@@ -20,14 +20,12 @@ pub mod cancel_journal_kinesis_stream_input {
             self.ledger_name = input;
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
-        /// canceled.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
-        /// canceled.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -204,18 +202,14 @@ pub mod create_ledger_input {
         pub(crate) kms_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the ledger that you want to create. The name must be unique among all of
-        /// the ledgers in your account in the current Region.</p>
-        /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
-        /// in the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your account in the current Region.</p>
+        /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the ledger that you want to create. The name must be unique among all of
-        /// the ledgers in your account in the current Region.</p>
-        /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
-        /// in the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your account in the current Region.</p>
+        /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -224,8 +218,7 @@ pub mod create_ledger_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
-        /// case sensitive. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -236,8 +229,7 @@ pub mod create_ledger_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
-        /// case sensitive. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -250,69 +242,23 @@ pub mod create_ledger_input {
             self.tags = input;
             self
         }
-        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
-        /// have one of the following values:</p>
+        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-        /// API-level granularity for ledgers.</p>
-        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-        /// in the specified ledger. This mode disregards any table-level or command-level IAM
-        /// permissions policies that you create for the ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-        /// enables access control with finer granularity for ledgers, tables, and PartiQL
-        /// commands.</p>
-        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-        /// permissions policies for specific table resources and PartiQL actions, in addition to
-        /// the <code>SendCommand</code> API permission for the ledger. For information, see
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-        /// the security of your ledger data.</p>
+        /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
         /// </note>
         pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
             self.permissions_mode = Some(input);
             self
         }
-        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
-        /// have one of the following values:</p>
+        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-        /// API-level granularity for ledgers.</p>
-        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-        /// in the specified ledger. This mode disregards any table-level or command-level IAM
-        /// permissions policies that you create for the ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-        /// enables access control with finer granularity for ledgers, tables, and PartiQL
-        /// commands.</p>
-        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-        /// permissions policies for specific table resources and PartiQL actions, in addition to
-        /// the <code>SendCommand</code> API permission for the ledger. For information, see
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-        /// the security of your ledger data.</p>
+        /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
         /// </note>
         pub fn set_permissions_mode(
             mut self,
@@ -321,126 +267,54 @@ pub mod create_ledger_input {
             self.permissions_mode = input;
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-        /// on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Undefined</b>: By default, use an Amazon Web Services owned KMS
-        /// key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b>: Use
-        /// the specified KMS key in your account that you create, own, and manage.</p>
-        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-        /// Guide</i>.</p>
-        /// </li>
+        /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+        /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// </ul>
-        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-        /// ARN or alias ARN.</p>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-        /// the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-        /// on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Undefined</b>: By default, use an Amazon Web Services owned KMS
-        /// key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b>: Use
-        /// the specified KMS key in your account that you create, own, and manage.</p>
-        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-        /// Guide</i>.</p>
-        /// </li>
+        /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+        /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// </ul>
-        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-        /// ARN or alias ARN.</p>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-        /// the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -746,14 +620,12 @@ pub mod describe_journal_kinesis_stream_input {
             self.ledger_name = input;
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
-        /// describe.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
-        /// describe.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -933,14 +805,12 @@ pub mod describe_journal_s3_export_input {
             self.name = input;
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
-        /// describe.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
         pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_id = Some(input.into());
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
-        /// describe.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -1272,25 +1142,17 @@ pub mod export_journal_to_s3_input {
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents to export.</p>
-        /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-        /// format and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
-        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-        /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
-        /// <code>CreationDateTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
         pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents to export.</p>
-        /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-        /// format and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
-        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-        /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
-        /// <code>CreationDateTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1299,21 +1161,15 @@ pub mod export_journal_to_s3_input {
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents to export.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
-        /// time.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents to export.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
-        /// time.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
         pub fn set_exclusive_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1321,8 +1177,7 @@ pub mod export_journal_to_s3_input {
             self.exclusive_end_time = input;
             self
         }
-        /// <p>The configuration settings of the Amazon S3 bucket destination for your export
-        /// request.</p>
+        /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
         pub fn s3_export_configuration(
             mut self,
             input: crate::model::S3ExportConfiguration,
@@ -1330,8 +1185,7 @@ pub mod export_journal_to_s3_input {
             self.s3_export_configuration = Some(input);
             self
         }
-        /// <p>The configuration settings of the Amazon S3 bucket destination for your export
-        /// request.</p>
+        /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
         pub fn set_s3_export_configuration(
             mut self,
             input: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -1339,31 +1193,19 @@ pub mod export_journal_to_s3_input {
             self.s3_export_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal export job to do the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-        /// encryption of your exported data.</p>
-        /// </li>
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+        /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal export job to do the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-        /// encryption of your exported data.</p>
-        /// </li>
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+        /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -1540,15 +1382,13 @@ pub mod get_block_input {
             self.name = input;
             self
         }
-        /// <p>The location of the block that you want to request. An address is an Amazon Ion
-        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
             self.block_address = Some(input);
             self
         }
-        /// <p>The location of the block that you want to request. An address is an Amazon Ion
-        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn set_block_address(
             mut self,
@@ -1557,17 +1397,13 @@ pub mod get_block_input {
             self.block_address = input;
             self
         }
-        /// <p>The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
             self.digest_tip_address = Some(input);
             self
         }
-        /// <p>The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn set_digest_tip_address(
             mut self,
@@ -1885,15 +1721,13 @@ pub mod get_revision_input {
             self.name = input;
             self
         }
-        /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
-        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
             self.block_address = Some(input);
             self
         }
-        /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
-        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn set_block_address(
             mut self,
@@ -1912,17 +1746,13 @@ pub mod get_revision_input {
             self.document_id = input;
             self
         }
-        /// <p>The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
             self.digest_tip_address = Some(input);
             self
         }
-        /// <p>The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn set_digest_tip_address(
             mut self,
@@ -2100,32 +1930,22 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self.ledger_name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single
-        /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
-        /// returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single
-        /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
-        /// returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2297,30 +2117,22 @@ pub mod list_journal_s3_exports_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
-        /// request. (The actual number of results returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
-        /// request. (The actual number of results returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalS3Exports</code> call, then you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalS3Exports</code> call, then you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2480,32 +2292,22 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self.name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single
-        /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
-        /// returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single
-        /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
-        /// returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
-        /// here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2673,28 +2475,22 @@ pub mod list_ledgers_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
-        /// (The actual number of results returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
-        /// (The actual number of results returned might be fewer.)</p>
+        /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-        /// you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2843,17 +2639,13 @@ pub mod list_tags_for_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3020,14 +2812,12 @@ pub mod stream_journal_to_kinesis_input {
             self.ledger_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3036,8 +2826,7 @@ pub mod stream_journal_to_kinesis_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
-        /// case sensitive. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3048,8 +2837,7 @@ pub mod stream_journal_to_kinesis_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
-        /// case sensitive. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3062,26 +2850,16 @@ pub mod stream_journal_to_kinesis_input {
             self.tags = input;
             self
         }
-        /// <p>The inclusive start date and time from which to start streaming journal data. This
-        /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-        /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-        /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
-        /// <code>ExclusiveEndTime</code>.</p>
-        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-        /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
-        /// <code>CreationDateTime</code>.</p>
+        /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
         pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
-        /// <p>The inclusive start date and time from which to start streaming journal data. This
-        /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-        /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-        /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
-        /// <code>ExclusiveEndTime</code>.</p>
-        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-        /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
-        /// <code>CreationDateTime</code>.</p>
+        /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3089,20 +2867,14 @@ pub mod stream_journal_to_kinesis_input {
             self.inclusive_start_time = input;
             self
         }
-        /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
-        /// this parameter, the stream runs indefinitely until you cancel it.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
-        /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
-        /// this parameter, the stream runs indefinitely until you cancel it.</p>
-        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
         pub fn set_exclusive_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3123,22 +2895,14 @@ pub mod stream_journal_to_kinesis_input {
             self.kinesis_configuration = input;
             self
         }
-        /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
-        /// help identify and indicate the purpose of a stream.</p>
-        /// <p>Your stream name must be unique among other <i>active</i> streams for a
-        /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
-        /// Guide</i>.</p>
+        /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
+        /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
-        /// help identify and indicate the purpose of a stream.</p>
-        /// <p>Your stream name must be unique among other <i>active</i> streams for a
-        /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
-        /// Guide</i>.</p>
+        /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
+        /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3317,17 +3081,13 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3336,9 +3096,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
-        /// sensitive. If you specify a key that already exists for the resource, your request fails
-        /// and returns an error. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3349,9 +3107,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
-        /// sensitive. If you specify a key that already exists for the resource, your request fails
-        /// and returns an error. Tag values are case sensitive and can be null.</p>
+        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3521,17 +3277,13 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-        /// <p>
-        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-        /// </p>
+        /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3722,126 +3474,54 @@ pub mod update_ledger_input {
             self.name = input;
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-        /// on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Undefined</b>: Make no changes to the KMS key of the
-        /// ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b>: Use
-        /// the specified KMS key in your account that you create, own, and manage.</p>
-        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-        /// Guide</i>.</p>
-        /// </li>
+        /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+        /// <li> <p> <b>Undefined</b>: Make no changes to the KMS key of the ledger.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// </ul>
-        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-        /// ARN or alias ARN.</p>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-        /// the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-        /// on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Undefined</b>: Make no changes to the KMS key of the
-        /// ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b>: Use
-        /// the specified KMS key in your account that you create, own, and manage.</p>
-        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-        /// Guide</i>.</p>
-        /// </li>
+        /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+        /// <li> <p> <b>Undefined</b>: Make no changes to the KMS key of the ledger.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// </ul>
-        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-        /// ARN or alias ARN.</p>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-        /// the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -4012,69 +3692,23 @@ pub mod update_ledger_permissions_mode_input {
             self.name = input;
             self
         }
-        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
-        /// following values:</p>
+        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-        /// API-level granularity for ledgers.</p>
-        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-        /// in the specified ledger. This mode disregards any table-level or command-level IAM
-        /// permissions policies that you create for the ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-        /// enables access control with finer granularity for ledgers, tables, and PartiQL
-        /// commands.</p>
-        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-        /// permissions policies for specific table resources and PartiQL actions, in addition to
-        /// the <code>SendCommand</code> API permission for the ledger. For information, see
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-        /// the security of your ledger data.</p>
+        /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
         /// </note>
         pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
             self.permissions_mode = Some(input);
             self
         }
-        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
-        /// following values:</p>
+        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-        /// API-level granularity for ledgers.</p>
-        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-        /// in the specified ledger. This mode disregards any table-level or command-level IAM
-        /// permissions policies that you create for the ledger.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-        /// enables access control with finer granularity for ledgers, tables, and PartiQL
-        /// commands.</p>
-        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-        /// permissions policies for specific table resources and PartiQL actions, in addition to
-        /// the <code>SendCommand</code> API permission for the ledger. For information, see
-        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-        /// the security of your ledger data.</p>
+        /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+        /// </ul> <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
         /// </note>
         pub fn set_permissions_mode(
             mut self,
@@ -4238,35 +3872,12 @@ impl UpdateLedgerPermissionsModeInput {
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
-    /// following values:</p>
+    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-    /// API-level granularity for ledgers.</p>
-    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-    /// in the specified ledger. This mode disregards any table-level or command-level IAM
-    /// permissions policies that you create for the ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-    /// enables access control with finer granularity for ledgers, tables, and PartiQL
-    /// commands.</p>
-    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-    /// permissions policies for specific table resources and PartiQL actions, in addition to
-    /// the <code>SendCommand</code> API permission for the ledger. For information, see
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-    /// the security of your ledger data.</p>
+    /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
 }
@@ -4275,35 +3886,12 @@ impl UpdateLedgerPermissionsModeInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
-    /// following values:</p>
+    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-    /// API-level granularity for ledgers.</p>
-    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-    /// in the specified ledger. This mode disregards any table-level or command-level IAM
-    /// permissions policies that you create for the ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-    /// enables access control with finer granularity for ledgers, tables, and PartiQL
-    /// commands.</p>
-    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-    /// permissions policies for specific table resources and PartiQL actions, in addition to
-    /// the <code>SendCommand</code> API permission for the ledger. For information, see
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-    /// the security of your ledger data.</p>
+    /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
         self.permissions_mode.as_ref()
@@ -4324,61 +3912,25 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-    /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-    /// the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-    /// on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Undefined</b>: Make no changes to the KMS key of the
-    /// ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b>: Use
-    /// the specified KMS key in your account that you create, own, and manage.</p>
-    /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+    /// <li> <p> <b>Undefined</b>: Make no changes to the KMS key of the ledger.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-    /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-    /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-    /// ARN or alias ARN.</p>
+    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias name: <code>alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-    /// the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl UpdateLedgerInput {
@@ -4386,63 +3938,27 @@ impl UpdateLedgerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-    /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-    /// the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-    /// on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Undefined</b>: Make no changes to the KMS key of the
-    /// ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b>: Use
-    /// the specified KMS key in your account that you create, own, and manage.</p>
-    /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+    /// <li> <p> <b>Undefined</b>: Make no changes to the KMS key of the ledger.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-    /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-    /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-    /// ARN or alias ARN.</p>
+    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias name: <code>alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-    /// the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4462,18 +3978,14 @@ impl std::fmt::Debug for UpdateLedgerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4496,28 +4008,20 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
-    /// sensitive. If you specify a key that already exists for the resource, your request fails
-    /// and returns an error. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
-    /// sensitive. If you specify a key that already exists for the resource, your request fails
-    /// and returns an error. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<
@@ -4541,37 +4045,23 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StreamJournalToKinesisInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
-    /// case sensitive. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
-    /// <p>The inclusive start date and time from which to start streaming journal data. This
-    /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-    /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
-    /// <code>ExclusiveEndTime</code>.</p>
-    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-    /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
-    /// <code>CreationDateTime</code>.</p>
+    /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
-    /// this parameter, the stream runs indefinitely until you cancel it.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-    /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
-    /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
-    /// help identify and indicate the purpose of a stream.</p>
-    /// <p>Your stream name must be unique among other <i>active</i> streams for a
-    /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
-    /// Guide</i>.</p>
+    /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
+    /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl StreamJournalToKinesisInput {
@@ -4579,13 +4069,11 @@ impl StreamJournalToKinesisInput {
     pub fn ledger_name(&self) -> std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
-    /// case sensitive. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<
@@ -4593,22 +4081,14 @@ impl StreamJournalToKinesisInput {
     > {
         self.tags.as_ref()
     }
-    /// <p>The inclusive start date and time from which to start streaming journal data. This
-    /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-    /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
-    /// <code>ExclusiveEndTime</code>.</p>
-    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-    /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
-    /// <code>CreationDateTime</code>.</p>
+    /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
     pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
-    /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
-    /// this parameter, the stream runs indefinitely until you cancel it.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-    /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
@@ -4618,12 +4098,8 @@ impl StreamJournalToKinesisInput {
     ) -> std::option::Option<&crate::model::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
-    /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
-    /// help identify and indicate the purpose of a stream.</p>
-    /// <p>Your stream name must be unique among other <i>active</i> streams for a
-    /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
-    /// Guide</i>.</p>
+    /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
+    /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
@@ -4647,16 +4123,12 @@ impl std::fmt::Debug for StreamJournalToKinesisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
-    /// <p>
-    /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
-    /// </p>
+    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4673,23 +4145,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersInput {
-    /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
-    /// (The actual number of results returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLedgersInput {
-    /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
-    /// (The actual number of results returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4709,14 +4175,9 @@ impl std::fmt::Debug for ListLedgersInput {
 pub struct ListJournalS3ExportsForLedgerInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single
-    /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
-    /// returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsForLedgerInput {
@@ -4724,16 +4185,11 @@ impl ListJournalS3ExportsForLedgerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single
-    /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
-    /// returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4752,25 +4208,17 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsInput {
-    /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
-    /// request. (The actual number of results returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalS3Exports</code> call, then you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsInput {
-    /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
-    /// request. (The actual number of results returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalS3Exports</code> call, then you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4790,14 +4238,9 @@ impl std::fmt::Debug for ListJournalS3ExportsInput {
 pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single
-    /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
-    /// returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalKinesisStreamsForLedgerInput {
@@ -4805,16 +4248,11 @@ impl ListJournalKinesisStreamsForLedgerInput {
     pub fn ledger_name(&self) -> std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single
-    /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
-    /// returned might be fewer.)</p>
+    /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
-    /// you received a value for <code>NextToken</code> in the response from a previous
-    /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
-    /// here.</p>
+    /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4835,15 +4273,12 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
 pub struct GetRevisionInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
-    /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: std::option::Option<crate::model::ValueHolder>,
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The latest block location covered by the digest for which to request a proof. An address
-    /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
@@ -4852,8 +4287,7 @@ impl GetRevisionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
-    /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn block_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.block_address.as_ref()
@@ -4862,9 +4296,7 @@ impl GetRevisionInput {
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>The latest block location covered by the digest for which to request a proof. An address
-    /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub fn digest_tip_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.digest_tip_address.as_ref()
@@ -4908,13 +4340,10 @@ impl std::fmt::Debug for GetDigestInput {
 pub struct GetBlockInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The location of the block that you want to request. An address is an Amazon Ion
-    /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: std::option::Option<crate::model::ValueHolder>,
-    /// <p>The latest block location covered by the digest for which to request a proof. An address
-    /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
@@ -4923,15 +4352,12 @@ impl GetBlockInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The location of the block that you want to request. An address is an Amazon Ion
-    /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn block_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.block_address.as_ref()
     }
-    /// <p>The latest block location covered by the digest for which to request a proof. An address
-    /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub fn digest_tip_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.digest_tip_address.as_ref()
@@ -4954,34 +4380,20 @@ pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
-    /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-    /// format and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
-    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-    /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
-    /// <code>CreationDateTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-    /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
-    /// time.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The configuration settings of the Amazon S3 bucket destination for your export
-    /// request.</p>
+    /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal export job to do the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-    /// encryption of your exported data.</p>
-    /// </li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -4991,42 +4403,28 @@ impl ExportJournalToS3Input {
         self.name.as_deref()
     }
     /// <p>The inclusive start date and time for the range of journal contents to export.</p>
-    /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-    /// format and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
-    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
-    /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
-    /// <code>CreationDateTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
     pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-    /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>.</p>
-    /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
-    /// time.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
     pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
-    /// <p>The configuration settings of the Amazon S3 bucket destination for your export
-    /// request.</p>
+    /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
     pub fn s3_export_configuration(
         &self,
     ) -> std::option::Option<&crate::model::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal export job to do the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-    /// encryption of your exported data.</p>
-    /// </li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -5071,8 +4469,7 @@ impl std::fmt::Debug for DescribeLedgerInput {
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
-    /// describe.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub export_id: std::option::Option<std::string::String>,
 }
 impl DescribeJournalS3ExportInput {
@@ -5080,8 +4477,7 @@ impl DescribeJournalS3ExportInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
-    /// describe.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
@@ -5101,8 +4497,7 @@ impl std::fmt::Debug for DescribeJournalS3ExportInput {
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
-    /// describe.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl DescribeJournalKinesisStreamInput {
@@ -5110,8 +4505,7 @@ impl DescribeJournalKinesisStreamInput {
     pub fn ledger_name(&self) -> std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
-    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
-    /// describe.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
@@ -5150,114 +4544,49 @@ impl std::fmt::Debug for DeleteLedgerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLedgerInput {
-    /// <p>The name of the ledger that you want to create. The name must be unique among all of
-    /// the ledgers in your account in the current Region.</p>
-    /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
-    /// in the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your account in the current Region.</p>
+    /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
-    /// case sensitive. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
-    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
-    /// have one of the following values:</p>
+    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-    /// API-level granularity for ledgers.</p>
-    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-    /// in the specified ledger. This mode disregards any table-level or command-level IAM
-    /// permissions policies that you create for the ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-    /// enables access control with finer granularity for ledgers, tables, and PartiQL
-    /// commands.</p>
-    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-    /// permissions policies for specific table resources and PartiQL actions, in addition to
-    /// the <code>SendCommand</code> API permission for the ledger. For information, see
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-    /// the security of your ledger data.</p>
+    /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-    /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-    /// the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-    /// on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Undefined</b>: By default, use an Amazon Web Services owned KMS
-    /// key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b>: Use
-    /// the specified KMS key in your account that you create, own, and manage.</p>
-    /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+    /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-    /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-    /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-    /// ARN or alias ARN.</p>
+    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias name: <code>alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-    /// the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl CreateLedgerInput {
-    /// <p>The name of the ledger that you want to create. The name must be unique among all of
-    /// the ledgers in your account in the current Region.</p>
-    /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
-    /// in the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your account in the current Region.</p>
+    /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
-    /// case sensitive. Tag values are case sensitive and can be null.</p>
+    /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<
@@ -5265,96 +4594,37 @@ impl CreateLedgerInput {
     > {
         self.tags.as_ref()
     }
-    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
-    /// have one of the following values:</p>
+    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
-    /// API-level granularity for ledgers.</p>
-    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
-    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
-    /// in the specified ledger. This mode disregards any table-level or command-level IAM
-    /// permissions policies that you create for the ledger.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
-    /// enables access control with finer granularity for ledgers, tables, and PartiQL
-    /// commands.</p>
-    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
-    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
-    /// permissions policies for specific table resources and PartiQL actions, in addition to
-    /// the <code>SendCommand</code> API permission for the ledger. For information, see
-    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
-    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
-    /// the security of your ledger data.</p>
+    /// <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// </ul> <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
-    /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-    /// the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
-    /// on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Undefined</b>: By default, use an Amazon Web Services owned KMS
-    /// key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b>: Use
-    /// the specified KMS key in your account that you create, own, and manage.</p>
-    /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
+    /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-    /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
-    /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
-    /// ARN or alias ARN.</p>
+    /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias name: <code>alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Alias ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
-    /// the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -5377,8 +4647,7 @@ impl std::fmt::Debug for CreateLedgerInput {
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
-    /// canceled.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl CancelJournalKinesisStreamInput {
@@ -5386,8 +4655,7 @@ impl CancelJournalKinesisStreamInput {
     pub fn ledger_name(&self) -> std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
-    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
-    /// canceled.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }

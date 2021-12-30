@@ -5,22 +5,17 @@
 pub enum Error {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have provided an invalid pagination token in your request.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-    /// details.</p>
+    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The value that you provided for the specified parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -30,11 +25,9 @@ pub enum Error {
     InvalidVersionNumberException(crate::error::InvalidVersionNumberException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

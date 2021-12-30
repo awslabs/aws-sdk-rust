@@ -15,14 +15,12 @@ pub mod create_configuration_set_input {
         pub(crate) suppression_options: std::option::Option<crate::model::SuppressionOptions>,
     }
     impl Builder {
-        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-        /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-        /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30,14 +28,12 @@ pub mod create_configuration_set_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
             self.tracking_options = Some(input);
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -45,14 +41,12 @@ pub mod create_configuration_set_input {
             self.tracking_options = input;
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
             self.delivery_options = Some(input);
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -60,14 +54,12 @@ pub mod create_configuration_set_input {
             self.delivery_options = input;
             self
         }
-        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
             self.reputation_options = Some(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn set_reputation_options(
             mut self,
             input: std::option::Option<crate::model::ReputationOptions>,
@@ -75,14 +67,12 @@ pub mod create_configuration_set_input {
             self.reputation_options = input;
             self
         }
-        /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-        /// configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
         pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
             self.sending_options = Some(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-        /// configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
         pub fn set_sending_options(
             mut self,
             input: std::option::Option<crate::model::SendingOptions>,
@@ -94,16 +84,14 @@ pub mod create_configuration_set_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) to associate with the
-        /// configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) to associate with the
-        /// configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -111,14 +99,12 @@ pub mod create_configuration_set_input {
             self.tags = input;
             self
         }
-        /// <p>An object that contains information about the suppression list preferences for your
-        /// account.</p>
+        /// <p>An object that contains information about the suppression list preferences for your account.</p>
         pub fn suppression_options(mut self, input: crate::model::SuppressionOptions) -> Self {
             self.suppression_options = Some(input);
             self
         }
-        /// <p>An object that contains information about the suppression list preferences for your
-        /// account.</p>
+        /// <p>An object that contains information about the suppression list preferences for your account.</p>
         pub fn set_suppression_options(
             mut self,
             input: std::option::Option<crate::model::SuppressionOptions>,
@@ -531,14 +517,12 @@ pub mod create_contact_input {
             self.topic_preferences = input;
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn unsubscribe_all(mut self, input: bool) -> Self {
             self.unsubscribe_all = Some(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.unsubscribe_all = input;
             self
@@ -738,16 +722,14 @@ pub mod create_contact_list_input {
         ///
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
             v.push(input);
             self.topics = Some(v);
             self
         }
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -970,18 +952,12 @@ pub mod create_custom_verification_email_template_input {
             self.template_subject = input;
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_content = Some(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -989,14 +965,12 @@ pub mod create_custom_verification_email_template_input {
             self.template_content = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1004,14 +978,12 @@ pub mod create_custom_verification_email_template_input {
             self.success_redirection_url = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1182,16 +1154,14 @@ pub mod create_dedicated_ip_pool_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1344,14 +1314,12 @@ pub mod create_deliverability_test_report_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_name = Some(input.into());
             self
         }
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_name = input;
             self
@@ -1386,16 +1354,14 @@ pub mod create_deliverability_test_report_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1570,16 +1536,14 @@ pub mod create_email_identity_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) to associate with the email
-        /// identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) to associate with the email
-        /// identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1587,11 +1551,8 @@ pub mod create_email_identity_input {
             self.tags = input;
             self
         }
-        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-        /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-        /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-        /// address.</p>
+        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
         pub fn dkim_signing_attributes(
             mut self,
             input: crate::model::DkimSigningAttributes,
@@ -1599,11 +1560,8 @@ pub mod create_email_identity_input {
             self.dkim_signing_attributes = Some(input);
             self
         }
-        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-        /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-        /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-        /// address.</p>
+        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
         pub fn set_dkim_signing_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimSigningAttributes>,
@@ -1611,14 +1569,12 @@ pub mod create_email_identity_input {
             self.dkim_signing_attributes = input;
             self
         }
-        /// <p>The configuration set to use by default when sending from this identity. Note that any
-        /// configuration set defined in the email sending request takes precedence. </p>
+        /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The configuration set to use by default when sending from this identity. Note that any
-        /// configuration set defined in the email sending request takes precedence. </p>
+        /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1784,31 +1740,25 @@ pub mod create_email_identity_policy_input {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_name = Some(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -2007,14 +1957,12 @@ pub mod create_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
             self.template_content = Some(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<crate::model::EmailTemplateContent>,
@@ -2488,14 +2436,12 @@ pub mod delete_configuration_set_event_destination_input {
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that contains the event destination to
-        /// delete.</p>
+        /// <p>The name of the configuration set that contains the event destination to delete.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// delete.</p>
+        /// <p>The name of the configuration set that contains the event destination to delete.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3509,17 +3455,13 @@ pub mod delete_email_identity_policy_input {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_name = Some(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -4129,18 +4071,14 @@ pub mod get_blacklist_reports_input {
         ///
         /// To override the contents of this collection use [`set_blacklist_item_names`](Self::set_blacklist_item_names).
         ///
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-        /// Amazon Pinpoint.</p>
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
         pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.blacklist_item_names.unwrap_or_default();
             v.push(input.into());
             self.blacklist_item_names = Some(v);
             self
         }
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-        /// Amazon Pinpoint.</p>
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
         pub fn set_blacklist_item_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5118,14 +5056,12 @@ pub mod get_dedicated_ip_input {
         pub(crate) ip: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
         pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip = Some(input.into());
             self
         }
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip = input;
             self
@@ -5281,30 +5217,22 @@ pub mod get_dedicated_ips_input {
             self.pool_name = input;
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -5736,14 +5664,12 @@ pub mod get_domain_deliverability_campaign_input {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-        /// and assigns this identifier to a campaign.</p>
+        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
         pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.campaign_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-        /// and assigns this identifier to a campaign.</p>
+        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_id = input;
             self
@@ -5907,14 +5833,12 @@ pub mod get_domain_statistics_report_input {
             self.domain = input;
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5922,16 +5846,12 @@ pub mod get_domain_statistics_report_input {
             self.start_date = input;
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6899,30 +6819,22 @@ pub mod list_configuration_sets_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -7071,36 +6983,22 @@ pub mod list_contact_lists_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-        /// results. If additional contact lists exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// lists.</p>
+        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-        /// results. If additional contact lists exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// lists.</p>
+        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
         }
-        /// <p>A string token indicating that there might be additional contact lists available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContactLists with the same parameters to retrieve the next page of contact
-        /// lists.</p>
+        /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional contact lists available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContactLists with the same parameters to retrieve the next page of contact
-        /// lists.</p>
+        /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7277,36 +7175,22 @@ pub mod list_contacts_input {
             self.filter = input;
             self
         }
-        /// <p>The number of contacts that may be returned at once, which is dependent on if there
-        /// are more or less contacts than the value of the PageSize. Use this parameter to
-        /// paginate results. If additional contacts exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// contacts.</p>
+        /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of contacts that may be returned at once, which is dependent on if there
-        /// are more or less contacts than the value of the PageSize. Use this parameter to
-        /// paginate results. If additional contacts exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// contacts.</p>
+        /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
         }
-        /// <p>A string token indicating that there might be additional contacts available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
+        /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional contacts available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
+        /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7490,35 +7374,23 @@ pub mod list_custom_verification_email_templates_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to
-        /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-        /// list of custom verification email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to
-        /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-        /// list of custom verification email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-        /// larger than the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-        /// larger than the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
@@ -7671,30 +7543,22 @@ pub mod list_dedicated_ip_pools_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -7843,33 +7707,23 @@ pub mod list_deliverability_test_reports_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
@@ -8025,14 +7879,12 @@ pub mod list_domain_deliverability_campaigns_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8040,16 +7892,12 @@ pub mod list_domain_deliverability_campaigns_input {
             self.start_date = input;
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8070,34 +7918,22 @@ pub mod list_domain_deliverability_campaigns_input {
             self.subscribed_domain = input;
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -8289,31 +8125,23 @@ pub mod list_email_identities_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
@@ -8463,29 +8291,23 @@ pub mod list_email_templates_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-        /// the position in the list of email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-        /// the position in the list of email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-        /// results is larger than the number you specified in this parameter, then the response
-        /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-        /// results is larger than the number you specified in this parameter, then the response
-        /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
@@ -8637,8 +8459,7 @@ pub mod list_import_jobs_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The destination of the import job, which can be used to list import jobs that have a
-        /// certain <code>ImportDestinationType</code>.</p>
+        /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
         pub fn import_destination_type(
             mut self,
             input: crate::model::ImportDestinationType,
@@ -8646,8 +8467,7 @@ pub mod list_import_jobs_input {
             self.import_destination_type = Some(input);
             self
         }
-        /// <p>The destination of the import job, which can be used to list import jobs that have a
-        /// certain <code>ImportDestinationType</code>.</p>
+        /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
         pub fn set_import_destination_type(
             mut self,
             input: std::option::Option<crate::model::ImportDestinationType>,
@@ -8655,34 +8475,22 @@ pub mod list_import_jobs_input {
             self.import_destination_type = input;
             self
         }
-        /// <p>A string token indicating that there might be additional import jobs available to be
-        /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-        /// same parameters to retrieve the next page of import jobs.</p>
+        /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional import jobs available to be
-        /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-        /// same parameters to retrieve the next page of import jobs.</p>
+        /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-        /// results. If additional import jobs exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// addresses.</p>
+        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-        /// results. If additional import jobs exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// addresses.</p>
+        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -8868,16 +8676,12 @@ pub mod list_suppressed_destinations_input {
             self.reasons = input;
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list after a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date = Some(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list after a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8885,16 +8689,12 @@ pub mod list_suppressed_destinations_input {
             self.start_date = input;
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list before a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date = Some(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list before a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8902,32 +8702,22 @@ pub mod list_suppressed_destinations_input {
             self.end_date = input;
             self
         }
-        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-        /// indicate the position in the list of suppressed email addresses.</p>
+        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-        /// indicate the position in the list of suppressed email addresses.</p>
+        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-        /// number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-        /// number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -9102,14 +8892,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9253,18 +9041,12 @@ pub mod put_account_dedicated_ip_warmup_attributes_input {
         pub(crate) auto_warmup_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn auto_warmup_enabled(mut self, input: bool) -> Self {
             self.auto_warmup_enabled = Some(input);
             self
         }
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_warmup_enabled = input;
             self
@@ -9428,14 +9210,12 @@ pub mod put_account_details_input {
             self.mail_type = input;
             self
         }
-        /// <p>The URL of your website. This information helps us better understand the type of
-        /// content that you plan to send.</p>
+        /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
         pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_url = Some(input.into());
             self
         }
-        /// <p>The URL of your website. This information helps us better understand the type of
-        /// content that you plan to send.</p>
+        /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
         pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.website_url = input;
             self
@@ -9470,8 +9250,7 @@ pub mod put_account_details_input {
         ///
         /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
         ///
-        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-        /// matters.</p>
+        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
         pub fn additional_contact_email_addresses(
             mut self,
             input: impl Into<std::string::String>,
@@ -9481,8 +9260,7 @@ pub mod put_account_details_input {
             self.additional_contact_email_addresses = Some(v);
             self
         }
-        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-        /// matters.</p>
+        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
         pub fn set_additional_contact_email_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9490,30 +9268,16 @@ pub mod put_account_details_input {
             self.additional_contact_email_addresses = input;
             self
         }
-        /// <p>Indicates whether or not your account should have production access in the current
-        /// Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the
-        /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-        /// email to verified identities. Additionally, the maximum number of emails you can send in
-        /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-        /// send per second (your maximum sending rate) is 1.</p>
-        /// <p>If the value is <code>true</code>, then your account has production access. When your
-        /// account has production access, you can send email to any address. The sending quota and
-        /// maximum sending rate for your account vary based on your specific use case.</p>
+        /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
         pub fn production_access_enabled(mut self, input: bool) -> Self {
             self.production_access_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether or not your account should have production access in the current
-        /// Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the
-        /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-        /// email to verified identities. Additionally, the maximum number of emails you can send in
-        /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-        /// send per second (your maximum sending rate) is 1.</p>
-        /// <p>If the value is <code>true</code>, then your account has production access. When your
-        /// account has production access, you can send email to any address. The sending quota and
-        /// maximum sending rate for your account vary based on your specific use case.</p>
+        /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
         pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.production_access_enabled = input;
             self
@@ -9662,21 +9426,15 @@ pub mod put_account_sending_attributes_input {
         pub(crate) sending_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.sending_enabled = Some(input);
             self
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sending_enabled = input;
@@ -9828,22 +9586,10 @@ pub mod put_account_suppression_attributes_input {
         ///
         /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
         ///
-        /// <p>A list that contains the reasons that email addresses will be automatically added to
-        /// the suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
@@ -9851,22 +9597,10 @@ pub mod put_account_suppression_attributes_input {
             self.suppressed_reasons = Some(v);
             self
         }
-        /// <p>A list that contains the reasons that email addresses will be automatically added to
-        /// the suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
@@ -10032,18 +9766,12 @@ pub mod put_configuration_set_delivery_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
             self.tls_policy = Some(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn set_tls_policy(
             mut self,
             input: std::option::Option<crate::model::TlsPolicy>,
@@ -10242,16 +9970,12 @@ pub mod put_configuration_set_reputation_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
             self.reputation_metrics_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.reputation_metrics_enabled = input;
             self
@@ -10433,14 +10157,12 @@ pub mod put_configuration_set_sending_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.sending_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sending_enabled = input;
             self
@@ -10610,14 +10332,12 @@ pub mod put_configuration_set_suppression_options_input {
             std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
     }
     impl Builder {
-        /// <p>The name of the configuration set to change the suppression list preferences
-        /// for.</p>
+        /// <p>The name of the configuration set to change the suppression list preferences for.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set to change the suppression list preferences
-        /// for.</p>
+        /// <p>The name of the configuration set to change the suppression list preferences for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10629,22 +10349,10 @@ pub mod put_configuration_set_suppression_options_input {
         ///
         /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
         ///
-        /// <p>A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
@@ -10652,22 +10360,10 @@ pub mod put_configuration_set_suppression_options_input {
             self.suppressed_reasons = Some(v);
             self
         }
-        /// <p>A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
@@ -11030,26 +10726,22 @@ pub mod put_dedicated_ip_in_pool_input {
         pub(crate) destination_pool_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
         pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip = Some(input.into());
             self
         }
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip = input;
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_pool_name = Some(input.into());
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn set_destination_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11226,14 +10918,12 @@ pub mod put_dedicated_ip_warmup_attributes_input {
             self.ip = input;
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn warmup_percentage(mut self, input: i32) -> Self {
             self.warmup_percentage = Some(input);
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.warmup_percentage = input;
             self
@@ -11399,14 +11089,12 @@ pub mod put_deliverability_dashboard_option_input {
             std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
     }
     impl Builder {
-        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-        /// value to <code>true</code>.</p>
+        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn dashboard_enabled(mut self, input: bool) -> Self {
             self.dashboard_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-        /// value to <code>true</code>.</p>
+        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dashboard_enabled = input;
             self
@@ -11415,8 +11103,7 @@ pub mod put_deliverability_dashboard_option_input {
         ///
         /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
         ///
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn subscribed_domains(
             mut self,
             input: crate::model::DomainDeliverabilityTrackingOption,
@@ -11426,8 +11113,7 @@ pub mod put_deliverability_dashboard_option_input {
             self.subscribed_domains = Some(v);
             self
         }
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn set_subscribed_domains(
             mut self,
             input: std::option::Option<
@@ -11789,17 +11475,13 @@ pub mod put_email_identity_dkim_attributes_input {
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-        /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-        /// messages are sent without DKIM signing.</p>
+        /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
         pub fn signing_enabled(mut self, input: bool) -> Self {
             self.signing_enabled = Some(input);
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-        /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-        /// messages are sent without DKIM signing.</p>
+        /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.signing_enabled = input;
             self
@@ -11983,19 +11665,10 @@ pub mod put_email_identity_dkim_signing_attributes_input {
             self.email_identity = input;
             self
         }
-        /// <p>The method to use to configure DKIM for the identity. There are the following possible
-        /// values:</p>
+        /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-        /// Your Own DKIM (BYODKIM).</p>
-        /// </li>
+        /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+        /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
         /// </ul>
         pub fn signing_attributes_origin(
             mut self,
@@ -12004,19 +11677,10 @@ pub mod put_email_identity_dkim_signing_attributes_input {
             self.signing_attributes_origin = Some(input);
             self
         }
-        /// <p>The method to use to configure DKIM for the identity. There are the following possible
-        /// values:</p>
+        /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-        /// Your Own DKIM (BYODKIM).</p>
-        /// </li>
+        /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+        /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
         /// </ul>
         pub fn set_signing_attributes_origin(
             mut self,
@@ -12025,18 +11689,12 @@ pub mod put_email_identity_dkim_signing_attributes_input {
             self.signing_attributes_origin = input;
             self
         }
-        /// <p>An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-        /// configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
         pub fn signing_attributes(mut self, input: crate::model::DkimSigningAttributes) -> Self {
             self.signing_attributes = Some(input);
             self
         }
-        /// <p>An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-        /// configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
         pub fn set_signing_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimSigningAttributes>,
@@ -12223,25 +11881,15 @@ pub mod put_email_identity_feedback_attributes_input {
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.</p>
-        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-        /// set up another mechanism for receiving bounce or complaint notifications (for example,
-        /// by setting up an event destination), you receive an email notification when these events
-        /// occur (even if this setting is disabled).</p>
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
         pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
             self.email_forwarding_enabled = Some(input);
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.</p>
-        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-        /// set up another mechanism for receiving bounce or complaint notifications (for example,
-        /// by setting up an event destination), you receive an email notification when these events
-        /// occur (even if this setting is disabled).</p>
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
         pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.email_forwarding_enabled = input;
             self
@@ -12424,37 +12072,21 @@ pub mod put_email_identity_mail_from_attributes_input {
             self.email_identity = input;
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
         pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.mail_from_domain = Some(input.into());
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
         pub fn set_mail_from_domain(
             mut self,
@@ -12463,28 +12095,14 @@ pub mod put_email_identity_mail_from_attributes_input {
             self.mail_from_domain = input;
             self
         }
-        /// <p>The action to take if the required MX record isn't found when you send an email. When
-        /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-        /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-        /// email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
+        /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.behavior_on_mx_failure = Some(input);
             self
         }
-        /// <p>The action to take if the required MX record isn't found when you send an email. When
-        /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-        /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-        /// email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
+        /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -12657,14 +12275,12 @@ pub mod put_suppressed_destination_input {
         pub(crate) reason: std::option::Option<crate::model::SuppressionListReason>,
     }
     impl Builder {
-        /// <p>The email address that should be added to the suppression list for your
-        /// account.</p>
+        /// <p>The email address that should be added to the suppression list for your account.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The email address that should be added to the suppression list for your
-        /// account.</p>
+        /// <p>The email address that should be added to the suppression list for your account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12672,14 +12288,12 @@ pub mod put_suppressed_destination_input {
             self.email_address = input;
             self
         }
-        /// <p>The factors that should cause the email address to be added to the suppression list
-        /// for your account.</p>
+        /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
         pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
             self.reason = Some(input);
             self
         }
-        /// <p>The factors that should cause the email address to be added to the suppression list
-        /// for your account.</p>
+        /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::SuppressionListReason>,
@@ -12840,14 +12454,12 @@ pub mod send_bulk_email_input {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.</p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.from_email_address = Some(input.into());
             self
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.</p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12855,17 +12467,9 @@ pub mod send_bulk_email_input {
             self.from_email_address = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn from_email_address_identity_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -12873,17 +12477,9 @@ pub mod send_bulk_email_input {
             self.from_email_address_identity_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_from_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12895,16 +12491,14 @@ pub mod send_bulk_email_input {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12928,18 +12522,9 @@ pub mod send_bulk_email_input {
             self.feedback_forwarding_email_address = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -12947,18 +12532,9 @@ pub mod send_bulk_email_input {
             self.feedback_forwarding_email_address_identity_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12970,18 +12546,14 @@ pub mod send_bulk_email_input {
         ///
         /// To override the contents of this collection use [`set_default_email_tags`](Self::set_default_email_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn default_email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.default_email_tags.unwrap_or_default();
             v.push(input);
             self.default_email_tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn set_default_email_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -12989,14 +12561,12 @@ pub mod send_bulk_email_input {
             self.default_email_tags = input;
             self
         }
-        /// <p>An object that contains the body of the message. You can specify a template
-        /// message.</p>
+        /// <p>An object that contains the body of the message. You can specify a template message.</p>
         pub fn default_content(mut self, input: crate::model::BulkEmailContent) -> Self {
             self.default_content = Some(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can specify a template
-        /// message.</p>
+        /// <p>An object that contains the body of the message. You can specify a template message.</p>
         pub fn set_default_content(
             mut self,
             input: std::option::Option<crate::model::BulkEmailContent>,
@@ -13199,14 +12769,12 @@ pub mod send_custom_verification_email_input {
             self.email_address = input;
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13382,16 +12950,12 @@ pub mod send_email_input {
             std::option::Option<crate::model::ListManagementOptions>,
     }
     impl Builder {
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.from_email_address = Some(input.into());
             self
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13399,20 +12963,10 @@ pub mod send_email_input {
             self.from_email_address = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-        /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-        /// content.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
         pub fn from_email_address_identity_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -13420,20 +12974,10 @@ pub mod send_email_input {
             self.from_email_address_identity_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-        /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-        /// content.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
         pub fn set_from_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13458,16 +13002,14 @@ pub mod send_email_input {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13491,18 +13033,9 @@ pub mod send_email_input {
             self.feedback_forwarding_email_address = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -13510,18 +13043,9 @@ pub mod send_email_input {
             self.feedback_forwarding_email_address_identity_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13529,14 +13053,12 @@ pub mod send_email_input {
             self.feedback_forwarding_email_address_identity_arn = input;
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.</p>
+        /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
         pub fn content(mut self, input: crate::model::EmailContent) -> Self {
             self.content = Some(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.</p>
+        /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<crate::model::EmailContent>,
@@ -13548,18 +13070,14 @@ pub mod send_email_input {
         ///
         /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.email_tags.unwrap_or_default();
             v.push(input);
             self.email_tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn set_email_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -13580,8 +13098,7 @@ pub mod send_email_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>An object used to specify a list or topic to which an email belongs, which will be
-        /// used when a contact chooses to unsubscribe.</p>
+        /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
         pub fn list_management_options(
             mut self,
             input: crate::model::ListManagementOptions,
@@ -13589,8 +13106,7 @@ pub mod send_email_input {
             self.list_management_options = Some(input);
             self
         }
-        /// <p>An object used to specify a list or topic to which an email belongs, which will be
-        /// used when a contact chooses to unsubscribe.</p>
+        /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
         pub fn set_list_management_options(
             mut self,
             input: std::option::Option<crate::model::ListManagementOptions>,
@@ -13743,14 +13259,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -13759,20 +13273,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13933,16 +13441,12 @@ pub mod test_render_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_data = Some(input.into());
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14114,14 +13618,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -14130,26 +13632,16 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14304,14 +13796,12 @@ pub mod update_configuration_set_event_destination_input {
         pub(crate) event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that contains the event destination to
-        /// modify.</p>
+        /// <p>The name of the configuration set that contains the event destination to modify.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// modify.</p>
+        /// <p>The name of the configuration set that contains the event destination to modify.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14572,14 +14062,12 @@ pub mod update_contact_input {
             self.topic_preferences = input;
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn unsubscribe_all(mut self, input: bool) -> Self {
             self.unsubscribe_all = Some(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.unsubscribe_all = input;
             self
@@ -14794,16 +14282,14 @@ pub mod update_contact_list_input {
         ///
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
             v.push(input);
             self.topics = Some(v);
             self
         }
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -15026,18 +14512,12 @@ pub mod update_custom_verification_email_template_input {
             self.template_subject = input;
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_content = Some(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15045,14 +14525,12 @@ pub mod update_custom_verification_email_template_input {
             self.template_content = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15060,14 +14538,12 @@ pub mod update_custom_verification_email_template_input {
             self.success_redirection_url = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15258,31 +14734,25 @@ pub mod update_email_identity_policy_input {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_name = Some(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -15481,14 +14951,12 @@ pub mod update_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
             self.template_content = Some(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<crate::model::EmailTemplateContent>,
@@ -15647,15 +15115,13 @@ impl UpdateEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to update an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Represents a request to update an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailTemplateInput {
     /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-    /// text-only part.</p>
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template_content: std::option::Option<crate::model::EmailTemplateContent>,
 }
 impl UpdateEmailTemplateInput {
@@ -15663,8 +15129,7 @@ impl UpdateEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-    /// text-only part.</p>
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(&self) -> std::option::Option<&crate::model::EmailTemplateContent> {
         self.template_content.as_ref()
     }
@@ -15678,22 +15143,17 @@ impl std::fmt::Debug for UpdateEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to update a sending authorization policy for an identity. Sending
-/// authorization is an Amazon SES feature that enables you to authorize other senders to use
-/// your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl UpdateEmailIdentityPolicyInput {
@@ -15702,15 +15162,12 @@ impl UpdateEmailIdentityPolicyInput {
         self.email_identity.as_deref()
     }
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -15735,16 +15192,11 @@ pub struct UpdateCustomVerificationEmailTemplateInput {
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
     pub template_subject: std::option::Option<std::string::String>,
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub template_content: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub success_redirection_url: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl UpdateCustomVerificationEmailTemplateInput {
@@ -15760,20 +15212,15 @@ impl UpdateCustomVerificationEmailTemplateInput {
     pub fn template_subject(&self) -> std::option::Option<&str> {
         self.template_subject.as_deref()
     }
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn template_content(&self) -> std::option::Option<&str> {
         self.template_content.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(&self) -> std::option::Option<&str> {
         self.success_redirection_url.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
     }
@@ -15797,8 +15244,7 @@ impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
 pub struct UpdateContactListInput {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: std::option::Option<std::string::String>,
-    /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-    /// topics.</p>
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
     /// <p>A description of what the contact list is about.</p>
     pub description: std::option::Option<std::string::String>,
@@ -15808,8 +15254,7 @@ impl UpdateContactListInput {
     pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
-    /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-    /// topics.</p>
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub fn topics(&self) -> std::option::Option<&[crate::model::Topic]> {
         self.topics.as_deref()
     }
@@ -15838,8 +15283,7 @@ pub struct UpdateContactInput {
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
-    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-    /// topics.</p>
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub unsubscribe_all: bool,
     /// <p>The attribute data attached to a contact.</p>
     pub attributes_data: std::option::Option<std::string::String>,
@@ -15857,8 +15301,7 @@ impl UpdateContactInput {
     pub fn topic_preferences(&self) -> std::option::Option<&[crate::model::TopicPreference]> {
         self.topic_preferences.as_deref()
     }
-    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-    /// topics.</p>
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(&self) -> bool {
         self.unsubscribe_all
     }
@@ -15879,13 +15322,11 @@ impl std::fmt::Debug for UpdateContactInput {
     }
 }
 
-/// <p>A request to change the settings for an event destination for a configuration
-/// set.</p>
+/// <p>A request to change the settings for an event destination for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination to
-    /// modify.</p>
+    /// <p>The name of the configuration set that contains the event destination to modify.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination.</p>
     pub event_destination_name: std::option::Option<std::string::String>,
@@ -15893,8 +15334,7 @@ pub struct UpdateConfigurationSetEventDestinationInput {
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination to
-    /// modify.</p>
+    /// <p>The name of the configuration set that contains the event destination to modify.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -15923,31 +15363,19 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-    /// tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-    /// key, the action removes both that key and its associated tag value.</p>
-    /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-    /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-    /// example:
-    /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-    /// </p>
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-    /// tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-    /// key, the action removes both that key and its associated tag value.</p>
-    /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-    /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-    /// example:
-    /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-    /// </p>
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -15961,16 +15389,13 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p>>Represents a request to create a preview of the MIME content of an email when
-/// provided with a template and a set of replacement data.</p>
+/// <p>&gt;Represents a request to create a preview of the MIME content of an email when provided with a template and a set of replacement data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderEmailTemplateInput {
     /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub template_data: std::option::Option<std::string::String>,
 }
 impl TestRenderEmailTemplateInput {
@@ -15978,9 +15403,7 @@ impl TestRenderEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(&self) -> std::option::Option<&str> {
         self.template_data.as_deref()
     }
@@ -15998,25 +15421,17 @@ impl std::fmt::Debug for TestRenderEmailTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -16030,85 +15445,45 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
-/// <p>Represents a request to send a single formatted email using Amazon SES. For more
-/// information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEmailInput {
-    /// <p>The email address to use as the "From" address for the email. The
-    /// address that you specify has to be verified.
-    /// </p>
+    /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub from_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use sender@example.com, then you would specify the
-    /// <code>FromEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-    /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-    /// content.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
     pub from_email_address_identity_arn: std::option::Option<std::string::String>,
     /// <p>An object that contains the recipients of the email message.</p>
     pub destination: std::option::Option<crate::model::Destination>,
-    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-    /// message, each Reply-to address receives the reply.</p>
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-    /// parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use feedback@example.com, then you would specify the
-    /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub feedback_forwarding_email_address_identity_arn: std::option::Option<std::string::String>,
-    /// <p>An object that contains the body of the message. You can send either a Simple message
-    /// Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
     pub content: std::option::Option<crate::model::EmailContent>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-    /// email that you define, so that you can publish email sending events. </p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>An object used to specify a list or topic to which an email belongs, which will be
-    /// used when a contact chooses to unsubscribe.</p>
+    /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub list_management_options: std::option::Option<crate::model::ListManagementOptions>,
 }
 impl SendEmailInput {
-    /// <p>The email address to use as the "From" address for the email. The
-    /// address that you specify has to be verified.
-    /// </p>
+    /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn from_email_address(&self) -> std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use sender@example.com, then you would specify the
-    /// <code>FromEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-    /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-    /// content.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
     pub fn from_email_address_identity_arn(&self) -> std::option::Option<&str> {
         self.from_email_address_identity_arn.as_deref()
     }
@@ -16116,8 +15491,7 @@ impl SendEmailInput {
     pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
         self.destination.as_ref()
     }
-    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-    /// message, each Reply-to address receives the reply.</p>
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
@@ -16125,30 +15499,18 @@ impl SendEmailInput {
     pub fn feedback_forwarding_email_address(&self) -> std::option::Option<&str> {
         self.feedback_forwarding_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-    /// parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use feedback@example.com, then you would specify the
-    /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn feedback_forwarding_email_address_identity_arn(&self) -> std::option::Option<&str> {
         self.feedback_forwarding_email_address_identity_arn
             .as_deref()
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message
-    /// Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
     pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
         self.content.as_ref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-    /// email that you define, so that you can publish email sending events. </p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub fn email_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.email_tags.as_deref()
     }
@@ -16156,8 +15518,7 @@ impl SendEmailInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>An object used to specify a list or topic to which an email belongs, which will be
-    /// used when a contact chooses to unsubscribe.</p>
+    /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn list_management_options(
         &self,
     ) -> std::option::Option<&crate::model::ListManagementOptions> {
@@ -16190,15 +15551,13 @@ impl std::fmt::Debug for SendEmailInput {
     }
 }
 
-/// <p>Represents a request to send a custom verification email to a specified
-/// recipient.</p>
+/// <p>Represents a request to send a custom verification email to a specified recipient.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The name of the custom verification email template to use when sending the
-    /// verification email.</p>
+    /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -16208,8 +15567,7 @@ impl SendCustomVerificationEmailInput {
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The name of the custom verification email template to use when sending the
-    /// verification email.</p>
+    /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -16228,51 +15586,27 @@ impl std::fmt::Debug for SendCustomVerificationEmailInput {
     }
 }
 
-/// <p>Represents a request to send email messages to multiple destinations using Amazon SES. For
-/// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkEmailInput {
-    /// <p>The email address to use as the "From" address for the email. The
-    /// address that you specify has to be verified.</p>
+    /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     pub from_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use sender@example.com, then you would specify the
-    /// <code>FromEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub from_email_address_identity_arn: std::option::Option<std::string::String>,
-    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-    /// message, each Reply-to address receives the reply.</p>
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-    /// parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use feedback@example.com, then you would specify the
-    /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub feedback_forwarding_email_address_identity_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-    /// email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub default_email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
-    /// <p>An object that contains the body of the message. You can specify a template
-    /// message.</p>
+    /// <p>An object that contains the body of the message. You can specify a template message.</p>
     pub default_content: std::option::Option<crate::model::BulkEmailContent>,
     /// <p>The list of bulk email entry objects.</p>
     pub bulk_email_entries: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntry>>,
@@ -16280,27 +15614,17 @@ pub struct SendBulkEmailInput {
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl SendBulkEmailInput {
-    /// <p>The email address to use as the "From" address for the email. The
-    /// address that you specify has to be verified.</p>
+    /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     pub fn from_email_address(&self) -> std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use sender@example.com, then you would specify the
-    /// <code>FromEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn from_email_address_identity_arn(&self) -> std::option::Option<&str> {
         self.from_email_address_identity_arn.as_deref()
     }
-    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-    /// message, each Reply-to address receives the reply.</p>
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
@@ -16308,30 +15632,18 @@ impl SendBulkEmailInput {
     pub fn feedback_forwarding_email_address(&self) -> std::option::Option<&str> {
         self.feedback_forwarding_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-    /// parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-    /// authorizes you to use feedback@example.com, then you would specify the
-    /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-    /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-    /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn feedback_forwarding_email_address_identity_arn(&self) -> std::option::Option<&str> {
         self.feedback_forwarding_email_address_identity_arn
             .as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-    /// email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn default_email_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.default_email_tags.as_deref()
     }
-    /// <p>An object that contains the body of the message. You can specify a template
-    /// message.</p>
+    /// <p>An object that contains the body of the message. You can specify a template message.</p>
     pub fn default_content(&self) -> std::option::Option<&crate::model::BulkEmailContent> {
         self.default_content.as_ref()
     }
@@ -16373,21 +15685,17 @@ impl std::fmt::Debug for SendBulkEmailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSuppressedDestinationInput {
-    /// <p>The email address that should be added to the suppression list for your
-    /// account.</p>
+    /// <p>The email address that should be added to the suppression list for your account.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The factors that should cause the email address to be added to the suppression list
-    /// for your account.</p>
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
 }
 impl PutSuppressedDestinationInput {
-    /// <p>The email address that should be added to the suppression list for your
-    /// account.</p>
+    /// <p>The email address that should be added to the suppression list for your account.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The factors that should cause the email address to be added to the suppression list
-    /// for your account.</p>
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::SuppressionListReason> {
         self.reason.as_ref()
     }
@@ -16407,30 +15715,15 @@ impl std::fmt::Debug for PutSuppressedDestinationInput {
 pub struct PutEmailIdentityMailFromAttributesInput {
     /// <p>The verified email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-    /// domain must meet the following criteria:</p>
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>It has to be a subdomain of the verified identity.</p>
-    /// </li>
-    /// <li>
-    /// <p>It can't be used to receive email.</p>
-    /// </li>
-    /// <li>
-    /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-    /// for feedback forwarding emails.</p>
-    /// </li>
+    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+    /// <li> <p>It can't be used to receive email.</p> </li>
+    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
     /// </ul>
     pub mail_from_domain: std::option::Option<std::string::String>,
-    /// <p>The action to take if the required MX record isn't found when you send an email. When
-    /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-    /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-    /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-    /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-    /// email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-    /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-    /// states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl PutEmailIdentityMailFromAttributesInput {
@@ -16438,32 +15731,17 @@ impl PutEmailIdentityMailFromAttributesInput {
     pub fn email_identity(&self) -> std::option::Option<&str> {
         self.email_identity.as_deref()
     }
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-    /// domain must meet the following criteria:</p>
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>It has to be a subdomain of the verified identity.</p>
-    /// </li>
-    /// <li>
-    /// <p>It can't be used to receive email.</p>
-    /// </li>
-    /// <li>
-    /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-    /// for feedback forwarding emails.</p>
-    /// </li>
+    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+    /// <li> <p>It can't be used to receive email.</p> </li>
+    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
     /// </ul>
     pub fn mail_from_domain(&self) -> std::option::Option<&str> {
         self.mail_from_domain.as_deref()
     }
-    /// <p>The action to take if the required MX record isn't found when you send an email. When
-    /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-    /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-    /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-    /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-    /// email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-    /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-    /// states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
@@ -16480,21 +15758,15 @@ impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
     }
 }
 
-/// <p>A request to set the attributes that control how bounce and complaint events are
-/// processed.</p>
+/// <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-    /// complaint events occur. These notifications are sent to the address that you specified
-    /// in the <code>Return-Path</code> header of the original email.</p>
-    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-    /// set up another mechanism for receiving bounce or complaint notifications (for example,
-    /// by setting up an event destination), you receive an email notification when these events
-    /// occur (even if this setting is disabled).</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub email_forwarding_enabled: bool,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
@@ -16503,13 +15775,8 @@ impl PutEmailIdentityFeedbackAttributesInput {
         self.email_identity.as_deref()
     }
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-    /// complaint events occur. These notifications are sent to the address that you specified
-    /// in the <code>Return-Path</code> header of the original email.</p>
-    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-    /// set up another mechanism for receiving bounce or complaint notifications (for example,
-    /// by setting up an event destination), you receive an email notification when these events
-    /// occur (even if this setting is disabled).</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub fn email_forwarding_enabled(&self) -> bool {
         self.email_forwarding_enabled
     }
@@ -16529,25 +15796,13 @@ impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
 pub struct PutEmailIdentityDkimSigningAttributesInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
-    /// <p>The method to use to configure DKIM for the identity. There are the following possible
-    /// values:</p>
+    /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-    /// DKIM</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-    /// Your Own DKIM (BYODKIM).</p>
-    /// </li>
+    /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub signing_attributes_origin: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
-    /// <p>An object that contains information about the private key and selector that you want
-    /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-    /// configures the key length to be used for
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     pub signing_attributes: std::option::Option<crate::model::DkimSigningAttributes>,
 }
 impl PutEmailIdentityDkimSigningAttributesInput {
@@ -16555,29 +15810,17 @@ impl PutEmailIdentityDkimSigningAttributesInput {
     pub fn email_identity(&self) -> std::option::Option<&str> {
         self.email_identity.as_deref()
     }
-    /// <p>The method to use to configure DKIM for the identity. There are the following possible
-    /// values:</p>
+    /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-    /// DKIM</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-    /// Your Own DKIM (BYODKIM).</p>
-    /// </li>
+    /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+    /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     pub fn signing_attributes_origin(
         &self,
     ) -> std::option::Option<&crate::model::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
     }
-    /// <p>An object that contains information about the private key and selector that you want
-    /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-    /// configures the key length to be used for
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     pub fn signing_attributes(&self) -> std::option::Option<&crate::model::DkimSigningAttributes> {
         self.signing_attributes.as_ref()
     }
@@ -16592,17 +15835,14 @@ impl std::fmt::Debug for PutEmailIdentityDkimSigningAttributesInput {
     }
 }
 
-/// <p>A request to enable or disable DKIM signing of email that you send from an email
-/// identity.</p>
+/// <p>A request to enable or disable DKIM signing of email that you send from an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the DKIM signing configuration for the identity.</p>
-    /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-    /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-    /// messages are sent without DKIM signing.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub signing_enabled: bool,
 }
 impl PutEmailIdentityDkimAttributesInput {
@@ -16611,9 +15851,7 @@ impl PutEmailIdentityDkimAttributesInput {
         self.email_identity.as_deref()
     }
     /// <p>Sets the DKIM signing configuration for the identity.</p>
-    /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-    /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-    /// messages are sent without DKIM signing.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn signing_enabled(&self) -> bool {
         self.signing_enabled
     }
@@ -16655,31 +15893,23 @@ impl std::fmt::Debug for PutEmailIdentityConfigurationSetAttributesInput {
     }
 }
 
-/// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain
-/// access to reputation, deliverability, and other metrics for the domains that you use to
-/// send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p>
-/// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
-/// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
+/// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p>
+/// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDeliverabilityDashboardOptionInput {
-    /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-    /// value to <code>true</code>.</p>
+    /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub dashboard_enabled: bool,
-    /// <p>An array of objects, one for each verified domain that you use to send email and
-    /// enabled the Deliverability dashboard for.</p>
+    /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     pub subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInput {
-    /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-    /// value to <code>true</code>.</p>
+    /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub fn dashboard_enabled(&self) -> bool {
         self.dashboard_enabled
     }
-    /// <p>An array of objects, one for each verified domain that you use to send email and
-    /// enabled the Deliverability dashboard for.</p>
+    /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     pub fn subscribed_domains(
         &self,
     ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
@@ -16695,15 +15925,13 @@ impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
     }
 }
 
-/// <p>A request to change the warm-up attributes for a dedicated IP address. This operation
-/// is useful when you want to resume the warm-up process for an existing IP address.</p>
+/// <p>A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
     pub ip: std::option::Option<std::string::String>,
-    /// <p>The warm-up percentage that you want to associate with the dedicated IP
-    /// address.</p>
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub warmup_percentage: std::option::Option<i32>,
 }
 impl PutDedicatedIpWarmupAttributesInput {
@@ -16711,8 +15939,7 @@ impl PutDedicatedIpWarmupAttributesInput {
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p>The warm-up percentage that you want to associate with the dedicated IP
-    /// address.</p>
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     pub fn warmup_percentage(&self) -> std::option::Option<i32> {
         self.warmup_percentage
     }
@@ -16730,21 +15957,17 @@ impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDedicatedIpInPoolInput {
-    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-    /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
     pub ip: std::option::Option<std::string::String>,
-    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-    /// specify an IP pool that already exists.</p>
+    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub destination_pool_name: std::option::Option<std::string::String>,
 }
 impl PutDedicatedIpInPoolInput {
-    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-    /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-    /// specify an IP pool that already exists.</p>
+    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn destination_pool_name(&self) -> std::option::Option<&str> {
         self.destination_pool_name.as_deref()
     }
@@ -16758,8 +15981,7 @@ impl std::fmt::Debug for PutDedicatedIpInPoolInput {
     }
 }
 
-/// <p>A request to add a custom domain for tracking open and click events to a configuration
-/// set.</p>
+/// <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetTrackingOptionsInput {
@@ -16787,55 +16009,28 @@ impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
     }
 }
 
-/// <p>A request to change the account suppression list preferences for a specific
-/// configuration set.</p>
+/// <p>A request to change the account suppression list preferences for a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetSuppressionOptionsInput {
-    /// <p>The name of the configuration set to change the suppression list preferences
-    /// for.</p>
+    /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>A list that contains the reasons that email addresses are automatically added to the
-    /// suppression list for your account. This list can contain any or all of the
-    /// following:</p>
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a
-    /// complaint.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a hard
-    /// bounce.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {
-    /// <p>The name of the configuration set to change the suppression list preferences
-    /// for.</p>
+    /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>A list that contains the reasons that email addresses are automatically added to the
-    /// suppression list for your account. This list can contain any or all of the
-    /// following:</p>
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a
-    /// complaint.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a hard
-    /// bounce.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     pub fn suppressed_reasons(
         &self,
@@ -16852,15 +16047,13 @@ impl std::fmt::Debug for PutConfigurationSetSuppressionOptionsInput {
     }
 }
 
-/// <p>A request to enable or disable the ability of Amazon SES to send emails that use a specific
-/// configuration set.</p>
+/// <p>A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set to enable or disable email sending for.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-    /// <code>false</code>, email sending is disabled for the configuration set.</p>
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: bool,
 }
 impl PutConfigurationSetSendingOptionsInput {
@@ -16868,8 +16061,7 @@ impl PutConfigurationSetSendingOptionsInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-    /// <code>false</code>, email sending is disabled for the configuration set.</p>
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
     }
@@ -16883,16 +16075,13 @@ impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
     }
 }
 
-/// <p>A request to enable or disable tracking of reputation metrics for a configuration
-/// set.</p>
+/// <p>A request to enable or disable tracking of reputation metrics for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-    /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-    /// configuration set.</p>
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub reputation_metrics_enabled: bool,
 }
 impl PutConfigurationSetReputationOptionsInput {
@@ -16900,9 +16089,7 @@ impl PutConfigurationSetReputationOptionsInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-    /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-    /// configuration set.</p>
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn reputation_metrics_enabled(&self) -> bool {
         self.reputation_metrics_enabled
     }
@@ -16925,10 +16112,7 @@ impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set to associate with a dedicated IP pool.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-    /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-    /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
     /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
     pub sending_pool_name: std::option::Option<std::string::String>,
@@ -16938,10 +16122,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-    /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-    /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
         self.tls_policy.as_ref()
     }
@@ -16964,42 +16145,18 @@ impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSuppressionAttributesInput {
-    /// <p>A list that contains the reasons that email addresses will be automatically added to
-    /// the suppression list for your account. This list can contain any or all of the
-    /// following:</p>
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a
-    /// complaint.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a hard
-    /// bounce.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
 }
 impl PutAccountSuppressionAttributesInput {
-    /// <p>A list that contains the reasons that email addresses will be automatically added to
-    /// the suppression list for your account. This list can contain any or all of the
-    /// following:</p>
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a
-    /// complaint.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-    /// list for your account when a message sent to that address results in a hard
-    /// bounce.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     pub fn suppressed_reasons(
         &self,
@@ -17019,20 +16176,14 @@ impl std::fmt::Debug for PutAccountSuppressionAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSendingAttributesInput {
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-    /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-    /// <note>
-    /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-    /// to resume your account's ability to send email.</p>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+    /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub sending_enabled: bool,
 }
 impl PutAccountSendingAttributesInput {
-    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-    /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-    /// <note>
-    /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-    /// to resume your account's ability to send email.</p>
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+    /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
@@ -17052,26 +16203,17 @@ impl std::fmt::Debug for PutAccountSendingAttributesInput {
 pub struct PutAccountDetailsInput {
     /// <p>The type of email your account will send.</p>
     pub mail_type: std::option::Option<crate::model::MailType>,
-    /// <p>The URL of your website. This information helps us better understand the type of
-    /// content that you plan to send.</p>
+    /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub website_url: std::option::Option<std::string::String>,
     /// <p>The language you would prefer to be contacted with.</p>
     pub contact_language: std::option::Option<crate::model::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
     pub use_case_description: std::option::Option<std::string::String>,
-    /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-    /// matters.</p>
+    /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub additional_contact_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether or not your account should have production access in the current
-    /// Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the
-    /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-    /// email to verified identities. Additionally, the maximum number of emails you can send in
-    /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-    /// send per second (your maximum sending rate) is 1.</p>
-    /// <p>If the value is <code>true</code>, then your account has production access. When your
-    /// account has production access, you can send email to any address. The sending quota and
-    /// maximum sending rate for your account vary based on your specific use case.</p>
+    /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub production_access_enabled: std::option::Option<bool>,
 }
 impl PutAccountDetailsInput {
@@ -17079,8 +16221,7 @@ impl PutAccountDetailsInput {
     pub fn mail_type(&self) -> std::option::Option<&crate::model::MailType> {
         self.mail_type.as_ref()
     }
-    /// <p>The URL of your website. This information helps us better understand the type of
-    /// content that you plan to send.</p>
+    /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub fn website_url(&self) -> std::option::Option<&str> {
         self.website_url.as_deref()
     }
@@ -17092,23 +16233,15 @@ impl PutAccountDetailsInput {
     pub fn use_case_description(&self) -> std::option::Option<&str> {
         self.use_case_description.as_deref()
     }
-    /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-    /// matters.</p>
+    /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub fn additional_contact_email_addresses(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.additional_contact_email_addresses.as_deref()
     }
-    /// <p>Indicates whether or not your account should have production access in the current
-    /// Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the
-    /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-    /// email to verified identities. Additionally, the maximum number of emails you can send in
-    /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-    /// send per second (your maximum sending rate) is 1.</p>
-    /// <p>If the value is <code>true</code>, then your account has production access. When your
-    /// account has production access, you can send email to any address. The sending quota and
-    /// maximum sending rate for your account vary based on your specific use case.</p>
+    /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(&self) -> std::option::Option<bool> {
         self.production_access_enabled
     }
@@ -17133,17 +16266,11 @@ impl std::fmt::Debug for PutAccountDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountDedicatedIpWarmupAttributesInput {
-    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-    /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-    /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-    /// it.</p>
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     pub auto_warmup_enabled: bool,
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
-    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-    /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-    /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-    /// it.</p>
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     pub fn auto_warmup_enabled(&self) -> bool {
         self.auto_warmup_enabled
     }
@@ -17160,13 +16287,11 @@ impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-    /// information for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-    /// information for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -17179,29 +16304,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
-/// <p>A request to obtain a list of email destinations that are on the suppression list for
-/// your account.</p>
+/// <p>A request to obtain a list of email destinations that are on the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
     pub reasons: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
-    /// <p>Used to filter the list of suppressed email destinations so that it only includes
-    /// addresses that were added to the list after a specific date. The date that you specify
-    /// should be in Unix time format.</p>
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Used to filter the list of suppressed email destinations so that it only includes
-    /// addresses that were added to the list before a specific date. The date that you specify
-    /// should be in Unix time format.</p>
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-    /// indicate the position in the list of suppressed email addresses.</p>
+    /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to
-    /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-    /// number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListSuppressedDestinationsInput {
@@ -17209,28 +16324,19 @@ impl ListSuppressedDestinationsInput {
     pub fn reasons(&self) -> std::option::Option<&[crate::model::SuppressionListReason]> {
         self.reasons.as_deref()
     }
-    /// <p>Used to filter the list of suppressed email destinations so that it only includes
-    /// addresses that were added to the list after a specific date. The date that you specify
-    /// should be in Unix time format.</p>
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
     pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>Used to filter the list of suppressed email destinations so that it only includes
-    /// addresses that were added to the list before a specific date. The date that you specify
-    /// should be in Unix time format.</p>
+    /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
     pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
-    /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-    /// indicate the position in the list of suppressed email addresses.</p>
+    /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to
-    /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-    /// number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17247,44 +16353,29 @@ impl std::fmt::Debug for ListSuppressedDestinationsInput {
     }
 }
 
-/// <p>Represents a request to list all of the import jobs for a data destination within the
-/// specified maximum number of import jobs.</p>
+/// <p>Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportJobsInput {
-    /// <p>The destination of the import job, which can be used to list import jobs that have a
-    /// certain <code>ImportDestinationType</code>.</p>
+    /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     pub import_destination_type: std::option::Option<crate::model::ImportDestinationType>,
-    /// <p>A string token indicating that there might be additional import jobs available to be
-    /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-    /// same parameters to retrieve the next page of import jobs.</p>
+    /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-    /// results. If additional import jobs exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// addresses.</p>
+    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListImportJobsInput {
-    /// <p>The destination of the import job, which can be used to list import jobs that have a
-    /// certain <code>ImportDestinationType</code>.</p>
+    /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     pub fn import_destination_type(
         &self,
     ) -> std::option::Option<&crate::model::ImportDestinationType> {
         self.import_destination_type.as_ref()
     }
-    /// <p>A string token indicating that there might be additional import jobs available to be
-    /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-    /// same parameters to retrieve the next page of import jobs.</p>
+    /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-    /// results. If additional import jobs exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// addresses.</p>
+    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17299,30 +16390,22 @@ impl std::fmt::Debug for ListImportJobsInput {
     }
 }
 
-/// <p>Represents a request to list the email templates present in your Amazon SES account in the
-/// current Amazon Web Services Region. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web Services Region. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailTemplatesInput {
-    /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-    /// the position in the list of email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-    /// results is larger than the number you specified in this parameter, then the response
-    /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListEmailTemplatesInput {
-    /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-    /// the position in the list of email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-    /// results is larger than the number you specified in this parameter, then the response
-    /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
@@ -17337,32 +16420,22 @@ impl std::fmt::Debug for ListEmailTemplatesInput {
     }
 }
 
-/// <p>A request to list all of the email identities associated with your Amazon Web Services account. This
-/// list includes identities that you've already verified, identities that are unverified,
-/// and identities that were verified in the past, but are no longer verified.</p>
+/// <p>A request to list all of the email identities associated with your Amazon Web Services account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailIdentitiesInput {
-    /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-    /// the position in the list of identities.</p>
+    /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-    /// the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListEmailIdentitiesInput {
-    /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-    /// the position in the list of identities.</p>
+    /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-    /// the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
@@ -17377,41 +16450,27 @@ impl std::fmt::Debug for ListEmailIdentitiesInput {
     }
 }
 
-/// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send
-/// email during a specified time range. This data is available for a domain only if you
-/// enabled the Deliverability dashboard.</p>
+/// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainDeliverabilityCampaignsInput {
-    /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-    /// for.</p>
+    /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-    /// This value has to be less than or equal to 30 days after the value of the
-    /// <code>StartDate</code> parameter.</p>
+    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain to obtain deliverability data for.</p>
     pub subscribed_domain: std::option::Option<std::string::String>,
-    /// <p>A token that’s returned from a previous call to the
-    /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-    /// position of a campaign in the list of campaigns.</p>
+    /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in response to a single call to the
-    /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-    /// is larger than the number that you specify in this parameter, the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListDomainDeliverabilityCampaignsInput {
-    /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-    /// for.</p>
+    /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
     pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-    /// This value has to be less than or equal to 30 days after the value of the
-    /// <code>StartDate</code> parameter.</p>
+    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
     pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
@@ -17419,17 +16478,11 @@ impl ListDomainDeliverabilityCampaignsInput {
     pub fn subscribed_domain(&self) -> std::option::Option<&str> {
         self.subscribed_domain.as_deref()
     }
-    /// <p>A token that’s returned from a previous call to the
-    /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-    /// position of a campaign in the list of campaigns.</p>
+    /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in response to a single call to the
-    /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-    /// is larger than the number that you specify in this parameter, the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17450,28 +16503,18 @@ impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliverabilityTestReportsInput {
-    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-    /// indicate the position in the list of predictive inbox placement tests.</p>
+    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to
-    /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-    /// the number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListDeliverabilityTestReportsInput {
-    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-    /// indicate the position in the list of predictive inbox placement tests.</p>
+    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to
-    /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-    /// the number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
@@ -17490,25 +16533,17 @@ impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDedicatedIpPoolsInput {
-    /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-    /// the position in the list of dedicated IP pools.</p>
+    /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListDedicatedIpPoolsInput {
-    /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-    /// the position in the list of dedicated IP pools.</p>
+    /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17522,35 +16557,22 @@ impl std::fmt::Debug for ListDedicatedIpPoolsInput {
     }
 }
 
-/// <p>Represents a request to list the existing custom verification email templates for your
-/// account.</p>
+/// <p>Represents a request to list the existing custom verification email templates for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomVerificationEmailTemplatesInput {
-    /// <p>A token returned from a previous call to
-    /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-    /// list of custom verification email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to
-    /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-    /// larger than the number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListCustomVerificationEmailTemplatesInput {
-    /// <p>A token returned from a previous call to
-    /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-    /// list of custom verification email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to
-    /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-    /// larger than the number you specified in this parameter, then the response includes a
-    /// <code>NextToken</code> element, which you can use to obtain additional
-    /// results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
@@ -17573,16 +16595,9 @@ pub struct ListContactsInput {
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>A filter that can be applied to a list of contacts.</p>
     pub filter: std::option::Option<crate::model::ListContactsFilter>,
-    /// <p>The number of contacts that may be returned at once, which is dependent on if there
-    /// are more or less contacts than the value of the PageSize. Use this parameter to
-    /// paginate results. If additional contacts exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// contacts.</p>
+    /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>A string token indicating that there might be additional contacts available to be
-    /// listed. Use the token provided in the Response to use in the subsequent call to
-    /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
+    /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactsInput {
@@ -17594,18 +16609,11 @@ impl ListContactsInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::ListContactsFilter> {
         self.filter.as_ref()
     }
-    /// <p>The number of contacts that may be returned at once, which is dependent on if there
-    /// are more or less contacts than the value of the PageSize. Use this parameter to
-    /// paginate results. If additional contacts exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// contacts.</p>
+    /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>A string token indicating that there might be additional contacts available to be
-    /// listed. Use the token provided in the Response to use in the subsequent call to
-    /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
+    /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17625,31 +16633,17 @@ impl std::fmt::Debug for ListContactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactListsInput {
-    /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-    /// results. If additional contact lists exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// lists.</p>
+    /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>A string token indicating that there might be additional contact lists available to be
-    /// listed. Use the token provided in the Response to use in the subsequent call to
-    /// ListContactLists with the same parameters to retrieve the next page of contact
-    /// lists.</p>
+    /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactListsInput {
-    /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-    /// results. If additional contact lists exist beyond the specified limit, the
-    /// <code>NextToken</code> element is sent in the response. Use the
-    /// <code>NextToken</code> value in subsequent requests to retrieve additional
-    /// lists.</p>
+    /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>A string token indicating that there might be additional contact lists available to be
-    /// listed. Use the token provided in the Response to use in the subsequent call to
-    /// ListContactLists with the same parameters to retrieve the next page of contact
-    /// lists.</p>
+    /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17663,30 +16657,21 @@ impl std::fmt::Debug for ListContactListsInput {
     }
 }
 
-/// <p>A request to obtain a list of configuration sets for your Amazon SES account in the current
-/// Amazon Web Services Region.</p>
+/// <p>A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsInput {
-    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-    /// indicate the position in the list of configuration sets.</p>
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl ListConfigurationSetsInput {
-    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-    /// indicate the position in the list of configuration sets.</p>
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17700,8 +16685,7 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
     }
 }
 
-/// <p>A request to retrieve information about an email address that's on the suppression
-/// list for your account.</p>
+/// <p>A request to retrieve information about an email address that's on the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuppressedDestinationInput {
@@ -17722,8 +16706,7 @@ impl std::fmt::Debug for GetSuppressedDestinationInput {
     }
 }
 
-/// <p>Represents a request for information about an import job using the import job
-/// ID.</p>
+/// <p>Represents a request for information about an import job using the import job ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobInput {
@@ -17744,8 +16727,7 @@ impl std::fmt::Debug for GetImportJobInput {
     }
 }
 
-/// <p>Represents a request to display the template object (which includes the subject line,
-/// HTML part and text part) for the template you specify.</p>
+/// <p>Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateInput {
@@ -17814,12 +16796,9 @@ impl std::fmt::Debug for GetEmailIdentityInput {
 pub struct GetDomainStatisticsReportInput {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-    /// for.</p>
+    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-    /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-    /// the <code>StartDate</code>.</p>
+    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDomainStatisticsReportInput {
@@ -17827,14 +16806,11 @@ impl GetDomainStatisticsReportInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-    /// for.</p>
+    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-    /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-    /// the <code>StartDate</code>.</p>
+    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
@@ -17849,20 +16825,15 @@ impl std::fmt::Debug for GetDomainStatisticsReportInput {
     }
 }
 
-/// <p>Retrieve all the deliverability data for a specific campaign. This data is available
-/// for a campaign only if the campaign sent email by using a domain that the
-/// Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
-/// operation).</p>
+/// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDeliverabilityCampaignInput {
-    /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-    /// and assigns this identifier to a campaign.</p>
+    /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
     pub campaign_id: std::option::Option<std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInput {
-    /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-    /// and assigns this identifier to a campaign.</p>
+    /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
     pub fn campaign_id(&self) -> std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
@@ -17896,13 +16867,8 @@ impl std::fmt::Debug for GetDeliverabilityTestReportInput {
     }
 }
 
-/// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account.
-/// When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and
-/// other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.</p>
-///
-/// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
-/// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
+/// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.</p>
+/// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityDashboardOptionsInput {}
@@ -17919,13 +16885,9 @@ impl std::fmt::Debug for GetDeliverabilityDashboardOptionsInput {
 pub struct GetDedicatedIpsInput {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
     pub pool_name: std::option::Option<std::string::String>,
-    /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-    /// position of the dedicated IP pool in the list of IP pools.</p>
+    /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl GetDedicatedIpsInput {
@@ -17933,15 +16895,11 @@ impl GetDedicatedIpsInput {
     pub fn pool_name(&self) -> std::option::Option<&str> {
         self.pool_name.as_deref()
     }
-    /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-    /// position of the dedicated IP pool in the list of IP pools.</p>
+    /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-    /// If the number of results is larger than the number you specified in this parameter, then
-    /// the response includes a <code>NextToken</code> element, which you can use to obtain
-    /// additional results.</p>
+    /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
@@ -17960,13 +16918,11 @@ impl std::fmt::Debug for GetDedicatedIpsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpInput {
-    /// <p>The IP address that you want to obtain more information about. The value you specify
-    /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+    /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
     pub ip: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpInput {
-    /// <p>The IP address that you want to obtain more information about. The value you specify
-    /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+    /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
@@ -17979,8 +16935,7 @@ impl std::fmt::Debug for GetDedicatedIpInput {
     }
 }
 
-/// <p>Represents a request to retrieve an existing custom verification email
-/// template.</p>
+/// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomVerificationEmailTemplateInput {
@@ -18050,8 +17005,7 @@ impl std::fmt::Debug for GetContactInput {
     }
 }
 
-/// <p>A request to obtain information about the event destinations for a configuration
-/// set.</p>
+/// <p>A request to obtain information about the event destinations for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsInput {
@@ -18093,20 +17047,15 @@ impl std::fmt::Debug for GetConfigurationSetInput {
     }
 }
 
-/// <p>A request to retrieve a list of the blacklists that your dedicated IP addresses appear
-/// on.</p>
+/// <p>A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlacklistReportsInput {
-    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-    /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-    /// Amazon Pinpoint.</p>
+    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetBlacklistReportsInput {
-    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-    /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-    /// Amazon Pinpoint.</p>
+    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     pub fn blacklist_item_names(&self) -> std::option::Option<&[std::string::String]> {
         self.blacklist_item_names.as_deref()
     }
@@ -18119,8 +17068,7 @@ impl std::fmt::Debug for GetBlacklistReportsInput {
     }
 }
 
-/// <p>A request to obtain information about the email-sending capabilities of your Amazon SES
-/// account.</p>
+/// <p>A request to obtain information about the email-sending capabilities of your Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountInput {}
@@ -18131,8 +17079,7 @@ impl std::fmt::Debug for GetAccountInput {
     }
 }
 
-/// <p>A request to remove an email address from the suppression list for your
-/// account.</p>
+/// <p>A request to remove an email address from the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuppressedDestinationInput {
@@ -18153,8 +17100,7 @@ impl std::fmt::Debug for DeleteSuppressedDestinationInput {
     }
 }
 
-/// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailTemplateInput {
@@ -18175,18 +17121,14 @@ impl std::fmt::Debug for DeleteEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to delete a sending authorization policy for an identity. Sending
-/// authorization is an Amazon SES feature that enables you to authorize other senders to
-/// use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteEmailIdentityPolicyInput {
@@ -18195,9 +17137,7 @@ impl DeleteEmailIdentityPolicyInput {
         self.email_identity.as_deref()
     }
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -18211,9 +17151,7 @@ impl std::fmt::Debug for DeleteEmailIdentityPolicyInput {
     }
 }
 
-/// <p>A request to delete an existing email identity. When you delete an identity, you lose
-/// the ability to send email from that identity. You can restore your ability to send email
-/// by completing the verification process for the identity again.</p>
+/// <p>A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailIdentityInput {
@@ -18329,15 +17267,13 @@ impl std::fmt::Debug for DeleteContactInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination to
-    /// delete.</p>
+    /// <p>The name of the configuration set that contains the event destination to delete.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination to delete.</p>
     pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination to
-    /// delete.</p>
+    /// <p>The name of the configuration set that contains the event destination to delete.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -18376,8 +17312,7 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
     }
 }
 
-/// <p>Represents a request to create an import job from a data source for a data
-/// destination.</p>
+/// <p>Represents a request to create an import job from a data source for a data destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImportJobInput {
@@ -18405,15 +17340,13 @@ impl std::fmt::Debug for CreateImportJobInput {
     }
 }
 
-/// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailTemplateInput {
     /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-    /// text-only part.</p>
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template_content: std::option::Option<crate::model::EmailTemplateContent>,
 }
 impl CreateEmailTemplateInput {
@@ -18421,8 +17354,7 @@ impl CreateEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-    /// text-only part.</p>
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(&self) -> std::option::Option<&crate::model::EmailTemplateContent> {
         self.template_content.as_ref()
     }
@@ -18436,22 +17368,17 @@ impl std::fmt::Debug for CreateEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to create a sending authorization policy for an identity. Sending
-/// authorization is an Amazon SES feature that enables you to authorize other senders to use
-/// your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to create a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
     pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl CreateEmailIdentityPolicyInput {
@@ -18460,15 +17387,12 @@ impl CreateEmailIdentityPolicyInput {
         self.email_identity.as_deref()
     }
     /// <p>The name of the policy.</p>
-    ///
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -18483,24 +17407,18 @@ impl std::fmt::Debug for CreateEmailIdentityPolicyInput {
     }
 }
 
-/// <p>A request to begin the verification process for an email identity (an email address or
-/// domain).</p>
+/// <p>A request to begin the verification process for an email identity (an email address or domain).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityInput {
     /// <p>The email address or domain to verify.</p>
     pub email_identity: std::option::Option<std::string::String>,
-    /// <p>An array of objects that define the tags (keys and values) to associate with the email
-    /// identity.</p>
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-    /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-    /// address.</p>
+    /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub dkim_signing_attributes: std::option::Option<crate::model::DkimSigningAttributes>,
-    /// <p>The configuration set to use by default when sending from this identity. Note that any
-    /// configuration set defined in the email sending request takes precedence. </p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl CreateEmailIdentityInput {
@@ -18508,23 +17426,18 @@ impl CreateEmailIdentityInput {
     pub fn email_identity(&self) -> std::option::Option<&str> {
         self.email_identity.as_deref()
     }
-    /// <p>An array of objects that define the tags (keys and values) to associate with the email
-    /// identity.</p>
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-    /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-    /// address.</p>
+    /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub fn dkim_signing_attributes(
         &self,
     ) -> std::option::Option<&crate::model::DkimSigningAttributes> {
         self.dkim_signing_attributes.as_ref()
     }
-    /// <p>The configuration set to use by default when sending from this identity. Note that any
-    /// configuration set defined in the email sending request takes precedence. </p>
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -18540,30 +17453,21 @@ impl std::fmt::Debug for CreateEmailIdentityInput {
     }
 }
 
-/// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will
-/// be handled by various email providers around the world. When you perform a predictive inbox placement test, you
-/// provide a sample message that contains the content that you plan to send to your
-/// customers. We send that message to special email addresses spread across several major
-/// email providers around the world. The test takes about 24 hours to complete. When the
-/// test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to
-/// view the results of the test.</p>
+/// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliverabilityTestReportInput {
-    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-    /// results.</p>
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub content: std::option::Option<crate::model::EmailContent>,
-    /// <p>An array of objects that define the tags (keys and values) that you want to associate
-    /// with the predictive inbox placement test.</p>
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeliverabilityTestReportInput {
-    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-    /// results.</p>
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     pub fn report_name(&self) -> std::option::Option<&str> {
         self.report_name.as_deref()
     }
@@ -18575,8 +17479,7 @@ impl CreateDeliverabilityTestReportInput {
     pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
         self.content.as_ref()
     }
-    /// <p>An array of objects that define the tags (keys and values) that you want to associate
-    /// with the predictive inbox placement test.</p>
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -18598,8 +17501,7 @@ impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
 pub struct CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
     pub pool_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the tags (keys and values) that you want to associate with the
-    /// pool.</p>
+    /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDedicatedIpPoolInput {
@@ -18607,8 +17509,7 @@ impl CreateDedicatedIpPoolInput {
     pub fn pool_name(&self) -> std::option::Option<&str> {
         self.pool_name.as_deref()
     }
-    /// <p>An object that defines the tags (keys and values) that you want to associate with the
-    /// pool.</p>
+    /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -18632,16 +17533,11 @@ pub struct CreateCustomVerificationEmailTemplateInput {
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
     pub template_subject: std::option::Option<std::string::String>,
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub template_content: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub success_redirection_url: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl CreateCustomVerificationEmailTemplateInput {
@@ -18657,20 +17553,15 @@ impl CreateCustomVerificationEmailTemplateInput {
     pub fn template_subject(&self) -> std::option::Option<&str> {
         self.template_subject.as_deref()
     }
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn template_content(&self) -> std::option::Option<&str> {
         self.template_content.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(&self) -> std::option::Option<&str> {
         self.success_redirection_url.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
     }
@@ -18694,8 +17585,7 @@ impl std::fmt::Debug for CreateCustomVerificationEmailTemplateInput {
 pub struct CreateContactListInput {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: std::option::Option<std::string::String>,
-    /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-    /// topics.</p>
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
     /// <p>A description of what the contact list is about.</p>
     pub description: std::option::Option<std::string::String>,
@@ -18707,8 +17597,7 @@ impl CreateContactListInput {
     pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
-    /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-    /// topics.</p>
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub fn topics(&self) -> std::option::Option<&[crate::model::Topic]> {
         self.topics.as_deref()
     }
@@ -18742,8 +17631,7 @@ pub struct CreateContactInput {
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
-    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-    /// topics.</p>
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub unsubscribe_all: bool,
     /// <p>The attribute data attached to a contact.</p>
     pub attributes_data: std::option::Option<std::string::String>,
@@ -18761,8 +17649,7 @@ impl CreateContactInput {
     pub fn topic_preferences(&self) -> std::option::Option<&[crate::model::TopicPreference]> {
         self.topic_preferences.as_deref()
     }
-    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-    /// topics.</p>
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(&self) -> bool {
         self.unsubscribe_all
     }
@@ -18824,61 +17711,47 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetInput {
-    /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-    /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+    /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the open and click tracking options for emails that you send
-    /// using the configuration set.</p>
+    /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
-    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-    /// using the configuration set.</p>
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
-    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-    /// that you send that use the configuration set.</p>
+    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
-    /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-    /// configuration set.</p>
+    /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     pub sending_options: std::option::Option<crate::model::SendingOptions>,
-    /// <p>An array of objects that define the tags (keys and values) to associate with the
-    /// configuration set.</p>
+    /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An object that contains information about the suppression list preferences for your
-    /// account.</p>
+    /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub suppression_options: std::option::Option<crate::model::SuppressionOptions>,
 }
 impl CreateConfigurationSetInput {
-    /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-    /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+    /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>An object that defines the open and click tracking options for emails that you send
-    /// using the configuration set.</p>
+    /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
-    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-    /// using the configuration set.</p>
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
-    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-    /// that you send that use the configuration set.</p>
+    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
         self.reputation_options.as_ref()
     }
-    /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-    /// configuration set.</p>
+    /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
         self.sending_options.as_ref()
     }
-    /// <p>An array of objects that define the tags (keys and values) to associate with the
-    /// configuration set.</p>
+    /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>An object that contains information about the suppression list preferences for your
-    /// account.</p>
+    /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn suppression_options(&self) -> std::option::Option<&crate::model::SuppressionOptions> {
         self.suppression_options.as_ref()
     }

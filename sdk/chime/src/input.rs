@@ -1084,20 +1084,12 @@ pub mod batch_create_channel_membership_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -3691,30 +3683,22 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ChannelMode>) -> Self {
             self.mode = input;
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -4190,20 +4174,12 @@ pub mod create_channel_membership_input {
             self.member_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -4642,14 +4618,12 @@ pub mod create_media_capture_pipeline_input {
             std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
     }
     impl Builder {
-        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-        /// is the only supported source.</p>
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
         pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
             self.source_type = Some(input);
             self
         }
-        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-        /// is the only supported source.</p>
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::MediaPipelineSourceType>,
@@ -4913,96 +4887,14 @@ pub mod create_meeting_input {
             self.meeting_host_id = input;
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_region = input;
             self
@@ -5448,98 +5340,14 @@ pub mod create_meeting_with_attendees_input {
             self.meeting_host_id = input;
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-        /// .
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-        /// .
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_region = input;
             self
@@ -5563,9 +5371,7 @@ pub mod create_meeting_with_attendees_input {
             self.tags = input;
             self
         }
-        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-        /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-        /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
         pub fn notifications_configuration(
             mut self,
             input: crate::model::MeetingNotificationConfiguration,
@@ -5573,9 +5379,7 @@ pub mod create_meeting_with_attendees_input {
             self.notifications_configuration = Some(input);
             self
         }
-        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-        /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-        /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
         pub fn set_notifications_configuration(
             mut self,
             input: std::option::Option<crate::model::MeetingNotificationConfiguration>,
@@ -7096,22 +6900,12 @@ pub mod create_sip_rule_input {
             self.trigger_type = input;
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-        /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-        /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-        /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-        /// <code>ToPhoneNumber</code> value.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
         pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.trigger_value = Some(input.into());
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-        /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-        /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-        /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-        /// <code>ToPhoneNumber</code> value.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
         pub fn set_trigger_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7519,20 +7313,12 @@ pub mod create_voice_connector_input {
             self.name = input;
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-        /// <code>us-east-1</code>
-        /// .
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
         pub fn aws_region(mut self, input: crate::model::VoiceConnectorAwsRegion) -> Self {
             self.aws_region = Some(input);
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-        /// <code>us-east-1</code>
-        /// .
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
         pub fn set_aws_region(
             mut self,
             input: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
@@ -22428,18 +22214,12 @@ pub mod list_channel_memberships_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -22457,14 +22237,12 @@ pub mod list_channel_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22925,14 +22703,12 @@ pub mod list_channel_messages_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -23240,14 +23016,12 @@ pub mod list_channel_moderators_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -23473,16 +23247,12 @@ pub mod list_channels_input {
             self.app_instance_arn = input;
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -23730,14 +23500,12 @@ pub mod list_channels_moderated_by_app_instance_user_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -36384,14 +36152,12 @@ pub mod update_user_input {
             self.user_id = input;
             self
         }
-        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-        /// account that the user belongs to.</p>
+        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
         pub fn license_type(mut self, input: crate::model::License) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-        /// account that the user belongs to.</p>
+        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::License>,
@@ -37328,8 +37094,7 @@ pub struct UpdateUserInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-    /// account that the user belongs to.</p>
+    /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
     pub license_type: std::option::Option<crate::model::License>,
     /// <p>The user type.</p>
     pub user_type: std::option::Option<crate::model::UserType>,
@@ -37345,8 +37110,7 @@ impl UpdateUserInput {
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-    /// account that the user belongs to.</p>
+    /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::License> {
         self.license_type.as_ref()
     }
@@ -39505,8 +39269,7 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -39520,8 +39283,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -39547,9 +39309,7 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-    /// can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -39563,9 +39323,7 @@ impl ListChannelsInput {
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-    /// can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
         self.privacy.as_ref()
     }
@@ -39602,8 +39360,7 @@ pub struct ListChannelModeratorsInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -39617,8 +39374,7 @@ impl ListChannelModeratorsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -39644,8 +39400,7 @@ impl std::fmt::Debug for ListChannelModeratorsInput {
 pub struct ListChannelMessagesInput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The order in which you want messages sorted. Default is Descending, based on time
-    /// created.</p>
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The initial or starting time stamp for your requested messages.</p>
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -39663,8 +39418,7 @@ impl ListChannelMessagesInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The order in which you want messages sorted. Default is Descending, based on time
-    /// created.</p>
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -39751,15 +39505,11 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 pub struct ListChannelMembershipsInput {
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -39769,10 +39519,7 @@ impl ListChannelMembershipsInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }
@@ -39780,8 +39527,7 @@ impl ListChannelMembershipsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -41951,11 +41697,7 @@ impl std::fmt::Debug for CreateVoiceConnectorGroupInput {
 pub struct CreateVoiceConnectorInput {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-    /// <code>us-east-1</code>
-    /// .
-    /// </p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub aws_region: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: std::option::Option<bool>,
@@ -41965,11 +41707,7 @@ impl CreateVoiceConnectorInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-    /// <code>us-east-1</code>
-    /// .
-    /// </p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
     pub fn aws_region(&self) -> std::option::Option<&crate::model::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
@@ -42038,12 +41776,7 @@ pub struct CreateSipRuleInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
-    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-    /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-    /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-    /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-    /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-    /// <code>ToPhoneNumber</code> value.</p>
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
     pub trigger_value: std::option::Option<std::string::String>,
     /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
     pub disabled: std::option::Option<bool>,
@@ -42060,12 +41793,7 @@ impl CreateSipRuleInput {
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::SipRuleTriggerType> {
         self.trigger_type.as_ref()
     }
-    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-    /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-    /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-    /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-    /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-    /// <code>ToPhoneNumber</code> value.</p>
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
     pub fn trigger_value(&self) -> std::option::Option<&str> {
         self.trigger_value.as_deref()
     }
@@ -42360,56 +42088,12 @@ pub struct CreateMeetingWithAttendeesInput {
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
     pub meeting_host_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-    /// .
-    /// </p>
-    ///
-    /// <p>
-    /// Available values:
-    /// <code>af-south-1</code>
-    /// ,
-    /// <code>ap-northeast-1</code>
-    /// ,
-    /// <code>ap-northeast-2</code>
-    /// ,
-    /// <code>ap-south-1</code>
-    /// ,
-    /// <code>ap-southeast-1</code>
-    /// ,
-    /// <code>ap-southeast-2</code>
-    /// ,
-    /// <code>ca-central-1</code>
-    /// ,
-    /// <code>eu-central-1</code>
-    /// ,
-    /// <code>eu-north-1</code>
-    /// ,
-    /// <code>eu-south-1</code>
-    /// ,
-    /// <code>eu-west-1</code>
-    /// ,
-    /// <code>eu-west-2</code>
-    /// ,
-    /// <code>eu-west-3</code>
-    /// ,
-    /// <code>sa-east-1</code>
-    /// ,
-    /// <code>us-east-1</code>
-    /// ,
-    /// <code>us-east-2</code>
-    /// ,
-    /// <code>us-west-1</code>
-    /// ,
-    /// <code>us-west-2</code>
-    /// .
-    /// </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+    /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-    /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-    /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+    /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
     pub notifications_configuration:
         std::option::Option<crate::model::MeetingNotificationConfiguration>,
     /// <p>The request containing the attendees to create.</p>
@@ -42428,50 +42112,8 @@ impl CreateMeetingWithAttendeesInput {
     pub fn meeting_host_id(&self) -> std::option::Option<&str> {
         self.meeting_host_id.as_deref()
     }
-    /// <p>
-    /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-    /// .
-    /// </p>
-    ///
-    /// <p>
-    /// Available values:
-    /// <code>af-south-1</code>
-    /// ,
-    /// <code>ap-northeast-1</code>
-    /// ,
-    /// <code>ap-northeast-2</code>
-    /// ,
-    /// <code>ap-south-1</code>
-    /// ,
-    /// <code>ap-southeast-1</code>
-    /// ,
-    /// <code>ap-southeast-2</code>
-    /// ,
-    /// <code>ca-central-1</code>
-    /// ,
-    /// <code>eu-central-1</code>
-    /// ,
-    /// <code>eu-north-1</code>
-    /// ,
-    /// <code>eu-south-1</code>
-    /// ,
-    /// <code>eu-west-1</code>
-    /// ,
-    /// <code>eu-west-2</code>
-    /// ,
-    /// <code>eu-west-3</code>
-    /// ,
-    /// <code>sa-east-1</code>
-    /// ,
-    /// <code>us-east-1</code>
-    /// ,
-    /// <code>us-east-2</code>
-    /// ,
-    /// <code>us-west-1</code>
-    /// ,
-    /// <code>us-west-2</code>
-    /// .
-    /// </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+    /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
@@ -42479,9 +42121,7 @@ impl CreateMeetingWithAttendeesInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-    /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-    /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+    /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
     pub fn notifications_configuration(
         &self,
     ) -> std::option::Option<&crate::model::MeetingNotificationConfiguration> {
@@ -42561,49 +42201,8 @@ pub struct CreateMeetingInput {
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
     pub meeting_host_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-    /// </p>
-    ///
-    /// <p>
-    /// Available values:
-    /// <code>af-south-1</code>
-    /// ,
-    /// <code>ap-northeast-1</code>
-    /// ,
-    /// <code>ap-northeast-2</code>
-    /// ,
-    /// <code>ap-south-1</code>
-    /// ,
-    /// <code>ap-southeast-1</code>
-    /// ,
-    /// <code>ap-southeast-2</code>
-    /// ,
-    /// <code>ca-central-1</code>
-    /// ,
-    /// <code>eu-central-1</code>
-    /// ,
-    /// <code>eu-north-1</code>
-    /// ,
-    /// <code>eu-south-1</code>
-    /// ,
-    /// <code>eu-west-1</code>
-    /// ,
-    /// <code>eu-west-2</code>
-    /// ,
-    /// <code>eu-west-3</code>
-    /// ,
-    /// <code>sa-east-1</code>
-    /// ,
-    /// <code>us-east-1</code>
-    /// ,
-    /// <code>us-east-2</code>
-    /// ,
-    /// <code>us-west-1</code>
-    /// ,
-    /// <code>us-west-2</code>
-    /// .
-    /// </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -42624,49 +42223,8 @@ impl CreateMeetingInput {
     pub fn meeting_host_id(&self) -> std::option::Option<&str> {
         self.meeting_host_id.as_deref()
     }
-    /// <p>
-    /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-    /// </p>
-    ///
-    /// <p>
-    /// Available values:
-    /// <code>af-south-1</code>
-    /// ,
-    /// <code>ap-northeast-1</code>
-    /// ,
-    /// <code>ap-northeast-2</code>
-    /// ,
-    /// <code>ap-south-1</code>
-    /// ,
-    /// <code>ap-southeast-1</code>
-    /// ,
-    /// <code>ap-southeast-2</code>
-    /// ,
-    /// <code>ca-central-1</code>
-    /// ,
-    /// <code>eu-central-1</code>
-    /// ,
-    /// <code>eu-north-1</code>
-    /// ,
-    /// <code>eu-south-1</code>
-    /// ,
-    /// <code>eu-west-1</code>
-    /// ,
-    /// <code>eu-west-2</code>
-    /// ,
-    /// <code>eu-west-3</code>
-    /// ,
-    /// <code>sa-east-1</code>
-    /// ,
-    /// <code>us-east-1</code>
-    /// ,
-    /// <code>us-east-2</code>
-    /// ,
-    /// <code>us-west-1</code>
-    /// ,
-    /// <code>us-west-2</code>
-    /// .
-    /// </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
@@ -42701,8 +42259,7 @@ impl std::fmt::Debug for CreateMeetingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineInput {
-    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-    /// is the only supported source.</p>
+    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
     pub source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     pub source_arn: std::option::Option<std::string::String>,
@@ -42717,8 +42274,7 @@ pub struct CreateMediaCapturePipelineInput {
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
 impl CreateMediaCapturePipelineInput {
-    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-    /// is the only supported source.</p>
+    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
     pub fn source_type(&self) -> std::option::Option<&crate::model::MediaPipelineSourceType> {
         self.source_type.as_ref()
     }
@@ -42804,11 +42360,7 @@ pub struct CreateChannelMembershipInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member you want to add to the channel.</p>
     pub member_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -42822,11 +42374,7 @@ impl CreateChannelMembershipInput {
     pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }
@@ -42889,13 +42437,9 @@ pub struct CreateChannelInput {
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-    /// moderators, and channel members can add themselves and other members to unrestricted
-    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub mode: std::option::Option<crate::model::ChannelMode>,
-    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-    /// by anyone in the <code>AppInstance</code>.</p>
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
     pub metadata: std::option::Option<std::string::String>,
@@ -42915,15 +42459,11 @@ impl CreateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-    /// moderators, and channel members can add themselves and other members to unrestricted
-    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
         self.mode.as_ref()
     }
-    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-    /// by anyone in the <code>AppInstance</code>.</p>
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
         self.privacy.as_ref()
     }
@@ -43352,11 +42892,7 @@ impl std::fmt::Debug for BatchCreateRoomMembershipInput {
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The ARNs of the members you want to add to the channel.</p>
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -43368,11 +42904,7 @@ impl BatchCreateChannelMembershipInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }

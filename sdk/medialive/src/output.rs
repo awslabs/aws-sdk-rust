@@ -1000,9 +1000,7 @@ pub struct StopChannelOutput {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -1047,9 +1045,7 @@ impl StopChannelOutput {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -1207,18 +1203,14 @@ pub mod stop_channel_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -1719,9 +1711,7 @@ pub struct StartChannelOutput {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -1766,9 +1756,7 @@ impl StartChannelOutput {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -1926,18 +1914,14 @@ pub mod start_channel_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -4926,15 +4910,13 @@ pub struct DescribeInputOutput {
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
     /// The generated ID of the input (unique for user account, immutable).
     pub id: std::option::Option<std::string::String>,
-    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-    /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
     pub input_class: std::option::Option<crate::model::InputClass>,
     /// Settings for the input devices.
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of IDs for all Inputs which are partners of this one.
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -4971,8 +4953,7 @@ impl DescribeInputOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-    /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
     pub fn input_class(&self) -> std::option::Option<&crate::model::InputClass> {
         self.input_class.as_ref()
     }
@@ -4984,8 +4965,7 @@ impl DescribeInputOutput {
     pub fn input_partner_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.input_partner_ids.as_deref()
     }
-    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub fn input_source_type(&self) -> std::option::Option<&crate::model::InputSourceType> {
         self.input_source_type.as_ref()
     }
@@ -5133,14 +5113,12 @@ pub mod describe_input_output {
             self.id = input;
             self
         }
-        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn input_class(mut self, input: crate::model::InputClass) -> Self {
             self.input_class = Some(input);
             self
         }
-        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn set_input_class(
             mut self,
             input: std::option::Option<crate::model::InputClass>,
@@ -5186,14 +5164,12 @@ pub mod describe_input_output {
             self.input_partner_ids = input;
             self
         }
-        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
             self.input_source_type = Some(input);
             self
         }
-        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn set_input_source_type(
             mut self,
             input: std::option::Option<crate::model::InputSourceType>,
@@ -5363,9 +5339,7 @@ pub struct DescribeChannelOutput {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -5410,9 +5384,7 @@ impl DescribeChannelOutput {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -5570,18 +5542,14 @@ pub mod describe_channel_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -6795,9 +6763,7 @@ pub struct DeleteChannelOutput {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -6842,9 +6808,7 @@ impl DeleteChannelOutput {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -7002,18 +6966,14 @@ pub mod delete_channel_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,

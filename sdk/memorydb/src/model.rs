@@ -15,9 +15,7 @@ pub struct User {
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub authentication: std::option::Option<crate::model::Authentication>,
-    /// <p>The Amazon Resource Name (ARN) of the user.
-    ///
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl User {
@@ -45,9 +43,7 @@ impl User {
     pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
         self.authentication.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user.
-    ///
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -158,16 +154,12 @@ pub mod user {
             self.authentication = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user.
-        ///
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the user. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user.
-        ///
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the user. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -462,13 +454,9 @@ impl AsRef<str> for InputAuthenticationType {
 
 /// <p>Represents the output of one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>CreateSubnetGroup</p>
-/// </li>
-/// <li>
-/// <p>UpdateSubnetGroup</p>
-/// </li>
-/// </ul>  
+/// <li> <p>CreateSubnetGroup</p> </li>
+/// <li> <p>UpdateSubnetGroup</p> </li>
+/// </ul>
 /// <p>A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -742,7 +730,7 @@ impl AvailabilityZone {
 pub struct ParameterGroup {
     /// <p>The name of the parameter group</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
+    /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     pub family: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group</p>
     pub description: std::option::Option<std::string::String>,
@@ -754,7 +742,7 @@ impl ParameterGroup {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
+    /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
@@ -799,12 +787,12 @@ pub mod parameter_group {
             self.name = input;
             self
         }
-        /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
+        /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
         pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
             self.family = Some(input.into());
             self
         }
-        /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
+        /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -974,11 +962,7 @@ pub struct Cluster {
     pub snapshot_retention_limit: std::option::Option<i32>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub maintenance_window: std::option::Option<std::string::String>,
-    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
-    ///
-    /// Example: 05:00-09:00
-    ///
-    /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The name of the Access Control List associated with this cluster.</p>
     pub acl_name: std::option::Option<std::string::String>,
@@ -1074,11 +1058,7 @@ impl Cluster {
     pub fn maintenance_window(&self) -> std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
-    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
-    ///
-    /// Example: 05:00-09:00
-    ///
-    /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(&self) -> std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
@@ -1430,20 +1410,12 @@ pub mod cluster {
             self.maintenance_window = input;
             self
         }
-        /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
-        ///
-        /// Example: 05:00-09:00
-        ///
-        /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_window = Some(input.into());
             self
         }
-        /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
-        ///
-        /// Example: 05:00-09:00
-        ///
-        /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1857,7 +1829,7 @@ impl Shard {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
-    /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+    /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the service update on the node</p>
     pub status: std::option::Option<std::string::String>,
@@ -1869,7 +1841,7 @@ pub struct Node {
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl Node {
-    /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+    /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1914,12 +1886,12 @@ pub mod node {
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
     }
     impl Builder {
-        /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+        /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+        /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2518,9 +2490,7 @@ impl ReplicaConfigurationRequest {
     }
 }
 
-/// <p>An Access Control List. You can authenticate users with Access Contol Lists.
-///
-/// ACLs enable you to control cluster access by grouping users. These Access control lists are designed as a way to organize access to clusters.</p>
+/// <p>An Access Control List. You can authenticate users with Access Contol Lists. ACLs enable you to control cluster access by grouping users. These Access control lists are designed as a way to organize access to clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Acl {
@@ -2803,10 +2773,7 @@ impl AclPendingChanges {
     }
 }
 
-/// <p>A tag that can be added to an MemoryDB resource. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your MemoryDB resources.
-/// When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. A tag with a null Value is permitted. For more information, see
-/// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging-resources.html">Tagging your MemoryDB resources</a>
-/// </p>
+/// <p>A tag that can be added to an MemoryDB resource. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your MemoryDB resources. When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. A tag with a null Value is permitted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging-resources.html">Tagging your MemoryDB resources</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -4041,8 +4008,7 @@ impl Parameter {
     }
 }
 
-/// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster or adding or removing a
-/// node.</p>
+/// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster or adding or removing a node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {

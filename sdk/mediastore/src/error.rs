@@ -12,8 +12,7 @@ pub struct CreateContainerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContainerErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -125,8 +124,7 @@ pub struct DeleteContainerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -238,8 +236,7 @@ pub struct DeleteContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -365,8 +362,7 @@ pub struct DeleteCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -492,8 +488,7 @@ pub struct DeleteLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -619,8 +614,7 @@ pub struct DeleteMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -850,8 +844,7 @@ pub struct GetContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -977,8 +970,7 @@ pub struct GetCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1101,8 +1093,7 @@ pub struct GetLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1228,8 +1219,7 @@ pub struct GetMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1442,8 +1432,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1558,8 +1547,7 @@ pub struct PutContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1674,8 +1662,7 @@ pub struct PutCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1787,8 +1774,7 @@ pub struct PutLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1903,8 +1889,7 @@ pub struct PutMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2016,8 +2001,7 @@ pub struct StartAccessLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAccessLoggingErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2132,8 +2116,7 @@ pub struct StopAccessLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopAccessLoggingErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2248,8 +2231,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2358,8 +2340,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2586,8 +2567,7 @@ impl ContainerNotFoundException {
     }
 }
 
-/// <p>The container that you specified in the request already exists or is being
-/// updated.</p>
+/// <p>The container that you specified in the request already exists or is being updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerInUseException {

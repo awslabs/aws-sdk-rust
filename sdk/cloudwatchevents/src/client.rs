@@ -459,8 +459,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ActivateEventSource`.
     ///
-    /// <p>Activates a partner event source that has been deactivated. Once activated, your matching
-    /// event bus will start receiving events from the event source.</p>
+    /// <p>Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateEventSource<
         C = aws_smithy_client::erase::DynConnector,
@@ -600,8 +599,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApiDestination`.
     ///
-    /// <p>Creates an API destination, which is an HTTP invocation endpoint configured as a target
-    /// for events.</p>
+    /// <p>Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -678,14 +676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-        /// support the authorization type specified for the connection.</p>
+        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_arn(input.into());
             self
         }
-        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-        /// support the authorization type specified for the connection.</p>
+        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -735,11 +731,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateArchive`.
     ///
-    /// <p>Creates an archive of events with the specified settings. When you create an archive,
-    /// incoming events might not immediately start being sent to the archive. Allow a short period of
-    /// time for changes to take effect. If you do not specify a pattern to filter events sent to the
-    /// archive, all events are sent to the archive except replayed events. Replayed events are not
-    /// sent to an archive.</p>
+    /// <p>Creates an archive of events with the specified settings. When you create an archive, incoming events might not immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed events. Replayed events are not sent to an archive.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArchive<
         C = aws_smithy_client::erase::DynConnector,
@@ -842,14 +834,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_pattern(input);
             self
         }
-        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-        /// retained indefinitely</p>
+        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
         pub fn retention_days(mut self, input: i32) -> Self {
             self.inner = self.inner.retention_days(input);
             self
         }
-        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-        /// retained indefinitely</p>
+        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
         pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_retention_days(input);
             self
@@ -857,8 +847,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
-    /// <p>Creates a connection. A connection defines the authorization type and credentials to use
-    /// for authorization with an API destination HTTP endpoint.</p>
+    /// <p>Creates a connection. A connection defines the authorization type and credentials to use for authorization with an API destination HTTP endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
@@ -951,8 +940,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorization_type(input);
             self
         }
-        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-        /// authorization parameters to use to authorize with the endpoint. </p>
+        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
         pub fn auth_parameters(
             mut self,
             input: crate::model::CreateConnectionAuthRequestParameters,
@@ -960,8 +948,7 @@ pub mod fluent_builders {
             self.inner = self.inner.auth_parameters(input);
             self
         }
-        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-        /// authorization parameters to use to authorize with the endpoint. </p>
+        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
         pub fn set_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
@@ -972,9 +959,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEventBus`.
     ///
-    /// <p>Creates a new event bus within your account. This can be a custom event bus which you can
-    /// use to receive events from your custom applications and services, or it can be a partner event
-    /// bus which can be matched to a partner event source.</p>
+    /// <p>Creates a new event bus within your account. This can be a custom event bus which you can use to receive events from your custom applications and services, or it can be a partner event bus which can be matched to a partner event source.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventBus<
         C = aws_smithy_client::erase::DynConnector,
@@ -1032,33 +1017,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new event bus. </p>
-        /// <p>Event bus names cannot contain the / character. You can't use the name
-        /// <code>default</code> for a custom event bus, as this name is already used for your account's
-        /// default event bus.</p>
-        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-        /// source that this event bus is matched to.</p>
+        /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new event bus. </p>
-        /// <p>Event bus names cannot contain the / character. You can't use the name
-        /// <code>default</code> for a custom event bus, as this name is already used for your account's
-        /// default event bus.</p>
-        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-        /// source that this event bus is matched to.</p>
+        /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-        /// new event bus will be matched with.</p>
+        /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
         pub fn event_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_source_name(input.into());
             self
         }
-        /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-        /// new event bus will be matched with.</p>
+        /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
         pub fn set_event_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1086,30 +1063,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePartnerEventSource`.
     ///
-    /// <p>Called by an SaaS partner to create a partner event source. This operation is not used by
-    /// Amazon Web Services customers.</p>
-    /// <p>Each partner event source can be used by one Amazon Web Services account to create a matching partner
-    /// event bus in that Amazon Web Services account. A SaaS partner must create one partner event source for each
-    /// Amazon Web Services account that wants to receive those event types. </p>
-    /// <p>A partner event source creates events based on resources within the SaaS partner's service
-    /// or application.</p>
-    /// <p>An Amazon Web Services account that creates a partner event bus that matches the partner event source can
-    /// use that event bus to receive events from the partner, and then process them using Amazon Web Services Events
-    /// rules and targets.</p>
+    /// <p>Called by an SaaS partner to create a partner event source. This operation is not used by Amazon Web Services customers.</p>
+    /// <p>Each partner event source can be used by one Amazon Web Services account to create a matching partner event bus in that Amazon Web Services account. A SaaS partner must create one partner event source for each Amazon Web Services account that wants to receive those event types. </p>
+    /// <p>A partner event source creates events based on resources within the SaaS partner's service or application.</p>
+    /// <p>An Amazon Web Services account that creates a partner event bus that matches the partner event source can use that event bus to receive events from the partner, and then process them using Amazon Web Services Events rules and targets.</p>
     /// <p>Partner event source names follow this format:</p>
-    /// <p>
-    /// <code>
-    /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-    /// </code>
-    /// </p>
-    /// <p>
-    /// <i>partner_name</i> is determined during partner registration and identifies
-    /// the partner to Amazon Web Services customers. <i>event_namespace</i> is determined by the
-    /// partner and is a way for the partner to categorize their events.
-    /// <i>event_name</i> is determined by the partner, and should uniquely identify
-    /// an event-generating resource within the partner system. The combination of
-    /// <i>event_namespace</i> and <i>event_name</i> should help Amazon Web Services
-    /// customers decide whether to create an event bus to receive these events.</p>
+    /// <p> <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> </p>
+    /// <p> <i>partner_name</i> is determined during partner registration and identifies the partner to Amazon Web Services customers. <i>event_namespace</i> is determined by the partner and is a way for the partner to categorize their events. <i>event_name</i> is determined by the partner, and should uniquely identify an event-generating resource within the partner system. The combination of <i>event_namespace</i> and <i>event_name</i> should help Amazon Web Services customers decide whether to create an event bus to receive these events.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartnerEventSource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1166,34 +1126,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the partner event source. This name must be unique and must be in the format
-        /// <code>
-        /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-        /// </code>.
-        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-        /// with a name that matches the name of the partner event source.</p>
+        /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the partner event source. This name must be unique and must be in the format
-        /// <code>
-        /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-        /// </code>.
-        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-        /// with a name that matches the name of the partner event source.</p>
+        /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-        /// partner event source.</p>
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-        /// partner event source.</p>
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account(input);
             self
@@ -1201,10 +1149,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeactivateEventSource`.
     ///
-    /// <p>You can use this operation to temporarily stop receiving events from the specified partner
-    /// event source. The matching event bus is not deleted. </p>
-    /// <p>When you deactivate a partner event source, the source goes into PENDING state. If it
-    /// remains in PENDING state for more than two weeks, it is deleted.</p>
+    /// <p>You can use this operation to temporarily stop receiving events from the specified partner event source. The matching event bus is not deleted. </p>
+    /// <p>When you deactivate a partner event source, the source goes into PENDING state. If it remains in PENDING state for more than two weeks, it is deleted.</p>
     /// <p>To activate a deactivated partner event source, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html">ActivateEventSource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateEventSource<
@@ -1275,8 +1221,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeauthorizeConnection`.
     ///
-    /// <p>Removes all authorization parameters from the connection. This lets you remove the secret
-    /// from the connection so you can reuse it without having to create a new connection.</p>
+    /// <p>Removes all authorization parameters from the connection. This lets you remove the secret from the connection so you can reuse it without having to create a new connection.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeauthorizeConnection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1556,8 +1501,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventBus`.
     ///
-    /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with
-    /// this event bus need to be deleted. You can't delete your account's default event bus.</p>
+    /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be deleted. You can't delete your account's default event bus.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventBus<
         C = aws_smithy_client::erase::DynConnector,
@@ -1627,10 +1571,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePartnerEventSource`.
     ///
-    /// <p>This operation is used by SaaS partners to delete a partner event source. This operation
-    /// is not used by Amazon Web Services customers.</p>
-    /// <p>When you delete an event source, the status of the corresponding partner event bus in the
-    /// Amazon Web Services customer account becomes DELETED.</p>
+    /// <p>This operation is used by SaaS partners to delete a partner event source. This operation is not used by Amazon Web Services customers.</p>
+    /// <p>When you delete an event source, the status of the corresponding partner event bus in the Amazon Web Services customer account becomes DELETED.</p>
     /// <p></p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartnerEventSource<
@@ -1713,18 +1655,9 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified rule.</p>
     /// <p>Before you can delete the rule, you must remove all targets, using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html">RemoveTargets</a>.</p>
-    ///
-    /// <p>When you delete a rule, incoming events might continue to match to the deleted rule. Allow
-    /// a short period of time for changes to take effect.</p>
-    ///
-    /// <p>If you call delete rule multiple times for the same rule, all calls will succeed. When you
-    /// call delete rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code> is
-    /// returned.</p>
-    ///
-    /// <p>Managed rules are rules created and managed by another Amazon Web Services service on your behalf. These
-    /// rules are created by those other Amazon Web Services services to support functionality in those services. You
-    /// can delete these rules using the <code>Force</code> option, but you should do so only if you
-    /// are sure the other service is not still using that rule.</p>
+    /// <p>When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time for changes to take effect.</p>
+    /// <p>If you call delete rule multiple times for the same rule, all calls will succeed. When you call delete rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code> is returned.</p>
+    /// <p>Managed rules are rules created and managed by another Amazon Web Services service on your behalf. These rules are created by those other Amazon Web Services services to support functionality in those services. You can delete these rules using the <code>Force</code> option, but you should do so only if you are sure the other service is not still using that rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1791,14 +1724,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1806,20 +1737,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_bus_name(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -2037,12 +1960,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventBus`.
     ///
-    /// <p>Displays details about an event bus in your account. This can include the external Amazon Web Services
-    /// accounts that are permitted to write events to your default event bus, and the associated
-    /// policy. For custom event buses and partner event buses, it displays the name, ARN, policy,
-    /// state, and creation time.</p>
-    /// <p> To enable your account to receive events from other accounts on its default event bus,
-    /// use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.</p>
+    /// <p>Displays details about an event bus in your account. This can include the external Amazon Web Services accounts that are permitted to write events to your default event bus, and the associated policy. For custom event buses and partner event buses, it displays the name, ARN, policy, state, and creation time.</p>
+    /// <p> To enable your account to receive events from other accounts on its default event bus, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.</p>
     /// <p>For more information about partner event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventBus<
@@ -2100,14 +2019,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-        /// bus is displayed.</p>
+        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-        /// bus is displayed.</p>
+        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2115,8 +2032,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventSource`.
     ///
-    /// <p>This operation lists details about a partner event source that is shared with your
-    /// account.</p>
+    /// <p>This operation lists details about a partner event source that is shared with your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2186,10 +2102,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePartnerEventSource`.
     ///
-    /// <p>An SaaS partner can use this operation to list details about a partner event source that
-    /// they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html">DescribeEventSource</a>
-    /// to see details about a partner event source that is
-    /// shared with them.</p>
+    /// <p>An SaaS partner can use this operation to list details about a partner event source that they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html">DescribeEventSource</a> to see details about a partner event source that is shared with them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePartnerEventSource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2259,15 +2172,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplay`.
     ///
-    /// <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the
-    /// progress of a running replay. A replay processes events to replay based on the time in the
-    /// event, and replays them using 1 minute intervals. If you use <code>StartReplay</code> and
-    /// specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20
-    /// minute time range, the events are replayed from the first minute of that 20 minute range
-    /// first. Then the events from the second minute are replayed. You can use
-    /// <code>DescribeReplay</code> to determine the progress of a replay. The value returned for
-    /// <code>EventLastReplayedTime</code> indicates the time within the specified time range
-    /// associated with the last event replayed.</p>
+    /// <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay. A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range associated with the last event replayed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplay<
         C = aws_smithy_client::erase::DynConnector,
@@ -2338,8 +2243,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRule`.
     ///
     /// <p>Describes the specified rule.</p>
-    /// <p>DescribeRule does not list the targets of a rule. To see the targets associated with a
-    /// rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
+    /// <p>DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -2406,14 +2310,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2424,11 +2326,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableRule`.
     ///
-    /// <p>Disables the specified rule. A disabled rule won't match any events, and won't
-    /// self-trigger if it has a schedule expression.</p>
-    ///
-    /// <p>When you disable a rule, incoming events might continue to match to the disabled rule.
-    /// Allow a short period of time for changes to take effect.</p>
+    /// <p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p>
+    /// <p>When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of time for changes to take effect.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -2495,14 +2394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2514,9 +2411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableRule`.
     ///
     /// <p>Enables the specified rule. If the rule does not exist, the operation fails.</p>
-    ///
-    /// <p>When you enable a rule, incoming events might not immediately start matching to a newly
-    /// enabled rule. Allow a short period of time for changes to take effect.</p>
+    /// <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a short period of time for changes to take effect.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -2583,14 +2478,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,14 +2551,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-        /// with the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-        /// with the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -2706,8 +2597,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListArchives`.
     ///
-    /// <p>Lists your archives. You can either list all the archives or you can provide a prefix to
-    /// match to the archive names. Filter parameters are exclusive.</p>
+    /// <p>Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive names. Filter parameters are exclusive.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArchives<
         C = aws_smithy_client::erase::DynConnector,
@@ -2764,14 +2654,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-        /// prefix are returned.</p>
+        /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-        /// prefix are returned.</p>
+        /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -2879,14 +2767,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-        /// the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-        /// the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -2927,8 +2813,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEventBuses`.
     ///
-    /// <p>Lists all the event buses in your account, including the default event bus, custom event
-    /// buses, and partner event buses.</p>
+    /// <p>Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventBuses<
         C = aws_smithy_client::erase::DynConnector,
@@ -2985,14 +2870,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifying this limits the results to only those event buses with names that start with
-        /// the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>Specifying this limits the results to only those event buses with names that start with
-        /// the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -3007,16 +2890,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3024,8 +2903,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEventSources`.
     ///
-    /// <p>You can use this to see all the partner event sources that have been shared with your Amazon Web Services
-    /// account. For more information about partner event sources, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
+    /// <p>You can use this to see all the partner event sources that have been shared with your Amazon Web Services account. For more information about partner event sources, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventSources<
         C = aws_smithy_client::erase::DynConnector,
@@ -3082,14 +2960,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifying this limits the results to only those partner event sources with names that
-        /// start with the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>Specifying this limits the results to only those partner event sources with names that
-        /// start with the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -3104,16 +2980,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3121,9 +2993,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPartnerEventSourceAccounts`.
     ///
-    /// <p>An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular
-    /// partner event source name is associated with. This operation is not used by Amazon Web Services
-    /// customers.</p>
+    /// <p>An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular partner event source name is associated with. This operation is not used by Amazon Web Services customers.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerEventSourceAccounts<
         C = aws_smithy_client::erase::DynConnector,
@@ -3193,28 +3063,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_source_name(input);
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3222,8 +3086,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPartnerEventSources`.
     ///
-    /// <p>An SaaS partner can use this operation to list all the partner event source names that
-    /// they have created. This operation is not used by Amazon Web Services customers.</p>
+    /// <p>An SaaS partner can use this operation to list all the partner event source names that they have created. This operation is not used by Amazon Web Services customers.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerEventSources<
         C = aws_smithy_client::erase::DynConnector,
@@ -3280,40 +3143,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify this, the results are limited to only those partner event sources that
-        /// start with the string you specify.</p>
+        /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>If you specify this, the results are limited to only those partner event sources that
-        /// start with the string you specify.</p>
+        /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>pecifying this limits the number of results returned by this operation. The operation also
-        /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>pecifying this limits the number of results returned by this operation. The operation also
-        /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3321,8 +3176,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReplays`.
     ///
-    /// <p>Lists your replays. You can either list all the replays or you can provide a prefix to
-    /// match to the replay names. Filter parameters are exclusive.</p>
+    /// <p>Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names. Filter parameters are exclusive.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReplays<
         C = aws_smithy_client::erase::DynConnector,
@@ -3379,14 +3233,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-        /// are returned.</p>
+        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_prefix(input.into());
             self
         }
-        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-        /// are returned.</p>
+        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name_prefix(input);
             self
@@ -3437,8 +3289,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRuleNamesByTarget`.
     ///
-    /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon
-    /// EventBridge can invoke a specific target in your account.</p>
+    /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleNamesByTarget<
         C = aws_smithy_client::erase::DynConnector,
@@ -3505,14 +3356,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_arn(input);
             self
         }
-        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3543,11 +3392,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRules`.
     ///
-    /// <p>Lists your Amazon EventBridge rules. You can either list all the rules or you can provide
-    /// a prefix to match to the rule names.</p>
-    ///
-    /// <p>ListRules does not list the targets of a rule. To see the targets associated with a rule,
-    /// use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
+    /// <p>Lists your Amazon EventBridge rules. You can either list all the rules or you can provide a prefix to match to the rule names.</p>
+    /// <p>ListRules does not list the targets of a rule. To see the targets associated with a rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
@@ -3614,14 +3460,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_prefix(input);
             self
         }
-        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3652,8 +3496,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Displays the tags associated with an EventBridge resource. In EventBridge, rules and event
-    /// buses can be tagged.</p>
+    /// <p>Displays the tags associated with an EventBridge resource. In EventBridge, rules and event buses can be tagged.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3790,14 +3633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3889,16 +3730,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The entry that defines an event in your system. You can specify several parameters for the
-        /// entry such as the source and type of the event, resources associated with the event, and so
-        /// on.</p>
+        /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
         pub fn entries(mut self, input: crate::model::PutEventsRequestEntry) -> Self {
             self.inner = self.inner.entries(input);
             self
         }
-        /// <p>The entry that defines an event in your system. You can specify several parameters for the
-        /// entry such as the source and type of the event, resources associated with the event, and so
-        /// on.</p>
+        /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
@@ -3909,8 +3746,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPartnerEvents`.
     ///
-    /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services
-    /// customers do not use this operation.</p>
+    /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services customers do not use this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPartnerEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -3987,25 +3823,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPermission`.
     ///
-    /// <p>Running <code>PutPermission</code> permits the specified Amazon Web Services account or Amazon Web Services organization
-    /// to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch
-    /// Events) rules in your account are triggered by these events arriving to an event bus in your
-    /// account. </p>
-    /// <p>For another account to send events to your account, that external account must have an
-    /// EventBridge rule with your account's event bus as a target.</p>
-    ///
-    /// <p>To enable multiple Amazon Web Services accounts to put events to your event bus, run
-    /// <code>PutPermission</code> once for each of these accounts. Or, if all the accounts are
-    /// members of the same Amazon Web Services organization, you can run <code>PutPermission</code> once specifying
-    /// <code>Principal</code> as "*" and specifying the Amazon Web Services organization ID in
-    /// <code>Condition</code>, to grant permissions to all accounts in that organization.</p>
-    ///
-    /// <p>If you grant permissions using an organization, then accounts in that organization must
-    /// specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to
-    /// add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and
-    /// Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User
-    /// Guide</i>.</p>
-    ///
+    /// <p>Running <code>PutPermission</code> permits the specified Amazon Web Services account or Amazon Web Services organization to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these events arriving to an event bus in your account. </p>
+    /// <p>For another account to send events to your account, that external account must have an EventBridge rule with your account's event bus as a target.</p>
+    /// <p>To enable multiple Amazon Web Services accounts to put events to your event bus, run <code>PutPermission</code> once for each of these accounts. Or, if all the accounts are members of the same Amazon Web Services organization, you can run <code>PutPermission</code> once specifying <code>Principal</code> as "*" and specifying the Amazon Web Services organization ID in <code>Condition</code>, to grant permissions to all accounts in that organization.</p>
+    /// <p>If you grant permissions using an organization, then accounts in that organization must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>The permission policy on the event bus cannot exceed 10 KB in size.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermission<
@@ -4063,14 +3884,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4088,68 +3907,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-        /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-        ///
-        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-        /// may match undesirable events. To create more secure rules, make sure that the event pattern
-        /// for each rule contains an <code>account</code> field with a specific account ID from which to
-        /// receive events. Rules with an account field do not match any events sent from other
-        /// accounts.</p>
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-        /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-        ///
-        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-        /// may match undesirable events. To create more secure rules, make sure that the event pattern
-        /// for each rule contains an <code>account</code> field with a specific account ID from which to
-        /// receive events. Rules with an account field do not match any events sent from other
-        /// accounts.</p>
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you
-        /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.statement_id(input.into());
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you
-        /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_statement_id(input);
             self
         }
-        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-        /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-        /// organization.</p>
-        ///
-        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-        /// <code>Key</code>, and <code>Value</code> fields.</p>
+        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
         pub fn condition(mut self, input: crate::model::Condition) -> Self {
             self.inner = self.inner.condition(input);
             self
         }
-        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-        /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-        /// organization.</p>
-        ///
-        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-        /// <code>Key</code>, and <code>Value</code> fields.</p>
+        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::Condition>,
@@ -4157,16 +3946,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_condition(input);
             self
         }
-        /// <p>A JSON string that describes the permission policy statement. You can include a
-        /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-        /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+        /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p>A JSON string that describes the permission policy statement. You can include a
-        /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-        /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+        /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
@@ -4174,53 +3959,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRule`.
     ///
-    /// <p>Creates or updates the specified rule. Rules are enabled by default, or based on value of
-    /// the state. You can disable a rule using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html">DisableRule</a>.</p>
-    ///
-    /// <p>A single rule watches for events from a single event bus. Events generated by Amazon Web Services services
-    /// go to your account's default event bus. Events generated by SaaS partner services or
-    /// applications go to the matching partner event bus. If you have custom applications or
-    /// services, you can specify whether their events go to your default event bus or a custom event
-    /// bus that you have created. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
-    ///
-    /// <p>If you are updating an existing rule, the rule is replaced with what you specify in this
-    /// <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values
-    /// for those arguments are not kept. Instead, they are replaced with null values.</p>
-    ///
-    /// <p>When you create or update a rule, incoming events might not immediately start matching to
-    /// new or updated rules. Allow a short period of time for changes to take effect.</p>
-    ///
-    /// <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with
-    /// EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions
-    /// self-trigger based on the given schedule. A rule can have both an EventPattern and a
-    /// ScheduleExpression, in which case the rule triggers on matching events as well as on a
-    /// schedule.</p>
-    ///
-    /// <p>When you initially create a rule, you can optionally assign one or more tags to the rule.
-    /// Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions, by granting a user permission to access or change only rules with certain tag
-    /// values. To use the <code>PutRule</code> operation and assign tags, you must have both the
-    /// <code>events:PutRule</code> and <code>events:TagResource</code> permissions.</p>
-    /// <p>If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
-    /// operation are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    ///
-    /// <p>Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs).
-    /// However, EventBridge uses an exact match in event patterns and rules. Be sure to use the
-    /// correct ARN characters when creating event patterns so that they match the ARN syntax in the
-    /// event you want to match.</p>
-    ///
-    /// <p>In EventBridge, it is possible to create rules that lead to infinite loops, where a rule
-    /// is fired repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket,
-    /// and trigger software to change them to the desired state. If the rule is not written
-    /// carefully, the subsequent change to the ACLs fires the rule again, creating an infinite
-    /// loop.</p>
-    /// <p>To prevent this, write the rules so that the triggered actions do not re-fire the same
-    /// rule. For example, your rule could fire only if ACLs are found to be in a bad state, instead
-    /// of after any change. </p>
-    /// <p>An infinite loop can quickly cause higher than expected charges. We recommend that you use
-    /// budgeting, which alerts you when charges exceed your specified limit. For more information,
-    /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your Costs with
-    /// Budgets</a>.</p>
+    /// <p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html">DisableRule</a>.</p>
+    /// <p>A single rule watches for events from a single event bus. Events generated by Amazon Web Services services go to your account's default event bus. Events generated by SaaS partner services or applications go to the matching partner event bus. If you have custom applications or services, you can specify whether their events go to your default event bus or a custom event bus that you have created. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
+    /// <p>If you are updating an existing rule, the rule is replaced with what you specify in this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments are not kept. Instead, they are replaced with null values.</p>
+    /// <p>When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Allow a short period of time for changes to take effect.</p>
+    /// <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.</p>
+    /// <p>When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only rules with certain tag values. To use the <code>PutRule</code> operation and assign tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code> permissions.</p>
+    /// <p>If you are updating an existing rule, any tags you specify in the <code>PutRule</code> operation are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    /// <p>Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs). However, EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>
+    /// <p>In EventBridge, it is possible to create rules that lead to infinite loops, where a rule is fired repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket, and trigger software to change them to the desired state. If the rule is not written carefully, the subsequent change to the ACLs fires the rule again, creating an infinite loop.</p>
+    /// <p>To prevent this, write the rules so that the triggered actions do not re-fire the same rule. For example, your rule could fire only if ACLs are found to be in a bad state, instead of after any change. </p>
+    /// <p>An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which alerts you when charges exceed your specified limit. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your Costs with Budgets</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -4300,14 +4049,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_expression(input);
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_pattern(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4336,19 +4083,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -4370,14 +4111,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-        /// default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-        /// default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4388,172 +4127,53 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutTargets`.
     ///
-    /// <p>Adds the specified targets to the specified rule, or updates the targets if they are
-    /// already associated with the rule.</p>
+    /// <p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p>
     /// <p>Targets are the resources that are invoked when a rule is triggered.</p>
     /// <p>You can configure the following as targets for Events:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
-    /// destination</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon API Gateway REST API endpoints</p>
-    /// </li>
-    /// <li>
-    /// <p>API Gateway</p>
-    /// </li>
-    /// <li>
-    /// <p>Batch job queue</p>
-    /// </li>
-    /// <li>
-    /// <p>CloudWatch Logs group</p>
-    /// </li>
-    /// <li>
-    /// <p>CodeBuild project</p>
-    /// </li>
-    /// <li>
-    /// <p>CodePipeline</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon EC2 <code>CreateSnapshot</code> API call</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon EC2 <code>RebootInstances</code> API call</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon EC2 <code>StopInstances</code> API call</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon EC2 <code>TerminateInstances</code> API call</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon ECS tasks</p>
-    /// </li>
-    /// <li>
-    /// <p>Event bus in a different Amazon Web Services account or Region.</p>
-    /// <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon)
-    /// us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.</p>
-    /// </li>
-    /// <li>
-    /// <p>Firehose delivery stream (Kinesis Data Firehose)</p>
-    /// </li>
-    /// <li>
-    /// <p>Inspector assessment template (Amazon Inspector)</p>
-    /// </li>
-    /// <li>
-    /// <p>Kinesis stream (Kinesis Data Stream)</p>
-    /// </li>
-    /// <li>
-    /// <p>Lambda function</p>
-    /// </li>
-    /// <li>
-    /// <p>Redshift clusters (Data API statement execution)</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon SNS topic</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon SQS queues (includes FIFO queues</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Automation</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM OpsItem</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Run Command</p>
-    /// </li>
-    /// <li>
-    /// <p>Step Functions state machines</p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API destination</a> </p> </li>
+    /// <li> <p>Amazon API Gateway REST API endpoints</p> </li>
+    /// <li> <p>API Gateway</p> </li>
+    /// <li> <p>Batch job queue</p> </li>
+    /// <li> <p>CloudWatch Logs group</p> </li>
+    /// <li> <p>CodeBuild project</p> </li>
+    /// <li> <p>CodePipeline</p> </li>
+    /// <li> <p>Amazon EC2 <code>CreateSnapshot</code> API call</p> </li>
+    /// <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p> </li>
+    /// <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li>
+    /// <li> <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li>
+    /// <li> <p>Amazon ECS tasks</p> </li>
+    /// <li> <p>Event bus in a different Amazon Web Services account or Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.</p> </li>
+    /// <li> <p>Firehose delivery stream (Kinesis Data Firehose)</p> </li>
+    /// <li> <p>Inspector assessment template (Amazon Inspector)</p> </li>
+    /// <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li>
+    /// <li> <p>Lambda function</p> </li>
+    /// <li> <p>Redshift clusters (Data API statement execution)</p> </li>
+    /// <li> <p>Amazon SNS topic</p> </li>
+    /// <li> <p>Amazon SQS queues (includes FIFO queues</p> </li>
+    /// <li> <p>SSM Automation</p> </li>
+    /// <li> <p>SSM OpsItem</p> </li>
+    /// <li> <p>SSM Run Command</p> </li>
+    /// <li> <p>Step Functions state machines</p> </li>
     /// </ul>
-    ///
-    /// <p>Creating rules with built-in targets is supported only in the Management Console. The
-    /// built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-    /// call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API
-    /// call</code>. </p>
-    ///
-    /// <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the
-    /// target is a Kinesis data stream, you can optionally specify which shard the event goes to by
-    /// using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
-    /// instances with one rule, you can use the <code>RunCommandParameters</code> field.</p>
-    ///
-    /// <p>To be able to make API calls against the resources that you own, Amazon EventBridge
-    /// needs the appropriate permissions. For Lambda and Amazon SNS
-    /// resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis Data Streams,
-    /// Step Functions state machines and API Gateway REST APIs, EventBridge relies on
-    /// IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-    /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    ///
-    /// <p>If another Amazon Web Services account is in the same region and has granted you permission (using
-    /// <code>PutPermission</code>), you can send events to that account. Set that account's event
-    /// bus as a target of the rules in your account. To send the matched events to the other account,
-    /// specify that account's event bus as the <code>Arn</code> value when you run
-    /// <code>PutTargets</code>. If your account sends events to another account, your account is
-    /// charged for each sent event. Each event sent to another account is charged as a custom event.
-    /// The account receiving the event is not charged. For more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
-    /// Pricing</a>.</p>
-    ///
-    /// <note>
-    /// <p>
-    /// <code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are not
-    /// available with <code>PutTarget</code> if the target is an event bus of a different Amazon Web Services
-    /// account.</p>
+    /// <p>Creating rules with built-in targets is supported only in the Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>. </p>
+    /// <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p>
+    /// <p>To be able to make API calls against the resources that you own, Amazon EventBridge needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>If another Amazon Web Services account is in the same region and has granted you permission (using <code>PutPermission</code>), you can send events to that account. Set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for each sent event. Each event sent to another account is charged as a custom event. The account receiving the event is not charged. For more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge Pricing</a>.</p> <note>
+    /// <p> <code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are not available with <code>PutTarget</code> if the target is an event bus of a different Amazon Web Services account.</p>
     /// </note>
-    ///
-    /// <p>If you are setting the event bus of another account as the target, and that account
-    /// granted permission to your account through an organization instead of directly by the account
-    /// ID, then you must specify a <code>RoleArn</code> with proper permissions in the
-    /// <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and
-    /// Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User
-    /// Guide</i>.</p>
-    ///
+    /// <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>For more information about enabling cross-account events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.</p>
-    ///
-    /// <p>
-    /// <b>Input</b>, <b>InputPath</b>, and
-    /// <b>InputTransformer</b> are mutually exclusive and optional
-    /// parameters of a target. When a rule is triggered due to a matched event:</p>
-    ///
+    /// <p> <b>Input</b>, <b>InputPath</b>, and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p>
     /// <ul>
-    /// <li>
-    /// <p>If none of the following arguments are specified for a target, then the entire event
-    /// is passed to the target in JSON format (unless the target is Amazon EC2 Run Command or
-    /// Amazon ECS task, in which case nothing from the event is passed to the target).</p>
-    /// </li>
-    /// <li>
-    /// <p>If <b>Input</b> is specified in the form of valid JSON, then
-    /// the matched event is overridden with this constant.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <b>InputPath</b> is specified in the form of JSONPath
-    /// (for example, <code>$.detail</code>), then only the part of the event specified in the
-    /// path is passed to the target (for example, only the detail part of the event is
-    /// passed).</p>
-    /// </li>
-    /// <li>
-    /// <p>If <b>InputTransformer</b> is specified, then one or more
-    /// specified JSONPaths are extracted from the event and used as values in a template that you
-    /// specify as the input to the target.</p>
-    /// </li>
+    /// <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li>
+    /// <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li>
+    /// <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li>
+    /// <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li>
     /// </ul>
-    ///
-    /// <p>When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use
-    /// JSON dot notation, not bracket notation.</p>
-    ///
-    /// <p>When you add targets to a rule and the associated rule triggers soon after, new or updated
-    /// targets might not be immediately invoked. Allow a short period of time for changes to take
-    /// effect.</p>
-    ///
-    /// <p>This action can partially fail if too many requests are made at the same time. If that
-    /// happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in
-    /// <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
+    /// <p>When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p>
+    /// <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Allow a short period of time for changes to take effect.</p>
+    /// <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTargets<
         C = aws_smithy_client::erase::DynConnector,
@@ -4620,14 +4240,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4655,10 +4273,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemovePermission`.
     ///
-    /// <p>Revokes the permission of another Amazon Web Services account to be able to put events to the specified
-    /// event bus. Specify the account to revoke by the <code>StatementId</code> value that you
-    /// associated with the account when you granted it permission with <code>PutPermission</code>.
-    /// You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.</p>
+    /// <p>Revokes the permission of another Amazon Web Services account to be able to put events to the specified event bus. Specify the account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
@@ -4715,14 +4330,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-        /// the default event bus.</p>
+        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.statement_id(input.into());
             self
         }
-        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-        /// the default event bus.</p>
+        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_statement_id(input);
             self
@@ -4737,14 +4350,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remove_all_permissions(input);
             self
         }
-        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4755,15 +4366,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTargets`.
     ///
-    /// <p>Removes the specified targets from the specified rule. When the rule is triggered, those
-    /// targets are no longer be invoked.</p>
-    ///
-    /// <p>When you remove a target, when the associated rule triggers, removed targets might
-    /// continue to be invoked. Allow a short period of time for changes to take effect.</p>
-    ///
-    /// <p>This action can partially fail if too many requests are made at the same time. If that
-    /// happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in
-    /// <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
+    /// <p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p>
+    /// <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow a short period of time for changes to take effect.</p>
+    /// <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTargets<
         C = aws_smithy_client::erase::DynConnector,
@@ -4830,14 +4435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule(input);
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_bus_name(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4862,20 +4465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ids(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -4883,15 +4478,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartReplay`.
     ///
-    /// <p>Starts the specified replay. Events are not necessarily replayed in the exact same order
-    /// that they were added to the archive. A replay processes events to replay based on the time in
-    /// the event, and replays them using 1 minute intervals. If you specify an
-    /// <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute time
-    /// range, the events are replayed from the first minute of that 20 minute range first. Then the
-    /// events from the second minute are replayed. You can use <code>DescribeReplay</code> to
-    /// determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
-    /// indicates the time within the specified time range associated with the last event
-    /// replayed.</p>
+    /// <p>Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range associated with the last event replayed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplay<
         C = aws_smithy_client::erase::DynConnector,
@@ -4981,14 +4568,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_source_arn(input);
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.event_start_time(input);
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn set_event_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4996,14 +4581,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_start_time(input);
             self
         }
-        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.event_end_time(input);
             self
         }
-        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn set_event_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5011,14 +4594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_end_time(input);
             self
         }
-        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-        /// the replay.</p>
+        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
         pub fn destination(mut self, input: crate::model::ReplayDestination) -> Self {
             self.inner = self.inner.destination(input);
             self
         }
-        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-        /// the replay.</p>
+        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::ReplayDestination>,
@@ -5029,16 +4610,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can
-    /// help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user permission to access or change only resources with certain tag
-    /// values. In EventBridge, rules and event buses can be tagged.</p>
-    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
-    /// characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If
-    /// you specify a new tag key, this tag is appended to the list of tags associated with the
-    /// resource. If you specify a tag key that is already associated with the resource, the new tag
-    /// value that you specify replaces the previous value for that tag.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In EventBridge, rules and event buses can be tagged.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
@@ -5127,10 +4701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestEventPattern`.
     ///
     /// <p>Tests whether the specified event pattern matches the provided event.</p>
-    /// <p>Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs).
-    /// However, EventBridge uses an exact match in event patterns and rules. Be sure to use the
-    /// correct ARN characters when creating event patterns so that they match the ARN syntax in the
-    /// event you want to match.</p>
+    /// <p>Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs). However, EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestEventPattern<
         C = aws_smithy_client::erase::DynConnector,
@@ -5187,14 +4758,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_pattern(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5202,89 +4771,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_pattern(input);
             self
         }
-        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-        /// fields are mandatory:</p>
+        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>account</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>time</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detail-type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>id</code> </p> </li>
+        /// <li> <p> <code>account</code> </p> </li>
+        /// <li> <p> <code>source</code> </p> </li>
+        /// <li> <p> <code>time</code> </p> </li>
+        /// <li> <p> <code>region</code> </p> </li>
+        /// <li> <p> <code>resources</code> </p> </li>
+        /// <li> <p> <code>detail-type</code> </p> </li>
         /// </ul>
         pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event(input.into());
             self
         }
-        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-        /// fields are mandatory:</p>
+        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>account</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>time</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detail-type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>id</code> </p> </li>
+        /// <li> <p> <code>account</code> </p> </li>
+        /// <li> <p> <code>source</code> </p> </li>
+        /// <li> <p> <code>time</code> </p> </li>
+        /// <li> <p> <code>region</code> </p> </li>
+        /// <li> <p> <code>resources</code> </p> </li>
+        /// <li> <p> <code>detail-type</code> </p> </li>
         /// </ul>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event(input);
@@ -5293,8 +4802,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
-    /// (CloudWatch Events), rules and event buses can be tagged.</p>
+    /// <p>Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events), rules and event buses can be tagged.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,

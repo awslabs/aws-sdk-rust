@@ -186,8 +186,7 @@ impl ListTagsForResourceOutput {
 pub struct ListPredictorsOutput {
     /// <p>An array of objects that summarize each predictor's properties.</p>
     pub predictors: std::option::Option<std::vec::Vec<crate::model::PredictorSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPredictorsOutput {
@@ -195,8 +194,7 @@ impl ListPredictorsOutput {
     pub fn predictors(&self) -> std::option::Option<&[crate::model::PredictorSummary]> {
         self.predictors.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -238,14 +236,12 @@ pub mod list_predictors_output {
             self.predictors = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -270,24 +266,20 @@ impl ListPredictorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorBacktestExportJobsOutput {
-    /// <p>An array of objects that summarize the properties of each predictor backtest export
-    /// job.</p>
+    /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
     pub predictor_backtest_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::PredictorBacktestExportJobSummary>>,
-    /// <p>Returns this token if the response is truncated. To retrieve the next
-    /// set of results, use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPredictorBacktestExportJobsOutput {
-    /// <p>An array of objects that summarize the properties of each predictor backtest export
-    /// job.</p>
+    /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
     pub fn predictor_backtest_export_jobs(
         &self,
     ) -> std::option::Option<&[crate::model::PredictorBacktestExportJobSummary]> {
         self.predictor_backtest_export_jobs.as_deref()
     }
-    /// <p>Returns this token if the response is truncated. To retrieve the next
-    /// set of results, use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -318,8 +310,7 @@ pub mod list_predictor_backtest_export_jobs_output {
         ///
         /// To override the contents of this collection use [`set_predictor_backtest_export_jobs`](Self::set_predictor_backtest_export_jobs).
         ///
-        /// <p>An array of objects that summarize the properties of each predictor backtest export
-        /// job.</p>
+        /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
         pub fn predictor_backtest_export_jobs(
             mut self,
             input: crate::model::PredictorBacktestExportJobSummary,
@@ -329,8 +320,7 @@ pub mod list_predictor_backtest_export_jobs_output {
             self.predictor_backtest_export_jobs = Some(v);
             self
         }
-        /// <p>An array of objects that summarize the properties of each predictor backtest export
-        /// job.</p>
+        /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
         pub fn set_predictor_backtest_export_jobs(
             mut self,
             input: std::option::Option<
@@ -340,14 +330,12 @@ pub mod list_predictor_backtest_export_jobs_output {
             self.predictor_backtest_export_jobs = input;
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next
-        /// set of results, use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next
-        /// set of results, use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -374,8 +362,7 @@ impl ListPredictorBacktestExportJobsOutput {
 pub struct ListForecastsOutput {
     /// <p>An array of objects that summarize each forecast's properties.</p>
     pub forecasts: std::option::Option<std::vec::Vec<crate::model::ForecastSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set
-    /// of results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListForecastsOutput {
@@ -383,8 +370,7 @@ impl ListForecastsOutput {
     pub fn forecasts(&self) -> std::option::Option<&[crate::model::ForecastSummary]> {
         self.forecasts.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set
-    /// of results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -426,14 +412,12 @@ pub mod list_forecasts_output {
             self.forecasts = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set
-        /// of results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set
-        /// of results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -461,8 +445,7 @@ pub struct ListForecastExportJobsOutput {
     /// <p>An array of objects that summarize each export job's properties.</p>
     pub forecast_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::ForecastExportJobSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListForecastExportJobsOutput {
@@ -472,8 +455,7 @@ impl ListForecastExportJobsOutput {
     ) -> std::option::Option<&[crate::model::ForecastExportJobSummary]> {
         self.forecast_export_jobs.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -519,14 +501,12 @@ pub mod list_forecast_export_jobs_output {
             self.forecast_export_jobs = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -551,24 +531,20 @@ impl ListForecastExportJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilityExportsOutput {
-    /// <p>An array of objects that summarize the properties of each Explainability
-    /// export.</p>
+    /// <p>An array of objects that summarize the properties of each Explainability export.</p>
     pub explainability_exports:
         std::option::Option<std::vec::Vec<crate::model::ExplainabilityExportSummary>>,
-    /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-    /// use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExplainabilityExportsOutput {
-    /// <p>An array of objects that summarize the properties of each Explainability
-    /// export.</p>
+    /// <p>An array of objects that summarize the properties of each Explainability export.</p>
     pub fn explainability_exports(
         &self,
     ) -> std::option::Option<&[crate::model::ExplainabilityExportSummary]> {
         self.explainability_exports.as_deref()
     }
-    /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-    /// use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -596,8 +572,7 @@ pub mod list_explainability_exports_output {
         ///
         /// To override the contents of this collection use [`set_explainability_exports`](Self::set_explainability_exports).
         ///
-        /// <p>An array of objects that summarize the properties of each Explainability
-        /// export.</p>
+        /// <p>An array of objects that summarize the properties of each Explainability export.</p>
         pub fn explainability_exports(
             mut self,
             input: crate::model::ExplainabilityExportSummary,
@@ -607,8 +582,7 @@ pub mod list_explainability_exports_output {
             self.explainability_exports = Some(v);
             self
         }
-        /// <p>An array of objects that summarize the properties of each Explainability
-        /// export.</p>
+        /// <p>An array of objects that summarize the properties of each Explainability export.</p>
         pub fn set_explainability_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplainabilityExportSummary>>,
@@ -616,14 +590,12 @@ pub mod list_explainability_exports_output {
             self.explainability_exports = input;
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-        /// use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-        /// use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -648,21 +620,17 @@ impl ListExplainabilityExportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilitiesOutput {
-    /// <p>An array of objects that summarize the properties of each Explainability
-    /// resource.</p>
+    /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
     pub explainabilities: std::option::Option<std::vec::Vec<crate::model::ExplainabilitySummary>>,
-    /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-    /// use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExplainabilitiesOutput {
-    /// <p>An array of objects that summarize the properties of each Explainability
-    /// resource.</p>
+    /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
     pub fn explainabilities(&self) -> std::option::Option<&[crate::model::ExplainabilitySummary]> {
         self.explainabilities.as_deref()
     }
-    /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-    /// use the token in the next request.</p>
+    /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -690,16 +658,14 @@ pub mod list_explainabilities_output {
         ///
         /// To override the contents of this collection use [`set_explainabilities`](Self::set_explainabilities).
         ///
-        /// <p>An array of objects that summarize the properties of each Explainability
-        /// resource.</p>
+        /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
         pub fn explainabilities(mut self, input: crate::model::ExplainabilitySummary) -> Self {
             let mut v = self.explainabilities.unwrap_or_default();
             v.push(input);
             self.explainabilities = Some(v);
             self
         }
-        /// <p>An array of objects that summarize the properties of each Explainability
-        /// resource.</p>
+        /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
         pub fn set_explainabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplainabilitySummary>>,
@@ -707,14 +673,12 @@ pub mod list_explainabilities_output {
             self.explainabilities = input;
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-        /// use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Returns this token if the response is truncated. To retrieve the next set of results,
-        /// use the token in the next request.</p>
+        /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -741,8 +705,7 @@ impl ListExplainabilitiesOutput {
 pub struct ListDatasetsOutput {
     /// <p>An array of objects that summarize each dataset's properties.</p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -750,8 +713,7 @@ impl ListDatasetsOutput {
     pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
         self.datasets.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -793,14 +755,12 @@ pub mod list_datasets_output {
             self.datasets = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -828,8 +788,7 @@ pub struct ListDatasetImportJobsOutput {
     /// <p>An array of objects that summarize each dataset import job's properties.</p>
     pub dataset_import_jobs:
         std::option::Option<std::vec::Vec<crate::model::DatasetImportJobSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetImportJobsOutput {
@@ -839,8 +798,7 @@ impl ListDatasetImportJobsOutput {
     ) -> std::option::Option<&[crate::model::DatasetImportJobSummary]> {
         self.dataset_import_jobs.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -883,14 +841,12 @@ pub mod list_dataset_import_jobs_output {
             self.dataset_import_jobs = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -917,8 +873,7 @@ impl ListDatasetImportJobsOutput {
 pub struct ListDatasetGroupsOutput {
     /// <p>An array of objects that summarize each dataset group's properties.</p>
     pub dataset_groups: std::option::Option<std::vec::Vec<crate::model::DatasetGroupSummary>>,
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetGroupsOutput {
@@ -926,8 +881,7 @@ impl ListDatasetGroupsOutput {
     pub fn dataset_groups(&self) -> std::option::Option<&[crate::model::DatasetGroupSummary]> {
         self.dataset_groups.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-    /// results, use the token in the next request.</p>
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -970,14 +924,12 @@ pub mod list_dataset_groups_output {
             self.dataset_groups = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
-        /// results, use the token in the next request.</p>
+        /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1005,15 +957,12 @@ pub struct GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
     pub predictor_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-    /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+    /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub is_auto_predictor: std::option::Option<bool>,
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -1026,17 +975,14 @@ impl GetAccuracyMetricsOutput {
     ) -> std::option::Option<&[crate::model::EvaluationResult]> {
         self.predictor_evaluation_results.as_deref()
     }
-    /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+    /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub fn is_auto_predictor(&self) -> std::option::Option<bool> {
         self.is_auto_predictor
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub fn auto_ml_override_strategy(
         &self,
@@ -1097,23 +1043,20 @@ pub mod get_accuracy_metrics_output {
             self.predictor_evaluation_results = input;
             self
         }
-        /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+        /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
         pub fn is_auto_predictor(mut self, input: bool) -> Self {
             self.is_auto_predictor = Some(input);
             self
         }
-        /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+        /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
         pub fn set_is_auto_predictor(mut self, input: std::option::Option<bool>) -> Self {
             self.is_auto_predictor = input;
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-        /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn auto_ml_override_strategy(
             mut self,
@@ -1123,12 +1066,9 @@ pub mod get_accuracy_metrics_output {
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-        /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn set_auto_ml_override_strategy(
             mut self,
@@ -1178,62 +1118,27 @@ pub struct DescribePredictorBacktestExportJobOutput {
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the predictor backtest export job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -1250,8 +1155,7 @@ impl DescribePredictorBacktestExportJobOutput {
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
@@ -1261,28 +1165,10 @@ impl DescribePredictorBacktestExportJobOutput {
     }
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1293,27 +1179,11 @@ impl DescribePredictorBacktestExportJobOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -1400,14 +1270,12 @@ pub mod describe_predictor_backtest_export_job_output {
             self.predictor_arn = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -1427,28 +1295,10 @@ pub mod describe_predictor_backtest_export_job_output {
         }
         /// <p>The status of the predictor backtest export job. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -1456,28 +1306,10 @@ pub mod describe_predictor_backtest_export_job_output {
         }
         /// <p>The status of the predictor backtest export job. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -1498,27 +1330,11 @@ pub mod describe_predictor_backtest_export_job_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -1526,27 +1342,11 @@ pub mod describe_predictor_backtest_export_job_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -1589,34 +1389,24 @@ pub struct DescribePredictorOutput {
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
     pub auto_ml_algorithm_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of time-steps of the forecast. The forecast horizon is also called the
-    /// prediction length.</p>
+    /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
     pub forecast_horizon: std::option::Option<i32>,
-    /// <p>The forecast types used during predictor training. Default value is
-    /// <code>["0.1","0.5","0.9"]</code>
-    /// </p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
     pub perform_auto_ml: std::option::Option<bool>,
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>Whether the predictor is set to perform hyperparameter optimization (HPO).</p>
     pub perform_hpo: std::option::Option<bool>,
-    /// <p>The default training parameters or overrides selected during model training. When running
-    /// AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen
-    /// hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+    /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub training_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-    /// evaluates a predictor by splitting a dataset into training data and testing data. The
-    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
     pub evaluation_parameters: std::option::Option<crate::model::EvaluationParameters>,
     /// <p>The hyperparameter override values for the algorithm.</p>
     pub hpo_config: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
@@ -1624,77 +1414,37 @@ pub struct DescribePredictorOutput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The featurization configuration.</p>
     pub featurization_config: std::option::Option<crate::model::FeaturizationConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
-    /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy
-    /// of the predictor. You specify the number of backtests to perform when you call the  operation.</p>
+    /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
     pub predictor_execution_details: std::option::Option<crate::model::PredictorExecutionDetails>,
     /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
-    /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+    /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub is_auto_predictor: std::option::Option<bool>,
-    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-    /// predictor.</p>
+    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
     pub dataset_import_job_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-    /// the predictor to create a forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the model training task was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -1717,14 +1467,11 @@ impl DescribePredictorOutput {
     pub fn auto_ml_algorithm_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_ml_algorithm_arns.as_deref()
     }
-    /// <p>The number of time-steps of the forecast. The forecast horizon is also called the
-    /// prediction length.</p>
+    /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
     pub fn forecast_horizon(&self) -> std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>The forecast types used during predictor training. Default value is
-    /// <code>["0.1","0.5","0.9"]</code>
-    /// </p>
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
@@ -1733,12 +1480,9 @@ impl DescribePredictorOutput {
         self.perform_auto_ml
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub fn auto_ml_override_strategy(
         &self,
@@ -1749,18 +1493,14 @@ impl DescribePredictorOutput {
     pub fn perform_hpo(&self) -> std::option::Option<bool> {
         self.perform_hpo
     }
-    /// <p>The default training parameters or overrides selected during model training. When running
-    /// AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen
-    /// hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+    /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub fn training_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.training_parameters.as_ref()
     }
-    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-    /// evaluates a predictor by splitting a dataset into training data and testing data. The
-    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
     pub fn evaluation_parameters(
         &self,
     ) -> std::option::Option<&crate::model::EvaluationParameters> {
@@ -1778,13 +1518,11 @@ impl DescribePredictorOutput {
     pub fn featurization_config(&self) -> std::option::Option<&crate::model::FeaturizationConfig> {
         self.featurization_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
-    /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy
-    /// of the predictor. You specify the number of backtests to perform when you call the  operation.</p>
+    /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
     pub fn predictor_execution_details(
         &self,
     ) -> std::option::Option<&crate::model::PredictorExecutionDetails> {
@@ -1794,43 +1532,22 @@ impl DescribePredictorOutput {
     pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
         self.estimated_time_remaining_in_minutes
     }
-    /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+    /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub fn is_auto_predictor(&self) -> std::option::Option<bool> {
         self.is_auto_predictor
     }
-    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-    /// predictor.</p>
+    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
     pub fn dataset_import_job_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_import_job_arns.as_deref()
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-    /// the predictor to create a forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1843,30 +1560,13 @@ impl DescribePredictorOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -2006,14 +1706,12 @@ pub mod describe_predictor_output {
             self.auto_ml_algorithm_arns = input;
             self
         }
-        /// <p>The number of time-steps of the forecast. The forecast horizon is also called the
-        /// prediction length.</p>
+        /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
         pub fn forecast_horizon(mut self, input: i32) -> Self {
             self.forecast_horizon = Some(input);
             self
         }
-        /// <p>The number of time-steps of the forecast. The forecast horizon is also called the
-        /// prediction length.</p>
+        /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.forecast_horizon = input;
             self
@@ -2022,18 +1720,14 @@ pub mod describe_predictor_output {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The forecast types used during predictor training. Default value is
-        /// <code>["0.1","0.5","0.9"]</code>
-        /// </p>
+        /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
-        /// <p>The forecast types used during predictor training. Default value is
-        /// <code>["0.1","0.5","0.9"]</code>
-        /// </p>
+        /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2052,12 +1746,9 @@ pub mod describe_predictor_output {
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-        /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn auto_ml_override_strategy(
             mut self,
@@ -2067,12 +1758,9 @@ pub mod describe_predictor_output {
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-        /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+        /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn set_auto_ml_override_strategy(
             mut self,
@@ -2095,9 +1783,7 @@ pub mod describe_predictor_output {
         ///
         /// To override the contents of this collection use [`set_training_parameters`](Self::set_training_parameters).
         ///
-        /// <p>The default training parameters or overrides selected during model training. When running
-        /// AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen
-        /// hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn training_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2108,9 +1794,7 @@ pub mod describe_predictor_output {
             self.training_parameters = Some(hash_map);
             self
         }
-        /// <p>The default training parameters or overrides selected during model training. When running
-        /// AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen
-        /// hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn set_training_parameters(
             mut self,
             input: std::option::Option<
@@ -2120,16 +1804,12 @@ pub mod describe_predictor_output {
             self.training_parameters = input;
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn evaluation_parameters(mut self, input: crate::model::EvaluationParameters) -> Self {
             self.evaluation_parameters = Some(input);
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn set_evaluation_parameters(
             mut self,
             input: std::option::Option<crate::model::EvaluationParameters>,
@@ -2176,14 +1856,12 @@ pub mod describe_predictor_output {
             self.featurization_config = input;
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -2191,8 +1869,7 @@ pub mod describe_predictor_output {
             self.encryption_config = input;
             self
         }
-        /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy
-        /// of the predictor. You specify the number of backtests to perform when you call the  operation.</p>
+        /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
         pub fn predictor_execution_details(
             mut self,
             input: crate::model::PredictorExecutionDetails,
@@ -2200,8 +1877,7 @@ pub mod describe_predictor_output {
             self.predictor_execution_details = Some(input);
             self
         }
-        /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy
-        /// of the predictor. You specify the number of backtests to perform when you call the  operation.</p>
+        /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
         pub fn set_predictor_execution_details(
             mut self,
             input: std::option::Option<crate::model::PredictorExecutionDetails>,
@@ -2222,12 +1898,12 @@ pub mod describe_predictor_output {
             self.estimated_time_remaining_in_minutes = input;
             self
         }
-        /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+        /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
         pub fn is_auto_predictor(mut self, input: bool) -> Self {
             self.is_auto_predictor = Some(input);
             self
         }
-        /// <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+        /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
         pub fn set_is_auto_predictor(mut self, input: std::option::Option<bool>) -> Self {
             self.is_auto_predictor = input;
             self
@@ -2236,16 +1912,14 @@ pub mod describe_predictor_output {
         ///
         /// To override the contents of this collection use [`set_dataset_import_job_arns`](Self::set_dataset_import_job_arns).
         ///
-        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-        /// predictor.</p>
+        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
         pub fn dataset_import_job_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_import_job_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_import_job_arns = Some(v);
             self
         }
-        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-        /// predictor.</p>
+        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
         pub fn set_dataset_import_job_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2255,32 +1929,12 @@ pub mod describe_predictor_output {
         }
         /// <p>The status of the predictor. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-        /// the predictor to create a forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2288,32 +1942,12 @@ pub mod describe_predictor_output {
         }
         /// <p>The status of the predictor. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-        /// the predictor to create a forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -2342,59 +1976,25 @@ pub mod describe_predictor_output {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -2470,59 +2070,23 @@ pub struct DescribeForecastExportJobOutput {
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your S3 bucket.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the forecast export job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2549,32 +2113,12 @@ impl DescribeForecastExportJobOutput {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your S3 bucket.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -2585,27 +2129,11 @@ impl DescribeForecastExportJobOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -2702,32 +2230,12 @@ pub mod describe_forecast_export_job_output {
         }
         /// <p>The status of the forecast export job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your S3 bucket.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2735,32 +2243,12 @@ pub mod describe_forecast_export_job_output {
         }
         /// <p>The status of the forecast export job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your S3 bucket.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -2781,27 +2269,11 @@ pub mod describe_forecast_export_job_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -2809,27 +2281,11 @@ pub mod describe_forecast_export_job_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -2878,32 +2334,12 @@ pub struct DescribeForecastOutput {
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-    /// or export the forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -2912,27 +2348,11 @@ pub struct DescribeForecastOutput {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2963,32 +2383,12 @@ impl DescribeForecastOutput {
     }
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-    /// or export the forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -3003,27 +2403,11 @@ impl DescribeForecastOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -3149,32 +2533,12 @@ pub mod describe_forecast_output {
         }
         /// <p>The status of the forecast. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-        /// or export the forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -3182,32 +2546,12 @@ pub mod describe_forecast_output {
         }
         /// <p>The status of the forecast. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-        /// or export the forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -3238,27 +2582,11 @@ pub mod describe_forecast_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -3266,27 +2594,11 @@ pub mod describe_forecast_output {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -3329,63 +2641,27 @@ pub struct DescribeExplainabilityExportOutput {
     pub explainability_export_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub explainability_arn: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>Information about any errors that occurred during the export.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the Explainability export was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -3402,8 +2678,7 @@ impl DescribeExplainabilityExportOutput {
     pub fn explainability_arn(&self) -> std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
@@ -3413,28 +2688,10 @@ impl DescribeExplainabilityExportOutput {
     }
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -3443,30 +2700,13 @@ impl DescribeExplainabilityExportOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -3544,14 +2784,12 @@ pub mod describe_explainability_export_output {
             self.explainability_arn = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -3571,28 +2809,10 @@ pub mod describe_explainability_export_output {
         }
         /// <p>The status of the Explainability export. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -3600,28 +2820,10 @@ pub mod describe_explainability_export_output {
         }
         /// <p>The status of the Explainability export. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -3640,59 +2842,25 @@ pub mod describe_explainability_export_output {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -3731,83 +2899,41 @@ pub struct DescribeExplainabilityOutput {
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability.</p>
     pub explainability_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
     /// <p>Whether the visualization was enabled for the Explainability resource.</p>
     pub enable_visualization: std::option::Option<bool>,
-    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-    /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-    /// <a>CreateDatasetImportJob</a> request.</p>
+    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <code>CreateDatasetImportJob</code> request.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+    /// <p>Defines the fields of a dataset. You specify this object in the <code>CreateDataset</code> request.</p>
     pub schema: std::option::Option<crate::model::Schema>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time
-    /// point in the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
     pub start_date_time: std::option::Option<std::string::String>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time
-    /// point in the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
     pub end_date_time: std::option::Option<std::string::String>,
-    /// <p>The estimated time remaining in minutes for the <a>CreateExplainability</a>
-    /// job to complete.</p>
+    /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>If an error occurred, a message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the Explainability resource. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the Explainability resource was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -3820,13 +2946,11 @@ impl DescribeExplainabilityOutput {
     pub fn explainability_name(&self) -> std::option::Option<&str> {
         self.explainability_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn explainability_config(
         &self,
     ) -> std::option::Option<&crate::model::ExplainabilityConfig> {
@@ -3836,28 +2960,23 @@ impl DescribeExplainabilityOutput {
     pub fn enable_visualization(&self) -> std::option::Option<bool> {
         self.enable_visualization
     }
-    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-    /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-    /// <a>CreateDatasetImportJob</a> request.</p>
+    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <code>CreateDatasetImportJob</code> request.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
     }
-    /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+    /// <p>Defines the fields of a dataset. You specify this object in the <code>CreateDataset</code> request.</p>
     pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
         self.schema.as_ref()
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time
-    /// point in the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
     pub fn start_date_time(&self) -> std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time
-    /// point in the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
     pub fn end_date_time(&self) -> std::option::Option<&str> {
         self.end_date_time.as_deref()
     }
-    /// <p>The estimated time remaining in minutes for the <a>CreateExplainability</a>
-    /// job to complete.</p>
+    /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
     pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
         self.estimated_time_remaining_in_minutes
     }
@@ -3867,28 +2986,10 @@ impl DescribeExplainabilityOutput {
     }
     /// <p>The status of the Explainability resource. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -3897,30 +2998,13 @@ impl DescribeExplainabilityOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -3997,26 +3081,22 @@ pub mod describe_explainability_output {
             self.explainability_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
             self.explainability_config = Some(input);
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn set_explainability_config(
             mut self,
             input: std::option::Option<crate::model::ExplainabilityConfig>,
@@ -4034,16 +3114,12 @@ pub mod describe_explainability_output {
             self.enable_visualization = input;
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
+        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <code>CreateDatasetImportJob</code> request.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
+        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <code>CreateDatasetImportJob</code> request.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -4051,24 +3127,22 @@ pub mod describe_explainability_output {
             self.data_source = input;
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        /// <p>Defines the fields of a dataset. You specify this object in the <code>CreateDataset</code> request.</p>
         pub fn schema(mut self, input: crate::model::Schema) -> Self {
             self.schema = Some(input);
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        /// <p>Defines the fields of a dataset. You specify this object in the <code>CreateDataset</code> request.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.schema = input;
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time
-        /// point in the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
         pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date_time = Some(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time
-        /// point in the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4076,14 +3150,12 @@ pub mod describe_explainability_output {
             self.start_date_time = input;
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time
-        /// point in the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
         pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date_time = Some(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time
-        /// point in the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4091,14 +3163,12 @@ pub mod describe_explainability_output {
             self.end_date_time = input;
             self
         }
-        /// <p>The estimated time remaining in minutes for the <a>CreateExplainability</a>
-        /// job to complete.</p>
+        /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
         pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
             self.estimated_time_remaining_in_minutes = Some(input);
             self
         }
-        /// <p>The estimated time remaining in minutes for the <a>CreateExplainability</a>
-        /// job to complete.</p>
+        /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
         pub fn set_estimated_time_remaining_in_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -4118,28 +3188,10 @@ pub mod describe_explainability_output {
         }
         /// <p>The status of the Explainability resource. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -4147,28 +3199,10 @@ pub mod describe_explainability_output {
         }
         /// <p>The status of the Explainability resource. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -4187,59 +3221,25 @@ pub mod describe_explainability_output {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -4284,34 +3284,21 @@ pub struct DescribeDatasetImportJobOutput {
     pub dataset_import_job_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset import job.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-    /// supported</p>
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li>
-    /// <p>"yyyy-MM-dd"</p>
-    /// <p>For the following data frequencies: Y, M, W, and D</p>
-    /// </li>
-    /// <li>
-    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-    /// M, W, and D</p>
-    /// </li>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     pub timestamp_format: std::option::Option<std::string::String>,
     /// <p>The single time zone applied to every item in the dataset</p>
     pub time_zone: std::option::Option<std::string::String>,
-    /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
-    /// attribute.</p>
+    /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
     pub use_geolocation_for_time_zone: bool,
-    /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
-    /// <code>"CC_POSTALCODE"</code>.</p>
+    /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
     pub geolocation_format: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
@@ -4324,58 +3311,23 @@ pub struct DescribeDatasetImportJobOutput {
     pub data_size: std::option::Option<f64>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the dataset import job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -4388,24 +3340,14 @@ impl DescribeDatasetImportJobOutput {
     pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
         self.dataset_import_job_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-    /// supported</p>
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li>
-    /// <p>"yyyy-MM-dd"</p>
-    /// <p>For the following data frequencies: Y, M, W, and D</p>
-    /// </li>
-    /// <li>
-    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-    /// M, W, and D</p>
-    /// </li>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
@@ -4414,18 +3356,15 @@ impl DescribeDatasetImportJobOutput {
     pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
     }
-    /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
-    /// attribute.</p>
+    /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
     pub fn use_geolocation_for_time_zone(&self) -> bool {
         self.use_geolocation_for_time_zone
     }
-    /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
-    /// <code>"CC_POSTALCODE"</code>.</p>
+    /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
     pub fn geolocation_format(&self) -> std::option::Option<&str> {
         self.geolocation_format.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
@@ -4448,28 +3387,10 @@ impl DescribeDatasetImportJobOutput {
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -4482,30 +3403,13 @@ impl DescribeDatasetImportJobOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -4589,49 +3493,29 @@ pub mod describe_dataset_import_job_output {
             self.dataset_import_job_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
         pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
         pub fn set_timestamp_format(
             mut self,
@@ -4650,14 +3534,12 @@ pub mod describe_dataset_import_job_output {
             self.time_zone = input;
             self
         }
-        /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
-        /// attribute.</p>
+        /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
         pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
             self.use_geolocation_for_time_zone = Some(input);
             self
         }
-        /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
-        /// attribute.</p>
+        /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
         pub fn set_use_geolocation_for_time_zone(
             mut self,
             input: std::option::Option<bool>,
@@ -4665,14 +3547,12 @@ pub mod describe_dataset_import_job_output {
             self.use_geolocation_for_time_zone = input;
             self
         }
-        /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
-        /// <code>"CC_POSTALCODE"</code>.</p>
+        /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
         pub fn geolocation_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.geolocation_format = Some(input.into());
             self
         }
-        /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
-        /// <code>"CC_POSTALCODE"</code>.</p>
+        /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
         pub fn set_geolocation_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4680,15 +3560,13 @@ pub mod describe_dataset_import_job_output {
             self.geolocation_format = input;
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
         /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
         /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
         pub fn set_data_source(
             mut self,
@@ -4747,28 +3625,10 @@ pub mod describe_dataset_import_job_output {
         }
         /// <p>The status of the dataset import job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -4776,28 +3636,10 @@ pub mod describe_dataset_import_job_output {
         }
         /// <p>The status of the dataset import job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -4826,59 +3668,25 @@ pub mod describe_dataset_import_job_output {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -4926,48 +3734,24 @@ pub struct DescribeDatasetGroupOutput {
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset
-    /// group.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The domain associated with the dataset group.</p>
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The status of the dataset group. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-    /// <code>UPDATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
-    /// use the dataset group to create a predictor.</p>
+    /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-    /// <code>LastModificationTime</code> is the current time of the
-    /// <code>DescribeDatasetGroup</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetGroupOutput {
@@ -4979,8 +3763,7 @@ impl DescribeDatasetGroupOutput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset
-    /// group.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
     pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_arns.as_deref()
     }
@@ -4990,34 +3773,13 @@ impl DescribeDatasetGroupOutput {
     }
     /// <p>The status of the dataset group. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-    /// <code>UPDATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
-    /// use the dataset group to create a predictor.</p>
+    /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5026,9 +3788,7 @@ impl DescribeDatasetGroupOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-    /// <code>LastModificationTime</code> is the current time of the
-    /// <code>DescribeDatasetGroup</code> call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -5091,16 +3851,14 @@ pub mod describe_dataset_group_output {
         ///
         /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset
-        /// group.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
         pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_arns = Some(v);
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset
-        /// group.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5120,34 +3878,13 @@ pub mod describe_dataset_group_output {
         }
         /// <p>The status of the dataset group. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-        /// <code>UPDATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.</p>
-        /// <note>
-        /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
-        /// use the dataset group to create a predictor.</p>
+        /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+        /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -5155,34 +3892,13 @@ pub mod describe_dataset_group_output {
         }
         /// <p>The status of the dataset group. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-        /// <code>UPDATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.</p>
-        /// <note>
-        /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
-        /// use the dataset group to create a predictor.</p>
+        /// <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>
+        /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -5201,16 +3917,12 @@ pub mod describe_dataset_group_output {
             self.creation_time = input;
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-        /// <code>LastModificationTime</code> is the current time of the
-        /// <code>DescribeDatasetGroup</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-        /// <code>LastModificationTime</code> is the current time of the
-        /// <code>DescribeDatasetGroup</code> call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5252,58 +3964,26 @@ pub struct DescribeDatasetOutput {
     /// <p>The dataset type.</p>
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
     /// <p>The frequency of data collection.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-    /// "M" indicates every month and "30min" indicates every 30 minutes.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
     pub data_frequency: std::option::Option<std::string::String>,
-    /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each
-    /// <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+    /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     pub schema: std::option::Option<crate::model::Schema>,
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The status of the dataset. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-    /// <code>UPDATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to
-    /// the <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset
-    /// import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the
-    /// status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import
-    /// training data.</p>
+    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+    /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>When the dataset was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-    /// <code>CreationTime</code>. While data is being imported to the dataset,
-    /// <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code>
-    /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
-    /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeDatasetOutput {
@@ -5324,55 +4004,27 @@ impl DescribeDatasetOutput {
         self.dataset_type.as_ref()
     }
     /// <p>The frequency of data collection.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-    /// "M" indicates every month and "30min" indicates every 30 minutes.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
     pub fn data_frequency(&self) -> std::option::Option<&str> {
         self.data_frequency.as_deref()
     }
-    /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each
-    /// <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+    /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
         self.schema.as_ref()
     }
-    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
     /// <p>The status of the dataset. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-    /// <code>UPDATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
     /// </ul>
-    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to
-    /// the <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset
-    /// import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the
-    /// status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import
-    /// training data.</p>
+    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+    /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5381,11 +4033,7 @@ impl DescribeDatasetOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-    /// <code>CreationTime</code>. While data is being imported to the dataset,
-    /// <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code>
-    /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
-    /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -5468,17 +4116,13 @@ pub mod describe_dataset_output {
             self
         }
         /// <p>The frequency of data collection.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "M" indicates every month and "30min" indicates every 30 minutes.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
         pub fn data_frequency(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_frequency = Some(input.into());
             self
         }
         /// <p>The frequency of data collection.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "M" indicates every month and "30min" indicates every 30 minutes.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
         pub fn set_data_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5486,26 +4130,22 @@ pub mod describe_dataset_output {
             self.data_frequency = input;
             self
         }
-        /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each
-        /// <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+        /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
         pub fn schema(mut self, input: crate::model::Schema) -> Self {
             self.schema = Some(input);
             self
         }
-        /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each
-        /// <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+        /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.schema = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -5515,37 +4155,13 @@ pub mod describe_dataset_output {
         }
         /// <p>The status of the dataset. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-        /// <code>UPDATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to
-        /// the <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset
-        /// import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the
-        /// status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p>
-        /// <note>
-        /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import
-        /// training data.</p>
+        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+        /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -5553,37 +4169,13 @@ pub mod describe_dataset_output {
         }
         /// <p>The status of the dataset. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
-        /// <code>UPDATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>
         /// </ul>
-        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to
-        /// the <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset
-        /// import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the
-        /// status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p>
-        /// <note>
-        /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import
-        /// training data.</p>
+        /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
+        /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -5602,20 +4194,12 @@ pub mod describe_dataset_output {
             self.creation_time = input;
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-        /// <code>CreationTime</code>. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code>
-        /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
-        /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-        /// <code>CreationTime</code>. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code>
-        /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
-        /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5655,86 +4239,42 @@ pub struct DescribeAutoPredictorOutput {
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor.</p>
     pub predictor_name: std::option::Option<std::string::String>,
-    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-    /// the prediction length.</p>
+    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     pub forecast_horizon: std::option::Option<i32>,
-    /// <p>The forecast types used during predictor training. Default value is
-    /// ["0.1","0.5","0.9"].</p>
+    /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-    /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
     pub forecast_frequency: std::option::Option<std::string::String>,
-    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-    /// predictor.</p>
+    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
     pub dataset_import_job_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
     pub data_config: std::option::Option<crate::model::DataConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-    /// access the key. You can specify this optional object in the
-    /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
-    /// <p>The ARN and state of the reference predictor. This parameter is only valid for
-    /// retrained or upgraded predictors.</p>
+    /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
     pub reference_predictor_summary: std::option::Option<crate::model::ReferencePredictorSummary>,
-    /// <p>The estimated time remaining in minutes for the predictor training job to
-    /// complete.</p>
+    /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>The status of the predictor. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>In the event of an error, a message detailing the cause of the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the CreateAutoPredictor request.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -5751,25 +4291,20 @@ impl DescribeAutoPredictorOutput {
     pub fn predictor_name(&self) -> std::option::Option<&str> {
         self.predictor_name.as_deref()
     }
-    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-    /// the prediction length.</p>
+    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     pub fn forecast_horizon(&self) -> std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>The forecast types used during predictor training. Default value is
-    /// ["0.1","0.5","0.9"].</p>
+    /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-    /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
     pub fn forecast_frequency(&self) -> std::option::Option<&str> {
         self.forecast_frequency.as_deref()
     }
-    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-    /// predictor.</p>
+    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
     pub fn dataset_import_job_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_import_job_arns.as_deref()
     }
@@ -5777,48 +4312,26 @@ impl DescribeAutoPredictorOutput {
     pub fn data_config(&self) -> std::option::Option<&crate::model::DataConfig> {
         self.data_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-    /// access the key. You can specify this optional object in the
-    /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
-    /// <p>The ARN and state of the reference predictor. This parameter is only valid for
-    /// retrained or upgraded predictors.</p>
+    /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
     pub fn reference_predictor_summary(
         &self,
     ) -> std::option::Option<&crate::model::ReferencePredictorSummary> {
         self.reference_predictor_summary.as_ref()
     }
-    /// <p>The estimated time remaining in minutes for the predictor training job to
-    /// complete.</p>
+    /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
     pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
         self.estimated_time_remaining_in_minutes
     }
     /// <p>The status of the predictor. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5831,30 +4344,13 @@ impl DescribeAutoPredictorOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -5947,14 +4443,12 @@ pub mod describe_auto_predictor_output {
             self.predictor_name = input;
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
         pub fn forecast_horizon(mut self, input: i32) -> Self {
             self.forecast_horizon = Some(input);
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.forecast_horizon = input;
             self
@@ -5963,16 +4457,14 @@ pub mod describe_auto_predictor_output {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The forecast types used during predictor training. Default value is
-        /// ["0.1","0.5","0.9"].</p>
+        /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
-        /// <p>The forecast types used during predictor training. Default value is
-        /// ["0.1","0.5","0.9"].</p>
+        /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5981,17 +4473,13 @@ pub mod describe_auto_predictor_output {
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
         pub fn forecast_frequency(mut self, input: impl Into<std::string::String>) -> Self {
             self.forecast_frequency = Some(input.into());
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
         pub fn set_forecast_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6003,16 +4491,14 @@ pub mod describe_auto_predictor_output {
         ///
         /// To override the contents of this collection use [`set_dataset_import_job_arns`](Self::set_dataset_import_job_arns).
         ///
-        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-        /// predictor.</p>
+        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
         pub fn dataset_import_job_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_import_job_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_import_job_arns = Some(v);
             self
         }
-        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
-        /// predictor.</p>
+        /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
         pub fn set_dataset_import_job_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6033,16 +4519,12 @@ pub mod describe_auto_predictor_output {
             self.data_config = input;
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -6050,8 +4532,7 @@ pub mod describe_auto_predictor_output {
             self.encryption_config = input;
             self
         }
-        /// <p>The ARN and state of the reference predictor. This parameter is only valid for
-        /// retrained or upgraded predictors.</p>
+        /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
         pub fn reference_predictor_summary(
             mut self,
             input: crate::model::ReferencePredictorSummary,
@@ -6059,8 +4540,7 @@ pub mod describe_auto_predictor_output {
             self.reference_predictor_summary = Some(input);
             self
         }
-        /// <p>The ARN and state of the reference predictor. This parameter is only valid for
-        /// retrained or upgraded predictors.</p>
+        /// <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
         pub fn set_reference_predictor_summary(
             mut self,
             input: std::option::Option<crate::model::ReferencePredictorSummary>,
@@ -6068,14 +4548,12 @@ pub mod describe_auto_predictor_output {
             self.reference_predictor_summary = input;
             self
         }
-        /// <p>The estimated time remaining in minutes for the predictor training job to
-        /// complete.</p>
+        /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
         pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
             self.estimated_time_remaining_in_minutes = Some(input);
             self
         }
-        /// <p>The estimated time remaining in minutes for the predictor training job to
-        /// complete.</p>
+        /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
         pub fn set_estimated_time_remaining_in_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -6085,28 +4563,10 @@ pub mod describe_auto_predictor_output {
         }
         /// <p>The status of the predictor. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -6114,28 +4574,10 @@ pub mod describe_auto_predictor_output {
         }
         /// <p>The status of the predictor. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -6164,59 +4606,25 @@ pub mod describe_auto_predictor_output {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -6585,13 +4993,11 @@ impl DeleteDatasetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorBacktestExportJobOutput {
-    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to
-    /// export.</p>
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
 impl CreatePredictorBacktestExportJobOutput {
-    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to
-    /// export.</p>
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
     pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
         self.predictor_backtest_export_job_arn.as_deref()
     }
@@ -6615,8 +5021,7 @@ pub mod create_predictor_backtest_export_job_output {
         pub(crate) predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to
-        /// export.</p>
+        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
         pub fn predictor_backtest_export_job_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6624,8 +5029,7 @@ pub mod create_predictor_backtest_export_job_output {
             self.predictor_backtest_export_job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to
-        /// export.</p>
+        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
         pub fn set_predictor_backtest_export_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,

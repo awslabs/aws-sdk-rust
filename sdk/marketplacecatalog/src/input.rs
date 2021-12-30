@@ -10,26 +10,22 @@ pub mod cancel_change_set_input {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_id = Some(input.into());
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -178,28 +174,22 @@ pub mod describe_change_set_input {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_id = Some(input.into());
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -348,16 +338,12 @@ pub mod describe_entity_input {
         pub(crate) entity_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -516,14 +502,12 @@ pub mod list_change_sets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -547,40 +531,32 @@ pub mod list_change_sets_input {
             self.filter_list = input;
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
             self.sort = Some(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.sort = input;
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -733,14 +709,12 @@ pub mod list_entities_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -759,16 +733,14 @@ pub mod list_entities_input {
         ///
         /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
         ///
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
             v.push(input);
             self.filter_list = Some(v);
             self
         }
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn set_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -776,14 +748,12 @@ pub mod list_entities_input {
             self.filter_list = input;
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
             self.sort = Some(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.sort = input;
             self
@@ -798,14 +768,12 @@ pub mod list_entities_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -956,14 +924,12 @@ pub mod start_change_set_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog = Some(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -987,14 +953,12 @@ pub mod start_change_set_input {
             self.change_set = input;
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_name = Some(input.into());
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1152,20 +1116,17 @@ impl StartChangeSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeSetInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Array of <code>change</code> object.</p>
     pub change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-    /// be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>A unique token to identify the request to ensure idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartChangeSetInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -1173,8 +1134,7 @@ impl StartChangeSetInput {
     pub fn change_set(&self) -> std::option::Option<&[crate::model::Change]> {
         self.change_set.as_deref()
     }
-    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-    /// be used to filter the list of change sets. </p>
+    /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
     pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
@@ -1198,26 +1158,21 @@ impl std::fmt::Debug for StartChangeSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub catalog: std::option::Option<std::string::String>,
     /// <p>The type of entities to retrieve.</p>
     pub entity_type: std::option::Option<std::string::String>,
-    /// <p>An array of filter objects. Each filter object contains two attributes,
-    /// <code>filterName</code> and <code>filterValues</code>.</p>
+    /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>An object that contains two attributes, <code>SortBy</code> and
-    /// <code>SortOrder</code>.</p>
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub sort: std::option::Option<crate::model::Sort>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-    /// the default value is 20.</p>
+    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -1225,13 +1180,11 @@ impl ListEntitiesInput {
     pub fn entity_type(&self) -> std::option::Option<&str> {
         self.entity_type.as_deref()
     }
-    /// <p>An array of filter objects. Each filter object contains two attributes,
-    /// <code>filterName</code> and <code>filterValues</code>.</p>
+    /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filter_list.as_deref()
     }
-    /// <p>An object that contains two attributes, <code>SortBy</code> and
-    /// <code>SortOrder</code>.</p>
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
         self.sort.as_ref()
     }
@@ -1239,8 +1192,7 @@ impl ListEntitiesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-    /// the default value is 20.</p>
+    /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -1262,25 +1214,19 @@ impl std::fmt::Debug for ListEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangeSetsInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub catalog: std::option::Option<std::string::String>,
     /// <p>An array of filter objects.</p>
     pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>An object that contains two attributes, <code>SortBy</code> and
-    /// <code>SortOrder</code>.</p>
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub sort: std::option::Option<crate::model::Sort>,
-    /// <p>The maximum number of results returned by a single call. This value must be provided
-    /// in the next call to retrieve the next set of results. By default, this value is
-    /// 20.</p>
+    /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token value retrieved from a previous call to access the next page of
-    /// results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangeSetsInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -1288,19 +1234,15 @@ impl ListChangeSetsInput {
     pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filter_list.as_deref()
     }
-    /// <p>An object that contains two attributes, <code>SortBy</code> and
-    /// <code>SortOrder</code>.</p>
+    /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
         self.sort.as_ref()
     }
-    /// <p>The maximum number of results returned by a single call. This value must be provided
-    /// in the next call to retrieve the next set of results. By default, this value is
-    /// 20.</p>
+    /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token value retrieved from a previous call to access the next page of
-    /// results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1321,17 +1263,13 @@ impl std::fmt::Debug for ListChangeSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntityInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -1353,23 +1291,17 @@ impl std::fmt::Debug for DescribeEntityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChangeSetInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub catalog: std::option::Option<std::string::String>,
-    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-    /// want to describe the details for.</p>
+    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
     pub change_set_id: std::option::Option<std::string::String>,
 }
 impl DescribeChangeSetInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>
-    /// </p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-    /// want to describe the details for.</p>
+    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
@@ -1387,21 +1319,17 @@ impl std::fmt::Debug for DescribeChangeSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelChangeSetInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>.</p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     pub catalog: std::option::Option<std::string::String>,
-    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-    /// want to cancel.</p>
+    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub change_set_id: std::option::Option<std::string::String>,
 }
 impl CancelChangeSetInput {
-    /// <p>Required. The catalog related to the request. Fixed value:
-    /// <code>AWSMarketplace</code>.</p>
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-    /// want to cancel.</p>
+    /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }

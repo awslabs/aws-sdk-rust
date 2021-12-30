@@ -911,11 +911,9 @@ pub struct GetResponsePlanOutput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create the incident when using this response plan.</p>
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The contacts and escalation plans that the response plan engages during an
-    /// incident.</p>
+    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -937,13 +935,11 @@ impl GetResponsePlanOutput {
     pub fn incident_template(&self) -> std::option::Option<&crate::model::IncidentTemplate> {
         self.incident_template.as_ref()
     }
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The contacts and escalation plans that the response plan engages during an
-    /// incident.</p>
+    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
     pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
         self.engagements.as_ref()
     }
@@ -1023,14 +1019,12 @@ pub mod get_response_plan_output {
             self.incident_template = input;
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -1038,14 +1032,12 @@ pub mod get_response_plan_output {
             self.chat_channel = input;
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             self.engagements = Some(input);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

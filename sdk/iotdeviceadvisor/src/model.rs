@@ -998,38 +998,14 @@ pub struct TestCaseRun {
     pub test_case_definition_name: std::option::Option<std::string::String>,
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PASS</code>: Test passed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAIL</code>: Test failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: Test is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
-    /// </li>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Provides test case run start time.</p>
@@ -1058,38 +1034,14 @@ impl TestCaseRun {
     }
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PASS</code>: Test passed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAIL</code>: Test failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: Test is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
-    /// </li>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
@@ -1188,38 +1140,14 @@ pub mod test_case_run {
         }
         /// <p>Provides the test case run status. Status is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PASS</code>: Test passed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAIL</code>: Test failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: Test is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
-        /// </li>
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
@@ -1227,38 +1155,14 @@ pub mod test_case_run {
         }
         /// <p>Provides the test case run status. Status is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PASS</code>: Test passed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAIL</code>: Test failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: Test is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
-        /// </li>
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;

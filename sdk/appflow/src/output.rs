@@ -257,8 +257,7 @@ pub struct StartFlowOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
-    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
-    /// scheduled or event-triggered flows, this value is null. </p>
+    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
     pub execution_id: std::option::Option<std::string::String>,
 }
 impl StartFlowOutput {
@@ -270,8 +269,7 @@ impl StartFlowOutput {
     pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
-    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
-    /// scheduled or event-triggered flows, this value is null. </p>
+    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
@@ -319,14 +317,12 @@ pub mod start_flow_output {
             self.flow_status = input;
             self
         }
-        /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
-        /// scheduled or event-triggered flows, this value is null. </p>
+        /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_id = Some(input.into());
             self
         }
-        /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
-        /// scheduled or event-triggered flows, this value is null. </p>
+        /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -507,9 +503,7 @@ impl ListFlowsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorEntitiesOutput {
-    /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category.
-    /// This map's key represents the group name, and its value contains the list of entities
-    /// belonging to that group. </p>
+    /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     pub connector_entity_map: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -518,9 +512,7 @@ pub struct ListConnectorEntitiesOutput {
     >,
 }
 impl ListConnectorEntitiesOutput {
-    /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category.
-    /// This map's key represents the group name, and its value contains the list of entities
-    /// belonging to that group. </p>
+    /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     pub fn connector_entity_map(
         &self,
     ) -> std::option::Option<
@@ -557,9 +549,7 @@ pub mod list_connector_entities_output {
         ///
         /// To override the contents of this collection use [`set_connector_entity_map`](Self::set_connector_entity_map).
         ///
-        /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category.
-        /// This map's key represents the group name, and its value contains the list of entities
-        /// belonging to that group. </p>
+        /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
         pub fn connector_entity_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -570,9 +560,7 @@ pub mod list_connector_entities_output {
             self.connector_entity_map = Some(hash_map);
             self
         }
-        /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category.
-        /// This map's key represents the group name, and its value contains the list of entities
-        /// belonging to that group. </p>
+        /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
         pub fn set_connector_entity_map(
             mut self,
             input: std::option::Option<
@@ -691,32 +679,24 @@ pub struct DescribeFlowOutput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> A description of the flow. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
-    /// <p> Contains an error message if the flow status is in a suspended or error state. This
-    /// applies only to scheduled or event-triggered flows. </p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub flow_status_message: std::option::Option<std::string::String>,
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> Describes the details of the most recent flow run. </p>
     pub last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> Specifies when the flow was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -739,15 +719,11 @@ impl DescribeFlowOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
@@ -755,18 +731,15 @@ impl DescribeFlowOutput {
     pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
-    /// <p> Contains an error message if the flow status is in a suspended or error state. This
-    /// applies only to scheduled or event-triggered flows. </p>
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
     pub fn flow_status_message(&self) -> std::option::Option<&str> {
         self.flow_status_message.as_deref()
     }
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn destination_flow_config_list(
         &self,
     ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
@@ -782,8 +755,7 @@ impl DescribeFlowOutput {
     pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -886,30 +858,22 @@ pub mod describe_flow_output {
             self.description = input;
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_arn = Some(input.into());
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_arn = input;
             self
@@ -927,14 +891,12 @@ pub mod describe_flow_output {
             self.flow_status = input;
             self
         }
-        /// <p> Contains an error message if the flow status is in a suspended or error state. This
-        /// applies only to scheduled or event-triggered flows. </p>
+        /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
         pub fn flow_status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_status_message = Some(input.into());
             self
         }
-        /// <p> Contains an error message if the flow status is in a suspended or error state. This
-        /// applies only to scheduled or event-triggered flows. </p>
+        /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
         pub fn set_flow_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -942,14 +904,12 @@ pub mod describe_flow_output {
             self.flow_status_message = input;
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.source_flow_config = Some(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -961,8 +921,7 @@ pub mod describe_flow_output {
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn destination_flow_config_list(
             mut self,
             input: crate::model::DestinationFlowConfig,
@@ -972,8 +931,7 @@ pub mod describe_flow_output {
             self.destination_flow_config_list = Some(v);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn set_destination_flow_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
@@ -1011,16 +969,14 @@ pub mod describe_flow_output {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -1247,8 +1203,7 @@ pub struct DescribeConnectorProfilesOutput {
     /// <p> Returns information about the connector profiles associated with the flow. </p>
     pub connector_profile_details:
         std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
-    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this
-    /// means that all records have been fetched. </p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesOutput {
@@ -1258,8 +1213,7 @@ impl DescribeConnectorProfilesOutput {
     ) -> std::option::Option<&[crate::model::ConnectorProfile]> {
         self.connector_profile_details.as_deref()
     }
-    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this
-    /// means that all records have been fetched. </p>
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1302,14 +1256,12 @@ pub mod describe_connector_profiles_output {
             self.connector_profile_details = input;
             self
         }
-        /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this
-        /// means that all records have been fetched. </p>
+        /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this
-        /// means that all records have been fetched. </p>
+        /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1334,16 +1286,12 @@ impl DescribeConnectorProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorEntityOutput {
-    /// <p> Describes the fields for that connector entity. For example, for an
-    /// <i>account</i> entity, the fields would be <i>account name</i>,
-    /// <i>account ID</i>, and so on. </p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub connector_entity_fields:
         std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
 }
 impl DescribeConnectorEntityOutput {
-    /// <p> Describes the fields for that connector entity. For example, for an
-    /// <i>account</i> entity, the fields would be <i>account name</i>,
-    /// <i>account ID</i>, and so on. </p>
+    /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     pub fn connector_entity_fields(
         &self,
     ) -> std::option::Option<&[crate::model::ConnectorEntityField]> {
@@ -1371,9 +1319,7 @@ pub mod describe_connector_entity_output {
         ///
         /// To override the contents of this collection use [`set_connector_entity_fields`](Self::set_connector_entity_fields).
         ///
-        /// <p> Describes the fields for that connector entity. For example, for an
-        /// <i>account</i> entity, the fields would be <i>account name</i>,
-        /// <i>account ID</i>, and so on. </p>
+        /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
         pub fn connector_entity_fields(
             mut self,
             input: crate::model::ConnectorEntityField,
@@ -1383,9 +1329,7 @@ pub mod describe_connector_entity_output {
             self.connector_entity_fields = Some(v);
             self
         }
-        /// <p> Describes the fields for that connector entity. For example, for an
-        /// <i>account</i> entity, the fields would be <i>account name</i>,
-        /// <i>account ID</i>, and so on. </p>
+        /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
         pub fn set_connector_entity_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,

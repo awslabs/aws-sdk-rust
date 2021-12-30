@@ -392,14 +392,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// The ID of the Channel. The ID must be unique within the region and it
-        /// cannot be changed after a Channel is created.
+        /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// The ID of the Channel. The ID must be unique within the region and it
-        /// cannot be changed after a Channel is created.
+        /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -497,26 +495,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// The ID of the HarvestJob. The ID must be unique within the region
-        /// and it cannot be changed after the HarvestJob is submitted
+        /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// The ID of the HarvestJob. The ID must be unique within the region
-        /// and it cannot be changed after the HarvestJob is submitted
+        /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-        /// This cannot be changed after the HarvestJob is submitted.
+        /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.origin_endpoint_id(input.into());
             self
         }
-        /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-        /// This cannot be changed after the HarvestJob is submitted.
+        /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn set_origin_endpoint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -620,14 +614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorization(input);
             self
         }
-        /// The ID of the Channel that the OriginEndpoint will be associated with.
-        /// This cannot be changed after the OriginEndpoint is created.
+        /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_id(input.into());
             self
         }
-        /// The ID of the Channel that the OriginEndpoint will be associated with.
-        /// This cannot be changed after the OriginEndpoint is created.
+        /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_id(input);
             self
@@ -684,14 +676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hls_package(input);
             self
         }
-        /// The ID of the OriginEndpoint.  The ID must be unique within the region
-        /// and it cannot be changed after the OriginEndpoint is created.
+        /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// The ID of the OriginEndpoint.  The ID must be unique within the region
-        /// and it cannot be changed after the OriginEndpoint is created.
+        /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -722,16 +712,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mss_package(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
             self.inner = self.inner.origination(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn set_origination(
             mut self,
             input: std::option::Option<crate::model::Origination>,
@@ -739,14 +725,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_origination(input);
             self
         }
-        /// Maximum duration (seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.startover_window_seconds(input);
             self
         }
-        /// Maximum duration (seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_startover_window_seconds(input);
             self
@@ -774,14 +758,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// Amount of delay (seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.time_delay_seconds(input);
             self
         }
-        /// Amount of delay (seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_time_delay_seconds(input);
             self
@@ -2070,16 +2052,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mss_package(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
             self.inner = self.inner.origination(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn set_origination(
             mut self,
             input: std::option::Option<crate::model::Origination>,
@@ -2087,26 +2065,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_origination(input);
             self
         }
-        /// Maximum duration (in seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.startover_window_seconds(input);
             self
         }
-        /// Maximum duration (in seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_startover_window_seconds(input);
             self
         }
-        /// Amount of delay (in seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.time_delay_seconds(input);
             self
         }
-        /// Amount of delay (in seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_time_delay_seconds(input);
             self

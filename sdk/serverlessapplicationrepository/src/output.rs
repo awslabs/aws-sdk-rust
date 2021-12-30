@@ -5,23 +5,32 @@
 pub struct UpdateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     pub is_verified_author: bool,
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub license_url: std::option::Option<std::string::String>,
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
     pub spdx_license_id: std::option::Option<std::string::String>,
@@ -35,7 +44,9 @@ impl UpdateApplicationOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -43,7 +54,8 @@ impl UpdateApplicationOutput {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -55,19 +67,25 @@ impl UpdateApplicationOutput {
     pub fn is_verified_author(&self) -> bool {
         self.is_verified_author
     }
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn license_url(&self) -> std::option::Option<&str> {
         self.license_url.as_deref()
     }
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn readme_url(&self) -> std::option::Option<&str> {
         self.readme_url.as_deref()
     }
@@ -137,12 +155,16 @@ pub mod update_application_output {
             self.application_id = input;
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author = input;
             self
@@ -160,12 +182,14 @@ pub mod update_application_output {
             self.creation_time = input;
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -197,14 +221,18 @@ pub mod update_application_output {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -212,32 +240,40 @@ pub mod update_application_output {
             self.labels = input;
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_url = Some(input.into());
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_url = input;
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.readme_url = Some(input.into());
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.readme_url = input;
             self
@@ -658,20 +694,18 @@ pub struct GetCloudFormationTemplateOutput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The date and time this template expires. Templates
-    /// expire 1 hour after creation.</p>
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub expiration_time: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-    /// </p>
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub status: std::option::Option<crate::model::Status>,
-    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>A link to the template that can be used to deploy the application using
-    /// AWS CloudFormation.</p>
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub template_url: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationTemplateOutput {
@@ -683,28 +717,26 @@ impl GetCloudFormationTemplateOutput {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The date and time this template expires. Templates
-    /// expire 1 hour after creation.</p>
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub fn expiration_time(&self) -> std::option::Option<&str> {
         self.expiration_time.as_deref()
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-    /// </p>
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
-    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>A link to the template that can be used to deploy the application using
-    /// AWS CloudFormation.</p>
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
     }
@@ -763,14 +795,12 @@ pub mod get_cloud_formation_template_output {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time this template expires. Templates
-        /// expire 1 hour after creation.</p>
+        /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration_time = Some(input.into());
             self
         }
-        /// <p>The date and time this template expires. Templates
-        /// expire 1 hour after creation.</p>
+        /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -778,16 +808,14 @@ pub mod get_cloud_formation_template_output {
             self.expiration_time = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -795,36 +823,36 @@ pub mod get_cloud_formation_template_output {
             self.semantic_version = input;
             self
         }
-        /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-        /// </p>
+        /// <p>Status of the template creation workflow.</p>
+        /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-        /// </p>
+        /// <p>Status of the template creation workflow.</p>
+        /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
         }
-        /// <p>A link to the template that can be used to deploy the application using
-        /// AWS CloudFormation.</p>
+        /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_url = Some(input.into());
             self
         }
-        /// <p>A link to the template that can be used to deploy the application using
-        /// AWS CloudFormation.</p>
+        /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -920,23 +948,32 @@ impl GetApplicationPolicyOutput {
 pub struct GetApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     pub is_verified_author: bool,
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub license_url: std::option::Option<std::string::String>,
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
     pub spdx_license_id: std::option::Option<std::string::String>,
@@ -950,7 +987,9 @@ impl GetApplicationOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -958,7 +997,8 @@ impl GetApplicationOutput {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -970,19 +1010,25 @@ impl GetApplicationOutput {
     pub fn is_verified_author(&self) -> bool {
         self.is_verified_author
     }
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn license_url(&self) -> std::option::Option<&str> {
         self.license_url.as_deref()
     }
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn readme_url(&self) -> std::option::Option<&str> {
         self.readme_url.as_deref()
     }
@@ -1052,12 +1098,16 @@ pub mod get_application_output {
             self.application_id = input;
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author = input;
             self
@@ -1075,12 +1125,14 @@ pub mod get_application_output {
             self.creation_time = input;
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1112,14 +1164,18 @@ pub mod get_application_output {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1127,32 +1183,40 @@ pub mod get_application_output {
             self.labels = input;
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_url = Some(input.into());
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_url = input;
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.readme_url = Some(input.into());
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.readme_url = input;
             self
@@ -1258,20 +1322,18 @@ pub struct CreateCloudFormationTemplateOutput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The date and time this template expires. Templates
-    /// expire 1 hour after creation.</p>
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub expiration_time: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-    /// </p>
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub status: std::option::Option<crate::model::Status>,
-    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>A link to the template that can be used to deploy the application using
-    /// AWS CloudFormation.</p>
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub template_url: std::option::Option<std::string::String>,
 }
 impl CreateCloudFormationTemplateOutput {
@@ -1283,28 +1345,26 @@ impl CreateCloudFormationTemplateOutput {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The date and time this template expires. Templates
-    /// expire 1 hour after creation.</p>
+    /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub fn expiration_time(&self) -> std::option::Option<&str> {
         self.expiration_time.as_deref()
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-    /// </p>
+    /// <p>Status of the template creation workflow.</p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
-    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>A link to the template that can be used to deploy the application using
-    /// AWS CloudFormation.</p>
+    /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
     }
@@ -1363,14 +1423,12 @@ pub mod create_cloud_formation_template_output {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time this template expires. Templates
-        /// expire 1 hour after creation.</p>
+        /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration_time = Some(input.into());
             self
         }
-        /// <p>The date and time this template expires. Templates
-        /// expire 1 hour after creation.</p>
+        /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1378,16 +1436,14 @@ pub mod create_cloud_formation_template_output {
             self.expiration_time = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1395,36 +1451,36 @@ pub mod create_cloud_formation_template_output {
             self.semantic_version = input;
             self
         }
-        /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-        /// </p>
+        /// <p>Status of the template creation workflow.</p>
+        /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED
-        /// </p>
+        /// <p>Status of the template creation workflow.</p>
+        /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
         }
-        /// <p>A link to the template that can be used to deploy the application using
-        /// AWS CloudFormation.</p>
+        /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_url = Some(input.into());
             self
         }
-        /// <p>A link to the template that can be used to deploy the application using
-        /// AWS CloudFormation.</p>
+        /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -1456,11 +1512,12 @@ impl CreateCloudFormationTemplateOutput {
 pub struct CreateCloudFormationChangeSetOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints: Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+    /// <p>Length constraints: Minimum length of 1.</p>
+    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
     pub change_set_id: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The unique ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
@@ -1470,13 +1527,14 @@ impl CreateCloudFormationChangeSetOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints: Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+    /// <p>Length constraints: Minimum length of 1.</p>
+    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
@@ -1520,12 +1578,16 @@ pub mod create_cloud_formation_change_set_output {
             self.application_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints: Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+        /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+        /// <p>Length constraints: Minimum length of 1.</p>
+        /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints: Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+        /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+        /// <p>Length constraints: Minimum length of 1.</p>
+        /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1533,16 +1595,14 @@ pub mod create_cloud_formation_change_set_output {
             self.change_set_id = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1589,38 +1649,20 @@ pub struct CreateApplicationVersionOutput {
     /// <p>An array of parameter types supported by the application.</p>
     pub parameter_definitions:
         std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-    /// <p>A list of values that you must specify before you can deploy certain applications.
-    /// Some applications might include resources that can affect permissions in your AWS
-    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-    /// For those applications, you must explicitly acknowledge their capabilities by
-    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-    /// CAPABILITY_NAMED_IAM:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-    /// all permissions associated with the application before deploying. If you don't specify
-    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+    /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+    /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+    /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
     pub required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>Whether all of the AWS resources contained in this application are supported in the region
-    /// in which it is being retrieved.</p>
+    /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub resources_supported: bool,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+    /// <p>Maximum size 50 MB</p>
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub source_code_url: std::option::Option<std::string::String>,
@@ -1642,44 +1684,26 @@ impl CreateApplicationVersionOutput {
     ) -> std::option::Option<&[crate::model::ParameterDefinition]> {
         self.parameter_definitions.as_deref()
     }
-    /// <p>A list of values that you must specify before you can deploy certain applications.
-    /// Some applications might include resources that can affect permissions in your AWS
-    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-    /// For those applications, you must explicitly acknowledge their capabilities by
-    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-    /// CAPABILITY_NAMED_IAM:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-    /// all permissions associated with the application before deploying. If you don't specify
-    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+    /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+    /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+    /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
     pub fn required_capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.required_capabilities.as_deref()
     }
-    /// <p>Whether all of the AWS resources contained in this application are supported in the region
-    /// in which it is being retrieved.</p>
+    /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn resources_supported(&self) -> bool {
         self.resources_supported
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+    /// <p>Maximum size 50 MB</p>
     pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
         self.source_code_archive_url.as_deref()
     }
@@ -1775,58 +1799,24 @@ pub mod create_application_version_output {
         ///
         /// To override the contents of this collection use [`set_required_capabilities`](Self::set_required_capabilities).
         ///
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
             v.push(input);
             self.required_capabilities = Some(v);
             self
         }
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn set_required_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -1834,28 +1824,24 @@ pub mod create_application_version_output {
             self.required_capabilities = input;
             self
         }
-        /// <p>Whether all of the AWS resources contained in this application are supported in the region
-        /// in which it is being retrieved.</p>
+        /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn resources_supported(mut self, input: bool) -> Self {
             self.resources_supported = Some(input);
             self
         }
-        /// <p>Whether all of the AWS resources contained in this application are supported in the region
-        /// in which it is being retrieved.</p>
+        /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn set_resources_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.resources_supported = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1863,12 +1849,14 @@ pub mod create_application_version_output {
             self.semantic_version = input;
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_code_archive_url = Some(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1928,23 +1916,32 @@ impl CreateApplicationVersionOutput {
 pub struct CreateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     pub is_verified_author: bool,
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub license_url: std::option::Option<std::string::String>,
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub readme_url: std::option::Option<std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
     pub spdx_license_id: std::option::Option<std::string::String>,
@@ -1958,7 +1955,9 @@ impl CreateApplicationOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -1966,7 +1965,8 @@ impl CreateApplicationOutput {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -1978,19 +1978,25 @@ impl CreateApplicationOutput {
     pub fn is_verified_author(&self) -> bool {
         self.is_verified_author
     }
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
-    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn license_url(&self) -> std::option::Option<&str> {
         self.license_url.as_deref()
     }
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
     pub fn readme_url(&self) -> std::option::Option<&str> {
         self.readme_url.as_deref()
     }
@@ -2060,12 +2066,16 @@ pub mod create_application_output {
             self.application_id = input;
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author = input;
             self
@@ -2083,12 +2093,14 @@ pub mod create_application_output {
             self.creation_time = input;
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2120,14 +2132,18 @@ pub mod create_application_output {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2135,32 +2151,40 @@ pub mod create_application_output {
             self.labels = input;
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_url = Some(input.into());
             self
         }
-        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_url = input;
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.readme_url = Some(input.into());
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.readme_url = input;
             self

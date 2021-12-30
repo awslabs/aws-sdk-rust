@@ -341,11 +341,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates an application. An application in AppConfig is a logical unit of code that
-    /// provides capabilities for your customers. For example, an application can be a microservice
-    /// that runs on Amazon EC2 instances, a mobile application installed by your users, a serverless
-    /// application using Amazon API Gateway and Lambda, or any system you run on behalf of
-    /// others.</p>
+    /// <p>Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system you run on behalf of others.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -426,9 +422,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -437,9 +431,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -452,28 +444,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConfigurationProfile`.
     ///
-    /// <p>Creates a configuration profile, which is information that enables AppConfig to access
-    /// the configuration source. Valid configuration sources include the AppConfig hosted
-    /// configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3
-    /// objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source
-    /// action</a> supported by CodePipeline. A configuration profile includes the following
-    /// information:</p>
-    ///
+    /// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source action</a> supported by CodePipeline. A configuration profile includes the following information:</p>
     /// <ul>
-    /// <li>
-    /// <p>The URI location of the configuration data.</p>
-    /// </li>
-    /// <li>
-    /// <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p>
-    /// </li>
-    /// <li>
-    /// <p>A validator for the configuration data. Available validators include either a JSON
-    /// Schema or an Lambda function.</p>
-    /// </li>
+    /// <li> <p>The URI location of the configuration data.</p> </li>
+    /// <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li>
+    /// <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Lambda function.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a
-    /// Configuration and a Configuration Profile</a> in the <i>AppConfig User
-    /// Guide</i>.</p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -563,53 +540,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-        /// document, specify either the document name in the format
-        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-        /// a parameter, specify either the parameter name in the format
-        /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-        /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example:
-        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-        /// </p>
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+        /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+        /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+        /// <bucket>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_uri(input.into());
             self
         }
-        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-        /// document, specify either the document name in the format
-        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-        /// a parameter, specify either the parameter name in the format
-        /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-        /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example:
-        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-        /// </p>
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+        /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+        /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+        /// <bucket>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location_uri(input);
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
-        /// <important>
-        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-        /// hosted configuration store. It is required for all other sources that store your
-        /// configuration. </p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
         /// </important>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retrieval_role_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
-        /// <important>
-        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-        /// hosted configuration store. It is required for all other sources that store your
-        /// configuration. </p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
         /// </important>
         pub fn set_retrieval_role_arn(
             mut self,
@@ -639,9 +602,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -650,9 +611,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -662,16 +621,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -679,10 +634,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeploymentStrategy`.
     ///
-    /// <p>Creates a deployment strategy that defines important criteria for rolling out your
-    /// configuration to the designated targets. A deployment strategy includes the overall
-    /// duration required, a percentage of targets to receive the deployment during each interval,
-    /// an algorithm that defines how percentage grows, and bake time.</p>
+    /// <p>Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
@@ -772,94 +724,44 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_duration_in_minutes(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.final_bake_time_in_minutes(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_final_bake_time_in_minutes(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.inner = self.inner.growth_factor(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_growth_factor(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by dividing the total number of targets by the value specified for <code>Step
-        /// percentage</code>. For example, a linear deployment that uses a <code>Step
-        /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-        /// those deployments are complete, the system deploys the configuration to the next 10
-        /// percent. This continues until 100% of the targets have successfully received the
-        /// configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
             self.inner = self.inner.growth_type(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by dividing the total number of targets by the value specified for <code>Step
-        /// percentage</code>. For example, a linear deployment that uses a <code>Step
-        /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-        /// those deployments are complete, the system deploys the configuration to the next 10
-        /// percent. This continues until 100% of the targets have successfully received the
-        /// configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,
@@ -884,9 +786,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -895,9 +795,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -910,14 +808,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Creates an environment. For each application, you define one or more environments. An
-    /// environment is a logical deployment group of AppConfig targets, such as applications in a
-    /// <code>Beta</code> or <code>Production</code> environment. You can also define
-    /// environments for application subcomponents such as the <code>Web</code>,
-    /// <code>Mobile</code> and <code>Back-end</code> components for your application. You can
-    /// configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a
-    /// configuration deployment. If an alarm is triggered, the system rolls back the
-    /// configuration.</p>
+    /// <p>Creates an environment. For each application, you define one or more environments. An environment is a logical deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment. You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1028,9 +919,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1039,9 +928,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1157,30 +1044,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
-        /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-        /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version number of
-        /// the latest hosted configuration version.</p>
+        /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
         pub fn latest_version_number(mut self, input: i32) -> Self {
             self.inner = self.inner.latest_version_number(input);
             self
         }
-        /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-        /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version number of
-        /// the latest hosted configuration version.</p>
+        /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
         pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_latest_version_number(input);
             self
@@ -1188,8 +1067,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Deletes an application. Deleting an application does not delete a configuration from a
-    /// host.</p>
+    /// <p>Deletes an application. Deleting an application does not delete a configuration from a host.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -1262,8 +1140,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConfigurationProfile`.
     ///
-    /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a
-    /// configuration from a host.</p>
+    /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a configuration from a host.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -1349,8 +1226,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDeploymentStrategy`.
     ///
-    /// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a
-    /// configuration from a host.</p>
+    /// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration from a host.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1423,8 +1299,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Deletes an environment. Deleting an environment does not delete a configuration from a
-    /// host.</p>
+    /// <p>Deletes an environment. Deleting an environment does not delete a configuration from a host.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1510,8 +1385,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHostedConfigurationVersion`.
     ///
-    /// <p>Deletes a version of a configuration from the AppConfig hosted configuration
-    /// store.</p>
+    /// <p>Deletes a version of a configuration from the AppConfig hosted configuration store.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1680,18 +1554,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfiguration`.
     ///
-    /// <p>Retrieves information about a configuration.</p>
-    /// <important>
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-    /// identify the configuration version on your clients. If you don’t send
-    /// <code>ClientConfigurationVersion</code> with each call to
-    /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-    /// are charged each time your clients receive a configuration.</p>
-    /// <p>To avoid excess charges, we recommend that you include the
-    /// <code>ClientConfigurationVersion</code> value with every call to
-    /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-    /// calls to <code>GetConfiguration</code> must pass this value by using the
-    /// <code>ClientConfigurationVersion</code> parameter. </p>
+    /// <p>Retrieves information about a configuration.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfiguration<
@@ -1749,38 +1614,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The application to get. Specify either the application name or the application
-        /// ID.</p>
+        /// <p>The application to get. Specify either the application name or the application ID.</p>
         pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application(input.into());
             self
         }
-        /// <p>The application to get. Specify either the application name or the application
-        /// ID.</p>
+        /// <p>The application to get. Specify either the application name or the application ID.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The environment to get. Specify either the environment name or the environment
-        /// ID.</p>
+        /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
         pub fn environment(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.environment(input.into());
             self
         }
-        /// <p>The environment to get. Specify either the environment name or the environment
-        /// ID.</p>
+        /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
         pub fn set_environment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The configuration to get. Specify either the configuration name or the configuration
-        /// ID.</p>
+        /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>The configuration to get. Specify either the configuration name or the configuration
-        /// ID.</p>
+        /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1788,36 +1647,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-        /// identify the client for the configuration. This ID enables AppConfig to deploy the
-        /// configuration in intervals, as defined in the deployment strategy. </p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-        /// identify the client for the configuration. This ID enables AppConfig to deploy the
-        /// configuration in intervals, as defined in the deployment strategy. </p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
         }
-        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-        /// response.</p>
-        /// <important>
-        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-        /// identify the configuration version on your clients. If you don’t send
-        /// <code>ClientConfigurationVersion</code> with each call to
-        /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-        /// are charged each time your clients receive a configuration.</p>
-        /// <p>To avoid excess charges, we recommend that you include the
-        /// <code>ClientConfigurationVersion</code> value with every call to
-        /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-        /// calls to <code>GetConfiguration</code> must pass this value by using the
-        /// <code>ClientConfigurationVersion</code> parameter. </p>
+        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+        /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn client_configuration_version(
             mut self,
             input: impl Into<std::string::String>,
@@ -1825,22 +1669,11 @@ pub mod fluent_builders {
             self.inner = self.inner.client_configuration_version(input.into());
             self
         }
-        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-        /// response.</p>
-        /// <important>
-        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-        /// identify the configuration version on your clients. If you don’t send
-        /// <code>ClientConfigurationVersion</code> with each call to
-        /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-        /// are charged each time your clients receive a configuration.</p>
-        /// <p>To avoid excess charges, we recommend that you include the
-        /// <code>ClientConfigurationVersion</code> value with every call to
-        /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-        /// calls to <code>GetConfiguration</code> must pass this value by using the
-        /// <code>ClientConfigurationVersion</code> parameter. </p>
+        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+        /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_client_configuration_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1908,14 +1741,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the application that includes the configuration profile you want to
-        /// get.</p>
+        /// <p>The ID of the application that includes the configuration profile you want to get.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_id(input.into());
             self
         }
-        /// <p>The ID of the application that includes the configuration profile you want to
-        /// get.</p>
+        /// <p>The ID of the application that includes the configuration profile you want to get.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2035,11 +1866,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeploymentStrategy`.
     ///
-    /// <p>Retrieves information about a deployment strategy. A deployment strategy defines
-    /// important criteria for rolling out your configuration to the designated targets. A
-    /// deployment strategy includes the overall duration required, a percentage of targets to
-    /// receive the deployment during each interval, an algorithm that defines how percentage
-    /// grows, and bake time.</p>
+    /// <p>Retrieves information about a deployment strategy. A deployment strategy defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
@@ -2112,11 +1939,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
-    /// <p>Retrieves information about an environment. An environment is a logical deployment group
-    /// of AppConfig applications, such as applications in a <code>Production</code> environment or
-    /// in an <code>EU_Region</code> environment. Each configuration deployment targets an
-    /// environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is
-    /// triggered during a deployment, AppConfig roles back the configuration.</p>
+    /// <p>Retrieves information about an environment. An environment is a logical deployment group of AppConfig applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -2355,32 +2178,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-        /// describe what page the previous List call ended on. For the first List request, the
-        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-        /// the previous responses nextToken value. Use this token to get the next set of results.
-        /// </p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-        /// describe what page the previous List call ended on. For the first List request, the
-        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-        /// the previous responses nextToken value. Use this token to get the next set of results.
-        /// </p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2458,14 +2271,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2480,14 +2291,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A
-        /// configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A
-        /// configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -2578,14 +2387,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2660,14 +2467,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2755,14 +2560,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2780,8 +2583,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHostedConfigurationVersions`.
     ///
-    /// <p>Lists configurations stored in the AppConfig hosted configuration store by
-    /// version.</p>
+    /// <p>Lists configurations stored in the AppConfig hosted configuration store by version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedConfigurationVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2864,14 +2666,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_profile_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3095,9 +2895,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3106,9 +2904,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3121,9 +2917,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopDeployment`.
     ///
-    /// <p>Stops a deployment. This API action works only on deployments that have a status of
-    /// <code>DEPLOYING</code>. This action moves the deployment to a status of
-    /// <code>ROLLED_BACK</code>.</p>
+    /// <p>Stops a deployment. This API action works only on deployments that have a status of <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -3219,11 +3013,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns
-    /// metadata
-    /// to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each
-    /// tag consists of a key and an optional value, both of which you define. You can specify a
-    /// maximum of 50 tags for a resource.</p>
+    /// <p>Assigns metadata to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. You can specify a maximum of 50 tags for a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3294,9 +3084,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-        /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-        /// 256 characters.</p>
+        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3305,9 +3093,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-        /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-        /// 256 characters.</p>
+        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3603,14 +3389,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retrieval_role_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3731,92 +3515,44 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_duration_in_minutes(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.final_bake_time_in_minutes(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_final_bake_time_in_minutes(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.inner = self.inner.growth_factor(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_growth_factor(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by increments of the growth factor evenly distributed over the deployment time.
-        /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-        /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-        /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-        /// the targets are set to receive the deployed configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
             self.inner = self.inner.growth_type(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by increments of the growth factor evenly distributed over the deployment time.
-        /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-        /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-        /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-        /// the targets are set to receive the deployed configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,

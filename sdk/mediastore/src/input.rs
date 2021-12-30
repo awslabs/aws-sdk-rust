@@ -10,18 +10,12 @@ pub mod create_container_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_name = Some(input.into());
             self
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33,18 +27,14 @@ pub mod create_container_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1772,28 +1762,22 @@ pub mod list_containers_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2115,13 +2099,8 @@ pub mod put_container_policy_input {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
@@ -2129,13 +2108,8 @@ pub mod put_container_policy_input {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
@@ -2304,14 +2278,14 @@ pub mod put_cors_policy_input {
         ///
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_policy.unwrap_or_default();
             v.push(input);
             self.cors_policy = Some(v);
             self
         }
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn set_cors_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -2650,27 +2624,19 @@ pub mod put_metric_policy_input {
             self.container_name = input;
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn metric_policy(mut self, input: crate::model::MetricPolicy) -> Self {
             self.metric_policy = Some(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn set_metric_policy(
             mut self,
@@ -3153,20 +3119,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3333,18 +3293,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3493,9 +3449,7 @@ impl UntagResourceInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-    /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-    /// (priority).</p>
+    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3503,9 +3457,7 @@ impl UntagResourceInput {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-    /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-    /// (priority).</p>
+    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -3525,10 +3477,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-    /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-    /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-    /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3536,10 +3485,7 @@ impl TagResourceInput {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-    /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-    /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-    /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -3601,14 +3547,10 @@ impl std::fmt::Debug for StartAccessLoggingInput {
 pub struct PutMetricPolicyInput {
     /// <p>The name of the container that you want to add the metric policy to.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-    /// </li>
-    /// <li>
-    /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-    /// </li>
+    /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+    /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
@@ -3617,14 +3559,10 @@ impl PutMetricPolicyInput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-    /// </li>
-    /// <li>
-    /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-    /// </li>
+    /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+    /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
     pub fn metric_policy(&self) -> std::option::Option<&crate::model::MetricPolicy> {
         self.metric_policy.as_ref()
@@ -3673,7 +3611,7 @@ impl std::fmt::Debug for PutLifecyclePolicyInput {
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>The CORS policy to apply to the container.  </p>
+    /// <p>The CORS policy to apply to the container. </p>
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl PutCorsPolicyInput {
@@ -3681,7 +3619,7 @@ impl PutCorsPolicyInput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The CORS policy to apply to the container.  </p>
+    /// <p>The CORS policy to apply to the container. </p>
     pub fn cors_policy(&self) -> std::option::Option<&[crate::model::CorsRule]> {
         self.cors_policy.as_deref()
     }
@@ -3703,13 +3641,8 @@ pub struct PutContainerPolicyInput {
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p>
-    /// </li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the
-    /// policy.</p>
-    /// </li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub policy: std::option::Option<std::string::String>,
 }
@@ -3720,13 +3653,8 @@ impl PutContainerPolicyInput {
     }
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p>
-    /// </li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the
-    /// policy.</p>
-    /// </li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
@@ -3766,23 +3694,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainersInput {
-    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-    /// was included in the previous response) to obtain the next set of containers. This token is
-    /// included in a response only if there actually are more containers to list.</p>
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-    /// </p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListContainersInput {
-    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-    /// was included in the previous response) to obtain the next set of containers. This token is
-    /// included in a response only if there actually are more containers to list.</p>
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-    /// </p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4010,27 +3932,17 @@ impl std::fmt::Debug for DeleteContainerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerInput {
-    /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-    /// names must be unique to your AWS account within a specific region. As an example, you could
-    /// create a container named <code>movies</code> in every region, as long as you don’t have an
-    /// existing container with that name.</p>
+    /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-    /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateContainerInput {
-    /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-    /// names must be unique to your AWS account within a specific region. As an example, you could
-    /// create a container named <code>movies</code> in every region, as long as you don’t have an
-    /// existing container with that name.</p>
+    /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-    /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

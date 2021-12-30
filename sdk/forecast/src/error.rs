@@ -12,8 +12,7 @@ pub struct CreateAutoPredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAutoPredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -21,8 +20,7 @@ pub enum CreateAutoPredictorErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -151,8 +149,7 @@ pub struct CreateDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -264,8 +261,7 @@ pub struct CreateDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -273,8 +269,7 @@ pub enum CreateDatasetGroupErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -403,8 +398,7 @@ pub struct CreateDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -412,8 +406,7 @@ pub enum CreateDatasetImportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -544,8 +537,7 @@ pub struct CreateExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -553,8 +545,7 @@ pub enum CreateExplainabilityErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -683,8 +674,7 @@ pub struct CreateExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -692,8 +682,7 @@ pub enum CreateExplainabilityExportErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -826,8 +815,7 @@ pub struct CreateForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -835,8 +823,7 @@ pub enum CreateForecastErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -965,8 +952,7 @@ pub struct CreateForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -974,8 +960,7 @@ pub enum CreateForecastExportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1108,8 +1093,7 @@ pub struct CreatePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1117,8 +1101,7 @@ pub enum CreatePredictorErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1247,8 +1230,7 @@ pub struct CreatePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1256,8 +1238,7 @@ pub enum CreatePredictorBacktestExportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1409,13 +1390,11 @@ pub struct DeleteDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1523,13 +1502,11 @@ pub struct DeleteDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1640,13 +1617,11 @@ pub struct DeleteDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1757,13 +1732,11 @@ pub struct DeleteExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1874,13 +1847,11 @@ pub struct DeleteExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1991,13 +1962,11 @@ pub struct DeleteForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2108,13 +2077,11 @@ pub struct DeleteForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2225,13 +2192,11 @@ pub struct DeletePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2342,13 +2307,11 @@ pub struct DeletePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2474,13 +2437,11 @@ pub struct DeleteResourceTreeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceTreeErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2591,11 +2552,9 @@ pub struct DescribeAutoPredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAutoPredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2697,11 +2656,9 @@ pub struct DescribeDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2803,11 +2760,9 @@ pub struct DescribeDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2909,11 +2864,9 @@ pub struct DescribeDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3015,11 +2968,9 @@ pub struct DescribeExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3121,11 +3072,9 @@ pub struct DescribeExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3231,11 +3180,9 @@ pub struct DescribeForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3337,11 +3284,9 @@ pub struct DescribeForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3443,11 +3388,9 @@ pub struct DescribePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3549,11 +3492,9 @@ pub struct DescribePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3666,13 +3607,11 @@ pub struct GetAccuracyMetricsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccuracyMetricsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3876,8 +3815,7 @@ pub struct ListDatasetImportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatasetImportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4074,8 +4012,7 @@ pub struct ListExplainabilitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExplainabilitiesErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4179,8 +4116,7 @@ pub struct ListExplainabilityExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExplainabilityExportsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4284,8 +4220,7 @@ pub struct ListForecastExportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListForecastExportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4389,8 +4324,7 @@ pub struct ListForecastsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListForecastsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4491,8 +4425,7 @@ pub struct ListPredictorBacktestExportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPredictorBacktestExportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4605,8 +4538,7 @@ pub struct ListPredictorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPredictorsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4710,11 +4642,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4816,13 +4746,11 @@ pub struct StopResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4927,13 +4855,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5038,11 +4964,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5141,13 +5065,11 @@ pub struct UpdateDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5245,8 +5167,7 @@ impl std::error::Error for UpdateDatasetGroupError {
     }
 }
 
-/// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-/// again.</p>
+/// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -5374,8 +5295,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>We can't process the request because it includes an invalid value or a value that exceeds
-/// the valid range.</p>
+/// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {

@@ -604,18 +604,14 @@ pub mod create_mission_profile_input {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
             v.push(input);
             self.dataflow_edges = Some(v);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -4442,18 +4438,14 @@ pub mod update_mission_profile_input {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
             v.push(input);
             self.dataflow_edges = Some(v);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -4633,7 +4625,7 @@ impl UpdateMissionProfileInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSatellitesInput {
@@ -4661,7 +4653,7 @@ impl std::fmt::Debug for ListSatellitesInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSatelliteInput {
@@ -4682,7 +4674,7 @@ impl std::fmt::Debug for GetSatelliteInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMissionProfilesInput {
@@ -4710,7 +4702,7 @@ impl std::fmt::Debug for ListMissionProfilesInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMissionProfileInput {
@@ -4722,9 +4714,7 @@ pub struct CreateMissionProfileInput {
     pub contact_post_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-    /// <code>Config</code> and a <i>to</i>
-    /// <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub tracking_config_arn: std::option::Option<std::string::String>,
@@ -4749,9 +4739,7 @@ impl CreateMissionProfileInput {
     pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
         self.minimum_viable_contact_duration_seconds
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-    /// <code>Config</code> and a <i>to</i>
-    /// <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.dataflow_edges.as_deref()
     }
@@ -4790,7 +4778,7 @@ impl std::fmt::Debug for CreateMissionProfileInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMissionProfileInput {
@@ -4811,7 +4799,7 @@ impl std::fmt::Debug for DeleteMissionProfileInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMissionProfileInput {
@@ -4825,9 +4813,7 @@ pub struct UpdateMissionProfileInput {
     pub contact_post_pass_duration_seconds: std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-    /// <code>Config</code> and a <i>to</i>
-    /// <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub tracking_config_arn: std::option::Option<std::string::String>,
@@ -4853,9 +4839,7 @@ impl UpdateMissionProfileInput {
     pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
         self.minimum_viable_contact_duration_seconds
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-    /// <code>Config</code> and a <i>to</i>
-    /// <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.dataflow_edges.as_deref()
     }
@@ -4887,7 +4871,7 @@ impl std::fmt::Debug for UpdateMissionProfileInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMissionProfileInput {
@@ -4908,7 +4892,7 @@ impl std::fmt::Debug for GetMissionProfileInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroundStationsInput {
@@ -4943,7 +4927,7 @@ impl std::fmt::Debug for ListGroundStationsInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataflowEndpointGroupsInput {
@@ -4971,7 +4955,7 @@ impl std::fmt::Debug for ListDataflowEndpointGroupsInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataflowEndpointGroupInput {
@@ -5003,7 +4987,7 @@ impl std::fmt::Debug for CreateDataflowEndpointGroupInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataflowEndpointGroupInput {
@@ -5027,7 +5011,7 @@ impl std::fmt::Debug for DeleteDataflowEndpointGroupInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataflowEndpointGroupInput {
@@ -5051,7 +5035,7 @@ impl std::fmt::Debug for GetDataflowEndpointGroupInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsInput {
@@ -5121,7 +5105,7 @@ impl std::fmt::Debug for ListContactsInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReserveContactInput {
@@ -5181,7 +5165,7 @@ impl std::fmt::Debug for ReserveContactInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelContactInput {
@@ -5202,7 +5186,7 @@ impl std::fmt::Debug for CancelContactInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactInput {
@@ -5223,7 +5207,7 @@ impl std::fmt::Debug for DescribeContactInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigsInput {
@@ -5251,7 +5235,7 @@ impl std::fmt::Debug for ListConfigsInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigInput {
@@ -5290,7 +5274,7 @@ impl std::fmt::Debug for CreateConfigInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigInput {
@@ -5318,7 +5302,7 @@ impl std::fmt::Debug for DeleteConfigInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigInput {
@@ -5360,7 +5344,7 @@ impl std::fmt::Debug for UpdateConfigInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigInput {
@@ -5388,7 +5372,7 @@ impl std::fmt::Debug for GetConfigInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -5416,7 +5400,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -5448,7 +5432,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -5469,7 +5453,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMinuteUsageInput {

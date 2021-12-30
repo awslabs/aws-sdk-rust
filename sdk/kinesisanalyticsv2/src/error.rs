@@ -12,9 +12,7 @@ pub struct AddApplicationCloudWatchLoggingOptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationCloudWatchLoggingOptionErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -192,12 +190,9 @@ pub struct AddApplicationInputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationInputErrorKind {
-    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax
-    /// error.</p>
+    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -343,9 +338,7 @@ pub struct AddApplicationInputProcessingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationInputProcessingConfigurationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -509,9 +502,7 @@ pub struct AddApplicationOutputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationOutputErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -648,9 +639,7 @@ pub struct AddApplicationReferenceDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationReferenceDataSourceErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -810,9 +799,7 @@ pub struct AddApplicationVpcConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddApplicationVpcConfigurationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -972,12 +959,9 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax
-    /// error.</p>
+    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -987,11 +971,9 @@ pub enum CreateApplicationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The application is not available for this operation.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum
-    /// number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
+    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1287,8 +1269,7 @@ pub enum CreateApplicationSnapshotErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1443,9 +1424,7 @@ pub struct DeleteApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -1599,9 +1578,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationCloudWatchLoggingOptionErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -1779,9 +1756,7 @@ pub struct DeleteApplicationInputProcessingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationInputProcessingConfigurationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1949,9 +1924,7 @@ pub struct DeleteApplicationOutputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationOutputErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2092,9 +2065,7 @@ pub struct DeleteApplicationReferenceDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationReferenceDataSourceErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2264,8 +2235,7 @@ pub enum DeleteApplicationSnapshotErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2398,9 +2368,7 @@ pub struct DeleteApplicationVpcConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationVpcConfigurationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -2685,8 +2653,7 @@ pub enum DescribeApplicationSnapshotErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2807,8 +2774,7 @@ pub enum DescribeApplicationVersionErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2927,18 +2893,15 @@ pub enum DiscoverInputSchemaErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The request JSON is not valid for the operation.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Discovery failed to get a record from the streaming source because of the Kinesis
-    /// Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
+    /// <p>Discovery failed to get a record from the streaming source because of the Kinesis Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
     ResourceProvisionedThroughputExceededException(
         crate::error::ResourceProvisionedThroughputExceededException,
     ),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for
-    /// the given streaming source.</p>
+    /// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming source.</p>
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3175,8 +3138,7 @@ pub struct ListApplicationSnapshotsError {
 pub enum ListApplicationSnapshotsErrorKind {
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3286,8 +3248,7 @@ pub enum ListApplicationVersionsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3400,9 +3361,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3517,9 +3476,7 @@ pub struct RollbackApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RollbackApplicationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3529,8 +3486,7 @@ pub enum RollbackApplicationErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3811,9 +3767,7 @@ pub struct StopApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopApplicationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -3967,9 +3921,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3977,8 +3929,7 @@ pub enum TagResourceErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum
-    /// number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
+    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4101,9 +4052,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4111,8 +4060,7 @@ pub enum UntagResourceErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum
-    /// number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
+    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4238,12 +4186,9 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax
-    /// error.</p>
+    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -4417,9 +4362,7 @@ pub struct UpdateApplicationMaintenanceConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationMaintenanceConfigurationErrorKind {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4427,8 +4370,7 @@ pub enum UpdateApplicationMaintenanceConfigurationErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4569,8 +4511,7 @@ impl std::error::Error for UpdateApplicationMaintenanceConfigurationError {
     }
 }
 
-/// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-/// operation. </p>
+/// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
@@ -4826,9 +4767,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-/// be the result of attempting to modify an application without using the current application
-/// ID.</p>
+/// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -5084,8 +5023,7 @@ impl InvalidApplicationConfigurationException {
     }
 }
 
-/// <p>The user-provided application code (query) is not valid. This can be a simple syntax
-/// error.</p>
+/// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeValidationException {
@@ -5149,8 +5087,7 @@ impl CodeValidationException {
     }
 }
 
-/// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum
-/// number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
+/// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -5214,8 +5151,7 @@ impl TooManyTagsException {
     }
 }
 
-/// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for
-/// the given streaming source.</p>
+/// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnableToDetectSchemaException {
@@ -5401,8 +5337,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>Discovery failed to get a record from the streaming source because of the Kinesis
-/// Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
+/// <p>Discovery failed to get a record from the streaming source because of the Kinesis Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceProvisionedThroughputExceededException {

@@ -12,16 +12,13 @@ pub struct CreateApiCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApiCacheErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -148,18 +145,15 @@ pub struct CreateApiKeyError {
 pub enum CreateApiKeyErrorKind {
     /// <p>The API key exceeded a limit. Try your request again.</p>
     ApiKeyLimitExceededException(crate::error::ApiKeyLimitExceededException),
-    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for
-    /// <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
+    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
     ApiKeyValidityOutOfBoundsException(crate::error::ApiKeyValidityOutOfBoundsException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -296,16 +290,13 @@ pub struct CreateDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDataSourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -433,13 +424,11 @@ pub struct CreateFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFunctionErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -560,11 +549,9 @@ pub struct CreateGraphqlApiError {
 pub enum CreateGraphqlApiErrorKind {
     /// <p>The GraphQL API exceeded a limit. Try your request again.</p>
     ApiLimitExceededException(crate::error::ApiLimitExceededException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -708,13 +695,11 @@ pub struct CreateResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResolverErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -833,16 +818,13 @@ pub struct CreateTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -961,16 +943,13 @@ pub struct DeleteApiCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApiCacheErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1095,13 +1074,11 @@ pub struct DeleteApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApiKeyErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1214,16 +1191,13 @@ pub struct DeleteDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDataSourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1351,13 +1325,11 @@ pub struct DeleteFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1478,16 +1450,13 @@ pub struct DeleteGraphqlApiError {
 pub enum DeleteGraphqlApiErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1624,13 +1593,11 @@ pub struct DeleteResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResolverErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1749,16 +1716,13 @@ pub struct DeleteTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1877,16 +1841,13 @@ pub struct FlushApiCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FlushApiCacheErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2008,16 +1969,13 @@ pub struct GetApiCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApiCacheErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2139,16 +2097,13 @@ pub struct GetDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDataSourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2270,11 +2225,9 @@ pub struct GetFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2383,13 +2336,11 @@ pub struct GetGraphqlApiError {
 pub enum GetGraphqlApiErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2512,8 +2463,7 @@ pub enum GetIntrospectionSchemaErrorKind {
     GraphQlSchemaException(crate::error::GraphQlSchemaException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2635,11 +2585,9 @@ pub struct GetResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResolverErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2746,13 +2694,11 @@ pub struct GetSchemaCreationStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSchemaCreationStatusErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2874,16 +2820,13 @@ pub struct GetTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3002,13 +2945,11 @@ pub struct ListApiKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApiKeysErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3121,13 +3062,11 @@ pub struct ListDataSourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataSourcesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3243,13 +3182,11 @@ pub struct ListFunctionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFunctionsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3362,8 +3299,7 @@ pub struct ListGraphqlApisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGraphqlApisErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3475,13 +3411,11 @@ pub struct ListResolversError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResolversErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3594,13 +3528,11 @@ pub struct ListResolversByFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResolversByFunctionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3724,15 +3656,13 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3872,16 +3802,13 @@ pub struct ListTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4000,16 +3927,13 @@ pub struct StartSchemaCreationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSchemaCreationErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4142,15 +4066,13 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4277,15 +4199,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4413,16 +4333,13 @@ pub struct UpdateApiCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApiCacheErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4547,18 +4464,15 @@ pub struct UpdateApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApiKeyErrorKind {
-    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for
-    /// <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
+    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
     ApiKeyValidityOutOfBoundsException(crate::error::ApiKeyValidityOutOfBoundsException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4686,16 +4600,13 @@ pub struct UpdateDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataSourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4823,13 +4734,11 @@ pub struct UpdateFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFunctionErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4950,16 +4859,13 @@ pub struct UpdateGraphqlApiError {
 pub enum UpdateGraphqlApiErrorKind {
     /// <p>You do not have access to perform this operation on this resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5096,13 +5002,11 @@ pub struct UpdateResolverError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResolverErrorKind {
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5221,16 +5125,13 @@ pub struct UpdateTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5400,8 +5301,7 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>The resource specified in the request was not found. Check the resource, and then try
-/// again.</p>
+/// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -5529,8 +5429,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p>Another modification is in progress at this time and it must complete before you can
-/// make your change. </p>
+/// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -5594,8 +5493,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The request is not well formed. For example, a value is invalid or a required field is
-/// missing. Check the field values, and then try again. </p>
+/// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
@@ -5787,8 +5685,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for
-/// <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
+/// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiKeyValidityOutOfBoundsException {

@@ -78,8 +78,7 @@ impl RealtimeContactAnalysisSegment {
     }
 }
 
-/// <p>Provides the category rules that are used to automatically categorize contacts based on
-/// uttered keywords and phrases.</p>
+/// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Categories {
@@ -526,8 +525,7 @@ impl Transcript {
     }
 }
 
-/// <p>Potential issues that are detected based on an artificial intelligence analysis of each
-/// turn in the conversation.</p>
+/// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssueDetected {

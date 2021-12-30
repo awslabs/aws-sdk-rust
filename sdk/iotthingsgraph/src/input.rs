@@ -23,18 +23,14 @@ pub mod associate_entity_to_thing_input {
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -419,14 +415,12 @@ pub mod create_system_instance_input {
             self.target = input;
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.greengrass_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_greengrass_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -434,14 +428,12 @@ pub mod create_system_instance_input {
             self.greengrass_group_name = input;
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,16 +454,12 @@ pub mod create_system_instance_input {
             self.metrics_configuration = input;
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_actions_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -806,18 +794,14 @@ pub mod delete_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1252,18 +1236,14 @@ pub mod delete_system_template_input {
     impl Builder {
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1414,18 +1394,14 @@ pub mod deploy_system_instance_input {
     impl Builder {
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1576,18 +1552,14 @@ pub mod deprecate_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1738,18 +1710,14 @@ pub mod deprecate_system_template_input {
     impl Builder {
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2235,9 +2203,7 @@ pub mod get_entities_input {
         ///
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
@@ -2246,9 +2212,7 @@ pub mod get_entities_input {
         }
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2413,18 +2377,14 @@ pub mod get_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2588,18 +2548,14 @@ pub mod get_flow_template_revisions_input {
     impl Builder {
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2909,18 +2865,14 @@ pub mod get_system_instance_input {
     impl Builder {
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3070,18 +3022,14 @@ pub mod get_system_template_input {
     impl Builder {
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3245,18 +3193,14 @@ pub mod get_system_template_revisions_input {
     impl Builder {
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3974,10 +3918,7 @@ pub mod search_entities_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -3985,10 +3926,7 @@ pub mod search_entities_input {
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -4596,8 +4534,7 @@ pub mod search_system_instances_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -4605,8 +4542,7 @@ pub mod search_system_instances_input {
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -4977,18 +4913,14 @@ pub mod search_things_input {
     impl Builder {
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -5184,14 +5116,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5677,18 +5609,14 @@ pub mod update_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5707,15 +5635,13 @@ pub mod update_flow_template_input {
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn compatible_namespace_version(mut self, input: i64) -> Self {
             self.compatible_namespace_version = Some(input);
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn set_compatible_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.compatible_namespace_version = input;
             self
@@ -5870,18 +5796,14 @@ pub mod update_system_template_input {
     impl Builder {
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6084,14 +6006,12 @@ pub mod upload_entity_definitions_input {
             self.sync_with_public_namespace = input;
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
             self.deprecate_existing_entities = Some(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
             self.deprecate_existing_entities = input;
             self
@@ -6244,8 +6164,7 @@ pub struct UploadEntityDefinitionsInput {
     pub document: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub sync_with_public_namespace: bool,
-    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-    /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub deprecate_existing_entities: bool,
 }
 impl UploadEntityDefinitionsInput {
@@ -6257,8 +6176,7 @@ impl UploadEntityDefinitionsInput {
     pub fn sync_with_public_namespace(&self) -> bool {
         self.sync_with_public_namespace
     }
-    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-    /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn deprecate_existing_entities(&self) -> bool {
         self.deprecate_existing_entities
     }
@@ -6285,9 +6203,7 @@ impl std::fmt::Debug for UploadEntityDefinitionsInput {
 pub struct UpdateSystemTemplateInput {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -6298,9 +6214,7 @@ pub struct UpdateSystemTemplateInput {
 impl UpdateSystemTemplateInput {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6333,23 +6247,18 @@ impl std::fmt::Debug for UpdateSystemTemplateInput {
 pub struct UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace.</p>
-    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-    /// to update.</p>
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6358,8 +6267,7 @@ impl UpdateFlowTemplateInput {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace.</p>
-    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-    /// to update.</p>
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
         self.compatible_namespace_version
     }
@@ -6434,7 +6342,7 @@ impl std::fmt::Debug for UndeploySystemInstanceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags to add to the resource.></p>
+    /// <p>A list of tags to add to the resource.&gt;</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6442,7 +6350,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tags to add to the resource.></p>
+    /// <p>A list of tags to add to the resource.&gt;</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6462,9 +6370,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6476,9 +6382,7 @@ pub struct SearchThingsInput {
 impl SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -6545,8 +6449,7 @@ impl std::fmt::Debug for SearchSystemTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSystemInstancesInput {
-    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-    /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SystemInstanceFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -6555,8 +6458,7 @@ pub struct SearchSystemInstancesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl SearchSystemInstancesInput {
-    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-    /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::SystemInstanceFilter]> {
         self.filters.as_deref()
@@ -6677,10 +6579,7 @@ impl std::fmt::Debug for SearchFlowExecutionsInput {
 pub struct SearchEntitiesInput {
     /// <p>The entity types for which to search.</p>
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-    /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-    /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::EntityFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -6695,10 +6594,7 @@ impl SearchEntitiesInput {
     pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
         self.entity_types.as_deref()
     }
-    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-    /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-    /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::EntityFilter]> {
         self.filters.as_deref()
@@ -6825,9 +6721,7 @@ impl std::fmt::Debug for GetUploadStatusInput {
 pub struct GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6837,9 +6731,7 @@ pub struct GetSystemTemplateRevisionsInput {
 impl GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6868,9 +6760,7 @@ impl std::fmt::Debug for GetSystemTemplateRevisionsInput {
 pub struct GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The number that specifies the revision of the system to get.</p>
     pub revision_number: std::option::Option<i64>,
@@ -6878,9 +6768,7 @@ pub struct GetSystemTemplateInput {
 impl GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6904,17 +6792,13 @@ impl std::fmt::Debug for GetSystemTemplateInput {
 pub struct GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6944,9 +6828,7 @@ impl std::fmt::Debug for GetNamespaceDeletionStatusInput {
 pub struct GetFlowTemplateRevisionsInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6956,9 +6838,7 @@ pub struct GetFlowTemplateRevisionsInput {
 impl GetFlowTemplateRevisionsInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6987,9 +6867,7 @@ impl std::fmt::Debug for GetFlowTemplateRevisionsInput {
 pub struct GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The number of the workflow revision to retrieve.</p>
     pub revision_number: std::option::Option<i64>,
@@ -6997,9 +6875,7 @@ pub struct GetFlowTemplateInput {
 impl GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7023,9 +6899,7 @@ impl std::fmt::Debug for GetFlowTemplateInput {
 pub struct GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
@@ -7033,9 +6907,7 @@ pub struct GetEntitiesInput {
 impl GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
@@ -7108,17 +6980,13 @@ impl std::fmt::Debug for DescribeNamespaceInput {
 pub struct DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7137,17 +7005,13 @@ impl std::fmt::Debug for DeprecateSystemTemplateInput {
 pub struct DeprecateFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7166,17 +7030,13 @@ impl std::fmt::Debug for DeprecateFlowTemplateInput {
 pub struct DeploySystemInstanceInput {
     /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeploySystemInstanceInput {
     /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7195,17 +7055,13 @@ impl std::fmt::Debug for DeploySystemInstanceInput {
 pub struct DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7256,17 +7112,13 @@ impl std::fmt::Debug for DeleteNamespaceInput {
 pub struct DeleteFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7322,17 +7174,13 @@ pub struct CreateSystemInstanceInput {
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub target: std::option::Option<crate::model::DeploymentTarget>,
-    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub greengrass_group_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
-    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-    /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-    /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSystemInstanceInput {
@@ -7348,13 +7196,11 @@ impl CreateSystemInstanceInput {
     pub fn target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
         self.target.as_ref()
     }
-    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
         self.greengrass_group_name.as_deref()
     }
-    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -7364,9 +7210,7 @@ impl CreateSystemInstanceInput {
     ) -> std::option::Option<&crate::model::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
-    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-    /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-    /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
         self.flow_actions_role_arn.as_deref()
     }
@@ -7426,9 +7270,7 @@ pub struct AssociateEntityToThingInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
@@ -7440,9 +7282,7 @@ impl AssociateEntityToThingInput {
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }

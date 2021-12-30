@@ -10,14 +10,12 @@ pub mod accept_certificate_transfer_input {
         pub(crate) set_as_active: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -199,16 +197,14 @@ pub mod add_thing_to_billing_group_input {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the billing group.</p>
-        /// <note>
+        /// <p>The name of the billing group.</p> <note>
         /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
         /// </note>
         pub fn billing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.billing_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the billing group.</p>
-        /// <note>
+        /// <p>The name of the billing group.</p> <note>
         /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
         /// </note>
         pub fn set_billing_group_name(
@@ -446,18 +442,12 @@ pub mod add_thing_to_thing_group_input {
             self.thing_arn = input;
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn override_dynamic_groups(mut self, input: bool) -> Self {
             self.override_dynamic_groups = Some(input);
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.override_dynamic_groups = input;
             self
@@ -651,12 +641,8 @@ pub mod associate_targets_with_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -664,12 +650,8 @@ pub mod associate_targets_with_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1039,14 +1021,12 @@ pub mod attach_principal_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1422,14 +1402,12 @@ pub mod attach_thing_principal_input {
             self.thing_name = input;
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the
-        /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the
-        /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1761,14 +1739,12 @@ pub mod cancel_audit_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the audit you want to cancel. You can only cancel an
-        /// audit that is "IN_PROGRESS".</p>
+        /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the audit you want to cancel. You can only cancel an
-        /// audit that is "IN_PROGRESS".</p>
+        /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -1914,14 +1890,12 @@ pub mod cancel_certificate_transfer_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2075,16 +2049,12 @@ pub mod cancel_detect_mitigation_actions_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2269,22 +2239,14 @@ pub mod cancel_job_input {
             self.comment = input;
             self
         }
-        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-        /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-        /// is <code>false</code>.</p>
-        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to update the job execution status.  Use caution and ensure that each
-        /// device executing a job which is canceled is able to recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-        /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-        /// is <code>false</code>.</p>
-        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to update the job execution status.  Use caution and ensure that each
-        /// device executing a job which is canceled is able to recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2482,46 +2444,24 @@ pub mod cancel_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-        /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-        /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-        /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-        /// will be thrown. The default is <code>false</code>.</p>
-        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-        /// to update the job execution status.  Use caution and ensure that the device is able to
-        /// recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-        /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-        /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-        /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-        /// will be thrown. The default is <code>false</code>.</p>
-        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-        /// to update the job execution status.  Use caution and ensure that the device is able to
-        /// recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
-        /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-        /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-        /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-        /// contains the current job execution status data is returned. (This makes it unnecessary to
-        /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-        /// data.)</p>
+        /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-        /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-        /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-        /// contains the current job execution status data is returned. (This makes it unnecessary to
-        /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-        /// data.)</p>
+        /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -2530,8 +2470,7 @@ pub mod cancel_job_execution_input {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -2542,8 +2481,7 @@ pub mod cancel_job_execution_input {
             self.status_details = Some(hash_map);
             self
         }
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -3031,18 +2969,12 @@ pub mod create_audit_suppression_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -3060,16 +2992,12 @@ pub mod create_audit_suppression_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3077,46 +3005,32 @@ pub mod create_audit_suppression_input {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>
-        /// Each audit supression must have a unique client request token. If you try to create a new audit
-        /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-        /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Each audit supression must have a unique client request token. If you try to create a new audit
-        /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-        /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3324,8 +3238,7 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
         ///
-        /// <p>The public keys used to verify the digital signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
         pub fn token_signing_public_keys(
             mut self,
             k: impl Into<std::string::String>,
@@ -3336,8 +3249,7 @@ pub mod create_authorizer_input {
             self.token_signing_public_keys = Some(hash_map);
             self
         }
-        /// <p>The public keys used to verify the digital signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
         pub fn set_token_signing_public_keys(
             mut self,
             input: std::option::Option<
@@ -3364,13 +3276,10 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the custom authorizer.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -3378,13 +3287,10 @@ pub mod create_authorizer_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the custom authorizer.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -3968,50 +3874,32 @@ pub mod create_custom_metric_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-        /// Cannot be updated
-        /// once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-        /// Cannot be updated
-        /// once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric;
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report. Can be updated once defined.</p>
+        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric;
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report. Can be updated once defined.</p>
+        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -4023,18 +3911,14 @@ pub mod create_custom_metric_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// Metadata that can be used to manage the custom metric.
-        /// </p>
+        /// <p> Metadata that can be used to manage the custom metric. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>
-        /// Metadata that can be used to manage the custom metric.
-        /// </p>
+        /// <p> Metadata that can be used to manage the custom metric. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4042,20 +3926,12 @@ pub mod create_custom_metric_input {
             self.tags = input;
             self
         }
-        /// <p>Each custom
-        /// metric must have a unique client request token. If you try to create a new custom metric that
-        /// already exists with a different token,
-        /// an exception
-        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+        /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each custom
-        /// metric must have a unique client request token. If you try to create a new custom metric that
-        /// already exists with a different token,
-        /// an exception
-        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+        /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4243,14 +4119,12 @@ pub mod create_dimension_input {
             self.name = input;
             self
         }
-        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-        /// </p>
+        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
         pub fn r#type(mut self, input: crate::model::DimensionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-        /// </p>
+        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::DimensionType>) -> Self {
             self.r#type = input;
             self
@@ -4293,14 +4167,12 @@ pub mod create_dimension_input {
             self.tags = input;
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4502,16 +4374,14 @@ pub mod create_domain_configuration_input {
         ///
         /// To override the contents of this collection use [`set_server_certificate_arns`](Self::set_server_certificate_arns).
         ///
-        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn server_certificate_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.server_certificate_arns.unwrap_or_default();
             v.push(input.into());
             self.server_certificate_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn set_server_certificate_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4519,14 +4389,12 @@ pub mod create_domain_configuration_input {
             self.server_certificate_arns = input;
             self
         }
-        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn validation_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.validation_certificate_arn = Some(input.into());
             self
         }
-        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn set_validation_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4547,16 +4415,14 @@ pub mod create_domain_configuration_input {
             self.authorizer_config = input;
             self
         }
-        /// <p>The type of service delivered by the endpoint.</p>
-        /// <note>
+        /// <p>The type of service delivered by the endpoint.</p> <note>
         /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The type of service delivered by the endpoint.</p>
-        /// <note>
+        /// <p>The type of service delivered by the endpoint.</p> <note>
         /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn set_service_type(
@@ -4570,13 +4436,10 @@ pub mod create_domain_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the domain configuration.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -4584,13 +4447,10 @@ pub mod create_domain_configuration_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the domain configuration.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -4798,16 +4658,14 @@ pub mod create_dynamic_thing_group_input {
             self.thing_group_properties = input;
             self
         }
-        /// <p>The dynamic thing group index name.</p>
-        /// <note>
+        /// <p>The dynamic thing group index name.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group index name.</p>
-        /// <note>
+        /// <p>The dynamic thing group index name.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4826,19 +4684,15 @@ pub mod create_dynamic_thing_group_input {
             self.query_string = input;
             self
         }
-        /// <p>The dynamic thing group query version.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_version = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group query version.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn set_query_version(
             mut self,
@@ -5131,14 +4985,12 @@ pub mod create_fleet_metric_input {
             self.index_name = input;
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
         pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::FleetMetricUnit>,
@@ -5349,14 +5201,12 @@ pub mod create_job_input {
         >,
     }
     impl Builder {
-        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-        /// characters, "-" and "_" are valid for use here.</p>
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-        /// characters, "-" and "_" are valid for use here.</p>
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5380,26 +5230,20 @@ pub mod create_job_input {
             self.targets = input;
             self
         }
-        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_source = Some(input.into());
             self
         }
-        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn set_document_source(
@@ -5442,18 +5286,12 @@ pub mod create_job_input {
             self.presigned_url_config = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -5490,18 +5328,12 @@ pub mod create_job_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the time expires, it will be
-        /// automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the time expires, it will be
-        /// automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -5529,12 +5361,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5542,12 +5370,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5764,14 +5588,12 @@ pub mod create_job_template_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-        /// characters, "-", and "_" are valid for use here.</p>
+        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
         pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_template_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-        /// characters, "-", and "_" are valid for use here.</p>
+        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
         pub fn set_job_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5789,26 +5611,20 @@ pub mod create_job_template_input {
             self.job_arn = input;
             self
         }
-        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_source = Some(input.into());
             self
         }
-        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn set_document_source(
@@ -5880,18 +5696,12 @@ pub mod create_job_template_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -6517,16 +6327,14 @@ pub mod create_ota_update_input {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
         pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input);
             self.protocols = Some(v);
             self
         }
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -6534,20 +6342,12 @@ pub mod create_ota_update_input {
             self.protocols = input;
             self
         }
-        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-        /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-        /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-        /// added to a target group, even after the update was completed by all things originally in the group. Valid
-        /// values: CONTINUOUS | SNAPSHOT.</p>
+        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-        /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-        /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-        /// added to a target group, even after the update was completed by all things originally in the group. Valid
-        /// values: CONTINUOUS | SNAPSHOT.</p>
+        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -6600,18 +6400,12 @@ pub mod create_ota_update_input {
             self.aws_job_abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-        /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-        /// status is not set to another terminal state before the timer expires, it will be automatically
-        /// set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn aws_job_timeout_config(mut self, input: crate::model::AwsJobTimeoutConfig) -> Self {
             self.aws_job_timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-        /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-        /// status is not set to another terminal state before the timer expires, it will be automatically
-        /// set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_aws_job_timeout_config(
             mut self,
             input: std::option::Option<crate::model::AwsJobTimeoutConfig>,
@@ -6638,14 +6432,12 @@ pub mod create_ota_update_input {
             self.files = input;
             self
         }
-        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-        /// to create an OTA update job.</p>
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-        /// to create an OTA update job.</p>
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -6877,14 +6669,12 @@ pub mod create_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6896,13 +6686,10 @@ pub mod create_policy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the policy.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the policy.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -6910,13 +6697,10 @@ pub mod create_policy_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the policy.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the policy.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -7093,14 +6877,12 @@ pub mod create_policy_version_input {
             self.policy_name = input;
             self
         }
-        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7108,16 +6890,12 @@ pub mod create_policy_version_input {
             self.policy_document = input;
             self
         }
-        /// <p>Specifies whether the policy version is set as the default. When this parameter is
-        /// true, the new policy version becomes the operative version (that is, the version that is in
-        /// effect for the certificates to which the policy is attached).</p>
+        /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
         pub fn set_as_default(mut self, input: bool) -> Self {
             self.set_as_default = Some(input);
             self
         }
-        /// <p>Specifies whether the policy version is set as the default. When this parameter is
-        /// true, the new policy version becomes the operative version (that is, the version that is in
-        /// effect for the certificates to which the policy is attached).</p>
+        /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
         pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
             self.set_as_default = input;
             self
@@ -7508,14 +7286,12 @@ pub mod create_provisioning_template_input {
             self.enabled = input;
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-        /// grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-        /// grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7540,13 +7316,10 @@ pub mod create_provisioning_template_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -7554,13 +7327,10 @@ pub mod create_provisioning_template_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -7936,14 +7706,12 @@ pub mod create_role_alias_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The role alias that points to a role ARN. This allows you to change the role without
-        /// having to update the device.</p>
+        /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
         pub fn role_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_alias = Some(input.into());
             self
         }
-        /// <p>The role alias that points to a role ARN. This allows you to change the role without
-        /// having to update the device.</p>
+        /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
         pub fn set_role_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_alias = input;
             self
@@ -7972,13 +7740,10 @@ pub mod create_role_alias_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the role alias.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the role alias.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -7986,13 +7751,10 @@ pub mod create_role_alias_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the role alias.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the role alias.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -8164,20 +7926,12 @@ pub mod create_scheduled_audit_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-        /// determined by the system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn frequency(mut self, input: crate::model::AuditFrequency) -> Self {
             self.frequency = Some(input);
             self
         }
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-        /// determined by the system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AuditFrequency>,
@@ -8185,46 +7939,22 @@ pub mod create_scheduled_audit_input {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-        /// parameter is set to <code>MONTHLY</code>. If days
-        /// 29
-        /// to 31 are specified, and the month
-        /// doesn't
-        /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-        /// parameter is set to <code>MONTHLY</code>. If days
-        /// 29
-        /// to 31 are specified, and the month
-        /// doesn't
-        /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either
-        /// <code>SUN</code>,
-        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-        /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either
-        /// <code>SUN</code>,
-        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-        /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -8236,20 +7966,14 @@ pub mod create_scheduled_audit_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8517,8 +8241,7 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
         ///
-        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-        /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
         pub fn alert_targets(
             mut self,
             k: crate::model::AlertTargetType,
@@ -8529,8 +8252,7 @@ pub mod create_security_profile_input {
             self.alert_targets = Some(hash_map);
             self
         }
-        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-        /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
         pub fn set_alert_targets(
             mut self,
             input: std::option::Option<
@@ -8544,12 +8266,8 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-        /// </p>
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-        /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -8559,12 +8277,8 @@ pub mod create_security_profile_input {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-        /// </p>
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-        /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9014,15 +8728,13 @@ pub mod create_thing_input {
     }
     impl Builder {
         /// <p>The name of the thing to create.</p>
-        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
         /// <p>The name of the thing to create.</p>
-        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -9040,20 +8752,14 @@ pub mod create_thing_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-        /// document. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn attribute_payload(mut self, input: crate::model::AttributePayload) -> Self {
             self.attribute_payload = Some(input);
             self
         }
-        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-        /// document. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn set_attribute_payload(
             mut self,
             input: std::option::Option<crate::model::AttributePayload>,
@@ -9469,16 +9175,12 @@ pub mod create_thing_type_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-        /// the new thing type including a description, and a list of searchable thing attribute
-        /// names.</p>
+        /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
         pub fn thing_type_properties(mut self, input: crate::model::ThingTypeProperties) -> Self {
             self.thing_type_properties = Some(input);
             self
         }
-        /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-        /// the new thing type including a description, and a list of searchable thing attribute
-        /// names.</p>
+        /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
         pub fn set_thing_type_properties(
             mut self,
             input: std::option::Option<crate::model::ThingTypeProperties>,
@@ -9691,25 +9393,19 @@ pub mod create_topic_rule_input {
             self.topic_rule_payload = input;
             self
         }
-        /// <p>Metadata which can be used to manage the topic rule.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: --tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
             self.tags = Some(input.into());
             self
         }
-        /// <p>Metadata which can be used to manage the topic rule.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: --tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tags = input;
@@ -10207,18 +9903,12 @@ pub mod delete_audit_suppression_input {
         pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -10550,18 +10240,12 @@ pub mod delete_billing_group_input {
             self.billing_group_name = input;
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>DeleteBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>DeleteBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -10726,14 +10410,12 @@ pub mod delete_ca_certificate_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-        /// the certificate ID.)</p>
+        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-        /// the certificate ID.)</p>
+        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10887,14 +10569,12 @@ pub mod delete_certificate_input {
         pub(crate) force_delete: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10902,14 +10582,12 @@ pub mod delete_certificate_input {
             self.certificate_id = input;
             self
         }
-        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-        /// thing.</p>
+        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
         }
-        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-        /// thing.</p>
+        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -11074,16 +10752,12 @@ pub mod delete_custom_metric_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -11909,54 +11583,34 @@ pub mod delete_job_input {
     }
     impl Builder {
         /// <p>The ID of the job to be deleted.</p>
-        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-        /// However, this is not recommended, and you must ensure that your devices are not using the
-        /// jobId to refer to the deleted job.</p>
+        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
         /// <p>The ID of the job to be deleted.</p>
-        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-        /// However, this is not recommended, and you must ensure that your devices are not using the
-        /// jobId to refer to the deleted job.</p>
+        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-        /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-        /// will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-        /// a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
         /// </note>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-        /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-        /// will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-        /// a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
         /// </note>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11964,12 +11618,8 @@ pub mod delete_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -12158,53 +11808,35 @@ pub mod delete_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-        /// execution of a particular job on a particular device.</p>
-        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-        /// by IoT, so be sure you get and use the correct value here.</p>
+        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-        /// execution of a particular job on a particular device.</p>
-        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-        /// by IoT, so be sure you get and use the correct value here.</p>
+        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
         }
-        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-        /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-        /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-        /// to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that the device is able to recover to a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         /// </note>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-        /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-        /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-        /// to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that the device is able to recover to a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         /// </note>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12212,12 +11844,8 @@ pub mod delete_job_execution_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -12755,26 +12383,22 @@ pub mod delete_ota_update_input {
             self.ota_update_id = input;
             self
         }
-        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-        /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
         pub fn delete_stream(mut self, input: bool) -> Self {
             self.delete_stream = Some(input);
             self
         }
-        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-        /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
         pub fn set_delete_stream(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_stream = input;
             self
         }
-        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-        /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn force_delete_aws_job(mut self, input: bool) -> Self {
             self.force_delete_aws_job = Some(input);
             self
         }
-        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-        /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn set_force_delete_aws_job(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete_aws_job = input;
             self
@@ -14076,16 +13700,12 @@ pub mod delete_security_profile_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -14412,18 +14032,12 @@ pub mod delete_thing_input {
             self.thing_name = input;
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>DeleteThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>DeleteThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -15227,14 +14841,12 @@ pub mod delete_v2_logging_level_input {
         pub(crate) target_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn target_type(mut self, input: crate::model::LogTargetType) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::LogTargetType>,
@@ -15406,14 +15018,12 @@ pub mod deprecate_thing_type_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-        /// associate it with things.</p>
+        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
         pub fn undo_deprecate(mut self, input: bool) -> Self {
             self.undo_deprecate = Some(input);
             self
         }
-        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-        /// associate it with things.</p>
+        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
         pub fn set_undo_deprecate(mut self, input: std::option::Option<bool>) -> Self {
             self.undo_deprecate = input;
             self
@@ -16014,18 +15624,12 @@ pub mod describe_audit_suppression_input {
         pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -16811,14 +16415,12 @@ pub mod describe_certificate_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16971,16 +16573,12 @@ pub mod describe_custom_metric_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -17252,16 +16850,12 @@ pub mod describe_detect_mitigation_actions_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -17722,66 +17316,36 @@ pub mod describe_endpoint_input {
     impl Builder {
         /// <p>The endpoint type. Valid endpoint types include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
         /// </ul>
-        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-        /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_type = Some(input.into());
             self
         }
         /// <p>The endpoint type. Valid endpoint types include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
         /// </ul>
-        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-        /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18528,14 +18092,12 @@ pub mod describe_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-        /// on a particular device.</p>
+        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-        /// on a particular device.</p>
+        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
@@ -18889,14 +18451,12 @@ pub mod describe_managed_job_template_input {
             self.template_name = input;
             self
         }
-        /// <p>An optional parameter to specify version of a managed template. If not specified, the
-        /// pre-defined default version is returned.</p>
+        /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
         pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_version = Some(input.into());
             self
         }
-        /// <p>An optional parameter to specify version of a managed template. If not specified, the
-        /// pre-defined default version is returned.</p>
+        /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19879,14 +19439,12 @@ pub mod describe_security_profile_input {
         pub(crate) security_profile_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the security profile
-        /// whose information you want to get.</p>
+        /// <p>The name of the security profile whose information you want to get.</p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>The name of the security profile
-        /// whose information you want to get.</p>
+        /// <p>The name of the security profile whose information you want to get.</p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21389,16 +20947,12 @@ pub mod detach_thing_principal_input {
             self.thing_name = input;
             self
         }
-        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-        /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-        /// Cognito identity.</p>
+        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-        /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-        /// Cognito identity.</p>
+        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -21877,16 +21431,12 @@ pub mod get_behavior_model_training_summaries_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21894,30 +21444,22 @@ pub mod get_behavior_model_training_summaries_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -23895,14 +23437,12 @@ pub mod get_statistics_input {
             self.index_name = input;
             self
         }
-        /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your Amazon Web Services account.</p>
+        /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your Amazon Web Services account.</p>
+        /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -24524,16 +24064,12 @@ pub mod list_active_violations_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn behavior_criteria_type(mut self, input: crate::model::BehaviorCriteriaType) -> Self {
             self.behavior_criteria_type = Some(input);
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn set_behavior_criteria_type(
             mut self,
             input: std::option::Option<crate::model::BehaviorCriteriaType>,
@@ -24541,16 +24077,12 @@ pub mod list_active_violations_input {
             self.behavior_criteria_type = input;
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
             self.list_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn set_list_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_alerts = input;
             self
@@ -24980,14 +24512,12 @@ pub mod list_audit_findings_input {
         pub(crate) list_suppressed_findings: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A filter to limit results to the audit with the specified ID. You must
-        /// specify either the taskId or the startTime and endTime, but not both.</p>
+        /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>A filter to limit results to the audit with the specified ID. You must
-        /// specify either the taskId or the startTime and endTime, but not both.</p>
+        /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -25035,14 +24565,12 @@ pub mod list_audit_findings_input {
             self.next_token = input;
             self
         }
-        /// <p>A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25050,14 +24578,12 @@ pub mod list_audit_findings_input {
             self.start_time = input;
             self
         }
-        /// <p>A filter to limit results to those found before the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>A filter to limit results to those found before the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25065,16 +24591,12 @@ pub mod list_audit_findings_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-        /// </p>
+        /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
         pub fn list_suppressed_findings(mut self, input: bool) -> Self {
             self.list_suppressed_findings = Some(input);
             self
         }
-        /// <p>
-        /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-        /// </p>
+        /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
         pub fn set_list_suppressed_findings(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_findings = input;
             self
@@ -25725,18 +25247,12 @@ pub mod list_audit_suppressions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -25754,44 +25270,32 @@ pub mod list_audit_suppressions_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-        /// </p>
+        /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>
-        /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-        /// </p>
+        /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -25946,16 +25450,12 @@ pub mod list_audit_tasks_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The beginning of the time period. Audit information is retained for a
-        /// limited time (90 days). Requesting a start time prior to what is retained
-        /// results in an "InvalidRequestException".</p>
+        /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time period. Audit information is retained for a
-        /// limited time (90 days). Requesting a start time prior to what is retained
-        /// results in an "InvalidRequestException".</p>
+        /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25976,14 +25476,12 @@ pub mod list_audit_tasks_input {
             self.end_time = input;
             self
         }
-        /// <p>A filter to limit the output to the specified type of audit: can be one of
-        /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+        /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
         pub fn task_type(mut self, input: crate::model::AuditTaskType) -> Self {
             self.task_type = Some(input);
             self
         }
-        /// <p>A filter to limit the output to the specified type of audit: can be one of
-        /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+        /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
         pub fn set_task_type(
             mut self,
             input: std::option::Option<crate::model::AuditTaskType>,
@@ -25991,14 +25489,12 @@ pub mod list_audit_tasks_input {
             self.task_type = input;
             self
         }
-        /// <p>A filter to limit the output to audits with the specified completion
-        /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+        /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn task_status(mut self, input: crate::model::AuditTaskStatus) -> Self {
             self.task_status = Some(input);
             self
         }
-        /// <p>A filter to limit the output to audits with the specified completion
-        /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+        /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::AuditTaskStatus>,
@@ -26402,16 +25898,12 @@ pub mod list_billing_groups_input {
         pub(crate) name_prefix_filter: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -26793,14 +26285,12 @@ pub mod list_certificates_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -26958,14 +26448,12 @@ pub mod list_certificates_by_ca_input {
         pub(crate) ascending_order: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the CA certificate. This operation will list all registered device
-        /// certificate that were signed by this CA certificate.</p>
+        /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
         pub fn ca_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the CA certificate. This operation will list all registered device
-        /// certificate that were signed by this CA certificate.</p>
+        /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
         pub fn set_ca_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26993,14 +26481,12 @@ pub mod list_certificates_by_ca_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -27177,30 +26663,22 @@ pub mod list_custom_metrics_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -27354,60 +26832,42 @@ pub mod list_detect_mitigation_actions_executions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.violation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.violation_id = input;
             self
         }
-        /// <p>
-        /// The name of the thing whose mitigation actions are listed.
-        /// </p>
+        /// <p> The name of the thing whose mitigation actions are listed. </p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the thing whose mitigation actions are listed.
-        /// </p>
+        /// <p> The name of the thing whose mitigation actions are listed. </p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27415,16 +26875,12 @@ pub mod list_detect_mitigation_actions_executions_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions executions are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions executions are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27432,30 +26888,22 @@ pub mod list_detect_mitigation_actions_executions_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -27654,32 +27102,22 @@ pub mod list_detect_mitigation_actions_tasks_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27687,16 +27125,12 @@ pub mod list_detect_mitigation_actions_tasks_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -28220,14 +27654,12 @@ pub mod list_fleet_metrics_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-        /// otherwise <code>null</code> to receive the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-        /// otherwise <code>null</code> to receive the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -28386,14 +27818,12 @@ pub mod list_indices_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -28790,12 +28220,8 @@ pub mod list_job_executions_for_thing_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -28803,12 +28229,8 @@ pub mod list_job_executions_for_thing_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -29023,18 +28445,12 @@ pub mod list_jobs_input {
             self.status = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -29089,12 +28505,8 @@ pub mod list_jobs_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -29102,12 +28514,8 @@ pub mod list_jobs_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -29448,14 +28856,12 @@ pub mod list_managed_job_templates_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An optional parameter for template name. If specified, only the versions of the
-        /// managed job templates that have the specified template name will be returned.</p>
+        /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>An optional parameter for template name. If specified, only the versions of the
-        /// managed job templates that have the specified template name will be returned.</p>
+        /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30026,14 +29432,12 @@ pub mod list_outgoing_certificates_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30211,14 +29615,12 @@ pub mod list_policies_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30406,14 +29808,12 @@ pub mod list_policy_principals_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30781,14 +30181,12 @@ pub mod list_principal_policies_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, results are returned in ascending creation
-        /// order.</p>
+        /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, results are returned in ascending creation
-        /// order.</p>
+        /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30970,16 +30368,12 @@ pub mod list_principal_things_input {
         pub(crate) principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -31907,16 +31301,12 @@ pub mod list_security_profiles_input {
             self.max_results = input;
             self
         }
-        /// <p>A filter to limit results to the security profiles that use the defined dimension.
-        /// Cannot be used with <code>metricName</code>
-        /// </p>
+        /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
         pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension_name = Some(input.into());
             self
         }
-        /// <p>A filter to limit results to the security profiles that use the defined dimension.
-        /// Cannot be used with <code>metricName</code>
-        /// </p>
+        /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31924,14 +31314,12 @@ pub mod list_security_profiles_input {
             self.dimension_name = input;
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be used with <code>dimensionName</code>. </p>
+        /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be used with <code>dimensionName</code>. </p>
+        /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -32494,16 +31882,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33052,16 +32436,12 @@ pub mod list_thing_groups_input {
         pub(crate) recursive: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33285,16 +32665,12 @@ pub mod list_thing_groups_for_thing_input {
             self.thing_name = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33476,16 +32852,12 @@ pub mod list_thing_principals_input {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33700,16 +33072,12 @@ pub mod list_thing_registration_task_reports_input {
             self.report_type = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33899,16 +33267,12 @@ pub mod list_thing_registration_tasks_input {
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34086,16 +33450,12 @@ pub mod list_things_input {
         pub(crate) use_prefix_attribute_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34149,20 +33509,14 @@ pub mod list_things_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-        /// that start with the <code>attributeValue</code> provided.</p>
-        /// <p>When <code>false</code>, or not present, the action returns only the thing
-        /// resources with attribute values that match the entire <code>attributeValue</code>
-        /// provided. </p>
+        /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+        /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
         pub fn use_prefix_attribute_value(mut self, input: bool) -> Self {
             self.use_prefix_attribute_value = Some(input);
             self
         }
-        /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-        /// that start with the <code>attributeValue</code> provided.</p>
-        /// <p>When <code>false</code>, or not present, the action returns only the thing
-        /// resources with attribute values that match the entire <code>attributeValue</code>
-        /// provided. </p>
+        /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+        /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
         pub fn set_use_prefix_attribute_value(mut self, input: std::option::Option<bool>) -> Self {
             self.use_prefix_attribute_value = input;
             self
@@ -34354,16 +33708,12 @@ pub mod list_things_in_billing_group_input {
             self.billing_group_name = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34559,28 +33909,22 @@ pub mod list_things_in_thing_group_input {
             self.thing_group_name = input;
             self
         }
-        /// <p>When true, list things in this thing group and in all child groups as
-        /// well.</p>
+        /// <p>When true, list things in this thing group and in all child groups as well.</p>
         pub fn recursive(mut self, input: bool) -> Self {
             self.recursive = Some(input);
             self
         }
-        /// <p>When true, list things in this thing group and in all child groups as
-        /// well.</p>
+        /// <p>When true, list things in this thing group and in all child groups as well.</p>
         pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
             self.recursive = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34768,16 +34112,12 @@ pub mod list_thing_types_input {
         pub(crate) thing_type_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34966,16 +34306,12 @@ pub mod list_topic_rule_destinations_input {
             self.max_results = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -35147,16 +34483,12 @@ pub mod list_topic_rules_input {
             self.max_results = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -35327,14 +34659,12 @@ pub mod list_v2_logging_levels_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn target_type(mut self, input: crate::model::LogTargetType) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::LogTargetType>,
@@ -35342,16 +34672,12 @@ pub mod list_v2_logging_levels_input {
             self.target_type = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -35573,16 +34899,12 @@ pub mod list_violation_events_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn behavior_criteria_type(mut self, input: crate::model::BehaviorCriteriaType) -> Self {
             self.behavior_criteria_type = Some(input);
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn set_behavior_criteria_type(
             mut self,
             input: std::option::Option<crate::model::BehaviorCriteriaType>,
@@ -35590,16 +34912,12 @@ pub mod list_violation_events_input {
             self.behavior_criteria_type = input;
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
             self.list_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn set_list_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_alerts = input;
             self
@@ -36078,14 +35396,12 @@ pub mod register_ca_certificate_input {
             self.set_as_active = input;
             self
         }
-        /// <p>Allows this CA certificate to be used for auto registration of device
-        /// certificates.</p>
+        /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
         pub fn allow_auto_registration(mut self, input: bool) -> Self {
             self.allow_auto_registration = Some(input);
             self
         }
-        /// <p>Allows this CA certificate to be used for auto registration of device
-        /// certificates.</p>
+        /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
         pub fn set_allow_auto_registration(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_auto_registration = input;
             self
@@ -36107,13 +35423,10 @@ pub mod register_ca_certificate_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the CA certificate.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -36121,13 +35434,10 @@ pub mod register_ca_certificate_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the CA certificate.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -36862,14 +36172,12 @@ pub mod reject_certificate_transfer_input {
         pub(crate) reject_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37645,14 +36953,12 @@ pub mod search_index_input {
             self.query_string = input;
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -38677,18 +37983,12 @@ pub mod start_audit_mitigation_actions_task_input {
             self.task_id = input;
             self
         }
-        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-        /// them to a type of audit check, to all findings from an audit, or to a
-        /// specific set of
-        /// findings.</p>
+        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
         pub fn target(mut self, input: crate::model::AuditMitigationActionsTaskTarget) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-        /// them to a type of audit check, to all findings from an audit, or to a
-        /// specific set of
-        /// findings.</p>
+        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
@@ -38909,30 +38209,22 @@ pub mod start_detect_mitigation_actions_task_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn target(mut self, input: crate::model::DetectMitigationActionsTaskTarget) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
@@ -38944,18 +38236,14 @@ pub mod start_detect_mitigation_actions_task_input {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>
-        /// The actions to be performed when a device has unexpected behavior.
-        /// </p>
+        /// <p> The actions to be performed when a device has unexpected behavior. </p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>
-        /// The actions to be performed when a device has unexpected behavior.
-        /// </p>
+        /// <p> The actions to be performed when a device has unexpected behavior. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38963,9 +38251,7 @@ pub mod start_detect_mitigation_actions_task_input {
             self.actions = input;
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn violation_event_occurrence_range(
             mut self,
             input: crate::model::ViolationEventOccurrenceRange,
@@ -38973,9 +38259,7 @@ pub mod start_detect_mitigation_actions_task_input {
             self.violation_event_occurrence_range = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn set_violation_event_occurrence_range(
             mut self,
             input: std::option::Option<crate::model::ViolationEventOccurrenceRange>,
@@ -38983,16 +38267,12 @@ pub mod start_detect_mitigation_actions_task_input {
             self.violation_event_occurrence_range = input;
             self
         }
-        /// <p>
-        /// Specifies to list only active violations.
-        /// </p>
+        /// <p> Specifies to list only active violations. </p>
         pub fn include_only_active_violations(mut self, input: bool) -> Self {
             self.include_only_active_violations = Some(input);
             self
         }
-        /// <p>
-        /// Specifies to list only active violations.
-        /// </p>
+        /// <p> Specifies to list only active violations. </p>
         pub fn set_include_only_active_violations(
             mut self,
             input: std::option::Option<bool>,
@@ -39000,30 +38280,22 @@ pub mod start_detect_mitigation_actions_task_input {
             self.include_only_active_violations = input;
             self
         }
-        /// <p>
-        /// Specifies to include suppressed alerts.
-        /// </p>
+        /// <p> Specifies to include suppressed alerts. </p>
         pub fn include_suppressed_alerts(mut self, input: bool) -> Self {
             self.include_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// Specifies to include suppressed alerts.
-        /// </p>
+        /// <p> Specifies to include suppressed alerts. </p>
         pub fn set_include_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_suppressed_alerts = input;
             self
         }
-        /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-        /// </p>
+        /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-        /// </p>
+        /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39206,20 +38478,14 @@ pub mod start_on_demand_audit_task_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-        /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks, including those that are enabled or
-        /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+        /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-        /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks, including those that are enabled or
-        /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+        /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39397,16 +38663,12 @@ pub mod start_thing_registration_task_input {
             self.input_file_bucket = input;
             self
         }
-        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-        /// JSON file. Each line contains the parameter values to provision one device
-        /// (thing).</p>
+        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
         pub fn input_file_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_file_key = Some(input.into());
             self
         }
-        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-        /// JSON file. Each line contains the parameter values to provision one device
-        /// (thing).</p>
+        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
         pub fn set_input_file_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39925,16 +39187,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_auth_infos`](Self::set_auth_infos).
         ///
-        /// <p>A list of authorization info objects. Simulating authorization will create a response
-        /// for each <code>authInfo</code> object in the list.</p>
+        /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
         pub fn auth_infos(mut self, input: crate::model::AuthInfo) -> Self {
             let mut v = self.auth_infos.unwrap_or_default();
             v.push(input);
             self.auth_infos = Some(v);
             self
         }
-        /// <p>A list of authorization info objects. Simulating authorization will create a response
-        /// for each <code>authInfo</code> object in the list.</p>
+        /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
         pub fn set_auth_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthInfo>>,
@@ -39956,16 +39216,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_policy_names_to_add`](Self::set_policy_names_to_add).
         ///
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
         pub fn policy_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names_to_add.unwrap_or_default();
             v.push(input.into());
             self.policy_names_to_add = Some(v);
             self
         }
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
         pub fn set_policy_names_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39977,16 +39235,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_policy_names_to_skip`](Self::set_policy_names_to_skip).
         ///
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are not attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
         pub fn policy_names_to_skip(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names_to_skip.unwrap_or_default();
             v.push(input.into());
             self.policy_names_to_skip = Some(v);
             self
         }
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are not attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
         pub fn set_policy_names_to_skip(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -40177,14 +39433,12 @@ pub mod test_invoke_authorizer_input {
             self.token = input;
             self
         }
-        /// <p>The signature made with the token and your custom authentication service's private
-        /// key. This value must be Base-64-encoded.</p>
+        /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
         pub fn token_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_signature = Some(input.into());
             self
         }
-        /// <p>The signature made with the token and your custom authentication service's private
-        /// key. This value must be Base-64-encoded.</p>
+        /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
         pub fn set_token_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40399,14 +39653,12 @@ pub mod transfer_certificate_input {
         pub(crate) transfer_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40793,26 +40045,12 @@ pub mod update_account_audit_configuration_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon
-        /// Resource Name
-        /// (ARN)
-        /// of the role that grants permission
-        /// to
-        /// IoT to access information about your devices, policies,
-        /// certificates,
-        /// and other items as required when performing an audit.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon
-        /// Resource Name
-        /// (ARN)
-        /// of the role that grants permission
-        /// to
-        /// IoT to access information about your devices, policies,
-        /// certificates,
-        /// and other items as required when performing an audit.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -40851,19 +40089,10 @@ pub mod update_account_audit_configuration_input {
         ///
         /// To override the contents of this collection use [`set_audit_check_configurations`](Self::set_audit_check_configurations).
         ///
-        /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-        /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-        /// that are currently enabled.</p>
-        /// <p>Some data collection might start immediately when certain checks are enabled.
-        /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-        /// <p>You
-        /// cannot
-        /// disable a check if
-        /// it's
-        /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-        /// delete the scheduled audit itself.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required and must specify at least one enabled check.</p>
+        /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+        /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+        /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
         pub fn audit_check_configurations(
             mut self,
             k: impl Into<std::string::String>,
@@ -40874,19 +40103,10 @@ pub mod update_account_audit_configuration_input {
             self.audit_check_configurations = Some(hash_map);
             self
         }
-        /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-        /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-        /// that are currently enabled.</p>
-        /// <p>Some data collection might start immediately when certain checks are enabled.
-        /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-        /// <p>You
-        /// cannot
-        /// disable a check if
-        /// it's
-        /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-        /// delete the scheduled audit itself.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required and must specify at least one enabled check.</p>
+        /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+        /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+        /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
         pub fn set_audit_check_configurations(
             mut self,
             input: std::option::Option<
@@ -41048,18 +40268,12 @@ pub mod update_audit_suppression_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -41077,16 +40291,12 @@ pub mod update_audit_suppression_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -41094,30 +40304,22 @@ pub mod update_audit_suppression_input {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -41545,18 +40747,12 @@ pub mod update_billing_group_input {
             self.billing_group_properties = input;
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>UpdateBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>UpdateBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -41741,17 +40937,13 @@ pub mod update_ca_certificate_input {
             self
         }
         /// <p>The updated status of the CA certificate.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn new_status(mut self, input: crate::model::CaCertificateStatus) -> Self {
             self.new_status = Some(input);
             self
         }
         /// <p>The updated status of the CA certificate.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn set_new_status(
             mut self,
             input: std::option::Option<crate::model::CaCertificateStatus>,
@@ -41759,8 +40951,7 @@ pub mod update_ca_certificate_input {
             self.new_status = input;
             self
         }
-        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-        /// "DISABLE".</p>
+        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
         pub fn new_auto_registration_status(
             mut self,
             input: crate::model::AutoRegistrationStatus,
@@ -41768,8 +40959,7 @@ pub mod update_ca_certificate_input {
             self.new_auto_registration_status = Some(input);
             self
         }
-        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-        /// "DISABLE".</p>
+        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
         pub fn set_new_auto_registration_status(
             mut self,
             input: std::option::Option<crate::model::AutoRegistrationStatus>,
@@ -41981,14 +41171,12 @@ pub mod update_certificate_input {
         pub(crate) new_status: std::option::Option<crate::model::CertificateStatus>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -41997,25 +41185,15 @@ pub mod update_certificate_input {
             self
         }
         /// <p>The new status.</p>
-        /// <p>
-        /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-        /// are not intended for developer use.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn new_status(mut self, input: crate::model::CertificateStatus) -> Self {
             self.new_status = Some(input);
             self
         }
         /// <p>The new status.</p>
-        /// <p>
-        /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-        /// are not intended for developer use.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn set_new_status(
             mut self,
             input: std::option::Option<crate::model::CertificateStatus>,
@@ -42181,38 +41359,22 @@ pub mod update_custom_metric_input {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of the custom metric.
-        /// Cannot be updated. </p>
+        /// <p> The name of the custom metric. Cannot be updated. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be updated. </p>
+        /// <p> The name of the custom metric. Cannot be updated. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric,
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report.
-        /// Can
-        /// be updated. </p>
+        /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric,
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report.
-        /// Can
-        /// be updated. </p>
+        /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -42824,16 +41986,14 @@ pub mod update_dynamic_thing_group_input {
             self.expected_version = input;
             self
         }
-        /// <p>The dynamic thing group index to update.</p>
-        /// <note>
+        /// <p>The dynamic thing group index to update.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group index to update.</p>
-        /// <note>
+        /// <p>The dynamic thing group index to update.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -42850,19 +42010,15 @@ pub mod update_dynamic_thing_group_input {
             self.query_string = input;
             self
         }
-        /// <p>The dynamic thing group query version to update.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version to update.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_version = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group query version to update.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version to update.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn set_query_version(
             mut self,
@@ -43305,14 +42461,12 @@ pub mod update_fleet_metric_input {
             self.index_name = input;
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::FleetMetricUnit>,
@@ -43744,14 +42898,12 @@ pub mod update_job_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -43760,12 +42912,8 @@ pub mod update_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -43773,12 +42921,8 @@ pub mod update_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -43956,18 +43100,12 @@ pub mod update_mitigation_action_input {
         pub(crate) action_params: std::option::Option<crate::model::MitigationActionParams>,
     }
     impl Builder {
-        /// <p>The friendly name for the mitigation action. You cannot change the name by using
-        /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-        /// recreate the
-        /// mitigation action with the new name.</p>
+        /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_name = Some(input.into());
             self
         }
-        /// <p>The friendly name for the mitigation action. You cannot change the name by using
-        /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-        /// recreate the
-        /// mitigation action with the new name.</p>
+        /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -44207,14 +43345,12 @@ pub mod update_provisioning_template_input {
             self.default_version_id = input;
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -44609,20 +43745,12 @@ pub mod update_scheduled_audit_input {
         pub(crate) scheduled_audit_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>How often the scheduled audit takes
-        /// place,
-        /// either <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn frequency(mut self, input: crate::model::AuditFrequency) -> Self {
             self.frequency = Some(input);
             self
         }
-        /// <p>How often the scheduled audit takes
-        /// place,
-        /// either <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AuditFrequency>,
@@ -44630,40 +43758,22 @@ pub mod update_scheduled_audit_input {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-        /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-        /// takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-        /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-        /// takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-        /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-        /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -44675,20 +43785,14 @@ pub mod update_scheduled_audit_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44964,16 +44068,8 @@ pub mod update_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -44983,16 +44079,8 @@ pub mod update_security_profile_input {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -45022,40 +44110,32 @@ pub mod update_security_profile_input {
             self.additional_metrics_to_retain_v2 = input;
             self
         }
-        /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-        /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_behaviors(mut self, input: bool) -> Self {
             self.delete_behaviors = Some(input);
             self
         }
-        /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-        /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_behaviors(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_behaviors = input;
             self
         }
-        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-        /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_alert_targets(mut self, input: bool) -> Self {
             self.delete_alert_targets = Some(input);
             self
         }
-        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-        /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_alert_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_alert_targets = input;
             self
         }
-        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-        /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_additional_metrics_to_retain(mut self, input: bool) -> Self {
             self.delete_additional_metrics_to_retain = Some(input);
             self
         }
-        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-        /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<bool>,
@@ -45063,16 +44143,12 @@ pub mod update_security_profile_input {
             self.delete_additional_metrics_to_retain = input;
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -45477,15 +44553,13 @@ pub mod update_thing_input {
     }
     impl Builder {
         /// <p>The name of the thing to update.</p>
-        /// <p>You can't change a thing's name. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
         /// <p>The name of the thing to update.</p>
-        /// <p>You can't change a thing's name. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -45503,21 +44577,15 @@ pub mod update_thing_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-        /// example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-        /// </p>
+        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+        /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
         /// <p>This data is used to add new attributes or update existing attributes.</p>
         pub fn attribute_payload(mut self, input: crate::model::AttributePayload) -> Self {
             self.attribute_payload = Some(input);
             self
         }
-        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-        /// example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-        /// </p>
+        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+        /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
         /// <p>This data is used to add new attributes or update existing attributes.</p>
         pub fn set_attribute_payload(
             mut self,
@@ -45526,30 +44594,22 @@ pub mod update_thing_input {
             self.attribute_payload = input;
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>UpdateThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>UpdateThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
         }
-        /// <p>Remove a thing type association. If <b>true</b>, the
-        /// association is removed.</p>
+        /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
         pub fn remove_thing_type(mut self, input: bool) -> Self {
             self.remove_thing_type = Some(input);
             self
         }
-        /// <p>Remove a thing type association. If <b>true</b>, the
-        /// association is removed.</p>
+        /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
         pub fn set_remove_thing_type(mut self, input: std::option::Option<bool>) -> Self {
             self.remove_thing_type = input;
             self
@@ -45740,14 +44800,12 @@ pub mod update_thing_group_input {
             self.thing_group_properties = input;
             self
         }
-        /// <p>The expected version of the thing group. If this does not match the version of the
-        /// thing group being updated, the update will fail.</p>
+        /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing group. If this does not match the version of the
-        /// thing group being updated, the update will fail.</p>
+        /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -45964,18 +45022,12 @@ pub mod update_thing_groups_for_thing_input {
             self.thing_groups_to_remove = input;
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn override_dynamic_groups(mut self, input: bool) -> Self {
             self.override_dynamic_groups = Some(input);
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.override_dynamic_groups = input;
             self
@@ -46138,34 +45190,29 @@ pub mod update_topic_rule_destination_input {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn status(mut self, input: crate::model::TopicRuleDestinationStatus) -> Self {
@@ -46174,34 +45221,29 @@ pub mod update_topic_rule_destination_input {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn set_status(
@@ -46535,34 +45577,29 @@ pub struct UpdateTopicRuleDestinationInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
@@ -46574,34 +45611,29 @@ impl UpdateTopicRuleDestinationInput {
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
@@ -46627,10 +45659,7 @@ pub struct UpdateThingGroupsForThingInput {
     pub thing_groups_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The groups from which the thing will be removed.</p>
     pub thing_groups_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
 impl UpdateThingGroupsForThingInput {
@@ -46646,10 +45675,7 @@ impl UpdateThingGroupsForThingInput {
     pub fn thing_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.thing_groups_to_remove.as_deref()
     }
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(&self) -> bool {
         self.override_dynamic_groups
     }
@@ -46673,8 +45699,7 @@ pub struct UpdateThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The thing group properties.</p>
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
-    /// <p>The expected version of the thing group. If this does not match the version of the
-    /// thing group being updated, the update will fail.</p>
+    /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateThingGroupInput {
@@ -46688,8 +45713,7 @@ impl UpdateThingGroupInput {
     ) -> std::option::Option<&crate::model::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
-    /// <p>The expected version of the thing group. If this does not match the version of the
-    /// thing group being updated, the update will fail.</p>
+    /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -46709,31 +45733,22 @@ impl std::fmt::Debug for UpdateThingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingInput {
     /// <p>The name of the thing to update.</p>
-    /// <p>You can't change a thing's name. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-    /// example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-    /// </p>
+    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>UpdateThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>Remove a thing type association. If <b>true</b>, the
-    /// association is removed.</p>
+    /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub remove_thing_type: bool,
 }
 impl UpdateThingInput {
     /// <p>The name of the thing to update.</p>
-    /// <p>You can't change a thing's name. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
@@ -46741,24 +45756,17 @@ impl UpdateThingInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-    /// example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-    /// </p>
+    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
         self.attribute_payload.as_ref()
     }
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>UpdateThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>Remove a thing type association. If <b>true</b>, the
-    /// association is removed.</p>
+    /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub fn remove_thing_type(&self) -> bool {
         self.remove_thing_type
     }
@@ -46831,33 +45839,19 @@ pub struct UpdateSecurityProfileInput {
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
-    /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-    /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_behaviors: bool,
-    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-    /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_alert_targets: bool,
-    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-    /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-    /// invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_additional_metrics_to_retain: bool,
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateSecurityProfileInput {
@@ -46881,16 +45875,8 @@ impl UpdateSecurityProfileInput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -46900,25 +45886,19 @@ impl UpdateSecurityProfileInput {
     ) -> std::option::Option<&[crate::model::MetricToRetain]> {
         self.additional_metrics_to_retain_v2.as_deref()
     }
-    /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-    /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_behaviors(&self) -> bool {
         self.delete_behaviors
     }
-    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-    /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_alert_targets(&self) -> bool {
         self.delete_alert_targets
     }
-    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-    /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-    /// invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_additional_metrics_to_retain(&self) -> bool {
         self.delete_additional_metrics_to_retain
     }
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -46956,63 +45936,31 @@ impl std::fmt::Debug for UpdateSecurityProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place,
-    /// either <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-    /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-    /// takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-    /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
 impl UpdateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place,
-    /// either <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-    /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-    /// takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-    /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -47083,8 +46031,7 @@ pub struct UpdateProvisioningTemplateInput {
     pub enabled: bool,
     /// <p>The ID of the default provisioning template version.</p>
     pub default_version_id: std::option::Option<i32>,
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Updates the pre-provisioning hook template.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
@@ -47108,8 +46055,7 @@ impl UpdateProvisioningTemplateInput {
     pub fn default_version_id(&self) -> std::option::Option<i32> {
         self.default_version_id
     }
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -47143,10 +46089,7 @@ impl std::fmt::Debug for UpdateProvisioningTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMitigationActionInput {
-    /// <p>The friendly name for the mitigation action. You cannot change the name by using
-    /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-    /// recreate the
-    /// mitigation action with the new name.</p>
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -47154,10 +46097,7 @@ pub struct UpdateMitigationActionInput {
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
 }
 impl UpdateMitigationActionInput {
-    /// <p>The friendly name for the mitigation action. You cannot change the name by using
-    /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-    /// recreate the
-    /// mitigation action with the new name.</p>
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
@@ -47195,16 +46135,11 @@ pub struct UpdateJobInput {
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create criteria to abort a job.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-    /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -47232,18 +46167,13 @@ impl UpdateJobInput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-    /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -47326,8 +46256,7 @@ pub struct UpdateFleetMetricInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>The expected version of the fleet metric record in the registry.</p>
     pub expected_version: std::option::Option<i64>,
@@ -47365,8 +46294,7 @@ impl UpdateFleetMetricInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -47429,17 +46357,14 @@ pub struct UpdateDynamicThingGroupInput {
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>The dynamic thing group index to update.</p>
-    /// <note>
+    /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string to update.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The dynamic thing group query version to update.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub query_version: std::option::Option<std::string::String>,
 }
@@ -47458,8 +46383,7 @@ impl UpdateDynamicThingGroupInput {
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>The dynamic thing group index to update.</p>
-    /// <note>
+    /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(&self) -> std::option::Option<&str> {
@@ -47469,10 +46393,8 @@ impl UpdateDynamicThingGroupInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version to update.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
@@ -47570,33 +46492,17 @@ impl std::fmt::Debug for UpdateDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomMetricInput {
-    /// <p> The name of the custom metric.
-    /// Cannot be updated. </p>
+    /// <p> The name of the custom metric. Cannot be updated. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric,
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report.
-    /// Can
-    /// be updated. </p>
+    /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub display_name: std::option::Option<std::string::String>,
 }
 impl UpdateCustomMetricInput {
-    /// <p> The name of the custom metric.
-    /// Cannot be updated. </p>
+    /// <p> The name of the custom metric. Cannot be updated. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric,
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report.
-    /// Can
-    /// be updated. </p>
+    /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -47614,33 +46520,21 @@ impl std::fmt::Debug for UpdateCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The new status.</p>
-    /// <p>
-    /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-    /// are not intended for developer use.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: std::option::Option<crate::model::CertificateStatus>,
 }
 impl UpdateCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>The new status.</p>
-    /// <p>
-    /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-    /// are not intended for developer use.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
         self.new_status.as_ref()
     }
@@ -47661,12 +46555,9 @@ pub struct UpdateCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The updated status of the CA certificate.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: std::option::Option<crate::model::CaCertificateStatus>,
-    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-    /// "DISABLE".</p>
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub new_auto_registration_status: std::option::Option<crate::model::AutoRegistrationStatus>,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
@@ -47679,14 +46570,11 @@ impl UpdateCaCertificateInput {
         self.certificate_id.as_deref()
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(&self) -> std::option::Option<&crate::model::CaCertificateStatus> {
         self.new_status.as_ref()
     }
-    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-    /// "DISABLE".</p>
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub fn new_auto_registration_status(
         &self,
     ) -> std::option::Option<&crate::model::AutoRegistrationStatus> {
@@ -47724,10 +46612,7 @@ pub struct UpdateBillingGroupInput {
     pub billing_group_name: std::option::Option<std::string::String>,
     /// <p>The properties of the billing group.</p>
     pub billing_group_properties: std::option::Option<crate::model::BillingGroupProperties>,
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>UpdateBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateBillingGroupInput {
@@ -47741,10 +46626,7 @@ impl UpdateBillingGroupInput {
     ) -> std::option::Option<&crate::model::BillingGroupProperties> {
         self.billing_group_properties.as_ref()
     }
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>UpdateBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -47816,31 +46698,19 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -47848,21 +46718,15 @@ impl UpdateAuditSuppressionInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -47883,14 +46747,7 @@ impl std::fmt::Debug for UpdateAuditSuppressionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountAuditConfigurationInput {
-    /// <p>The Amazon
-    /// Resource Name
-    /// (ARN)
-    /// of the role that grants permission
-    /// to
-    /// IoT to access information about your devices, policies,
-    /// certificates,
-    /// and other items as required when performing an audit.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub audit_notification_target_configurations: std::option::Option<
@@ -47899,32 +46756,16 @@ pub struct UpdateAccountAuditConfigurationInput {
             crate::model::AuditNotificationTarget,
         >,
     >,
-    /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-    /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-    /// that are currently enabled.</p>
-    /// <p>Some data collection might start immediately when certain checks are enabled.
-    /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-    /// <p>You
-    /// cannot
-    /// disable a check if
-    /// it's
-    /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-    /// delete the scheduled audit itself.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required and must specify at least one enabled check.</p>
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub audit_check_configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AuditCheckConfiguration>,
     >,
 }
 impl UpdateAccountAuditConfigurationInput {
-    /// <p>The Amazon
-    /// Resource Name
-    /// (ARN)
-    /// of the role that grants permission
-    /// to
-    /// IoT to access information about your devices, policies,
-    /// certificates,
-    /// and other items as required when performing an audit.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -47939,19 +46780,10 @@ impl UpdateAccountAuditConfigurationInput {
     > {
         self.audit_notification_target_configurations.as_ref()
     }
-    /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-    /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-    /// that are currently enabled.</p>
-    /// <p>Some data collection might start immediately when certain checks are enabled.
-    /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-    /// <p>You
-    /// cannot
-    /// disable a check if
-    /// it's
-    /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-    /// delete the scheduled audit itself.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required and must specify at least one enabled check.</p>
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn audit_check_configurations(
         &self,
     ) -> std::option::Option<
@@ -48008,8 +46840,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account.</p>
     pub target_aws_account: std::option::Option<std::string::String>,
@@ -48017,8 +46848,7 @@ pub struct TransferCertificateInput {
     pub transfer_message: std::option::Option<std::string::String>,
 }
 impl TransferCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -48049,8 +46879,7 @@ pub struct TestInvokeAuthorizerInput {
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The token returned by your custom authentication service.</p>
     pub token: std::option::Option<std::string::String>,
-    /// <p>The signature made with the token and your custom authentication service's private
-    /// key. This value must be Base-64-encoded.</p>
+    /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
     pub token_signature: std::option::Option<std::string::String>,
     /// <p>Specifies a test HTTP authorization request.</p>
     pub http_context: std::option::Option<crate::model::HttpContext>,
@@ -48068,8 +46897,7 @@ impl TestInvokeAuthorizerInput {
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>The signature made with the token and your custom authentication service's private
-    /// key. This value must be Base-64-encoded.</p>
+    /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
     pub fn token_signature(&self) -> std::option::Option<&str> {
         self.token_signature.as_deref()
     }
@@ -48107,16 +46935,13 @@ pub struct TestAuthorizationInput {
     pub principal: std::option::Option<std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
     pub cognito_identity_pool_id: std::option::Option<std::string::String>,
-    /// <p>A list of authorization info objects. Simulating authorization will create a response
-    /// for each <code>authInfo</code> object in the list.</p>
+    /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub auth_infos: std::option::Option<std::vec::Vec<crate::model::AuthInfo>>,
     /// <p>The MQTT client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub policy_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are not attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub policy_names_to_skip: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestAuthorizationInput {
@@ -48128,8 +46953,7 @@ impl TestAuthorizationInput {
     pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
         self.cognito_identity_pool_id.as_deref()
     }
-    /// <p>A list of authorization info objects. Simulating authorization will create a response
-    /// for each <code>authInfo</code> object in the list.</p>
+    /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub fn auth_infos(&self) -> std::option::Option<&[crate::model::AuthInfo]> {
         self.auth_infos.as_deref()
     }
@@ -48137,13 +46961,11 @@ impl TestAuthorizationInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub fn policy_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names_to_add.as_deref()
     }
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are not attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub fn policy_names_to_skip(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names_to_skip.as_deref()
     }
@@ -48218,9 +47040,7 @@ pub struct StartThingRegistrationTaskInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
     pub input_file_bucket: std::option::Option<std::string::String>,
-    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-    /// JSON file. Each line contains the parameter values to provision one device
-    /// (thing).</p>
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub input_file_key: std::option::Option<std::string::String>,
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -48234,9 +47054,7 @@ impl StartThingRegistrationTaskInput {
     pub fn input_file_bucket(&self) -> std::option::Option<&str> {
         self.input_file_bucket.as_deref()
     }
-    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-    /// JSON file. Each line contains the parameter values to provision one device
-    /// (thing).</p>
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub fn input_file_key(&self) -> std::option::Option<&str> {
         self.input_file_key.as_deref()
     }
@@ -48260,17 +47078,11 @@ impl std::fmt::Debug for StartThingRegistrationTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandAuditTaskInput {
-    /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-    /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-    /// to see the list of all checks, including those that are enabled or
-    /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartOnDemandAuditTaskInput {
-    /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-    /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-    /// to see the list of all checks, including those that are enabled or
-    /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -48287,78 +47099,50 @@ impl std::fmt::Debug for StartOnDemandAuditTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub target: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
-    /// <p>
-    /// The actions to be performed when a device has unexpected behavior.
-    /// </p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub violation_event_occurrence_range:
         std::option::Option<crate::model::ViolationEventOccurrenceRange>,
-    /// <p>
-    /// Specifies to list only active violations.
-    /// </p>
+    /// <p> Specifies to list only active violations. </p>
     pub include_only_active_violations: std::option::Option<bool>,
-    /// <p>
-    /// Specifies to include suppressed alerts.
-    /// </p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub include_suppressed_alerts: std::option::Option<bool>,
-    /// <p>
-    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-    /// </p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(&self) -> std::option::Option<&crate::model::DetectMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
-    /// <p>
-    /// The actions to be performed when a device has unexpected behavior.
-    /// </p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(
         &self,
     ) -> std::option::Option<&crate::model::ViolationEventOccurrenceRange> {
         self.violation_event_occurrence_range.as_ref()
     }
-    /// <p>
-    /// Specifies to list only active violations.
-    /// </p>
+    /// <p> Specifies to list only active violations. </p>
     pub fn include_only_active_violations(&self) -> std::option::Option<bool> {
         self.include_only_active_violations
     }
-    /// <p>
-    /// Specifies to include suppressed alerts.
-    /// </p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub fn include_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.include_suppressed_alerts
     }
-    /// <p>
-    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-    /// </p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -48389,10 +47173,7 @@ impl std::fmt::Debug for StartDetectMitigationActionsTaskInput {
 pub struct StartAuditMitigationActionsTaskInput {
     /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-    /// them to a type of audit check, to all findings from an audit, or to a
-    /// specific set of
-    /// findings.</p>
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub target: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub audit_check_to_actions_mapping: std::option::Option<
@@ -48406,10 +47187,7 @@ impl StartAuditMitigationActionsTaskInput {
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-    /// them to a type of audit check, to all findings from an audit, or to a
-    /// specific set of
-    /// findings.</p>
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::AuditMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
@@ -48583,8 +47361,7 @@ pub struct SearchIndexInput {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The search query string.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -48600,8 +47377,7 @@ impl SearchIndexInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48742,15 +47518,13 @@ impl std::fmt::Debug for RemoveThingFromBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The reason the certificate transfer was rejected.</p>
     pub reject_reason: std::option::Option<std::string::String>,
 }
 impl RejectCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -48880,18 +47654,14 @@ pub struct RegisterCaCertificateInput {
     pub verification_certificate: std::option::Option<std::string::String>,
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     pub set_as_active: bool,
-    /// <p>Allows this CA certificate to be used for auto registration of device
-    /// certificates.</p>
+    /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub allow_auto_registration: bool,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
-    /// <p>Metadata which can be used to manage the CA certificate.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -48908,8 +47678,7 @@ impl RegisterCaCertificateInput {
     pub fn set_as_active(&self) -> bool {
         self.set_as_active
     }
-    /// <p>Allows this CA certificate to be used for auto registration of device
-    /// certificates.</p>
+    /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub fn allow_auto_registration(&self) -> bool {
         self.allow_auto_registration
     }
@@ -48917,13 +47686,10 @@ impl RegisterCaCertificateInput {
     pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -48992,13 +47758,9 @@ pub struct ListViolationEventsInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub behavior_criteria_type: std::option::Option<crate::model::BehaviorCriteriaType>,
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub list_suppressed_alerts: std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
@@ -49024,17 +47786,13 @@ impl ListViolationEventsInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.list_suppressed_alerts
     }
@@ -49071,25 +47829,19 @@ impl std::fmt::Debug for ListViolationEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub target_type: std::option::Option<crate::model::LogTargetType>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
         self.target_type.as_ref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49116,9 +47868,7 @@ pub struct ListTopicRulesInput {
     pub topic: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: std::option::Option<bool>,
@@ -49132,9 +47882,7 @@ impl ListTopicRulesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49160,9 +47908,7 @@ impl std::fmt::Debug for ListTopicRulesInput {
 pub struct ListTopicRuleDestinationsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicRuleDestinationsInput {
@@ -49170,9 +47916,7 @@ impl ListTopicRuleDestinationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49190,9 +47934,7 @@ impl std::fmt::Debug for ListTopicRuleDestinationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingTypesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49200,9 +47942,7 @@ pub struct ListThingTypesInput {
     pub thing_type_name: std::option::Option<std::string::String>,
 }
 impl ListThingTypesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49231,12 +47971,9 @@ impl std::fmt::Debug for ListThingTypesInput {
 pub struct ListThingsInThingGroupInput {
     /// <p>The thing group name.</p>
     pub thing_group_name: std::option::Option<std::string::String>,
-    /// <p>When true, list things in this thing group and in all child groups as
-    /// well.</p>
+    /// <p>When true, list things in this thing group and in all child groups as well.</p>
     pub recursive: bool,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49246,14 +47983,11 @@ impl ListThingsInThingGroupInput {
     pub fn thing_group_name(&self) -> std::option::Option<&str> {
         self.thing_group_name.as_deref()
     }
-    /// <p>When true, list things in this thing group and in all child groups as
-    /// well.</p>
+    /// <p>When true, list things in this thing group and in all child groups as well.</p>
     pub fn recursive(&self) -> bool {
         self.recursive
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49279,9 +48013,7 @@ impl std::fmt::Debug for ListThingsInThingGroupInput {
 pub struct ListThingsInBillingGroupInput {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -49291,9 +48023,7 @@ impl ListThingsInBillingGroupInput {
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49316,9 +48046,7 @@ impl std::fmt::Debug for ListThingsInBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49328,17 +48056,12 @@ pub struct ListThingsInput {
     pub attribute_value: std::option::Option<std::string::String>,
     /// <p>The name of the thing type used to search for things.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-    /// that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing
-    /// resources with attribute values that match the entire <code>attributeValue</code>
-    /// provided. </p>
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub use_prefix_attribute_value: bool,
 }
 impl ListThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49358,11 +48081,8 @@ impl ListThingsInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-    /// that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing
-    /// resources with attribute values that match the entire <code>attributeValue</code>
-    /// provided. </p>
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub fn use_prefix_attribute_value(&self) -> bool {
         self.use_prefix_attribute_value
     }
@@ -49387,9 +48107,7 @@ impl std::fmt::Debug for ListThingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingRegistrationTasksInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49397,9 +48115,7 @@ pub struct ListThingRegistrationTasksInput {
     pub status: std::option::Option<crate::model::Status>,
 }
 impl ListThingRegistrationTasksInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49430,9 +48146,7 @@ pub struct ListThingRegistrationTaskReportsInput {
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The type of task report.</p>
     pub report_type: std::option::Option<crate::model::ReportType>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -49446,9 +48160,7 @@ impl ListThingRegistrationTaskReportsInput {
     pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
         self.report_type.as_ref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49472,9 +48184,7 @@ impl std::fmt::Debug for ListThingRegistrationTaskReportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingPrincipalsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49482,9 +48192,7 @@ pub struct ListThingPrincipalsInput {
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl ListThingPrincipalsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49513,9 +48221,7 @@ impl std::fmt::Debug for ListThingPrincipalsInput {
 pub struct ListThingGroupsForThingInput {
     /// <p>The thing name.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49525,9 +48231,7 @@ impl ListThingGroupsForThingInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49550,9 +48254,7 @@ impl std::fmt::Debug for ListThingGroupsForThingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49564,9 +48266,7 @@ pub struct ListThingGroupsInput {
     pub recursive: std::option::Option<bool>,
 }
 impl ListThingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49675,9 +48375,7 @@ impl std::fmt::Debug for ListTargetsForPolicyInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -49685,9 +48383,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49789,12 +48485,9 @@ pub struct ListSecurityProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A filter to limit results to the security profiles that use the defined dimension.
-    /// Cannot be used with <code>metricName</code>
-    /// </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub dimension_name: std::option::Option<std::string::String>,
-    /// <p> The name of the custom metric.
-    /// Cannot be used with <code>dimensionName</code>. </p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesInput {
@@ -49806,14 +48499,11 @@ impl ListSecurityProfilesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension.
-    /// Cannot be used with <code>metricName</code>
-    /// </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn dimension_name(&self) -> std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
-    /// <p> The name of the custom metric.
-    /// Cannot be used with <code>dimensionName</code>. </p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -49959,9 +48649,7 @@ impl std::fmt::Debug for ListProvisioningTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49969,9 +48657,7 @@ pub struct ListPrincipalThingsInput {
     pub principal: std::option::Option<std::string::String>,
 }
 impl ListPrincipalThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50004,8 +48690,7 @@ pub struct ListPrincipalPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, results are returned in ascending creation
-    /// order.</p>
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPrincipalPoliciesInput {
@@ -50021,8 +48706,7 @@ impl ListPrincipalPoliciesInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, results are returned in ascending creation
-    /// order.</p>
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50069,8 +48753,7 @@ pub struct ListPolicyPrincipalsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPolicyPrincipalsInput {
@@ -50086,8 +48769,7 @@ impl ListPolicyPrincipalsInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50111,8 +48793,7 @@ pub struct ListPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPoliciesInput {
@@ -50124,8 +48805,7 @@ impl ListPoliciesInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50148,8 +48828,7 @@ pub struct ListOutgoingCertificatesInput {
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListOutgoingCertificatesInput {
@@ -50161,8 +48840,7 @@ impl ListOutgoingCertificatesInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50251,8 +48929,7 @@ impl std::fmt::Debug for ListMitigationActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedJobTemplatesInput {
-    /// <p>An optional parameter for template name. If specified, only the versions of the
-    /// managed job templates that have the specified template name will be returned.</p>
+    /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Maximum number of entries that can be returned.</p>
     pub max_results: std::option::Option<i32>,
@@ -50260,8 +48937,7 @@ pub struct ListManagedJobTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedJobTemplatesInput {
-    /// <p>An optional parameter for template name. If specified, only the versions of the
-    /// managed job templates that have the specified template name will be returned.</p>
+    /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -50318,10 +48994,7 @@ impl std::fmt::Debug for ListJobTemplatesInput {
 pub struct ListJobsInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -50332,12 +49005,8 @@ pub struct ListJobsInput {
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -50347,10 +49016,7 @@ impl ListJobsInput {
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -50371,12 +49037,8 @@ impl ListJobsInput {
         self.thing_group_id.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -50406,12 +49068,8 @@ pub struct ListJobExecutionsForThingInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -50430,12 +49088,8 @@ impl ListJobExecutionsForThingInput {
         self.status.as_ref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -50508,15 +49162,13 @@ impl std::fmt::Debug for ListJobExecutionsForJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesInput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListIndicesInput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50538,15 +49190,13 @@ impl std::fmt::Debug for ListIndicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetMetricsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-    /// otherwise <code>null</code> to receive the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFleetMetricsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-    /// otherwise <code>null</code> to receive the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50633,18 +49283,11 @@ impl std::fmt::Debug for ListDimensionsInput {
 pub struct ListDetectMitigationActionsTasksInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDetectMitigationActionsTasksInput {
@@ -50652,22 +49295,15 @@ impl ListDetectMitigationActionsTasksInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -50687,77 +49323,47 @@ impl std::fmt::Debug for ListDetectMitigationActionsTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsExecutionsInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub violation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the thing whose mitigation actions are listed.
-    /// </p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions executions are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(&self) -> std::option::Option<&str> {
         self.violation_id.as_deref()
     }
-    /// <p>
-    /// The name of the thing whose mitigation actions are listed.
-    /// </p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions executions are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50780,25 +49386,17 @@ impl std::fmt::Debug for ListDetectMitigationActionsExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomMetricsInput {
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCustomMetricsInput {
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -50816,20 +49414,17 @@ impl std::fmt::Debug for ListCustomMetricsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesByCaInput {
-    /// <p>The ID of the CA certificate. This operation will list all registered device
-    /// certificate that were signed by this CA certificate.</p>
+    /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub ca_certificate_id: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListCertificatesByCaInput {
-    /// <p>The ID of the CA certificate. This operation will list all registered device
-    /// certificate that were signed by this CA certificate.</p>
+    /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub fn ca_certificate_id(&self) -> std::option::Option<&str> {
         self.ca_certificate_id.as_deref()
     }
@@ -50841,8 +49436,7 @@ impl ListCertificatesByCaInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50866,8 +49460,7 @@ pub struct ListCertificatesInput {
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListCertificatesInput {
@@ -50879,8 +49472,7 @@ impl ListCertificatesInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50934,9 +49526,7 @@ impl std::fmt::Debug for ListCaCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -50944,9 +49534,7 @@ pub struct ListBillingGroupsInput {
     pub name_prefix_filter: std::option::Option<std::string::String>,
 }
 impl ListBillingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -51015,17 +49603,13 @@ impl std::fmt::Debug for ListAuthorizersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditTasksInput {
-    /// <p>The beginning of the time period. Audit information is retained for a
-    /// limited time (90 days). Requesting a start time prior to what is retained
-    /// results in an "InvalidRequestException".</p>
+    /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time period.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A filter to limit the output to the specified type of audit: can be one of
-    /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
-    /// <p>A filter to limit the output to audits with the specified completion
-    /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -51033,9 +49617,7 @@ pub struct ListAuditTasksInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListAuditTasksInput {
-    /// <p>The beginning of the time period. Audit information is retained for a
-    /// limited time (90 days). Requesting a start time prior to what is retained
-    /// results in an "InvalidRequestException".</p>
+    /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -51043,13 +49625,11 @@ impl ListAuditTasksInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>A filter to limit the output to the specified type of audit: can be one of
-    /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub fn task_type(&self) -> std::option::Option<&crate::model::AuditTaskType> {
         self.task_type.as_ref()
     }
-    /// <p>A filter to limit the output to audits with the specified completion
-    /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
         self.task_status.as_ref()
     }
@@ -51079,31 +49659,19 @@ impl std::fmt::Debug for ListAuditTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditSuppressionsInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-    /// </p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub ascending_order: bool,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAuditSuppressionsInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -51111,21 +49679,15 @@ impl ListAuditSuppressionsInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-    /// </p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -51262,8 +49824,7 @@ impl std::fmt::Debug for ListAuditMitigationActionsExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditFindingsInput {
-    /// <p>A filter to limit results to the audit with the specified ID. You must
-    /// specify either the taskId or the startTime and endTime, but not both.</p>
+    /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
     pub check_name: std::option::Option<std::string::String>,
@@ -51273,20 +49834,15 @@ pub struct ListAuditFindingsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A filter to limit results to those found before the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-    /// </p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub list_suppressed_findings: bool,
 }
 impl ListAuditFindingsInput {
-    /// <p>A filter to limit results to the audit with the specified ID. You must
-    /// specify either the taskId or the startTime and endTime, but not both.</p>
+    /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -51306,19 +49862,15 @@ impl ListAuditFindingsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>A filter to limit results to those found before the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-    /// </p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn list_suppressed_findings(&self) -> bool {
         self.list_suppressed_findings
     }
@@ -51388,13 +49940,9 @@ pub struct ListActiveViolationsInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub behavior_criteria_type: std::option::Option<crate::model::BehaviorCriteriaType>,
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub list_suppressed_alerts: std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
@@ -51412,17 +49960,13 @@ impl ListActiveViolationsInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.list_suppressed_alerts
     }
@@ -51512,8 +50056,7 @@ impl std::fmt::Debug for GetTopicRuleInput {
 pub struct GetStatisticsInput {
     /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-    /// indexed things in your Amazon Web Services account.</p>
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The aggregation field name.</p>
     pub aggregation_field: std::option::Option<std::string::String>,
@@ -51525,8 +50068,7 @@ impl GetStatisticsInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-    /// indexed things in your Amazon Web Services account.</p>
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -51855,35 +50397,23 @@ impl std::fmt::Debug for GetBucketsAggregationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBehaviorModelTrainingSummariesInput {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBehaviorModelTrainingSummariesInput {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -51946,9 +50476,7 @@ impl std::fmt::Debug for DisableTopicRuleInput {
 pub struct DetachThingPrincipalInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-    /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-    /// Cognito identity.</p>
+    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl DetachThingPrincipalInput {
@@ -51956,9 +50484,7 @@ impl DetachThingPrincipalInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-    /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-    /// Cognito identity.</p>
+    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -52170,13 +50696,11 @@ impl std::fmt::Debug for DescribeStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityProfileInput {
-    /// <p>The name of the security profile
-    /// whose information you want to get.</p>
+    /// <p>The name of the security profile whose information you want to get.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityProfileInput {
-    /// <p>The name of the security profile
-    /// whose information you want to get.</p>
+    /// <p>The name of the security profile whose information you want to get.</p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
@@ -52307,8 +50831,7 @@ impl std::fmt::Debug for DescribeMitigationActionInput {
 pub struct DescribeManagedJobTemplateInput {
     /// <p>The unique name of a managed job template, which is required.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>An optional parameter to specify version of a managed template. If not specified, the
-    /// pre-defined default version is returned.</p>
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub template_version: std::option::Option<std::string::String>,
 }
 impl DescribeManagedJobTemplateInput {
@@ -52316,8 +50839,7 @@ impl DescribeManagedJobTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>An optional parameter to specify version of a managed template. If not specified, the
-    /// pre-defined default version is returned.</p>
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
     }
@@ -52360,8 +50882,7 @@ pub struct DescribeJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing on which the job execution is running.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-    /// on a particular device.</p>
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {
@@ -52373,8 +50894,7 @@ impl DescribeJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-    /// on a particular device.</p>
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
@@ -52469,65 +50989,35 @@ impl std::fmt::Debug for DescribeEventConfigurationsInput {
 pub struct DescribeEndpointInput {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
-    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-    /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointInput {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
-    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-    /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
@@ -52586,15 +51076,11 @@ impl std::fmt::Debug for DescribeDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl DescribeDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -52622,15 +51108,11 @@ impl std::fmt::Debug for DescribeDefaultAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl DescribeCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -52647,13 +51129,11 @@ impl std::fmt::Debug for DescribeCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -52754,19 +51234,13 @@ impl std::fmt::Debug for DescribeAuditTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
 impl DescribeAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -52843,8 +51317,7 @@ impl std::fmt::Debug for DescribeAccountAuditConfigurationInput {
 pub struct DeprecateThingTypeInput {
     /// <p>The name of the thing type to deprecate.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-    /// associate it with things.</p>
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub undo_deprecate: bool,
 }
 impl DeprecateThingTypeInput {
@@ -52852,8 +51325,7 @@ impl DeprecateThingTypeInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-    /// associate it with things.</p>
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn undo_deprecate(&self) -> bool {
         self.undo_deprecate
     }
@@ -52871,15 +51343,13 @@ impl std::fmt::Debug for DeprecateThingTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub target_type: std::option::Option<crate::model::LogTargetType>,
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub target_name: std::option::Option<std::string::String>,
 }
 impl DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
         self.target_type.as_ref()
     }
@@ -52994,10 +51464,7 @@ impl std::fmt::Debug for DeleteThingGroupInput {
 pub struct DeleteThingInput {
     /// <p>The name of the thing to delete.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>DeleteThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteThingInput {
@@ -53005,10 +51472,7 @@ impl DeleteThingInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>DeleteThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53049,9 +51513,7 @@ impl std::fmt::Debug for DeleteStreamInput {
 pub struct DeleteSecurityProfileInput {
     /// <p>The name of the security profile to be deleted.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteSecurityProfileInput {
@@ -53059,9 +51521,7 @@ impl DeleteSecurityProfileInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53232,11 +51692,9 @@ impl std::fmt::Debug for DeletePolicyInput {
 pub struct DeleteOtaUpdateInput {
     /// <p>The ID of the OTA update to delete.</p>
     pub ota_update_id: std::option::Option<std::string::String>,
-    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-    /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub delete_stream: bool,
-    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-    /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub force_delete_aws_job: bool,
 }
 impl DeleteOtaUpdateInput {
@@ -53244,13 +51702,11 @@ impl DeleteOtaUpdateInput {
     pub fn ota_update_id(&self) -> std::option::Option<&str> {
         self.ota_update_id.as_deref()
     }
-    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-    /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub fn delete_stream(&self) -> bool {
         self.delete_stream
     }
-    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-    /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub fn force_delete_aws_job(&self) -> bool {
         self.force_delete_aws_job
     }
@@ -53315,27 +51771,16 @@ pub struct DeleteJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing whose job execution will be deleted.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-    /// execution of a particular job on a particular device.</p>
-    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-    /// by IoT, so be sure you get and use the correct value here.</p>
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
     pub execution_number: std::option::Option<i64>,
-    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-    /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-    /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-    /// to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -53349,31 +51794,20 @@ impl DeleteJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-    /// execution of a particular job on a particular device.</p>
-    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-    /// by IoT, so be sure you get and use the correct value here.</p>
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
-    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-    /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-    /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-    /// to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     /// </note>
     pub fn force(&self) -> bool {
         self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -53397,58 +51831,34 @@ impl std::fmt::Debug for DeleteJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobInput {
     /// <p>The ID of the job to be deleted.</p>
-    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-    /// However, this is not recommended, and you must ensure that your devices are not using the
-    /// jobId to refer to the deleted job.</p>
+    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-    /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-    /// will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-    /// a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
 impl DeleteJobInput {
     /// <p>The ID of the job to be deleted.</p>
-    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-    /// However, this is not recommended, and you must ensure that your devices are not using the
-    /// jobId to refer to the deleted job.</p>
+    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-    /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-    /// will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-    /// a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     pub fn force(&self) -> bool {
         self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -53567,15 +51977,11 @@ impl std::fmt::Debug for DeleteDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl DeleteCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -53592,21 +51998,17 @@ impl std::fmt::Debug for DeleteCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
-    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-    /// thing.</p>
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub force_delete: bool,
 }
 impl DeleteCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
-    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-    /// thing.</p>
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn force_delete(&self) -> bool {
         self.force_delete
     }
@@ -53624,13 +52026,11 @@ impl std::fmt::Debug for DeleteCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCaCertificateInput {
-    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-    /// the certificate ID.)</p>
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteCaCertificateInput {
-    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-    /// the certificate ID.)</p>
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -53649,10 +52049,7 @@ impl std::fmt::Debug for DeleteCaCertificateInput {
 pub struct DeleteBillingGroupInput {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>DeleteBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteBillingGroupInput {
@@ -53660,10 +52057,7 @@ impl DeleteBillingGroupInput {
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>DeleteBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53702,19 +52096,13 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
 impl DeleteAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -53785,13 +52173,10 @@ pub struct CreateTopicRuleInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The rule payload.</p>
     pub topic_rule_payload: std::option::Option<crate::model::TopicRulePayload>,
-    /// <p>Metadata which can be used to manage the topic rule.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: --tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::string::String>,
 }
@@ -53804,13 +52189,10 @@ impl CreateTopicRuleInput {
     pub fn topic_rule_payload(&self) -> std::option::Option<&crate::model::TopicRulePayload> {
         self.topic_rule_payload.as_ref()
     }
-    /// <p>Metadata which can be used to manage the topic rule.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: --tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&str> {
         self.tags.as_deref()
@@ -53832,9 +52214,7 @@ impl std::fmt::Debug for CreateTopicRuleInput {
 pub struct CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-    /// the new thing type including a description, and a list of searchable thing attribute
-    /// names.</p>
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
     /// <p>Metadata which can be used to manage the thing type.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -53844,9 +52224,7 @@ impl CreateThingTypeInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-    /// the new thing type including a description, and a list of searchable thing attribute
-    /// names.</p>
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
@@ -53914,24 +52292,19 @@ impl std::fmt::Debug for CreateThingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThingInput {
     /// <p>The name of the thing to create.</p>
-    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the thing type associated with the new thing.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-    /// document. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
     /// <p>The name of the billing group the thing will be added to.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
 }
 impl CreateThingInput {
     /// <p>The name of the thing to create.</p>
-    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
@@ -53939,11 +52312,8 @@ impl CreateThingInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-    /// document. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
         self.attribute_payload.as_ref()
     }
@@ -54022,17 +52392,12 @@ pub struct CreateSecurityProfileInput {
     pub security_profile_description: std::option::Option<std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
-    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-    /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-    /// </p>
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-    /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-    /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -54053,8 +52418,7 @@ impl CreateSecurityProfileInput {
     pub fn behaviors(&self) -> std::option::Option<&[crate::model::Behavior]> {
         self.behaviors.as_deref()
     }
-    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-    /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub fn alert_targets(
         &self,
     ) -> std::option::Option<
@@ -54062,12 +52426,8 @@ impl CreateSecurityProfileInput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-    /// </p>
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-    /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-    /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -54109,32 +52469,13 @@ impl std::fmt::Debug for CreateSecurityProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-    /// determined by the system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-    /// parameter is set to <code>MONTHLY</code>. If days
-    /// 29
-    /// to 31 are specified, and the month
-    /// doesn't
-    /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either
-    /// <code>SUN</code>,
-    /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-    /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
@@ -54142,38 +52483,19 @@ pub struct CreateScheduledAuditInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-    /// determined by the system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-    /// parameter is set to <code>MONTHLY</code>. If days
-    /// 29
-    /// to 31 are specified, and the month
-    /// doesn't
-    /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either
-    /// <code>SUN</code>,
-    /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-    /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -54203,26 +52525,21 @@ impl std::fmt::Debug for CreateScheduledAuditInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoleAliasInput {
-    /// <p>The role alias that points to a role ARN. This allows you to change the role without
-    /// having to update the device.</p>
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     pub credential_duration_seconds: std::option::Option<i32>,
-    /// <p>Metadata which can be used to manage the role alias.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRoleAliasInput {
-    /// <p>The role alias that points to a role ARN. This allows you to change the role without
-    /// having to update the device.</p>
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub fn role_alias(&self) -> std::option::Option<&str> {
         self.role_alias.as_deref()
     }
@@ -54234,13 +52551,10 @@ impl CreateRoleAliasInput {
     pub fn credential_duration_seconds(&self) -> std::option::Option<i32> {
         self.credential_duration_seconds
     }
-    /// <p>Metadata which can be used to manage the role alias.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54307,18 +52621,14 @@ pub struct CreateProvisioningTemplateInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True to enable the fleet provisioning template, otherwise false.</p>
     pub enabled: bool,
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-    /// grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Creates a pre-provisioning hook template.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -54339,8 +52649,7 @@ impl CreateProvisioningTemplateInput {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-    /// grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -54348,13 +52657,10 @@ impl CreateProvisioningTemplateInput {
     pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54401,12 +52707,9 @@ impl std::fmt::Debug for CreateProvisioningClaimInput {
 pub struct CreatePolicyVersionInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the policy version is set as the default. When this parameter is
-    /// true, the new policy version becomes the operative version (that is, the version that is in
-    /// effect for the certificates to which the policy is attached).</p>
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub set_as_default: bool,
 }
 impl CreatePolicyVersionInput {
@@ -54414,14 +52717,11 @@ impl CreatePolicyVersionInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Specifies whether the policy version is set as the default. When this parameter is
-    /// true, the new policy version becomes the operative version (that is, the version that is in
-    /// effect for the certificates to which the policy is attached).</p>
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub fn set_as_default(&self) -> bool {
         self.set_as_default
     }
@@ -54442,16 +52742,12 @@ impl std::fmt::Debug for CreatePolicyVersionInput {
 pub struct CreatePolicyInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>Metadata which can be used to manage the policy.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -54460,18 +52756,14 @@ impl CreatePolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Metadata which can be used to manage the policy.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54497,14 +52789,9 @@ pub struct CreateOtaUpdateInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The devices targeted to receive OTA updates.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
-    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-    /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-    /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-    /// added to a target group, even after the update was completed by all things originally in the group. Valid
-    /// values: CONTINUOUS | SNAPSHOT.</p>
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub aws_job_executions_rollout_config:
@@ -54513,15 +52800,11 @@ pub struct CreateOtaUpdateInput {
     pub aws_job_presigned_url_config: std::option::Option<crate::model::AwsJobPresignedUrlConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub aws_job_abort_config: std::option::Option<crate::model::AwsJobAbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-    /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-    /// status is not set to another terminal state before the timer expires, it will be automatically
-    /// set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub aws_job_timeout_config: std::option::Option<crate::model::AwsJobTimeoutConfig>,
     /// <p>The files to be streamed by the OTA update.</p>
     pub files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
-    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-    /// to create an OTA update job.</p>
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
     pub additional_parameters:
@@ -54542,16 +52825,11 @@ impl CreateOtaUpdateInput {
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
     }
-    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-    /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-    /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-    /// added to a target group, even after the update was completed by all things originally in the group. Valid
-    /// values: CONTINUOUS | SNAPSHOT.</p>
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -54571,10 +52849,7 @@ impl CreateOtaUpdateInput {
     pub fn aws_job_abort_config(&self) -> std::option::Option<&crate::model::AwsJobAbortConfig> {
         self.aws_job_abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-    /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-    /// status is not set to another terminal state before the timer expires, it will be automatically
-    /// set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn aws_job_timeout_config(
         &self,
     ) -> std::option::Option<&crate::model::AwsJobTimeoutConfig> {
@@ -54584,8 +52859,7 @@ impl CreateOtaUpdateInput {
     pub fn files(&self) -> std::option::Option<&[crate::model::OtaUpdateFile]> {
         self.files.as_deref()
     }
-    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-    /// to create an OTA update job.</p>
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -54695,18 +52969,14 @@ impl std::fmt::Debug for CreateKeysAndCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobTemplateInput {
-    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-    /// characters, "-", and "_" are valid for use here.</p>
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub document_source: std::option::Option<std::string::String>,
@@ -54721,17 +52991,13 @@ pub struct CreateJobTemplateInput {
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>Metadata that can be used to manage the job template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateJobTemplateInput {
-    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-    /// characters, "-", and "_" are valid for use here.</p>
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     pub fn job_template_id(&self) -> std::option::Option<&str> {
         self.job_template_id.as_deref()
     }
@@ -54739,13 +53005,10 @@ impl CreateJobTemplateInput {
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub fn document_source(&self) -> std::option::Option<&str> {
@@ -54773,10 +53036,7 @@ impl CreateJobTemplateInput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
@@ -54809,18 +53069,14 @@ impl std::fmt::Debug for CreateJobTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
-    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-    /// characters, "-" and "_" are valid for use here.</p>
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A list of things and thing groups to which the job should be sent.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub document_source: std::option::Option<std::string::String>,
@@ -54830,30 +53086,20 @@ pub struct CreateJobInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>Allows you to create a staged rollout of the job.</p>
     pub job_executions_rollout_config:
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create criteria to abort a job.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the time expires, it will be
-    /// automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>Metadata which can be used to manage the job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -54864,8 +53110,7 @@ pub struct CreateJobInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobInput {
-    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-    /// characters, "-" and "_" are valid for use here.</p>
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -54873,13 +53118,10 @@ impl CreateJobInput {
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub fn document_source(&self) -> std::option::Option<&str> {
@@ -54897,10 +53139,7 @@ impl CreateJobInput {
     pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -54914,10 +53153,7 @@ impl CreateJobInput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the time expires, it will be
-    /// automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
@@ -54926,12 +53162,8 @@ impl CreateJobInput {
         self.tags.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -54993,8 +53225,7 @@ pub struct CreateFleetMetricInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -55032,8 +53263,7 @@ impl CreateFleetMetricInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -55067,18 +53297,15 @@ pub struct CreateDynamicThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group properties.</p>
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
-    /// <p>The dynamic thing group index name.</p>
-    /// <note>
+    /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The dynamic thing group query version.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub query_version: std::option::Option<std::string::String>,
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
@@ -55095,8 +53322,7 @@ impl CreateDynamicThingGroupInput {
     ) -> std::option::Option<&crate::model::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
-    /// <p>The dynamic thing group index name.</p>
-    /// <note>
+    /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(&self) -> std::option::Option<&str> {
@@ -55107,10 +53333,8 @@ impl CreateDynamicThingGroupInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
@@ -55141,26 +53365,20 @@ pub struct CreateDomainConfigurationInput {
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
     pub server_certificate_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub validation_certificate_arn: std::option::Option<std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub authorizer_config: std::option::Option<crate::model::AuthorizerConfig>,
-    /// <p>The type of service delivered by the endpoint.</p>
-    /// <note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub service_type: std::option::Option<crate::model::ServiceType>,
-    /// <p>Metadata which can be used to manage the domain configuration.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -55173,13 +53391,11 @@ impl CreateDomainConfigurationInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn server_certificate_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.server_certificate_arns.as_deref()
     }
-    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn validation_certificate_arn(&self) -> std::option::Option<&str> {
         self.validation_certificate_arn.as_deref()
     }
@@ -55187,20 +53403,16 @@ impl CreateDomainConfigurationInput {
     pub fn authorizer_config(&self) -> std::option::Option<&crate::model::AuthorizerConfig> {
         self.authorizer_config.as_ref()
     }
-    /// <p>The type of service delivered by the endpoint.</p>
-    /// <note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -55229,15 +53441,13 @@ impl std::fmt::Debug for CreateDomainConfigurationInput {
 pub struct CreateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-    /// </p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub r#type: std::option::Option<crate::model::DimensionType>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Metadata that can be used to manage the dimension.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateDimensionInput {
@@ -55245,8 +53455,7 @@ impl CreateDimensionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-    /// </p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DimensionType> {
         self.r#type.as_ref()
     }
@@ -55258,8 +53467,7 @@ impl CreateDimensionInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55280,65 +53488,35 @@ impl std::fmt::Debug for CreateDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomMetricInput {
-    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-    /// Cannot be updated
-    /// once defined.</p>
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric;
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report. Can be updated once defined.</p>
+    /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
-    /// <p>
-    /// Metadata that can be used to manage the custom metric.
-    /// </p>
+    /// <p> Metadata that can be used to manage the custom metric. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Each custom
-    /// metric must have a unique client request token. If you try to create a new custom metric that
-    /// already exists with a different token,
-    /// an exception
-    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateCustomMetricInput {
-    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-    /// Cannot be updated
-    /// once defined.</p>
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric;
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report. Can be updated once defined.</p>
+    /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
-    /// <p>
-    /// Metadata that can be used to manage the custom metric.
-    /// </p>
+    /// <p> Metadata that can be used to manage the custom metric. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Each custom
-    /// metric must have a unique client request token. If you try to create a new custom metric that
-    /// already exists with a different token,
-    /// an exception
-    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55433,19 +53611,15 @@ pub struct CreateAuthorizerInput {
     pub authorizer_function_arn: std::option::Option<std::string::String>,
     /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
     pub token_key_name: std::option::Option<std::string::String>,
-    /// <p>The public keys used to verify the digital signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
     pub token_signing_public_keys:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the create authorizer request.</p>
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
-    /// <p>Metadata which can be used to manage the custom authorizer.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
@@ -55464,8 +53638,7 @@ impl CreateAuthorizerInput {
     pub fn token_key_name(&self) -> std::option::Option<&str> {
         self.token_key_name.as_deref()
     }
-    /// <p>The public keys used to verify the digital signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
     pub fn token_signing_public_keys(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -55476,13 +53649,10 @@ impl CreateAuthorizerInput {
     pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
         self.status.as_ref()
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -55510,36 +53680,21 @@ impl std::fmt::Debug for CreateAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// Each audit supression must have a unique client request token. If you try to create a new audit
-    /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-    /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -55547,28 +53702,19 @@ impl CreateAuditSuppressionInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// Each audit supression must have a unique client request token. If you try to create a new audit
-    /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-    /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55626,24 +53772,12 @@ pub struct CancelJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-    /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-    /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-    /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-    /// will be thrown. The default is <code>false</code>.</p>
-    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-    /// to update the job execution status.  Use caution and ensure that the device is able to
-    /// recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub force: bool,
-    /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-    /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-    /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-    /// contains the current job execution status data is returned. (This makes it unnecessary to
-    /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-    /// data.)</p>
+    /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -55656,28 +53790,16 @@ impl CancelJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-    /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-    /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-    /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-    /// will be thrown. The default is <code>false</code>.</p>
-    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-    /// to update the job execution status.  Use caution and ensure that the device is able to
-    /// recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub fn force(&self) -> bool {
         self.force
     }
-    /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-    /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-    /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-    /// contains the current job execution status data is returned. (This makes it unnecessary to
-    /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-    /// data.)</p>
+    /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub fn status_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -55707,12 +53829,8 @@ pub struct CancelJobInput {
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>An optional comment string describing why the job was canceled.</p>
     pub comment: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-    /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-    /// is <code>false</code>.</p>
-    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to update the job execution status.  Use caution and ensure that each
-    /// device executing a job which is canceled is able to recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub force: bool,
 }
 impl CancelJobInput {
@@ -55728,12 +53846,8 @@ impl CancelJobInput {
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-    /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-    /// is <code>false</code>.</p>
-    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to update the job execution status.  Use caution and ensure that each
-    /// device executing a job which is canceled is able to recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -55753,15 +53867,11 @@ impl std::fmt::Debug for CancelJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -55778,13 +53888,11 @@ impl std::fmt::Debug for CancelDetectMitigationActionsTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl CancelCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -55801,13 +53909,11 @@ impl std::fmt::Debug for CancelCertificateTransferInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelAuditTaskInput {
-    /// <p>The ID of the audit you want to cancel. You can only cancel an
-    /// audit that is "IN_PROGRESS".</p>
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelAuditTaskInput {
-    /// <p>The ID of the audit you want to cancel. You can only cancel an
-    /// audit that is "IN_PROGRESS".</p>
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -55847,8 +53953,7 @@ impl std::fmt::Debug for CancelAuditMitigationActionsTaskInput {
 pub struct AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The principal, which can be a certificate ARN (as returned from the
-    /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl AttachThingPrincipalInput {
@@ -55856,8 +53961,7 @@ impl AttachThingPrincipalInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The principal, which can be a certificate ARN (as returned from the
-    /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -55908,8 +54012,7 @@ impl std::fmt::Debug for AttachSecurityProfileInput {
 pub struct AttachPrincipalPolicyInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-    /// operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl AttachPrincipalPolicyInput {
@@ -55917,8 +54020,7 @@ impl AttachPrincipalPolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-    /// operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -55971,12 +54073,8 @@ pub struct AssociateTargetsWithJobInput {
     /// <p>An optional comment string describing why the job was associated with the targets.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -55995,12 +54093,8 @@ impl AssociateTargetsWithJobInput {
         self.comment.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -56030,10 +54124,7 @@ pub struct AddThingToThingGroupInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to add to a group.</p>
     pub thing_arn: std::option::Option<std::string::String>,
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
 impl AddThingToThingGroupInput {
@@ -56053,10 +54144,7 @@ impl AddThingToThingGroupInput {
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(&self) -> bool {
         self.override_dynamic_groups
     }
@@ -56077,8 +54165,7 @@ impl std::fmt::Debug for AddThingToThingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p>
-    /// <note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -56090,8 +54177,7 @@ pub struct AddThingToBillingGroupInput {
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p>
-    /// <note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
@@ -56125,15 +54211,13 @@ impl std::fmt::Debug for AddThingToBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: bool,
 }
 impl AcceptCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }

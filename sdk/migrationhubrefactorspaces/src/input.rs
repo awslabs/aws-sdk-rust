@@ -63,14 +63,12 @@ pub mod create_application_input {
             self.proxy_type = input;
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
             self.api_gateway_proxy = Some(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn set_api_gateway_proxy(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayProxyInput>,
@@ -103,14 +101,12 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -347,14 +343,12 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -539,14 +533,12 @@ pub mod create_route_input {
             self.application_identifier = input;
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_identifier = Some(input.into());
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,18 +546,12 @@ pub mod create_route_input {
             self.service_identifier = input;
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
             self.route_type = Some(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn set_route_type(
             mut self,
             input: std::option::Option<crate::model::RouteType>,
@@ -611,14 +597,12 @@ pub mod create_route_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -937,14 +921,12 @@ pub mod create_service_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1859,21 +1841,15 @@ pub mod delete_service_input {
             self.environment_identifier = input;
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_identifier = Some(input.into());
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn set_application_identifier(
             mut self,
@@ -3016,14 +2992,12 @@ pub mod list_applications_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3203,14 +3177,12 @@ pub mod list_environments_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3383,14 +3355,12 @@ pub mod list_environment_vpcs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3598,14 +3568,12 @@ pub mod list_routes_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3830,14 +3798,12 @@ pub mod list_services_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4169,14 +4135,12 @@ pub mod put_resource_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4764,15 +4728,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4821,8 +4783,7 @@ pub struct ListServicesInput {
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -4838,8 +4799,7 @@ impl ListServicesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4865,8 +4825,7 @@ pub struct ListRoutesInput {
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRoutesInput {
@@ -4882,8 +4841,7 @@ impl ListRoutesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4907,8 +4865,7 @@ pub struct ListEnvironmentVpcsInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentVpcsInput {
@@ -4920,8 +4877,7 @@ impl ListEnvironmentVpcsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4942,8 +4898,7 @@ impl std::fmt::Debug for ListEnvironmentVpcsInput {
 pub struct ListEnvironmentsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentsInput {
@@ -4951,8 +4906,7 @@ impl ListEnvironmentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4974,8 +4928,7 @@ pub struct ListApplicationsInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationsInput {
@@ -4987,8 +4940,7 @@ impl ListApplicationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5149,11 +5101,8 @@ impl std::fmt::Debug for GetApplicationInput {
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
     pub environment_identifier: std::option::Option<std::string::String>,
-    /// <p>Deletes a Refactor Spaces service.</p>
-    /// <note>
-    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-    /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-    /// endpoint in a VPC.</p>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the service to delete.</p>
@@ -5164,11 +5113,8 @@ impl DeleteServiceInput {
     pub fn environment_identifier(&self) -> std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
-    /// <p>Deletes a Refactor Spaces service.</p>
-    /// <note>
-    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-    /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-    /// endpoint in a VPC.</p>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
@@ -5316,8 +5262,7 @@ pub struct CreateServiceInput {
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceInput {
@@ -5360,8 +5305,7 @@ impl CreateServiceInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5391,21 +5335,16 @@ pub struct CreateRouteInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
     pub application_identifier: std::option::Option<std::string::String>,
-    /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub service_identifier: std::option::Option<std::string::String>,
-    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-    /// match another route is forwarded to the default route. Applications must have a default route
-    /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-    /// on a URI path.</p>
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The configuration for the URI path route type. </p>
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateRouteInput {
@@ -5417,15 +5356,11 @@ impl CreateRouteInput {
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
-    /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
-    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-    /// match another route is forwarded to the default route. Applications must have a default route
-    /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-    /// on a URI path.</p>
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.route_type.as_ref()
     }
@@ -5440,8 +5375,7 @@ impl CreateRouteInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5473,8 +5407,7 @@ pub struct CreateEnvironmentInput {
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -5497,8 +5430,7 @@ impl CreateEnvironmentInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5527,14 +5459,12 @@ pub struct CreateApplicationInput {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -5554,8 +5484,7 @@ impl CreateApplicationInput {
     pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxyInput> {
         self.api_gateway_proxy.as_ref()
     }
@@ -5566,8 +5495,7 @@ impl CreateApplicationInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

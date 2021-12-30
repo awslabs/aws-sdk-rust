@@ -12,11 +12,9 @@ pub struct AssociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -161,11 +159,9 @@ pub struct BatchAssociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchAssociateAssessmentReportEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -310,11 +306,9 @@ pub struct BatchCreateDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCreateDelegationByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -455,11 +449,9 @@ pub struct BatchDeleteDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteDelegationByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -600,11 +592,9 @@ pub struct BatchDisassociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDisassociateAssessmentReportEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -749,11 +739,9 @@ pub struct BatchImportEvidenceToAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchImportEvidenceToAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -898,11 +886,9 @@ pub struct CreateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1026,11 +1012,9 @@ pub struct CreateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1154,11 +1138,9 @@ pub struct CreateAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentReportErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1282,11 +1264,9 @@ pub struct CreateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1404,11 +1384,9 @@ pub struct DeleteAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1532,11 +1510,9 @@ pub struct DeleteAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1660,11 +1636,9 @@ pub struct DeleteAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1799,11 +1773,9 @@ pub struct DeleteAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentReportErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1927,11 +1899,9 @@ pub struct DeleteControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2049,11 +2019,9 @@ pub struct DeregisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2177,11 +2145,9 @@ pub struct DeregisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2324,11 +2290,9 @@ pub struct DisassociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2473,8 +2437,7 @@ pub struct GetAccountStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountStatusErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2567,11 +2530,9 @@ pub struct GetAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2689,11 +2650,9 @@ pub struct GetAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2817,11 +2776,9 @@ pub struct GetAssessmentReportUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentReportUrlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2945,11 +2902,9 @@ pub struct GetChangeLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChangeLogsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3067,11 +3022,9 @@ pub struct GetControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3186,11 +3139,9 @@ pub struct GetDelegationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDelegationsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -3300,11 +3251,9 @@ pub struct GetEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3419,11 +3368,9 @@ pub struct GetEvidenceByEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceByEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3549,11 +3496,9 @@ pub struct GetEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3677,11 +3622,9 @@ pub struct GetEvidenceFoldersByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3816,11 +3759,9 @@ pub struct GetEvidenceFoldersByAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3965,11 +3906,9 @@ pub struct GetInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInsightsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4065,11 +4004,9 @@ pub struct GetInsightsByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInsightsByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4193,11 +4130,9 @@ pub struct GetOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4323,11 +4258,9 @@ pub struct GetServicesInScopeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServicesInScopeErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4440,11 +4373,9 @@ pub struct GetSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSettingsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4540,11 +4471,9 @@ pub struct ListAssessmentControlInsightsByControlDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentControlInsightsByControlDomainErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4693,11 +4622,9 @@ pub struct ListAssessmentFrameworksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentFrameworksErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4810,11 +4737,9 @@ pub struct ListAssessmentFrameworkShareRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentFrameworkShareRequestsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4944,11 +4869,9 @@ pub struct ListAssessmentReportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentReportsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5061,11 +4984,9 @@ pub struct ListAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5175,11 +5096,9 @@ pub struct ListControlDomainInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlDomainInsightsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5303,11 +5222,9 @@ pub struct ListControlDomainInsightsByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlDomainInsightsByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5452,11 +5369,9 @@ pub struct ListControlInsightsByControlDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlInsightsByControlDomainErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5599,11 +5514,9 @@ pub struct ListControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5710,11 +5623,9 @@ pub struct ListKeywordsForDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeywordsForDataSourceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5827,11 +5738,9 @@ pub struct ListNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotificationsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5944,8 +5853,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6060,11 +5968,9 @@ pub struct RegisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6185,11 +6091,9 @@ pub struct RegisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6328,11 +6232,9 @@ pub struct StartAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6465,8 +6367,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6575,8 +6476,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6688,11 +6588,9 @@ pub struct UpdateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6816,11 +6714,9 @@ pub struct UpdateAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6944,11 +6840,9 @@ pub struct UpdateAssessmentControlSetStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlSetStatusErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7087,11 +6981,9 @@ pub struct UpdateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7215,11 +7107,9 @@ pub struct UpdateAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7354,11 +7244,9 @@ pub struct UpdateAssessmentStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentStatusErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7482,11 +7370,9 @@ pub struct UpdateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7604,11 +7490,9 @@ pub struct UpdateSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSettingsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -7718,11 +7602,9 @@ pub struct ValidateAssessmentReportIntegrityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateAssessmentReportIntegrityErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -8074,8 +7956,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> An internal service error occurred during the processing of your request. Try again
-/// later. </p>
+/// <p> An internal service error occurred during the processing of your request. Try again later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -8139,8 +8020,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> Your account isn't registered with Audit Manager. Check the delegated
-/// administrator setup on the Audit Manager settings page, and try again. </p>
+/// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

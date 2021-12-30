@@ -5067,9 +5067,7 @@ pub enum ModifyWorkspacePropertiesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// <p>The configuration of this WorkSpace is not supported for this operation. For more information, see  
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required
-    /// Configuration and Service Components for WorkSpaces </a>.</p>
+    /// <p>The configuration of this WorkSpace is not supported for this operation. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required Configuration and Service Components for WorkSpaces </a>.</p>
     UnsupportedWorkspaceConfigurationException(
         crate::error::UnsupportedWorkspaceConfigurationException,
     ),
@@ -5529,15 +5527,11 @@ pub enum RegisterWorkspaceDirectoryErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The configuration of this network is not supported for this operation, or your network configuration
-    /// conflicts with the Amazon WorkSpaces management network IP range. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-    /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+    /// <p>The configuration of this network is not supported for this operation, or your network configuration conflicts with the Amazon WorkSpaces management network IP range. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
     UnsupportedNetworkConfigurationException(
         crate::error::UnsupportedNetworkConfigurationException,
     ),
-    /// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you
-    /// will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
+    /// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
     WorkspacesDefaultRoleNotFoundException(crate::error::WorkspacesDefaultRoleNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7351,8 +7345,7 @@ impl ResourceAssociatedException {
     }
 }
 
-/// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you
-/// will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
+/// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspacesDefaultRoleNotFoundException {
@@ -7416,10 +7409,7 @@ impl WorkspacesDefaultRoleNotFoundException {
     }
 }
 
-/// <p>The configuration of this network is not supported for this operation, or your network configuration
-/// conflicts with the Amazon WorkSpaces management network IP range. For more information, see
-/// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-/// Configure a VPC for Amazon WorkSpaces</a>.</p>
+/// <p>The configuration of this network is not supported for this operation, or your network configuration conflicts with the Amazon WorkSpaces management network IP range. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedNetworkConfigurationException {
@@ -7483,9 +7473,7 @@ impl UnsupportedNetworkConfigurationException {
     }
 }
 
-/// <p>The configuration of this WorkSpace is not supported for this operation. For more information, see  
-/// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required
-/// Configuration and Service Components for WorkSpaces </a>.</p>
+/// <p>The configuration of this WorkSpace is not supported for this operation. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required Configuration and Service Components for WorkSpaces </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedWorkspaceConfigurationException {

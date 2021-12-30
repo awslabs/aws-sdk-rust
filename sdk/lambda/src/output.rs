@@ -12,26 +12,12 @@ pub struct UpdateFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
@@ -53,26 +39,12 @@ impl UpdateFunctionEventInvokeConfigOutput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -149,52 +121,24 @@ pub mod update_function_event_invoke_config_output {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -256,8 +200,7 @@ pub struct UpdateFunctionConfigurationOutput {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -265,19 +208,15 @@ pub struct UpdateFunctionConfigurationOutput {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -294,8 +233,7 @@ pub struct UpdateFunctionConfigurationOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl UpdateFunctionConfigurationOutput {
@@ -359,8 +297,7 @@ impl UpdateFunctionConfigurationOutput {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -376,13 +313,11 @@ impl UpdateFunctionConfigurationOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -390,13 +325,11 @@ impl UpdateFunctionConfigurationOutput {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -430,8 +363,7 @@ impl UpdateFunctionConfigurationOutput {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -687,14 +619,12 @@ pub mod update_function_configuration_output {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -736,16 +666,14 @@ pub mod update_function_configuration_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -753,14 +681,12 @@ pub mod update_function_configuration_output {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -775,14 +701,12 @@ pub mod update_function_configuration_output {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -790,14 +714,12 @@ pub mod update_function_configuration_output {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -912,16 +834,14 @@ pub mod update_function_configuration_output {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -1009,8 +929,7 @@ pub struct UpdateFunctionCodeOutput {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -1018,19 +937,15 @@ pub struct UpdateFunctionCodeOutput {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -1047,8 +962,7 @@ pub struct UpdateFunctionCodeOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl UpdateFunctionCodeOutput {
@@ -1112,8 +1026,7 @@ impl UpdateFunctionCodeOutput {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -1129,13 +1042,11 @@ impl UpdateFunctionCodeOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -1143,13 +1054,11 @@ impl UpdateFunctionCodeOutput {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -1183,8 +1092,7 @@ impl UpdateFunctionCodeOutput {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -1440,14 +1348,12 @@ pub mod update_function_code_output {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1489,16 +1395,14 @@ pub mod update_function_code_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -1506,14 +1410,12 @@ pub mod update_function_code_output {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -1528,14 +1430,12 @@ pub mod update_function_code_output {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -1543,14 +1443,12 @@ pub mod update_function_code_output {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -1665,16 +1563,14 @@ pub mod update_function_code_output {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -1728,17 +1624,15 @@ impl UpdateFunctionCodeOutput {
     }
 }
 
-/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
@@ -1752,8 +1646,7 @@ pub struct UpdateEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
@@ -1761,9 +1654,7 @@ pub struct UpdateEventSourceMappingOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
@@ -1778,13 +1669,11 @@ pub struct UpdateEventSourceMappingOutput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
@@ -1797,13 +1686,11 @@ impl UpdateEventSourceMappingOutput {
     pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -1827,8 +1714,7 @@ impl UpdateEventSourceMappingOutput {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -1844,9 +1730,7 @@ impl UpdateEventSourceMappingOutput {
     pub fn last_processing_result(&self) -> std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -1878,8 +1762,7 @@ impl UpdateEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -1887,8 +1770,7 @@ impl UpdateEventSourceMappingOutput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -1994,14 +1876,12 @@ pub mod update_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -2009,14 +1889,12 @@ pub mod update_event_source_mapping_output {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2078,14 +1956,12 @@ pub mod update_event_source_mapping_output {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -2129,16 +2005,12 @@ pub mod update_event_source_mapping_output {
             self.last_processing_result = input;
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -2245,14 +2117,12 @@ pub mod update_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn set_maximum_record_age_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -2273,14 +2143,12 @@ pub mod update_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -2423,8 +2291,7 @@ pub struct UpdateAliasOutput {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -2446,8 +2313,7 @@ impl UpdateAliasOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
@@ -2525,14 +2391,12 @@ pub mod update_alias_output {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,
@@ -2882,26 +2746,12 @@ pub struct PutFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
@@ -2923,26 +2773,12 @@ impl PutFunctionEventInvokeConfigOutput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -3019,52 +2855,24 @@ pub mod put_function_event_invoke_config_output {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -3159,25 +2967,13 @@ pub struct PutFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl PutFunctionCodeSigningConfigOutput {
@@ -3186,25 +2982,13 @@ impl PutFunctionCodeSigningConfigOutput {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -3241,49 +3025,25 @@ pub mod put_function_code_signing_config_output {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3341,8 +3101,7 @@ pub struct PublishVersionOutput {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -3350,19 +3109,15 @@ pub struct PublishVersionOutput {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -3379,8 +3134,7 @@ pub struct PublishVersionOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl PublishVersionOutput {
@@ -3444,8 +3198,7 @@ impl PublishVersionOutput {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -3461,13 +3214,11 @@ impl PublishVersionOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -3475,13 +3226,11 @@ impl PublishVersionOutput {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -3515,8 +3264,7 @@ impl PublishVersionOutput {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -3772,14 +3520,12 @@ pub mod publish_version_output {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -3821,16 +3567,14 @@ pub mod publish_version_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -3838,14 +3582,12 @@ pub mod publish_version_output {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -3860,14 +3602,12 @@ pub mod publish_version_output {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -3875,14 +3615,12 @@ pub mod publish_version_output {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -3997,16 +3735,14 @@ pub mod publish_version_output {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -4080,8 +3816,7 @@ pub struct PublishLayerVersionOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl PublishLayerVersionOutput {
@@ -4117,8 +3852,7 @@ impl PublishLayerVersionOutput {
     pub fn license_info(&self) -> std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
@@ -4255,16 +3989,14 @@ pub mod publish_layer_version_output {
         ///
         /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
         ///
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
             v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn set_compatible_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -5281,30 +5013,23 @@ impl InvokeAsyncOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeOutput {
-    /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
-    /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
-    /// the <code>DryRun</code> invocation type, the status code is 204.</p>
+    /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
     pub status_code: i32,
-    /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
-    /// in the response payload.</p>
+    /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
     pub function_error: std::option::Option<std::string::String>,
     /// <p>The last 4 KB of the execution log, which is base64 encoded.</p>
     pub log_result: std::option::Option<std::string::String>,
     /// <p>The response from the function, or an error object.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
-    /// version the alias resolved to.</p>
+    /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
     pub executed_version: std::option::Option<std::string::String>,
 }
 impl InvokeOutput {
-    /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
-    /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
-    /// the <code>DryRun</code> invocation type, the status code is 204.</p>
+    /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
-    /// in the response payload.</p>
+    /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
     pub fn function_error(&self) -> std::option::Option<&str> {
         self.function_error.as_deref()
     }
@@ -5316,8 +5041,7 @@ impl InvokeOutput {
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
-    /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
-    /// version the alias resolved to.</p>
+    /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
     pub fn executed_version(&self) -> std::option::Option<&str> {
         self.executed_version.as_deref()
     }
@@ -5346,28 +5070,22 @@ pub mod invoke_output {
         pub(crate) executed_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
-        /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
-        /// the <code>DryRun</code> invocation type, the status code is 204.</p>
+        /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
         pub fn status_code(mut self, input: i32) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
-        /// invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For
-        /// the <code>DryRun</code> invocation type, the status code is 204.</p>
+        /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
         }
-        /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
-        /// in the response payload.</p>
+        /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
         pub fn function_error(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_error = Some(input.into());
             self
         }
-        /// <p>If present, indicates that an error occurred during function execution. Details about the error are included
-        /// in the response payload.</p>
+        /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
         pub fn set_function_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5395,14 +5113,12 @@ pub mod invoke_output {
             self.payload = input;
             self
         }
-        /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
-        /// version the alias resolved to.</p>
+        /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
         pub fn executed_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.executed_version = Some(input.into());
             self
         }
-        /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which
-        /// version the alias resolved to.</p>
+        /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
         pub fn set_executed_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5774,8 +5490,7 @@ pub struct GetLayerVersionByArnOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl GetLayerVersionByArnOutput {
@@ -5811,8 +5526,7 @@ impl GetLayerVersionByArnOutput {
     pub fn license_info(&self) -> std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
@@ -5949,16 +5663,14 @@ pub mod get_layer_version_by_arn_output {
         ///
         /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
         ///
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
             v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn set_compatible_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -6009,8 +5721,7 @@ pub struct GetLayerVersionOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl GetLayerVersionOutput {
@@ -6046,8 +5757,7 @@ impl GetLayerVersionOutput {
     pub fn license_info(&self) -> std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
@@ -6184,16 +5894,14 @@ pub mod get_layer_version_output {
         ///
         /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
         ///
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
             v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn set_compatible_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -6237,26 +5945,12 @@ pub struct GetFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
@@ -6278,26 +5972,12 @@ impl GetFunctionEventInvokeConfigOutput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -6374,52 +6054,24 @@ pub mod get_function_event_invoke_config_output {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -6481,8 +6133,7 @@ pub struct GetFunctionConfigurationOutput {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -6490,19 +6141,15 @@ pub struct GetFunctionConfigurationOutput {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -6519,8 +6166,7 @@ pub struct GetFunctionConfigurationOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl GetFunctionConfigurationOutput {
@@ -6584,8 +6230,7 @@ impl GetFunctionConfigurationOutput {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -6601,13 +6246,11 @@ impl GetFunctionConfigurationOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -6615,13 +6258,11 @@ impl GetFunctionConfigurationOutput {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -6655,8 +6296,7 @@ impl GetFunctionConfigurationOutput {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -6912,14 +6552,12 @@ pub mod get_function_configuration_output {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -6961,16 +6599,14 @@ pub mod get_function_configuration_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -6978,14 +6614,12 @@ pub mod get_function_configuration_output {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -7000,14 +6634,12 @@ pub mod get_function_configuration_output {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -7015,14 +6647,12 @@ pub mod get_function_configuration_output {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -7137,16 +6767,14 @@ pub mod get_function_configuration_output {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -7267,25 +6895,13 @@ pub struct GetFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetFunctionCodeSigningConfigOutput {
@@ -7294,25 +6910,13 @@ impl GetFunctionCodeSigningConfigOutput {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -7349,49 +6953,25 @@ pub mod get_function_code_signing_config_output {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7426,8 +7006,7 @@ pub struct GetFunctionOutput {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
-    /// concurrency</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub concurrency: std::option::Option<crate::model::Concurrency>,
 }
 impl GetFunctionOutput {
@@ -7446,8 +7025,7 @@ impl GetFunctionOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
-    /// concurrency</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn concurrency(&self) -> std::option::Option<&crate::model::Concurrency> {
         self.concurrency.as_ref()
     }
@@ -7527,14 +7105,12 @@ pub mod get_function_output {
             self.tags = input;
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
-        /// concurrency</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
         pub fn concurrency(mut self, input: crate::model::Concurrency) -> Self {
             self.concurrency = Some(input);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
-        /// concurrency</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
         pub fn set_concurrency(
             mut self,
             input: std::option::Option<crate::model::Concurrency>,
@@ -7560,17 +7136,15 @@ impl GetFunctionOutput {
     }
 }
 
-/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
@@ -7584,8 +7158,7 @@ pub struct GetEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
@@ -7593,9 +7166,7 @@ pub struct GetEventSourceMappingOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
@@ -7610,13 +7181,11 @@ pub struct GetEventSourceMappingOutput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
@@ -7629,13 +7198,11 @@ impl GetEventSourceMappingOutput {
     pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -7659,8 +7226,7 @@ impl GetEventSourceMappingOutput {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -7676,9 +7242,7 @@ impl GetEventSourceMappingOutput {
     pub fn last_processing_result(&self) -> std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -7710,8 +7274,7 @@ impl GetEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -7719,8 +7282,7 @@ impl GetEventSourceMappingOutput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -7826,14 +7388,12 @@ pub mod get_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -7841,14 +7401,12 @@ pub mod get_event_source_mapping_output {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7910,14 +7468,12 @@ pub mod get_event_source_mapping_output {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -7961,16 +7517,12 @@ pub mod get_event_source_mapping_output {
             self.last_processing_result = input;
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -8077,14 +7629,12 @@ pub mod get_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn set_maximum_record_age_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -8105,14 +7655,12 @@ pub mod get_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -8255,8 +7803,7 @@ pub struct GetAliasOutput {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -8278,8 +7825,7 @@ impl GetAliasOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
@@ -8357,14 +7903,12 @@ pub mod get_alias_output {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,
@@ -8661,17 +8205,15 @@ impl DeleteFunctionOutput {
     }
 }
 
-/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
@@ -8685,8 +8227,7 @@ pub struct DeleteEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
@@ -8694,9 +8235,7 @@ pub struct DeleteEventSourceMappingOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
@@ -8711,13 +8250,11 @@ pub struct DeleteEventSourceMappingOutput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
@@ -8730,13 +8267,11 @@ impl DeleteEventSourceMappingOutput {
     pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -8760,8 +8295,7 @@ impl DeleteEventSourceMappingOutput {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -8777,9 +8311,7 @@ impl DeleteEventSourceMappingOutput {
     pub fn last_processing_result(&self) -> std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -8811,8 +8343,7 @@ impl DeleteEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -8820,8 +8351,7 @@ impl DeleteEventSourceMappingOutput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -8927,14 +8457,12 @@ pub mod delete_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -8942,14 +8470,12 @@ pub mod delete_event_source_mapping_output {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9011,14 +8537,12 @@ pub mod delete_event_source_mapping_output {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -9062,16 +8586,12 @@ pub mod delete_event_source_mapping_output {
             self.last_processing_result = input;
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -9178,14 +8698,12 @@ pub mod delete_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn set_maximum_record_age_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -9206,14 +8724,12 @@ pub mod delete_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -9381,8 +8897,7 @@ pub struct CreateFunctionOutput {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -9390,19 +8905,15 @@ pub struct CreateFunctionOutput {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -9419,8 +8930,7 @@ pub struct CreateFunctionOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl CreateFunctionOutput {
@@ -9484,8 +8994,7 @@ impl CreateFunctionOutput {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -9501,13 +9010,11 @@ impl CreateFunctionOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -9515,13 +9022,11 @@ impl CreateFunctionOutput {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -9555,8 +9060,7 @@ impl CreateFunctionOutput {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -9812,14 +9316,12 @@ pub mod create_function_output {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -9861,16 +9363,14 @@ pub mod create_function_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -9878,14 +9378,12 @@ pub mod create_function_output {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -9900,14 +9398,12 @@ pub mod create_function_output {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -9915,14 +9411,12 @@ pub mod create_function_output {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -10037,16 +9531,14 @@ pub mod create_function_output {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -10100,17 +9592,15 @@ impl CreateFunctionOutput {
     }
 }
 
-/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
@@ -10124,8 +9614,7 @@ pub struct CreateEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
@@ -10133,9 +9622,7 @@ pub struct CreateEventSourceMappingOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
@@ -10150,13 +9637,11 @@ pub struct CreateEventSourceMappingOutput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
@@ -10169,13 +9654,11 @@ impl CreateEventSourceMappingOutput {
     pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -10199,8 +9682,7 @@ impl CreateEventSourceMappingOutput {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -10216,9 +9698,7 @@ impl CreateEventSourceMappingOutput {
     pub fn last_processing_result(&self) -> std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -10250,8 +9730,7 @@ impl CreateEventSourceMappingOutput {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -10259,8 +9738,7 @@ impl CreateEventSourceMappingOutput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -10366,14 +9844,12 @@ pub mod create_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -10381,14 +9857,12 @@ pub mod create_event_source_mapping_output {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10450,14 +9924,12 @@ pub mod create_event_source_mapping_output {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -10501,16 +9973,12 @@ pub mod create_event_source_mapping_output {
             self.last_processing_result = input;
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -10617,14 +10085,12 @@ pub mod create_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn set_maximum_record_age_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -10645,14 +10111,12 @@ pub mod create_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -10795,8 +10259,7 @@ pub struct CreateAliasOutput {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -10818,8 +10281,7 @@ impl CreateAliasOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
@@ -10897,14 +10359,12 @@ pub mod create_alias_output {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,

@@ -7,29 +7,12 @@ pub enum Error {
     ConcurrentModification(crate::error::ConcurrentModification),
     /// <p>The cause of this error depends on the operation that you're performing:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that have a
-    /// parent/child relationship (example.com and test.example.com) can't have any common name servers. You tried to create a hosted zone
-    /// that has the same name as an existing hosted zone or that's the parent or child of an existing hosted zone, and you specified a
-    /// delegation set that shares one or more name servers with the existing hosted zone. For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Create a private hosted zone:</b> A hosted zone with the specified name
-    /// already exists and is already associated with the Amazon VPC that you specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is
-    /// already associated with another hosted zone that has the same name.</p>
-    /// </li>
+    /// <li> <p> <b>Create a public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child relationship (example.com and test.example.com) can't have any common name servers. You tried to create a hosted zone that has the same name as an existing hosted zone or that's the parent or child of an existing hosted zone, and you specified a delegation set that shares one or more name servers with the existing hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p> </li>
+    /// <li> <p> <b>Create a private hosted zone:</b> A hosted zone with the specified name already exists and is already associated with the Amazon VPC that you specified.</p> </li>
+    /// <li> <p> <b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already associated with another hosted zone that has the same name.</p> </li>
     /// </ul>
     ConflictingDomainExists(crate::error::ConflictingDomainExists),
-    /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type
-    /// than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or
-    /// <code>CreateTrafficPolicyVersion</code>request. </p>
+    /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>
     ConflictingTypes(crate::error::ConflictingTypes),
     /// <p>The hosted zone doesn't have any DNSSEC resources.</p>
     DnssecNotFound(crate::error::DnssecNotFound),
@@ -37,35 +20,23 @@ pub enum Error {
     DelegationSetAlreadyCreated(crate::error::DelegationSetAlreadyCreated),
     /// <p>The specified delegation set has already been marked as reusable.</p>
     DelegationSetAlreadyReusable(crate::error::DelegationSetAlreadyReusable),
-    /// <p>The specified delegation contains associated hosted zones which must be deleted before the reusable delegation set
-    /// can be deleted.</p>
+    /// <p>The specified delegation contains associated hosted zones which must be deleted before the reusable delegation set can be deleted.</p>
     DelegationSetInUse(crate::error::DelegationSetInUse),
-    /// <p>You can create a hosted zone that has the same name as an existing hosted zone (example.com is common), but there is a
-    /// limit to the number of hosted zones that have the same name. If you get this error, Amazon Route 53 has reached that limit. If you own
-    /// the domain name and Route 53 generates this error, contact Customer Support.</p>
+    /// <p>You can create a hosted zone that has the same name as an existing hosted zone (example.com is common), but there is a limit to the number of hosted zones that have the same name. If you get this error, Amazon Route 53 has reached that limit. If you own the domain name and Route 53 generates this error, contact Customer Support.</p>
     DelegationSetNotAvailable(crate::error::DelegationSetNotAvailable),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     DelegationSetNotReusable(crate::error::DelegationSetNotReusable),
-    /// <p> The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that
-    /// has the following values:</p>
+    /// <p> The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that has the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ
-    /// from the existing health check that has the same caller reference.</p>
-    /// </li>
-    /// <li>
-    /// <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted,
-    /// regardless of the other settings in the request.</p>
-    /// </li>
+    /// <li> <p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ from the existing health check that has the same caller reference.</p> </li>
+    /// <li> <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p> </li>
     /// </ul>
     HealthCheckAlreadyExists(crate::error::HealthCheckAlreadyExists),
     /// <p>This error code is not in use.</p>
     HealthCheckInUse(crate::error::HealthCheckInUse),
-    /// <p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code>
-    /// in the health check.</p>
+    /// <p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code> in the health check.</p>
     HealthCheckVersionMismatch(crate::error::HealthCheckVersionMismatch),
-    /// <p>The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted zone has already been created
-    /// with the specified <code>CallerReference</code>.</p>
+    /// <p>The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted zone has already been created with the specified <code>CallerReference</code>.</p>
     HostedZoneAlreadyExists(crate::error::HostedZoneAlreadyExists),
     /// <p>The hosted zone contains resource records that are not SOA or NS records.</p>
     HostedZoneNotEmpty(crate::error::HostedZoneNotEmpty),
@@ -77,31 +48,19 @@ pub enum Error {
     HostedZonePartiallyDelegated(crate::error::HostedZonePartiallyDelegated),
     /// <p>The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.</p>
     IncompatibleVersion(crate::error::IncompatibleVersion),
-    /// <p>Amazon Route 53 doesn't have the permissions required to create log streams and send query logs to log streams. Possible causes
-    /// include the following:</p>
+    /// <p>Amazon Route 53 doesn't have the permissions required to create log streams and send query logs to log streams. Possible causes include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the
-    /// necessary permissions.</p>
-    /// </li>
-    /// <li>
-    /// <p>The resource policy hasn't finished propagating yet.</p>
-    /// </li>
-    /// <li>
-    /// <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the
-    /// log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p>
-    /// </li>
+    /// <li> <p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p> </li>
+    /// <li> <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p> </li>
+    /// <li> <p>The resource policy hasn't finished propagating yet.</p> </li>
+    /// <li> <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p> </li>
     /// </ul>
     InsufficientCloudWatchLogsResourcePolicy(
         crate::error::InsufficientCloudWatchLogsResourcePolicy,
     ),
     /// <p>Parameter name is not valid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates
-    /// one error in the change batch.</p>
+    /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates one error in the change batch.</p>
     InvalidChangeBatch(crate::error::InvalidChangeBatch),
     /// <p>The specified domain name is not valid.</p>
     InvalidDomainName(crate::error::InvalidDomainName),
@@ -115,8 +74,7 @@ pub enum Error {
     InvalidKeySigningKeyStatus(crate::error::InvalidKeySigningKeyStatus),
     /// <p>The value that you specified to get the second or subsequent page of results is invalid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    /// <p>Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable <code>DNSSEC</code>
-    /// or disable <code>DNSSEC</code>.</p>
+    /// <p>Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.</p>
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     /// <p>The format of the traffic policy document that you specified in the <code>Document</code> element is not valid.</p>
     InvalidTrafficPolicyDocument(crate::error::InvalidTrafficPolicyDocument),
@@ -126,21 +84,13 @@ pub enum Error {
     KeySigningKeyAlreadyExists(crate::error::KeySigningKeyAlreadyExists),
     /// <p>The key-signing key (KSK) is specified in a parent DS record.</p>
     KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
-    /// <p>The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
-    /// currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.</p>
+    /// <p>The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.</p>
     KeySigningKeyInUse(crate::error::KeySigningKeyInUse),
     /// <p>A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.</p>
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
-    /// <p>The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with
-    /// the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>
+    /// <p>The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>
     LastVpcAssociation(crate::error::LastVpcAssociation),
-    /// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets
-    /// that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-    /// To get the current limit on the number of reusable delegation sets, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-    /// To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-    /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone. To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     LimitsExceeded(crate::error::LimitsExceeded),
     /// <p>A change with the specified change ID does not exist.</p>
     NoSuchChange(crate::error::NoSuchChange),
@@ -148,8 +98,7 @@ pub enum Error {
     NoSuchCloudWatchLogsLogGroup(crate::error::NoSuchCloudWatchLogsLogGroup),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
-    /// <p>Amazon Route 53 doesn't support the specified geographic location. For a list of supported geolocation codes, see the
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
+    /// <p>Amazon Route 53 doesn't support the specified geographic location. For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
     NoSuchGeoLocation(crate::error::NoSuchGeoLocation),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
@@ -165,73 +114,43 @@ pub enum Error {
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
     /// <p>Associating the specified VPC with the specified hosted zone has not been authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>If Amazon Route 53 can't process a request before the next request arrives, it will reject
-    /// subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-    /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same request, we
-    /// recommend that you wait, in intervals of increasing duration, before you try the request
-    /// again.</p>
+    /// <p>If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals of increasing duration, before you try the request again.</p>
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a
-    /// VPC with a public hosted zone.</p>
+    /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a public hosted zone.</p>
     PublicZoneVpcAssociation(crate::error::PublicZoneVpcAssociation),
-    /// <p>You can create only one query logging configuration for a hosted zone, and a query logging configuration already exists
-    /// for this hosted zone.</p>
+    /// <p>You can create only one query logging configuration for a hosted zone, and a query logging configuration already exists for this hosted zone.</p>
     QueryLoggingConfigAlreadyExists(crate::error::QueryLoggingConfigAlreadyExists),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>This health check can't be created because the current account has reached the limit on the number of active health checks.</p>
-    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>For information about how to get the current limit for an account, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a
-    /// higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
-    ///
-    /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit,
-    /// <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyHealthChecks(crate::error::TooManyHealthChecks),
-    /// <p>This operation can't be completed either because the current account has reached the limit on the number of hosted zones
-    /// or because you've reached the limit on the number of hosted zones that can be associated with a reusable delegation set.</p>
-    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>To get the current limit on hosted zones that can be created by an account, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
-    /// <p>To get the current limit on hosted zones that can be associated with a reusable delegation set, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.</p>
+    /// <p>This operation can't be completed either because the current account has reached the limit on the number of hosted zones or because you've reached the limit on the number of hosted zones that can be associated with a reusable delegation set.</p>
+    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>To get the current limit on hosted zones that can be created by an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
+    /// <p>To get the current limit on hosted zones that can be associated with a reusable delegation set, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.</p>
     /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyHostedZones(crate::error::TooManyHostedZones),
     /// <p>You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try again.</p>
     TooManyKeySigningKeys(crate::error::TooManyKeySigningKeys),
     /// <p>This traffic policy can't be created because the current account has reached the limit on the number of traffic policies.</p>
-    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>To get the current limit for an account, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-    /// </p>
+    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>To get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. </p>
     /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyTrafficPolicies(crate::error::TooManyTrafficPolicies),
-    /// <p>This traffic policy instance can't be created because the current account has reached the limit on the number of
-    /// traffic policy instances.</p>
-    /// <p>For information about default limits, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>For information about how to get the current limit for an account, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
+    /// <p>This traffic policy instance can't be created because the current account has reached the limit on the number of traffic policy instances.</p>
+    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.</p>
     /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyTrafficPolicyInstances(crate::error::TooManyTrafficPolicyInstances),
-    /// <p>This traffic policy version can't be created because you've reached the limit of 1000 on the number of versions
-    /// that you can create for the current traffic policy.</p>
-    /// <p>To create more traffic policy versions, you can use
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>
-    /// to get the traffic policy document for a specified traffic policy version, and then use
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>
-    /// to create a new traffic policy using the traffic policy document.</p>
+    /// <p>This traffic policy version can't be created because you've reached the limit of 1000 on the number of versions that you can create for the current traffic policy.</p>
+    /// <p>To create more traffic policy versions, you can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a> to get the traffic policy document for a specified traffic policy version, and then use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a> to create a new traffic policy using the traffic policy document.</p>
     TooManyTrafficPolicyVersionsForCurrentPolicy(
         crate::error::TooManyTrafficPolicyVersionsForCurrentPolicy,
     ),
-    /// <p>You've created the maximum number of authorizations that can be created for the specified hosted zone.
-    /// To authorize another VPC to be associated with the hosted zone, submit a <code>DeleteVPCAssociationAuthorization</code> request
-    /// to remove an existing authorization. To get a list of existing authorizations, submit a
-    /// <code>ListVPCAssociationAuthorizations</code> request.</p>
+    /// <p>You've created the maximum number of authorizations that can be created for the specified hosted zone. To authorize another VPC to be associated with the hosted zone, submit a <code>DeleteVPCAssociationAuthorization</code> request to remove an existing authorization. To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code> request.</p>
     TooManyVpcAssociationAuthorizations(crate::error::TooManyVpcAssociationAuthorizations),
     /// <p>A traffic policy that has the same value for <code>Name</code> already exists.</p>
     TrafficPolicyAlreadyExists(crate::error::TrafficPolicyAlreadyExists),

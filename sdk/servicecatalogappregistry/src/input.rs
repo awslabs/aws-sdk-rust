@@ -460,18 +460,12 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -682,18 +676,12 @@ pub mod create_attribute_group_input {
             self.tags = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3734,14 +3722,12 @@ pub mod update_attribute_group_input {
             self.attribute_group = input;
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-        /// updating the attribute group.</p>
+        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-        /// updating the attribute group.</p>
+        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3927,8 +3913,7 @@ impl UpdateAttributeGroupInput {
 pub struct UpdateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
-    /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-    /// updating the attribute group.</p>
+    /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3940,8 +3925,7 @@ impl UpdateAttributeGroupInput {
     pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
-    /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-    /// updating the attribute group.</p>
+    /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4430,10 +4414,7 @@ pub struct CreateAttributeGroupInput {
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-    /// completed successfully using the same client token and the same parameters, the retry succeeds
-    /// without performing any further actions. If you retry a successful request using the same
-    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAttributeGroupInput {
@@ -4456,10 +4437,7 @@ impl CreateAttributeGroupInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-    /// completed successfully using the same client token and the same parameters, the retry succeeds
-    /// without performing any further actions. If you retry a successful request using the same
-    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -4487,10 +4465,7 @@ pub struct CreateApplicationInput {
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-    /// completed successfully using the same client token and the same parameters, the retry succeeds
-    /// without performing any further actions. If you retry a successful request using the same
-    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -4509,10 +4484,7 @@ impl CreateApplicationInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-    /// completed successfully using the same client token and the same parameters, the retry succeeds
-    /// without performing any further actions. If you retry a successful request using the same
-    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

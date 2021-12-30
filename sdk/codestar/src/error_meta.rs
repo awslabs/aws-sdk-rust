@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The next token is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -12,13 +11,11 @@ pub enum Error {
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
     /// <p>A resource limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.
-    /// AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
+    /// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account. AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
     ProjectAlreadyExistsException(crate::error::ProjectAlreadyExistsException),
     /// <p>Project configuration information is required but not specified.</p>
     ProjectConfigurationException(crate::error::ProjectConfigurationException),
-    /// <p>The project creation request was valid, but a nonspecific exception or error occurred
-    /// during project creation. The project could not be created in AWS CodeStar.</p>
+    /// <p>The project creation request was valid, but a nonspecific exception or error occurred during project creation. The project could not be created in AWS CodeStar.</p>
     ProjectCreationFailedException(crate::error::ProjectCreationFailedException),
     /// <p>The specified AWS CodeStar project was not found.</p>
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
@@ -26,8 +23,7 @@ pub enum Error {
     TeamMemberAlreadyAssociatedException(crate::error::TeamMemberAlreadyAssociatedException),
     /// <p>The specified team member was not found.</p>
     TeamMemberNotFoundException(crate::error::TeamMemberNotFoundException),
-    /// <p>A user profile with that name already exists in this region for the AWS account. AWS
-    /// CodeStar user profile names must be unique within a region for the AWS account. </p>
+    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
     UserProfileAlreadyExistsException(crate::error::UserProfileAlreadyExistsException),
     /// <p>The user profile was not found.</p>
     UserProfileNotFoundException(crate::error::UserProfileNotFoundException),

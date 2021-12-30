@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -14,8 +13,7 @@ pub enum Error {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

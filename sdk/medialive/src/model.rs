@@ -2055,21 +2055,17 @@ impl MultiplexProgramSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexVideoSettings {
-    /// The constant bitrate configuration for the video encode.
-    /// When this field is defined, StatmuxSettings must be undefined.
+    /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub constant_bitrate: i32,
-    /// Statmux rate control settings.
-    /// When this field is defined, ConstantBitrate must be undefined.
+    /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     pub statmux_settings: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
 }
 impl MultiplexVideoSettings {
-    /// The constant bitrate configuration for the video encode.
-    /// When this field is defined, StatmuxSettings must be undefined.
+    /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub fn constant_bitrate(&self) -> i32 {
         self.constant_bitrate
     }
-    /// Statmux rate control settings.
-    /// When this field is defined, ConstantBitrate must be undefined.
+    /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     pub fn statmux_settings(
         &self,
     ) -> std::option::Option<&crate::model::MultiplexStatmuxVideoSettings> {
@@ -2095,20 +2091,17 @@ pub mod multiplex_video_settings {
             std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
     }
     impl Builder {
-        /// The constant bitrate configuration for the video encode.
-        /// When this field is defined, StatmuxSettings must be undefined.
+        /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
         pub fn constant_bitrate(mut self, input: i32) -> Self {
             self.constant_bitrate = Some(input);
             self
         }
-        /// The constant bitrate configuration for the video encode.
-        /// When this field is defined, StatmuxSettings must be undefined.
+        /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
         pub fn set_constant_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.constant_bitrate = input;
             self
         }
-        /// Statmux rate control settings.
-        /// When this field is defined, ConstantBitrate must be undefined.
+        /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
         pub fn statmux_settings(
             mut self,
             input: crate::model::MultiplexStatmuxVideoSettings,
@@ -2116,8 +2109,7 @@ pub mod multiplex_video_settings {
             self.statmux_settings = Some(input);
             self
         }
-        /// Statmux rate control settings.
-        /// When this field is defined, ConstantBitrate must be undefined.
+        /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
         pub fn set_statmux_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
@@ -2149,7 +2141,7 @@ pub struct MultiplexStatmuxVideoSettings {
     pub maximum_bitrate: i32,
     /// Minimum statmux bitrate.
     pub minimum_bitrate: i32,
-    /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+    /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     pub priority: i32,
 }
 impl MultiplexStatmuxVideoSettings {
@@ -2161,7 +2153,7 @@ impl MultiplexStatmuxVideoSettings {
     pub fn minimum_bitrate(&self) -> i32 {
         self.minimum_bitrate
     }
-    /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+    /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     pub fn priority(&self) -> i32 {
         self.priority
     }
@@ -2206,12 +2198,12 @@ pub mod multiplex_statmux_video_settings {
             self.minimum_bitrate = input;
             self
         }
-        /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+        /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
+        /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -4474,15 +4466,13 @@ pub struct Input {
     pub destinations: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
     /// The generated ID of the input (unique for user account, immutable).
     pub id: std::option::Option<std::string::String>,
-    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-    /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
     pub input_class: std::option::Option<crate::model::InputClass>,
     /// Settings for the input devices.
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of IDs for all Inputs which are partners of this one.
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -4519,8 +4509,7 @@ impl Input {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-    /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
     pub fn input_class(&self) -> std::option::Option<&crate::model::InputClass> {
         self.input_class.as_ref()
     }
@@ -4532,8 +4521,7 @@ impl Input {
     pub fn input_partner_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.input_partner_ids.as_deref()
     }
-    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub fn input_source_type(&self) -> std::option::Option<&crate::model::InputSourceType> {
         self.input_source_type.as_ref()
     }
@@ -4681,14 +4669,12 @@ pub mod input {
             self.id = input;
             self
         }
-        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn input_class(mut self, input: crate::model::InputClass) -> Self {
             self.input_class = Some(input);
             self
         }
-        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
-        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn set_input_class(
             mut self,
             input: std::option::Option<crate::model::InputClass>,
@@ -4734,14 +4720,12 @@ pub mod input {
             self.input_partner_ids = input;
             self
         }
-        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
             self.input_source_type = Some(input);
             self
         }
-        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn set_input_source_type(
             mut self,
             input: std::option::Option<crate::model::InputSourceType>,
@@ -5072,8 +5056,7 @@ impl AsRef<str> for InputState {
 pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
     pub password_param: std::option::Option<std::string::String>,
-    /// This represents the customer's source URL where stream is
-    /// pulled from.
+    /// This represents the customer's source URL where stream is pulled from.
     pub url: std::option::Option<std::string::String>,
     /// The username for the input source.
     pub username: std::option::Option<std::string::String>,
@@ -5083,8 +5066,7 @@ impl InputSource {
     pub fn password_param(&self) -> std::option::Option<&str> {
         self.password_param.as_deref()
     }
-    /// This represents the customer's source URL where stream is
-    /// pulled from.
+    /// This represents the customer's source URL where stream is pulled from.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -5126,14 +5108,12 @@ pub mod input_source {
             self.password_param = input;
             self
         }
-        /// This represents the customer's source URL where stream is
-        /// pulled from.
+        /// This represents the customer's source URL where stream is pulled from.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// This represents the customer's source URL where stream is
-        /// pulled from.
+        /// This represents the customer's source URL where stream is pulled from.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -5387,20 +5367,17 @@ impl AsRef<str> for InputClass {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDestination {
-    /// The system-generated static IP address of endpoint.
-    /// It remains fixed for the lifetime of the input.
+    /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
     pub ip: std::option::Option<std::string::String>,
     /// The port number for the input.
     pub port: std::option::Option<std::string::String>,
-    /// This represents the endpoint that the customer stream will be
-    /// pushed to.
+    /// This represents the endpoint that the customer stream will be pushed to.
     pub url: std::option::Option<std::string::String>,
     /// The properties for a VPC type input destination.
     pub vpc: std::option::Option<crate::model::InputDestinationVpc>,
 }
 impl InputDestination {
-    /// The system-generated static IP address of endpoint.
-    /// It remains fixed for the lifetime of the input.
+    /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
     pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
@@ -5408,8 +5385,7 @@ impl InputDestination {
     pub fn port(&self) -> std::option::Option<&str> {
         self.port.as_deref()
     }
-    /// This represents the endpoint that the customer stream will be
-    /// pushed to.
+    /// This represents the endpoint that the customer stream will be pushed to.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -5440,14 +5416,12 @@ pub mod input_destination {
         pub(crate) vpc: std::option::Option<crate::model::InputDestinationVpc>,
     }
     impl Builder {
-        /// The system-generated static IP address of endpoint.
-        /// It remains fixed for the lifetime of the input.
+        /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
         pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip = Some(input.into());
             self
         }
-        /// The system-generated static IP address of endpoint.
-        /// It remains fixed for the lifetime of the input.
+        /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip = input;
             self
@@ -5462,14 +5436,12 @@ pub mod input_destination {
             self.port = input;
             self
         }
-        /// This represents the endpoint that the customer stream will be
-        /// pushed to.
+        /// This represents the endpoint that the customer stream will be pushed to.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// This represents the endpoint that the customer stream will be
-        /// pushed to.
+        /// This represents the endpoint that the customer stream will be pushed to.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -5590,8 +5562,7 @@ impl InputDestinationVpc {
 pub struct InputSourceRequest {
     /// The key used to extract the password from EC2 Parameter store.
     pub password_param: std::option::Option<std::string::String>,
-    /// This represents the customer's source URL where stream is
-    /// pulled from.
+    /// This represents the customer's source URL where stream is pulled from.
     pub url: std::option::Option<std::string::String>,
     /// The username for the input source.
     pub username: std::option::Option<std::string::String>,
@@ -5601,8 +5572,7 @@ impl InputSourceRequest {
     pub fn password_param(&self) -> std::option::Option<&str> {
         self.password_param.as_deref()
     }
-    /// This represents the customer's source URL where stream is
-    /// pulled from.
+    /// This represents the customer's source URL where stream is pulled from.
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -5644,14 +5614,12 @@ pub mod input_source_request {
             self.password_param = input;
             self
         }
-        /// This represents the customer's source URL where stream is
-        /// pulled from.
+        /// This represents the customer's source URL where stream is pulled from.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// This represents the customer's source URL where stream is
-        /// pulled from.
+        /// This represents the customer's source URL where stream is pulled from.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -5793,13 +5761,11 @@ impl InputDeviceRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDestinationRequest {
-    /// A unique name for the location the RTMP stream is being pushed
-    /// to.
+    /// A unique name for the location the RTMP stream is being pushed to.
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl InputDestinationRequest {
-    /// A unique name for the location the RTMP stream is being pushed
-    /// to.
+    /// A unique name for the location the RTMP stream is being pushed to.
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
@@ -5820,14 +5786,12 @@ pub mod input_destination_request {
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A unique name for the location the RTMP stream is being pushed
-        /// to.
+        /// A unique name for the location the RTMP stream is being pushed to.
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// A unique name for the location the RTMP stream is being pushed
-        /// to.
+        /// A unique name for the location the RTMP stream is being pushed to.
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -5857,9 +5821,7 @@ pub struct Channel {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -5904,9 +5866,7 @@ impl Channel {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -6064,18 +6024,14 @@ pub mod channel {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -6299,22 +6255,17 @@ impl Channel {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOutputSettingsDescription {
-    /// The Availability Zones where the vpc subnets are located.
-    /// The first Availability Zone applies to the first subnet in the list of subnets.
-    /// The second Availability Zone applies to the second subnet.
+    /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
     pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of VPC subnet IDs from the same VPC.
-    /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcOutputSettingsDescription {
-    /// The Availability Zones where the vpc subnets are located.
-    /// The first Availability Zone applies to the first subnet in the list of subnets.
-    /// The second Availability Zone applies to the second subnet.
+    /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
@@ -6326,8 +6277,7 @@ impl VpcOutputSettingsDescription {
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// A list of VPC subnet IDs from the same VPC.
-    /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
@@ -6358,18 +6308,14 @@ pub mod vpc_output_settings_description {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// The Availability Zones where the vpc subnets are located.
-        /// The first Availability Zone applies to the first subnet in the list of subnets.
-        /// The second Availability Zone applies to the second subnet.
+        /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// The Availability Zones where the vpc subnets are located.
-        /// The first Availability Zone applies to the first subnet in the list of subnets.
-        /// The second Availability Zone applies to the second subnet.
+        /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6419,16 +6365,14 @@ pub mod vpc_output_settings_description {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// A list of VPC subnet IDs from the same VPC.
-        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// A list of VPC subnet IDs from the same VPC.
-        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7206,18 +7150,13 @@ pub struct InputSettings {
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
     pub filter_strength: i32,
-    /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
-    /// 1) auto - filtering will be applied depending on input type/quality
-    /// 2) disabled - no filtering will be applied to the input
-    /// 3) forced - filtering will be applied regardless of input type
+    /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
     pub input_filter: std::option::Option<crate::model::InputFilter>,
     /// Input settings.
     pub network_input_settings: std::option::Option<crate::model::NetworkInputSettings>,
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
     pub scte35_pid: i32,
-    /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
-    /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
-    /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
+    /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
     pub smpte2038_data_preference: std::option::Option<crate::model::Smpte2038DataPreference>,
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
     pub source_end_behavior: std::option::Option<crate::model::InputSourceEndBehavior>,
@@ -7245,10 +7184,7 @@ impl InputSettings {
     pub fn filter_strength(&self) -> i32 {
         self.filter_strength
     }
-    /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
-    /// 1) auto - filtering will be applied depending on input type/quality
-    /// 2) disabled - no filtering will be applied to the input
-    /// 3) forced - filtering will be applied regardless of input type
+    /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
     pub fn input_filter(&self) -> std::option::Option<&crate::model::InputFilter> {
         self.input_filter.as_ref()
     }
@@ -7262,9 +7198,7 @@ impl InputSettings {
     pub fn scte35_pid(&self) -> i32 {
         self.scte35_pid
     }
-    /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
-    /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
-    /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
+    /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
     pub fn smpte2038_data_preference(
         &self,
     ) -> std::option::Option<&crate::model::Smpte2038DataPreference> {
@@ -7393,18 +7327,12 @@ pub mod input_settings {
             self.filter_strength = input;
             self
         }
-        /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
-        /// 1) auto - filtering will be applied depending on input type/quality
-        /// 2) disabled - no filtering will be applied to the input
-        /// 3) forced - filtering will be applied regardless of input type
+        /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
         pub fn input_filter(mut self, input: crate::model::InputFilter) -> Self {
             self.input_filter = Some(input);
             self
         }
-        /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
-        /// 1) auto - filtering will be applied depending on input type/quality
-        /// 2) disabled - no filtering will be applied to the input
-        /// 3) forced - filtering will be applied regardless of input type
+        /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
         pub fn set_input_filter(
             mut self,
             input: std::option::Option<crate::model::InputFilter>,
@@ -7435,9 +7363,7 @@ pub mod input_settings {
             self.scte35_pid = input;
             self
         }
-        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
-        /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
-        /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
+        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
         pub fn smpte2038_data_preference(
             mut self,
             input: crate::model::Smpte2038DataPreference,
@@ -7445,9 +7371,7 @@ pub mod input_settings {
             self.smpte2038_data_preference = Some(input);
             self
         }
-        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
-        /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
-        /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
+        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
         pub fn set_smpte2038_data_preference(
             mut self,
             input: std::option::Option<crate::model::Smpte2038DataPreference>,
@@ -7950,25 +7874,17 @@ impl VideoSelectorColorSpaceSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hdr10Settings {
-    /// Maximum Content Light Level
-    /// An integer metadata value defining the maximum light level, in nits,
-    /// of any single pixel within an encoded HDR video stream or file.
+    /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub max_cll: i32,
-    /// Maximum Frame Average Light Level
-    /// An integer metadata value defining the maximum average light level, in nits,
-    /// for any single frame within an encoded HDR video stream or file.
+    /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub max_fall: i32,
 }
 impl Hdr10Settings {
-    /// Maximum Content Light Level
-    /// An integer metadata value defining the maximum light level, in nits,
-    /// of any single pixel within an encoded HDR video stream or file.
+    /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub fn max_cll(&self) -> i32 {
         self.max_cll
     }
-    /// Maximum Frame Average Light Level
-    /// An integer metadata value defining the maximum average light level, in nits,
-    /// for any single frame within an encoded HDR video stream or file.
+    /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn max_fall(&self) -> i32 {
         self.max_fall
     }
@@ -7991,30 +7907,22 @@ pub mod hdr10_settings {
         pub(crate) max_fall: std::option::Option<i32>,
     }
     impl Builder {
-        /// Maximum Content Light Level
-        /// An integer metadata value defining the maximum light level, in nits,
-        /// of any single pixel within an encoded HDR video stream or file.
+        /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
         pub fn max_cll(mut self, input: i32) -> Self {
             self.max_cll = Some(input);
             self
         }
-        /// Maximum Content Light Level
-        /// An integer metadata value defining the maximum light level, in nits,
-        /// of any single pixel within an encoded HDR video stream or file.
+        /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
         pub fn set_max_cll(mut self, input: std::option::Option<i32>) -> Self {
             self.max_cll = input;
             self
         }
-        /// Maximum Frame Average Light Level
-        /// An integer metadata value defining the maximum average light level, in nits,
-        /// for any single frame within an encoded HDR video stream or file.
+        /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
         pub fn max_fall(mut self, input: i32) -> Self {
             self.max_fall = Some(input);
             self
         }
-        /// Maximum Frame Average Light Level
-        /// An integer metadata value defining the maximum average light level, in nits,
-        /// for any single frame within an encoded HDR video stream or file.
+        /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
         pub fn set_max_fall(mut self, input: std::option::Option<i32>) -> Self {
             self.max_fall = input;
             self
@@ -8363,9 +8271,9 @@ impl AsRef<str> for NetworkInputServerValidation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsInputSettings {
-    /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
+    /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub bandwidth: i32,
-    /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
+    /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
     pub buffer_segments: i32,
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
     pub retries: i32,
@@ -8375,11 +8283,11 @@ pub struct HlsInputSettings {
     pub scte35_source: std::option::Option<crate::model::HlsScte35SourceType>,
 }
 impl HlsInputSettings {
-    /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
+    /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub fn bandwidth(&self) -> i32 {
         self.bandwidth
     }
-    /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
+    /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
     pub fn buffer_segments(&self) -> i32 {
         self.buffer_segments
     }
@@ -8420,22 +8328,22 @@ pub mod hls_input_settings {
         pub(crate) scte35_source: std::option::Option<crate::model::HlsScte35SourceType>,
     }
     impl Builder {
-        /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
+        /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
         pub fn bandwidth(mut self, input: i32) -> Self {
             self.bandwidth = Some(input);
             self
         }
-        /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
+        /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
         pub fn set_bandwidth(mut self, input: std::option::Option<i32>) -> Self {
             self.bandwidth = input;
             self
         }
-        /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
+        /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
         pub fn buffer_segments(mut self, input: i32) -> Self {
             self.buffer_segments = Some(input);
             self
         }
-        /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
+        /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
         pub fn set_buffer_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.buffer_segments = input;
             self
@@ -8722,7 +8630,7 @@ impl AsRef<str> for InputDeblockFilter {
 pub struct CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
     pub language_code: std::option::Option<std::string::String>,
-    /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
+    /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub name: std::option::Option<std::string::String>,
     /// Caption selector settings.
     pub selector_settings: std::option::Option<crate::model::CaptionSelectorSettings>,
@@ -8732,7 +8640,7 @@ impl CaptionSelector {
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
-    /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
+    /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -8774,12 +8682,12 @@ pub mod caption_selector {
             self.language_code = input;
             self
         }
-        /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
+        /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
+        /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9110,47 +9018,29 @@ impl TeletextSourceSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionRectangle {
-    /// See the description in leftOffset.
-    /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
-    /// This field corresponds to tts:extent - Y in the TTML standard.
+    /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
     pub height: f64,
-    /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
-    /// If you specify a value for one of these fields, you must specify a value for all of them.
-    /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
-    /// This field corresponds to tts:origin - X in the TTML standard.
+    /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages. If you specify a value for one of these fields, you must specify a value for all of them. For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame. This field corresponds to tts:origin - X in the TTML standard.
     pub left_offset: f64,
-    /// See the description in leftOffset.
-    /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
-    /// This field corresponds to tts:origin - Y in the TTML standard.
+    /// See the description in leftOffset. For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame. This field corresponds to tts:origin - Y in the TTML standard.
     pub top_offset: f64,
-    /// See the description in leftOffset.
-    /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
-    /// This field corresponds to tts:extent - X in the TTML standard.
+    /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
     pub width: f64,
 }
 impl CaptionRectangle {
-    /// See the description in leftOffset.
-    /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
-    /// This field corresponds to tts:extent - Y in the TTML standard.
+    /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
     pub fn height(&self) -> f64 {
         self.height
     }
-    /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
-    /// If you specify a value for one of these fields, you must specify a value for all of them.
-    /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
-    /// This field corresponds to tts:origin - X in the TTML standard.
+    /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages. If you specify a value for one of these fields, you must specify a value for all of them. For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame. This field corresponds to tts:origin - X in the TTML standard.
     pub fn left_offset(&self) -> f64 {
         self.left_offset
     }
-    /// See the description in leftOffset.
-    /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
-    /// This field corresponds to tts:origin - Y in the TTML standard.
+    /// See the description in leftOffset. For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame. This field corresponds to tts:origin - Y in the TTML standard.
     pub fn top_offset(&self) -> f64 {
         self.top_offset
     }
-    /// See the description in leftOffset.
-    /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
-    /// This field corresponds to tts:extent - X in the TTML standard.
+    /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
     pub fn width(&self) -> f64 {
         self.width
     }
@@ -9177,60 +9067,42 @@ pub mod caption_rectangle {
         pub(crate) width: std::option::Option<f64>,
     }
     impl Builder {
-        /// See the description in leftOffset.
-        /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
-        /// This field corresponds to tts:extent - Y in the TTML standard.
+        /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
         pub fn height(mut self, input: f64) -> Self {
             self.height = Some(input);
             self
         }
-        /// See the description in leftOffset.
-        /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
-        /// This field corresponds to tts:extent - Y in the TTML standard.
+        /// See the description in leftOffset. For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less. This field corresponds to tts:extent - Y in the TTML standard.
         pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
             self.height = input;
             self
         }
-        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
-        /// If you specify a value for one of these fields, you must specify a value for all of them.
-        /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
-        /// This field corresponds to tts:origin - X in the TTML standard.
+        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages. If you specify a value for one of these fields, you must specify a value for all of them. For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame. This field corresponds to tts:origin - X in the TTML standard.
         pub fn left_offset(mut self, input: f64) -> Self {
             self.left_offset = Some(input);
             self
         }
-        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
-        /// If you specify a value for one of these fields, you must specify a value for all of them.
-        /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
-        /// This field corresponds to tts:origin - X in the TTML standard.
+        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages. If you specify a value for one of these fields, you must specify a value for all of them. For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame. This field corresponds to tts:origin - X in the TTML standard.
         pub fn set_left_offset(mut self, input: std::option::Option<f64>) -> Self {
             self.left_offset = input;
             self
         }
-        /// See the description in leftOffset.
-        /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
-        /// This field corresponds to tts:origin - Y in the TTML standard.
+        /// See the description in leftOffset. For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame. This field corresponds to tts:origin - Y in the TTML standard.
         pub fn top_offset(mut self, input: f64) -> Self {
             self.top_offset = Some(input);
             self
         }
-        /// See the description in leftOffset.
-        /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
-        /// This field corresponds to tts:origin - Y in the TTML standard.
+        /// See the description in leftOffset. For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame. This field corresponds to tts:origin - Y in the TTML standard.
         pub fn set_top_offset(mut self, input: std::option::Option<f64>) -> Self {
             self.top_offset = input;
             self
         }
-        /// See the description in leftOffset.
-        /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
-        /// This field corresponds to tts:extent - X in the TTML standard.
+        /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
         pub fn width(mut self, input: f64) -> Self {
             self.width = Some(input);
             self
         }
-        /// See the description in leftOffset.
-        /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
-        /// This field corresponds to tts:extent - X in the TTML standard.
+        /// See the description in leftOffset. For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less. This field corresponds to tts:extent - X in the TTML standard.
         pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
             self.width = input;
             self
@@ -9257,27 +9129,17 @@ impl CaptionRectangle {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte27SourceSettings {
-    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-    /// provide the language to consider when translating the image-based source to text.
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub ocr_language: std::option::Option<crate::model::Scte27OcrLanguage>,
-    /// The pid field is used in conjunction with the caption selector languageCode field as follows:
-    /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
-    /// - Specify PID and omit Language: Extracts the specified PID.
-    /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
-    /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+    /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub pid: i32,
 }
 impl Scte27SourceSettings {
-    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-    /// provide the language to consider when translating the image-based source to text.
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn ocr_language(&self) -> std::option::Option<&crate::model::Scte27OcrLanguage> {
         self.ocr_language.as_ref()
     }
-    /// The pid field is used in conjunction with the caption selector languageCode field as follows:
-    /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
-    /// - Specify PID and omit Language: Extracts the specified PID.
-    /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
-    /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+    /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub fn pid(&self) -> i32 {
         self.pid
     }
@@ -9300,14 +9162,12 @@ pub mod scte27_source_settings {
         pub(crate) pid: std::option::Option<i32>,
     }
     impl Builder {
-        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-        /// provide the language to consider when translating the image-based source to text.
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
         pub fn ocr_language(mut self, input: crate::model::Scte27OcrLanguage) -> Self {
             self.ocr_language = Some(input);
             self
         }
-        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-        /// provide the language to consider when translating the image-based source to text.
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
         pub fn set_ocr_language(
             mut self,
             input: std::option::Option<crate::model::Scte27OcrLanguage>,
@@ -9315,20 +9175,12 @@ pub mod scte27_source_settings {
             self.ocr_language = input;
             self
         }
-        /// The pid field is used in conjunction with the caption selector languageCode field as follows:
-        /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
-        /// - Specify PID and omit Language: Extracts the specified PID.
-        /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
-        /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+        /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
         pub fn pid(mut self, input: i32) -> Self {
             self.pid = Some(input);
             self
         }
-        /// The pid field is used in conjunction with the caption selector languageCode field as follows:
-        /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
-        /// - Specify PID and omit Language: Extracts the specified PID.
-        /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
-        /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+        /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pid = input;
             self
@@ -9782,15 +9634,13 @@ impl AsRef<str> for EmbeddedConvert608To708 {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSubSourceSettings {
-    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-    /// provide the language to consider when translating the image-based source to text.
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub ocr_language: std::option::Option<crate::model::DvbSubOcrLanguage>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     pub pid: i32,
 }
 impl DvbSubSourceSettings {
-    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-    /// provide the language to consider when translating the image-based source to text.
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn ocr_language(&self) -> std::option::Option<&crate::model::DvbSubOcrLanguage> {
         self.ocr_language.as_ref()
     }
@@ -9817,14 +9667,12 @@ pub mod dvb_sub_source_settings {
         pub(crate) pid: std::option::Option<i32>,
     }
     impl Builder {
-        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-        /// provide the language to consider when translating the image-based source to text.
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
         pub fn ocr_language(mut self, input: crate::model::DvbSubOcrLanguage) -> Self {
             self.ocr_language = Some(input);
             self
         }
-        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
-        /// provide the language to consider when translating the image-based source to text.
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
         pub fn set_ocr_language(
             mut self,
             input: std::option::Option<crate::model::DvbSubOcrLanguage>,
@@ -10025,13 +9873,13 @@ impl AncillarySourceSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelector {
-    /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
+    /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     pub name: std::option::Option<std::string::String>,
     /// The audio selector settings.
     pub selector_settings: std::option::Option<crate::model::AudioSelectorSettings>,
 }
 impl AudioSelector {
-    /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
+    /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10058,12 +9906,12 @@ pub mod audio_selector {
         pub(crate) selector_settings: std::option::Option<crate::model::AudioSelectorSettings>,
     }
     impl Builder {
-        /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
+        /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
+        /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11544,12 +11392,9 @@ pub struct VideoDescription {
     pub codec_settings: std::option::Option<crate::model::VideoCodecSettings>,
     /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     pub height: i32,
-    /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
+    /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
     pub name: std::option::Option<std::string::String>,
-    /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
-    /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
-    /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
-    /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+    /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
     pub respond_to_afd: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
     pub scaling_behavior: std::option::Option<crate::model::VideoDescriptionScalingBehavior>,
@@ -11567,14 +11412,11 @@ impl VideoDescription {
     pub fn height(&self) -> i32 {
         self.height
     }
-    /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
+    /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
-    /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
-    /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
-    /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+    /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
     pub fn respond_to_afd(
         &self,
     ) -> std::option::Option<&crate::model::VideoDescriptionRespondToAfd> {
@@ -11647,28 +11489,22 @@ pub mod video_description {
             self.height = input;
             self
         }
-        /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
+        /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
+        /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
-        /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
-        /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
-        /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+        /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
         pub fn respond_to_afd(mut self, input: crate::model::VideoDescriptionRespondToAfd) -> Self {
             self.respond_to_afd = Some(input);
             self
         }
-        /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
-        /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
-        /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
-        /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
+        /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
         pub fn set_respond_to_afd(
             mut self,
             input: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
@@ -11978,22 +11814,15 @@ impl VideoCodecSettings {
 pub struct Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
     pub adaptive_quantization: std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
-    /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
-    /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
-    /// FIXED: MediaLive will use the value you specify in fixedAFD.
+    /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
     pub color_metadata: std::option::Option<crate::model::Mpeg2ColorMetadata>,
-    /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
-    /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
-    /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
+    /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
     pub color_space: std::option::Option<crate::model::Mpeg2ColorSpace>,
     /// Sets the pixel aspect ratio for the encode.
     pub display_aspect_ratio: std::option::Option<crate::model::Mpeg2DisplayRatio>,
-    /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
-    /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
-    /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
-    /// When the content is reasonably clean, the filter tends to decrease the bitrate.
+    /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
     pub filter_settings: std::option::Option<crate::model::Mpeg2FilterSettings>,
     /// Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode.
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
@@ -12005,21 +11834,15 @@ pub struct Mpeg2Settings {
     pub gop_closed_cadence: i32,
     /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
     pub gop_num_b_frames: i32,
-    /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
-    /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
+    /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
     pub gop_size: f64,
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
     pub gop_size_units: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
     /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
     pub scan_type: std::option::Option<crate::model::Mpeg2ScanType>,
-    /// Relates to the GOP structure. If you do not know what GOP is, use the default.
-    /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
-    /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
+    /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
     pub subgop_length: std::option::Option<crate::model::Mpeg2SubGopLength>,
-    /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
-    /// DISABLED: do not include timecodes.
-    /// GOP_TIMECODE: Include timecode metadata in the GOP header.
+    /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
     pub timecode_insertion: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
 }
 impl Mpeg2Settings {
@@ -12029,9 +11852,7 @@ impl Mpeg2Settings {
     ) -> std::option::Option<&crate::model::Mpeg2AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
-    /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
-    /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
-    /// FIXED: MediaLive will use the value you specify in fixedAFD.
+    /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
     pub fn afd_signaling(&self) -> std::option::Option<&crate::model::AfdSignaling> {
         self.afd_signaling.as_ref()
     }
@@ -12039,9 +11860,7 @@ impl Mpeg2Settings {
     pub fn color_metadata(&self) -> std::option::Option<&crate::model::Mpeg2ColorMetadata> {
         self.color_metadata.as_ref()
     }
-    /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
-    /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
-    /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
+    /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
     pub fn color_space(&self) -> std::option::Option<&crate::model::Mpeg2ColorSpace> {
         self.color_space.as_ref()
     }
@@ -12049,10 +11868,7 @@ impl Mpeg2Settings {
     pub fn display_aspect_ratio(&self) -> std::option::Option<&crate::model::Mpeg2DisplayRatio> {
         self.display_aspect_ratio.as_ref()
     }
-    /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
-    /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
-    /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
-    /// When the content is reasonably clean, the filter tends to decrease the bitrate.
+    /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
     pub fn filter_settings(&self) -> std::option::Option<&crate::model::Mpeg2FilterSettings> {
         self.filter_settings.as_ref()
     }
@@ -12076,9 +11892,7 @@ impl Mpeg2Settings {
     pub fn gop_num_b_frames(&self) -> i32 {
         self.gop_num_b_frames
     }
-    /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
-    /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
+    /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
     pub fn gop_size(&self) -> f64 {
         self.gop_size
     }
@@ -12090,15 +11904,11 @@ impl Mpeg2Settings {
     pub fn scan_type(&self) -> std::option::Option<&crate::model::Mpeg2ScanType> {
         self.scan_type.as_ref()
     }
-    /// Relates to the GOP structure. If you do not know what GOP is, use the default.
-    /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
-    /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
+    /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
     pub fn subgop_length(&self) -> std::option::Option<&crate::model::Mpeg2SubGopLength> {
         self.subgop_length.as_ref()
     }
-    /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
-    /// DISABLED: do not include timecodes.
-    /// GOP_TIMECODE: Include timecode metadata in the GOP header.
+    /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
     pub fn timecode_insertion(
         &self,
     ) -> std::option::Option<&crate::model::Mpeg2TimecodeInsertionBehavior> {
@@ -12169,16 +11979,12 @@ pub mod mpeg2_settings {
             self.adaptive_quantization = input;
             self
         }
-        /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
-        /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
-        /// FIXED: MediaLive will use the value you specify in fixedAFD.
+        /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
         pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
             self.afd_signaling = Some(input);
             self
         }
-        /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
-        /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
-        /// FIXED: MediaLive will use the value you specify in fixedAFD.
+        /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -12199,16 +12005,12 @@ pub mod mpeg2_settings {
             self.color_metadata = input;
             self
         }
-        /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
-        /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
-        /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
+        /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
         pub fn color_space(mut self, input: crate::model::Mpeg2ColorSpace) -> Self {
             self.color_space = Some(input);
             self
         }
-        /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
-        /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
-        /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
+        /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
         pub fn set_color_space(
             mut self,
             input: std::option::Option<crate::model::Mpeg2ColorSpace>,
@@ -12229,18 +12031,12 @@ pub mod mpeg2_settings {
             self.display_aspect_ratio = input;
             self
         }
-        /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
-        /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
-        /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
-        /// When the content is reasonably clean, the filter tends to decrease the bitrate.
+        /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
         pub fn filter_settings(mut self, input: crate::model::Mpeg2FilterSettings) -> Self {
             self.filter_settings = Some(input);
             self
         }
-        /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
-        /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
-        /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
-        /// When the content is reasonably clean, the filter tends to decrease the bitrate.
+        /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
         pub fn set_filter_settings(
             mut self,
             input: std::option::Option<crate::model::Mpeg2FilterSettings>,
@@ -12298,16 +12094,12 @@ pub mod mpeg2_settings {
             self.gop_num_b_frames = input;
             self
         }
-        /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
-        /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
+        /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
         }
-        /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
-        /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
+        /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -12338,16 +12130,12 @@ pub mod mpeg2_settings {
             self.scan_type = input;
             self
         }
-        /// Relates to the GOP structure. If you do not know what GOP is, use the default.
-        /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
-        /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
+        /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
         pub fn subgop_length(mut self, input: crate::model::Mpeg2SubGopLength) -> Self {
             self.subgop_length = Some(input);
             self
         }
-        /// Relates to the GOP structure. If you do not know what GOP is, use the default.
-        /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
-        /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
+        /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
         pub fn set_subgop_length(
             mut self,
             input: std::option::Option<crate::model::Mpeg2SubGopLength>,
@@ -12355,9 +12143,7 @@ pub mod mpeg2_settings {
             self.subgop_length = input;
             self
         }
-        /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
-        /// DISABLED: do not include timecodes.
-        /// GOP_TIMECODE: Include timecode metadata in the GOP header.
+        /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
         pub fn timecode_insertion(
             mut self,
             input: crate::model::Mpeg2TimecodeInsertionBehavior,
@@ -12365,9 +12151,7 @@ pub mod mpeg2_settings {
             self.timecode_insertion = Some(input);
             self
         }
-        /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
-        /// DISABLED: do not include timecodes.
-        /// GOP_TIMECODE: Include timecode metadata in the GOP header.
+        /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
@@ -12786,18 +12570,14 @@ impl Mpeg2FilterSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemporalFilterSettings {
-    /// If you enable this filter, the results are the following:
-    /// - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source.
-    /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+    /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     pub post_filter_sharpening:
         std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub strength: std::option::Option<crate::model::TemporalFilterStrength>,
 }
 impl TemporalFilterSettings {
-    /// If you enable this filter, the results are the following:
-    /// - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source.
-    /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+    /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     pub fn post_filter_sharpening(
         &self,
     ) -> std::option::Option<&crate::model::TemporalFilterPostFilterSharpening> {
@@ -12827,9 +12607,7 @@ pub mod temporal_filter_settings {
         pub(crate) strength: std::option::Option<crate::model::TemporalFilterStrength>,
     }
     impl Builder {
-        /// If you enable this filter, the results are the following:
-        /// - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source.
-        /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+        /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
         pub fn post_filter_sharpening(
             mut self,
             input: crate::model::TemporalFilterPostFilterSharpening,
@@ -12837,9 +12615,7 @@ pub mod temporal_filter_settings {
             self.post_filter_sharpening = Some(input);
             self
         }
-        /// If you enable this filter, the results are the following:
-        /// - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source.
-        /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
+        /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
         pub fn set_post_filter_sharpening(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
@@ -13365,7 +13141,7 @@ impl AsRef<str> for Mpeg2AdaptiveQuantization {
 pub struct H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     pub adaptive_quantization: std::option::Option<crate::model::H265AdaptiveQuantization>,
-    /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
     pub alternative_transfer_function:
@@ -13390,9 +13166,7 @@ pub struct H265Settings {
     pub framerate_numerator: i32,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub gop_closed_cadence: i32,
-    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-    /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub gop_size: f64,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     pub gop_size_units: std::option::Option<crate::model::H265GopSizeUnits>,
@@ -13402,7 +13176,7 @@ pub struct H265Settings {
     pub look_ahead_rate_control: std::option::Option<crate::model::H265LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level
     pub max_bitrate: i32,
-    /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub min_i_interval: i32,
     /// Pixel Aspect Ratio denominator.
     pub par_denominator: i32,
@@ -13410,35 +13184,19 @@ pub struct H265Settings {
     pub par_numerator: i32,
     /// H.265 Profile.
     pub profile: std::option::Option<crate::model::H265Profile>,
-    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
-    /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-    /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-    /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     pub qvbr_quality_level: i32,
-    /// Rate control mode.
-    ///
-    /// QVBR: Quality will match the specified quality level except when it is constrained by the
-    /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-    ///
-    /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-    /// your assets to devices that cannot handle variable bitrates.
-    ///
-    /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-    /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-    /// by the properties within the Multiplex Program.
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub rate_control_mode: std::option::Option<crate::model::H265RateControlMode>,
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
     pub scan_type: std::option::Option<crate::model::H265ScanType>,
     /// Scene change detection.
     pub scene_change_detect: std::option::Option<crate::model::H265SceneChangeDetect>,
-    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub slices: i32,
     /// H.265 Tier.
     pub tier: std::option::Option<crate::model::H265Tier>,
-    /// Determines how timecodes should be inserted into the video elementary stream.
-    /// - 'disabled': Do not include timecodes
-    /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub timecode_insertion: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
 }
 impl H265Settings {
@@ -13448,7 +13206,7 @@ impl H265Settings {
     ) -> std::option::Option<&crate::model::H265AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
-    /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub fn afd_signaling(&self) -> std::option::Option<&crate::model::AfdSignaling> {
         self.afd_signaling.as_ref()
     }
@@ -13500,9 +13258,7 @@ impl H265Settings {
     pub fn gop_closed_cadence(&self) -> i32 {
         self.gop_closed_cadence
     }
-    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-    /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub fn gop_size(&self) -> f64 {
         self.gop_size
     }
@@ -13524,7 +13280,7 @@ impl H265Settings {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub fn min_i_interval(&self) -> i32 {
         self.min_i_interval
     }
@@ -13540,24 +13296,11 @@ impl H265Settings {
     pub fn profile(&self) -> std::option::Option<&crate::model::H265Profile> {
         self.profile.as_ref()
     }
-    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
-    /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-    /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-    /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     pub fn qvbr_quality_level(&self) -> i32 {
         self.qvbr_quality_level
     }
-    /// Rate control mode.
-    ///
-    /// QVBR: Quality will match the specified quality level except when it is constrained by the
-    /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-    ///
-    /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-    /// your assets to devices that cannot handle variable bitrates.
-    ///
-    /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-    /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-    /// by the properties within the Multiplex Program.
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::H265RateControlMode> {
         self.rate_control_mode.as_ref()
     }
@@ -13569,8 +13312,7 @@ impl H265Settings {
     pub fn scene_change_detect(&self) -> std::option::Option<&crate::model::H265SceneChangeDetect> {
         self.scene_change_detect.as_ref()
     }
-    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub fn slices(&self) -> i32 {
         self.slices
     }
@@ -13578,9 +13320,7 @@ impl H265Settings {
     pub fn tier(&self) -> std::option::Option<&crate::model::H265Tier> {
         self.tier.as_ref()
     }
-    /// Determines how timecodes should be inserted into the video elementary stream.
-    /// - 'disabled': Do not include timecodes
-    /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub fn timecode_insertion(
         &self,
     ) -> std::option::Option<&crate::model::H265TimecodeInsertionBehavior> {
@@ -13682,12 +13422,12 @@ pub mod h265_settings {
             self.adaptive_quantization = input;
             self
         }
-        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+        /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
             self.afd_signaling = Some(input);
             self
         }
-        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+        /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -13823,16 +13563,12 @@ pub mod h265_settings {
             self.gop_closed_cadence = input;
             self
         }
-        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
         }
-        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -13886,12 +13622,12 @@ pub mod h265_settings {
             self.max_bitrate = input;
             self
         }
-        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn min_i_interval(mut self, input: i32) -> Self {
             self.min_i_interval = Some(input);
             self
         }
-        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -13929,48 +13665,22 @@ pub mod h265_settings {
             self.profile = input;
             self
         }
-        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
-        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
         pub fn qvbr_quality_level(mut self, input: i32) -> Self {
             self.qvbr_quality_level = Some(input);
             self
         }
-        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
-        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
         pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
             self.qvbr_quality_level = input;
             self
         }
-        /// Rate control mode.
-        ///
-        /// QVBR: Quality will match the specified quality level except when it is constrained by the
-        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-        ///
-        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-        /// your assets to devices that cannot handle variable bitrates.
-        ///
-        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-        /// by the properties within the Multiplex Program.
+        /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
         pub fn rate_control_mode(mut self, input: crate::model::H265RateControlMode) -> Self {
             self.rate_control_mode = Some(input);
             self
         }
-        /// Rate control mode.
-        ///
-        /// QVBR: Quality will match the specified quality level except when it is constrained by the
-        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-        ///
-        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-        /// your assets to devices that cannot handle variable bitrates.
-        ///
-        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-        /// by the properties within the Multiplex Program.
+        /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
         pub fn set_rate_control_mode(
             mut self,
             input: std::option::Option<crate::model::H265RateControlMode>,
@@ -14004,14 +13714,12 @@ pub mod h265_settings {
             self.scene_change_detect = input;
             self
         }
-        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn slices(mut self, input: i32) -> Self {
             self.slices = Some(input);
             self
         }
-        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
             self.slices = input;
             self
@@ -14026,9 +13734,7 @@ pub mod h265_settings {
             self.tier = input;
             self
         }
-        /// Determines how timecodes should be inserted into the video elementary stream.
-        /// - 'disabled': Do not include timecodes
-        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+        /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn timecode_insertion(
             mut self,
             input: crate::model::H265TimecodeInsertionBehavior,
@@ -14036,9 +13742,7 @@ pub mod h265_settings {
             self.timecode_insertion = Some(input);
             self
         }
-        /// Determines how timecodes should be inserted into the video elementary stream.
-        /// - 'disabled': Do not include timecodes
-        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+        /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
@@ -15187,7 +14891,7 @@ impl AsRef<str> for H265AdaptiveQuantization {
 pub struct H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
     pub adaptive_quantization: std::option::Option<crate::model::H264AdaptiveQuantization>,
-    /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub afd_signaling: std::option::Option<crate::model::AfdSignaling>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
     pub bitrate: i32,
@@ -15199,7 +14903,7 @@ pub struct H264Settings {
     pub color_metadata: std::option::Option<crate::model::H264ColorMetadata>,
     /// Color Space settings
     pub color_space_settings: std::option::Option<crate::model::H264ColorSpaceSettings>,
-    /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
+    /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
     pub entropy_encoding: std::option::Option<crate::model::H264EntropyEncoding>,
     /// Optional filters that you can apply to an encode.
     pub filter_settings: std::option::Option<crate::model::H264FilterSettings>,
@@ -15207,11 +14911,9 @@ pub struct H264Settings {
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
     /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
     pub flicker_aq: std::option::Option<crate::model::H264FlickerAq>,
-    /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
-    /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
-    /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
+    /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
     pub force_field_pictures: std::option::Option<crate::model::H264ForceFieldPictures>,
-    /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
+    /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
     pub framerate_control: std::option::Option<crate::model::H264FramerateControl>,
     /// Framerate denominator.
     pub framerate_denominator: i32,
@@ -15223,9 +14925,7 @@ pub struct H264Settings {
     pub gop_closed_cadence: i32,
     /// Number of B-frames between reference frames.
     pub gop_num_b_frames: i32,
-    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-    /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub gop_size: f64,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     pub gop_size_units: std::option::Option<crate::model::H264GopSizeUnits>,
@@ -15233,15 +14933,13 @@ pub struct H264Settings {
     pub level: std::option::Option<crate::model::H264Level>,
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
     pub look_ahead_rate_control: std::option::Option<crate::model::H264LookAheadRateControl>,
-    /// For QVBR: See the tooltip for Quality level
-    ///
-    /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
+    /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
     pub max_bitrate: i32,
-    /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub min_i_interval: i32,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub num_ref_frames: i32,
-    /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
+    /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
     pub par_control: std::option::Option<crate::model::H264ParControl>,
     /// Pixel Aspect Ratio denominator.
     pub par_denominator: i32,
@@ -15249,42 +14947,19 @@ pub struct H264Settings {
     pub par_numerator: i32,
     /// H.264 Profile.
     pub profile: std::option::Option<crate::model::H264Profile>,
-    /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
-    /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
-    /// - STANDARD_QUALITY: Valid for any Rate control mode.
+    /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
     pub quality_level: std::option::Option<crate::model::H264QualityLevel>,
-    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
-    /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-    /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-    /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-    /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
+    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
     pub qvbr_quality_level: i32,
-    /// Rate control mode.
-    ///
-    /// QVBR: Quality will match the specified quality level except when it is constrained by the
-    /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-    ///
-    /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
-    /// if you want to maintain a specific average bitrate over the duration of the channel.
-    ///
-    /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-    /// your assets to devices that cannot handle variable bitrates.
-    ///
-    /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-    /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-    /// by the properties within the Multiplex Program.
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub rate_control_mode: std::option::Option<crate::model::H264RateControlMode>,
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
     pub scan_type: std::option::Option<crate::model::H264ScanType>,
-    /// Scene change detection.
-    ///
-    /// - On: inserts I-frames when scene change is detected.
-    /// - Off: does not force an I-frame when scene change is detected.
+    /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
     pub scene_change_detect: std::option::Option<crate::model::H264SceneChangeDetect>,
-    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub slices: i32,
-    /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
+    /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
     pub softness: i32,
     /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
     pub spatial_aq: std::option::Option<crate::model::H264SpatialAq>,
@@ -15294,9 +14969,7 @@ pub struct H264Settings {
     pub syntax: std::option::Option<crate::model::H264Syntax>,
     /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
     pub temporal_aq: std::option::Option<crate::model::H264TemporalAq>,
-    /// Determines how timecodes should be inserted into the video elementary stream.
-    /// - 'disabled': Do not include timecodes
-    /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub timecode_insertion: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
 }
 impl H264Settings {
@@ -15306,7 +14979,7 @@ impl H264Settings {
     ) -> std::option::Option<&crate::model::H264AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
-    /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+    /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub fn afd_signaling(&self) -> std::option::Option<&crate::model::AfdSignaling> {
         self.afd_signaling.as_ref()
     }
@@ -15332,7 +15005,7 @@ impl H264Settings {
     ) -> std::option::Option<&crate::model::H264ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
-    /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
+    /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
     pub fn entropy_encoding(&self) -> std::option::Option<&crate::model::H264EntropyEncoding> {
         self.entropy_encoding.as_ref()
     }
@@ -15348,15 +15021,13 @@ impl H264Settings {
     pub fn flicker_aq(&self) -> std::option::Option<&crate::model::H264FlickerAq> {
         self.flicker_aq.as_ref()
     }
-    /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
-    /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
-    /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
+    /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
     pub fn force_field_pictures(
         &self,
     ) -> std::option::Option<&crate::model::H264ForceFieldPictures> {
         self.force_field_pictures.as_ref()
     }
-    /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
+    /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
     pub fn framerate_control(&self) -> std::option::Option<&crate::model::H264FramerateControl> {
         self.framerate_control.as_ref()
     }
@@ -15380,9 +15051,7 @@ impl H264Settings {
     pub fn gop_num_b_frames(&self) -> i32 {
         self.gop_num_b_frames
     }
-    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-    /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-    /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+    /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub fn gop_size(&self) -> f64 {
         self.gop_size
     }
@@ -15400,13 +15069,11 @@ impl H264Settings {
     ) -> std::option::Option<&crate::model::H264LookAheadRateControl> {
         self.look_ahead_rate_control.as_ref()
     }
-    /// For QVBR: See the tooltip for Quality level
-    ///
-    /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
+    /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+    /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub fn min_i_interval(&self) -> i32 {
         self.min_i_interval
     }
@@ -15414,7 +15081,7 @@ impl H264Settings {
     pub fn num_ref_frames(&self) -> i32 {
         self.num_ref_frames
     }
-    /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
+    /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
     pub fn par_control(&self) -> std::option::Option<&crate::model::H264ParControl> {
         self.par_control.as_ref()
     }
@@ -15430,34 +15097,15 @@ impl H264Settings {
     pub fn profile(&self) -> std::option::Option<&crate::model::H264Profile> {
         self.profile.as_ref()
     }
-    /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
-    /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
-    /// - STANDARD_QUALITY: Valid for any Rate control mode.
+    /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
     pub fn quality_level(&self) -> std::option::Option<&crate::model::H264QualityLevel> {
         self.quality_level.as_ref()
     }
-    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
-    /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-    /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-    /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-    /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
+    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
     pub fn qvbr_quality_level(&self) -> i32 {
         self.qvbr_quality_level
     }
-    /// Rate control mode.
-    ///
-    /// QVBR: Quality will match the specified quality level except when it is constrained by the
-    /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-    ///
-    /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
-    /// if you want to maintain a specific average bitrate over the duration of the channel.
-    ///
-    /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-    /// your assets to devices that cannot handle variable bitrates.
-    ///
-    /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-    /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-    /// by the properties within the Multiplex Program.
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::H264RateControlMode> {
         self.rate_control_mode.as_ref()
     }
@@ -15465,19 +15113,15 @@ impl H264Settings {
     pub fn scan_type(&self) -> std::option::Option<&crate::model::H264ScanType> {
         self.scan_type.as_ref()
     }
-    /// Scene change detection.
-    ///
-    /// - On: inserts I-frames when scene change is detected.
-    /// - Off: does not force an I-frame when scene change is detected.
+    /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
     pub fn scene_change_detect(&self) -> std::option::Option<&crate::model::H264SceneChangeDetect> {
         self.scene_change_detect.as_ref()
     }
-    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+    /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub fn slices(&self) -> i32 {
         self.slices
     }
-    /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
+    /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
     pub fn softness(&self) -> i32 {
         self.softness
     }
@@ -15497,9 +15141,7 @@ impl H264Settings {
     pub fn temporal_aq(&self) -> std::option::Option<&crate::model::H264TemporalAq> {
         self.temporal_aq.as_ref()
     }
-    /// Determines how timecodes should be inserted into the video elementary stream.
-    /// - 'disabled': Do not include timecodes
-    /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+    /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub fn timecode_insertion(
         &self,
     ) -> std::option::Option<&crate::model::H264TimecodeInsertionBehavior> {
@@ -15621,12 +15263,12 @@ pub mod h264_settings {
             self.adaptive_quantization = input;
             self
         }
-        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+        /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn afd_signaling(mut self, input: crate::model::AfdSignaling) -> Self {
             self.afd_signaling = Some(input);
             self
         }
-        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
+        /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -15690,12 +15332,12 @@ pub mod h264_settings {
             self.color_space_settings = input;
             self
         }
-        /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
+        /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
         pub fn entropy_encoding(mut self, input: crate::model::H264EntropyEncoding) -> Self {
             self.entropy_encoding = Some(input);
             self
         }
-        /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
+        /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
         pub fn set_entropy_encoding(
             mut self,
             input: std::option::Option<crate::model::H264EntropyEncoding>,
@@ -15739,16 +15381,12 @@ pub mod h264_settings {
             self.flicker_aq = input;
             self
         }
-        /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
-        /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
-        /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
+        /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
         pub fn force_field_pictures(mut self, input: crate::model::H264ForceFieldPictures) -> Self {
             self.force_field_pictures = Some(input);
             self
         }
-        /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
-        /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
-        /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
+        /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
         pub fn set_force_field_pictures(
             mut self,
             input: std::option::Option<crate::model::H264ForceFieldPictures>,
@@ -15756,12 +15394,12 @@ pub mod h264_settings {
             self.force_field_pictures = input;
             self
         }
-        /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
+        /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
         pub fn framerate_control(mut self, input: crate::model::H264FramerateControl) -> Self {
             self.framerate_control = Some(input);
             self
         }
-        /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
+        /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
         pub fn set_framerate_control(
             mut self,
             input: std::option::Option<crate::model::H264FramerateControl>,
@@ -15822,16 +15460,12 @@ pub mod h264_settings {
             self.gop_num_b_frames = input;
             self
         }
-        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
         }
-        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
-        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
-        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -15875,26 +15509,22 @@ pub mod h264_settings {
             self.look_ahead_rate_control = input;
             self
         }
-        /// For QVBR: See the tooltip for Quality level
-        ///
-        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
+        /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
         pub fn max_bitrate(mut self, input: i32) -> Self {
             self.max_bitrate = Some(input);
             self
         }
-        /// For QVBR: See the tooltip for Quality level
-        ///
-        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
+        /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
         }
-        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn min_i_interval(mut self, input: i32) -> Self {
             self.min_i_interval = Some(input);
             self
         }
-        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+        /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -15909,12 +15539,12 @@ pub mod h264_settings {
             self.num_ref_frames = input;
             self
         }
-        /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
+        /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
         pub fn par_control(mut self, input: crate::model::H264ParControl) -> Self {
             self.par_control = Some(input);
             self
         }
-        /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
+        /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
         pub fn set_par_control(
             mut self,
             input: std::option::Option<crate::model::H264ParControl>,
@@ -15955,16 +15585,12 @@ pub mod h264_settings {
             self.profile = input;
             self
         }
-        /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
-        /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
-        /// - STANDARD_QUALITY: Valid for any Rate control mode.
+        /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
         pub fn quality_level(mut self, input: crate::model::H264QualityLevel) -> Self {
             self.quality_level = Some(input);
             self
         }
-        /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
-        /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
-        /// - STANDARD_QUALITY: Valid for any Rate control mode.
+        /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
         pub fn set_quality_level(
             mut self,
             input: std::option::Option<crate::model::H264QualityLevel>,
@@ -15972,56 +15598,22 @@ pub mod h264_settings {
             self.quality_level = input;
             self
         }
-        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
-        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-        /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
         pub fn qvbr_quality_level(mut self, input: i32) -> Self {
             self.qvbr_quality_level = Some(input);
             self
         }
-        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
-        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
-        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
-        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-        /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
         pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
             self.qvbr_quality_level = input;
             self
         }
-        /// Rate control mode.
-        ///
-        /// QVBR: Quality will match the specified quality level except when it is constrained by the
-        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-        ///
-        /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
-        /// if you want to maintain a specific average bitrate over the duration of the channel.
-        ///
-        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-        /// your assets to devices that cannot handle variable bitrates.
-        ///
-        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-        /// by the properties within the Multiplex Program.
+        /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
         pub fn rate_control_mode(mut self, input: crate::model::H264RateControlMode) -> Self {
             self.rate_control_mode = Some(input);
             self
         }
-        /// Rate control mode.
-        ///
-        /// QVBR: Quality will match the specified quality level except when it is constrained by the
-        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
-        ///
-        /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
-        /// if you want to maintain a specific average bitrate over the duration of the channel.
-        ///
-        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
-        /// your assets to devices that cannot handle variable bitrates.
-        ///
-        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
-        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
-        /// by the properties within the Multiplex Program.
+        /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
         pub fn set_rate_control_mode(
             mut self,
             input: std::option::Option<crate::model::H264RateControlMode>,
@@ -16042,18 +15634,12 @@ pub mod h264_settings {
             self.scan_type = input;
             self
         }
-        /// Scene change detection.
-        ///
-        /// - On: inserts I-frames when scene change is detected.
-        /// - Off: does not force an I-frame when scene change is detected.
+        /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
         pub fn scene_change_detect(mut self, input: crate::model::H264SceneChangeDetect) -> Self {
             self.scene_change_detect = Some(input);
             self
         }
-        /// Scene change detection.
-        ///
-        /// - On: inserts I-frames when scene change is detected.
-        /// - Off: does not force an I-frame when scene change is detected.
+        /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
         pub fn set_scene_change_detect(
             mut self,
             input: std::option::Option<crate::model::H264SceneChangeDetect>,
@@ -16061,24 +15647,22 @@ pub mod h264_settings {
             self.scene_change_detect = input;
             self
         }
-        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn slices(mut self, input: i32) -> Self {
             self.slices = Some(input);
             self
         }
-        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
             self.slices = input;
             self
         }
-        /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
+        /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
         pub fn softness(mut self, input: i32) -> Self {
             self.softness = Some(input);
             self
         }
-        /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
+        /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
         pub fn set_softness(mut self, input: std::option::Option<i32>) -> Self {
             self.softness = input;
             self
@@ -16132,9 +15716,7 @@ pub mod h264_settings {
             self.temporal_aq = input;
             self
         }
-        /// Determines how timecodes should be inserted into the video elementary stream.
-        /// - 'disabled': Do not include timecodes
-        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+        /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn timecode_insertion(
             mut self,
             input: crate::model::H264TimecodeInsertionBehavior,
@@ -16142,9 +15724,7 @@ pub mod h264_settings {
             self.timecode_insertion = Some(input);
             self
         }
-        /// Determines how timecodes should be inserted into the video elementary stream.
-        /// - 'disabled': Do not include timecodes
-        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
+        /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
@@ -17810,19 +17390,13 @@ impl AsRef<str> for FrameCaptureIntervalUnit {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimecodeConfig {
-    /// Identifies the source for the timecode that will be associated with the events outputs.
-    /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
-    /// -System Clock (systemclock): Use the UTC time.
-    /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
+    /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     pub source: std::option::Option<crate::model::TimecodeConfigSource>,
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
     pub sync_threshold: i32,
 }
 impl TimecodeConfig {
-    /// Identifies the source for the timecode that will be associated with the events outputs.
-    /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
-    /// -System Clock (systemclock): Use the UTC time.
-    /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
+    /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     pub fn source(&self) -> std::option::Option<&crate::model::TimecodeConfigSource> {
         self.source.as_ref()
     }
@@ -17849,18 +17423,12 @@ pub mod timecode_config {
         pub(crate) sync_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// Identifies the source for the timecode that will be associated with the events outputs.
-        /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
-        /// -System Clock (systemclock): Use the UTC time.
-        /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
+        /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
         pub fn source(mut self, input: crate::model::TimecodeConfigSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// Identifies the source for the timecode that will be associated with the events outputs.
-        /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
-        /// -System Clock (systemclock): Use the UTC time.
-        /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
+        /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::TimecodeConfigSource>,
@@ -17957,7 +17525,7 @@ impl AsRef<str> for TimecodeConfigSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputGroup {
-    /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
+    /// Custom output group name optionally defined by the user. Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
     pub name: std::option::Option<std::string::String>,
     /// Settings associated with the output group.
     pub output_group_settings: std::option::Option<crate::model::OutputGroupSettings>,
@@ -17965,7 +17533,7 @@ pub struct OutputGroup {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl OutputGroup {
-    /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
+    /// Custom output group name optionally defined by the user. Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -17998,12 +17566,12 @@ pub mod output_group {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     }
     impl Builder {
-        /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
+        /// Custom output group name optionally defined by the user. Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
+        /// Custom output group name optionally defined by the user. Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -18585,15 +18153,15 @@ impl UdpOutputSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FecOutputSettings {
-    /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+    /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
     pub column_depth: i32,
     /// Enables column only or column and row based FEC
     pub include_fec: std::option::Option<crate::model::FecOutputIncludeFec>,
-    /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+    /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub row_length: i32,
 }
 impl FecOutputSettings {
-    /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+    /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
     pub fn column_depth(&self) -> i32 {
         self.column_depth
     }
@@ -18601,7 +18169,7 @@ impl FecOutputSettings {
     pub fn include_fec(&self) -> std::option::Option<&crate::model::FecOutputIncludeFec> {
         self.include_fec.as_ref()
     }
-    /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+    /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub fn row_length(&self) -> i32 {
         self.row_length
     }
@@ -18626,12 +18194,12 @@ pub mod fec_output_settings {
         pub(crate) row_length: std::option::Option<i32>,
     }
     impl Builder {
-        /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+        /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
         pub fn column_depth(mut self, input: i32) -> Self {
             self.column_depth = Some(input);
             self
         }
-        /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+        /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
         pub fn set_column_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.column_depth = input;
             self
@@ -18649,12 +18217,12 @@ pub mod fec_output_settings {
             self.include_fec = input;
             self
         }
-        /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+        /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
         pub fn row_length(mut self, input: i32) -> Self {
             self.row_length = Some(input);
             self
         }
-        /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+        /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
         pub fn set_row_length(mut self, input: std::option::Option<i32>) -> Self {
             self.row_length = input;
             self
@@ -18854,11 +18422,11 @@ pub struct M2tsSettings {
         std::option::Option<crate::model::M2tsAbsentInputAudioBehavior>,
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
     pub arib: std::option::Option<crate::model::M2tsArib>,
-    /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub arib_captions_pid: std::option::Option<std::string::String>,
-    /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
+    /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
     pub arib_captions_pid_control: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
-    /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
+    /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
     pub audio_buffer_model: std::option::Option<crate::model::M2tsAudioBufferModel>,
     /// The number of audio frames to insert for each PES packet.
     pub audio_frames_per_pes: i32,
@@ -18876,45 +18444,45 @@ pub struct M2tsSettings {
     pub dvb_nit_settings: std::option::Option<crate::model::DvbNitSettings>,
     /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
     pub dvb_sdt_settings: std::option::Option<crate::model::DvbSdtSettings>,
-    /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub dvb_sub_pids: std::option::Option<std::string::String>,
     /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
     pub dvb_tdt_settings: std::option::Option<crate::model::DvbTdtSettings>,
-    /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub dvb_teletext_pid: std::option::Option<std::string::String>,
     /// If set to passthrough, passes any EBIF data from the input source to this output.
     pub ebif: std::option::Option<crate::model::M2tsEbifControl>,
-    /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
+    /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
     pub ebp_audio_interval: std::option::Option<crate::model::M2tsAudioInterval>,
-    /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+    /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
     pub ebp_lookahead_ms: i32,
-    /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
+    /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
     pub ebp_placement: std::option::Option<crate::model::M2tsEbpPlacement>,
     /// This field is unused and deprecated.
     pub ecm_pid: std::option::Option<std::string::String>,
     /// Include or exclude the ES Rate field in the PES header.
     pub es_rate_in_pes: std::option::Option<crate::model::M2tsEsRateInPes>,
-    /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub etv_platform_pid: std::option::Option<std::string::String>,
-    /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub etv_signal_pid: std::option::Option<std::string::String>,
     /// The length in seconds of each fragment. Only used with EBP markers.
     pub fragment_time: f64,
     /// If set to passthrough, passes any KLV data from the input source to this output.
     pub klv: std::option::Option<crate::model::M2tsKlv>,
-    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub klv_data_pids: std::option::Option<std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub nielsen_id3_behavior: std::option::Option<crate::model::M2tsNielsenId3Behavior>,
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
     pub null_packet_bitrate: f64,
-    /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
+    /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub pat_interval: i32,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub pcr_control: std::option::Option<crate::model::M2tsPcrControl>,
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
     pub pcr_period: i32,
-    /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub pcr_pid: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub pmt_interval: i32,
@@ -18924,29 +18492,25 @@ pub struct M2tsSettings {
     pub program_num: i32,
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
     pub rate_mode: std::option::Option<crate::model::M2tsRateMode>,
-    /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub scte27_pids: std::option::Option<std::string::String>,
     /// Optionally pass SCTE-35 signals from the input source to this output.
     pub scte35_control: std::option::Option<crate::model::M2tsScte35Control>,
-    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub scte35_pid: std::option::Option<std::string::String>,
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
     pub segmentation_markers: std::option::Option<crate::model::M2tsSegmentationMarkers>,
-    /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
-    ///
-    /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
-    ///
-    /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
+    /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
     pub segmentation_style: std::option::Option<crate::model::M2tsSegmentationStyle>,
     /// The length in seconds of each segment. Required unless markers is set to _none_.
     pub segmentation_time: f64,
     /// When set to passthrough, timed metadata will be passed through from input to output.
     pub timed_metadata_behavior: std::option::Option<crate::model::M2tsTimedMetadataBehavior>,
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
     pub transport_stream_id: i32,
-    /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub video_pid: std::option::Option<std::string::String>,
 }
 impl M2tsSettings {
@@ -18960,17 +18524,17 @@ impl M2tsSettings {
     pub fn arib(&self) -> std::option::Option<&crate::model::M2tsArib> {
         self.arib.as_ref()
     }
-    /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn arib_captions_pid(&self) -> std::option::Option<&str> {
         self.arib_captions_pid.as_deref()
     }
-    /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
+    /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
     pub fn arib_captions_pid_control(
         &self,
     ) -> std::option::Option<&crate::model::M2tsAribCaptionsPidControl> {
         self.arib_captions_pid_control.as_ref()
     }
-    /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
+    /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
     pub fn audio_buffer_model(&self) -> std::option::Option<&crate::model::M2tsAudioBufferModel> {
         self.audio_buffer_model.as_ref()
     }
@@ -19006,7 +18570,7 @@ impl M2tsSettings {
     pub fn dvb_sdt_settings(&self) -> std::option::Option<&crate::model::DvbSdtSettings> {
         self.dvb_sdt_settings.as_ref()
     }
-    /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn dvb_sub_pids(&self) -> std::option::Option<&str> {
         self.dvb_sub_pids.as_deref()
     }
@@ -19014,7 +18578,7 @@ impl M2tsSettings {
     pub fn dvb_tdt_settings(&self) -> std::option::Option<&crate::model::DvbTdtSettings> {
         self.dvb_tdt_settings.as_ref()
     }
-    /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn dvb_teletext_pid(&self) -> std::option::Option<&str> {
         self.dvb_teletext_pid.as_deref()
     }
@@ -19022,15 +18586,15 @@ impl M2tsSettings {
     pub fn ebif(&self) -> std::option::Option<&crate::model::M2tsEbifControl> {
         self.ebif.as_ref()
     }
-    /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
+    /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
     pub fn ebp_audio_interval(&self) -> std::option::Option<&crate::model::M2tsAudioInterval> {
         self.ebp_audio_interval.as_ref()
     }
-    /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+    /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
     pub fn ebp_lookahead_ms(&self) -> i32 {
         self.ebp_lookahead_ms
     }
-    /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
+    /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
     pub fn ebp_placement(&self) -> std::option::Option<&crate::model::M2tsEbpPlacement> {
         self.ebp_placement.as_ref()
     }
@@ -19042,11 +18606,11 @@ impl M2tsSettings {
     pub fn es_rate_in_pes(&self) -> std::option::Option<&crate::model::M2tsEsRateInPes> {
         self.es_rate_in_pes.as_ref()
     }
-    /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn etv_platform_pid(&self) -> std::option::Option<&str> {
         self.etv_platform_pid.as_deref()
     }
-    /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn etv_signal_pid(&self) -> std::option::Option<&str> {
         self.etv_signal_pid.as_deref()
     }
@@ -19058,7 +18622,7 @@ impl M2tsSettings {
     pub fn klv(&self) -> std::option::Option<&crate::model::M2tsKlv> {
         self.klv.as_ref()
     }
-    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn klv_data_pids(&self) -> std::option::Option<&str> {
         self.klv_data_pids.as_deref()
     }
@@ -19072,7 +18636,7 @@ impl M2tsSettings {
     pub fn null_packet_bitrate(&self) -> f64 {
         self.null_packet_bitrate
     }
-    /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
+    /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub fn pat_interval(&self) -> i32 {
         self.pat_interval
     }
@@ -19084,7 +18648,7 @@ impl M2tsSettings {
     pub fn pcr_period(&self) -> i32 {
         self.pcr_period
     }
-    /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn pcr_pid(&self) -> std::option::Option<&str> {
         self.pcr_pid.as_deref()
     }
@@ -19104,7 +18668,7 @@ impl M2tsSettings {
     pub fn rate_mode(&self) -> std::option::Option<&crate::model::M2tsRateMode> {
         self.rate_mode.as_ref()
     }
-    /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn scte27_pids(&self) -> std::option::Option<&str> {
         self.scte27_pids.as_deref()
     }
@@ -19112,7 +18676,7 @@ impl M2tsSettings {
     pub fn scte35_control(&self) -> std::option::Option<&crate::model::M2tsScte35Control> {
         self.scte35_control.as_ref()
     }
-    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn scte35_pid(&self) -> std::option::Option<&str> {
         self.scte35_pid.as_deref()
     }
@@ -19122,11 +18686,7 @@ impl M2tsSettings {
     ) -> std::option::Option<&crate::model::M2tsSegmentationMarkers> {
         self.segmentation_markers.as_ref()
     }
-    /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
-    ///
-    /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
-    ///
-    /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
+    /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
     pub fn segmentation_style(&self) -> std::option::Option<&crate::model::M2tsSegmentationStyle> {
         self.segmentation_style.as_ref()
     }
@@ -19140,7 +18700,7 @@ impl M2tsSettings {
     ) -> std::option::Option<&crate::model::M2tsTimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn timed_metadata_pid(&self) -> std::option::Option<&str> {
         self.timed_metadata_pid.as_deref()
     }
@@ -19148,7 +18708,7 @@ impl M2tsSettings {
     pub fn transport_stream_id(&self) -> i32 {
         self.transport_stream_id
     }
-    /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn video_pid(&self) -> std::option::Option<&str> {
         self.video_pid.as_deref()
     }
@@ -19293,12 +18853,12 @@ pub mod m2ts_settings {
             self.arib = input;
             self
         }
-        /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn arib_captions_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.arib_captions_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_arib_captions_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19306,7 +18866,7 @@ pub mod m2ts_settings {
             self.arib_captions_pid = input;
             self
         }
-        /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
+        /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
         pub fn arib_captions_pid_control(
             mut self,
             input: crate::model::M2tsAribCaptionsPidControl,
@@ -19314,7 +18874,7 @@ pub mod m2ts_settings {
             self.arib_captions_pid_control = Some(input);
             self
         }
-        /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
+        /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
         pub fn set_arib_captions_pid_control(
             mut self,
             input: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
@@ -19322,12 +18882,12 @@ pub mod m2ts_settings {
             self.arib_captions_pid_control = input;
             self
         }
-        /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
+        /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
         pub fn audio_buffer_model(mut self, input: crate::model::M2tsAudioBufferModel) -> Self {
             self.audio_buffer_model = Some(input);
             self
         }
-        /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
+        /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
         pub fn set_audio_buffer_model(
             mut self,
             input: std::option::Option<crate::model::M2tsAudioBufferModel>,
@@ -19430,12 +18990,12 @@ pub mod m2ts_settings {
             self.dvb_sdt_settings = input;
             self
         }
-        /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn dvb_sub_pids(mut self, input: impl Into<std::string::String>) -> Self {
             self.dvb_sub_pids = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dvb_sub_pids = input;
             self
@@ -19453,12 +19013,12 @@ pub mod m2ts_settings {
             self.dvb_tdt_settings = input;
             self
         }
-        /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn dvb_teletext_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.dvb_teletext_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_dvb_teletext_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19479,12 +19039,12 @@ pub mod m2ts_settings {
             self.ebif = input;
             self
         }
-        /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
+        /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
         pub fn ebp_audio_interval(mut self, input: crate::model::M2tsAudioInterval) -> Self {
             self.ebp_audio_interval = Some(input);
             self
         }
-        /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
+        /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
         pub fn set_ebp_audio_interval(
             mut self,
             input: std::option::Option<crate::model::M2tsAudioInterval>,
@@ -19492,22 +19052,22 @@ pub mod m2ts_settings {
             self.ebp_audio_interval = input;
             self
         }
-        /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+        /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
         pub fn ebp_lookahead_ms(mut self, input: i32) -> Self {
             self.ebp_lookahead_ms = Some(input);
             self
         }
-        /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
+        /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
         pub fn set_ebp_lookahead_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.ebp_lookahead_ms = input;
             self
         }
-        /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
+        /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
         pub fn ebp_placement(mut self, input: crate::model::M2tsEbpPlacement) -> Self {
             self.ebp_placement = Some(input);
             self
         }
-        /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
+        /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
         pub fn set_ebp_placement(
             mut self,
             input: std::option::Option<crate::model::M2tsEbpPlacement>,
@@ -19538,12 +19098,12 @@ pub mod m2ts_settings {
             self.es_rate_in_pes = input;
             self
         }
-        /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn etv_platform_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.etv_platform_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_etv_platform_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19551,12 +19111,12 @@ pub mod m2ts_settings {
             self.etv_platform_pid = input;
             self
         }
-        /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn etv_signal_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.etv_signal_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_etv_signal_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19584,12 +19144,12 @@ pub mod m2ts_settings {
             self.klv = input;
             self
         }
-        /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn klv_data_pids(mut self, input: impl Into<std::string::String>) -> Self {
             self.klv_data_pids = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_klv_data_pids(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19620,12 +19180,12 @@ pub mod m2ts_settings {
             self.null_packet_bitrate = input;
             self
         }
-        /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
+        /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
         pub fn pat_interval(mut self, input: i32) -> Self {
             self.pat_interval = Some(input);
             self
         }
-        /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
+        /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
         pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.pat_interval = input;
             self
@@ -19653,12 +19213,12 @@ pub mod m2ts_settings {
             self.pcr_period = input;
             self
         }
-        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn pcr_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.pcr_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pcr_pid = input;
             self
@@ -19706,12 +19266,12 @@ pub mod m2ts_settings {
             self.rate_mode = input;
             self
         }
-        /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn scte27_pids(mut self, input: impl Into<std::string::String>) -> Self {
             self.scte27_pids = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_scte27_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scte27_pids = input;
             self
@@ -19729,12 +19289,12 @@ pub mod m2ts_settings {
             self.scte35_control = input;
             self
         }
-        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn scte35_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.scte35_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scte35_pid = input;
             self
@@ -19755,20 +19315,12 @@ pub mod m2ts_settings {
             self.segmentation_markers = input;
             self
         }
-        /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
-        ///
-        /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
-        ///
-        /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
+        /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
         pub fn segmentation_style(mut self, input: crate::model::M2tsSegmentationStyle) -> Self {
             self.segmentation_style = Some(input);
             self
         }
-        /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
-        ///
-        /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
-        ///
-        /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
+        /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
         pub fn set_segmentation_style(
             mut self,
             input: std::option::Option<crate::model::M2tsSegmentationStyle>,
@@ -19802,12 +19354,12 @@ pub mod m2ts_settings {
             self.timed_metadata_behavior = input;
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.timed_metadata_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_timed_metadata_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19825,12 +19377,12 @@ pub mod m2ts_settings {
             self.transport_stream_id = input;
             self
         }
-        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn video_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.video_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_pid = input;
             self
@@ -21299,7 +20851,7 @@ impl AsRef<str> for M2tsAbsentInputAudioBehavior {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RtmpOutputSettings {
-    /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
+    /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     pub certificate_mode: std::option::Option<crate::model::RtmpOutputCertificateMode>,
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
     pub connection_retry_interval: i32,
@@ -21309,7 +20861,7 @@ pub struct RtmpOutputSettings {
     pub num_retries: i32,
 }
 impl RtmpOutputSettings {
-    /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
+    /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     pub fn certificate_mode(
         &self,
     ) -> std::option::Option<&crate::model::RtmpOutputCertificateMode> {
@@ -21350,12 +20902,12 @@ pub mod rtmp_output_settings {
         pub(crate) num_retries: std::option::Option<i32>,
     }
     impl Builder {
-        /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
+        /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
         pub fn certificate_mode(mut self, input: crate::model::RtmpOutputCertificateMode) -> Self {
             self.certificate_mode = Some(input);
             self
         }
-        /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
+        /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::RtmpOutputCertificateMode>,
@@ -21530,21 +21082,19 @@ impl MultiplexOutputSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MsSmoothOutputSettings {
-    /// Only applicable when this output is referencing an H.265 video description.
-    /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     pub h265_packaging_type: std::option::Option<crate::model::MsSmoothH265PackagingType>,
-    /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+    /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl MsSmoothOutputSettings {
-    /// Only applicable when this output is referencing an H.265 video description.
-    /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     pub fn h265_packaging_type(
         &self,
     ) -> std::option::Option<&crate::model::MsSmoothH265PackagingType> {
         self.h265_packaging_type.as_ref()
     }
-    /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+    /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn name_modifier(&self) -> std::option::Option<&str> {
         self.name_modifier.as_deref()
     }
@@ -21568,8 +21118,7 @@ pub mod ms_smooth_output_settings {
         pub(crate) name_modifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Only applicable when this output is referencing an H.265 video description.
-        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+        /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn h265_packaging_type(
             mut self,
             input: crate::model::MsSmoothH265PackagingType,
@@ -21577,8 +21126,7 @@ pub mod ms_smooth_output_settings {
             self.h265_packaging_type = Some(input);
             self
         }
-        /// Only applicable when this output is referencing an H.265 video description.
-        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+        /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn set_h265_packaging_type(
             mut self,
             input: std::option::Option<crate::model::MsSmoothH265PackagingType>,
@@ -21586,12 +21134,12 @@ pub mod ms_smooth_output_settings {
             self.h265_packaging_type = input;
             self
         }
-        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+        /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
         pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_modifier = Some(input.into());
             self
         }
-        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+        /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21704,8 +21252,7 @@ impl MediaPackageOutputSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsOutputSettings {
-    /// Only applicable when this output is referencing an H.265 video description.
-    /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     pub h265_packaging_type: std::option::Option<crate::model::HlsH265PackagingType>,
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
     pub hls_settings: std::option::Option<crate::model::HlsSettings>,
@@ -21715,8 +21262,7 @@ pub struct HlsOutputSettings {
     pub segment_modifier: std::option::Option<std::string::String>,
 }
 impl HlsOutputSettings {
-    /// Only applicable when this output is referencing an H.265 video description.
-    /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+    /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
     pub fn h265_packaging_type(&self) -> std::option::Option<&crate::model::HlsH265PackagingType> {
         self.h265_packaging_type.as_ref()
     }
@@ -21755,14 +21301,12 @@ pub mod hls_output_settings {
         pub(crate) segment_modifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Only applicable when this output is referencing an H.265 video description.
-        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+        /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn h265_packaging_type(mut self, input: crate::model::HlsH265PackagingType) -> Self {
             self.h265_packaging_type = Some(input);
             self
         }
-        /// Only applicable when this output is referencing an H.265 video description.
-        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+        /// Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn set_h265_packaging_type(
             mut self,
             input: std::option::Option<crate::model::HlsH265PackagingType>,
@@ -22075,7 +21619,7 @@ pub struct M3u8Settings {
     pub scte35_pid: std::option::Option<std::string::String>,
     /// When set to passthrough, timed metadata is passed through from input to output.
     pub timed_metadata_behavior: std::option::Option<crate::model::M3u8TimedMetadataBehavior>,
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
     pub transport_stream_id: i32,
@@ -22143,7 +21687,7 @@ impl M3u8Settings {
     ) -> std::option::Option<&crate::model::M3u8TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+    /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn timed_metadata_pid(&self) -> std::option::Option<&str> {
         self.timed_metadata_pid.as_deref()
     }
@@ -22360,12 +21904,12 @@ pub mod m3u8_settings {
             self.timed_metadata_behavior = input;
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
             self.timed_metadata_pid = Some(input.into());
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_timed_metadata_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22899,23 +22443,9 @@ impl AsRef<str> for Fmp4NielsenId3Behavior {
 pub struct AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
     pub audio_group_id: std::option::Option<std::string::String>,
-    /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
-    ///
-    /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
+    /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
     pub audio_only_image: std::option::Option<crate::model::InputLocation>,
-    /// Four types of audio-only tracks are supported:
-    ///
-    /// Audio-Only Variant Stream
-    /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
-    ///
-    /// Alternate Audio, Auto Select, Default
-    /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
-    ///
-    /// Alternate Audio, Auto Select, Not Default
-    /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
-    ///
-    /// Alternate Audio, not Auto Select
-    /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+    /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     pub audio_track_type: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
     /// Specifies the segment type.
     pub segment_type: std::option::Option<crate::model::AudioOnlyHlsSegmentType>,
@@ -22925,25 +22455,11 @@ impl AudioOnlyHlsSettings {
     pub fn audio_group_id(&self) -> std::option::Option<&str> {
         self.audio_group_id.as_deref()
     }
-    /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
-    ///
-    /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
+    /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
     pub fn audio_only_image(&self) -> std::option::Option<&crate::model::InputLocation> {
         self.audio_only_image.as_ref()
     }
-    /// Four types of audio-only tracks are supported:
-    ///
-    /// Audio-Only Variant Stream
-    /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
-    ///
-    /// Alternate Audio, Auto Select, Default
-    /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
-    ///
-    /// Alternate Audio, Auto Select, Not Default
-    /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
-    ///
-    /// Alternate Audio, not Auto Select
-    /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+    /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     pub fn audio_track_type(&self) -> std::option::Option<&crate::model::AudioOnlyHlsTrackType> {
         self.audio_track_type.as_ref()
     }
@@ -22987,16 +22503,12 @@ pub mod audio_only_hls_settings {
             self.audio_group_id = input;
             self
         }
-        /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
-        ///
-        /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
+        /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
         pub fn audio_only_image(mut self, input: crate::model::InputLocation) -> Self {
             self.audio_only_image = Some(input);
             self
         }
-        /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
-        ///
-        /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
+        /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
         pub fn set_audio_only_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -23004,36 +22516,12 @@ pub mod audio_only_hls_settings {
             self.audio_only_image = input;
             self
         }
-        /// Four types of audio-only tracks are supported:
-        ///
-        /// Audio-Only Variant Stream
-        /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
-        ///
-        /// Alternate Audio, Auto Select, Default
-        /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
-        ///
-        /// Alternate Audio, Auto Select, Not Default
-        /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
-        ///
-        /// Alternate Audio, not Auto Select
-        /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+        /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
         pub fn audio_track_type(mut self, input: crate::model::AudioOnlyHlsTrackType) -> Self {
             self.audio_track_type = Some(input);
             self
         }
-        /// Four types of audio-only tracks are supported:
-        ///
-        /// Audio-Only Variant Stream
-        /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
-        ///
-        /// Alternate Audio, Auto Select, Default
-        /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
-        ///
-        /// Alternate Audio, Auto Select, Not Default
-        /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
-        ///
-        /// Alternate Audio, not Auto Select
-        /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
+        /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
         pub fn set_audio_track_type(
             mut self,
             input: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
@@ -23414,7 +22902,7 @@ pub struct ArchiveOutputSettings {
     pub container_settings: std::option::Option<crate::model::ArchiveContainerSettings>,
     /// Output file extension. If excluded, this will be auto-selected from the container type.
     pub extension: std::option::Option<std::string::String>,
-    /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+    /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl ArchiveOutputSettings {
@@ -23428,7 +22916,7 @@ impl ArchiveOutputSettings {
     pub fn extension(&self) -> std::option::Option<&str> {
         self.extension.as_deref()
     }
-    /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+    /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn name_modifier(&self) -> std::option::Option<&str> {
         self.name_modifier.as_deref()
     }
@@ -23476,12 +22964,12 @@ pub mod archive_output_settings {
             self.extension = input;
             self
         }
-        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+        /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
         pub fn name_modifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_modifier = Some(input.into());
             self
         }
-        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
+        /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23862,7 +23350,7 @@ impl OutputGroupSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UdpGroupSettings {
-    /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
+    /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForUdpOut>,
     /// Indicates ID3 frame that has the timecode.
     pub timed_metadata_id3_frame: std::option::Option<crate::model::UdpTimedMetadataId3Frame>,
@@ -23870,7 +23358,7 @@ pub struct UdpGroupSettings {
     pub timed_metadata_id3_period: i32,
 }
 impl UdpGroupSettings {
-    /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
+    /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
     pub fn input_loss_action(
         &self,
     ) -> std::option::Option<&crate::model::InputLossActionForUdpOut> {
@@ -23908,12 +23396,12 @@ pub mod udp_group_settings {
         pub(crate) timed_metadata_id3_period: std::option::Option<i32>,
     }
     impl Builder {
-        /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
+        /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
         pub fn input_loss_action(mut self, input: crate::model::InputLossActionForUdpOut) -> Self {
             self.input_loss_action = Some(input);
             self
         }
-        /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
+        /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForUdpOut>,
@@ -24094,12 +23582,9 @@ pub struct RtmpGroupSettings {
     pub cache_full_behavior: std::option::Option<crate::model::RtmpCacheFullBehavior>,
     /// Cache length, in seconds, is used to calculate buffer size.
     pub cache_length: i32,
-    /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
+    /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     pub caption_data: std::option::Option<crate::model::RtmpCaptionData>,
-    /// Controls the behavior of this RTMP group if input becomes unavailable.
-    ///
-    /// - emitOutput: Emit a slate until input returns.
-    /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
+    /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub restart_delay: i32,
@@ -24123,14 +23608,11 @@ impl RtmpGroupSettings {
     pub fn cache_length(&self) -> i32 {
         self.cache_length
     }
-    /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
+    /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     pub fn caption_data(&self) -> std::option::Option<&crate::model::RtmpCaptionData> {
         self.caption_data.as_ref()
     }
-    /// Controls the behavior of this RTMP group if input becomes unavailable.
-    ///
-    /// - emitOutput: Emit a slate until input returns.
-    /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
+    /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub fn input_loss_action(
         &self,
     ) -> std::option::Option<&crate::model::InputLossActionForRtmpOut> {
@@ -24224,12 +23706,12 @@ pub mod rtmp_group_settings {
             self.cache_length = input;
             self
         }
-        /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
+        /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
         pub fn caption_data(mut self, input: crate::model::RtmpCaptionData) -> Self {
             self.caption_data = Some(input);
             self
         }
-        /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
+        /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
         pub fn set_caption_data(
             mut self,
             input: std::option::Option<crate::model::RtmpCaptionData>,
@@ -24237,18 +23719,12 @@ pub mod rtmp_group_settings {
             self.caption_data = input;
             self
         }
-        /// Controls the behavior of this RTMP group if input becomes unavailable.
-        ///
-        /// - emitOutput: Emit a slate until input returns.
-        /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
+        /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
         pub fn input_loss_action(mut self, input: crate::model::InputLossActionForRtmpOut) -> Self {
             self.input_loss_action = Some(input);
             self
         }
-        /// Controls the behavior of this RTMP group if input becomes unavailable.
-        ///
-        /// - emitOutput: Emit a slate until input returns.
-        /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
+        /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForRtmpOut>,
@@ -24601,22 +24077,15 @@ pub struct MsSmoothGroupSettings {
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
     pub audio_only_timecode_control:
         std::option::Option<crate::model::SmoothGroupAudioOnlyTimecodeControl>,
-    /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
+    /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
     pub certificate_mode: std::option::Option<crate::model::SmoothGroupCertificateMode>,
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
     pub connection_retry_interval: i32,
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
-    /// MS Smooth event ID to be sent to the IIS server.
-    ///
-    /// Should only be specified if eventIdMode is set to useConfigured.
+    /// MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.
     pub event_id: std::option::Option<std::string::String>,
-    /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
-    ///
-    /// Options:
-    /// - "useConfigured" - use the value provided in eventId
-    /// - "useTimestamp" - generate and send an event ID based on the current timestamp
-    /// - "noEventId" - do not send an event ID to the IIS server.
+    /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
     pub event_id_mode: std::option::Option<crate::model::SmoothGroupEventIdMode>,
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
     pub event_stop_behavior: std::option::Option<crate::model::SmoothGroupEventStopBehavior>,
@@ -24634,19 +24103,14 @@ pub struct MsSmoothGroupSettings {
     pub segmentation_mode: std::option::Option<crate::model::SmoothGroupSegmentationMode>,
     /// Number of milliseconds to delay the output from the second pipeline.
     pub send_delay_ms: i32,
-    /// Identifies the type of data to place in the sparse track:
-    /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
-    /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
-    /// - NONE: Don't generate a sparse track for any outputs in this output group.
+    /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
     pub sparse_track_type: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
     pub stream_manifest_behavior:
         std::option::Option<crate::model::SmoothGroupStreamManifestBehavior>,
-    /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
+    /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
     pub timestamp_offset: std::option::Option<std::string::String>,
-    /// Type of timestamp date offset to use.
-    /// - useEventStartDate: Use the date the event was started as the offset
-    /// - useConfiguredOffset: Use an explicitly configured date as the offset
+    /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
     pub timestamp_offset_mode: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
 }
 impl MsSmoothGroupSettings {
@@ -24660,7 +24124,7 @@ impl MsSmoothGroupSettings {
     ) -> std::option::Option<&crate::model::SmoothGroupAudioOnlyTimecodeControl> {
         self.audio_only_timecode_control.as_ref()
     }
-    /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
+    /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
     pub fn certificate_mode(
         &self,
     ) -> std::option::Option<&crate::model::SmoothGroupCertificateMode> {
@@ -24674,18 +24138,11 @@ impl MsSmoothGroupSettings {
     pub fn destination(&self) -> std::option::Option<&crate::model::OutputLocationRef> {
         self.destination.as_ref()
     }
-    /// MS Smooth event ID to be sent to the IIS server.
-    ///
-    /// Should only be specified if eventIdMode is set to useConfigured.
+    /// MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
-    ///
-    /// Options:
-    /// - "useConfigured" - use the value provided in eventId
-    /// - "useTimestamp" - generate and send an event ID based on the current timestamp
-    /// - "noEventId" - do not send an event ID to the IIS server.
+    /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
     pub fn event_id_mode(&self) -> std::option::Option<&crate::model::SmoothGroupEventIdMode> {
         self.event_id_mode.as_ref()
     }
@@ -24727,10 +24184,7 @@ impl MsSmoothGroupSettings {
     pub fn send_delay_ms(&self) -> i32 {
         self.send_delay_ms
     }
-    /// Identifies the type of data to place in the sparse track:
-    /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
-    /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
-    /// - NONE: Don't generate a sparse track for any outputs in this output group.
+    /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
     pub fn sparse_track_type(
         &self,
     ) -> std::option::Option<&crate::model::SmoothGroupSparseTrackType> {
@@ -24742,13 +24196,11 @@ impl MsSmoothGroupSettings {
     ) -> std::option::Option<&crate::model::SmoothGroupStreamManifestBehavior> {
         self.stream_manifest_behavior.as_ref()
     }
-    /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
+    /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
     pub fn timestamp_offset(&self) -> std::option::Option<&str> {
         self.timestamp_offset.as_deref()
     }
-    /// Type of timestamp date offset to use.
-    /// - useEventStartDate: Use the date the event was started as the offset
-    /// - useConfiguredOffset: Use an explicitly configured date as the offset
+    /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
     pub fn timestamp_offset_mode(
         &self,
     ) -> std::option::Option<&crate::model::SmoothGroupTimestampOffsetMode> {
@@ -24845,12 +24297,12 @@ pub mod ms_smooth_group_settings {
             self.audio_only_timecode_control = input;
             self
         }
-        /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
+        /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
         pub fn certificate_mode(mut self, input: crate::model::SmoothGroupCertificateMode) -> Self {
             self.certificate_mode = Some(input);
             self
         }
-        /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
+        /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupCertificateMode>,
@@ -24881,36 +24333,22 @@ pub mod ms_smooth_group_settings {
             self.destination = input;
             self
         }
-        /// MS Smooth event ID to be sent to the IIS server.
-        ///
-        /// Should only be specified if eventIdMode is set to useConfigured.
+        /// MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// MS Smooth event ID to be sent to the IIS server.
-        ///
-        /// Should only be specified if eventIdMode is set to useConfigured.
+        /// MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
         }
-        /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
-        ///
-        /// Options:
-        /// - "useConfigured" - use the value provided in eventId
-        /// - "useTimestamp" - generate and send an event ID based on the current timestamp
-        /// - "noEventId" - do not send an event ID to the IIS server.
+        /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
         pub fn event_id_mode(mut self, input: crate::model::SmoothGroupEventIdMode) -> Self {
             self.event_id_mode = Some(input);
             self
         }
-        /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
-        ///
-        /// Options:
-        /// - "useConfigured" - use the value provided in eventId
-        /// - "useTimestamp" - generate and send an event ID based on the current timestamp
-        /// - "noEventId" - do not send an event ID to the IIS server.
+        /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
         pub fn set_event_id_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupEventIdMode>,
@@ -25016,10 +24454,7 @@ pub mod ms_smooth_group_settings {
             self.send_delay_ms = input;
             self
         }
-        /// Identifies the type of data to place in the sparse track:
-        /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
-        /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
-        /// - NONE: Don't generate a sparse track for any outputs in this output group.
+        /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
         pub fn sparse_track_type(
             mut self,
             input: crate::model::SmoothGroupSparseTrackType,
@@ -25027,10 +24462,7 @@ pub mod ms_smooth_group_settings {
             self.sparse_track_type = Some(input);
             self
         }
-        /// Identifies the type of data to place in the sparse track:
-        /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
-        /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
-        /// - NONE: Don't generate a sparse track for any outputs in this output group.
+        /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
         pub fn set_sparse_track_type(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
@@ -25054,12 +24486,12 @@ pub mod ms_smooth_group_settings {
             self.stream_manifest_behavior = input;
             self
         }
-        /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
+        /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
         pub fn timestamp_offset(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_offset = Some(input.into());
             self
         }
-        /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
+        /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
         pub fn set_timestamp_offset(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25067,9 +24499,7 @@ pub mod ms_smooth_group_settings {
             self.timestamp_offset = input;
             self
         }
-        /// Type of timestamp date offset to use.
-        /// - useEventStartDate: Use the date the event was started as the offset
-        /// - useConfiguredOffset: Use an explicitly configured date as the offset
+        /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
         pub fn timestamp_offset_mode(
             mut self,
             input: crate::model::SmoothGroupTimestampOffsetMode,
@@ -25077,9 +24507,7 @@ pub mod ms_smooth_group_settings {
             self.timestamp_offset_mode = Some(input);
             self
         }
-        /// Type of timestamp date offset to use.
-        /// - useEventStartDate: Use the date the event was started as the offset
-        /// - useConfiguredOffset: Use an explicitly configured date as the offset
+        /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
         pub fn set_timestamp_offset_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
@@ -25688,23 +25116,16 @@ pub struct HlsGroupSettings {
     pub ad_markers: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub base_url_content: std::option::Option<std::string::String>,
-    /// Optional. One value per output group.
-    ///
-    /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
+    /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
     pub base_url_content1: std::option::Option<std::string::String>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub base_url_manifest: std::option::Option<std::string::String>,
-    /// Optional. One value per output group.
-    ///
-    /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
+    /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub base_url_manifest1: std::option::Option<std::string::String>,
-    /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
+    /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
     pub caption_language_mappings:
         std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
-    /// Applies only to 608 Embedded output captions.
-    /// insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions.
-    /// none: Include CLOSED-CAPTIONS=NONE line in the manifest.
-    /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
+    /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub caption_language_setting: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
     pub client_cache: std::option::Option<crate::model::HlsClientCache>,
@@ -25716,28 +25137,20 @@ pub struct HlsGroupSettings {
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Place segments in subdirectories.
     pub directory_structure: std::option::Option<crate::model::HlsDirectoryStructure>,
-    /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
-    /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
-    /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+    /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
     pub discontinuity_tags: std::option::Option<crate::model::HlsDiscontinuityTags>,
-    /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
+    /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
     pub encryption_type: std::option::Option<crate::model::HlsEncryptionType>,
     /// Parameters that control interactions with the CDN.
     pub hls_cdn_settings: std::option::Option<crate::model::HlsCdnSettings>,
     /// State of HLS ID3 Segment Tagging
     pub hls_id3_segment_tagging: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
-    /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
-    ///
-    /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
+    /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
     pub i_frame_only_playlists: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
-    /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
-    /// Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.
-    /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
+    /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
     pub incomplete_segment_behavior:
         std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
-    /// Applies only if Mode field is LIVE.
-    ///
-    /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+    /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     pub index_n_segments: i32,
     /// Parameter that control output group behavior on input loss.
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForHlsOut>,
@@ -25745,13 +25158,9 @@ pub struct HlsGroupSettings {
     pub iv_in_manifest: std::option::Option<crate::model::HlsIvInManifest>,
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
     pub iv_source: std::option::Option<crate::model::HlsIvSource>,
-    /// Applies only if Mode field is LIVE.
-    ///
-    /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
-    ///
-    /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+    /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     pub keep_segments: i32,
-    /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
+    /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
     pub key_format: std::option::Option<std::string::String>,
     /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     pub key_format_versions: std::option::Option<std::string::String>,
@@ -25763,25 +25172,15 @@ pub struct HlsGroupSettings {
     pub manifest_duration_format: std::option::Option<crate::model::HlsManifestDurationFormat>,
     /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     pub min_segment_length: i32,
-    /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
-    ///
-    /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
+    /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     pub mode: std::option::Option<crate::model::HlsMode>,
-    /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
-    ///
-    /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
-    ///
-    /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
+    /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub output_selection: std::option::Option<crate::model::HlsOutputSelection>,
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
     pub program_date_time: std::option::Option<crate::model::HlsProgramDateTime>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub program_date_time_period: i32,
-    /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
-    ///
-    /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
-    ///
-    /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
+    /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     pub redundant_manifest: std::option::Option<crate::model::HlsRedundantManifest>,
     /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
     pub segment_length: i32,
@@ -25797,9 +25196,7 @@ pub struct HlsGroupSettings {
     pub timed_metadata_id3_period: i32,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub timestamp_delta_milliseconds: i32,
-    /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
-    ///
-    /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
+    /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub ts_file_mode: std::option::Option<crate::model::HlsTsFileMode>,
 }
 impl HlsGroupSettings {
@@ -25811,9 +25208,7 @@ impl HlsGroupSettings {
     pub fn base_url_content(&self) -> std::option::Option<&str> {
         self.base_url_content.as_deref()
     }
-    /// Optional. One value per output group.
-    ///
-    /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
+    /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
     pub fn base_url_content1(&self) -> std::option::Option<&str> {
         self.base_url_content1.as_deref()
     }
@@ -25821,22 +25216,17 @@ impl HlsGroupSettings {
     pub fn base_url_manifest(&self) -> std::option::Option<&str> {
         self.base_url_manifest.as_deref()
     }
-    /// Optional. One value per output group.
-    ///
-    /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
+    /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub fn base_url_manifest1(&self) -> std::option::Option<&str> {
         self.base_url_manifest1.as_deref()
     }
-    /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
+    /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
     pub fn caption_language_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::CaptionLanguageMapping]> {
         self.caption_language_mappings.as_deref()
     }
-    /// Applies only to 608 Embedded output captions.
-    /// insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions.
-    /// none: Include CLOSED-CAPTIONS=NONE line in the manifest.
-    /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
+    /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub fn caption_language_setting(
         &self,
     ) -> std::option::Option<&crate::model::HlsCaptionLanguageSetting> {
@@ -25862,13 +25252,11 @@ impl HlsGroupSettings {
     pub fn directory_structure(&self) -> std::option::Option<&crate::model::HlsDirectoryStructure> {
         self.directory_structure.as_ref()
     }
-    /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
-    /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
-    /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+    /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
     pub fn discontinuity_tags(&self) -> std::option::Option<&crate::model::HlsDiscontinuityTags> {
         self.discontinuity_tags.as_ref()
     }
-    /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
+    /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::HlsEncryptionType> {
         self.encryption_type.as_ref()
     }
@@ -25882,25 +25270,19 @@ impl HlsGroupSettings {
     ) -> std::option::Option<&crate::model::HlsId3SegmentTaggingState> {
         self.hls_id3_segment_tagging.as_ref()
     }
-    /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
-    ///
-    /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
+    /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
     pub fn i_frame_only_playlists(
         &self,
     ) -> std::option::Option<&crate::model::IFrameOnlyPlaylistType> {
         self.i_frame_only_playlists.as_ref()
     }
-    /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
-    /// Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.
-    /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
+    /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
     pub fn incomplete_segment_behavior(
         &self,
     ) -> std::option::Option<&crate::model::HlsIncompleteSegmentBehavior> {
         self.incomplete_segment_behavior.as_ref()
     }
-    /// Applies only if Mode field is LIVE.
-    ///
-    /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+    /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     pub fn index_n_segments(&self) -> i32 {
         self.index_n_segments
     }
@@ -25918,15 +25300,11 @@ impl HlsGroupSettings {
     pub fn iv_source(&self) -> std::option::Option<&crate::model::HlsIvSource> {
         self.iv_source.as_ref()
     }
-    /// Applies only if Mode field is LIVE.
-    ///
-    /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
-    ///
-    /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+    /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     pub fn keep_segments(&self) -> i32 {
         self.keep_segments
     }
-    /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
+    /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
     pub fn key_format(&self) -> std::option::Option<&str> {
         self.key_format.as_deref()
     }
@@ -25954,17 +25332,11 @@ impl HlsGroupSettings {
     pub fn min_segment_length(&self) -> i32 {
         self.min_segment_length
     }
-    /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
-    ///
-    /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
+    /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     pub fn mode(&self) -> std::option::Option<&crate::model::HlsMode> {
         self.mode.as_ref()
     }
-    /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
-    ///
-    /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
-    ///
-    /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
+    /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub fn output_selection(&self) -> std::option::Option<&crate::model::HlsOutputSelection> {
         self.output_selection.as_ref()
     }
@@ -25976,11 +25348,7 @@ impl HlsGroupSettings {
     pub fn program_date_time_period(&self) -> i32 {
         self.program_date_time_period
     }
-    /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
-    ///
-    /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
-    ///
-    /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
+    /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     pub fn redundant_manifest(&self) -> std::option::Option<&crate::model::HlsRedundantManifest> {
         self.redundant_manifest.as_ref()
     }
@@ -26016,9 +25384,7 @@ impl HlsGroupSettings {
     pub fn timestamp_delta_milliseconds(&self) -> i32 {
         self.timestamp_delta_milliseconds
     }
-    /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
-    ///
-    /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
+    /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub fn ts_file_mode(&self) -> std::option::Option<&crate::model::HlsTsFileMode> {
         self.ts_file_mode.as_ref()
     }
@@ -26166,16 +25532,12 @@ pub mod hls_group_settings {
             self.base_url_content = input;
             self
         }
-        /// Optional. One value per output group.
-        ///
-        /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
+        /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
         pub fn base_url_content1(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_url_content1 = Some(input.into());
             self
         }
-        /// Optional. One value per output group.
-        ///
-        /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
+        /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
         pub fn set_base_url_content1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26196,16 +25558,12 @@ pub mod hls_group_settings {
             self.base_url_manifest = input;
             self
         }
-        /// Optional. One value per output group.
-        ///
-        /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
+        /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
         pub fn base_url_manifest1(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_url_manifest1 = Some(input.into());
             self
         }
-        /// Optional. One value per output group.
-        ///
-        /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
+        /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
         pub fn set_base_url_manifest1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26217,7 +25575,7 @@ pub mod hls_group_settings {
         ///
         /// To override the contents of this collection use [`set_caption_language_mappings`](Self::set_caption_language_mappings).
         ///
-        /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
+        /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
         pub fn caption_language_mappings(
             mut self,
             input: crate::model::CaptionLanguageMapping,
@@ -26227,7 +25585,7 @@ pub mod hls_group_settings {
             self.caption_language_mappings = Some(v);
             self
         }
-        /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
+        /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
         pub fn set_caption_language_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
@@ -26235,10 +25593,7 @@ pub mod hls_group_settings {
             self.caption_language_mappings = input;
             self
         }
-        /// Applies only to 608 Embedded output captions.
-        /// insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions.
-        /// none: Include CLOSED-CAPTIONS=NONE line in the manifest.
-        /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
+        /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
         pub fn caption_language_setting(
             mut self,
             input: crate::model::HlsCaptionLanguageSetting,
@@ -26246,10 +25601,7 @@ pub mod hls_group_settings {
             self.caption_language_setting = Some(input);
             self
         }
-        /// Applies only to 608 Embedded output captions.
-        /// insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions.
-        /// none: Include CLOSED-CAPTIONS=NONE line in the manifest.
-        /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
+        /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
         pub fn set_caption_language_setting(
             mut self,
             input: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
@@ -26319,16 +25671,12 @@ pub mod hls_group_settings {
             self.directory_structure = input;
             self
         }
-        /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
-        /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
-        /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+        /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
         pub fn discontinuity_tags(mut self, input: crate::model::HlsDiscontinuityTags) -> Self {
             self.discontinuity_tags = Some(input);
             self
         }
-        /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
-        /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
-        /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+        /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
         pub fn set_discontinuity_tags(
             mut self,
             input: std::option::Option<crate::model::HlsDiscontinuityTags>,
@@ -26336,12 +25684,12 @@ pub mod hls_group_settings {
             self.discontinuity_tags = input;
             self
         }
-        /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
+        /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
         pub fn encryption_type(mut self, input: crate::model::HlsEncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
+        /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::HlsEncryptionType>,
@@ -26378,9 +25726,7 @@ pub mod hls_group_settings {
             self.hls_id3_segment_tagging = input;
             self
         }
-        /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
-        ///
-        /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
+        /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
         pub fn i_frame_only_playlists(
             mut self,
             input: crate::model::IFrameOnlyPlaylistType,
@@ -26388,9 +25734,7 @@ pub mod hls_group_settings {
             self.i_frame_only_playlists = Some(input);
             self
         }
-        /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
-        ///
-        /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
+        /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
         pub fn set_i_frame_only_playlists(
             mut self,
             input: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
@@ -26398,9 +25742,7 @@ pub mod hls_group_settings {
             self.i_frame_only_playlists = input;
             self
         }
-        /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
-        /// Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.
-        /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
+        /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
         pub fn incomplete_segment_behavior(
             mut self,
             input: crate::model::HlsIncompleteSegmentBehavior,
@@ -26408,9 +25750,7 @@ pub mod hls_group_settings {
             self.incomplete_segment_behavior = Some(input);
             self
         }
-        /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
-        /// Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.
-        /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
+        /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
         pub fn set_incomplete_segment_behavior(
             mut self,
             input: std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
@@ -26418,16 +25758,12 @@ pub mod hls_group_settings {
             self.incomplete_segment_behavior = input;
             self
         }
-        /// Applies only if Mode field is LIVE.
-        ///
-        /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+        /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
         pub fn index_n_segments(mut self, input: i32) -> Self {
             self.index_n_segments = Some(input);
             self
         }
-        /// Applies only if Mode field is LIVE.
-        ///
-        /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+        /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
         pub fn set_index_n_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.index_n_segments = input;
             self
@@ -26471,30 +25807,22 @@ pub mod hls_group_settings {
             self.iv_source = input;
             self
         }
-        /// Applies only if Mode field is LIVE.
-        ///
-        /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
-        ///
-        /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+        /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
         pub fn keep_segments(mut self, input: i32) -> Self {
             self.keep_segments = Some(input);
             self
         }
-        /// Applies only if Mode field is LIVE.
-        ///
-        /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
-        ///
-        /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+        /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
         pub fn set_keep_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.keep_segments = input;
             self
         }
-        /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
+        /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
         pub fn key_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_format = Some(input.into());
             self
         }
-        /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
+        /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
         pub fn set_key_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_format = input;
             self
@@ -26564,34 +25892,22 @@ pub mod hls_group_settings {
             self.min_segment_length = input;
             self
         }
-        /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
-        ///
-        /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
+        /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
         pub fn mode(mut self, input: crate::model::HlsMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
-        ///
-        /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
+        /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
         pub fn set_mode(mut self, input: std::option::Option<crate::model::HlsMode>) -> Self {
             self.mode = input;
             self
         }
-        /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
-        ///
-        /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
-        ///
-        /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
+        /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
         pub fn output_selection(mut self, input: crate::model::HlsOutputSelection) -> Self {
             self.output_selection = Some(input);
             self
         }
-        /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
-        ///
-        /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
-        ///
-        /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
+        /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
         pub fn set_output_selection(
             mut self,
             input: std::option::Option<crate::model::HlsOutputSelection>,
@@ -26622,20 +25938,12 @@ pub mod hls_group_settings {
             self.program_date_time_period = input;
             self
         }
-        /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
-        ///
-        /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
-        ///
-        /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
+        /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
         pub fn redundant_manifest(mut self, input: crate::model::HlsRedundantManifest) -> Self {
             self.redundant_manifest = Some(input);
             self
         }
-        /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
-        ///
-        /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
-        ///
-        /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
+        /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
         pub fn set_redundant_manifest(
             mut self,
             input: std::option::Option<crate::model::HlsRedundantManifest>,
@@ -26728,16 +26036,12 @@ pub mod hls_group_settings {
             self.timestamp_delta_milliseconds = input;
             self
         }
-        /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
-        ///
-        /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
+        /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
         pub fn ts_file_mode(mut self, input: crate::model::HlsTsFileMode) -> Self {
             self.ts_file_mode = Some(input);
             self
         }
-        /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
-        ///
-        /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
+        /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
         pub fn set_ts_file_mode(
             mut self,
             input: std::option::Option<crate::model::HlsTsFileMode>,
@@ -29170,7 +28474,7 @@ impl AsRef<str> for HlsCaptionLanguageSetting {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionLanguageMapping {
-    /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
+    /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub caption_channel: i32,
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
     pub language_code: std::option::Option<std::string::String>,
@@ -29178,7 +28482,7 @@ pub struct CaptionLanguageMapping {
     pub language_description: std::option::Option<std::string::String>,
 }
 impl CaptionLanguageMapping {
-    /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
+    /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub fn caption_channel(&self) -> i32 {
         self.caption_channel
     }
@@ -29211,12 +28515,12 @@ pub mod caption_language_mapping {
         pub(crate) language_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
+        /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
         pub fn caption_channel(mut self, input: i32) -> Self {
             self.caption_channel = Some(input);
             self
         }
-        /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
+        /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
         pub fn set_caption_channel(mut self, input: std::option::Option<i32>) -> Self {
             self.caption_channel = input;
             self
@@ -29327,13 +28631,13 @@ impl AsRef<str> for HlsAdMarkers {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureGroupSettings {
-    /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
+    /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// Parameters that control interactions with the CDN.
     pub frame_capture_cdn_settings: std::option::Option<crate::model::FrameCaptureCdnSettings>,
 }
 impl FrameCaptureGroupSettings {
-    /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
+    /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     pub fn destination(&self) -> std::option::Option<&crate::model::OutputLocationRef> {
         self.destination.as_ref()
     }
@@ -29366,12 +28670,12 @@ pub mod frame_capture_group_settings {
             std::option::Option<crate::model::FrameCaptureCdnSettings>,
     }
     impl Builder {
-        /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
+        /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
         pub fn destination(mut self, input: crate::model::OutputLocationRef) -> Self {
             self.destination = Some(input);
             self
         }
-        /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
+        /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -30135,14 +29439,11 @@ impl AsRef<str> for MotionGraphicsInsertion {
 pub struct GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
     pub initial_audio_gain: i32,
-    /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+    /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     pub input_end_action: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
     /// Settings for system actions when input is lost.
     pub input_loss_behavior: std::option::Option<crate::model::InputLossBehavior>,
-    /// Indicates how MediaLive pipelines are synchronized.
-    ///
-    /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-    /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub output_locking_mode:
         std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
@@ -30157,7 +29458,7 @@ impl GlobalConfiguration {
     pub fn initial_audio_gain(&self) -> i32 {
         self.initial_audio_gain
     }
-    /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+    /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     pub fn input_end_action(
         &self,
     ) -> std::option::Option<&crate::model::GlobalConfigurationInputEndAction> {
@@ -30167,10 +29468,7 @@ impl GlobalConfiguration {
     pub fn input_loss_behavior(&self) -> std::option::Option<&crate::model::InputLossBehavior> {
         self.input_loss_behavior.as_ref()
     }
-    /// Indicates how MediaLive pipelines are synchronized.
-    ///
-    /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-    /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub fn output_locking_mode(
         &self,
     ) -> std::option::Option<&crate::model::GlobalConfigurationOutputLockingMode> {
@@ -30232,7 +29530,7 @@ pub mod global_configuration {
             self.initial_audio_gain = input;
             self
         }
-        /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+        /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
         pub fn input_end_action(
             mut self,
             input: crate::model::GlobalConfigurationInputEndAction,
@@ -30240,7 +29538,7 @@ pub mod global_configuration {
             self.input_end_action = Some(input);
             self
         }
-        /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
+        /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
         pub fn set_input_end_action(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
@@ -30261,10 +29559,7 @@ pub mod global_configuration {
             self.input_loss_behavior = input;
             self
         }
-        /// Indicates how MediaLive pipelines are synchronized.
-        ///
-        /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-        /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+        /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
         pub fn output_locking_mode(
             mut self,
             input: crate::model::GlobalConfigurationOutputLockingMode,
@@ -30272,10 +29567,7 @@ pub mod global_configuration {
             self.output_locking_mode = Some(input);
             self
         }
-        /// Indicates how MediaLive pipelines are synchronized.
-        ///
-        /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-        /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+        /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
         pub fn set_output_locking_mode(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
@@ -30753,14 +30045,12 @@ impl AsRef<str> for GlobalConfigurationInputEndAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureActivations {
-    /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.
-    /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
+    /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
     pub input_prepare_schedule_actions:
         std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
 }
 impl FeatureActivations {
-    /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.
-    /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
+    /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
     pub fn input_prepare_schedule_actions(
         &self,
     ) -> std::option::Option<&crate::model::FeatureActivationsInputPrepareScheduleActions> {
@@ -30787,8 +30077,7 @@ pub mod feature_activations {
             std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
     }
     impl Builder {
-        /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.
-        /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
+        /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
         pub fn input_prepare_schedule_actions(
             mut self,
             input: crate::model::FeatureActivationsInputPrepareScheduleActions,
@@ -30796,8 +30085,7 @@ pub mod feature_activations {
             self.input_prepare_schedule_actions = Some(input);
             self
         }
-        /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.
-        /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
+        /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
         pub fn set_input_prepare_schedule_actions(
             mut self,
             input: std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
@@ -30887,7 +30175,7 @@ pub struct CaptionDescription {
     pub language_code: std::option::Option<std::string::String>,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
     pub language_description: std::option::Option<std::string::String>,
-    /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
+    /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub name: std::option::Option<std::string::String>,
 }
 impl CaptionDescription {
@@ -30909,7 +30197,7 @@ impl CaptionDescription {
     pub fn language_description(&self) -> std::option::Option<&str> {
         self.language_description.as_deref()
     }
-    /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
+    /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -30994,12 +30282,12 @@ pub mod caption_description {
             self.language_description = input;
             self
         }
-        /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
+        /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
+        /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -31467,11 +30755,11 @@ impl CaptionDestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebvttDestinationSettings {
-    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     pub style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
 }
 impl WebvttDestinationSettings {
-    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+    /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     pub fn style_control(
         &self,
     ) -> std::option::Option<&crate::model::WebvttDestinationStyleControl> {
@@ -31494,12 +30782,12 @@ pub mod webvtt_destination_settings {
         pub(crate) style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
     }
     impl Builder {
-        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
         pub fn style_control(mut self, input: crate::model::WebvttDestinationStyleControl) -> Self {
             self.style_control = Some(input);
             self
         }
-        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
+        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
         pub fn set_style_control(
             mut self,
             input: std::option::Option<crate::model::WebvttDestinationStyleControl>,
@@ -31905,22 +31193,11 @@ impl EmbeddedDestinationSettings {
 pub struct EbuTtDDestinationSettings {
     /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
     pub copyright_holder: std::option::Option<std::string::String>,
-    /// Specifies how to handle the gap between the lines (in multi-line captions).
-    ///
-    /// - enabled: Fill with the captions background color (as specified in the input captions).
-    /// - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
     pub fill_line_gap: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
-    ///
-    /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
-    ///
-    /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
-    /// - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
     pub font_family: std::option::Option<std::string::String>,
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
-    ///
-    /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
-    /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
     pub style_control: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
 }
 impl EbuTtDDestinationSettings {
@@ -31928,26 +31205,15 @@ impl EbuTtDDestinationSettings {
     pub fn copyright_holder(&self) -> std::option::Option<&str> {
         self.copyright_holder.as_deref()
     }
-    /// Specifies how to handle the gap between the lines (in multi-line captions).
-    ///
-    /// - enabled: Fill with the captions background color (as specified in the input captions).
-    /// - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
     pub fn fill_line_gap(&self) -> std::option::Option<&crate::model::EbuTtDFillLineGapControl> {
         self.fill_line_gap.as_ref()
     }
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
-    ///
-    /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
-    ///
-    /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
-    /// - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
     pub fn font_family(&self) -> std::option::Option<&str> {
         self.font_family.as_deref()
     }
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
-    ///
-    /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
-    /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
     pub fn style_control(
         &self,
     ) -> std::option::Option<&crate::model::EbuTtDDestinationStyleControl> {
@@ -31989,18 +31255,12 @@ pub mod ebu_tt_d_destination_settings {
             self.copyright_holder = input;
             self
         }
-        /// Specifies how to handle the gap between the lines (in multi-line captions).
-        ///
-        /// - enabled: Fill with the captions background color (as specified in the input captions).
-        /// - disabled: Leave the gap unfilled.
+        /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
         pub fn fill_line_gap(mut self, input: crate::model::EbuTtDFillLineGapControl) -> Self {
             self.fill_line_gap = Some(input);
             self
         }
-        /// Specifies how to handle the gap between the lines (in multi-line captions).
-        ///
-        /// - enabled: Fill with the captions background color (as specified in the input captions).
-        /// - disabled: Leave the gap unfilled.
+        /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
         pub fn set_fill_line_gap(
             mut self,
             input: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
@@ -32008,38 +31268,22 @@ pub mod ebu_tt_d_destination_settings {
             self.fill_line_gap = input;
             self
         }
-        /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
-        ///
-        /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
-        ///
-        /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
-        /// - Leave blank to set the family to “monospace”.
+        /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
         pub fn font_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_family = Some(input.into());
             self
         }
-        /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
-        ///
-        /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
-        ///
-        /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
-        /// - Leave blank to set the family to “monospace”.
+        /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
         pub fn set_font_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_family = input;
             self
         }
-        /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
-        ///
-        /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
-        /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+        /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
         pub fn style_control(mut self, input: crate::model::EbuTtDDestinationStyleControl) -> Self {
             self.style_control = Some(input);
             self
         }
-        /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
-        ///
-        /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
-        /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+        /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
         pub fn set_style_control(
             mut self,
             input: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
@@ -32179,74 +31423,74 @@ impl AsRef<str> for EbuTtDFillLineGapControl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSubDestinationSettings {
-    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub alignment: std::option::Option<crate::model::DvbSubDestinationAlignment>,
-    /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
     pub background_color: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
-    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub background_opacity: i32,
-    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     pub font: std::option::Option<crate::model::InputLocation>,
-    /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub font_color: std::option::Option<crate::model::DvbSubDestinationFontColor>,
-    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     pub font_opacity: i32,
-    /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+    /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     pub font_resolution: i32,
-    /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+    /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     pub font_size: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_color: std::option::Option<crate::model::DvbSubDestinationOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_size: i32,
-    /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     pub shadow_color: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
-    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub shadow_opacity: i32,
-    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     pub shadow_x_offset: i32,
-    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub shadow_y_offset: i32,
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
     pub teletext_grid_control:
         std::option::Option<crate::model::DvbSubDestinationTeletextGridControl>,
-    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub x_position: i32,
-    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub y_position: i32,
 }
 impl DvbSubDestinationSettings {
-    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn alignment(&self) -> std::option::Option<&crate::model::DvbSubDestinationAlignment> {
         self.alignment.as_ref()
     }
-    /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
     pub fn background_color(
         &self,
     ) -> std::option::Option<&crate::model::DvbSubDestinationBackgroundColor> {
         self.background_color.as_ref()
     }
-    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn background_opacity(&self) -> i32 {
         self.background_opacity
     }
-    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     pub fn font(&self) -> std::option::Option<&crate::model::InputLocation> {
         self.font.as_ref()
     }
-    /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn font_color(&self) -> std::option::Option<&crate::model::DvbSubDestinationFontColor> {
         self.font_color.as_ref()
     }
-    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     pub fn font_opacity(&self) -> i32 {
         self.font_opacity
     }
-    /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+    /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     pub fn font_resolution(&self) -> i32 {
         self.font_resolution
     }
-    /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+    /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     pub fn font_size(&self) -> std::option::Option<&str> {
         self.font_size.as_deref()
     }
@@ -32260,19 +31504,19 @@ impl DvbSubDestinationSettings {
     pub fn outline_size(&self) -> i32 {
         self.outline_size
     }
-    /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_color(&self) -> std::option::Option<&crate::model::DvbSubDestinationShadowColor> {
         self.shadow_color.as_ref()
     }
-    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn shadow_opacity(&self) -> i32 {
         self.shadow_opacity
     }
-    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_x_offset(&self) -> i32 {
         self.shadow_x_offset
     }
-    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_y_offset(&self) -> i32 {
         self.shadow_y_offset
     }
@@ -32282,11 +31526,11 @@ impl DvbSubDestinationSettings {
     ) -> std::option::Option<&crate::model::DvbSubDestinationTeletextGridControl> {
         self.teletext_grid_control.as_ref()
     }
-    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn x_position(&self) -> i32 {
         self.x_position
     }
-    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn y_position(&self) -> i32 {
         self.y_position
     }
@@ -32341,12 +31585,12 @@ pub mod dvb_sub_destination_settings {
         pub(crate) y_position: std::option::Option<i32>,
     }
     impl Builder {
-        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn alignment(mut self, input: crate::model::DvbSubDestinationAlignment) -> Self {
             self.alignment = Some(input);
             self
         }
-        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationAlignment>,
@@ -32354,7 +31598,7 @@ pub mod dvb_sub_destination_settings {
             self.alignment = input;
             self
         }
-        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
         pub fn background_color(
             mut self,
             input: crate::model::DvbSubDestinationBackgroundColor,
@@ -32362,7 +31606,7 @@ pub mod dvb_sub_destination_settings {
             self.background_color = Some(input);
             self
         }
-        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
         pub fn set_background_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
@@ -32370,32 +31614,32 @@ pub mod dvb_sub_destination_settings {
             self.background_color = input;
             self
         }
-        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn background_opacity(mut self, input: i32) -> Self {
             self.background_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.background_opacity = input;
             self
         }
-        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
         pub fn font(mut self, input: crate::model::InputLocation) -> Self {
             self.font = Some(input);
             self
         }
-        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
         pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
             self.font = input;
             self
         }
-        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn font_color(mut self, input: crate::model::DvbSubDestinationFontColor) -> Self {
             self.font_color = Some(input);
             self
         }
-        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationFontColor>,
@@ -32403,32 +31647,32 @@ pub mod dvb_sub_destination_settings {
             self.font_color = input;
             self
         }
-        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
         pub fn font_opacity(mut self, input: i32) -> Self {
             self.font_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.font_opacity = input;
             self
         }
-        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+        /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
         pub fn font_resolution(mut self, input: i32) -> Self {
             self.font_resolution = Some(input);
             self
         }
-        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+        /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.font_resolution = input;
             self
         }
-        /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+        /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
         pub fn font_size(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_size = Some(input.into());
             self
         }
-        /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+        /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_size = input;
             self
@@ -32456,12 +31700,12 @@ pub mod dvb_sub_destination_settings {
             self.outline_size = input;
             self
         }
-        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_color(mut self, input: crate::model::DvbSubDestinationShadowColor) -> Self {
             self.shadow_color = Some(input);
             self
         }
-        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
@@ -32469,32 +31713,32 @@ pub mod dvb_sub_destination_settings {
             self.shadow_color = input;
             self
         }
-        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn shadow_opacity(mut self, input: i32) -> Self {
             self.shadow_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_opacity = input;
             self
         }
-        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_x_offset(mut self, input: i32) -> Self {
             self.shadow_x_offset = Some(input);
             self
         }
-        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_x_offset = input;
             self
         }
-        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_y_offset(mut self, input: i32) -> Self {
             self.shadow_y_offset = Some(input);
             self
         }
-        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_y_offset = input;
             self
@@ -32515,22 +31759,22 @@ pub mod dvb_sub_destination_settings {
             self.teletext_grid_control = input;
             self
         }
-        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn x_position(mut self, input: i32) -> Self {
             self.x_position = Some(input);
             self
         }
-        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
             self.x_position = input;
             self
         }
-        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn y_position(mut self, input: i32) -> Self {
             self.y_position = Some(input);
             self
         }
-        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
             self.y_position = input;
             self
@@ -32944,71 +32188,71 @@ impl AsRef<str> for DvbSubDestinationAlignment {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BurnInDestinationSettings {
-    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
+    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
     pub alignment: std::option::Option<crate::model::BurnInAlignment>,
-    /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
     pub background_color: std::option::Option<crate::model::BurnInBackgroundColor>,
-    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub background_opacity: i32,
-    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     pub font: std::option::Option<crate::model::InputLocation>,
-    /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub font_color: std::option::Option<crate::model::BurnInFontColor>,
-    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     pub font_opacity: i32,
-    /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+    /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     pub font_resolution: i32,
-    /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+    /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     pub font_size: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_color: std::option::Option<crate::model::BurnInOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_size: i32,
-    /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     pub shadow_color: std::option::Option<crate::model::BurnInShadowColor>,
-    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub shadow_opacity: i32,
-    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     pub shadow_x_offset: i32,
-    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub shadow_y_offset: i32,
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
     pub teletext_grid_control: std::option::Option<crate::model::BurnInTeletextGridControl>,
-    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
     pub x_position: i32,
-    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
     pub y_position: i32,
 }
 impl BurnInDestinationSettings {
-    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
+    /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
     pub fn alignment(&self) -> std::option::Option<&crate::model::BurnInAlignment> {
         self.alignment.as_ref()
     }
-    /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
     pub fn background_color(&self) -> std::option::Option<&crate::model::BurnInBackgroundColor> {
         self.background_color.as_ref()
     }
-    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn background_opacity(&self) -> i32 {
         self.background_opacity
     }
-    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+    /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     pub fn font(&self) -> std::option::Option<&crate::model::InputLocation> {
         self.font.as_ref()
     }
-    /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub fn font_color(&self) -> std::option::Option<&crate::model::BurnInFontColor> {
         self.font_color.as_ref()
     }
-    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     pub fn font_opacity(&self) -> i32 {
         self.font_opacity
     }
-    /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+    /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     pub fn font_resolution(&self) -> i32 {
         self.font_resolution
     }
-    /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+    /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     pub fn font_size(&self) -> std::option::Option<&str> {
         self.font_size.as_deref()
     }
@@ -33020,19 +32264,19 @@ impl BurnInDestinationSettings {
     pub fn outline_size(&self) -> i32 {
         self.outline_size
     }
-    /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_color(&self) -> std::option::Option<&crate::model::BurnInShadowColor> {
         self.shadow_color.as_ref()
     }
-    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub fn shadow_opacity(&self) -> i32 {
         self.shadow_opacity
     }
-    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_x_offset(&self) -> i32 {
         self.shadow_x_offset
     }
-    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub fn shadow_y_offset(&self) -> i32 {
         self.shadow_y_offset
     }
@@ -33042,11 +32286,11 @@ impl BurnInDestinationSettings {
     ) -> std::option::Option<&crate::model::BurnInTeletextGridControl> {
         self.teletext_grid_control.as_ref()
     }
-    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
     pub fn x_position(&self) -> i32 {
         self.x_position
     }
-    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
+    /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
     pub fn y_position(&self) -> i32 {
         self.y_position
     }
@@ -33100,12 +32344,12 @@ pub mod burn_in_destination_settings {
         pub(crate) y_position: std::option::Option<i32>,
     }
     impl Builder {
-        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
         pub fn alignment(mut self, input: crate::model::BurnInAlignment) -> Self {
             self.alignment = Some(input);
             self
         }
-        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::BurnInAlignment>,
@@ -33113,12 +32357,12 @@ pub mod burn_in_destination_settings {
             self.alignment = input;
             self
         }
-        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
         pub fn background_color(mut self, input: crate::model::BurnInBackgroundColor) -> Self {
             self.background_color = Some(input);
             self
         }
-        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
         pub fn set_background_color(
             mut self,
             input: std::option::Option<crate::model::BurnInBackgroundColor>,
@@ -33126,32 +32370,32 @@ pub mod burn_in_destination_settings {
             self.background_color = input;
             self
         }
-        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn background_opacity(mut self, input: i32) -> Self {
             self.background_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.background_opacity = input;
             self
         }
-        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
         pub fn font(mut self, input: crate::model::InputLocation) -> Self {
             self.font = Some(input);
             self
         }
-        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
         pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
             self.font = input;
             self
         }
-        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn font_color(mut self, input: crate::model::BurnInFontColor) -> Self {
             self.font_color = Some(input);
             self
         }
-        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_color(
             mut self,
             input: std::option::Option<crate::model::BurnInFontColor>,
@@ -33159,32 +32403,32 @@ pub mod burn_in_destination_settings {
             self.font_color = input;
             self
         }
-        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
         pub fn font_opacity(mut self, input: i32) -> Self {
             self.font_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.font_opacity = input;
             self
         }
-        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+        /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
         pub fn font_resolution(mut self, input: i32) -> Self {
             self.font_resolution = Some(input);
             self
         }
-        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
+        /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.font_resolution = input;
             self
         }
-        /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+        /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
         pub fn font_size(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_size = Some(input.into());
             self
         }
-        /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
+        /// When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
         pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_size = input;
             self
@@ -33212,12 +32456,12 @@ pub mod burn_in_destination_settings {
             self.outline_size = input;
             self
         }
-        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_color(mut self, input: crate::model::BurnInShadowColor) -> Self {
             self.shadow_color = Some(input);
             self
         }
-        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_color(
             mut self,
             input: std::option::Option<crate::model::BurnInShadowColor>,
@@ -33225,32 +32469,32 @@ pub mod burn_in_destination_settings {
             self.shadow_color = input;
             self
         }
-        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn shadow_opacity(mut self, input: i32) -> Self {
             self.shadow_opacity = Some(input);
             self
         }
-        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_opacity = input;
             self
         }
-        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_x_offset(mut self, input: i32) -> Self {
             self.shadow_x_offset = Some(input);
             self
         }
-        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_x_offset = input;
             self
         }
-        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
         pub fn shadow_y_offset(mut self, input: i32) -> Self {
             self.shadow_y_offset = Some(input);
             self
         }
-        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_y_offset = input;
             self
@@ -33271,22 +32515,22 @@ pub mod burn_in_destination_settings {
             self.teletext_grid_control = input;
             self
         }
-        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
         pub fn x_position(mut self, input: i32) -> Self {
             self.x_position = Some(input);
             self
         }
-        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.
         pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
             self.x_position = input;
             self
         }
-        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
         pub fn y_position(mut self, input: i32) -> Self {
             self.y_position = Some(input);
             self
         }
-        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
         pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
             self.y_position = input;
             self
@@ -34716,10 +33960,7 @@ pub struct AudioDescription {
     pub audio_selector_name: std::option::Option<std::string::String>,
     /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
     pub audio_type: std::option::Option<crate::model::AudioType>,
-    /// Determines how audio type is determined.
-    /// followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.
-    /// useConfigured: The value in Audio Type is included in the output.
-    /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+    /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
     pub audio_type_control: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
     /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
     pub audio_watermarking_settings: std::option::Option<crate::model::AudioWatermarkSettings>,
@@ -34730,7 +33971,7 @@ pub struct AudioDescription {
     /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
     pub language_code_control:
         std::option::Option<crate::model::AudioDescriptionLanguageCodeControl>,
-    /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
+    /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
     pub name: std::option::Option<std::string::String>,
     /// Settings that control how input audio channels are remixed into the output audio channels.
     pub remix_settings: std::option::Option<crate::model::RemixSettings>,
@@ -34752,10 +33993,7 @@ impl AudioDescription {
     pub fn audio_type(&self) -> std::option::Option<&crate::model::AudioType> {
         self.audio_type.as_ref()
     }
-    /// Determines how audio type is determined.
-    /// followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.
-    /// useConfigured: The value in Audio Type is included in the output.
-    /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+    /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
     pub fn audio_type_control(
         &self,
     ) -> std::option::Option<&crate::model::AudioDescriptionAudioTypeControl> {
@@ -34781,7 +34019,7 @@ impl AudioDescription {
     ) -> std::option::Option<&crate::model::AudioDescriptionLanguageCodeControl> {
         self.language_code_control.as_ref()
     }
-    /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
+    /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -34882,10 +34120,7 @@ pub mod audio_description {
             self.audio_type = input;
             self
         }
-        /// Determines how audio type is determined.
-        /// followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.
-        /// useConfigured: The value in Audio Type is included in the output.
-        /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+        /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
         pub fn audio_type_control(
             mut self,
             input: crate::model::AudioDescriptionAudioTypeControl,
@@ -34893,10 +34128,7 @@ pub mod audio_description {
             self.audio_type_control = Some(input);
             self
         }
-        /// Determines how audio type is determined.
-        /// followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.
-        /// useConfigured: The value in Audio Type is included in the output.
-        /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
+        /// Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
         pub fn set_audio_type_control(
             mut self,
             input: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
@@ -34962,12 +34194,12 @@ pub mod audio_description {
             self.language_code_control = input;
             self
         }
-        /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
+        /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
+        /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -35028,8 +34260,7 @@ pub struct RemixSettings {
     pub channel_mappings: std::option::Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
     /// Number of input channels to be used.
     pub channels_in: i32,
-    /// Number of output channels to be produced.
-    /// Valid values: 1, 2, 4, 6, 8
+    /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
     pub channels_out: i32,
 }
 impl RemixSettings {
@@ -35041,8 +34272,7 @@ impl RemixSettings {
     pub fn channels_in(&self) -> i32 {
         self.channels_in
     }
-    /// Number of output channels to be produced.
-    /// Valid values: 1, 2, 4, 6, 8
+    /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
     pub fn channels_out(&self) -> i32 {
         self.channels_out
     }
@@ -35097,14 +34327,12 @@ pub mod remix_settings {
             self.channels_in = input;
             self
         }
-        /// Number of output channels to be produced.
-        /// Valid values: 1, 2, 4, 6, 8
+        /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
         pub fn channels_out(mut self, input: i32) -> Self {
             self.channels_out = Some(input);
             self
         }
-        /// Number of output channels to be produced.
-        /// Valid values: 1, 2, 4, 6, 8
+        /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
         pub fn set_channels_out(mut self, input: std::option::Option<i32>) -> Self {
             self.channels_out = input;
             self
@@ -35703,7 +34931,7 @@ impl PassThroughSettings {
 pub struct Mp2Settings {
     /// Average bitrate in bits/second.
     pub bitrate: f64,
-    /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+    /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub coding_mode: std::option::Option<crate::model::Mp2CodingMode>,
     /// Sample rate in Hz.
     pub sample_rate: f64,
@@ -35713,7 +34941,7 @@ impl Mp2Settings {
     pub fn bitrate(&self) -> f64 {
         self.bitrate
     }
-    /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+    /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub fn coding_mode(&self) -> std::option::Option<&crate::model::Mp2CodingMode> {
         self.coding_mode.as_ref()
     }
@@ -35752,12 +34980,12 @@ pub mod mp2_settings {
             self.bitrate = input;
             self
         }
-        /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+        /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
         pub fn coding_mode(mut self, input: crate::model::Mp2CodingMode) -> Self {
             self.coding_mode = Some(input);
             self
         }
-        /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
+        /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::Mp2CodingMode>,
@@ -37671,9 +36899,7 @@ pub struct AacSettings {
     pub bitrate: f64,
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     pub coding_mode: std::option::Option<crate::model::AacCodingMode>,
-    /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
-    ///
-    /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
+    /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
     pub input_type: std::option::Option<crate::model::AacInputType>,
     /// AAC Profile.
     pub profile: std::option::Option<crate::model::AacProfile>,
@@ -37697,9 +36923,7 @@ impl AacSettings {
     pub fn coding_mode(&self) -> std::option::Option<&crate::model::AacCodingMode> {
         self.coding_mode.as_ref()
     }
-    /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
-    ///
-    /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
+    /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
     pub fn input_type(&self) -> std::option::Option<&crate::model::AacInputType> {
         self.input_type.as_ref()
     }
@@ -37783,16 +37007,12 @@ pub mod aac_settings {
             self.coding_mode = input;
             self
         }
-        /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
-        ///
-        /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
+        /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
         pub fn input_type(mut self, input: crate::model::AacInputType) -> Self {
             self.input_type = Some(input);
             self
         }
-        /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
-        ///
-        /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
+        /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
         pub fn set_input_type(
             mut self,
             input: std::option::Option<crate::model::AacInputType>,
@@ -38379,9 +37599,7 @@ impl AudioWatermarkSettings {
 pub struct NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
     pub nielsen_cbet_settings: std::option::Option<crate::model::NielsenCbet>,
-    /// Choose the distribution types that you want to assign to the watermarks:
-    /// - PROGRAM_CONTENT
-    /// - FINAL_DISTRIBUTOR
+    /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
     pub nielsen_distribution_type:
         std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
@@ -38392,9 +37610,7 @@ impl NielsenWatermarksSettings {
     pub fn nielsen_cbet_settings(&self) -> std::option::Option<&crate::model::NielsenCbet> {
         self.nielsen_cbet_settings.as_ref()
     }
-    /// Choose the distribution types that you want to assign to the watermarks:
-    /// - PROGRAM_CONTENT
-    /// - FINAL_DISTRIBUTOR
+    /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
     pub fn nielsen_distribution_type(
         &self,
     ) -> std::option::Option<&crate::model::NielsenWatermarksDistributionTypes> {
@@ -38444,9 +37660,7 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_cbet_settings = input;
             self
         }
-        /// Choose the distribution types that you want to assign to the watermarks:
-        /// - PROGRAM_CONTENT
-        /// - FINAL_DISTRIBUTOR
+        /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
         pub fn nielsen_distribution_type(
             mut self,
             input: crate::model::NielsenWatermarksDistributionTypes,
@@ -38454,9 +37668,7 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_distribution_type = Some(input);
             self
         }
-        /// Choose the distribution types that you want to assign to the watermarks:
-        /// - PROGRAM_CONTENT
-        /// - FINAL_DISTRIBUTOR
+        /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
         pub fn set_nielsen_distribution_type(
             mut self,
             input: std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
@@ -38915,7 +38127,7 @@ pub struct AudioNormalizationSettings {
     pub algorithm: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
     pub algorithm_control: std::option::Option<crate::model::AudioNormalizationAlgorithmControl>,
-    /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+    /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     pub target_lkfs: f64,
 }
 impl AudioNormalizationSettings {
@@ -38929,7 +38141,7 @@ impl AudioNormalizationSettings {
     ) -> std::option::Option<&crate::model::AudioNormalizationAlgorithmControl> {
         self.algorithm_control.as_ref()
     }
-    /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+    /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     pub fn target_lkfs(&self) -> f64 {
         self.target_lkfs
     }
@@ -38984,12 +38196,12 @@ pub mod audio_normalization_settings {
             self.algorithm_control = input;
             self
         }
-        /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+        /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
         pub fn target_lkfs(mut self, input: f64) -> Self {
             self.target_lkfs = Some(input);
             self
         }
-        /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
+        /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
         pub fn set_target_lkfs(mut self, input: std::option::Option<f64>) -> Self {
             self.target_lkfs = input;
             self
@@ -39438,15 +38650,13 @@ impl OutputDestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiplexProgramChannelDestinationSettings {
-    /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
-    /// The Multiplex must be in the same region as the Channel.
+    /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
     pub multiplex_id: std::option::Option<std::string::String>,
     /// The program name of the Multiplex program that the encoder is providing output to.
     pub program_name: std::option::Option<std::string::String>,
 }
 impl MultiplexProgramChannelDestinationSettings {
-    /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
-    /// The Multiplex must be in the same region as the Channel.
+    /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
     pub fn multiplex_id(&self) -> std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
@@ -39473,14 +38683,12 @@ pub mod multiplex_program_channel_destination_settings {
         pub(crate) program_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
-        /// The Multiplex must be in the same region as the Channel.
+        /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
         pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.multiplex_id = Some(input.into());
             self
         }
-        /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
-        /// The Multiplex must be in the same region as the Channel.
+        /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
         pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.multiplex_id = input;
             self
@@ -40805,9 +40013,7 @@ pub struct ChannelSummary {
     pub cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: std::option::Option<crate::model::ChannelClass>,
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
     pub egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -40848,9 +40054,7 @@ impl ChannelSummary {
     pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
-    /// A list of destinations of the channel. For UDP outputs, there is one
-    /// destination per output. For other types (HLS, for example), there is
-    /// one destination per packager.
+    /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
@@ -40995,18 +40199,14 @@ pub mod channel_summary {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// A list of destinations of the channel. For UDP outputs, there is one
-        /// destination per output. For other types (HLS, for example), there is
-        /// one destination per packager.
+        /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -44523,28 +43723,21 @@ impl AsRef<str> for AcceptHeader {
     }
 }
 
-/// Settings for a private VPC Input.
-/// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-/// This property requires setting the roleArn property on Input creation.
-/// Not compatible with the inputSecurityGroups property.
+/// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputVpcRequest {
-    /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
-    /// Requires subnetIds. If none are specified then the VPC default security group will be used.
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of 2 VPC subnet IDs from the same VPC.
-    /// Subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InputVpcRequest {
-    /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
-    /// Requires subnetIds. If none are specified then the VPC default security group will be used.
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// A list of 2 VPC subnet IDs from the same VPC.
-    /// Subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
@@ -44571,16 +43764,14 @@ pub mod input_vpc_request {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
-        /// Requires subnetIds. If none are specified then the VPC default security group will be used.
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
-        /// Requires subnetIds. If none are specified then the VPC default security group will be used.
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44592,16 +43783,14 @@ pub mod input_vpc_request {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// A list of 2 VPC subnet IDs from the same VPC.
-        /// Subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// A list of 2 VPC subnet IDs from the same VPC.
-        /// Subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44625,34 +43814,27 @@ impl InputVpcRequest {
     }
 }
 
-/// The properties for a private VPC Output
-/// When this property is specified, the output egress addresses will be created in a user specified VPC
+/// The properties for a private VPC Output When this property is specified, the output egress addresses will be created in a user specified VPC
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOutputSettings {
-    /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
-    /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+    /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
     pub public_address_allocation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
-    /// If none are specified then the VPC default security group will be used
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of VPC subnet IDs from the same VPC.
-    /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcOutputSettings {
-    /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
-    /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+    /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
     pub fn public_address_allocation_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.public_address_allocation_ids.as_deref()
     }
-    /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
-    /// If none are specified then the VPC default security group will be used
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// A list of VPC subnet IDs from the same VPC.
-    /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
@@ -44685,8 +43867,7 @@ pub mod vpc_output_settings {
         ///
         /// To override the contents of this collection use [`set_public_address_allocation_ids`](Self::set_public_address_allocation_ids).
         ///
-        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
-        /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
         pub fn public_address_allocation_ids(
             mut self,
             input: impl Into<std::string::String>,
@@ -44696,8 +43877,7 @@ pub mod vpc_output_settings {
             self.public_address_allocation_ids = Some(v);
             self
         }
-        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
-        /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
+        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one for SINGLE_PIPELINE, two for STANDARD channels
         pub fn set_public_address_allocation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44709,16 +43889,14 @@ pub mod vpc_output_settings {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
-        /// If none are specified then the VPC default security group will be used
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
-        /// If none are specified then the VPC default security group will be used
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are specified then the VPC default security group will be used
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44730,16 +43908,14 @@ pub mod vpc_output_settings {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// A list of VPC subnet IDs from the same VPC.
-        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// A list of VPC subnet IDs from the same VPC.
-        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

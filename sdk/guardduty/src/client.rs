@@ -615,10 +615,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ArchiveFindings`.
     ///
-    /// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p>
-    /// <note>
-    /// <p>Only the administrator account can archive findings. Member accounts don't have permission to
-    /// archive findings from their accounts.</p>
+    /// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note>
+    /// <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ArchiveFindings<
@@ -676,14 +674,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -708,10 +704,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDetector`.
     ///
-    /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the
-    /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region where
-    /// you enable the service. You can have only one detector per account per Region. All data
-    /// sources are enabled in a new detector by default.</p>
+    /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetector<
         C = aws_smithy_client::erase::DynConnector,
@@ -900,14 +893,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -945,14 +936,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
@@ -960,164 +949,57 @@ pub mod fluent_builders {
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
         pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
             self.inner = self.inner.finding_criteria(input);
@@ -1126,164 +1008,57 @@ pub mod fluent_builders {
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -1328,10 +1103,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIPSet`.
     ///
-    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An
-    /// IPSet is a list of IP addresses that are trusted for secure communication with AWS
-    /// infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are
-    /// included in IPSets. Only users from the administrator account can use this operation.</p>
+    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1388,14 +1160,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -1422,26 +1192,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.inner = self.inner.activate(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self
@@ -1482,18 +1248,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Creates member accounts of the current AWS account by specifying a list of AWS account
-    /// IDs. This step is a prerequisite for managing the associated member accounts either by
-    /// invitation or through an organization.</p>
-    /// <p>When using <code>Create Members</code> as an organizations delegated administrator this
-    /// action will enable GuardDuty in the added member accounts, with the exception of the
-    /// organization delegated administrator account, which must enable GuardDuty prior to being added as a
-    /// member.</p>
-    /// <p>If you are adding accounts by invitation use this action after GuardDuty has been enabled
-    /// in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-    /// <code>Invite
-    /// Members</code>
-    /// </a>.</p>
+    /// <p>Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p>
+    /// <p>When using <code>Create Members</code> as an organizations delegated administrator this action will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account, which must enable GuardDuty prior to being added as a member.</p>
+    /// <p>If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html"> <code>Invite Members</code> </a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -1550,14 +1307,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -1566,14 +1321,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
         pub fn account_details(mut self, input: crate::model::AccountDetail) -> Self {
             self.inner = self.inner.account_details(input);
             self
         }
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
@@ -1584,8 +1337,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePublishingDestination`.
     ///
-    /// <p>Creates a publishing destination to export findings to. The resource to export findings to
-    /// must exist before you use this operation.</p>
+    /// <p>Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -1652,14 +1404,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
         pub fn destination_type(mut self, input: crate::model::DestinationType) -> Self {
             self.inner = self.inner.destination_type(input);
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -1667,8 +1417,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_type(input);
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationProperties,
@@ -1676,8 +1425,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_properties(input);
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -1698,9 +1446,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSampleFindings`.
     ///
-    /// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is
-    /// specified for <code>findingTypes</code>, the API generates example findings of all supported
-    /// finding types.</p>
+    /// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates example findings of all supported finding types.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSampleFindings<
         C = aws_smithy_client::erase::DynConnector,
@@ -1787,9 +1533,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateThreatIntelSet`.
     ///
-    /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can
-    /// use this operation.</p>
+    /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1846,26 +1590,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1883,26 +1623,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.inner = self.inner.activate(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self
@@ -1943,8 +1679,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
-    /// <p>Declines invitations sent to the current member account by AWS accounts specified by their
-    /// account IDs.</p>
+    /// <p>Declines invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2005,14 +1740,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2173,8 +1906,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
-    /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their
-    /// account IDs.</p>
+    /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2235,14 +1967,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2253,8 +1983,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIPSet`.
     ///
-    /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP
-    /// lists in the console user interface.</p>
+    /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIPSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -2334,8 +2063,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMembers`.
     ///
-    /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by
-    /// the account IDs.</p>
+    /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -2392,14 +2120,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2590,8 +2316,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
-    /// <p>Returns information about the account selected as the delegated administrator for
-    /// GuardDuty.</p>
+    /// <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -2648,14 +2373,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2663,8 +2386,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePublishingDestination`.
     ///
-    /// <p>Returns information about the publishing destination specified by the provided
-    /// <code>destinationId</code>.</p>
+    /// <p>Returns information about the publishing destination specified by the provided <code>destinationId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -2721,14 +2443,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2749,8 +2469,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
-    /// <p>Disables an AWS account within the Organization as the GuardDuty delegated
-    /// administrator.</p>
+    /// <p>Disables an AWS account within the Organization as the GuardDuty delegated administrator.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -2807,14 +2526,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2895,8 +2612,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateMembers`.
     ///
-    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-    /// specified by the account IDs.</p>
+    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -2953,14 +2669,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2969,14 +2683,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2987,8 +2699,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
-    /// <p>Enables an AWS account within the organization as the GuardDuty delegated
-    /// administrator.</p>
+    /// <p>Enables an AWS account within the organization as the GuardDuty delegated administrator.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3045,14 +2756,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3270,14 +2979,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3372,14 +3079,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3420,8 +3125,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInvitationsCount`.
     ///
-    /// <p>Returns the count of all GuardDuty membership invitations that were sent to the current
-    /// member account except the currently accepted invitation.</p>
+    /// <p>Returns the count of all GuardDuty membership invitations that were sent to the current member account except the currently accepted invitation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3561,8 +3265,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMasterAccount`.
     ///
-    /// <p>Provides the details for the GuardDuty administrator account associated with the current
-    /// GuardDuty member account.</p>
+    /// <p>Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3719,8 +3422,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMembers`.
     ///
-    /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by
-    /// the account IDs.</p>
+    /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -3777,14 +3479,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3892,10 +3592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
-    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
-    /// ID. For newly enabled detectors or data sources the cost returned will include only the usage
-    /// so far under 30 days, this may differ from the cost metrics in the console, which projects
-    /// usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
+    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics<
         C = aws_smithy_client::erase::DynConnector,
@@ -3952,14 +3649,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3990,14 +3685,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_usage_criteria(input);
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.unit(input.into());
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -4012,18 +3705,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4031,9 +3718,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteMembers`.
     ///
-    /// <p>Invites other AWS accounts (created as members of the current AWS account by
-    /// CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these
-    /// accounts' findings on their behalf as the GuardDuty administrator account.</p>
+    /// <p>Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4090,14 +3775,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -4106,14 +3789,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4131,14 +3812,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disable_email_notification(input);
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.message(input.into());
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message(input);
             self
@@ -4203,30 +3882,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4301,30 +3972,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4389,171 +4052,67 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
         pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
             self.inner = self.inner.finding_criteria(input);
@@ -4561,157 +4120,55 @@ pub mod fluent_builders {
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -4733,30 +4190,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_criteria(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4764,8 +4213,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS
-    /// account.</p>
+    /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -4822,30 +4270,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4853,9 +4293,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIPSets`.
     ///
-    /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this
-    /// operation from a member account, the IPSets returned are the IPSets from the associated administrator
-    /// account.</p>
+    /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIPSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -4922,30 +4360,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5020,42 +4450,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
         pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.only_associated(input.into());
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5133,18 +4553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5152,8 +4566,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPublishingDestinations`.
     ///
-    /// <p>Returns a list of publishing destinations associated with the specified
-    /// <code>dectectorId</code>.</p>
+    /// <p>Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishingDestinations<
         C = aws_smithy_client::erase::DynConnector,
@@ -5230,18 +4643,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5249,9 +4656,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-    /// IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this
-    /// operation returns all assigned tags for a given resource.</p>
+    /// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5321,9 +4726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListThreatIntelSets`.
     ///
-    /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you
-    /// use this operation from a member account, the ThreatIntelSets associated with the administrator
-    /// account are returned.</p>
+    /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThreatIntelSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -5390,30 +4793,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5421,9 +4816,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMonitoringMembers`.
     ///
-    /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to
-    /// restart monitoring of accounts that you stopped monitoring with the
-    /// <code>StopMonitoringMembers</code> operation.</p>
+    /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -5480,14 +4873,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -5512,9 +4903,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopMonitoringMembers`.
     ///
-    /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the
-    /// <code>StartMonitoringMembers</code> operation to restart monitoring for those
-    /// accounts.</p>
+    /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -5571,14 +4960,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -5947,8 +5334,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable(input);
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -5956,8 +5342,7 @@ pub mod fluent_builders {
             self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -6038,14 +5423,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -6083,14 +5466,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
@@ -6305,14 +5686,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6526,8 +5905,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePublishingDestination`.
     ///
-    /// <p>Updates information about the publishing destination specified by the
-    /// <code>destinationId</code>.</p>
+    /// <p>Updates information about the publishing destination specified by the <code>destinationId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -6607,8 +5985,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_id(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationProperties,
@@ -6616,8 +5993,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_properties(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -6685,14 +6061,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -6730,14 +6104,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.inner = self.inner.activate(input);
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self

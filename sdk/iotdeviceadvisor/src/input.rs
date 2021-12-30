@@ -1247,14 +1247,12 @@ pub mod list_suite_runs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1262,14 +1260,12 @@ pub mod list_suite_runs_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_version = Some(input.into());
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2783,11 +2779,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition
-    /// ID.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-    /// the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
     pub max_results: i32,
@@ -2795,13 +2789,11 @@ pub struct ListSuiteRunsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition
-    /// ID.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-    /// the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }

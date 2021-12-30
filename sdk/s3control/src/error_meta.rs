@@ -5,9 +5,7 @@
 pub enum Error {
     /// <p></p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by
-    /// all users of the Outposts in this Region. Select a different name and try
-    /// again.</p>
+    /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in this Region. Select a different name and try again.</p>
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
     /// <p>The Outposts bucket you tried to create already exists, and you own it. </p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
@@ -21,8 +19,7 @@ pub enum Error {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     JobStatusException(crate::error::JobStatusException),
-    /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
-    /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
+    /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
     NoSuchPublicAccessBlockConfiguration(crate::error::NoSuchPublicAccessBlockConfiguration),
     /// <p></p>
     NotFoundException(crate::error::NotFoundException),

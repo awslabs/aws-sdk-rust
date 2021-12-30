@@ -527,21 +527,17 @@ impl UpdateProductOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortfolioShareOutput {
-    /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or  organizational type sharing.</p>
+    /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     pub portfolio_share_token: std::option::Option<std::string::String>,
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation.
-    /// You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-    /// </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
     pub status: std::option::Option<crate::model::ShareStatus>,
 }
 impl UpdatePortfolioShareOutput {
-    /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or  organizational type sharing.</p>
+    /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
         self.portfolio_share_token.as_deref()
     }
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation.
-    /// You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-    /// </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.status.as_ref()
     }
@@ -564,12 +560,12 @@ pub mod update_portfolio_share_output {
         pub(crate) status: std::option::Option<crate::model::ShareStatus>,
     }
     impl Builder {
-        /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or  organizational type sharing.</p>
+        /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
         pub fn portfolio_share_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.portfolio_share_token = Some(input.into());
             self
         }
-        /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or  organizational type sharing.</p>
+        /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
         pub fn set_portfolio_share_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -577,16 +573,12 @@ pub mod update_portfolio_share_output {
             self.portfolio_share_token = input;
             self
         }
-        /// <p>The status of <code>UpdatePortfolioShare</code> operation.
-        /// You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-        /// </p>
+        /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
         pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of <code>UpdatePortfolioShare</code> operation.
-        /// You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-        /// </p>
+        /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
             self.status = input;
             self
@@ -3003,15 +2995,13 @@ impl ImportAsProvisionedProductOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProvisionedProductOutputsOutput {
-    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
-    /// </p>
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetProvisionedProductOutputsOutput {
-    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
-    /// </p>
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     pub fn outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
         self.outputs.as_deref()
     }
@@ -3042,16 +3032,14 @@ pub mod get_provisioned_product_outputs_output {
         ///
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
-        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
-        /// </p>
+        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
         pub fn outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input);
             self.outputs = Some(v);
             self
         }
-        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
-        /// </p>
+        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
@@ -3664,8 +3652,7 @@ impl DescribeServiceActionOutput {
 pub struct DescribeRecordOutput {
     /// <p>Information about the product.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
-    /// <p>Information about the product created as the result of a request. For example, the output for  
-    /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
     pub record_outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -3675,8 +3662,7 @@ impl DescribeRecordOutput {
     pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
-    /// <p>Information about the product created as the result of a request. For example, the output for  
-    /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
     pub fn record_outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
         self.record_outputs.as_deref()
     }
@@ -3722,16 +3708,14 @@ pub mod describe_record_output {
         ///
         /// To override the contents of this collection use [`set_record_outputs`](Self::set_record_outputs).
         ///
-        /// <p>Information about the product created as the result of a request. For example, the output for  
-        /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
         pub fn record_outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.record_outputs.unwrap_or_default();
             v.push(input);
             self.record_outputs = Some(v);
             self
         }
-        /// <p>Information about the product created as the result of a request. For example, the output for  
-        /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+        /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
         pub fn set_record_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
@@ -3778,8 +3762,7 @@ pub struct DescribeProvisioningParametersOutput {
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
     /// <p>Information about the constraints used to provision the product.</p>
     pub constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
-    /// <p>Any additional metadata specifically related to the provisioning of the product. For
-    /// example, see the <code>Version</code> field of the CloudFormation template.</p>
+    /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
     pub usage_instructions: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
     /// <p>Information about the TagOptions associated with the resource.</p>
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>,
@@ -3801,8 +3784,7 @@ impl DescribeProvisioningParametersOutput {
     pub fn constraint_summaries(&self) -> std::option::Option<&[crate::model::ConstraintSummary]> {
         self.constraint_summaries.as_deref()
     }
-    /// <p>Any additional metadata specifically related to the provisioning of the product. For
-    /// example, see the <code>Version</code> field of the CloudFormation template.</p>
+    /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
     pub fn usage_instructions(&self) -> std::option::Option<&[crate::model::UsageInstruction]> {
         self.usage_instructions.as_deref()
     }
@@ -3908,16 +3890,14 @@ pub mod describe_provisioning_parameters_output {
         ///
         /// To override the contents of this collection use [`set_usage_instructions`](Self::set_usage_instructions).
         ///
-        /// <p>Any additional metadata specifically related to the provisioning of the product. For
-        /// example, see the <code>Version</code> field of the CloudFormation template.</p>
+        /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
         pub fn usage_instructions(mut self, input: crate::model::UsageInstruction) -> Self {
             let mut v = self.usage_instructions.unwrap_or_default();
             v.push(input);
             self.usage_instructions = Some(v);
             self
         }
-        /// <p>Any additional metadata specifically related to the provisioning of the product. For
-        /// example, see the <code>Version</code> field of the CloudFormation template.</p>
+        /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
         pub fn set_usage_instructions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
@@ -5714,18 +5694,12 @@ impl CreateServiceActionOutput {
 pub struct CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-    /// <p>Specify the template source with one of the following options, but not both. Keys
-    /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
-    /// <p>
-    /// <code>LoadTemplateFromURL</code>
-    /// </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
-    /// <p>
-    /// <code>ImportFromPhysicalId</code>
-    /// </p>
-    /// <p>Use the physical id of the resource that contains the template; currently supports
-    /// CloudFormation stack ARN.</p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
+    /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
@@ -5738,18 +5712,12 @@ impl CreateProvisioningArtifactOutput {
     ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys
-    /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
-    /// <p>
-    /// <code>LoadTemplateFromURL</code>
-    /// </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
-    /// <p>
-    /// <code>ImportFromPhysicalId</code>
-    /// </p>
-    /// <p>Use the physical id of the resource that contains the template; currently supports
-    /// CloudFormation stack ARN.</p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
+    /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn info(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5807,18 +5775,12 @@ pub mod create_provisioning_artifact_output {
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
-        /// <p>Specify the template source with one of the following options, but not both. Keys
-        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
         /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
-        /// <p>
-        /// <code>LoadTemplateFromURL</code>
-        /// </p>
+        /// <p> <code>LoadTemplateFromURL</code> </p>
         /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
-        /// <p>
-        /// <code>ImportFromPhysicalId</code>
-        /// </p>
-        /// <p>Use the physical id of the resource that contains the template; currently supports
-        /// CloudFormation stack ARN.</p>
+        /// <p> <code>ImportFromPhysicalId</code> </p>
+        /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
         pub fn info(
             mut self,
             k: impl Into<std::string::String>,
@@ -5829,18 +5791,12 @@ pub mod create_provisioning_artifact_output {
             self.info = Some(hash_map);
             self
         }
-        /// <p>Specify the template source with one of the following options, but not both. Keys
-        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
         /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
-        /// <p>
-        /// <code>LoadTemplateFromURL</code>
-        /// </p>
+        /// <p> <code>LoadTemplateFromURL</code> </p>
         /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
-        /// <p>
-        /// <code>ImportFromPhysicalId</code>
-        /// </p>
-        /// <p>Use the physical id of the resource that contains the template; currently supports
-        /// CloudFormation stack ARN.</p>
+        /// <p> <code>ImportFromPhysicalId</code> </p>
+        /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
         pub fn set_info(
             mut self,
             input: std::option::Option<

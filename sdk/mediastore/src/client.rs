@@ -241,8 +241,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateContainer`.
     ///
-    /// <p>Creates a storage container to hold objects. A container is similar to a bucket in
-    /// the Amazon S3 service.</p>
+    /// <p>Creates a storage container to hold objects. A container is similar to a bucket in the Amazon S3 service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainer<
         C = aws_smithy_client::erase::DynConnector,
@@ -299,18 +298,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_name(input.into());
             self
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -322,16 +315,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -342,9 +331,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContainer`.
     ///
-    /// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code>
-    /// request, delete any objects in the container or in any folders in the container. You can
-    /// delete only empty containers. </p>
+    /// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code> request, delete any objects in the container or in any folders in the container. You can delete only empty containers. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainer<
         C = aws_smithy_client::erase::DynConnector,
@@ -490,11 +477,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCorsPolicy`.
     ///
-    /// <p>Deletes the cross-origin resource sharing (CORS) configuration information that is
-    /// set for the container.</p>
-    /// <p>To use this operation, you must have permission to perform the
-    /// <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission
-    /// by default and can grant this permission to others.</p>
+    /// <p>Deletes the cross-origin resource sharing (CORS) configuration information that is set for the container.</p>
+    /// <p>To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission by default and can grant this permission to others.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCorsPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -713,13 +697,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContainer`.
     ///
-    /// <p>Retrieves the properties of the requested container. This request is commonly used to
-    /// retrieve the endpoint of a container. An endpoint is a value assigned by the service when a
-    /// new container is created. A container's endpoint does not change after it has been
-    /// assigned. The <code>DescribeContainer</code> request returns a single
-    /// <code>Container</code> object based on <code>ContainerName</code>. To return all
-    /// <code>Container</code> objects that are associated with a specified AWS account, use
-    /// <a>ListContainers</a>.</p>
+    /// <p>Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code> object based on <code>ContainerName</code>. To return all <code>Container</code> objects that are associated with a specified AWS account, use <code>ListContainers</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContainer<
         C = aws_smithy_client::erase::DynConnector,
@@ -792,9 +770,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerPolicy`.
     ///
-    /// <p>Retrieves the access policy for the specified container. For information about the
-    /// data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User
-    /// Guide</a>.</p>
+    /// <p>Retrieves the access policy for the specified container. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -867,11 +843,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCorsPolicy`.
     ///
-    /// <p>Returns the cross-origin resource sharing (CORS) configuration information that is
-    /// set for the container.</p>
-    /// <p>To use this operation, you must have permission to perform the
-    /// <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this
-    /// permission and can grant it to others.</p>
+    /// <p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the container.</p>
+    /// <p>To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this permission and can grant it to others.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCorsPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1091,14 +1064,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContainers`.
     ///
     /// <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
-    /// <p>You can query to receive all the containers in one response. Or you can include the
-    /// <code>MaxResults</code> parameter to receive a limited number of containers in each
-    /// response. In this case, the response includes a token. To get the next set of containers,
-    /// send the command again, this time with the <code>NextToken</code> parameter (with the
-    /// returned token as its value). The next set of responses appears, with a token if there are
-    /// still more containers to receive. </p>
-    /// <p>See also <a>DescribeContainer</a>, which gets the properties of one
-    /// container. </p>
+    /// <p>You can query to receive all the containers in one response. Or you can include the <code>MaxResults</code> parameter to receive a limited number of containers in each response. In this case, the response includes a token. To get the next set of containers, send the command again, this time with the <code>NextToken</code> parameter (with the returned token as its value). The next set of responses appears, with a token if there are still more containers to receive. </p>
+    /// <p>See also <code>DescribeContainer</code>, which gets the properties of one container. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainers<
         C = aws_smithy_client::erase::DynConnector,
@@ -1155,28 +1122,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1254,13 +1215,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutContainerPolicy`.
     ///
-    /// <p>Creates an access policy for the specified container to restrict the users and
-    /// clients that can access it. For information about the data that is included in an access
-    /// policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and
-    /// Access Management User Guide</a>.</p>
-    /// <p>For this release of the REST API, you can create only one policy for a container. If
-    /// you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing
-    /// policy. </p>
+    /// <p>Creates an access policy for the specified container to restrict the users and clients that can access it. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
+    /// <p>For this release of the REST API, you can create only one policy for a container. If you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing policy. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContainerPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1332,13 +1288,8 @@ pub mod fluent_builders {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy(input.into());
@@ -1346,13 +1297,8 @@ pub mod fluent_builders {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
@@ -1361,16 +1307,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutCorsPolicy`.
     ///
-    /// <p>Sets the cross-origin resource sharing (CORS) configuration on a container so that
-    /// the container can service cross-origin requests. For example, you might want to enable a
-    /// request whose origin is http://www.example.com to access your AWS Elemental MediaStore
-    /// container at my.example.container.com by using the browser's XMLHttpRequest
-    /// capability.</p>
-    /// <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS
-    /// policy, you configure rules that identify origins and the HTTP methods that can be executed
-    /// on your container. The policy can contain up to 398,000 characters. You can add up to 100
-    /// rules to a CORS policy. If more than one rule applies, the service uses the first
-    /// applicable rule listed.</p>
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.</p>
+    /// <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
     /// <p>To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in AWS Elemental MediaStore</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCorsPolicy<
@@ -1445,12 +1383,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             self.inner = self.inner.cors_policy(input);
             self
         }
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn set_cors_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -1618,27 +1556,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_name(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn metric_policy(mut self, input: crate::model::MetricPolicy) -> Self {
             self.inner = self.inner.metric_policy(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn set_metric_policy(
             mut self,
@@ -1796,9 +1726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the
-    /// tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1869,18 +1797,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1962,16 +1884,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

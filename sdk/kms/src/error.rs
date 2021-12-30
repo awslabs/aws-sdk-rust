@@ -12,24 +12,16 @@ pub struct CancelKeyDeletionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelKeyDeletionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -155,73 +147,30 @@ pub struct ConnectCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConnectCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the
-    /// configuration requirements for a custom key store.</p>
-    ///
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
     /// <ul>
-    /// <li>
-    /// <p>The cluster must be configured with private subnets in at least two different
-    /// Availability Zones in the Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for
-    /// the cluster</a> (cloudhsm-cluster-<i><cluster-id></i>-sg) must
-    /// include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The
-    /// <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group
-    /// ID. These rules are set by default when you create the cluster. Do not delete or change
-    /// them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-    /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p>
-    /// <p>For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a> operations, the CloudHSM cluster must have at least two
-    /// active HSMs, each in a different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the CloudHSM must contain at least one active
-    /// HSM.</p>
-    /// </li>
+    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a
-    /// custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a>
-    /// in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster,
-    /// see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private
-    /// Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security
-    /// Group</a> in the <i>
-    /// <i>CloudHSM User Guide</i>
-    /// </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key
-    /// store is not active. Initialize and activate the cluster and try the command again. For
-    /// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -364,29 +313,20 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified alias name is not valid.</p>
     InvalidAliasNameException(crate::error::InvalidAliasNameException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -521,66 +461,30 @@ pub struct CreateCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with a
-    /// custom key store or it shares a backup history with a cluster that is associated with a custom
-    /// key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
-    /// <p>Clusters that share a backup history have the same cluster certificate. To view the
-    /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with a custom key store or it shares a backup history with a cluster that is associated with a custom key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
+    /// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterInUseException(crate::error::CloudHsmClusterInUseException),
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the
-    /// configuration requirements for a custom key store.</p>
-    ///
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
     /// <ul>
-    /// <li>
-    /// <p>The cluster must be configured with private subnets in at least two different
-    /// Availability Zones in the Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for
-    /// the cluster</a> (cloudhsm-cluster-<i><cluster-id></i>-sg) must
-    /// include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The
-    /// <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group
-    /// ID. These rules are set by default when you create the cluster. Do not delete or change
-    /// them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-    /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p>
-    /// <p>For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a> operations, the CloudHSM cluster must have at least two
-    /// active HSMs, each in a different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the CloudHSM must contain at least one active
-    /// HSM.</p>
-    /// </li>
+    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a
-    /// custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a>
-    /// in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster,
-    /// see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private
-    /// Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security
-    /// Group</a> in the <i>
-    /// <i>CloudHSM User Guide</i>
-    /// </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key
-    /// store is not active. Initialize and activate the cluster and try the command again. For
-    /// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
-    /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified
-    /// cluster ID. Retry the request with a different cluster ID.</p>
+    /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
-    /// <p>The request was rejected because the specified custom key store name is already assigned
-    /// to another custom key store in the account. Try again with a custom key store name that is
-    /// unique in the account.</p>
+    /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
     CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
-    /// <p>The request was rejected because the trust anchor certificate in the request is not the
-    /// trust anchor certificate for the specified CloudHSM cluster.</p>
-    /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the
-    /// <code>customerCA.crt</code> file.</p>
+    /// <p>The request was rejected because the trust anchor certificate in the request is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+    /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
     IncorrectTrustAnchorException(crate::error::IncorrectTrustAnchorException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -739,31 +643,22 @@ pub struct CreateGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -904,86 +799,40 @@ pub struct CreateKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the
-    /// configuration requirements for a custom key store.</p>
-    ///
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
     /// <ul>
-    /// <li>
-    /// <p>The cluster must be configured with private subnets in at least two different
-    /// Availability Zones in the Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for
-    /// the cluster</a> (cloudhsm-cluster-<i><cluster-id></i>-sg) must
-    /// include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The
-    /// <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group
-    /// ID. These rules are set by default when you create the cluster. Do not delete or change
-    /// them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-    /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p>
-    /// <p>For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a> operations, the CloudHSM cluster must have at least two
-    /// active HSMs, each in a different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the CloudHSM must contain at least one active
-    /// HSM.</p>
-    /// </li>
+    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a
-    /// custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a>
-    /// in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster,
-    /// see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private
-    /// Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security
-    /// Group</a> in the <i>
-    /// <i>CloudHSM User Guide</i>
-    /// </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified policy is not syntactically or semantically
-    /// correct.</p>
+    /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1149,58 +998,33 @@ pub struct DecryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The
-    /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code>
-    /// in a <a>ReEncrypt</a> request must identify the same KMS key that was used to
-    /// encrypt the ciphertext.</p>
+    /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::error::IncorrectKeyException),
-    /// <p>From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request
-    /// was rejected because the specified ciphertext, or additional authenticated data incorporated
-    /// into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise
-    /// invalid.</p>
-    /// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
-    /// KMS could not decrypt the encrypted (wrapped) key material. </p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1344,21 +1168,14 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1472,38 +1289,19 @@ pub struct DeleteCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the custom key store contains KMS keys. After verifying
-    /// that you do not need to use the KMS keys, use the <a>ScheduleKeyDeletion</a>
-    /// operation to delete the KMS keys. After they are deleted, you can delete the custom key
-    /// store.</p>
+    /// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <code>ScheduleKeyDeletion</code> operation to delete the KMS keys. After they are deleted, you can delete the custom key store.</p>
     CustomKeyStoreHasCmKsException(crate::error::CustomKeyStoreHasCmKsException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1627,27 +1425,18 @@ pub struct DeleteImportedKeyMaterialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteImportedKeyMaterialErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1789,14 +1578,11 @@ pub struct DescribeCustomKeyStoresError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCustomKeyStoresErrorKind {
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1911,17 +1697,13 @@ pub struct DescribeKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2032,24 +1814,16 @@ pub struct DisableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2166,29 +1940,20 @@ pub struct DisableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableKeyRotationErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2335,33 +2100,17 @@ pub struct DisconnectCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisconnectCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2480,27 +2229,18 @@ pub struct EnableKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2623,29 +2363,20 @@ pub struct EnableKeyRotationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableKeyRotationErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2786,8 +2517,7 @@ pub struct EncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EncryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -2795,37 +2525,20 @@ pub enum EncryptErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2957,8 +2670,7 @@ pub struct GenerateDataKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -2966,37 +2678,20 @@ pub enum GenerateDataKeyErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3146,8 +2841,7 @@ pub struct GenerateDataKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -3155,40 +2849,22 @@ pub enum GenerateDataKeyPairErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3353,8 +3029,7 @@ pub struct GenerateDataKeyPairWithoutPlaintextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -3362,40 +3037,22 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3597,8 +3254,7 @@ pub struct GenerateDataKeyWithoutPlaintextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateDataKeyWithoutPlaintextErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -3606,37 +3262,20 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3815,36 +3454,19 @@ pub struct GenerateRandomError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateRandomErrorKind {
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3961,24 +3583,16 @@ pub struct GetKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyPolicyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4098,27 +3712,18 @@ pub struct GetKeyRotationStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyRotationStatusErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4256,27 +3861,18 @@ pub struct GetParametersForImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetParametersForImportErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4414,52 +4010,32 @@ pub struct GetPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPublicKeyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4621,43 +4197,27 @@ pub struct ImportKeyMaterialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportKeyMaterialErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because the specified import token is expired. Use <a>GetParametersForImport</a> to get a new import token and public key, use the new
-    /// public key to encrypt the key material, and then try the request again.</p>
+    /// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
     ExpiredImportTokenException(crate::error::ExpiredImportTokenException),
-    /// <p>The request was rejected because the key material in the request is, expired, invalid, or
-    /// is not the same key material that was previously imported into this KMS key.</p>
+    /// <p>The request was rejected because the key material in the request is, expired, invalid, or is not the same key material that was previously imported into this KMS key.</p>
     IncorrectKeyMaterialException(crate::error::IncorrectKeyMaterialException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request
-    /// was rejected because the specified ciphertext, or additional authenticated data incorporated
-    /// into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise
-    /// invalid.</p>
-    /// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
-    /// KMS could not decrypt the encrypted (wrapped) key material. </p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
-    /// <p>The request was rejected because the provided import token is invalid or is associated
-    /// with a different KMS key.</p>
+    /// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
     InvalidImportTokenException(crate::error::InvalidImportTokenException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4828,20 +4388,15 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4958,29 +4513,20 @@ pub struct ListGrantsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGrantsErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
     InvalidGrantIdException(crate::error::InvalidGrantIdException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5109,24 +4655,16 @@ pub struct ListKeyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeyPoliciesErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5249,14 +4787,11 @@ pub struct ListKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeysErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5358,17 +4893,13 @@ pub struct ListResourceTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceTagsErrorKind {
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5485,20 +5016,15 @@ pub struct ListRetirableGrantsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRetirableGrantsErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because the marker that specifies where pagination should next
-    /// begin is not valid.</p>
+    /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
     InvalidMarkerException(crate::error::InvalidMarkerException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5627,33 +5153,22 @@ pub struct PutKeyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutKeyPolicyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified policy is not syntactically or semantically
-    /// correct.</p>
+    /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5797,58 +5312,33 @@ pub struct ReEncryptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReEncryptErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The
-    /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code>
-    /// in a <a>ReEncrypt</a> request must identify the same KMS key that was used to
-    /// encrypt the ciphertext.</p>
+    /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::error::IncorrectKeyException),
-    /// <p>From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request
-    /// was rejected because the specified ciphertext, or additional authenticated data incorporated
-    /// into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise
-    /// invalid.</p>
-    /// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
-    /// KMS could not decrypt the encrypted (wrapped) key material. </p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6001,37 +5491,26 @@ pub struct ReplicateKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplicateKeyErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified policy is not syntactically or semantically
-    /// correct.</p>
+    /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6184,28 +5663,20 @@ pub struct RetireGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetireGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
     InvalidGrantIdException(crate::error::InvalidGrantIdException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6340,26 +5811,18 @@ pub struct RevokeGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeGrantErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
     InvalidGrantIdException(crate::error::InvalidGrantIdException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6485,24 +5948,16 @@ pub struct ScheduleKeyDeletionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ScheduleKeyDeletionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6631,8 +6086,7 @@ pub struct SignError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SignErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -6640,37 +6094,20 @@ pub enum SignErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6802,24 +6239,16 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
@@ -6944,21 +6373,14 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
@@ -7077,24 +6499,16 @@ pub struct UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7214,89 +6628,38 @@ pub struct UpdateCustomKeyStoreError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the
-    /// configuration requirements for a custom key store.</p>
-    ///
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
     /// <ul>
-    /// <li>
-    /// <p>The cluster must be configured with private subnets in at least two different
-    /// Availability Zones in the Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for
-    /// the cluster</a> (cloudhsm-cluster-<i><cluster-id></i>-sg) must
-    /// include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The
-    /// <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group
-    /// ID. These rules are set by default when you create the cluster. Do not delete or change
-    /// them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-    /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p>
-    /// <p>For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a> operations, the CloudHSM cluster must have at least two
-    /// active HSMs, each in a different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the CloudHSM must contain at least one active
-    /// HSM.</p>
-    /// </li>
+    /// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+    /// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
-    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a
-    /// custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a>
-    /// in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster,
-    /// see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private
-    /// Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security
-    /// Group</a> in the <i>
-    /// <i>CloudHSM User Guide</i>
-    /// </i>. </p>
+    /// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
     CloudHsmClusterInvalidConfigurationException(
         crate::error::CloudHsmClusterInvalidConfigurationException,
     ),
-    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key
-    /// store is not active. Initialize and activate the cluster and try the command again. For
-    /// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+    /// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
-    /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified
-    /// cluster ID. Retry the request with a different cluster ID.</p>
+    /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
-    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster
-    /// certificate than the original cluster. You cannot use the operation to specify an unrelated
-    /// cluster.</p>
-    /// <p>Specify a cluster that shares a backup history with the original cluster. This includes
-    /// clusters that were created from a backup of the current cluster, and clusters that were
-    /// created from the same backup that produced the current cluster.</p>
-    /// <p>Clusters that share a backup history have the same cluster certificate. To view the
-    /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster.</p>
+    /// <p>Specify a cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+    /// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterNotRelatedException(crate::error::CloudHsmClusterNotRelatedException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-    /// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-    /// operation in a custom key store that is not connected. These operations are valid only
-    /// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-    /// disconnected. This operation is valid only when the custom key store
-    /// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-    /// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-    /// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-    /// values.</p>
-    /// </li>
+    /// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
-    /// <p>The request was rejected because the specified custom key store name is already assigned
-    /// to another custom key store in the account. Try again with a custom key store name that is
-    /// unique in the account.</p>
+    /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
     CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
-    /// <p>The request was rejected because KMS cannot find a custom key store with the specified
-    /// key store name or ID.</p>
+    /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7472,24 +6835,16 @@ pub struct UpdateKeyDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateKeyDescriptionErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7620,24 +6975,16 @@ pub struct UpdatePrimaryRegionError {
 pub enum UpdatePrimaryRegionErrorKind {
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
-    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-    /// valid.</p>
+    /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified
-    /// resource is not valid for this operation.</p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7775,8 +7122,7 @@ pub struct VerifyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyErrorKind {
-    /// <p>The system timed out while trying to fulfill the request. The request can be
-    /// retried.</p>
+    /// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::error::DisabledException),
@@ -7784,41 +7130,22 @@ pub enum VerifyErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-    /// operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The encryption algorithm or signing algorithm specified for the operation is
-    /// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-    /// </li>
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-    /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-    /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-    /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-    /// <a>DescribeKey</a> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
-    /// <p>The request was rejected because the specified KMS key was not available. You can retry
-    /// the request.</p>
+    /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
-    /// <p>The request was rejected because an internal exception occurred. The request can be
-    /// retried.</p>
+    /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the signature verification failed. Signature verification
-    /// fails when it cannot confirm that signature was produced by signing the specified message with
-    /// the specified KMS key and signing algorithm.</p>
+    /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
     KmsInvalidSignatureException(crate::error::KmsInvalidSignatureException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this
-    /// request.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>
-    /// <i>Key Management Service Developer Guide</i>
-    /// </i>.</p>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource could not be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7943,8 +7270,7 @@ impl std::error::Error for VerifyError {
     }
 }
 
-/// <p>The request was rejected because the specified entity or resource could not be
-/// found.</p>
+/// <p>The request was rejected because the specified entity or resource could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -8008,12 +7334,8 @@ impl NotFoundException {
     }
 }
 
-/// <p>The request was rejected because the state of the specified resource is not valid for this
-/// request.</p>
-/// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-/// key</a> in the <i>
-/// <i>Key Management Service Developer Guide</i>
-/// </i>.</p>
+/// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+/// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
@@ -8077,9 +7399,7 @@ impl KmsInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the signature verification failed. Signature verification
-/// fails when it cannot confirm that signature was produced by signing the specified message with
-/// the specified KMS key and signing algorithm.</p>
+/// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidSignatureException {
@@ -8146,8 +7466,7 @@ impl KmsInvalidSignatureException {
     }
 }
 
-/// <p>The request was rejected because an internal exception occurred. The request can be
-/// retried.</p>
+/// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInternalException {
@@ -8211,8 +7530,7 @@ impl KmsInternalException {
     }
 }
 
-/// <p>The request was rejected because the specified KMS key was not available. You can retry
-/// the request.</p>
+/// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUnavailableException {
@@ -8278,21 +7596,11 @@ impl KeyUnavailableException {
 
 /// <p>The request was rejected for one of the following reasons: </p>
 /// <ul>
-/// <li>
-/// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API
-/// operation.</p>
-/// </li>
-/// <li>
-/// <p>The encryption algorithm or signing algorithm specified for the operation is
-/// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
-/// </li>
+/// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
+/// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
 /// </ul>
-/// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
-/// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
-/// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
-/// a KMS key, use the <a>DescribeKey</a> operation.</p>
-/// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
-/// <a>DescribeKey</a> operation.</p>
+/// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+/// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyUsageException {
@@ -8484,8 +7792,7 @@ impl DisabledException {
     }
 }
 
-/// <p>The system timed out while trying to fulfill the request. The request can be
-/// retried.</p>
+/// <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyTimeoutException {
@@ -8549,8 +7856,7 @@ impl DependencyTimeoutException {
     }
 }
 
-/// <p>The request was rejected because a specified parameter is not supported or a specified
-/// resource is not valid for this operation.</p>
+/// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
@@ -8614,8 +7920,7 @@ impl UnsupportedOperationException {
     }
 }
 
-/// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
-/// valid.</p>
+/// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
@@ -8679,8 +7984,7 @@ impl InvalidArnException {
     }
 }
 
-/// <p>The request was rejected because KMS cannot find a custom key store with the specified
-/// key store name or ID.</p>
+/// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNotFoundException {
@@ -8744,9 +8048,7 @@ impl CustomKeyStoreNotFoundException {
     }
 }
 
-/// <p>The request was rejected because the specified custom key store name is already assigned
-/// to another custom key store in the account. Try again with a custom key store name that is
-/// unique in the account.</p>
+/// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNameInUseException {
@@ -8810,26 +8112,12 @@ impl CustomKeyStoreNameInUseException {
     }
 }
 
-/// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key
-/// store. To get the <code>ConnectionState</code> of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+/// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
 /// <p>This exception is thrown under the following conditions:</p>
 /// <ul>
-/// <li>
-/// <p>You requested the <a>CreateKey</a> or <a>GenerateRandom</a>
-/// operation in a custom key store that is not connected. These operations are valid only
-/// when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-/// </li>
-/// <li>
-/// <p>You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation on a custom key store that is not
-/// disconnected. This operation is valid only when the custom key store
-/// <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p>
-/// </li>
-/// <li>
-/// <p>You requested the <a>ConnectCustomKeyStore</a> operation on a custom key
-/// store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or
-/// <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
-/// values.</p>
-/// </li>
+/// <li> <p>You requested the <code>CreateKey</code> or <code>GenerateRandom</code> operation in a custom key store that is not connected. These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
+/// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
+/// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8894,14 +8182,9 @@ impl CustomKeyStoreInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster
-/// certificate than the original cluster. You cannot use the operation to specify an unrelated
-/// cluster.</p>
-/// <p>Specify a cluster that shares a backup history with the original cluster. This includes
-/// clusters that were created from a backup of the current cluster, and clusters that were
-/// created from the same backup that produced the current cluster.</p>
-/// <p>Clusters that share a backup history have the same cluster certificate. To view the
-/// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster.</p>
+/// <p>Specify a cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+/// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotRelatedException {
@@ -8965,8 +8248,7 @@ impl CloudHsmClusterNotRelatedException {
     }
 }
 
-/// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified
-/// cluster ID. Retry the request with a different cluster ID.</p>
+/// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotFoundException {
@@ -9030,9 +8312,7 @@ impl CloudHsmClusterNotFoundException {
     }
 }
 
-/// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key
-/// store is not active. Initialize and activate the cluster and try the command again. For
-/// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
+/// <p>The request was rejected because the CloudHSM cluster that is associated with the custom key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotActiveException {
@@ -9096,39 +8376,14 @@ impl CloudHsmClusterNotActiveException {
     }
 }
 
-/// <p>The request was rejected because the associated CloudHSM cluster did not meet the
-/// configuration requirements for a custom key store.</p>
-///
+/// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a custom key store.</p>
 /// <ul>
-/// <li>
-/// <p>The cluster must be configured with private subnets in at least two different
-/// Availability Zones in the Region.</p>
-/// </li>
-/// <li>
-/// <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for
-/// the cluster</a> (cloudhsm-cluster-<i><cluster-id></i>-sg) must
-/// include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The
-/// <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group
-/// ID. These rules are set by default when you create the cluster. Do not delete or change
-/// them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p>
-/// </li>
-/// <li>
-/// <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-/// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p>
-/// <p>For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a> operations, the CloudHSM cluster must have at least two
-/// active HSMs, each in a different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the CloudHSM must contain at least one active
-/// HSM.</p>
-/// </li>
+/// <li> <p>The cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+/// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
+/// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
+/// <li> <p>The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
 /// </ul>
-/// <p>For information about the requirements for an CloudHSM cluster that is associated with a
-/// custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a>
-/// in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster,
-/// see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private
-/// Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see
-/// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security
-/// Group</a> in the <i>
-/// <i>CloudHSM User Guide</i>
-/// </i>. </p>
+/// <p>For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInvalidConfigurationException {
@@ -9192,8 +8447,7 @@ impl CloudHsmClusterInvalidConfigurationException {
     }
 }
 
-/// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
-/// <i>Key Management Service Developer Guide</i>.</p>
+/// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -9385,8 +8639,7 @@ impl InvalidGrantIdException {
     }
 }
 
-/// <p>The request was rejected because the specified policy is not syntactically or semantically
-/// correct.</p>
+/// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
@@ -9450,8 +8703,7 @@ impl MalformedPolicyDocumentException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create a resource that already
-/// exists.</p>
+/// <p>The request was rejected because it attempted to create a resource that already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
@@ -9515,12 +8767,8 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request
-/// was rejected because the specified ciphertext, or additional authenticated data incorporated
-/// into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise
-/// invalid.</p>
-/// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
-/// KMS could not decrypt the encrypted (wrapped) key material. </p>
+/// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+/// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCiphertextException {
@@ -9584,10 +8832,7 @@ impl InvalidCiphertextException {
     }
 }
 
-/// <p>The request was rejected because the specified KMS key cannot decrypt the data. The
-/// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code>
-/// in a <a>ReEncrypt</a> request must identify the same KMS key that was used to
-/// encrypt the ciphertext.</p>
+/// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyException {
@@ -9651,8 +8896,7 @@ impl IncorrectKeyException {
     }
 }
 
-/// <p>The request was rejected because the marker that specifies where pagination should next
-/// begin is not valid.</p>
+/// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMarkerException {
@@ -9716,8 +8960,7 @@ impl InvalidMarkerException {
     }
 }
 
-/// <p>The request was rejected because the provided import token is invalid or is associated
-/// with a different KMS key.</p>
+/// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidImportTokenException {
@@ -9781,8 +9024,7 @@ impl InvalidImportTokenException {
     }
 }
 
-/// <p>The request was rejected because the key material in the request is, expired, invalid, or
-/// is not the same key material that was previously imported into this KMS key.</p>
+/// <p>The request was rejected because the key material in the request is, expired, invalid, or is not the same key material that was previously imported into this KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyMaterialException {
@@ -9846,8 +9088,7 @@ impl IncorrectKeyMaterialException {
     }
 }
 
-/// <p>The request was rejected because the specified import token is expired. Use <a>GetParametersForImport</a> to get a new import token and public key, use the new
-/// public key to encrypt the key material, and then try the request again.</p>
+/// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredImportTokenException {
@@ -9911,10 +9152,7 @@ impl ExpiredImportTokenException {
     }
 }
 
-/// <p>The request was rejected because the custom key store contains KMS keys. After verifying
-/// that you do not need to use the KMS keys, use the <a>ScheduleKeyDeletion</a>
-/// operation to delete the KMS keys. After they are deleted, you can delete the custom key
-/// store.</p>
+/// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <code>ScheduleKeyDeletion</code> operation to delete the KMS keys. After they are deleted, you can delete the custom key store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreHasCmKsException {
@@ -9981,10 +9219,8 @@ impl CustomKeyStoreHasCmKsException {
     }
 }
 
-/// <p>The request was rejected because the trust anchor certificate in the request is not the
-/// trust anchor certificate for the specified CloudHSM cluster.</p>
-/// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the
-/// <code>customerCA.crt</code> file.</p>
+/// <p>The request was rejected because the trust anchor certificate in the request is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+/// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectTrustAnchorException {
@@ -10048,11 +9284,8 @@ impl IncorrectTrustAnchorException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster is already associated with a
-/// custom key store or it shares a backup history with a cluster that is associated with a custom
-/// key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
-/// <p>Clusters that share a backup history have the same cluster certificate. To view the
-/// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster is already associated with a custom key store or it shares a backup history with a cluster that is associated with a custom key store. Each custom key store must be associated with a different CloudHSM cluster.</p>
+/// <p>Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInUseException {

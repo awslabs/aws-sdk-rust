@@ -826,17 +826,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAlias`.
     ///
-    /// <p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront
-    /// distribution.</p>
-    /// <p>With this operation you can move an alias that’s already in use on a CloudFront distribution
-    /// to a different distribution in one step. This prevents the downtime that could occur if
-    /// you first remove the alias from one distribution and then separately add the alias to
-    /// another distribution.</p>
-    /// <p>To use this operation to associate an alias with a distribution, you provide the alias
-    /// and the ID of the target distribution for the alias. For more information, including how
-    /// to set up the target distribution, prerequisites that you must complete, and other
-    /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a>
-    /// in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.</p>
+    /// <p>With this operation you can move an alias that’s already in use on a CloudFront distribution to a different distribution in one step. This prevents the downtime that could occur if you first remove the alias from one distribution and then separately add the alias to another distribution.</p>
+    /// <p>To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target distribution for the alias. For more information, including how to set up the target distribution, prerequisites that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAlias<
         C = aws_smithy_client::erase::DynConnector,
@@ -920,26 +912,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCachePolicy`.
     ///
     /// <p>Creates a cache policy.</p>
-    /// <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it’s
-    /// attached to a cache behavior, the cache policy determines the following:</p>
+    /// <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache behavior, the cache policy determines the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The values that CloudFront includes in the <i>cache key</i>. These values can
-    /// include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to
-    /// find an object in its cache that it can return to the viewer.</p>
-    /// </li>
-    /// <li>
-    /// <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay
-    /// in the CloudFront cache.</p>
-    /// </li>
+    /// <li> <p>The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> </li>
+    /// <li> <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.</p> </li>
     /// </ul>
-    /// <p>The headers, cookies, and query strings that are included in the cache key are automatically
-    /// included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t
-    /// find an object in its cache that matches the request’s cache key. If you want to send
-    /// values to the origin but <i>not</i> include them in the cache key, use
-    /// <code>OriginRequestPolicy</code>.</p>
-    /// <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
+    /// <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1012,10 +991,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCloudFrontOriginAccessIdentity`.
     ///
-    /// <p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can
-    /// use an origin access identity to require users to access your content using a CloudFront URL instead
-    /// of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFrontOriginAccessIdentity<
         C = aws_smithy_client::erase::DynConnector,
@@ -1095,18 +1071,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDistribution`.
     ///
-    /// <p>Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you
-    /// want content to be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code> request to the
-    /// <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p>
-    /// <important>
-    /// <p>When you update a distribution, there are more required fields than when you create a distribution.
-    /// When you update your distribution by using
-    /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
-    /// follow the steps included
-    /// in the documentation to get the current configuration
-    /// and then make your updates. This helps to make sure that you include all of the required fields. To view a summary,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-    /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code> request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p> <important>
+    /// <p>When you update a distribution, there are more required fields than when you create a distribution. When you update your distribution by using <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>, follow the steps included in the documentation to get the current configuration and then make your updates. This helps to make sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistribution<
@@ -1409,16 +1375,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunction`.
     ///
     /// <p>Creates a CloudFront function.</p>
-    /// <p>To create a function, you provide the function code and some configuration information
-    /// about the function. The response contains an Amazon Resource Name (ARN) that uniquely
-    /// identifies the function.</p>
-    /// <p>When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you
-    /// can test the function with <code>TestFunction</code>, and update it with
-    /// <code>UpdateFunction</code>.</p>
-    /// <p>When you’re ready to use your function with a CloudFront distribution, use
-    /// <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code>
-    /// stage to <code>LIVE</code>. When it’s live, you can attach the function to a
-    /// distribution’s cache behavior, using the function’s ARN.</p>
+    /// <p>To create a function, you provide the function code and some configuration information about the function. The response contains an Amazon Resource Name (ARN) that uniquely identifies the function.</p>
+    /// <p>When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the function to a distribution’s cache behavior, using the function’s ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -1485,14 +1444,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the
-        /// function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
         pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
             self.inner = self.inner.function_config(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the
-        /// function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
         pub fn set_function_config(
             mut self,
             input: std::option::Option<crate::model::FunctionConfig>,
@@ -1500,14 +1457,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_config(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.function_code(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_function_code(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -1605,13 +1560,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateKeyGroup`.
     ///
     /// <p>Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
-    /// <p>To create a key group, you must specify at least one public key for the key group. After you
-    /// create a key group, you can reference it from one or more cache behaviors. When you
-    /// reference a key group in a cache behavior, CloudFront requires signed URLs or signed cookies
-    /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-    /// a private key whose corresponding public key is in the key group. The signed URL or
-    /// cookie contains information about which public key CloudFront should use to verify the
-    /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>To create a key group, you must specify at least one public key for the key group. After you create a key group, you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1684,10 +1633,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMonitoringSubscription`.
     ///
-    /// <p>Enables additional CloudWatch metrics for the specified CloudFront distribution. The
-    /// additional metrics incur an additional cost.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing additional CloudFront distribution metrics</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMonitoringSubscription<
         C = aws_smithy_client::erase::DynConnector,
@@ -1757,8 +1704,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_id(input);
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn monitoring_subscription(
             mut self,
             input: crate::model::MonitoringSubscription,
@@ -1766,8 +1712,7 @@ pub mod fluent_builders {
             self.inner = self.inner.monitoring_subscription(input);
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -1779,30 +1724,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOriginRequestPolicy`.
     ///
     /// <p>Creates an origin request policy.</p>
-    /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors.
-    /// When it’s attached to a cache behavior, the origin request policy determines the values
-    /// that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends
-    /// to the origin includes the following:</p>
+    /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The request body and the URL path (without the domain name) from the viewer
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>The headers that CloudFront automatically includes in every origin request, including
-    /// <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or
-    /// the origin request policy. These can include items from the viewer request and,
-    /// in the case of headers, additional ones that are added by CloudFront.</p>
-    /// </li>
+    /// <li> <p>The request body and the URL path (without the domain name) from the viewer request.</p> </li>
+    /// <li> <p>The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p> </li>
+    /// <li> <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.</p> </li>
     /// </ul>
-    /// <p>CloudFront sends a request when it can’t find a valid object in its cache that matches the
-    /// request. If you want to send values to the origin and also include them in the cache
-    /// key, use <code>CachePolicy</code>.</p>
-    /// <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
+    /// <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1952,8 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRealtimeLogConfig`.
     ///
     /// <p>Creates a real-time log configuration.</p>
-    /// <p>After you create a real-time log configuration, you can attach it to one or more cache
-    /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.</p>
+    /// <p>After you create a real-time log configuration, you can attach it to one or more cache behaviors to send real-time log data to the specified Amazon Kinesis data stream.</p>
     /// <p>For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRealtimeLogConfig<
@@ -2015,14 +1943,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
         ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             self.inner = self.inner.end_points(input);
             self
         }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn set_end_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -2035,15 +1961,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2061,16 +1985,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.inner = self.inner.sampling_rate(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_sampling_rate(input);
             self
@@ -2079,13 +1999,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResponseHeadersPolicy`.
     ///
     /// <p>Creates a response headers policy.</p>
-    /// <p>A response headers policy contains information about a set of HTTP response headers
-    /// and their values. To create a response headers policy, you provide some metadata about
-    /// the policy, and a set of configurations that specify the response headers.</p>
-    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more
-    /// cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront
-    /// adds the headers in the policy to HTTP responses that it sends for requests that match
-    /// the cache behavior.</p>
+    /// <p>A response headers policy contains information about a set of HTTP response headers and their values. To create a response headers policy, you provide some metadata about the policy, and a set of configurations that specify the response headers.</p>
+    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match the cache behavior.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -2142,8 +2057,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that
-        /// specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
         pub fn response_headers_policy_config(
             mut self,
             input: crate::model::ResponseHeadersPolicyConfig,
@@ -2151,8 +2065,7 @@ pub mod fluent_builders {
             self.inner = self.inner.response_headers_policy_config(input);
             self
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that
-        /// specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
         pub fn set_response_headers_policy_config(
             mut self,
             input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
@@ -2163,9 +2076,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStreamingDistribution`.
     ///
-    /// <p>This API is deprecated.
-    /// Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020.
-    /// For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
+    /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
@@ -2241,9 +2152,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStreamingDistributionWithTags`.
     ///
-    /// <p>This API is deprecated.
-    /// Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020.
-    /// For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
+    /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingDistributionWithTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -2324,12 +2233,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCachePolicy`.
     ///
     /// <p>Deletes a cache policy.</p>
-    /// <p>You cannot delete a cache policy if it’s attached to a cache behavior. First update your
-    /// distributions to remove the cache policy from all cache behaviors, then delete the cache
-    /// policy.</p>
-    /// <p>To delete a cache policy, you must provide the policy’s identifier and version. To get these
-    /// values, you can use <code>ListCachePolicies</code> or
-    /// <code>GetCachePolicy</code>.</p>
+    /// <p>You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p>
+    /// <p>To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -2386,30 +2291,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the
-        /// identifier, you can use <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the
-        /// identifier, you can use <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache
-        /// policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache
-        /// policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2486,14 +2383,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2568,14 +2463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2650,14 +2543,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2732,14 +2623,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2748,12 +2637,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunction`.
     ///
     /// <p>Deletes a CloudFront function.</p>
-    /// <p>You cannot delete a function if it’s associated with a cache behavior. First, update your
-    /// distributions to remove the function association from all cache behaviors, then delete
-    /// the function.</p>
-    /// <p>To delete a function, you must provide the function’s name and version
-    /// (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code>
-    /// and <code>DescribeFunction</code>.</p>
+    /// <p>You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.</p>
+    /// <p>To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -2820,14 +2705,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -2836,12 +2719,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteKeyGroup`.
     ///
     /// <p>Deletes a key group.</p>
-    /// <p>You cannot delete a key group that is referenced in a cache behavior. First update
-    /// your distributions to remove the key group from all cache behaviors, then delete the key
-    /// group.</p>
-    /// <p>To delete a key group, you must provide the key group’s identifier and version. To get
-    /// these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or
-    /// <code>GetKeyGroupConfig</code>.</p>
+    /// <p>You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove the key group from all cache behaviors, then delete the key group.</p>
+    /// <p>To delete a key group, you must provide the key group’s identifier and version. To get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2898,28 +2777,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s
-        /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-        /// <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s
-        /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-        /// <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3001,12 +2874,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOriginRequestPolicy`.
     ///
     /// <p>Deletes an origin request policy.</p>
-    /// <p>You cannot delete an origin request policy if it’s attached to any cache behaviors. First
-    /// update your distributions to remove the origin request policy from all cache behaviors,
-    /// then delete the origin request policy.</p>
-    /// <p>To delete an origin request policy, you must provide the policy’s identifier and version. To
-    /// get the identifier, you can use <code>ListOriginRequestPolicies</code> or
-    /// <code>GetOriginRequestPolicy</code>.</p>
+    /// <p>You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your distributions to remove the origin request policy from all cache behaviors, then delete the origin request policy.</p>
+    /// <p>To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3063,30 +2932,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-        /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-        /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin
-        /// request policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin
-        /// request policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3161,14 +3022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3177,12 +3036,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRealtimeLogConfig`.
     ///
     /// <p>Deletes a real-time log configuration.</p>
-    /// <p>You cannot delete a real-time log configuration if it’s attached to a cache behavior.
-    /// First update your distributions to remove the real-time log configuration from all cache
-    /// behaviors, then delete the real-time log configuration.</p>
-    /// <p>To delete a real-time log configuration, you can provide the configuration’s name or its
-    /// Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront
-    /// uses the name to identify the real-time log configuration to delete.</p>
+    /// <p>You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log configuration.</p>
+    /// <p>To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to delete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3263,12 +3118,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResponseHeadersPolicy`.
     ///
     /// <p>Deletes a response headers policy.</p>
-    /// <p>You cannot delete a response headers policy if it’s attached to a cache behavior.
-    /// First update your distributions to remove the response headers policy from all cache
-    /// behaviors, then delete the response headers policy.</p>
-    /// <p>To delete a response headers policy, you must provide the policy’s identifier and
-    /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or
-    /// <code>GetResponseHeadersPolicy</code>. </p>
+    /// <p>You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions to remove the response headers policy from all cache behaviors, then delete the response headers policy.</p>
+    /// <p>To delete a response headers policy, you must provide the policy’s identifier and version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3338,19 +3189,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-        /// get using <code>ListResponseHeadersPolicies</code>,
-        /// <code>GetResponseHeadersPolicy</code>, or
-        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-        /// get using <code>ListResponseHeadersPolicies</code>,
-        /// <code>GetResponseHeadersPolicy</code>, or
-        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3358,54 +3203,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStreamingDistribution`.
     ///
-    /// <p>Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API,
-    /// perform the following steps.</p>
-    ///
-    /// <p>
-    /// <b>To delete an RTMP distribution using the CloudFront
-    /// API</b>:</p>
+    /// <p>Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following steps.</p>
+    /// <p> <b>To delete an RTMP distribution using the CloudFront API</b>:</p>
     /// <ol>
-    /// <li>
-    /// <p>Disable the RTMP distribution.</p>
-    /// </li>
-    /// <li>
-    /// <p>Submit a <code>GET Streaming Distribution Config</code> request to get the current
-    /// configuration and the <code>Etag</code> header for the distribution. </p>
-    /// </li>
-    /// <li>
-    /// <p>Update the XML document that was returned in the response to your <code>GET
-    /// Streaming Distribution Config</code> request to change the value of <code>Enabled</code>
-    /// to <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Submit a <code>PUT Streaming Distribution Config</code> request to update the
-    /// configuration for your distribution. In the request body, include the XML document that
-    /// you updated in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the
-    /// value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-    /// Streaming Distribution Config</code> request in Step 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>Review the response to the <code>PUT Streaming Distribution Config</code> request
-    /// to confirm that the distribution was successfully disabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>Submit a <code>GET Streaming Distribution Config</code> request to confirm that
-    /// your changes have propagated. When propagation is complete, the value of
-    /// <code>Status</code> is <code>Deployed</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
-    /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront
-    /// returned when you submitted the <code>GET Streaming Distribution Config</code> request in
-    /// Step 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>Review the response to your <code>DELETE Streaming Distribution</code> request to
-    /// confirm that the distribution was successfully deleted.</p>
-    /// </li>
+    /// <li> <p>Disable the RTMP distribution.</p> </li>
+    /// <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution. </p> </li>
+    /// <li> <p>Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.</p> </li>
+    /// <li> <p>Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li>
+    /// <li> <p>Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the distribution was successfully disabled.</p> </li>
+    /// <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
+    /// <li> <p>Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li>
+    /// <li> <p>Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution was successfully deleted.</p> </li>
     /// </ol>
-    /// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3472,14 +3282,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -3487,11 +3295,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFunction`.
     ///
-    /// <p>Gets configuration information and metadata about a CloudFront function, but not the function’s
-    /// code. To get a function’s code, use <code>GetFunction</code>.</p>
-    /// <p>To get configuration information and metadata about a function, you must provide the
-    /// function’s name and stage. To get these values, you can use
-    /// <code>ListFunctions</code>.</p>
+    /// <p>Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a function’s code, use <code>GetFunction</code>.</p>
+    /// <p>To get configuration information and metadata about a function, you must provide the function’s name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -3576,18 +3381,10 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a cache policy, including the following metadata:</p>
     /// <ul>
-    /// <li>
-    /// <p>The policy’s identifier.</p>
-    /// </li>
-    /// <li>
-    /// <p>The date and time when the policy was last modified.</p>
-    /// </li>
+    /// <li> <p>The policy’s identifier.</p> </li>
+    /// <li> <p>The date and time when the policy was last modified.</p> </li>
     /// </ul>
-    /// <p>To get a cache policy, you must provide the policy’s identifier. If the cache policy is
-    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-    /// not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3644,20 +3441,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3666,11 +3455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCachePolicyConfig`.
     ///
     /// <p>Gets a cache policy configuration.</p>
-    /// <p>To get a cache policy configuration, you must provide the policy’s identifier. If the cache
-    /// policy is attached to a distribution’s cache behavior, you can get the policy’s
-    /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
-    /// cache policy is not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3727,20 +3512,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4312,10 +4089,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFunction`.
     ///
-    /// <p>Gets the code of a CloudFront function. To get configuration information and metadata about
-    /// a function, use <code>DescribeFunction</code>.</p>
-    /// <p>To get a function’s code, you must provide the function’s name and stage. To get these
-    /// values, you can use <code>ListFunctions</code>.</p>
+    /// <p>Gets the code of a CloudFront function. To get configuration information and metadata about a function, use <code>DescribeFunction</code>.</p>
+    /// <p>To get a function’s code, you must provide the function’s name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -4468,14 +4243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_id(input);
             self
         }
-        /// <p>The identifier for the invalidation request, for example,
-        /// <code>IDFDVBD632BHDS5</code>.</p>
+        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier for the invalidation request, for example,
-        /// <code>IDFDVBD632BHDS5</code>.</p>
+        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4484,11 +4257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyGroup`.
     ///
     /// <p>Gets a key group, including the date and time when the key group was last modified.</p>
-    /// <p>To get a key group, you must provide the key group’s identifier. If the key group is
-    /// referenced in a distribution’s cache behavior, you can get the key group’s identifier
-    /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
-    /// is not referenced in a cache behavior, you can get the identifier using
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>To get a key group, you must provide the key group’s identifier. If the key group is referenced in a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -4545,14 +4314,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4561,11 +4328,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyGroupConfig`.
     ///
     /// <p>Gets a key group configuration.</p>
-    /// <p>To get a key group configuration, you must provide the key group’s identifier. If the
-    /// key group is referenced in a distribution’s cache behavior, you can get the key group’s
-    /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
-    /// key group is not referenced in a cache behavior, you can get the identifier using
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroupConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -4622,14 +4385,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the key group whose configuration you are getting. To get the
-        /// identifier, use <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the key group whose configuration you are getting. To get the
-        /// identifier, use <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4637,8 +4398,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMonitoringSubscription`.
     ///
-    /// <p>Gets information about whether additional CloudWatch metrics are enabled for the specified
-    /// CloudFront distribution.</p>
+    /// <p>Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMonitoringSubscription<
         C = aws_smithy_client::erase::DynConnector,
@@ -4713,18 +4473,10 @@ pub mod fluent_builders {
     ///
     /// <p>Gets an origin request policy, including the following metadata:</p>
     /// <ul>
-    /// <li>
-    /// <p>The policy’s identifier.</p>
-    /// </li>
-    /// <li>
-    /// <p>The date and time when the policy was last modified.</p>
-    /// </li>
+    /// <li> <p>The policy’s identifier.</p> </li>
+    /// <li> <p>The date and time when the policy was last modified.</p> </li>
     /// </ul>
-    /// <p>To get an origin request policy, you must provide the policy’s identifier. If the origin
-    /// request policy is attached to a distribution’s cache behavior, you can get the policy’s
-    /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
-    /// origin request policy is not attached to a cache behavior, you can get the identifier
-    /// using <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -4781,20 +4533,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -4803,12 +4547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOriginRequestPolicyConfig`.
     ///
     /// <p>Gets an origin request policy configuration.</p>
-    /// <p>To get an origin request policy configuration, you must provide the policy’s identifier. If
-    /// the origin request policy is attached to a distribution’s cache behavior, you can get
-    /// the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the origin request policy is not attached to a cache
-    /// behavior, you can get the identifier using
-    /// <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -4865,20 +4604,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5027,9 +4758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRealtimeLogConfig`.
     ///
     /// <p>Gets a real-time log configuration.</p>
-    /// <p>To get a real-time log configuration, you can provide the configuration’s name or its Amazon
-    /// Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
-    /// name to identify the real-time log configuration to get.</p>
+    /// <p>To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to get.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -5109,14 +4838,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResponseHeadersPolicy`.
     ///
-    /// <p>Gets a response headers policy, including metadata (the policy’s identifier and the date and
-    /// time when the policy was last modified).</p>
-    /// <p>To get a response headers policy, you must provide the policy’s identifier. If the
-    /// response headers policy is attached to a distribution’s cache behavior, you can get the
-    /// policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a cache
-    /// behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy was last modified).</p>
+    /// <p>To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -5174,21 +4897,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5197,12 +4912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResponseHeadersPolicyConfig`.
     ///
     /// <p>Gets a response headers policy configuration.</p>
-    /// <p>To get a response headers policy configuration, you must provide the policy’s
-    /// identifier. If the response headers policy is attached to a distribution’s cache
-    /// behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-    /// cache behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -5260,21 +4970,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -5423,13 +5125,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCachePolicies`.
     ///
     /// <p>Gets a list of cache policies.</p>
-    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or
-    /// only the custom policies created in your Amazon Web Services account.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCachePolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -5486,33 +5183,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -5521,18 +5204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// cache policies. The response includes cache policies in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// cache policies. The response includes cache policies in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5609,32 +5286,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin
-        /// access identities. The results include identities in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// identity on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin
-        /// access identities. The results include identities in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// identity on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body.
-        /// </p>
+        /// <p>The maximum number of origin access identities you want in the response body. </p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body.
-        /// </p>
+        /// <p>The maximum number of origin access identities you want in the response body. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -5642,29 +5309,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConflictingAliases`.
     ///
-    /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or
-    /// overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services
-    /// accounts for each conflicting alias. In the returned list, the distribution and account
-    /// IDs are partially hidden, which allows you to identify the distributions and accounts
-    /// that you own, but helps to protect the information of ones that you don’t own.</p>
-    /// <p>Use this operation to find aliases that are in use in CloudFront that conflict or overlap
-    /// with the provided alias. For example, if you provide <code>www.example.com</code> as
-    /// input, the returned list can include <code>www.example.com</code> and the overlapping
-    /// wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you
-    /// provide <code>*.example.com</code> as input, the returned list can include
-    /// <code>*.example.com</code> and any alternate domain names covered by that wildcard (for
-    /// example, <code>www.example.com</code>, <code>test.example.com</code>,
-    /// <code>dev.example.com</code>, and so on), if they exist.</p>
-    /// <p>To list conflicting aliases, you provide the alias to search and the ID of a distribution in
-    /// your account that has an attached SSL/TLS certificate that includes the provided alias.
-    /// For more information, including how to set up the distribution and certificate, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a>
-    /// in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias. In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
+    /// <p>Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.</p>
+    /// <p>To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set up the distribution and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConflictingAliases<
         C = aws_smithy_client::erase::DynConnector,
@@ -5721,14 +5369,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-        /// includes the provided alias.</p>
+        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
         pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_id(input.into());
             self
         }
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-        /// includes the provided alias.</p>
+        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
         pub fn set_distribution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5746,18 +5392,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of
-        /// conflicting aliases. The response includes conflicting aliases in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of
-        /// conflicting aliases. The response includes conflicting aliases in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5832,20 +5472,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of
-        /// distributions. The results include distributions in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// distribution on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of
-        /// distributions. The results include distributions in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// distribution on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5863,13 +5495,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByCachePolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s
-    /// associated with the specified cache policy.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified cache policy.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByCachePolicyId<
         C = aws_smithy_client::erase::DynConnector,
@@ -5926,18 +5553,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5968,13 +5589,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByKeyGroup`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that references
-    /// the specified key group.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key group.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -6031,18 +5647,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6070,13 +5680,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByOriginRequestPolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s
-    /// associated with the specified origin request policy.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified origin request policy.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByOriginRequestPolicyId<
         C = aws_smithy_client::erase::DynConnector,
@@ -6135,18 +5740,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6161,14 +5760,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
         pub fn origin_request_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.origin_request_policy_id(input.into());
             self
         }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
         pub fn set_origin_request_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6179,16 +5776,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByRealtimeLogConfig`.
     ///
-    /// <p>Gets a list of distributions that have a cache behavior that’s associated with the specified
-    /// real-time log configuration.</p>
-    /// <p>You can specify the real-time log configuration by its name or its Amazon Resource Name
-    /// (ARN). You must provide at least one. If you provide both, CloudFront uses the name to
-    /// identify the real-time log configuration to list distributions for.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request. </p>
+    /// <p>Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log configuration.</p>
+    /// <p>You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list distributions for.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -6247,18 +5837,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distributions. The response includes distributions in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distributions. The response includes distributions in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6273,14 +5857,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to
-        /// list.</p>
+        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn realtime_log_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.realtime_log_config_name(input.into());
             self
         }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to
-        /// list.</p>
+        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn set_realtime_log_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6288,14 +5870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_realtime_log_config_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-        /// distributions you want to list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn realtime_log_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.realtime_log_config_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-        /// distributions you want to list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn set_realtime_log_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6306,13 +5886,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDistributionsByResponseHeadersPolicyId`.
     ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s
-    /// associated with the specified response headers policy.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified response headers policy.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByResponseHeadersPolicyId<
         C = aws_smithy_client::erase::DynConnector,
@@ -6371,18 +5946,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6397,14 +5966,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
         pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.response_headers_policy_id(input.into());
             self
         }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
         pub fn set_response_headers_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6472,46 +6039,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-        /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-        /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-        /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-        /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-        /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-        /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-        /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-        /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-        /// The maximum and default values are both 100.</p>
+        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-        /// The maximum and default values are both 100.</p>
+        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-        /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-        /// associated with a web ACL.</p>
+        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.web_acl_id(input.into());
             self
         }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-        /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-        /// associated with a web ACL.</p>
+        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_web_acl_id(input);
             self
@@ -6576,16 +6129,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6660,16 +6209,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6688,13 +6233,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctions`.
     ///
     /// <p>Gets a list of all CloudFront functions in your Amazon Web Services account.</p>
-    /// <p>You can optionally apply a filter to return only the functions that are in the
-    /// specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>You can optionally apply a filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctions<
         C = aws_smithy_client::erase::DynConnector,
@@ -6751,18 +6291,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// functions. The response includes functions in the list that occur after the marker. To
-        /// get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// functions. The response includes functions in the list that occur after the marker. To
-        /// get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6777,14 +6311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>An optional filter to return only the functions that are in the specified stage,
-        /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.inner = self.inner.stage(input);
             self
         }
-        /// <p>An optional filter to return only the functions that are in the specified stage,
-        /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -6865,34 +6397,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_id(input);
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-        /// invalidation batches. Because the results are returned in decreasing order from most recent to
-        /// oldest, the most recent results are on the first page, the second page will contain earlier
-        /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-        /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-        /// of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-        /// invalidation batches. Because the results are returned in decreasing order from most recent to
-        /// oldest, the most recent results are on the first page, the second page will contain earlier
-        /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-        /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-        /// of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of invalidation batches that you want in the response
-        /// body.</p>
+        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The maximum number of invalidation batches that you want in the response
-        /// body.</p>
+        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -6901,11 +6421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKeyGroups`.
     ///
     /// <p>Gets a list of key groups.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKeyGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -6962,18 +6478,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key
-        /// groups. The response includes key groups in the list that occur after the marker. To get
-        /// the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key
-        /// groups. The response includes key groups in the list that occur after the marker. To get
-        /// the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -6992,13 +6502,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOriginRequestPolicies`.
     ///
     /// <p>Gets a list of origin request policies.</p>
-    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or
-    /// only the custom policies created in your Amazon Web Services account.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOriginRequestPolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -7055,33 +6560,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -7090,18 +6581,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// origin request policies. The response includes origin request policies in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// origin request policies. The response includes origin request policies in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7176,16 +6661,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7204,11 +6685,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRealtimeLogConfigs`.
     ///
     /// <p>Gets a list of real-time log configurations.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request. </p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRealtimeLogConfigs<
         C = aws_smithy_client::erase::DynConnector,
@@ -7275,18 +6752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-        /// log configurations. The response includes real-time log configurations in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-        /// log configurations. The response includes real-time log configurations in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7295,13 +6766,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResponseHeadersPolicies`.
     ///
     /// <p>Gets a list of response headers policies.</p>
-    /// <p>You can optionally apply a filter to get only the managed policies created by Amazon Web Services,
-    /// or only the custom policies created in your Amazon Web Services account.</p>
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If
-    /// the total number of items in the list exceeds the maximum that you specify, or the
-    /// default maximum, the response is paginated. To get the next page of items, send a
-    /// subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    /// <p>You can optionally apply a filter to get only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResponseHeadersPolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -7358,35 +6824,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values
-        /// are:</p>
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Gets only the custom policies created in your
-        /// Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values
-        /// are:</p>
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Gets only the custom policies created in your
-        /// Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -7395,18 +6845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response
-        /// headers policies. The response includes response headers policies in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response
-        /// headers policies. The response includes response headers policies in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -7574,15 +7018,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PublishFunction`.
     ///
-    /// <p>Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code>
-    /// stage to <code>LIVE</code>. This automatically updates all cache behaviors that are
-    /// using this function to use the newly published copy in the <code>LIVE</code>
-    /// stage.</p>
-    /// <p>When a function is published to the <code>LIVE</code> stage, you can attach the function to
-    /// a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).</p>
-    /// <p>To publish a function, you must provide the function’s name and version (<code>ETag</code>
-    /// value). To get these values, you can use <code>ListFunctions</code> and
-    /// <code>DescribeFunction</code>.</p>
+    /// <p>Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly published copy in the <code>LIVE</code> stage.</p>
+    /// <p>When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).</p>
+    /// <p>To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -7649,14 +7087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -7745,15 +7181,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestFunction`.
     ///
     /// <p>Tests a CloudFront function.</p>
-    /// <p>To test a function, you provide an <i>event object</i> that represents an HTTP
-    /// request or response that your CloudFront distribution could receive in production. CloudFront runs
-    /// the function, passing it the event object that you provided, and returns the function’s
-    /// result (the modified event object) in the response. The response also contains function
-    /// logs and error messages, if any exist. For more information about testing functions, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>To test a function, you provide the function’s name and version (<code>ETag</code> value)
-    /// along with the event object. To get the function’s name and version, you can use
-    /// <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object that you provided, and returns the function’s result (the modified event object) in the response. The response also contains function logs and error messages, if any exist. For more information about testing functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event object. To get the function’s name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -7820,26 +7249,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
         }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-        /// <code>LIVE</code>.</p>
+        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.inner = self.inner.stage(input);
             self
         }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-        /// <code>LIVE</code>.</p>
+        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -7847,14 +7272,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stage(input);
             self
         }
-        /// <p>The event object to test the function with. For more information about the structure of the
-        /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn event_object(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.event_object(input);
             self
         }
-        /// <p>The event object to test the function with. For more information about the structure of the
-        /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_event_object(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -7946,22 +7369,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCachePolicy`.
     ///
     /// <p>Updates a cache policy configuration.</p>
-    /// <p>When you update a cache policy configuration, all the fields are updated with the
-    /// values provided in the request. You cannot update some fields independent of others. To
-    /// update a cache policy configuration:</p>
+    /// <p>When you update a cache policy configuration, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a cache policy configuration:</p>
     /// <ol>
-    /// <li>
-    /// <p>Use <code>GetCachePolicyConfig</code> to get the current configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Locally modify the fields in the cache policy configuration that you want to
-    /// update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy
-    /// configuration, including the fields that you modified and those that you
-    /// didn’t.</p>
-    /// </li>
+    /// <li> <p>Use <code>GetCachePolicyConfig</code> to get the current configuration.</p> </li>
+    /// <li> <p>Locally modify the fields in the cache policy configuration that you want to update.</p> </li>
+    /// <li> <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCachePolicy<
@@ -8032,30 +7444,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_policy_config(input);
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-        /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-        /// <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-        /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-        /// <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-        /// policy’s <code>ETag</code> field in the response to
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-        /// policy’s <code>ETag</code> field in the response to
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8150,14 +7554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8165,84 +7567,32 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDistribution`.
     ///
-    /// <p>Updates the configuration for a web distribution. </p>
-    /// <important>
-    /// <p>When you update a distribution, there are more required fields than when you create a distribution.
-    /// When you update your distribution by using this API action, follow the steps here to get the current configuration
-    /// and then make your updates, to make sure that you include all of the required fields. To view a summary,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-    /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>Updates the configuration for a web distribution. </p> <important>
+    /// <p>When you update a distribution, there are more required fields than when you create a distribution. When you update your distribution by using this API action, follow the steps here to get the current configuration and then make your updates, to make sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </important>
-    /// <p>The update process includes getting the current distribution configuration, updating the XML document that is
-    /// returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p>
-    /// <p>For information about updating a distribution using the CloudFront console instead, see  
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating a
-    /// Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    ///
-    /// <p>
-    /// <b>To update a web distribution using the CloudFront API</b>
-    /// </p>
+    /// <p>The update process includes getting the current distribution configuration, updating the XML document that is returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p>
+    /// <p>For information about updating a distribution using the CloudFront console instead, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p> <b>To update a web distribution using the CloudFront API</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Submit a
-    /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
-    /// request to get the current configuration and an <code>Etag</code> header  
-    /// for the distribution.</p>
-    /// <note>
+    /// <li> <p>Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a> request to get the current configuration and an <code>Etag</code> header for the distribution.</p> <note>
     /// <p>If you update the distribution again, you must get a new <code>Etag</code> header.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to include
-    /// your changes. </p>
-    /// <important>
+    /// </note> </li>
+    /// <li> <p>Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to include your changes. </p> <important>
     /// <p>When you edit the XML file, be aware of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>You must strip out the ETag parameter that is returned.</p>
-    /// </li>
-    /// <li>
-    /// <p>Additional fields are required when you update a distribution. There may be fields included in the
-    /// XML file for features that you haven't configured for your distribution. This is expected and required to
-    /// successfully update the distribution.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns an  
-    /// <code>IllegalUpdate</code> error. </p>
-    /// </li>
-    /// <li>
-    /// <p>The new configuration replaces the existing configuration; the values that you specify in an
-    /// <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or
-    /// replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all of the
-    /// values that you want to appear in the updated distribution. In addition,  
-    /// you must update the corresponding <code>Quantity</code> element.</p>
-    /// </li>
+    /// <li> <p>You must strip out the ETag parameter that is returned.</p> </li>
+    /// <li> <p>Additional fields are required when you update a distribution. There may be fields included in the XML file for features that you haven't configured for your distribution. This is expected and required to successfully update the distribution.</p> </li>
+    /// <li> <p>You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns an <code>IllegalUpdate</code> error. </p> </li>
+    /// <li> <p>The new configuration replaces the existing configuration; the values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all of the values that you want to appear in the updated distribution. In addition, you must update the corresponding <code>Quantity</code> element.</p> </li>
     /// </ul>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>Submit an <code>UpdateDistribution</code> request to update the configuration for your distribution:</p>
+    /// </important> </li>
+    /// <li> <p>Submit an <code>UpdateDistribution</code> request to update the configuration for your distribution:</p>
     /// <ul>
-    /// <li>
-    /// <p>In the request body, include the XML document that you updated in Step 2. The request body must include an  
-    /// XML document with a <code>DistributionConfig</code> element.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned  
-    /// when you submitted the <code>GetDistributionConfig</code> request in Step 1.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Review the response to the <code>UpdateDistribution</code> request to confirm that the configuration was  
-    /// successfully updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>Optional: Submit a
-    /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
-    /// request to confirm that your changes have propagated.  
-    /// When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p>
-    /// </li>
+    /// <li> <p>In the request body, include the XML document that you updated in Step 2. The request body must include an XML document with a <code>DistributionConfig</code> element.</p> </li>
+    /// <li> <p>Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GetDistributionConfig</code> request in Step 1.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Review the response to the <code>UpdateDistribution</code> request to confirm that the configuration was successfully updated.</p> </li>
+    /// <li> <p>Optional: Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistribution<
@@ -8323,14 +7673,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8421,14 +7769,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8519,14 +7865,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8535,11 +7879,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunction`.
     ///
     /// <p>Updates a CloudFront function.</p>
-    /// <p>You can update a function’s code or the comment that describes the function. You
-    /// cannot update a function’s name.</p>
-    /// <p>To update a function, you provide the function’s name and version (<code>ETag</code> value)
-    /// along with the updated function code. To get the name and version, you can use
-    /// <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
+    /// <p>You can update a function’s code or the comment that describes the function. You cannot update a function’s name.</p>
+    /// <p>To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the updated function code. To get the name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -8606,14 +7947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8631,14 +7970,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_config(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.function_code(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_function_code(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -8650,22 +7987,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateKeyGroup`.
     ///
     /// <p>Updates a key group.</p>
-    /// <p>When you update a key group, all the fields are updated with the values provided in
-    /// the request. You cannot update some fields independent of others. To update a key
-    /// group:</p>
+    /// <p>When you update a key group, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a key group:</p>
     /// <ol>
-    /// <li>
-    /// <p>Get the current key group with <code>GetKeyGroup</code> or
-    /// <code>GetKeyGroupConfig</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Locally modify the fields in the key group that you want to update. For
-    /// example, add or remove public key IDs.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including
-    /// the fields that you modified and those that you didn’t.</p>
-    /// </li>
+    /// <li> <p>Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p> </li>
+    /// <li> <p>Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.</p> </li>
+    /// <li> <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn’t.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKeyGroup<
@@ -8746,14 +8072,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s
-        /// <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s
-        /// <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8762,22 +8086,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOriginRequestPolicy`.
     ///
     /// <p>Updates an origin request policy configuration.</p>
-    /// <p>When you update an origin request policy configuration, all the fields are updated
-    /// with the values provided in the request. You cannot update some fields independent of
-    /// others. To update an origin request policy configuration:</p>
+    /// <p>When you update an origin request policy configuration, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update an origin request policy configuration:</p>
     /// <ol>
-    /// <li>
-    /// <p>Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Locally modify the fields in the origin request policy configuration that you
-    /// want to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin
-    /// request policy configuration, including the fields that you modified and those
-    /// that you didn’t.</p>
-    /// </li>
+    /// <li> <p>Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p> </li>
+    /// <li> <p>Locally modify the fields in the origin request policy configuration that you want to update.</p> </li>
+    /// <li> <p>Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOriginRequestPolicy<
@@ -8851,30 +8164,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_origin_request_policy_config(input);
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-        /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-        /// to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-        /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-        /// to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in
-        /// the origin request policy’s <code>ETag</code> field in the response to
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in
-        /// the origin request policy’s <code>ETag</code> field in the response to
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8962,14 +8267,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -8978,26 +8281,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRealtimeLogConfig`.
     ///
     /// <p>Updates a real-time log configuration.</p>
-    /// <p>When you update a real-time log configuration, all the parameters are updated with the
-    /// values provided in the request. You cannot update some parameters independent of others.
-    /// To update a real-time log configuration:</p>
+    /// <p>When you update a real-time log configuration, all the parameters are updated with the values provided in the request. You cannot update some parameters independent of others. To update a real-time log configuration:</p>
     /// <ol>
-    /// <li>
-    /// <p>Call <code>GetRealtimeLogConfig</code> to get the current real-time log
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Locally modify the parameters in the real-time log configuration that you want
-    /// to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire
-    /// real-time log configuration, including the parameters that you modified and
-    /// those that you didn’t.</p>
-    /// </li>
+    /// <li> <p>Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.</p> </li>
+    /// <li> <p>Locally modify the parameters in the real-time log configuration that you want to update.</p> </li>
+    /// <li> <p>Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration, including the parameters that you modified and those that you didn’t.</p> </li>
     /// </ol>
-    /// <p>You cannot update a real-time log configuration’s <code>Name</code> or
-    /// <code>ARN</code>.</p>
+    /// <p>You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -9058,14 +8348,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
         ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             self.inner = self.inner.end_points(input);
             self
         }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn set_end_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -9078,15 +8366,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9114,16 +8400,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.inner = self.inner.sampling_rate(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_sampling_rate(input);
             self
@@ -9132,23 +8414,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResponseHeadersPolicy`.
     ///
     /// <p>Updates a response headers policy.</p>
-    /// <p>When you update a response headers policy, the entire policy is replaced. You cannot
-    /// update some policy fields independent of others. To update a response headers policy
-    /// configuration:</p>
+    /// <p>When you update a response headers policy, the entire policy is replaced. You cannot update some policy fields independent of others. To update a response headers policy configuration:</p>
     /// <ol>
-    /// <li>
-    /// <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Modify the fields in the response headers policy configuration that you want
-    /// to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response
-    /// headers policy configuration, including the fields that you modified and those
-    /// that you didn’t.</p>
-    /// </li>
+    /// <li> <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.</p> </li>
+    /// <li> <p>Modify the fields in the response headers policy configuration that you want to update.</p> </li>
+    /// <li> <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration, including the fields that you modified and those that you didn’t.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResponseHeadersPolicy<
@@ -9233,15 +8503,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self
@@ -9332,14 +8600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.if_match(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self

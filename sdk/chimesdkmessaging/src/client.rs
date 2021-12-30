@@ -429,12 +429,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateChannelFlow`.
     ///
-    /// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the
-    /// <code>DisassociateChannelFlow</code> API.</p>
-    ///
-    /// <note>
-    /// <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.</p>
+    /// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the <code>DisassociateChannelFlow</code> API.</p> <note>
+    /// <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateChannelFlow<
@@ -595,20 +591,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -647,17 +635,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ChannelFlowCallback`.
     ///
     /// <p>Calls back Chime SDK Messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p>
-    /// <p>You can return one of the following processing responses:</p>                  
+    /// <p>You can return one of the following processing responses:</p>
     /// <ul>
-    /// <li>
-    /// <p>Update message content or metadata</p>
-    /// </li>
-    /// <li>
-    /// <p>Deny a message</p>
-    /// </li>
-    /// <li>
-    /// <p>Make no changes to the message</p>
-    /// </li>
+    /// <li> <p>Update message content or metadata</p> </li>
+    /// <li> <p>Deny a message</p> </li>
+    /// <li> <p>Make no changes to the message</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChannelFlowCallback<
@@ -762,15 +744,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a channel to which you can add users and send messages.</p>
-    ///
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's
-    /// privacy.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
@@ -851,30 +826,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.inner = self.inner.mode(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ChannelMode>) -> Self {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -935,17 +902,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelBan`.
     ///
-    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a
-    /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
-    /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-    /// channels.</p>
-    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked
-    /// from the channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p>
+    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelBan<
@@ -1036,27 +995,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelFlow`.
     ///
-    /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions
-    /// that perform actions on chat messages, such as stripping out profanity. You can associate
-    /// channel flows with channels, and the processors in the channel flow then take action on all
-    /// messages sent to that channel. This is a developer API.</p>
-    ///
+    /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p>
     /// <p>Channel flows process the following items:</p>
     /// <ol>
-    /// <li>
-    /// <p>New and updated messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Persistent and non-persistent messages</p>
-    /// </li>
-    /// <li>
-    /// <p>The Standard message type</p>
-    /// </li>
-    /// </ol>
-    ///
-    /// <note>
-    /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
+    /// <li> <p>New and updated messages</p> </li>
+    /// <li> <p>Persistent and non-persistent messages</p> </li>
+    /// <li> <p>The Standard message type</p> </li>
+    /// </ol> <note>
+    /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelFlow<
@@ -1187,43 +1133,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelMembership`.
     ///
-    /// <p>Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the
-    /// request header. A channel member can:</p>
-    ///
+    /// <p>Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p>
     /// <ul>
-    /// <li>
-    /// <p>List messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Send messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Receive messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Edit their own messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Leave the channel</p>
-    /// </li>
+    /// <li> <p>List messages</p> </li>
+    /// <li> <p>Send messages</p> </li>
+    /// <li> <p>Receive messages</p> </li>
+    /// <li> <p>Edit their own messages</p> </li>
+    /// <li> <p>Leave the channel</p> </li>
     /// </ul>
-    ///
     /// <p>Privacy settings impact this action as follows:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Public Channels: You do not need to be a member to list messages, but you must be
-    /// a member to send messages.</p>
-    /// </li>
-    /// <li>
-    /// <p>Private Channels: You must be a member to list or send messages.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li>
+    /// <li> <p>Private Channels: You must be a member to list or send messages.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelMembership<
@@ -1301,20 +1224,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -1336,29 +1251,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannelModerator`.
     ///
     /// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Add and remove other members of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove other moderators of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove user bans for the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Redact messages in the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>List messages in the channel.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Add and remove other members of the channel.</p> </li>
+    /// <li> <p>Add and remove other moderators of the channel.</p> </li>
+    /// <li> <p>Add and remove user bans for the channel.</p> </li>
+    /// <li> <p>Redact messages in the channel.</p> </li>
+    /// <li> <p>List messages in the channel.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelModerator<
@@ -1452,13 +1352,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
-    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for
-    /// deletion. This is an irreversible process.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
@@ -1539,12 +1434,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelBan`.
     ///
-    /// <p>Removes a user from a channel's ban list.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a user from a channel's ban list.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelBan<
@@ -1635,10 +1526,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelFlow`.
     ///
-    /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
-    /// <note>
-    /// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the
-    /// <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
+    /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note>
+    /// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelFlow<
@@ -1712,12 +1601,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMembership`.
     ///
-    /// <p>Removes a member from a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a member from a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMembership<
@@ -1808,14 +1693,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMessage`.
     ///
-    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages
-    /// inaccessible immediately. A background process deletes any revisions created by
-    /// <code>UpdateChannelMessage</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMessage<
@@ -1906,12 +1785,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelModerator`.
     ///
-    /// <p>Deletes a channel moderator.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel moderator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelModerator<
@@ -2005,14 +1880,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
-    /// <p>Returns the full details of a channel in an Amazon Chime
-    /// <code>AppInstance</code>.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
@@ -2093,13 +1962,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelBan`.
     ///
-    /// <p>Returns the full details of a channel ban.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel ban.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelBan<
@@ -2263,11 +2127,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembership`.
     ///
-    /// <p>Returns the full details of a user's channel membership.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a user's channel membership.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembership<
@@ -2358,13 +2219,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembershipForAppInstanceUser`.
     ///
-    /// <p> Returns the details of a channel based on the membership of the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembershipForAppInstanceUser<
@@ -2460,13 +2316,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModeratedByAppInstanceUser`.
     ///
-    /// <p>Returns the full details of a channel moderated by the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModeratedByAppInstanceUser<
@@ -2562,11 +2413,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModerator`.
     ///
-    /// <p>Returns the full details of a single ChannelModerator.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a single ChannelModerator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModerator<
@@ -2660,11 +2508,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateChannelFlow`.
     ///
-    /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to
-    /// that channel stop going through the channel flow processor.</p>
-    /// <note>
-    /// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.</p>
+    /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note>
+    /// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateChannelFlow<
@@ -2758,9 +2603,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMembershipPreferences`.
     ///
-    /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
-    /// Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users.
-    /// Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
+    /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users. Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
@@ -2850,12 +2693,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMessage`.
     ///
-    /// <p>Gets the full details of a channel message.</p>
-    ///
-    /// <note>
-    /// <p>The x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Gets the full details of a channel message.</p> <note>
+    /// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessage<
@@ -2946,41 +2785,38 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMessageStatus`.
     ///
-    /// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to
-    /// retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
-    ///
+    /// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
     /// <p>Messages can have any one of these statuses.</p>
-    ///
     /// <dl>
-    /// <dt>SENT</dt>
+    /// <dt>
+    /// SENT
+    /// </dt>
     /// <dd>
     /// <p>Message processed successfully</p>
     /// </dd>
-    /// <dt>PENDING</dt>
+    /// <dt>
+    /// PENDING
+    /// </dt>
     /// <dd>
     /// <p>Ongoing processing</p>
     /// </dd>
-    /// <dt>FAILED</dt>
+    /// <dt>
+    /// FAILED
+    /// </dt>
     /// <dd>
     /// <p>Processing failed</p>
     /// </dd>
-    /// <dt>DENIED</dt>
+    /// <dt>
+    /// DENIED
+    /// </dt>
     /// <dd>
     /// <p>Messasge denied by the processor</p>
     /// </dd>
-    /// </dl>
-    ///
-    /// <note>
+    /// </dl> <note>
     /// <ul>
-    /// <li>
-    /// <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p>
-    /// </li>
-    /// <li>
-    /// <p>Only the message sender can invoke this API.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header</p>
-    /// </li>
+    /// <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li>
+    /// <li> <p>Only the message sender can invoke this API.</p> </li>
+    /// <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3132,12 +2968,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelBans`.
     ///
-    /// <p>Lists all the users banned from a particular channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the users banned from a particular channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelBans<
@@ -3331,16 +3163,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMemberships`.
     ///
-    /// <p>Lists all channel memberships in a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all channel memberships in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    ///
-    /// <p>If you want to list the channels to which a specific app instance user belongs, see the
-    /// <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
+    /// <p>If you want to list the channels to which a specific app instance user belongs, see the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMemberships<
         C = aws_smithy_client::erase::DynConnector,
@@ -3407,18 +3233,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -3436,14 +3256,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3461,13 +3279,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMembershipsForAppInstanceUser`.
     ///
-    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
-    /// <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMembershipsForAppInstanceUser<
@@ -3550,14 +3363,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3575,16 +3386,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMessages`.
     ///
-    /// <p>List all the messages in a channel. Returns a paginated list of
-    /// <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending
-    /// order.</p>
-    /// <note>
-    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not
-    /// deleted. Deleted messages do not appear in the results. This action always returns the
-    /// latest version of an edited message.</p>
-    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note>
+    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p>
+    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMessages<
@@ -3652,14 +3456,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -3726,11 +3528,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelModerators`.
     ///
-    /// <p>Lists all the moderators for a channel.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the moderators for a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelModerators<
@@ -3808,14 +3607,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3833,27 +3630,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify
-    /// filters to narrow results.</p>
-    ///
-    /// <p class="title">
-    /// <b>Functionality & restrictions</b>
-    /// </p>
+    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
+    /// <p class="title"> <b>Functionality &amp; restrictions</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the
-    /// account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to
-    /// list the private channels in an account.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li>
+    /// <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
@@ -3924,16 +3707,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_instance_arn(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -4069,12 +3848,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelsModeratedByAppInstanceUser`.
     ///
-    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsModeratedByAppInstanceUser<
@@ -4157,14 +3932,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4252,9 +4025,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutChannelMembershipPreferences`.
     ///
-    /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
-    /// Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users.
-    /// Banned users can't set membership preferences for the channel from which they are banned.</p>
+    /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users. Banned users can't set membership preferences for the channel from which they are banned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
@@ -4331,12 +4102,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.chime_bearer(input.into());
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
             self
@@ -4357,13 +4128,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RedactChannelMessage`.
     ///
-    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the
-    /// action returns null content, and the state shows as redacted.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactChannelMessage<
@@ -4454,15 +4220,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendChannelMessage`.
     ///
-    /// <p>Sends a message to a particular channel that the member is a part of.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
-    ///
-    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-    /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
+    /// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendChannelMessage<
@@ -4816,12 +4576,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Update a channel's attributes.</p>
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's privacy. </p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
@@ -5032,12 +4788,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelMessage`.
     ///
-    /// <p>Updates the content of a message.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Updates the content of a message.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelMessage<
@@ -5148,12 +4900,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelReadMarker`.
     ///
-    /// <p>The details of the time when a user last read messages in a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>The details of the time when a user last read messages in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelReadMarker<

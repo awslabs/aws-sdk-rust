@@ -413,14 +413,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateCustomerGateway`.
     ///
-    /// <p>Associates a customer gateway with a device and optionally, with a link. If you
-    /// specify a link, it must be associated with the specified device. </p>
-    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a
-    /// transit gateway. The transit gateway must be registered in your global network. When
-    /// you register a transit gateway, customer gateways that are connected to the transit
-    /// gateway are automatically included in the global network. To list customer gateways
-    /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by
-    /// <code>transit-gateway-id</code>.</p>
+    /// <p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
+    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit gateway must be registered in your global network. When you register a transit gateway, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p>
     /// <p>You cannot associate a customer gateway with more than one device and link. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCustomerGateway<
@@ -620,10 +614,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateTransitGatewayConnectPeer`.
     ///
-    /// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you
-    /// specify a link, it must be associated with the specified device. </p>
-    /// <p>You can only associate transit gateway Connect peers that have been created on a
-    /// transit gateway that's registered in your global network.</p>
+    /// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
+    /// <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p>
     /// <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTransitGatewayConnectPeer<
@@ -883,8 +875,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDevice`.
     ///
-    /// <p>Creates a new device in a global network. If you specify both a site ID and a
-    /// location, the location of the site is used for visualization in the Network Manager console.</p>
+    /// <p>Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -1390,18 +1381,9 @@ pub mod fluent_builders {
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.inner = self.inner.location(input);
@@ -1409,18 +1391,9 @@ pub mod fluent_builders {
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.inner = self.inner.set_location(input);
@@ -1532,8 +1505,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDevice`.
     ///
-    /// <p>Deletes an existing device. You must first disassociate the device from any links and
-    /// customer gateways.</p>
+    /// <p>Deletes an existing device. You must first disassociate the device from any links and customer gateways.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -1616,8 +1588,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGlobalNetwork`.
     ///
-    /// <p>Deletes an existing global network. You must first delete all global network objects
-    /// (devices, links, and sites) and deregister all transit gateways.</p>
+    /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites) and deregister all transit gateways.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
@@ -1690,8 +1661,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLink`.
     ///
-    /// <p>Deletes an existing link. You must first disassociate the link from any devices and
-    /// customer gateways.</p>
+    /// <p>Deletes an existing link. You must first disassociate the link from any devices and customer gateways.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLink<
         C = aws_smithy_client::erase::DynConnector,
@@ -1857,8 +1827,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterTransitGateway`.
     ///
-    /// <p>Deregisters a transit gateway from your global network. This action does not delete
-    /// your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
+    /// <p>Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -1944,10 +1913,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGlobalNetworks`.
     ///
-    /// <p>Describes one or more global networks. By default, all global networks are
-    /// described. To describe the objects in your global network, you must use the appropriate
-    /// <code>Get*</code> action. For example, to list the transit gateways in your global
-    /// network, use <a>GetTransitGatewayRegistrations</a>.</p>
+    /// <p>Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate <code>Get*</code> action. For example, to list the transit gateways in your global network, use <code>GetTransitGatewayRegistrations</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalNetworks<
         C = aws_smithy_client::erase::DynConnector,
@@ -2130,8 +2096,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateLink`.
     ///
-    /// <p>Disassociates an existing device from a link. You must first disassociate any customer
-    /// gateways that are associated with the link.</p>
+    /// <p>Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLink<
         C = aws_smithy_client::erase::DynConnector,
@@ -2435,8 +2400,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCustomerGatewayAssociations`.
     ///
-    /// <p>Gets the association information for customer gateways that are associated with
-    /// devices and links in your global network.</p>
+    /// <p>Gets the association information for customer gateways that are associated with devices and links in your global network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomerGatewayAssociations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2666,8 +2630,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLinkAssociations`.
     ///
-    /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID
-    /// must be specified.</p>
+    /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinkAssociations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2994,79 +2957,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -3075,79 +2984,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -3285,79 +3140,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -3366,79 +3167,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -3587,79 +3334,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -3668,79 +3361,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -4116,79 +3755,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -4197,79 +3782,25 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -4622,8 +4153,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTransitGatewayRegistrations`.
     ///
-    /// <p>Gets information about the transit gateway registrations in a specified
-    /// global network.</p>
+    /// <p>Gets information about the transit gateway registrations in a specified global network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayRegistrations<
         C = aws_smithy_client::erase::DynConnector,
@@ -4697,14 +4227,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_transit_gateway_arns`](Self::set_transit_gateway_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
         pub fn transit_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transit_gateway_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
         pub fn set_transit_gateway_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4805,9 +4333,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterTransitGateway`.
     ///
-    /// <p>Registers a transit gateway in your global network. The transit gateway can be in any
-    /// Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns
-    /// the global network. You cannot register a transit gateway in more than one global network.</p>
+    /// <p>Registers a transit gateway in your global network. The transit gateway can be in any Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -4893,8 +4419,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartRouteAnalysis`.
     ///
-    /// <p>Starts analyzing the routing path between the specified source and destination. For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
+    /// <p>Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRouteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
@@ -5006,14 +4531,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_return_path(input);
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
         pub fn use_middleboxes(mut self, input: bool) -> Self {
             self.inner = self.inner.use_middleboxes(input);
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
         pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_use_middleboxes(input);
             self
@@ -5195,8 +4718,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateConnection`.
     ///
-    /// <p>Updates the information for an existing connection. To remove information for any of the parameters,
-    /// specify an empty string.</p>
+    /// <p>Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
@@ -5317,8 +4839,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDevice`.
     ///
-    /// <p>Updates the details for an existing device. To remove information for any of the
-    /// parameters, specify an empty string.</p>
+    /// <p>Updates the details for an existing device. To remove information for any of the parameters, specify an empty string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -5495,8 +5016,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGlobalNetwork`.
     ///
-    /// <p>Updates an existing global network. To remove information for any of the parameters,
-    /// specify an empty string.</p>
+    /// <p>Updates an existing global network. To remove information for any of the parameters, specify an empty string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
@@ -5581,8 +5101,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLink`.
     ///
-    /// <p>Updates the details for an existing link. To remove information for any of the
-    /// parameters, specify an empty string.</p>
+    /// <p>Updates the details for an existing link. To remove information for any of the parameters, specify an empty string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLink<
         C = aws_smithy_client::erase::DynConnector,
@@ -5820,8 +5339,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSite`.
     ///
-    /// <p>Updates the information for an existing site. To remove information for any of the
-    /// parameters, specify an empty string.</p>
+    /// <p>Updates the information for an existing site. To remove information for any of the parameters, specify an empty string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite<
         C = aws_smithy_client::erase::DynConnector,
@@ -5915,18 +5433,9 @@ pub mod fluent_builders {
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.inner = self.inner.location(input);
@@ -5934,18 +5443,9 @@ pub mod fluent_builders {
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.inner = self.inner.set_location(input);

@@ -18,8 +18,7 @@ pub enum BatchExecuteStatementErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -156,8 +155,7 @@ pub enum BeginTransactionErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -293,8 +291,7 @@ pub enum CommitTransactionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -437,8 +434,7 @@ pub enum ExecuteSqlErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -555,8 +551,7 @@ pub enum ExecuteStatementErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -692,8 +687,7 @@ pub enum RollbackTransactionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -905,8 +899,7 @@ impl StatementTimeoutException {
     }
 }
 
-/// <p>The service specified by the <code>resourceArn</code> parameter is not
-/// available.</p>
+/// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {

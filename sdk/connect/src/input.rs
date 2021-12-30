@@ -601,14 +601,12 @@ pub mod associate_lambda_function_input {
             self.instance_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-        /// 140.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-        /// 140.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -1861,14 +1859,12 @@ pub mod create_contact_flow_input {
             self.name = input;
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -2157,14 +2153,12 @@ pub mod create_contact_flow_module_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3661,16 +3655,14 @@ pub mod create_routing_profile_input {
         ///
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
-        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-        /// make only outbound calls.</p>
+        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
         pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
             let mut v = self.queue_configs.unwrap_or_default();
             v.push(input);
             self.queue_configs = Some(v);
             self
         }
-        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-        /// make only outbound calls.</p>
+        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
         pub fn set_queue_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
@@ -3682,16 +3674,14 @@ pub mod create_routing_profile_input {
         ///
         /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
         ///
-        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
             let mut v = self.media_concurrencies.unwrap_or_default();
             v.push(input);
             self.media_concurrencies = Some(v);
             self
         }
-        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn set_media_concurrencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
@@ -4167,14 +4157,12 @@ pub mod create_use_case_input {
             self.integration_association_id = input;
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
         pub fn use_case_type(mut self, input: crate::model::UseCaseType) -> Self {
             self.use_case_type = Some(input);
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
         pub fn set_use_case_type(
             mut self,
             input: std::option::Option<crate::model::UseCaseType>,
@@ -4390,28 +4378,22 @@ pub mod create_user_input {
         >,
     }
     impl Builder {
-        /// <p>The user name for the account. For instances not using SAML for identity management, the
-        /// user name can include up to 20 characters. If you are using SAML for identity management, the
-        /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+        /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The user name for the account. For instances not using SAML for identity management, the
-        /// user name can include up to 20 characters. If you are using SAML for identity management, the
-        /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+        /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
-        /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-        /// identity management. Otherwise, it is an error to include a password.</p>
+        /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-        /// identity management. Otherwise, it is an error to include a password.</p>
+        /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4442,24 +4424,14 @@ pub mod create_user_input {
             self.phone_config = input;
             self
         }
-        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-        /// cannot access the directory, you can specify this identifier to authenticate users. If you
-        /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-        /// information is used to authenticate users from your directory.</p>
-        /// <p>This parameter is required if you are using an existing directory for identity management in
-        /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-        /// identity management and include this parameter, an error is returned.</p>
+        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+        /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
         pub fn directory_user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_user_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-        /// cannot access the directory, you can specify this identifier to authenticate users. If you
-        /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-        /// information is used to authenticate users from your directory.</p>
-        /// <p>This parameter is required if you are using an existing directory for identity management in
-        /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-        /// identity management and include this parameter, an error is returned.</p>
+        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+        /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
         pub fn set_directory_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4722,14 +4694,12 @@ pub mod create_user_hierarchy_group_input {
             self.name = input;
             self
         }
-        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-        /// the parent group ID is null.</p>
+        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
         pub fn parent_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_group_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-        /// the parent group ID is null.</p>
+        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
         pub fn set_parent_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11315,16 +11285,12 @@ pub mod get_current_metric_data_input {
             self.instance_id = input;
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
         pub fn filters(mut self, input: crate::model::Filters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
         pub fn set_filters(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.filters = input;
             self
@@ -11333,24 +11299,16 @@ pub mod get_current_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
         ///
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by
-        /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-        /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-        /// VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-        /// returned.</p>
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
         pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
             let mut v = self.groupings.unwrap_or_default();
             v.push(input);
             self.groupings = Some(v);
             self
         }
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by
-        /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-        /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-        /// VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-        /// returned.</p>
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
         pub fn set_groupings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
@@ -11362,99 +11320,102 @@ pub mod get_current_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_current_metrics`](Self::set_current_metrics).
         ///
-        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-        /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-        /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         /// <dl>
-        /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+        /// <dt>
+        /// AGENTS_AFTER_CONTACT_WORK
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-        /// </p>
-        ///
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
         /// </dd>
-        /// <dt>AGENTS_AVAILABLE</dt>
+        /// <dt>
+        /// AGENTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ERROR</dt>
+        /// <dt>
+        /// AGENTS_ERROR
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
         /// </dd>
-        /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+        /// <dt>
+        /// AGENTS_NON_PRODUCTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CALL</dt>
+        /// <dt>
+        /// AGENTS_ON_CALL
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CONTACT</dt>
+        /// <dt>
+        /// AGENTS_ON_CONTACT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ONLINE</dt>
+        /// <dt>
+        /// AGENTS_ONLINE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
         /// </dd>
-        /// <dt>AGENTS_STAFFED</dt>
+        /// <dt>
+        /// AGENTS_STAFFED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_IN_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_IN_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-        /// queue</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_SCHEDULED</dt>
+        /// <dt>
+        /// CONTACTS_SCHEDULED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
         /// </dd>
-        /// <dt>OLDEST_CONTACT_AGE</dt>
+        /// <dt>
+        /// OLDEST_CONTACT_AGE
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-        /// example, if you get a response like this:</p>
-        /// <p>
-        /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-        /// </code>}</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
         /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-        ///
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
         /// </dd>
-        /// <dt>SLOTS_ACTIVE</dt>
+        /// <dt>
+        /// SLOTS_ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
         /// </dd>
-        /// <dt>SLOTS_AVAILABLE</dt>
+        /// <dt>
+        /// SLOTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
         /// </dd>
         /// </dl>
         pub fn current_metrics(mut self, input: crate::model::CurrentMetric) -> Self {
@@ -11463,99 +11424,102 @@ pub mod get_current_metric_data_input {
             self.current_metrics = Some(v);
             self
         }
-        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-        /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-        /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         /// <dl>
-        /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+        /// <dt>
+        /// AGENTS_AFTER_CONTACT_WORK
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-        /// </p>
-        ///
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
         /// </dd>
-        /// <dt>AGENTS_AVAILABLE</dt>
+        /// <dt>
+        /// AGENTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ERROR</dt>
+        /// <dt>
+        /// AGENTS_ERROR
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
         /// </dd>
-        /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+        /// <dt>
+        /// AGENTS_NON_PRODUCTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CALL</dt>
+        /// <dt>
+        /// AGENTS_ON_CALL
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CONTACT</dt>
+        /// <dt>
+        /// AGENTS_ON_CONTACT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ONLINE</dt>
+        /// <dt>
+        /// AGENTS_ONLINE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
         /// </dd>
-        /// <dt>AGENTS_STAFFED</dt>
+        /// <dt>
+        /// AGENTS_STAFFED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_IN_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_IN_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-        /// queue</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_SCHEDULED</dt>
+        /// <dt>
+        /// CONTACTS_SCHEDULED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
         /// </dd>
-        /// <dt>OLDEST_CONTACT_AGE</dt>
+        /// <dt>
+        /// OLDEST_CONTACT_AGE
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-        /// example, if you get a response like this:</p>
-        /// <p>
-        /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-        /// </code>}</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
         /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-        ///
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
         /// </dd>
-        /// <dt>SLOTS_ACTIVE</dt>
+        /// <dt>
+        /// SLOTS_ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
         /// </dd>
-        /// <dt>SLOTS_AVAILABLE</dt>
+        /// <dt>
+        /// SLOTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
         /// </dd>
         /// </dl>
         pub fn set_current_metrics(
@@ -11565,18 +11529,14 @@ pub mod get_current_metric_data_input {
             self.current_metrics = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11930,20 +11890,14 @@ pub mod get_metric_data_input {
             self.instance_id = input;
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-        /// such as 10:05, 10:10, 10:15.</p>
-        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-        /// metrics are available only for 24 hours.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-        /// such as 10:05, 10:10, 10:15.</p>
-        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-        /// metrics are available only for 24 hours.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11951,17 +11905,13 @@ pub mod get_metric_data_input {
             self.start_time = input;
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-        /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-        /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
         pub fn set_end_time(
             mut self,
@@ -11970,23 +11920,15 @@ pub mod get_metric_data_input {
             self.end_time = input;
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <note>
-        /// <p>To filter by <code>Queues</code>, enter the queue
-        /// ID/ARN, not the name of the queue.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+        /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <note>
-        /// <p>To filter by <code>Queues</code>, enter the queue
-        /// ID/ARN, not the name of the queue.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+        /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
         /// </note>
         pub fn set_filters(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.filters = input;
@@ -11996,10 +11938,7 @@ pub mod get_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
         ///
-        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-        /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-        /// each queue rather than aggregated for all queues.</p>
-        ///
+        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
         /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
         pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
             let mut v = self.groupings.unwrap_or_default();
@@ -12007,10 +11946,7 @@ pub mod get_metric_data_input {
             self.groupings = Some(v);
             self
         }
-        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-        /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-        /// each queue rather than aggregated for all queues.</p>
-        ///
+        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
         /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
         pub fn set_groupings(
             mut self,
@@ -12023,143 +11959,186 @@ pub mod get_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_historical_metrics`](Self::set_historical_metrics).
         ///
-        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-        /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>This API does not support a contacts
-        /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+        /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
         /// </note>
-        ///
         /// <dl>
-        /// <dt>ABANDON_TIME</dt>
+        /// <dt>
+        /// ABANDON_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+        /// <dt>
+        /// AFTER_CONTACT_WORK_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>API_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// API_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CALLBACK_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_ABANDONED</dt>
+        /// <dt>
+        /// CONTACTS_ABANDONED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+        /// <dt>
+        /// CONTACTS_AGENT_HUNG_UP_FIRST
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_CONSULTED</dt>
+        /// <dt>
+        /// CONTACTS_CONSULTED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_INCOMING
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_OUTBOUND
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+        /// <dt>
+        /// CONTACTS_HOLD_ABANDONS
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_MISSED</dt>
+        /// <dt>
+        /// CONTACTS_MISSED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_QUEUED</dt>
+        /// <dt>
+        /// CONTACTS_QUEUED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>HANDLE_TIME</dt>
+        /// <dt>
+        /// HANDLE_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>HOLD_TIME</dt>
+        /// <dt>
+        /// HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+        /// <dt>
+        /// INTERACTION_AND_HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_TIME</dt>
+        /// <dt>
+        /// INTERACTION_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>OCCUPANCY</dt>
+        /// <dt>
+        /// OCCUPANCY
+        /// </dt>
         /// <dd>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUE_ANSWER_TIME</dt>
+        /// <dt>
+        /// QUEUE_ANSWER_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUED_TIME</dt>
+        /// <dt>
+        /// QUEUED_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: MAX</p>
         /// </dd>
-        /// <dt>SERVICE_LEVEL</dt>
+        /// <dt>
+        /// SERVICE_LEVEL
+        /// </dt>
         /// <dd>
         /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
-        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-        /// "Less than"). </p>
+        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
         /// </dd>
         /// </dl>
         pub fn historical_metrics(mut self, input: crate::model::HistoricalMetric) -> Self {
@@ -12168,143 +12147,186 @@ pub mod get_metric_data_input {
             self.historical_metrics = Some(v);
             self
         }
-        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-        /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>This API does not support a contacts
-        /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+        /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
         /// </note>
-        ///
         /// <dl>
-        /// <dt>ABANDON_TIME</dt>
+        /// <dt>
+        /// ABANDON_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+        /// <dt>
+        /// AFTER_CONTACT_WORK_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>API_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// API_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CALLBACK_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_ABANDONED</dt>
+        /// <dt>
+        /// CONTACTS_ABANDONED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+        /// <dt>
+        /// CONTACTS_AGENT_HUNG_UP_FIRST
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_CONSULTED</dt>
+        /// <dt>
+        /// CONTACTS_CONSULTED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_INCOMING
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_OUTBOUND
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+        /// <dt>
+        /// CONTACTS_HOLD_ABANDONS
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_MISSED</dt>
+        /// <dt>
+        /// CONTACTS_MISSED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_QUEUED</dt>
+        /// <dt>
+        /// CONTACTS_QUEUED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>HANDLE_TIME</dt>
+        /// <dt>
+        /// HANDLE_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>HOLD_TIME</dt>
+        /// <dt>
+        /// HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+        /// <dt>
+        /// INTERACTION_AND_HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_TIME</dt>
+        /// <dt>
+        /// INTERACTION_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>OCCUPANCY</dt>
+        /// <dt>
+        /// OCCUPANCY
+        /// </dt>
         /// <dd>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUE_ANSWER_TIME</dt>
+        /// <dt>
+        /// QUEUE_ANSWER_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUED_TIME</dt>
+        /// <dt>
+        /// QUEUED_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: MAX</p>
         /// </dd>
-        /// <dt>SERVICE_LEVEL</dt>
+        /// <dt>
+        /// SERVICE_LEVEL
+        /// </dt>
         /// <dd>
         /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
-        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-        /// "Less than"). </p>
+        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
         /// </dd>
         /// </dl>
         pub fn set_historical_metrics(
@@ -12314,14 +12336,12 @@ pub mod get_metric_data_input {
             self.historical_metrics = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12516,14 +12536,12 @@ pub mod list_agent_statuses_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12742,14 +12760,12 @@ pub mod list_approved_origins_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12941,14 +12957,12 @@ pub mod list_bots_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13156,14 +13170,12 @@ pub mod list_contact_flow_modules_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13395,14 +13407,12 @@ pub mod list_contact_flows_input {
             self.contact_flow_types = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13632,21 +13642,15 @@ pub mod list_contact_references_input {
             self.reference_types = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <important>
-        /// <p>This is not expected to be set, because the value returned in the previous response is
-        /// always null.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+        /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
         /// </important>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <important>
-        /// <p>This is not expected to be set, because the value returned in the previous response is
-        /// always null.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+        /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -13847,14 +13851,12 @@ pub mod list_hours_of_operations_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14045,14 +14047,12 @@ pub mod list_instance_attributes_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14232,14 +14232,12 @@ pub mod list_instances_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14423,14 +14421,12 @@ pub mod list_instance_storage_configs_input {
             self.resource_type = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14643,14 +14639,12 @@ pub mod list_integration_associations_input {
             self.integration_type = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14849,14 +14843,12 @@ pub mod list_lambda_functions_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15047,14 +15039,12 @@ pub mod list_lex_bots_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15290,14 +15280,12 @@ pub mod list_phone_numbers_input {
             self.phone_number_country_codes = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15506,14 +15494,12 @@ pub mod list_prompts_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in
-        /// the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in
-        /// the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15715,14 +15701,12 @@ pub mod list_queue_quick_connects_input {
             self.queue_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15950,14 +15934,12 @@ pub mod list_queues_input {
             self.queue_types = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16159,14 +16141,12 @@ pub mod list_quick_connects_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16185,16 +16165,14 @@ pub mod list_quick_connects_input {
         ///
         /// To override the contents of this collection use [`set_quick_connect_types`](Self::set_quick_connect_types).
         ///
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn quick_connect_types(mut self, input: crate::model::QuickConnectType) -> Self {
             let mut v = self.quick_connect_types.unwrap_or_default();
             v.push(input);
             self.quick_connect_types = Some(v);
             self
         }
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn set_quick_connect_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QuickConnectType>>,
@@ -16401,14 +16379,12 @@ pub mod list_routing_profile_queues_input {
             self.routing_profile_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16617,14 +16593,12 @@ pub mod list_routing_profiles_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16815,14 +16789,12 @@ pub mod list_security_keys_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17027,14 +16999,12 @@ pub mod list_security_profile_permissions_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17244,14 +17214,12 @@ pub mod list_security_profiles_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17607,14 +17575,12 @@ pub mod list_use_cases_input {
             self.integration_association_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17816,14 +17782,12 @@ pub mod list_user_hierarchy_groups_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -18015,14 +17979,12 @@ pub mod list_users_input {
             self.instance_id = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -18219,14 +18181,12 @@ pub mod resume_contact_recording_input {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18394,24 +18354,14 @@ pub mod start_chat_contact_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat.
-        /// To
-        /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-        /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-        /// the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat.
-        /// To
-        /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-        /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-        /// the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18423,10 +18373,8 @@ pub mod start_chat_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -18437,10 +18385,8 @@ pub mod start_chat_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -18476,14 +18422,12 @@ pub mod start_chat_contact_input {
             self.initial_message = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -18659,14 +18603,12 @@ pub mod start_contact_recording_input {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18848,14 +18790,12 @@ pub mod start_contact_streaming_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -18876,14 +18816,12 @@ pub mod start_contact_streaming_input {
             self.chat_streaming_configuration = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -19060,26 +18998,14 @@ pub mod start_outbound_voice_contact_input {
             self.destination_phone_number = input;
             self
         }
-        /// <p>The
-        /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-        /// console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-        /// page, under the name of the contact flow, choose <b>Show additional flow
-        /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The
-        /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-        /// console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-        /// page, under the name of the contact flow, choose <b>Show additional flow
-        /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19097,30 +19023,22 @@ pub mod start_outbound_voice_contact_input {
             self.instance_id = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. The token is valid for 7 days after creation. If a contact is already started, the
-        /// contact ID is returned.
-        /// </p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. The token is valid for 7 days after creation. If a contact is already started, the
-        /// contact ID is returned.
-        /// </p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-        /// a source phone number, you must specify a queue.</p>
+        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
         pub fn source_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-        /// a source phone number, you must specify a queue.</p>
+        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
         pub fn set_source_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19128,18 +19046,12 @@ pub mod start_outbound_voice_contact_input {
             self.source_phone_number = input;
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-        /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-        /// contact flow is used. If you do not specify a queue, you must specify a source phone
-        /// number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.queue_id = Some(input.into());
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-        /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-        /// contact flow is used. If you do not specify a queue, you must specify a source phone
-        /// number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -19148,10 +19060,8 @@ pub mod start_outbound_voice_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -19162,10 +19072,8 @@ pub mod start_outbound_voice_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -19201,18 +19109,12 @@ pub mod start_outbound_voice_contact_input {
             self.campaign_id = input;
             self
         }
-        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-        /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-        /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-        /// <code>GENERAL</code>. </p>
+        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
         pub fn traffic_type(mut self, input: crate::model::TrafficType) -> Self {
             self.traffic_type = Some(input);
             self
         }
-        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-        /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-        /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-        /// <code>GENERAL</code>. </p>
+        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
         pub fn set_traffic_type(
             mut self,
             input: std::option::Option<crate::model::TrafficType>,
@@ -19409,24 +19311,14 @@ pub mod start_task_contact_input {
             self.previous_contact_id = input;
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-        /// the contact flow page, under the name of the contact flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-        /// the contact flow page, under the name of the contact flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19438,10 +19330,8 @@ pub mod start_task_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -19452,10 +19342,8 @@ pub mod start_task_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -19500,26 +19388,22 @@ pub mod start_task_contact_input {
             self.references = input;
             self
         }
-        /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-        /// (CCP).</p>
+        /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-        /// (CCP).</p>
+        /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -19869,14 +19753,12 @@ pub mod stop_contact_recording_input {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20039,14 +19921,12 @@ pub mod stop_contact_streaming_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-        /// the first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
         pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-        /// the first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -20226,14 +20106,12 @@ pub mod suspend_contact_recording_input {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21042,14 +20920,12 @@ pub mod update_contact_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with your contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
         pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with your contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -21281,14 +21157,12 @@ pub mod update_contact_attributes_input {
         >,
     }
     impl Builder {
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_contact_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21310,10 +21184,8 @@ pub mod update_contact_attributes_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-        /// contact attributes.</p>
-        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -21324,10 +21196,8 @@ pub mod update_contact_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-        /// contact attributes.</p>
-        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -21506,16 +21376,12 @@ pub mod update_contact_flow_content_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-        /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </p>
+        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-        /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </p>
+        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -23074,16 +22940,14 @@ pub mod update_instance_attribute_input {
             self.instance_id = input;
             self
         }
-        /// <p>The type of attribute.</p>
-        /// <note>
+        /// <p>The type of attribute.</p> <note>
         /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
         pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
             self.attribute_type = Some(input);
             self
         }
-        /// <p>The type of attribute.</p>
-        /// <note>
+        /// <p>The type of attribute.</p> <note>
         /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
         pub fn set_attribute_type(
@@ -25745,18 +25609,14 @@ pub mod update_routing_profile_queues_input {
         ///
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
-        /// <p>The queues to be updated for this routing profile.
-        /// Queues must first be associated to the routing
-        /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+        /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
         pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
             let mut v = self.queue_configs.unwrap_or_default();
             v.push(input);
             self.queue_configs = Some(v);
             self
         }
-        /// <p>The queues to be updated for this routing profile.
-        /// Queues must first be associated to the routing
-        /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+        /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
         pub fn set_queue_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
@@ -27939,9 +27799,7 @@ pub struct UpdateRoutingProfileQueuesInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: std::option::Option<std::string::String>,
-    /// <p>The queues to be updated for this routing profile.
-    /// Queues must first be associated to the routing
-    /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+    /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
 }
 impl UpdateRoutingProfileQueuesInput {
@@ -27953,9 +27811,7 @@ impl UpdateRoutingProfileQueuesInput {
     pub fn routing_profile_id(&self) -> std::option::Option<&str> {
         self.routing_profile_id.as_deref()
     }
-    /// <p>The queues to be updated for this routing profile.
-    /// Queues must first be associated to the routing
-    /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+    /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
     pub fn queue_configs(&self) -> std::option::Option<&[crate::model::RoutingProfileQueueConfig]> {
         self.queue_configs.as_deref()
     }
@@ -28391,8 +28247,7 @@ impl std::fmt::Debug for UpdateInstanceStorageConfigInput {
 pub struct UpdateInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The type of attribute.</p>
-    /// <note>
+    /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
     /// </note>
     pub attribute_type: std::option::Option<crate::model::InstanceAttributeType>,
@@ -28404,8 +28259,7 @@ impl UpdateInstanceAttributeInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The type of attribute.</p>
-    /// <note>
+    /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
     /// </note>
     pub fn attribute_type(&self) -> std::option::Option<&crate::model::InstanceAttributeType> {
@@ -28700,9 +28554,7 @@ pub struct UpdateContactFlowContentInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-    /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-    /// </p>
+    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub content: std::option::Option<std::string::String>,
 }
 impl UpdateContactFlowContentInput {
@@ -28714,9 +28566,7 @@ impl UpdateContactFlowContentInput {
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-    /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-    /// </p>
+    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -28735,21 +28585,17 @@ impl std::fmt::Debug for UpdateContactFlowContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactAttributesInput {
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-    /// contact attributes.</p>
-    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateContactAttributesInput {
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -28757,10 +28603,8 @@ impl UpdateContactAttributesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-    /// contact attributes.</p>
-    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -28784,8 +28628,7 @@ impl std::fmt::Debug for UpdateContactAttributesInput {
 pub struct UpdateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with your contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact.</p>
     pub name: std::option::Option<std::string::String>,
@@ -28801,8 +28644,7 @@ impl UpdateContactInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with your contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -28965,8 +28807,7 @@ pub struct SuspendContactRecordingInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl SuspendContactRecordingInput {
@@ -28978,8 +28819,7 @@ impl SuspendContactRecordingInput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -29000,8 +28840,7 @@ impl std::fmt::Debug for SuspendContactRecordingInput {
 pub struct StopContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-    /// the first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub streaming_id: std::option::Option<std::string::String>,
@@ -29011,8 +28850,7 @@ impl StopContactStreamingInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-    /// the first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -29039,8 +28877,7 @@ pub struct StopContactRecordingInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl StopContactRecordingInput {
@@ -29052,8 +28889,7 @@ impl StopContactRecordingInput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -29104,18 +28940,11 @@ pub struct StartTaskContactInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
     pub previous_contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-    /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-    /// the contact flow page, under the name of the contact flow, choose <b>Show
-    /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-    /// here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -29124,11 +28953,9 @@ pub struct StartTaskContactInput {
     pub references: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Reference>,
     >,
-    /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-    /// (CCP).</p>
+    /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -29142,20 +28969,13 @@ impl StartTaskContactInput {
     pub fn previous_contact_id(&self) -> std::option::Option<&str> {
         self.previous_contact_id.as_deref()
     }
-    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-    /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-    /// the contact flow page, under the name of the contact flow, choose <b>Show
-    /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-    /// here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -29173,13 +28993,11 @@ impl StartTaskContactInput {
     {
         self.references.as_ref()
     }
-    /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-    /// (CCP).</p>
+    /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -29210,34 +29028,19 @@ impl std::fmt::Debug for StartTaskContactInput {
 pub struct StartOutboundVoiceContactInput {
     /// <p>The phone number of the customer, in E.164 format.</p>
     pub destination_phone_number: std::option::Option<std::string::String>,
-    /// <p>The
-    /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-    /// console user interface, on the navigation menu go to <b>Routing</b>,
-    /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-    /// page, under the name of the contact flow, choose <b>Show additional flow
-    /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. The token is valid for 7 days after creation. If a contact is already started, the
-    /// contact ID is returned.
-    /// </p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-    /// a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub source_phone_number: std::option::Option<std::string::String>,
-    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-    /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-    /// contact flow is used. If you do not specify a queue, you must specify a source phone
-    /// number.</p>
+    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     pub queue_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
@@ -29245,10 +29048,7 @@ pub struct StartOutboundVoiceContactInput {
         std::option::Option<crate::model::AnswerMachineDetectionConfig>,
     /// <p>The campaign identifier of the outbound communication.</p>
     pub campaign_id: std::option::Option<std::string::String>,
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-    /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-    /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-    /// <code>GENERAL</code>. </p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
     pub traffic_type: std::option::Option<crate::model::TrafficType>,
 }
 impl StartOutboundVoiceContactInput {
@@ -29256,14 +29056,8 @@ impl StartOutboundVoiceContactInput {
     pub fn destination_phone_number(&self) -> std::option::Option<&str> {
         self.destination_phone_number.as_deref()
     }
-    /// <p>The
-    /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-    /// console user interface, on the navigation menu go to <b>Routing</b>,
-    /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-    /// page, under the name of the contact flow, choose <b>Show additional flow
-    /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -29271,29 +29065,20 @@ impl StartOutboundVoiceContactInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. The token is valid for 7 days after creation. If a contact is already started, the
-    /// contact ID is returned.
-    /// </p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-    /// a source phone number, you must specify a queue.</p>
+    /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     pub fn source_phone_number(&self) -> std::option::Option<&str> {
         self.source_phone_number.as_deref()
     }
-    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-    /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-    /// contact flow is used. If you do not specify a queue, you must specify a source phone
-    /// number.</p>
+    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -29310,10 +29095,7 @@ impl StartOutboundVoiceContactInput {
     pub fn campaign_id(&self) -> std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
-    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-    /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-    /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-    /// <code>GENERAL</code>. </p>
+    /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
     pub fn traffic_type(&self) -> std::option::Option<&crate::model::TrafficType> {
         self.traffic_type.as_ref()
     }
@@ -29344,13 +29126,11 @@ impl std::fmt::Debug for StartOutboundVoiceContactInput {
 pub struct StartContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     pub chat_streaming_configuration: std::option::Option<crate::model::ChatStreamingConfiguration>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartContactStreamingInput {
@@ -29358,8 +29138,7 @@ impl StartContactStreamingInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -29369,8 +29148,7 @@ impl StartContactStreamingInput {
     ) -> std::option::Option<&crate::model::ChatStreamingConfiguration> {
         self.chat_streaming_configuration.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -29397,8 +29175,7 @@ pub struct StartContactRecordingInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The person being recorded.</p>
     pub voice_recording_configuration:
@@ -29413,8 +29190,7 @@ impl StartContactRecordingInput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -29445,26 +29221,18 @@ impl std::fmt::Debug for StartContactRecordingInput {
 pub struct StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow for initiating the chat.
-    /// To
-    /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-    /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-    /// the ARN, shown here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information identifying the participant.</p>
     pub participant_details: std::option::Option<crate::model::ParticipantDetails>,
     /// <p>The initial message to be sent to the newly created chat.</p>
     pub initial_message: std::option::Option<crate::model::ChatMessage>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartChatContactInput {
@@ -29472,20 +29240,13 @@ impl StartChatContactInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow for initiating the chat.
-    /// To
-    /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-    /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-    /// the ARN, shown here in bold: </p>
-    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-    /// </p>
+    /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-    /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-    /// can include only alphanumeric, dash, and underscore characters.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -29500,8 +29261,7 @@ impl StartChatContactInput {
     pub fn initial_message(&self) -> std::option::Option<&crate::model::ChatMessage> {
         self.initial_message.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -29527,8 +29287,7 @@ pub struct ResumeContactRecordingInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: std::option::Option<std::string::String>,
 }
 impl ResumeContactRecordingInput {
@@ -29540,8 +29299,7 @@ impl ResumeContactRecordingInput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-    /// first interaction with the contact center.</p>
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
@@ -29562,8 +29320,7 @@ impl std::fmt::Debug for ResumeContactRecordingInput {
 pub struct ListUsersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29573,8 +29330,7 @@ impl ListUsersInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29599,8 +29355,7 @@ impl std::fmt::Debug for ListUsersInput {
 pub struct ListUserHierarchyGroupsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29610,8 +29365,7 @@ impl ListUserHierarchyGroupsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29630,8 +29384,7 @@ impl std::fmt::Debug for ListUserHierarchyGroupsInput {
     }
 }
 
-/// <p>Provides summary information about the use cases for the specified integration
-/// association.</p>
+/// <p>Provides summary information about the use cases for the specified integration association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUseCasesInput {
@@ -29639,8 +29392,7 @@ pub struct ListUseCasesInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
     pub integration_association_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29654,8 +29406,7 @@ impl ListUseCasesInput {
     pub fn integration_association_id(&self) -> std::option::Option<&str> {
         self.integration_association_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29705,8 +29456,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListSecurityProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29716,8 +29466,7 @@ impl ListSecurityProfilesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29744,8 +29493,7 @@ pub struct ListSecurityProfilePermissionsInput {
     pub security_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29759,8 +29507,7 @@ impl ListSecurityProfilePermissionsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29786,8 +29533,7 @@ impl std::fmt::Debug for ListSecurityProfilePermissionsInput {
 pub struct ListSecurityKeysInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29797,8 +29543,7 @@ impl ListSecurityKeysInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29823,8 +29568,7 @@ impl std::fmt::Debug for ListSecurityKeysInput {
 pub struct ListRoutingProfilesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29834,8 +29578,7 @@ impl ListRoutingProfilesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29862,8 +29605,7 @@ pub struct ListRoutingProfileQueuesInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -29877,8 +29619,7 @@ impl ListRoutingProfileQueuesInput {
     pub fn routing_profile_id(&self) -> std::option::Option<&str> {
         self.routing_profile_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29904,13 +29645,11 @@ impl std::fmt::Debug for ListRoutingProfileQueuesInput {
 pub struct ListQuickConnectsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_types: std::option::Option<std::vec::Vec<crate::model::QuickConnectType>>,
 }
 impl ListQuickConnectsInput {
@@ -29918,8 +29657,7 @@ impl ListQuickConnectsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29927,8 +29665,7 @@ impl ListQuickConnectsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_types(&self) -> std::option::Option<&[crate::model::QuickConnectType]> {
         self.quick_connect_types.as_deref()
     }
@@ -29952,8 +29689,7 @@ pub struct ListQueuesInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of queue.</p>
     pub queue_types: std::option::Option<std::vec::Vec<crate::model::QueueType>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
@@ -29967,8 +29703,7 @@ impl ListQueuesInput {
     pub fn queue_types(&self) -> std::option::Option<&[crate::model::QueueType]> {
         self.queue_types.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29996,8 +29731,7 @@ pub struct ListQueueQuickConnectsInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the queue.</p>
     pub queue_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30011,8 +29745,7 @@ impl ListQueueQuickConnectsInput {
     pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30038,8 +29771,7 @@ impl std::fmt::Debug for ListQueueQuickConnectsInput {
 pub struct ListPromptsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in
-    /// the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30049,8 +29781,7 @@ impl ListPromptsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in
-    /// the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30080,8 +29811,7 @@ pub struct ListPhoneNumbersInput {
     /// <p>The ISO country code.</p>
     pub phone_number_country_codes:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountryCode>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
@@ -30101,8 +29831,7 @@ impl ListPhoneNumbersInput {
     ) -> std::option::Option<&[crate::model::PhoneNumberCountryCode]> {
         self.phone_number_country_codes.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30132,8 +29861,7 @@ impl std::fmt::Debug for ListPhoneNumbersInput {
 pub struct ListLexBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
     pub max_results: std::option::Option<i32>,
@@ -30143,8 +29871,7 @@ impl ListLexBotsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30169,8 +29896,7 @@ impl std::fmt::Debug for ListLexBotsInput {
 pub struct ListLambdaFunctionsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30180,8 +29906,7 @@ impl ListLambdaFunctionsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30208,8 +29933,7 @@ pub struct ListIntegrationAssociationsInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The integration type.</p>
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30223,8 +29947,7 @@ impl ListIntegrationAssociationsInput {
     pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.integration_type.as_ref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30252,8 +29975,7 @@ pub struct ListInstanceStorageConfigsInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A valid resource type.</p>
     pub resource_type: std::option::Option<crate::model::InstanceStorageResourceType>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30267,8 +29989,7 @@ impl ListInstanceStorageConfigsInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::InstanceStorageResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30292,15 +30013,13 @@ impl std::fmt::Debug for ListInstanceStorageConfigsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListInstancesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30324,8 +30043,7 @@ impl std::fmt::Debug for ListInstancesInput {
 pub struct ListInstanceAttributesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30335,8 +30053,7 @@ impl ListInstanceAttributesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30361,8 +30078,7 @@ impl std::fmt::Debug for ListInstanceAttributesInput {
 pub struct ListHoursOfOperationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
@@ -30372,8 +30088,7 @@ impl ListHoursOfOperationsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30402,11 +30117,8 @@ pub struct ListContactReferencesInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The type of reference.</p>
     pub reference_types: std::option::Option<std::vec::Vec<crate::model::ReferenceType>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
-    /// <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is
-    /// always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -30423,11 +30135,8 @@ impl ListContactReferencesInput {
     pub fn reference_types(&self) -> std::option::Option<&[crate::model::ReferenceType]> {
         self.reference_types.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
-    /// <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is
-    /// always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -30452,8 +30161,7 @@ pub struct ListContactFlowsInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The type of contact flow.</p>
     pub contact_flow_types: std::option::Option<std::vec::Vec<crate::model::ContactFlowType>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: i32,
@@ -30467,8 +30175,7 @@ impl ListContactFlowsInput {
     pub fn contact_flow_types(&self) -> std::option::Option<&[crate::model::ContactFlowType]> {
         self.contact_flow_types.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30494,8 +30201,7 @@ impl std::fmt::Debug for ListContactFlowsInput {
 pub struct ListContactFlowModulesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30507,8 +30213,7 @@ impl ListContactFlowModulesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30540,8 +30245,7 @@ impl std::fmt::Debug for ListContactFlowModulesInput {
 pub struct ListBotsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30553,8 +30257,7 @@ impl ListBotsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30584,8 +30287,7 @@ impl std::fmt::Debug for ListBotsInput {
 pub struct ListApprovedOriginsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30595,8 +30297,7 @@ impl ListApprovedOriginsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30621,8 +30322,7 @@ impl std::fmt::Debug for ListApprovedOriginsInput {
 pub struct ListAgentStatusesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30634,8 +30334,7 @@ impl ListAgentStatusesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -30665,173 +30364,203 @@ impl std::fmt::Debug for ListAgentStatusesInput {
 pub struct GetMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-    /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-    /// such as 10:05, 10:10, 10:15.</p>
-    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-    /// metrics are available only for 24 hours.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-    /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-    /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-    /// retrieved only for the resources associated with the queues or channels included in the filter.
-    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-    /// <note>
-    /// <p>To filter by <code>Queues</code>, enter the queue
-    /// ID/ARN, not the name of the queue.</p>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+    /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub filters: std::option::Option<crate::model::Filters>,
-    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-    /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-    /// each queue rather than aggregated for all queues.</p>
-    ///
+    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     pub groupings: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
-    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-    /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
-    /// <note>
-    /// <p>This API does not support a contacts
-    /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
     /// </note>
-    ///
     /// <dl>
-    /// <dt>ABANDON_TIME</dt>
+    /// <dt>
+    /// ABANDON_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+    /// <dt>
+    /// AFTER_CONTACT_WORK_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>API_CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// API_CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// CALLBACK_CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_ABANDONED</dt>
+    /// <dt>
+    /// CONTACTS_ABANDONED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+    /// <dt>
+    /// CONTACTS_AGENT_HUNG_UP_FIRST
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_CONSULTED</dt>
+    /// <dt>
+    /// CONTACTS_CONSULTED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED_INCOMING
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED_OUTBOUND
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+    /// <dt>
+    /// CONTACTS_HOLD_ABANDONS
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_MISSED</dt>
+    /// <dt>
+    /// CONTACTS_MISSED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_QUEUED</dt>
+    /// <dt>
+    /// CONTACTS_QUEUED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>HANDLE_TIME</dt>
+    /// <dt>
+    /// HANDLE_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>HOLD_TIME</dt>
+    /// <dt>
+    /// HOLD_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+    /// <dt>
+    /// INTERACTION_AND_HOLD_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>INTERACTION_TIME</dt>
+    /// <dt>
+    /// INTERACTION_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>OCCUPANCY</dt>
+    /// <dt>
+    /// OCCUPANCY
+    /// </dt>
     /// <dd>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>QUEUE_ANSWER_TIME</dt>
+    /// <dt>
+    /// QUEUE_ANSWER_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>QUEUED_TIME</dt>
+    /// <dt>
+    /// QUEUED_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: MAX</p>
     /// </dd>
-    /// <dt>SERVICE_LEVEL</dt>
+    /// <dt>
+    /// SERVICE_LEVEL
+    /// </dt>
     /// <dd>
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-    /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-    /// "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
     pub historical_metrics: std::option::Option<std::vec::Vec<crate::model::HistoricalMetric>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -30841,183 +30570,213 @@ impl GetMetricDataInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-    /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-    /// such as 10:05, 10:10, 10:15.</p>
-    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-    /// metrics are available only for 24 hours.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+    /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-    /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-    /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-    /// retrieved only for the resources associated with the queues or channels included in the filter.
-    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-    /// <note>
-    /// <p>To filter by <code>Queues</code>, enter the queue
-    /// ID/ARN, not the name of the queue.</p>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+    /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub fn filters(&self) -> std::option::Option<&crate::model::Filters> {
         self.filters.as_ref()
     }
-    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-    /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-    /// each queue rather than aggregated for all queues.</p>
-    ///
+    /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     pub fn groupings(&self) -> std::option::Option<&[crate::model::Grouping]> {
         self.groupings.as_deref()
     }
-    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-    /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
-    /// <note>
-    /// <p>This API does not support a contacts
-    /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+    /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+    /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
     /// </note>
-    ///
     /// <dl>
-    /// <dt>ABANDON_TIME</dt>
+    /// <dt>
+    /// ABANDON_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+    /// <dt>
+    /// AFTER_CONTACT_WORK_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>API_CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// API_CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// CALLBACK_CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_ABANDONED</dt>
+    /// <dt>
+    /// CONTACTS_ABANDONED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+    /// <dt>
+    /// CONTACTS_AGENT_HUNG_UP_FIRST
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_CONSULTED</dt>
+    /// <dt>
+    /// CONTACTS_CONSULTED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED_INCOMING
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+    /// <dt>
+    /// CONTACTS_HANDLED_OUTBOUND
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+    /// <dt>
+    /// CONTACTS_HOLD_ABANDONS
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_MISSED</dt>
+    /// <dt>
+    /// CONTACTS_MISSED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_QUEUED</dt>
+    /// <dt>
+    /// CONTACTS_QUEUED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
     /// </dd>
-    /// <dt>HANDLE_TIME</dt>
+    /// <dt>
+    /// HANDLE_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>HOLD_TIME</dt>
+    /// <dt>
+    /// HOLD_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+    /// <dt>
+    /// INTERACTION_AND_HOLD_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>INTERACTION_TIME</dt>
+    /// <dt>
+    /// INTERACTION_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>OCCUPANCY</dt>
+    /// <dt>
+    /// OCCUPANCY
+    /// </dt>
     /// <dd>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>QUEUE_ANSWER_TIME</dt>
+    /// <dt>
+    /// QUEUE_ANSWER_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
     /// </dd>
-    /// <dt>QUEUED_TIME</dt>
+    /// <dt>
+    /// QUEUED_TIME
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: MAX</p>
     /// </dd>
-    /// <dt>SERVICE_LEVEL</dt>
+    /// <dt>
+    /// SERVICE_LEVEL
+    /// </dt>
     /// <dd>
     /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
-    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-    /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-    /// "Less than"). </p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
     pub fn historical_metrics(&self) -> std::option::Option<&[crate::model::HistoricalMetric]> {
         self.historical_metrics.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -31068,117 +30827,112 @@ impl std::fmt::Debug for GetFederationTokenInput {
 pub struct GetCurrentMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-    /// retrieved only for the resources associated with the queues or channels included in the filter.
-    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
     pub filters: std::option::Option<crate::model::Filters>,
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by
-    /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-    /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-    /// VOICE, CHAT, and TASK channels are supported.</p>
-    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-    /// returned.</p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
     pub groupings: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-    /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-    /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
-    /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+    /// <dt>
+    /// AGENTS_AFTER_CONTACT_WORK
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-    /// </p>
-    ///
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
     /// </dd>
-    /// <dt>AGENTS_AVAILABLE</dt>
+    /// <dt>
+    /// AGENTS_AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ERROR</dt>
+    /// <dt>
+    /// AGENTS_ERROR
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
     /// </dd>
-    /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+    /// <dt>
+    /// AGENTS_NON_PRODUCTIVE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ON_CALL</dt>
+    /// <dt>
+    /// AGENTS_ON_CALL
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-    /// contact</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ON_CONTACT</dt>
+    /// <dt>
+    /// AGENTS_ON_CONTACT
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-    /// contact</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ONLINE</dt>
+    /// <dt>
+    /// AGENTS_ONLINE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
     /// </dd>
-    /// <dt>AGENTS_STAFFED</dt>
+    /// <dt>
+    /// AGENTS_STAFFED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
     /// </dd>
-    /// <dt>CONTACTS_IN_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_IN_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-    /// queue</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
     /// </dd>
-    /// <dt>CONTACTS_SCHEDULED</dt>
+    /// <dt>
+    /// CONTACTS_SCHEDULED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
     /// </dd>
-    /// <dt>OLDEST_CONTACT_AGE</dt>
+    /// <dt>
+    /// OLDEST_CONTACT_AGE
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-    /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-    /// example, if you get a response like this:</p>
-    /// <p>
-    /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-    /// </code>}</p>
+    /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    ///
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
     /// </dd>
-    /// <dt>SLOTS_ACTIVE</dt>
+    /// <dt>
+    /// SLOTS_ACTIVE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
     /// </dd>
-    /// <dt>SLOTS_AVAILABLE</dt>
+    /// <dt>
+    /// SLOTS_AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
     pub current_metrics: std::option::Option<std::vec::Vec<crate::model::CurrentMetric>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -31188,123 +30942,118 @@ impl GetCurrentMetricDataInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-    /// retrieved only for the resources associated with the queues or channels included in the filter.
-    /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::Filters> {
         self.filters.as_ref()
     }
-    /// <p>The grouping applied to the metrics returned. For example, when grouped by
-    /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-    /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-    /// VOICE, CHAT, and TASK channels are supported.</p>
-    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-    /// returned.</p>
+    /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
     pub fn groupings(&self) -> std::option::Option<&[crate::model::Grouping]> {
         self.groupings.as_deref()
     }
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-    /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-    /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
-    /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+    /// <dt>
+    /// AGENTS_AFTER_CONTACT_WORK
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-    /// </p>
-    ///
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
     /// </dd>
-    /// <dt>AGENTS_AVAILABLE</dt>
+    /// <dt>
+    /// AGENTS_AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ERROR</dt>
+    /// <dt>
+    /// AGENTS_ERROR
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
     /// </dd>
-    /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+    /// <dt>
+    /// AGENTS_NON_PRODUCTIVE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ON_CALL</dt>
+    /// <dt>
+    /// AGENTS_ON_CALL
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-    /// contact</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ON_CONTACT</dt>
+    /// <dt>
+    /// AGENTS_ON_CONTACT
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-    /// contact</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
     /// </dd>
-    /// <dt>AGENTS_ONLINE</dt>
+    /// <dt>
+    /// AGENTS_ONLINE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
     /// </dd>
-    /// <dt>AGENTS_STAFFED</dt>
+    /// <dt>
+    /// AGENTS_STAFFED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
     /// </dd>
-    /// <dt>CONTACTS_IN_QUEUE</dt>
+    /// <dt>
+    /// CONTACTS_IN_QUEUE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-    /// queue</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
     /// </dd>
-    /// <dt>CONTACTS_SCHEDULED</dt>
+    /// <dt>
+    /// CONTACTS_SCHEDULED
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
     /// </dd>
-    /// <dt>OLDEST_CONTACT_AGE</dt>
+    /// <dt>
+    /// OLDEST_CONTACT_AGE
+    /// </dt>
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-    /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-    /// example, if you get a response like this:</p>
-    /// <p>
-    /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-    /// </code>}</p>
+    /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+    /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
     /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-    ///
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
     /// </dd>
-    /// <dt>SLOTS_ACTIVE</dt>
+    /// <dt>
+    /// SLOTS_ACTIVE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
     /// </dd>
-    /// <dt>SLOTS_AVAILABLE</dt>
+    /// <dt>
+    /// SLOTS_AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>Unit: COUNT</p>
-    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-    /// </p>
+    /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
     pub fn current_metrics(&self) -> std::option::Option<&[crate::model::CurrentMetric]> {
         self.current_metrics.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -32321,8 +32070,7 @@ impl std::fmt::Debug for DeleteContactFlowInput {
 pub struct CreateUserHierarchyGroupInput {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-    /// the parent group ID is null.</p>
+    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub parent_group_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -32332,8 +32080,7 @@ impl CreateUserHierarchyGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-    /// the parent group ID is null.</p>
+    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub fn parent_group_id(&self) -> std::option::Option<&str> {
         self.parent_group_id.as_deref()
     }
@@ -32356,24 +32103,16 @@ impl std::fmt::Debug for CreateUserHierarchyGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
-    /// <p>The user name for the account. For instances not using SAML for identity management, the
-    /// user name can include up to 20 characters. If you are using SAML for identity management, the
-    /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-    /// identity management. Otherwise, it is an error to include a password.</p>
+    /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
     pub password: std::option::Option<std::string::String>,
     /// <p>The information about the identity of the user.</p>
     pub identity_info: std::option::Option<crate::model::UserIdentityInfo>,
     /// <p>The phone settings for the user.</p>
     pub phone_config: std::option::Option<crate::model::UserPhoneConfig>,
-    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-    /// cannot access the directory, you can specify this identifier to authenticate users. If you
-    /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-    /// information is used to authenticate users from your directory.</p>
-    /// <p>This parameter is required if you are using an existing directory for identity management in
-    /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-    /// identity management and include this parameter, an error is returned.</p>
+    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+    /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub directory_user_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the security profile for the user.</p>
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32388,14 +32127,11 @@ pub struct CreateUserInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateUserInput {
-    /// <p>The user name for the account. For instances not using SAML for identity management, the
-    /// user name can include up to 20 characters. If you are using SAML for identity management, the
-    /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-    /// identity management. Otherwise, it is an error to include a password.</p>
+    /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
@@ -32407,13 +32143,8 @@ impl CreateUserInput {
     pub fn phone_config(&self) -> std::option::Option<&crate::model::UserPhoneConfig> {
         self.phone_config.as_ref()
     }
-    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-    /// cannot access the directory, you can specify this identifier to authenticate users. If you
-    /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-    /// information is used to authenticate users from your directory.</p>
-    /// <p>This parameter is required if you are using an existing directory for identity management in
-    /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-    /// identity management and include this parameter, an error is returned.</p>
+    /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+    /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn directory_user_id(&self) -> std::option::Option<&str> {
         self.directory_user_id.as_deref()
     }
@@ -32466,8 +32197,7 @@ pub struct CreateUseCaseInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the integration association.</p>
     pub integration_association_id: std::option::Option<std::string::String>,
-    /// <p>The type of use case to associate to the integration association. Each integration
-    /// association can have only one of each use case type.</p>
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -32482,8 +32212,7 @@ impl CreateUseCaseInput {
     pub fn integration_association_id(&self) -> std::option::Option<&str> {
         self.integration_association_id.as_deref()
     }
-    /// <p>The type of use case to associate to the integration association. Each integration
-    /// association can have only one of each use case type.</p>
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
         self.use_case_type.as_ref()
     }
@@ -32574,11 +32303,9 @@ pub struct CreateRoutingProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The default outbound queue for the routing profile.</p>
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
-    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-    /// make only outbound calls.</p>
+    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     pub queue_configs: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
-    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
     /// <p>One or more tags.</p>
     pub tags:
@@ -32601,13 +32328,11 @@ impl CreateRoutingProfileInput {
     pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
         self.default_outbound_queue_id.as_deref()
     }
-    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-    /// make only outbound calls.</p>
+    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     pub fn queue_configs(&self) -> std::option::Option<&[crate::model::RoutingProfileQueueConfig]> {
         self.queue_configs.as_deref()
     }
-    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
@@ -32960,8 +32685,7 @@ pub struct CreateContactFlowModuleInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowModuleInput {
@@ -32988,8 +32712,7 @@ impl CreateContactFlowModuleInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -33015,8 +32738,7 @@ pub struct CreateContactFlowInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
     /// <p>The description of the contact flow. </p>
     pub description: std::option::Option<std::string::String>,
@@ -33035,8 +32757,7 @@ impl CreateContactFlowInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.r#type.as_ref()
     }
@@ -33261,8 +32982,7 @@ impl std::fmt::Debug for AssociateLexBotInput {
 pub struct AssociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-    /// 140.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl AssociateLambdaFunctionInput {
@@ -33270,8 +32990,7 @@ impl AssociateLambdaFunctionInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-    /// 140.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }

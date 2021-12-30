@@ -179,9 +179,7 @@ pub struct CreateBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBucketErrorKind {
-    /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by
-    /// all users of the Outposts in this Region. Select a different name and try
-    /// again.</p>
+    /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in this Region. Select a different name and try again.</p>
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
     /// <p>The Outposts bucket you tried to create already exists, and you own it. </p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
@@ -3089,8 +3087,7 @@ pub struct GetPublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPublicAccessBlockErrorKind {
-    /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
-    /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
+    /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
     NoSuchPublicAccessBlockConfiguration(crate::error::NoSuchPublicAccessBlockConfiguration),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5585,8 +5582,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
-/// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
+/// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchPublicAccessBlockConfiguration {
@@ -5778,9 +5774,7 @@ impl BucketAlreadyOwnedByYou {
     }
 }
 
-/// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by
-/// all users of the Outposts in this Region. Select a different name and try
-/// again.</p>
+/// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in this Region. Select a different name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketAlreadyExists {

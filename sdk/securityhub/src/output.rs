@@ -697,8 +697,7 @@ pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     pub finding_aggregators: std::option::Option<std::vec::Vec<crate::model::FindingAggregator>>,
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result.
-    /// </p>
+    /// <p>This operation currently only returns a single result. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingAggregatorsOutput {
@@ -707,8 +706,7 @@ impl ListFindingAggregatorsOutput {
         self.finding_aggregators.as_deref()
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result.
-    /// </p>
+    /// <p>This operation currently only returns a single result. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -752,15 +750,13 @@ pub mod list_finding_aggregators_output {
             self
         }
         /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-        /// <p>This operation currently only returns a single result.
-        /// </p>
+        /// <p>This operation currently only returns a single result. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-        /// <p>This operation currently only returns a single result.
-        /// </p>
+        /// <p>This operation currently only returns a single result. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -867,13 +863,11 @@ impl ListEnabledProductsForImportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-    /// includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl InviteMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-    /// includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -898,16 +892,14 @@ pub mod invite_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-        /// includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-        /// includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -936,8 +928,7 @@ impl InviteMembersOutput {
 pub struct GetMembersOutput {
     /// <p>The list of details about the Security Hub member accounts.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-    /// includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl GetMembersOutput {
@@ -945,8 +936,7 @@ impl GetMembersOutput {
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
-    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-    /// includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -992,16 +982,14 @@ pub mod get_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-        /// includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
-        /// includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -1029,13 +1017,11 @@ impl GetMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountOutput {
-    /// <p>A list of details about the Security Hub administrator account for the current member account.
-    /// </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
     pub master: std::option::Option<crate::model::Invitation>,
 }
 impl GetMasterAccountOutput {
-    /// <p>A list of details about the Security Hub administrator account for the current member account.
-    /// </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
     pub fn master(&self) -> std::option::Option<&crate::model::Invitation> {
         self.master.as_ref()
     }
@@ -1056,14 +1042,12 @@ pub mod get_master_account_output {
         pub(crate) master: std::option::Option<crate::model::Invitation>,
     }
     impl Builder {
-        /// <p>A list of details about the Security Hub administrator account for the current member account.
-        /// </p>
+        /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
         pub fn master(mut self, input: crate::model::Invitation) -> Self {
             self.master = Some(input);
             self
         }
-        /// <p>A list of details about the Security Hub administrator account for the current member account.
-        /// </p>
+        /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
         pub fn set_master(mut self, input: std::option::Option<crate::model::Invitation>) -> Self {
             self.master = input;
             self
@@ -1087,13 +1071,11 @@ impl GetMasterAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationsCountOutput {
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not
-    /// including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
     pub invitations_count: i32,
 }
 impl GetInvitationsCountOutput {
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not
-    /// including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
     pub fn invitations_count(&self) -> i32 {
         self.invitations_count
     }
@@ -1114,14 +1096,12 @@ pub mod get_invitations_count_output {
         pub(crate) invitations_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of all membership invitations sent to this Security Hub member account, not
-        /// including the currently accepted invitation.</p>
+        /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
         pub fn invitations_count(mut self, input: i32) -> Self {
             self.invitations_count = Some(input);
             self
         }
-        /// <p>The number of all membership invitations sent to this Security Hub member account, not
-        /// including the currently accepted invitation.</p>
+        /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
         pub fn set_invitations_count(mut self, input: std::option::Option<i32>) -> Self {
             self.invitations_count = input;
             self
@@ -1498,16 +1478,14 @@ impl GetFindingAggregatorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnabledStandardsOutput {
-    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about
-    /// the enabled standards.</p>
+    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
     pub standards_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEnabledStandardsOutput {
-    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about
-    /// the enabled standards.</p>
+    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
     pub fn standards_subscriptions(
         &self,
     ) -> std::option::Option<&[crate::model::StandardsSubscription]> {
@@ -1541,8 +1519,7 @@ pub mod get_enabled_standards_output {
         ///
         /// To override the contents of this collection use [`set_standards_subscriptions`](Self::set_standards_subscriptions).
         ///
-        /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about
-        /// the enabled standards.</p>
+        /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
         pub fn standards_subscriptions(
             mut self,
             input: crate::model::StandardsSubscription,
@@ -1552,8 +1529,7 @@ pub mod get_enabled_standards_output {
             self.standards_subscriptions = Some(v);
             self
         }
-        /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about
-        /// the enabled standards.</p>
+        /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
         pub fn set_standards_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StandardsSubscription>>,
@@ -2192,22 +2168,18 @@ impl DescribeProductsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false,
-    /// then new accounts are not added automatically.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
     pub auto_enable: bool,
-    /// <p>Whether the maximum number of allowed member accounts are already associated with the
-    /// Security Hub administrator account.</p>
+    /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
     pub member_account_limit_reached: bool,
 }
 impl DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false,
-    /// then new accounts are not added automatically.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
     }
-    /// <p>Whether the maximum number of allowed member accounts are already associated with the
-    /// Security Hub administrator account.</p>
+    /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
     pub fn member_account_limit_reached(&self) -> bool {
         self.member_account_limit_reached
     }
@@ -2234,27 +2206,23 @@ pub mod describe_organization_configuration_output {
     }
     impl Builder {
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false,
-        /// then new accounts are not added automatically.</p>
+        /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.auto_enable = Some(input);
             self
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false,
-        /// then new accounts are not added automatically.</p>
+        /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
         }
-        /// <p>Whether the maximum number of allowed member accounts are already associated with the
-        /// Security Hub administrator account.</p>
+        /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
         pub fn member_account_limit_reached(mut self, input: bool) -> Self {
             self.member_account_limit_reached = Some(input);
             self
         }
-        /// <p>Whether the maximum number of allowed member accounts are already associated with the
-        /// Security Hub administrator account.</p>
+        /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
         pub fn set_member_account_limit_reached(
             mut self,
             input: std::option::Option<bool>,
@@ -2286,10 +2254,8 @@ pub struct DescribeHubOutput {
     pub hub_arn: std::option::Option<std::string::String>,
     /// <p>The date and time when Security Hub was enabled in the account.</p>
     pub subscribed_at: std::option::Option<std::string::String>,
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
-    /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     pub auto_enable_controls: bool,
 }
 impl DescribeHubOutput {
@@ -2301,10 +2267,8 @@ impl DescribeHubOutput {
     pub fn subscribed_at(&self) -> std::option::Option<&str> {
         self.subscribed_at.as_deref()
     }
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
-    /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
     pub fn auto_enable_controls(&self) -> bool {
         self.auto_enable_controls
     }
@@ -2352,18 +2316,14 @@ pub mod describe_hub_output {
             self.subscribed_at = input;
             self
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
-        /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
         pub fn auto_enable_controls(mut self, input: bool) -> Self {
             self.auto_enable_controls = Some(input);
             self
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled
-        /// automatically. If set to <code>false</code>, then new controls are not enabled.</p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
         pub fn set_auto_enable_controls(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable_controls = input;
             self
@@ -2389,17 +2349,13 @@ impl DescribeHubOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActionTargetsOutput {
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
-    /// <code>Description</code>, and <code>Name</code> of a custom action target available in
-    /// Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     pub action_targets: std::option::Option<std::vec::Vec<crate::model::ActionTarget>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeActionTargetsOutput {
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
-    /// <code>Description</code>, and <code>Name</code> of a custom action target available in
-    /// Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     pub fn action_targets(&self) -> std::option::Option<&[crate::model::ActionTarget]> {
         self.action_targets.as_deref()
     }
@@ -2430,18 +2386,14 @@ pub mod describe_action_targets_output {
         ///
         /// To override the contents of this collection use [`set_action_targets`](Self::set_action_targets).
         ///
-        /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
-        /// <code>Description</code>, and <code>Name</code> of a custom action target available in
-        /// Security Hub.</p>
+        /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
         pub fn action_targets(mut self, input: crate::model::ActionTarget) -> Self {
             let mut v = self.action_targets.unwrap_or_default();
             v.push(input);
             self.action_targets = Some(v);
             self
         }
-        /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
-        /// <code>Description</code>, and <code>Name</code> of a custom action target available in
-        /// Security Hub.</p>
+        /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
         pub fn set_action_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionTarget>>,
@@ -2479,13 +2431,11 @@ impl DescribeActionTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
-    /// account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeleteMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
-    /// account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -2510,16 +2460,14 @@ pub mod delete_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
-        /// account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
-        /// account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -2546,13 +2494,11 @@ impl DeleteMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
-    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
-    /// the list includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeleteInvitationsOutput {
-    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
-    /// the list includes the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -2577,16 +2523,14 @@ pub mod delete_invitations_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
-        /// the list includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
-        /// the list includes the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -2754,13 +2698,11 @@ impl DeleteActionTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
-    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-    /// the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl DeclineInvitationsOutput {
-    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-    /// the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -2785,16 +2727,14 @@ pub mod decline_invitations_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-        /// the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-        /// the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -2821,13 +2761,11 @@ impl DeclineInvitationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-    /// the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl CreateMembersOutput {
-    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-    /// the account ID and the email address.</p>
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::Result]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -2852,16 +2790,14 @@ pub mod create_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-        /// the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
-        /// the account ID and the email address.</p>
+        /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,

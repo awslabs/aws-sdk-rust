@@ -12,21 +12,15 @@ pub struct GetMediaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMediaErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client connections.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client connections.</p>
     ConnectionLimitExceededException(crate::error::ConnectionLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving
-    /// such an exception, the user must call <code>GetDataEndpoint</code> with
-    /// <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next
-    /// <code>GetMedia</code> call. </p>
+    /// <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving such an exception, the user must call <code>GetDataEndpoint</code> with <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next <code>GetMedia</code> call. </p>
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -205,8 +199,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-/// stream, or the token has expired.</p>
+/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
@@ -270,10 +263,7 @@ impl NotAuthorizedException {
     }
 }
 
-/// <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving
-/// such an exception, the user must call <code>GetDataEndpoint</code> with
-/// <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next
-/// <code>GetMedia</code> call. </p>
+/// <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving such an exception, the user must call <code>GetDataEndpoint</code> with <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next <code>GetMedia</code> call. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEndpointException {
@@ -401,8 +391,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-/// allowed client connections.</p>
+/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client connections.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionLimitExceededException {
@@ -466,8 +455,7 @@ impl ConnectionLimitExceededException {
     }
 }
 
-/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-/// allowed client calls. Try making the call later.</p>
+/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientLimitExceededException {

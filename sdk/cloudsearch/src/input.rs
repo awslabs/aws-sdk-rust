@@ -483,12 +483,12 @@ pub mod define_expression_input {
             self.domain_name = input;
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
         pub fn expression(mut self, input: crate::model::Expression) -> Self {
             self.expression = Some(input);
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<crate::model::Expression>,
@@ -1289,12 +1289,12 @@ pub mod delete_expression_input {
             self.domain_name = input;
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
         pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression_name = Some(input.into());
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
         pub fn set_expression_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2456,14 +2456,14 @@ pub mod describe_expressions_input {
         ///
         /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
         ///
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
         pub fn expression_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expression_names.unwrap_or_default();
             v.push(input.into());
             self.expression_names = Some(v);
             self
         }
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
         pub fn set_expression_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4236,7 +4236,7 @@ impl UpdateServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>UpdateServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceAccessPoliciesInput {
@@ -4264,7 +4264,7 @@ impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>UpdateScalingParameters</code></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingParametersInput {
@@ -4292,7 +4292,7 @@ impl std::fmt::Debug for UpdateScalingParametersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
+/// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEndpointOptionsInput {
@@ -4322,7 +4322,7 @@ impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
+/// <p>Container for the parameters to the <code><code>UpdateAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityOptionsInput {
@@ -4361,7 +4361,7 @@ impl std::fmt::Debug for ListDomainNamesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index.</p>
+/// <p>Container for the parameters to the <code><code>IndexDocuments</code></code> operation. Specifies the name of the domain you want to re-index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexDocumentsInput {
@@ -4382,7 +4382,7 @@ impl std::fmt::Debug for IndexDocumentsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeSuggester</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSuggestersInput {
@@ -4417,7 +4417,7 @@ impl std::fmt::Debug for DescribeSuggestersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceAccessPoliciesInput {
@@ -4445,7 +4445,7 @@ impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe. </p>
+/// <p>Container for the parameters to the <code><code>DescribeScalingParameters</code></code> operation. Specifies the name of the domain you want to describe. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingParametersInput {
@@ -4466,7 +4466,7 @@ impl std::fmt::Debug for DescribeScalingParametersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show  the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeIndexFields</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexFieldsInput {
@@ -4501,14 +4501,13 @@ impl std::fmt::Debug for DescribeIndexFieldsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation.
-/// Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     pub expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
@@ -4518,7 +4517,7 @@ impl DescribeExpressionsInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     pub fn expression_names(&self) -> std::option::Option<&[std::string::String]> {
         self.expression_names.as_deref()
     }
@@ -4537,7 +4536,7 @@ impl std::fmt::Debug for DescribeExpressionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsInput {
@@ -4558,7 +4557,7 @@ impl std::fmt::Debug for DescribeDomainsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomainEndpointOptions</code></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainEndpointOptionsInput {
@@ -4586,7 +4585,7 @@ impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityOptionsInput {
@@ -4614,7 +4613,7 @@ impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
+/// <p>Container for the parameters to the <code><code>DescribeAnalysisSchemes</code></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisSchemesInput {
@@ -4649,7 +4648,7 @@ impl std::fmt::Debug for DescribeAnalysisSchemesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteSuggester</code></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuggesterInput {
@@ -4677,7 +4676,7 @@ impl std::fmt::Debug for DeleteSuggesterInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteIndexField</code></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldInput {
@@ -4705,13 +4704,13 @@ impl std::fmt::Debug for DeleteIndexFieldInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+    /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub expression_name: std::option::Option<std::string::String>,
 }
 impl DeleteExpressionInput {
@@ -4719,7 +4718,7 @@ impl DeleteExpressionInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+    /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub fn expression_name(&self) -> std::option::Option<&str> {
         self.expression_name.as_deref()
     }
@@ -4733,7 +4732,7 @@ impl std::fmt::Debug for DeleteExpressionInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteDomain</code></code> operation. Specifies the name of the domain you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
@@ -4754,7 +4753,7 @@ impl std::fmt::Debug for DeleteDomainInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
+/// <p>Container for the parameters to the <code><code>DeleteAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisSchemeInput {
@@ -4782,7 +4781,7 @@ impl std::fmt::Debug for DeleteAnalysisSchemeInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineSuggester</code></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineSuggesterInput {
@@ -4810,7 +4809,7 @@ impl std::fmt::Debug for DefineSuggesterInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineIndexField</code></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldInput {
@@ -4838,13 +4837,13 @@ impl std::fmt::Debug for DefineIndexFieldInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>DefineExpression</code></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub expression: std::option::Option<crate::model::Expression>,
 }
 impl DefineExpressionInput {
@@ -4852,7 +4851,7 @@ impl DefineExpressionInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub fn expression(&self) -> std::option::Option<&crate::model::Expression> {
         self.expression.as_ref()
     }
@@ -4866,7 +4865,7 @@ impl std::fmt::Debug for DefineExpressionInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeInput {
@@ -4894,7 +4893,7 @@ impl std::fmt::Debug for DefineAnalysisSchemeInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain.</p>
+/// <p>Container for the parameters to the <code><code>CreateDomain</code></code> operation. Specifies a name for the new search domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
@@ -4915,7 +4914,7 @@ impl std::fmt::Debug for CreateDomainInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update.</p>
+/// <p>Container for the parameters to the <code><code>BuildSuggester</code></code> operation. Specifies the name of the domain you want to update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildSuggestersInput {

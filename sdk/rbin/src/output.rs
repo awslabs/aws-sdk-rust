@@ -11,8 +11,7 @@ pub struct UpdateRuleOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource type retained by the retention rule.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention
-    /// rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
     pub status: std::option::Option<crate::model::RuleStatus>,
@@ -34,8 +33,7 @@ impl UpdateRuleOutput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention
-    /// rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
@@ -120,16 +118,14 @@ pub mod update_rule_output {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags used to identify resources that are retained by the retention
-        /// rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags used to identify resources that are retained by the retention
-        /// rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -578,8 +574,7 @@ pub struct CreateRuleOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The resource type retained by the retention rule.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention
-    /// rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
     pub status: std::option::Option<crate::model::RuleStatus>,
@@ -605,8 +600,7 @@ impl CreateRuleOutput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention
-    /// rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
@@ -712,16 +706,14 @@ pub mod create_rule_output {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags used to identify resources that are retained by the retention
-        /// rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags used to identify resources that are retained by the retention
-        /// rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,

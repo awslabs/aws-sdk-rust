@@ -9,14 +9,12 @@ pub mod accept_shared_directory_input {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account. </p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account. </p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -186,16 +184,14 @@ pub mod add_ip_routes_input {
         ///
         /// To override the contents of this collection use [`set_ip_routes`](Self::set_ip_routes).
         ///
-        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
-        /// address block of the DNS server used for your self-managed domain.</p>
+        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
         pub fn ip_routes(mut self, input: crate::model::IpRoute) -> Self {
             let mut v = self.ip_routes.unwrap_or_default();
             v.push(input);
             self.ip_routes = Some(v);
             self
         }
-        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
-        /// address block of the DNS server used for your self-managed domain.</p>
+        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
         pub fn set_ip_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpRoute>>,
@@ -203,148 +199,64 @@ pub mod add_ip_routes_input {
             self.ip_routes = input;
             self
         }
-        /// <p>If set to true, updates the inbound and outbound rules of the security group that has
-        /// the description: "Amazon Web Services created security group for <i>directory ID</i>
-        /// directory controllers." Following are the new rules: </p>
+        /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
         /// <p>Inbound:</p>
         /// <ul>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-        /// 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-        /// 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p>
-        /// </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>
         /// </ul>
-        ///
         /// <p></p>
         /// <p>Outbound:</p>
         /// <ul>
-        /// <li>
-        /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
-        /// </li>
+        /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
         /// </ul>
-        /// <p>These security rules impact an internal network interface that is not exposed
-        /// publicly.</p>
+        /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
         pub fn update_security_group_for_directory_controllers(mut self, input: bool) -> Self {
             self.update_security_group_for_directory_controllers = Some(input);
             self
         }
-        /// <p>If set to true, updates the inbound and outbound rules of the security group that has
-        /// the description: "Amazon Web Services created security group for <i>directory ID</i>
-        /// directory controllers." Following are the new rules: </p>
+        /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
         /// <p>Inbound:</p>
         /// <ul>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-        /// 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-        /// 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p>
-        /// </li>
-        /// <li>
-        /// <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p>
-        /// </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>
+        /// <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>
         /// </ul>
-        ///
         /// <p></p>
         /// <p>Outbound:</p>
         /// <ul>
-        /// <li>
-        /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
-        /// </li>
+        /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
         /// </ul>
-        /// <p>These security rules impact an internal network interface that is not exposed
-        /// publicly.</p>
+        /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
         pub fn set_update_security_group_for_directory_controllers(
             mut self,
             input: std::option::Option<bool>,
@@ -511,24 +423,22 @@ pub mod add_region_input {
             self.directory_id = input;
             self
         }
-        /// <p>The name of the Region where you want to add domain controllers for replication. For
-        /// example, <code>us-east-1</code>.</p>
+        /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_name = Some(input.into());
             self
         }
-        /// <p>The name of the Region where you want to add domain controllers for replication. For
-        /// example, <code>us-east-1</code>.</p>
+        /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region_name = input;
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
             self.vpc_settings = Some(input);
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn set_vpc_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryVpcSettings>,
@@ -1029,14 +939,12 @@ pub mod connect_directory_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The fully qualified name of your self-managed directory, such as
-        /// <code>corp.example.com</code>.</p>
+        /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The fully qualified name of your self-managed directory, such as
-        /// <code>corp.example.com</code>.</p>
+        /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1081,14 +989,12 @@ pub mod connect_directory_input {
             self.size = input;
             self
         }
-        /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
-        /// for the operation.</p>
+        /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
         pub fn connect_settings(mut self, input: crate::model::DirectoryConnectSettings) -> Self {
             self.connect_settings = Some(input);
             self
         }
-        /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
-        /// for the operation.</p>
+        /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
         pub fn set_connect_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryConnectSettings>,
@@ -1277,15 +1183,13 @@ pub mod create_alias_input {
             self
         }
         /// <p>The requested alias.</p>
-        /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
-        /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+        /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
         /// <p>The requested alias.</p>
-        /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
-        /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+        /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -1491,16 +1395,14 @@ pub mod create_computer_input {
         ///
         /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
         ///
-        /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
-        /// computer account.</p>
+        /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
         pub fn computer_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
             v.push(input);
             self.computer_attributes = Some(v);
             self
         }
-        /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
-        /// computer account.</p>
+        /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
         pub fn set_computer_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -1658,26 +1560,22 @@ pub mod create_conditional_forwarder_input {
         pub(crate) dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
-        /// forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
-        /// forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-        /// a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-        /// a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1879,66 +1777,36 @@ pub mod create_directory_input {
             self.short_name = input;
             self
         }
-        /// <p>The password for the directory administrator. The directory creation process creates a
-        /// directory administrator account with the user name <code>Administrator</code> and this
-        /// password.</p>
-        /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+        /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
+        /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
         /// <p>The regex pattern for this string is made up of the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p>
-        /// </li>
+        /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
         /// </ul>
         /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
         /// <ul>
-        /// <li>
-        /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers and special characters and lower case
-        /// (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Special characters and upper case and lower case
-        /// (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers and upper case and special characters
-        /// (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p>
-        /// </li>
+        /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+        /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+        /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+        /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
         /// </ul>
         /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>The password for the directory administrator. The directory creation process creates a
-        /// directory administrator account with the user name <code>Administrator</code> and this
-        /// password.</p>
-        /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+        /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
+        /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
         /// <p>The regex pattern for this string is made up of the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p>
-        /// </li>
+        /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
         /// </ul>
         /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
         /// <ul>
-        /// <li>
-        /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers and special characters and lower case
-        /// (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Special characters and upper case and lower case
-        /// (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers and upper case and special characters
-        /// (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p>
-        /// </li>
+        /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+        /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+        /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+        /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
         /// </ul>
         /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1965,14 +1833,12 @@ pub mod create_directory_input {
             self.size = input;
             self
         }
-        /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
-        /// the operation.</p>
+        /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
         pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
             self.vpc_settings = Some(input);
             self
         }
-        /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
-        /// the operation.</p>
+        /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
         pub fn set_vpc_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryVpcSettings>,
@@ -2150,26 +2016,22 @@ pub mod create_log_subscription_input {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
-        /// your specified CloudWatch log group.</p>
+        /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
-        /// your specified CloudWatch log group.</p>
+        /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
-        /// forwarded.</p>
+        /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
-        /// forwarded.</p>
+        /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2330,64 +2192,54 @@ pub mod create_microsoft_ad_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
-        /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
-        /// to be publicly resolvable.</p>
+        /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
-        /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
-        /// to be publicly resolvable.</p>
+        /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
-        /// NetBIOS name, it will default to the first part of your directory DNS. For example,
-        /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
         pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.short_name = Some(input.into());
             self
         }
-        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
-        /// NetBIOS name, it will default to the first part of your directory DNS. For example,
-        /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
         pub fn set_short_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.short_name = input;
             self
         }
         /// <p>The password for the default administrative user named <code>Admin</code>.</p>
-        /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+        /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
         /// <p>The password for the default administrative user named <code>Admin</code>.</p>
-        /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+        /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
         }
-        /// <p>A description for the directory. This label will appear on the Amazon Web Services console
-        /// <code>Directory Details</code> page after the directory is created.</p>
+        /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description for the directory. This label will appear on the Amazon Web Services console
-        /// <code>Directory Details</code> page after the directory is created.</p>
+        /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
             self.vpc_settings = Some(input);
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn set_vpc_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryVpcSettings>,
@@ -2395,14 +2247,12 @@ pub mod create_microsoft_ad_input {
             self.vpc_settings = input;
             self
         }
-        /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
-        /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+        /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
         pub fn edition(mut self, input: crate::model::DirectoryEdition) -> Self {
             self.edition = Some(input);
             self
         }
-        /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
-        /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+        /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
         pub fn set_edition(
             mut self,
             input: std::option::Option<crate::model::DirectoryEdition>,
@@ -2752,26 +2602,22 @@ pub mod create_trust_input {
         pub(crate) selective_auth: std::option::Option<crate::model::SelectiveAuth>,
     }
     impl Builder {
-        /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
-        /// relationship.</p>
+        /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
-        /// relationship.</p>
+        /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
-        /// trust relationship.</p>
+        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
-        /// trust relationship.</p>
+        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2779,14 +2625,12 @@ pub mod create_trust_input {
             self.remote_domain_name = input;
             self
         }
-        /// <p>The trust password. The must be the same password that was used when creating the trust
-        /// relationship on the external domain.</p>
+        /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
         pub fn trust_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.trust_password = Some(input.into());
             self
         }
-        /// <p>The trust password. The must be the same password that was used when creating the trust
-        /// relationship on the external domain.</p>
+        /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
         pub fn set_trust_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3015,14 +2859,12 @@ pub mod delete_conditional_forwarder_input {
             self.directory_id = input;
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
-        /// the conditional forwarder.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
-        /// the conditional forwarder.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3984,26 +3826,22 @@ pub mod deregister_event_topic_input {
         pub(crate) topic_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
-        /// to the specified Amazon SNS topic.</p>
+        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
-        /// to the specified Amazon SNS topic.</p>
+        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The name of the Amazon SNS topic from which to remove the directory as a
-        /// publisher.</p>
+        /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
         pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon SNS topic from which to remove the directory as a
-        /// publisher.</p>
+        /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -4350,12 +4188,12 @@ pub mod describe_client_authentication_settings_input {
             self.r#type = input;
             self
         }
-        /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4521,14 +4359,12 @@ pub mod describe_conditional_forwarders_input {
         pub(crate) remote_domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The directory ID for which to get the list of associated conditional
-        /// forwarders.</p>
+        /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The directory ID for which to get the list of associated conditional
-        /// forwarders.</p>
+        /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -4537,18 +4373,14 @@ pub mod describe_conditional_forwarders_input {
         ///
         /// To override the contents of this collection use [`set_remote_domain_names`](Self::set_remote_domain_names).
         ///
-        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
-        /// of associated conditional forwarders. If this member is null, all conditional forwarders are
-        /// returned.</p>
+        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
         pub fn remote_domain_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remote_domain_names.unwrap_or_default();
             v.push(input.into());
             self.remote_domain_names = Some(v);
             self
         }
-        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
-        /// of associated conditional forwarders. If this member is null, all conditional forwarders are
-        /// returned.</p>
+        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
         pub fn set_remote_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4710,8 +4542,7 @@ pub mod describe_directories_input {
         ///
         /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).
         ///
-        /// <p>A list of identifiers of the directories for which to obtain the information. If this
-        /// member is null, all directories that belong to the current account are returned.</p>
+        /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
         /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn directory_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.directory_ids.unwrap_or_default();
@@ -4719,8 +4550,7 @@ pub mod describe_directories_input {
             self.directory_ids = Some(v);
             self
         }
-        /// <p>A list of identifiers of the directories for which to obtain the information. If this
-        /// member is null, all directories that belong to the current account are returned.</p>
+        /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
         /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn set_directory_ids(
             mut self,
@@ -4729,24 +4559,22 @@ pub mod describe_directories_input {
             self.directory_ids = input;
             self
         }
-        /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+        /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+        /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
-        /// is specified by the limitations of the operation.</p>
+        /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
-        /// is specified by the limitations of the operation.</p>
+        /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4900,14 +4728,12 @@ pub mod describe_domain_controllers_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Identifier of the directory for which to retrieve the domain controller
-        /// information.</p>
+        /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory for which to retrieve the domain controller
-        /// information.</p>
+        /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -4916,16 +4742,14 @@ pub mod describe_domain_controllers_input {
         ///
         /// To override the contents of this collection use [`set_domain_controller_ids`](Self::set_domain_controller_ids).
         ///
-        /// <p>A list of identifiers for the domain controllers whose information will be
-        /// provided.</p>
+        /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
         pub fn domain_controller_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domain_controller_ids.unwrap_or_default();
             v.push(input.into());
             self.domain_controller_ids = Some(v);
             self
         }
-        /// <p>A list of identifiers for the domain controllers whose information will be
-        /// provided.</p>
+        /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
         pub fn set_domain_controller_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4933,16 +4757,12 @@ pub mod describe_domain_controllers_input {
             self.domain_controller_ids = input;
             self
         }
-        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
-        /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
-        /// </p>
+        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
-        /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
-        /// </p>
+        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5108,14 +4928,12 @@ pub mod describe_event_topics_input {
         pub(crate) topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
-        /// is null, associations for all Directory IDs are returned.</p>
+        /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
-        /// is null, associations for all Directory IDs are returned.</p>
+        /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -5124,20 +4942,16 @@ pub mod describe_event_topics_input {
         ///
         /// To override the contents of this collection use [`set_topic_names`](Self::set_topic_names).
         ///
-        /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
-        /// null, all associations for the specified Directory ID are returned.</p>
-        /// <p>An empty list results in an <code>InvalidParameterException</code> being
-        /// thrown.</p>
+        /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
+        /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn topic_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topic_names.unwrap_or_default();
             v.push(input.into());
             self.topic_names = Some(v);
             self
         }
-        /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
-        /// null, all associations for the specified Directory ID are returned.</p>
-        /// <p>An empty list results in an <code>InvalidParameterException</code> being
-        /// thrown.</p>
+        /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
+        /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn set_topic_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5303,14 +5117,12 @@ pub mod describe_ldaps_settings_input {
             self.directory_id = input;
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LdapsType>) -> Self {
             self.r#type = input;
             self
@@ -5506,12 +5318,12 @@ pub mod describe_regions_input {
             self.region_name = input;
             self
         }
-        /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+        /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+        /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5697,14 +5509,12 @@ pub mod describe_shared_directories_input {
             self.shared_directory_ids = input;
             self
         }
-        /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
-        /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
+        /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
-        /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
+        /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5886,18 +5696,14 @@ pub mod describe_snapshots_input {
         ///
         /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
         ///
-        /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is
-        /// null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
-        /// members.</p>
+        /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
         pub fn snapshot_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.snapshot_ids.unwrap_or_default();
             v.push(input.into());
             self.snapshot_ids = Some(v);
             self
         }
-        /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is
-        /// null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
-        /// members.</p>
+        /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
         pub fn set_snapshot_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5905,14 +5711,12 @@ pub mod describe_snapshots_input {
             self.snapshot_ids = input;
             self
         }
-        /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
-        /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
-        /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6077,14 +5881,12 @@ pub mod describe_trusts_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
-        /// relationship.</p>
+        /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
-        /// relationship.</p>
+        /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -6093,9 +5895,7 @@ pub mod describe_trusts_input {
         ///
         /// To override the contents of this collection use [`set_trust_ids`](Self::set_trust_ids).
         ///
-        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
-        /// this member is null, all trust relationships that belong to the current account are
-        /// returned.</p>
+        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
         /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn trust_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_ids.unwrap_or_default();
@@ -6103,9 +5903,7 @@ pub mod describe_trusts_input {
             self.trust_ids = Some(v);
             self
         }
-        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
-        /// this member is null, all trust relationships that belong to the current account are
-        /// returned.</p>
+        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
         /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn set_trust_ids(
             mut self,
@@ -6114,14 +5912,12 @@ pub mod describe_trusts_input {
             self.trust_ids = input;
             self
         }
-        /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
-        /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
-        /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6465,14 +6261,12 @@ pub mod disable_ldaps_input {
             self.directory_id = input;
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LdapsType>) -> Self {
             self.r#type = input;
             self
@@ -6786,40 +6580,24 @@ pub mod disable_sso_input {
             self.directory_id = input;
             self
         }
-        /// <p>The username of an alternate account to use to disable single-sign on. This is only used
-        /// for AD Connector directories. This account must have privileges to remove a service
-        /// principal name.</p>
-        /// <p>If the AD Connector service account does not have privileges to remove a service
-        /// principal name, you can specify an alternate account with the <i>UserName</i>
-        /// and <i>Password</i> parameters. These credentials are only used to disable
-        /// single sign-on and are not stored by the service. The AD Connector service account is not
-        /// changed.</p>
+        /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
+        /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The username of an alternate account to use to disable single-sign on. This is only used
-        /// for AD Connector directories. This account must have privileges to remove a service
-        /// principal name.</p>
-        /// <p>If the AD Connector service account does not have privileges to remove a service
-        /// principal name, you can specify an alternate account with the <i>UserName</i>
-        /// and <i>Password</i> parameters. These credentials are only used to disable
-        /// single sign-on and are not stored by the service. The AD Connector service account is not
-        /// changed.</p>
+        /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
+        /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The password of an alternate account to use to disable single-sign on. This is only used
-        /// for AD Connector directories. For more information, see the <i>UserName</i>
-        /// parameter.</p>
+        /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>The password of an alternate account to use to disable single-sign on. This is only used
-        /// for AD Connector directories. For more information, see the <i>UserName</i>
-        /// parameter.</p>
+        /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -6980,18 +6758,12 @@ pub mod enable_client_authentication_input {
             self.directory_id = input;
             self
         }
-        /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
-        /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
-        /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
-        /// </p>
+        /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
         pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
-        /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
-        /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
-        /// </p>
+        /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ClientAuthenticationType>,
@@ -7158,14 +6930,12 @@ pub mod enable_ldaps_input {
             self.directory_id = input;
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-        /// supported.</p>
+        /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LdapsType>) -> Self {
             self.r#type = input;
             self
@@ -7325,14 +7095,12 @@ pub mod enable_radius_input {
             self.directory_id = input;
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.radius_settings = Some(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn set_radius_settings(
             mut self,
             input: std::option::Option<crate::model::RadiusSettings>,
@@ -7496,40 +7264,24 @@ pub mod enable_sso_input {
             self.directory_id = input;
             self
         }
-        /// <p>The username of an alternate account to use to enable single-sign on. This is only used
-        /// for AD Connector directories. This account must have privileges to add a service principal
-        /// name.</p>
-        /// <p>If the AD Connector service account does not have privileges to add a service principal
-        /// name, you can specify an alternate account with the <i>UserName</i> and
-        /// <i>Password</i> parameters. These credentials are only used to enable single
-        /// sign-on and are not stored by the service. The AD Connector service account is not
-        /// changed.</p>
+        /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
+        /// <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The username of an alternate account to use to enable single-sign on. This is only used
-        /// for AD Connector directories. This account must have privileges to add a service principal
-        /// name.</p>
-        /// <p>If the AD Connector service account does not have privileges to add a service principal
-        /// name, you can specify an alternate account with the <i>UserName</i> and
-        /// <i>Password</i> parameters. These credentials are only used to enable single
-        /// sign-on and are not stored by the service. The AD Connector service account is not
-        /// changed.</p>
+        /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
+        /// <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The password of an alternate account to use to enable single-sign on. This is only used
-        /// for AD Connector directories. For more information, see the <i>UserName</i>
-        /// parameter.</p>
+        /// <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>The password of an alternate account to use to enable single-sign on. This is only used
-        /// for AD Connector directories. For more information, see the <i>UserName</i>
-        /// parameter.</p>
+        /// <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -7973,18 +7725,12 @@ pub mod list_certificates_input {
             self.directory_id = input;
             self
         }
-        /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
-        /// element indicates that more certificates are available. Use the value of the returned
-        /// <code>NextToken</code> element in your request until the token comes back as
-        /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+        /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
-        /// element indicates that more certificates are available. Use the value of the returned
-        /// <code>NextToken</code> element in your request until the token comes back as
-        /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+        /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8147,36 +7893,32 @@ pub mod list_ip_routes_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
-        /// addresses.</p>
+        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
-        /// addresses.</p>
+        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
-        /// is specified by the limitations of the operation.</p>
+        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
-        /// is specified by the limitations of the operation.</p>
+        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8328,18 +8070,12 @@ pub mod list_log_subscriptions_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
-        /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-        /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
-        /// Amazon Web Services account or the directory, an empty list will be returned.</p>
+        /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
-        /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-        /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
-        /// Amazon Web Services account or the directory, an empty list will be returned.</p>
+        /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -8514,26 +8250,22 @@ pub mod list_schema_extensions_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the directory from which to retrieve the schema extension
-        /// information.</p>
+        /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory from which to retrieve the schema extension
-        /// information.</p>
+        /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-        /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-        /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9090,14 +8822,12 @@ pub mod register_event_topic_input {
             self.directory_id = input;
             self
         }
-        /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
-        /// topic must be in the same region as the specified Directory ID.</p>
+        /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
         pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_name = Some(input.into());
             self
         }
-        /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
-        /// topic must be in the same region as the specified Directory ID.</p>
+        /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -9247,14 +8977,12 @@ pub mod reject_shared_directory_input {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account.</p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account.</p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9409,14 +9137,12 @@ pub mod remove_ip_routes_input {
         pub(crate) cidr_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Identifier (ID) of the directory from which you want to remove the IP
-        /// addresses.</p>
+        /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier (ID) of the directory from which you want to remove the IP
-        /// addresses.</p>
+        /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -9917,14 +9643,12 @@ pub mod reset_user_password_input {
         pub(crate) new_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
-        /// resides.</p>
+        /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
-        /// resides.</p>
+        /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -10262,28 +9986,22 @@ pub mod share_directory_input {
             self.directory_id = input;
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_notes = Some(input.into());
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn set_share_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_notes = input;
             self
         }
-        /// <p>Identifier for the directory consumer account with whom the directory is to be
-        /// shared.</p>
+        /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
         pub fn share_target(mut self, input: crate::model::ShareTarget) -> Self {
             self.share_target = Some(input);
             self
         }
-        /// <p>Identifier for the directory consumer account with whom the directory is to be
-        /// shared.</p>
+        /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
         pub fn set_share_target(
             mut self,
             input: std::option::Option<crate::model::ShareTarget>,
@@ -10291,16 +10009,12 @@ pub mod share_directory_input {
             self.share_target = input;
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
             self.share_method = Some(input);
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
         pub fn set_share_method(
             mut self,
             input: std::option::Option<crate::model::ShareMethod>,
@@ -10458,26 +10172,22 @@ pub mod start_schema_extension_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the directory for which the schema extension will be applied
-        /// to.</p>
+        /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory for which the schema extension will be applied
-        /// to.</p>
+        /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>If true, creates a snapshot of the directory before applying the schema
-        /// extension.</p>
+        /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
         pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
             self.create_snapshot_before_schema_extension = Some(input);
             self
         }
-        /// <p>If true, creates a snapshot of the directory before applying the schema
-        /// extension.</p>
+        /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
         pub fn set_create_snapshot_before_schema_extension(
             mut self,
             input: std::option::Option<bool>,
@@ -10485,16 +10195,12 @@ pub mod start_schema_extension_input {
             self.create_snapshot_before_schema_extension = input;
             self
         }
-        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
-        /// each line as it would be formatted in an ldif file with \n. See the example request below for
-        /// more details. The file size can be no larger than 1MB.</p>
+        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
         pub fn ldif_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.ldif_content = Some(input.into());
             self
         }
-        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
-        /// each line as it would be formatted in an ldif file with \n. See the example request below for
-        /// more details. The file size can be no larger than 1MB.</p>
+        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
         pub fn set_ldif_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ldif_content = input;
             self
@@ -10661,26 +10367,22 @@ pub mod unshare_directory_input {
         pub(crate) unshare_target: std::option::Option<crate::model::UnshareTarget>,
     }
     impl Builder {
-        /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
-        /// sharing.</p>
+        /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
-        /// sharing.</p>
+        /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>Identifier for the directory consumer account with whom the directory has to be
-        /// unshared.</p>
+        /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
         pub fn unshare_target(mut self, input: crate::model::UnshareTarget) -> Self {
             self.unshare_target = Some(input);
             self
         }
-        /// <p>Identifier for the directory consumer account with whom the directory has to be
-        /// unshared.</p>
+        /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
         pub fn set_unshare_target(
             mut self,
             input: std::option::Option<crate::model::UnshareTarget>,
@@ -10835,26 +10537,22 @@ pub mod update_conditional_forwarder_input {
         pub(crate) dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
-        /// forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
-        /// forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-        /// a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-        /// a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10866,16 +10564,14 @@ pub mod update_conditional_forwarder_input {
         ///
         /// To override the contents of this collection use [`set_dns_ip_addrs`](Self::set_dns_ip_addrs).
         ///
-        /// <p>The updated IP addresses of the remote DNS server associated with the conditional
-        /// forwarder.</p>
+        /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
             v.push(input.into());
             self.dns_ip_addrs = Some(v);
             self
         }
-        /// <p>The updated IP addresses of the remote DNS server associated with the conditional
-        /// forwarder.</p>
+        /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
         pub fn set_dns_ip_addrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11033,14 +10729,12 @@ pub mod update_number_of_domain_controllers_input {
         pub(crate) desired_number: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Identifier of the directory to which the domain controllers will be added or
-        /// removed.</p>
+        /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory to which the domain controllers will be added or
-        /// removed.</p>
+        /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -11204,26 +10898,22 @@ pub mod update_radius_input {
         pub(crate) radius_settings: std::option::Option<crate::model::RadiusSettings>,
     }
     impl Builder {
-        /// <p>The identifier of the directory for which to update the RADIUS server
-        /// information.</p>
+        /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory for which to update the RADIUS server
-        /// information.</p>
+        /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.radius_settings = Some(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn set_radius_settings(
             mut self,
             input: std::option::Option<crate::model::RadiusSettings>,
@@ -11687,8 +11377,7 @@ impl VerifyTrustInput {
     }
 }
 
-/// <p>Initiates the verification of an existing trust relationship between an Managed Microsoft AD
-/// directory and an external domain.</p>
+/// <p>Initiates the verification of an existing trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyTrustInput {
@@ -11737,25 +11426,21 @@ impl std::fmt::Debug for UpdateTrustInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>UpdateRadius</a> operation.</p>
+/// <p>Contains the inputs for the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRadiusInput {
-    /// <p>The identifier of the directory for which to update the RADIUS server
-    /// information.</p>
+    /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
 impl UpdateRadiusInput {
-    /// <p>The identifier of the directory for which to update the RADIUS server
-    /// information.</p>
+    /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
@@ -11773,15 +11458,13 @@ impl std::fmt::Debug for UpdateRadiusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNumberOfDomainControllersInput {
-    /// <p>Identifier of the directory to which the domain controllers will be added or
-    /// removed.</p>
+    /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The number of domain controllers desired in the directory.</p>
     pub desired_number: i32,
 }
 impl UpdateNumberOfDomainControllersInput {
-    /// <p>Identifier of the directory to which the domain controllers will be added or
-    /// removed.</p>
+    /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -11803,29 +11486,23 @@ impl std::fmt::Debug for UpdateNumberOfDomainControllersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConditionalForwarderInput {
-    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
-    /// forwarder.</p>
+    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-    /// a trust relationship.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
-    /// <p>The updated IP addresses of the remote DNS server associated with the conditional
-    /// forwarder.</p>
+    /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateConditionalForwarderInput {
-    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
-    /// forwarder.</p>
+    /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-    /// a trust relationship.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
-    /// <p>The updated IP addresses of the remote DNS server associated with the conditional
-    /// forwarder.</p>
+    /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
     pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
@@ -11844,21 +11521,17 @@ impl std::fmt::Debug for UpdateConditionalForwarderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareDirectoryInput {
-    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
-    /// sharing.</p>
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>Identifier for the directory consumer account with whom the directory has to be
-    /// unshared.</p>
+    /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub unshare_target: std::option::Option<crate::model::UnshareTarget>,
 }
 impl UnshareDirectoryInput {
-    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
-    /// sharing.</p>
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>Identifier for the directory consumer account with whom the directory has to be
-    /// unshared.</p>
+    /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub fn unshare_target(&self) -> std::option::Option<&crate::model::UnshareTarget> {
         self.unshare_target.as_ref()
     }
@@ -11876,33 +11549,25 @@ impl std::fmt::Debug for UnshareDirectoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaExtensionInput {
-    /// <p>The identifier of the directory for which the schema extension will be applied
-    /// to.</p>
+    /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>If true, creates a snapshot of the directory before applying the schema
-    /// extension.</p>
+    /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub create_snapshot_before_schema_extension: bool,
-    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
-    /// each line as it would be formatted in an ldif file with \n. See the example request below for
-    /// more details. The file size can be no larger than 1MB.</p>
+    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub ldif_content: std::option::Option<std::string::String>,
     /// <p>A description of the schema extension.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl StartSchemaExtensionInput {
-    /// <p>The identifier of the directory for which the schema extension will be applied
-    /// to.</p>
+    /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>If true, creates a snapshot of the directory before applying the schema
-    /// extension.</p>
+    /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub fn create_snapshot_before_schema_extension(&self) -> bool {
         self.create_snapshot_before_schema_extension
     }
-    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
-    /// each line as it would be formatted in an ldif file with \n. See the example request below for
-    /// more details. The file size can be no larger than 1MB.</p>
+    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub fn ldif_content(&self) -> std::option::Option<&str> {
         self.ldif_content.as_deref()
     }
@@ -11931,16 +11596,11 @@ impl std::fmt::Debug for StartSchemaExtensionInput {
 pub struct ShareDirectoryInput {
     /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub share_notes: std::option::Option<std::string::String>,
-    /// <p>Identifier for the directory consumer account with whom the directory is to be
-    /// shared.</p>
+    /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
     pub share_target: std::option::Option<crate::model::ShareTarget>,
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
     pub share_method: std::option::Option<crate::model::ShareMethod>,
 }
 impl ShareDirectoryInput {
@@ -11948,20 +11608,15 @@ impl ShareDirectoryInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub fn share_notes(&self) -> std::option::Option<&str> {
         self.share_notes.as_deref()
     }
-    /// <p>Identifier for the directory consumer account with whom the directory is to be
-    /// shared.</p>
+    /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
     pub fn share_target(&self) -> std::option::Option<&crate::model::ShareTarget> {
         self.share_target.as_ref()
     }
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
     pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
         self.share_method.as_ref()
     }
@@ -11977,7 +11632,7 @@ impl std::fmt::Debug for ShareDirectoryInput {
     }
 }
 
-/// <p>An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.</p>
+/// <p>An object representing the inputs for the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromSnapshotInput {
@@ -12002,8 +11657,7 @@ impl std::fmt::Debug for RestoreFromSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetUserPasswordInput {
-    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
-    /// resides.</p>
+    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user whose password will be reset.</p>
     pub user_name: std::option::Option<std::string::String>,
@@ -12011,8 +11665,7 @@ pub struct ResetUserPasswordInput {
     pub new_password: std::option::Option<std::string::String>,
 }
 impl ResetUserPasswordInput {
-    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
-    /// resides.</p>
+    /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -12088,15 +11741,13 @@ impl std::fmt::Debug for RemoveRegionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveIpRoutesInput {
-    /// <p>Identifier (ID) of the directory from which you want to remove the IP
-    /// addresses.</p>
+    /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>IP address blocks that you want to remove.</p>
     pub cidr_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveIpRoutesInput {
-    /// <p>Identifier (ID) of the directory from which you want to remove the IP
-    /// addresses.</p>
+    /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -12118,13 +11769,11 @@ impl std::fmt::Debug for RemoveIpRoutesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectSharedDirectoryInput {
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl RejectSharedDirectoryInput {
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
     }
@@ -12143,8 +11792,7 @@ impl std::fmt::Debug for RejectSharedDirectoryInput {
 pub struct RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
-    /// topic must be in the same region as the specified Directory ID.</p>
+    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub topic_name: std::option::Option<std::string::String>,
 }
 impl RegisterEventTopicInput {
@@ -12152,8 +11800,7 @@ impl RegisterEventTopicInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
-    /// topic must be in the same region as the specified Directory ID.</p>
+    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub fn topic_name(&self) -> std::option::Option<&str> {
         self.topic_name.as_deref()
     }
@@ -12250,23 +11897,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaExtensionsInput {
-    /// <p>The identifier of the directory from which to retrieve the schema extension
-    /// information.</p>
+    /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-    /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListSchemaExtensionsInput {
-    /// <p>The identifier of the directory from which to retrieve the schema extension
-    /// information.</p>
+    /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-    /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+    /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12289,10 +11932,7 @@ impl std::fmt::Debug for ListSchemaExtensionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsInput {
-    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
-    /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-    /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
-    /// Amazon Web Services account or the directory, an empty list will be returned.</p>
+    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12300,10 +11940,7 @@ pub struct ListLogSubscriptionsInput {
     pub limit: std::option::Option<i32>,
 }
 impl ListLogSubscriptionsInput {
-    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
-    /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-    /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
-    /// Amazon Web Services account or the directory, an empty list will be returned.</p>
+    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -12330,27 +11967,23 @@ impl std::fmt::Debug for ListLogSubscriptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpRoutesInput {
-    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
-    /// addresses.</p>
+    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
-    /// is specified by the limitations of the operation.</p>
+    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListIpRoutesInput {
-    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
-    /// addresses.</p>
+    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
-    /// is specified by the limitations of the operation.</p>
+    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -12371,10 +12004,7 @@ impl std::fmt::Debug for ListIpRoutesInput {
 pub struct ListCertificatesInput {
     /// <p>The identifier of the directory.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
-    /// element indicates that more certificates are available. Use the value of the returned
-    /// <code>NextToken</code> element in your request until the token comes back as
-    /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items that should show up on one page</p>
     pub limit: std::option::Option<i32>,
@@ -12384,10 +12014,7 @@ impl ListCertificatesInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
-    /// element indicates that more certificates are available. Use the value of the returned
-    /// <code>NextToken</code> element in your request until the token comes back as
-    /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12406,7 +12033,7 @@ impl std::fmt::Debug for ListCertificatesInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>GetSnapshotLimits</a> operation.</p>
+/// <p>Contains the inputs for the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotLimitsInput {
@@ -12427,7 +12054,7 @@ impl std::fmt::Debug for GetSnapshotLimitsInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>GetDirectoryLimits</a> operation.</p>
+/// <p>Contains the inputs for the <code>GetDirectoryLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryLimitsInput {}
@@ -12438,24 +12065,16 @@ impl std::fmt::Debug for GetDirectoryLimitsInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>EnableSso</a> operation.</p>
+/// <p>Contains the inputs for the <code>EnableSso</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSsoInput {
     /// <p>The identifier of the directory for which to enable single-sign on.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The username of an alternate account to use to enable single-sign on. This is only used
-    /// for AD Connector directories. This account must have privileges to add a service principal
-    /// name.</p>
-    /// <p>If the AD Connector service account does not have privileges to add a service principal
-    /// name, you can specify an alternate account with the <i>UserName</i> and
-    /// <i>Password</i> parameters. These credentials are only used to enable single
-    /// sign-on and are not stored by the service. The AD Connector service account is not
-    /// changed.</p>
+    /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
+    /// <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The password of an alternate account to use to enable single-sign on. This is only used
-    /// for AD Connector directories. For more information, see the <i>UserName</i>
-    /// parameter.</p>
+    /// <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub password: std::option::Option<std::string::String>,
 }
 impl EnableSsoInput {
@@ -12463,20 +12082,12 @@ impl EnableSsoInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The username of an alternate account to use to enable single-sign on. This is only used
-    /// for AD Connector directories. This account must have privileges to add a service principal
-    /// name.</p>
-    /// <p>If the AD Connector service account does not have privileges to add a service principal
-    /// name, you can specify an alternate account with the <i>UserName</i> and
-    /// <i>Password</i> parameters. These credentials are only used to enable single
-    /// sign-on and are not stored by the service. The AD Connector service account is not
-    /// changed.</p>
+    /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
+    /// <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The password of an alternate account to use to enable single-sign on. This is only used
-    /// for AD Connector directories. For more information, see the <i>UserName</i>
-    /// parameter.</p>
+    /// <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
@@ -12491,14 +12102,13 @@ impl std::fmt::Debug for EnableSsoInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>EnableRadius</a> operation.</p>
+/// <p>Contains the inputs for the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableRadiusInput {
     /// <p>The identifier of the directory for which to enable MFA.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
 impl EnableRadiusInput {
@@ -12506,8 +12116,7 @@ impl EnableRadiusInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
@@ -12527,8 +12136,7 @@ impl std::fmt::Debug for EnableRadiusInput {
 pub struct EnableLdapsInput {
     /// <p>The identifier of the directory.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub r#type: std::option::Option<crate::model::LdapsType>,
 }
 impl EnableLdapsInput {
@@ -12536,8 +12144,7 @@ impl EnableLdapsInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
         self.r#type.as_ref()
     }
@@ -12557,10 +12164,7 @@ impl std::fmt::Debug for EnableLdapsInput {
 pub struct EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
-    /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
-    /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
-    /// </p>
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
 }
 impl EnableClientAuthenticationInput {
@@ -12568,10 +12172,7 @@ impl EnableClientAuthenticationInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
-    /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
-    /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
-    /// </p>
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
@@ -12585,24 +12186,16 @@ impl std::fmt::Debug for EnableClientAuthenticationInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DisableSso</a> operation.</p>
+/// <p>Contains the inputs for the <code>DisableSso</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSsoInput {
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used
-    /// for AD Connector directories. This account must have privileges to remove a service
-    /// principal name.</p>
-    /// <p>If the AD Connector service account does not have privileges to remove a service
-    /// principal name, you can specify an alternate account with the <i>UserName</i>
-    /// and <i>Password</i> parameters. These credentials are only used to disable
-    /// single sign-on and are not stored by the service. The AD Connector service account is not
-    /// changed.</p>
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
+    /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The password of an alternate account to use to disable single-sign on. This is only used
-    /// for AD Connector directories. For more information, see the <i>UserName</i>
-    /// parameter.</p>
+    /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub password: std::option::Option<std::string::String>,
 }
 impl DisableSsoInput {
@@ -12610,20 +12203,12 @@ impl DisableSsoInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used
-    /// for AD Connector directories. This account must have privileges to remove a service
-    /// principal name.</p>
-    /// <p>If the AD Connector service account does not have privileges to remove a service
-    /// principal name, you can specify an alternate account with the <i>UserName</i>
-    /// and <i>Password</i> parameters. These credentials are only used to disable
-    /// single sign-on and are not stored by the service. The AD Connector service account is not
-    /// changed.</p>
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
+    /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The password of an alternate account to use to disable single-sign on. This is only used
-    /// for AD Connector directories. For more information, see the <i>UserName</i>
-    /// parameter.</p>
+    /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
@@ -12638,7 +12223,7 @@ impl std::fmt::Debug for DisableSsoInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DisableRadius</a> operation.</p>
+/// <p>Contains the inputs for the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableRadiusInput {
@@ -12665,8 +12250,7 @@ impl std::fmt::Debug for DisableRadiusInput {
 pub struct DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub r#type: std::option::Option<crate::model::LdapsType>,
 }
 impl DisableLdapsInput {
@@ -12674,8 +12258,7 @@ impl DisableLdapsInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
         self.r#type.as_ref()
     }
@@ -12717,41 +12300,31 @@ impl std::fmt::Debug for DisableClientAuthenticationInput {
     }
 }
 
-/// <p>Describes the trust relationships for a particular Managed Microsoft AD directory. If no input
-/// parameters are provided, such as directory ID or trust ID, this request describes all the
-/// trust relationships.</p>
+/// <p>Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustsInput {
-    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
-    /// relationship.</p>
+    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
-    /// this member is null, all trust relationships that belong to the current account are
-    /// returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub trust_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
-    /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
     pub limit: std::option::Option<i32>,
 }
 impl DescribeTrustsInput {
-    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
-    /// relationship.</p>
+    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
-    /// this member is null, all trust relationships that belong to the current account are
-    /// returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn trust_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_ids.as_deref()
     }
-    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
-    /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12771,18 +12344,15 @@ impl std::fmt::Debug for DescribeTrustsInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DescribeSnapshots</a> operation.</p>
+/// <p>Contains the inputs for the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsInput {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is
-    /// null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
-    /// members.</p>
+    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
     pub snapshot_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
-    /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
     pub limit: std::option::Option<i32>,
@@ -12792,14 +12362,11 @@ impl DescribeSnapshotsInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is
-    /// null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
-    /// members.</p>
+    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
     pub fn snapshot_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.snapshot_ids.as_deref()
     }
-    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
-    /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12827,8 +12394,7 @@ pub struct DescribeSharedDirectoriesInput {
     pub owner_directory_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers of all shared directories in your account. </p>
     pub shared_directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
-    /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of shared directories to return in the response object.</p>
     pub limit: std::option::Option<i32>,
@@ -12842,8 +12408,7 @@ impl DescribeSharedDirectoriesInput {
     pub fn shared_directory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.shared_directory_ids.as_deref()
     }
-    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
-    /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
+    /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12871,7 +12436,7 @@ pub struct DescribeRegionsInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegionsInput {
@@ -12883,7 +12448,7 @@ impl DescribeRegionsInput {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12904,8 +12469,7 @@ impl std::fmt::Debug for DescribeRegionsInput {
 pub struct DescribeLdapsSettingsInput {
     /// <p>The identifier of the directory.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub r#type: std::option::Option<crate::model::LdapsType>,
     /// <p>The type of next token used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12917,8 +12481,7 @@ impl DescribeLdapsSettingsInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
-    /// supported.</p>
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::LdapsType> {
         self.r#type.as_ref()
     }
@@ -12946,25 +12509,19 @@ impl std::fmt::Debug for DescribeLdapsSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTopicsInput {
-    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
-    /// is null, associations for all Directory IDs are returned.</p>
+    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
-    /// null, all associations for the specified Directory ID are returned.</p>
-    /// <p>An empty list results in an <code>InvalidParameterException</code> being
-    /// thrown.</p>
+    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEventTopicsInput {
-    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
-    /// is null, associations for all Directory IDs are returned.</p>
+    /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
-    /// null, all associations for the specified Directory ID are returned.</p>
-    /// <p>An empty list results in an <code>InvalidParameterException</code> being
-    /// thrown.</p>
+    /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn topic_names(&self) -> std::option::Option<&[std::string::String]> {
         self.topic_names.as_deref()
     }
@@ -12982,33 +12539,25 @@ impl std::fmt::Debug for DescribeEventTopicsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainControllersInput {
-    /// <p>Identifier of the directory for which to retrieve the domain controller
-    /// information.</p>
+    /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A list of identifiers for the domain controllers whose information will be
-    /// provided.</p>
+    /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
     pub domain_controller_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
-    /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
-    /// </p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
 }
 impl DescribeDomainControllersInput {
-    /// <p>Identifier of the directory for which to retrieve the domain controller
-    /// information.</p>
+    /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>A list of identifiers for the domain controllers whose information will be
-    /// provided.</p>
+    /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
     pub fn domain_controller_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.domain_controller_ids.as_deref()
     }
-    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
-    /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
-    /// </p>
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13028,33 +12577,29 @@ impl std::fmt::Debug for DescribeDomainControllersInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DescribeDirectories</a> operation.</p>
+/// <p>Contains the inputs for the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectoriesInput {
-    /// <p>A list of identifiers of the directories for which to obtain the information. If this
-    /// member is null, all directories that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
-    /// is specified by the limitations of the operation.</p>
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub limit: std::option::Option<i32>,
 }
 impl DescribeDirectoriesInput {
-    /// <p>A list of identifiers of the directories for which to obtain the information. If this
-    /// member is null, all directories that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.directory_ids.as_deref()
     }
-    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
-    /// is specified by the limitations of the operation.</p>
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -13073,23 +12618,17 @@ impl std::fmt::Debug for DescribeDirectoriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConditionalForwardersInput {
-    /// <p>The directory ID for which to get the list of associated conditional
-    /// forwarders.</p>
+    /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
-    /// of associated conditional forwarders. If this member is null, all conditional forwarders are
-    /// returned.</p>
+    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
     pub remote_domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConditionalForwardersInput {
-    /// <p>The directory ID for which to get the list of associated conditional
-    /// forwarders.</p>
+    /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
-    /// of associated conditional forwarders. If this member is null, all conditional forwarders are
-    /// returned.</p>
+    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
     pub fn remote_domain_names(&self) -> std::option::Option<&[std::string::String]> {
         self.remote_domain_names.as_deref()
     }
@@ -13111,7 +12650,7 @@ pub struct DescribeClientAuthenticationSettingsInput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
-    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub limit: std::option::Option<i32>,
@@ -13125,7 +12664,7 @@ impl DescribeClientAuthenticationSettingsInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
-    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+    /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13177,21 +12716,17 @@ impl std::fmt::Debug for DescribeCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterEventTopicInput {
-    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
-    /// to the specified Amazon SNS topic.</p>
+    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon SNS topic from which to remove the directory as a
-    /// publisher.</p>
+    /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
     pub topic_name: std::option::Option<std::string::String>,
 }
 impl DeregisterEventTopicInput {
-    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
-    /// to the specified Amazon SNS topic.</p>
+    /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The name of the Amazon SNS topic from which to remove the directory as a
-    /// publisher.</p>
+    /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
     pub fn topic_name(&self) -> std::option::Option<&str> {
         self.topic_name.as_deref()
     }
@@ -13233,8 +12768,7 @@ impl std::fmt::Debug for DeregisterCertificateInput {
     }
 }
 
-/// <p>Deletes the local side of an existing trust relationship between the Managed Microsoft AD
-/// directory and the external domain.</p>
+/// <p>Deletes the local side of an existing trust relationship between the Managed Microsoft AD directory and the external domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrustInput {
@@ -13265,7 +12799,7 @@ impl std::fmt::Debug for DeleteTrustInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DeleteSnapshot</a> operation.</p>
+/// <p>Contains the inputs for the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotInput {
@@ -13307,7 +12841,7 @@ impl std::fmt::Debug for DeleteLogSubscriptionInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DeleteDirectory</a> operation.</p>
+/// <p>Contains the inputs for the <code>DeleteDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryInput {
@@ -13334,8 +12868,7 @@ impl std::fmt::Debug for DeleteDirectoryInput {
 pub struct DeleteConditionalForwarderInput {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
-    /// the conditional forwarder.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteConditionalForwarderInput {
@@ -13343,8 +12876,7 @@ impl DeleteConditionalForwarderInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
-    /// the conditional forwarder.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
@@ -13358,23 +12890,16 @@ impl std::fmt::Debug for DeleteConditionalForwarderInput {
     }
 }
 
-/// <p>Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-/// example, you can establish a trust between your Managed Microsoft AD directory, and your existing
-/// self-managed Microsoft Active Directory. This would allow you to provide users and groups
-/// access to resources in either domain, with a single set of credentials.</p>
-/// <p>This action initiates the creation of the Amazon Web Services side of a trust relationship between an
-/// Managed Microsoft AD directory and an external domain.</p>
+/// <p>Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>
+/// <p>This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustInput {
-    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
-    /// relationship.</p>
+    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
-    /// trust relationship.</p>
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
-    /// <p>The trust password. The must be the same password that was used when creating the trust
-    /// relationship on the external domain.</p>
+    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub trust_password: std::option::Option<std::string::String>,
     /// <p>The direction of the trust relationship.</p>
     pub trust_direction: std::option::Option<crate::model::TrustDirection>,
@@ -13386,18 +12911,15 @@ pub struct CreateTrustInput {
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
 }
 impl CreateTrustInput {
-    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
-    /// relationship.</p>
+    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
-    /// trust relationship.</p>
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
-    /// <p>The trust password. The must be the same password that was used when creating the trust
-    /// relationship on the external domain.</p>
+    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn trust_password(&self) -> std::option::Option<&str> {
         self.trust_password.as_deref()
     }
@@ -13435,7 +12957,7 @@ impl std::fmt::Debug for CreateTrustInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateSnapshot</a> operation.</p>
+/// <p>Contains the inputs for the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
@@ -13467,57 +12989,45 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMicrosoftAdInput {
-    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
-    /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
-    /// to be publicly resolvable.</p>
+    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
-    /// NetBIOS name, it will default to the first part of your directory DNS. For example,
-    /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
     pub short_name: std::option::Option<std::string::String>,
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
-    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>A description for the directory. This label will appear on the Amazon Web Services console
-    /// <code>Directory Details</code> page after the directory is created.</p>
+    /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
-    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
-    /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
     pub edition: std::option::Option<crate::model::DirectoryEdition>,
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMicrosoftAdInput {
-    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
-    /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
-    /// to be publicly resolvable.</p>
+    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
-    /// NetBIOS name, it will default to the first part of your directory DNS. For example,
-    /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
     pub fn short_name(&self) -> std::option::Option<&str> {
         self.short_name.as_deref()
     }
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
-    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>A description for the directory. This label will appear on the Amazon Web Services console
-    /// <code>Directory Details</code> page after the directory is created.</p>
+    /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
-    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
-    /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
     pub fn edition(&self) -> std::option::Option<&crate::model::DirectoryEdition> {
         self.edition.as_ref()
     }
@@ -13544,21 +13054,17 @@ impl std::fmt::Debug for CreateMicrosoftAdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLogSubscriptionInput {
-    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
-    /// your specified CloudWatch log group.</p>
+    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
-    /// forwarded.</p>
+    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl CreateLogSubscriptionInput {
-    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
-    /// your specified CloudWatch log group.</p>
+    /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
-    /// forwarded.</p>
+    /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -13572,7 +13078,7 @@ impl std::fmt::Debug for CreateLogSubscriptionInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>
+/// <p>Contains the inputs for the <code>CreateDirectory</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryInput {
@@ -13580,33 +13086,18 @@ pub struct CreateDirectoryInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
     pub short_name: std::option::Option<std::string::String>,
-    /// <p>The password for the directory administrator. The directory creation process creates a
-    /// directory administrator account with the user name <code>Administrator</code> and this
-    /// password.</p>
-    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     /// <p>The regex pattern for this string is made up of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p>
-    /// </li>
+    /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
     /// </ul>
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
-    /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers and special characters and lower case
-    /// (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Special characters and upper case and lower case
-    /// (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers and upper case and special characters
-    /// (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p>
-    /// </li>
+    /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+    /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub password: std::option::Option<std::string::String>,
@@ -13614,8 +13105,7 @@ pub struct CreateDirectoryInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The size of the directory.</p>
     pub size: std::option::Option<crate::model::DirectorySize>,
-    /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
-    /// the operation.</p>
+    /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
     /// <p>The tags to be assigned to the Simple AD directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13629,33 +13119,18 @@ impl CreateDirectoryInput {
     pub fn short_name(&self) -> std::option::Option<&str> {
         self.short_name.as_deref()
     }
-    /// <p>The password for the directory administrator. The directory creation process creates a
-    /// directory administrator account with the user name <code>Administrator</code> and this
-    /// password.</p>
-    /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
+    /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
     /// <p>The regex pattern for this string is made up of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p>
-    /// </li>
+    /// <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>
     /// </ul>
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
-    /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers and special characters and lower case
-    /// (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Special characters and upper case and lower case
-    /// (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers and upper case and special characters
-    /// (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p>
-    /// </li>
+    /// <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>
+    /// <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>
+    /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn password(&self) -> std::option::Option<&str> {
@@ -13669,8 +13144,7 @@ impl CreateDirectoryInput {
     pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
         self.size.as_ref()
     }
-    /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
-    /// the operation.</p>
+    /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
     pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
@@ -13693,29 +13167,23 @@ impl std::fmt::Debug for CreateDirectoryInput {
     }
 }
 
-/// <p>Initiates the creation of a conditional forwarder for your Directory Service for Microsoft Active
-/// Directory. Conditional forwarders are required in order to set up a trust relationship with
-/// another domain.</p>
+/// <p>Initiates the creation of a conditional forwarder for your Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConditionalForwarderInput {
-    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
-    /// forwarder.</p>
+    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-    /// a trust relationship.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateConditionalForwarderInput {
-    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
-    /// forwarder.</p>
+    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
-    /// a trust relationship.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
@@ -13734,7 +13202,7 @@ impl std::fmt::Debug for CreateConditionalForwarderInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateComputer</a> operation.</p>
+/// <p>Contains the inputs for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputerInput {
@@ -13746,8 +13214,7 @@ pub struct CreateComputerInput {
     pub password: std::option::Option<std::string::String>,
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
-    /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
-    /// computer account.</p>
+    /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl CreateComputerInput {
@@ -13767,8 +13234,7 @@ impl CreateComputerInput {
     pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
-    /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
-    /// computer account.</p>
+    /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
     pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.computer_attributes.as_deref()
     }
@@ -13788,15 +13254,14 @@ impl std::fmt::Debug for CreateComputerInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateAlias</a> operation.</p>
+/// <p>Contains the inputs for the <code>CreateAlias</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasInput {
     /// <p>The identifier of the directory for which to create the alias.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The requested alias.</p>
-    /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
-    /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAliasInput {
@@ -13805,8 +13270,7 @@ impl CreateAliasInput {
         self.directory_id.as_deref()
     }
     /// <p>The requested alias.</p>
-    /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
-    /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -13820,12 +13284,11 @@ impl std::fmt::Debug for CreateAliasInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>ConnectDirectory</a> operation.</p>
+/// <p>Contains the inputs for the <code>ConnectDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectDirectoryInput {
-    /// <p>The fully qualified name of your self-managed directory, such as
-    /// <code>corp.example.com</code>.</p>
+    /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
     pub short_name: std::option::Option<std::string::String>,
@@ -13835,15 +13298,13 @@ pub struct ConnectDirectoryInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The size of the directory.</p>
     pub size: std::option::Option<crate::model::DirectorySize>,
-    /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
-    /// for the operation.</p>
+    /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
     pub connect_settings: std::option::Option<crate::model::DirectoryConnectSettings>,
     /// <p>The tags to be assigned to AD Connector.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectDirectoryInput {
-    /// <p>The fully qualified name of your self-managed directory, such as
-    /// <code>corp.example.com</code>.</p>
+    /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13863,8 +13324,7 @@ impl ConnectDirectoryInput {
     pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
         self.size.as_ref()
     }
-    /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
-    /// for the operation.</p>
+    /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
     pub fn connect_settings(&self) -> std::option::Option<&crate::model::DirectoryConnectSettings> {
         self.connect_settings.as_ref()
     }
@@ -13949,10 +13409,9 @@ impl std::fmt::Debug for AddTagsToResourceInput {
 pub struct AddRegionInput {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Region where you want to add domain controllers for replication. For
-    /// example, <code>us-east-1</code>.</p>
+    /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
 }
 impl AddRegionInput {
@@ -13960,12 +13419,11 @@ impl AddRegionInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The name of the Region where you want to add domain controllers for replication. For
-    /// example, <code>us-east-1</code>.</p>
+    /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
@@ -13986,78 +13444,35 @@ impl std::fmt::Debug for AddRegionInput {
 pub struct AddIpRoutesInput {
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
-    /// address block of the DNS server used for your self-managed domain.</p>
+    /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
     pub ip_routes: std::option::Option<std::vec::Vec<crate::model::IpRoute>>,
-    /// <p>If set to true, updates the inbound and outbound rules of the security group that has
-    /// the description: "Amazon Web Services created security group for <i>directory ID</i>
-    /// directory controllers." Following are the new rules: </p>
+    /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
     /// <p>Inbound:</p>
     /// <ul>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-    /// 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-    /// 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p>
-    /// </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>
     /// </ul>
-    ///
     /// <p></p>
     /// <p>Outbound:</p>
     /// <ul>
-    /// <li>
-    /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
-    /// </li>
+    /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
-    /// <p>These security rules impact an internal network interface that is not exposed
-    /// publicly.</p>
+    /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
     pub update_security_group_for_directory_controllers: bool,
 }
 impl AddIpRoutesInput {
@@ -14065,80 +13480,37 @@ impl AddIpRoutesInput {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
-    /// address block of the DNS server used for your self-managed domain.</p>
+    /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
     pub fn ip_routes(&self) -> std::option::Option<&[crate::model::IpRoute]> {
         self.ip_routes.as_deref()
     }
-    /// <p>If set to true, updates the inbound and outbound rules of the security group that has
-    /// the description: "Amazon Web Services created security group for <i>directory ID</i>
-    /// directory controllers." Following are the new rules: </p>
+    /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
     /// <p>Inbound:</p>
     /// <ul>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-    /// 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-    /// 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p>
-    /// </li>
-    /// <li>
-    /// <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p>
-    /// </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>
+    /// <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>
     /// </ul>
-    ///
     /// <p></p>
     /// <p>Outbound:</p>
     /// <ul>
-    /// <li>
-    /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
-    /// </li>
+    /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
-    /// <p>These security rules impact an internal network interface that is not exposed
-    /// publicly.</p>
+    /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
     pub fn update_security_group_for_directory_controllers(&self) -> bool {
         self.update_security_group_for_directory_controllers
     }
@@ -14160,13 +13532,11 @@ impl std::fmt::Debug for AddIpRoutesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptSharedDirectoryInput {
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account. </p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl AcceptSharedDirectoryInput {
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account. </p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
     }

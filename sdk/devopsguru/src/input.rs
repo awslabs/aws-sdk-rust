@@ -9,16 +9,12 @@ pub mod add_notification_channel_input {
         pub(crate) config: std::option::Option<crate::model::NotificationChannelConfig>,
     }
     impl Builder {
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
         pub fn config(mut self, input: crate::model::NotificationChannelConfig) -> Self {
             self.config = Some(input);
             self
         }
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
         pub fn set_config(
             mut self,
             input: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -289,16 +285,12 @@ pub mod describe_account_overview_input {
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -306,16 +298,12 @@ pub mod describe_account_overview_input {
             self.from_time = input;
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time = Some(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1146,16 +1134,12 @@ pub mod describe_organization_overview_input {
         pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1163,16 +1147,12 @@ pub mod describe_organization_overview_input {
             self.from_time = input;
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time = Some(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1368,10 +1348,7 @@ pub mod describe_organization_resource_collection_health_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn organization_resource_collection_type(
             mut self,
             input: crate::model::OrganizationResourceCollectionType,
@@ -1379,10 +1356,7 @@ pub mod describe_organization_resource_collection_health_input {
             self.organization_resource_collection_type = Some(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_organization_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
@@ -1428,26 +1402,22 @@ pub mod describe_organization_resource_collection_health_input {
             self.organizational_unit_ids = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1605,10 +1575,7 @@ pub mod describe_resource_collection_health_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -1616,10 +1583,7 @@ pub mod describe_resource_collection_health_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1627,14 +1591,12 @@ pub mod describe_resource_collection_health_input {
             self.resource_collection_type = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1920,14 +1882,12 @@ pub mod get_cost_estimation_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2070,8 +2030,7 @@ pub mod get_resource_collection_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -2079,8 +2038,7 @@ pub mod get_resource_collection_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -2088,14 +2046,12 @@ pub mod get_resource_collection_input {
             self.resource_collection_type = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2271,14 +2227,12 @@ pub mod list_anomalies_for_insight_input {
             self.insight_id = input;
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -2286,26 +2240,22 @@ pub mod list_anomalies_for_insight_input {
             self.start_time_range = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2489,14 +2439,12 @@ pub mod list_events_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
         pub fn filters(mut self, input: crate::model::ListEventsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ListEventsFilters>,
@@ -2504,26 +2452,22 @@ pub mod list_events_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2681,14 +2625,12 @@ pub mod list_insights_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
         pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -2696,26 +2638,22 @@ pub mod list_insights_input {
             self.status_filter = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2860,14 +2798,12 @@ pub mod list_notification_channels_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3018,14 +2954,12 @@ pub mod list_organization_insights_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
         pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -3033,14 +2967,12 @@ pub mod list_organization_insights_input {
             self.status_filter = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3083,14 +3015,12 @@ pub mod list_organization_insights_input {
             self.organizational_unit_ids = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3254,14 +3184,12 @@ pub mod list_recommendations_input {
             self.insight_id = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3732,14 +3660,12 @@ pub mod search_insights_input {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -3747,14 +3673,12 @@ pub mod search_insights_input {
             self.start_time_range = input;
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn filters(mut self, input: crate::model::SearchInsightsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchInsightsFilters>,
@@ -3762,38 +3686,32 @@ pub mod search_insights_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -3965,14 +3883,12 @@ pub mod search_organization_insights_input {
             self.account_ids = input;
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -3980,14 +3896,12 @@ pub mod search_organization_insights_input {
             self.start_time_range = input;
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn filters(mut self, input: crate::model::SearchOrganizationInsightsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
@@ -3995,38 +3909,32 @@ pub mod search_organization_insights_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -4351,14 +4259,12 @@ pub mod update_resource_collection_input {
             std::option::Option<crate::model::UpdateResourceCollectionFilter>,
     }
     impl Builder {
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
         pub fn action(mut self, input: crate::model::UpdateResourceCollectionAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -4526,8 +4432,7 @@ pub mod update_service_integration_input {
             std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
     }
     impl Builder {
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
             input: crate::model::UpdateServiceIntegrationConfig,
@@ -4535,8 +4440,7 @@ pub mod update_service_integration_input {
             self.service_integration = Some(input);
             self
         }
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
@@ -4681,13 +4585,11 @@ impl UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationInput {
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-    /// you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     pub service_integration: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
 }
 impl UpdateServiceIntegrationInput {
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-    /// you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     pub fn service_integration(
         &self,
     ) -> std::option::Option<&crate::model::UpdateServiceIntegrationConfig> {
@@ -4706,15 +4608,13 @@ impl std::fmt::Debug for UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceCollectionInput {
-    /// <p> Specifies if the resource collection in the request is added or deleted to the
-    /// resource collection. </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
     pub action: std::option::Option<crate::model::UpdateResourceCollectionAction>,
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub resource_collection: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInput {
-    /// <p> Specifies if the resource collection in the request is added or deleted to the
-    /// resource collection. </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::UpdateResourceCollectionAction> {
         self.action.as_ref()
     }
@@ -4771,20 +4671,15 @@ impl std::fmt::Debug for StartCostEstimationInput {
 pub struct SearchOrganizationInsightsInput {
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-    /// </p>
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-    /// severity and status filters on your insight search. </p>
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub filters: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchOrganizationInsightsInput {
@@ -4792,28 +4687,23 @@ impl SearchOrganizationInsightsInput {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-    /// </p>
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-    /// severity and status filters on your insight search. </p>
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::SearchOrganizationInsightsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.r#type.as_ref()
     }
@@ -4835,45 +4725,35 @@ impl std::fmt::Debug for SearchOrganizationInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInsightsInput {
-    /// <p> The start of the time range passed in. Returned insights occurred after this time.
-    /// </p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-    /// status filters on your insight search. </p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub filters: std::option::Option<crate::model::SearchInsightsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchInsightsInput {
-    /// <p> The start of the time range passed in. Returned insights occurred after this time.
-    /// </p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-    /// status filters on your insight search. </p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::SearchInsightsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.r#type.as_ref()
     }
@@ -4938,8 +4818,7 @@ impl std::fmt::Debug for PutFeedbackInput {
 pub struct ListRecommendationsInput {
     /// <p> The ID of the requested insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub locale: std::option::Option<crate::model::Locale>,
@@ -4951,8 +4830,7 @@ impl ListRecommendationsInput {
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4980,28 +4858,23 @@ impl std::fmt::Debug for ListRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-    /// </p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-    /// </p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5013,8 +4886,7 @@ impl ListOrganizationInsightsInput {
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5035,13 +4907,11 @@ impl std::fmt::Debug for ListOrganizationInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationChannelsInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationChannelsInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5058,29 +4928,23 @@ impl std::fmt::Debug for ListNotificationChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsInput {
-    /// <p> A filter used to filter the returned insights by their status. You can specify one
-    /// status filter. </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsInput {
-    /// <p> A filter used to filter the returned insights by their status. You can specify one
-    /// status filter. </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5099,31 +4963,25 @@ impl std::fmt::Debug for ListInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsInput {
-    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-    /// </p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub filters: std::option::Option<crate::model::ListEventsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListEventsInput {
-    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-    /// </p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListEventsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5149,14 +5007,11 @@ impl std::fmt::Debug for ListEventsInput {
 pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p> A time range used to specify when the requested anomalies started. All returned
-    /// anomalies started during this time range. </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_id: std::option::Option<std::string::String>,
@@ -5166,18 +5021,15 @@ impl ListAnomaliesForInsightInput {
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p> A time range used to specify when the requested anomalies started. All returned
-    /// anomalies started during this time range. </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5202,23 +5054,19 @@ impl std::fmt::Debug for ListAnomaliesForInsightInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5236,13 +5084,11 @@ impl std::fmt::Debug for GetResourceCollectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostEstimationInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCostEstimationInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5270,27 +5116,19 @@ impl std::fmt::Debug for DescribeServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5308,28 +5146,20 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub organization_resource_collection_type:
         std::option::Option<crate::model::OrganizationResourceCollectionType>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeOrganizationResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn organization_resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationResourceCollectionType> {
@@ -5343,13 +5173,11 @@ impl DescribeOrganizationResourceCollectionHealthInput {
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5373,13 +5201,9 @@ impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5387,15 +5211,11 @@ pub struct DescribeOrganizationOverviewInput {
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeOrganizationOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
@@ -5528,25 +5348,17 @@ impl std::fmt::Debug for DescribeAnomalyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAccountOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
@@ -5575,15 +5387,11 @@ impl std::fmt::Debug for DescribeAccountHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-    /// notification channel to add. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-    /// notification channel to add. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub fn config(&self) -> std::option::Option<&crate::model::NotificationChannelConfig> {
         self.config.as_ref()
     }

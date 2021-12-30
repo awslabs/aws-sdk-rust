@@ -12,8 +12,7 @@ pub struct AddAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddAssociationErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -196,8 +195,7 @@ pub struct AssociateTrialComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTrialComponentErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -383,8 +381,7 @@ pub struct CreateActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateActionErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -558,8 +555,7 @@ pub struct CreateAppError {
 pub enum CreateAppErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -745,8 +741,7 @@ pub struct CreateArtifactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateArtifactErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -841,8 +836,7 @@ pub struct CreateAutoMLJobError {
 pub enum CreateAutoMLJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1025,8 +1019,7 @@ pub struct CreateCompilationJobError {
 pub enum CreateCompilationJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1125,8 +1118,7 @@ pub struct CreateContextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContextErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1218,8 +1210,7 @@ pub struct CreateDataQualityJobDefinitionError {
 pub enum CreateDataQualityJobDefinitionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1326,8 +1317,7 @@ pub struct CreateDeviceFleetError {
 pub enum CreateDeviceFleetErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1428,8 +1418,7 @@ pub struct CreateDomainError {
 pub enum CreateDomainErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1525,8 +1514,7 @@ pub struct CreateEdgePackagingJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEdgePackagingJobErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1619,8 +1607,7 @@ pub struct CreateEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEndpointErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1713,8 +1700,7 @@ pub struct CreateEndpointConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEndpointConfigErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1807,8 +1793,7 @@ pub struct CreateExperimentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExperimentErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1903,8 +1888,7 @@ pub struct CreateFeatureGroupError {
 pub enum CreateFeatureGroupErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2005,8 +1989,7 @@ pub struct CreateFlowDefinitionError {
 pub enum CreateFlowDefinitionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2107,8 +2090,7 @@ pub struct CreateHumanTaskUiError {
 pub enum CreateHumanTaskUiErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2209,8 +2191,7 @@ pub struct CreateHyperParameterTuningJobError {
 pub enum CreateHyperParameterTuningJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2317,8 +2298,7 @@ pub struct CreateImageError {
 pub enum CreateImageErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2416,8 +2396,7 @@ pub struct CreateImageVersionError {
 pub enum CreateImageVersionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -2526,8 +2505,7 @@ pub struct CreateInferenceRecommendationsJobError {
 pub enum CreateInferenceRecommendationsJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2638,8 +2616,7 @@ pub struct CreateLabelingJobError {
 pub enum CreateLabelingJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2738,8 +2715,7 @@ pub struct CreateModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2831,8 +2807,7 @@ pub struct CreateModelBiasJobDefinitionError {
 pub enum CreateModelBiasJobDefinitionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2936,8 +2911,7 @@ pub struct CreateModelExplainabilityJobDefinitionError {
 pub enum CreateModelExplainabilityJobDefinitionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3048,11 +3022,9 @@ pub struct CreateModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelPackageErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3154,8 +3126,7 @@ pub struct CreateModelPackageGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelPackageGroupErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3250,8 +3221,7 @@ pub struct CreateModelQualityJobDefinitionError {
 pub enum CreateModelQualityJobDefinitionErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3360,8 +3330,7 @@ pub struct CreateMonitoringScheduleError {
 pub enum CreateMonitoringScheduleErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3463,8 +3432,7 @@ pub struct CreateNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNotebookInstanceErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3557,8 +3525,7 @@ pub struct CreateNotebookInstanceLifecycleConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNotebookInstanceLifecycleConfigErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3660,8 +3627,7 @@ pub struct CreatePipelineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePipelineErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -3942,8 +3908,7 @@ pub struct CreateProcessingJobError {
 pub enum CreateProcessingJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -4053,8 +4018,7 @@ pub struct CreateProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProjectErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4239,8 +4203,7 @@ pub struct CreateTrainingJobError {
 pub enum CreateTrainingJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -4349,8 +4312,7 @@ pub struct CreateTransformJobError {
 pub enum CreateTransformJobErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -4457,8 +4419,7 @@ pub struct CreateTrialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrialErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -4556,8 +4517,7 @@ pub struct CreateTrialComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrialComponentErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4652,8 +4612,7 @@ pub struct CreateUserProfileError {
 pub enum CreateUserProfileErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4836,8 +4795,7 @@ pub struct CreateWorkteamError {
 pub enum CreateWorkteamErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6943,8 +6901,7 @@ pub struct DeleteModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelPackageErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7037,8 +6994,7 @@ pub struct DeleteModelPackageGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelPackageGroupErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7664,8 +7620,7 @@ pub struct DeleteProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProjectErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8304,8 +8259,7 @@ pub struct DeleteWorkteamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWorkteamErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18610,8 +18564,7 @@ pub struct RegisterDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterDevicesErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18794,11 +18747,9 @@ pub struct RetryPipelineExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetryPipelineExecutionErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -18993,8 +18944,7 @@ pub struct SendPipelineExecutionStepFailureError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendPipelineExecutionStepFailureErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -19105,8 +19055,7 @@ pub struct SendPipelineExecutionStepSuccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendPipelineExecutionStepSuccessErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -19310,8 +19259,7 @@ pub struct StartNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartNotebookInstanceErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -19404,8 +19352,7 @@ pub struct StartPipelineExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartPipelineExecutionErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -20588,8 +20535,7 @@ pub struct UpdateActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateActionErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -20780,8 +20726,7 @@ pub struct UpdateArtifactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateArtifactErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -20961,8 +20906,7 @@ pub struct UpdateContextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContextErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -21234,8 +21178,7 @@ pub struct UpdateDomainError {
 pub enum UpdateDomainErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -21339,8 +21282,7 @@ pub struct UpdateEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEndpointErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -21433,8 +21375,7 @@ pub struct UpdateEndpointWeightsAndCapacitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEndpointWeightsAndCapacitiesErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -21534,8 +21475,7 @@ pub struct UpdateExperimentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateExperimentErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -21813,8 +21753,7 @@ pub struct UpdateMonitoringScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMonitoringScheduleErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -21918,8 +21857,7 @@ pub struct UpdateNotebookInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNotebookInstanceErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -22012,8 +21950,7 @@ pub struct UpdateNotebookInstanceLifecycleConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNotebookInstanceLifecycleConfigErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -22470,8 +22407,7 @@ pub struct UpdateTrialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrialErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -22569,8 +22505,7 @@ pub struct UpdateTrialComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrialComponentErrorKind {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -22676,8 +22611,7 @@ pub struct UpdateUserProfileError {
 pub enum UpdateUserProfileErrorKind {
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -22866,8 +22800,7 @@ pub struct UpdateWorkteamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWorkteamErrorKind {
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -22947,8 +22880,7 @@ impl std::error::Error for UpdateWorkteamError {
     }
 }
 
-/// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-/// training jobs created. </p>
+/// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceeded {
@@ -23140,8 +23072,7 @@ impl ResourceInUse {
     }
 }
 
-/// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-/// <code>Experiment</code> or <code>Artifact</code>.</p>
+/// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

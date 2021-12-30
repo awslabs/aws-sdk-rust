@@ -12,16 +12,13 @@ pub struct CreateConnectorProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConnectorProfileErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-    /// </p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -156,21 +153,17 @@ pub struct CreateFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFlowErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
     /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::error::ConnectorServerException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-    /// </p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -307,14 +300,11 @@ pub struct DeleteConnectorProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConnectorProfileErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -425,14 +415,11 @@ pub struct DeleteFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFlowErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -541,11 +528,9 @@ pub enum DescribeConnectorEntityErrorKind {
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
     /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::error::ConnectorServerException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -680,8 +665,7 @@ pub struct DescribeConnectorProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeConnectorProfilesErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -785,8 +769,7 @@ pub struct DescribeConnectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeConnectorsErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -890,11 +873,9 @@ pub struct DescribeFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFlowErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -996,11 +977,9 @@ pub struct DescribeFlowExecutionRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFlowExecutionRecordsErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1121,11 +1100,9 @@ pub enum ListConnectorEntitiesErrorKind {
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
     /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::error::ConnectorServerException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1260,8 +1237,7 @@ pub struct ListFlowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFlowsErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1359,11 +1335,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1476,17 +1450,13 @@ pub struct StartFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartFlowErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-    /// </p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1597,14 +1567,11 @@ pub struct StopFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopFlowErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The requested operation is not supported for the current flow. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -1717,11 +1684,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1828,11 +1793,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -1942,16 +1905,13 @@ pub struct UpdateConnectorProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateConnectorProfileErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -2086,21 +2046,17 @@ pub struct UpdateFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFlowErrorKind {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
     /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::error::ConnectorServerException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-    /// </p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -2288,8 +2244,7 @@ impl ValidationException {
     }
 }
 
-/// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-/// </p>
+/// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -2353,8 +2308,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p> The resource specified in the request (such as the source or destination connector
-/// profile) is not found. </p>
+/// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2418,8 +2372,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> An internal service error occurred during the processing of your request. Try again
-/// later. </p>
+/// <p> An internal service error occurred during the processing of your request. Try again later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -2611,8 +2564,7 @@ impl ConnectorAuthenticationException {
     }
 }
 
-/// <p> There was a conflict when processing the request (for example, a flow with the given name
-/// already exists within the account. Check for conflicting resource names and try again. </p>
+/// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

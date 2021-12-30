@@ -14,11 +14,9 @@ pub struct CreateBackupPlanError {
 pub enum CreateBackupPlanErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -153,11 +151,9 @@ pub struct CreateBackupSelectionError {
 pub enum CreateBackupSelectionErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -292,11 +288,9 @@ pub struct CreateBackupVaultError {
 pub enum CreateBackupVaultErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -431,11 +425,9 @@ pub struct CreateFrameworkError {
 pub enum CreateFrameworkErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -570,11 +562,9 @@ pub struct CreateReportPlanError {
 pub enum CreateReportPlanErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -707,11 +697,9 @@ pub struct DeleteBackupPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupPlanErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -846,8 +834,7 @@ pub struct DeleteBackupSelectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupSelectionErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -973,11 +960,9 @@ pub struct DeleteBackupVaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupVaultErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1112,8 +1097,7 @@ pub struct DeleteBackupVaultAccessPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupVaultAccessPolicyErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1258,11 +1242,9 @@ pub struct DeleteBackupVaultLockConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupVaultLockConfigurationErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1420,8 +1402,7 @@ pub struct DeleteBackupVaultNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupVaultNotificationsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1566,11 +1547,9 @@ pub struct DeleteFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFrameworkErrorKind {
-    /// <p>Backup can't perform the action that you requested until it finishes
-    /// performing a previous action. Try again later.</p>
+    /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1702,14 +1681,11 @@ pub struct DeleteRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRecoveryPointErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Backup is already performing an action on this recovery point. It can't
-    /// perform the action you requested until the first action finishes. Try again later.</p>
+    /// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1853,11 +1829,9 @@ pub struct DeleteReportPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteReportPlanErrorKind {
-    /// <p>Backup can't perform the action that you requested until it finishes
-    /// performing a previous action. Try again later.</p>
+    /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -1991,8 +1965,7 @@ pub struct DescribeBackupJobError {
 pub enum DescribeBackupJobErrorKind {
     /// <p>A dependent Amazon Web Services service or resource returned an error to the Backup service, and the action cannot be completed.</p>
     DependencyFailureException(crate::error::DependencyFailureException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -2127,8 +2100,7 @@ pub struct DescribeBackupVaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBackupVaultErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -2254,8 +2226,7 @@ pub struct DescribeCopyJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCopyJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -2381,8 +2352,7 @@ pub struct DescribeFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFrameworkErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -2508,8 +2478,7 @@ pub struct DescribeGlobalSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGlobalSettingsErrorKind {
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2613,8 +2582,7 @@ pub struct DescribeProtectedResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProtectedResourceErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -2750,8 +2718,7 @@ pub struct DescribeRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRecoveryPointErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3085,8 +3052,7 @@ pub struct DescribeReportPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReportPlanErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3214,8 +3180,7 @@ pub struct DescribeRestoreJobError {
 pub enum DescribeRestoreJobErrorKind {
     /// <p>A dependent Amazon Web Services service or resource returned an error to the Backup service, and the action cannot be completed.</p>
     DependencyFailureException(crate::error::DependencyFailureException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3350,14 +3315,11 @@ pub struct DisassociateRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateRecoveryPointErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Backup is already performing an action on this recovery point. It can't
-    /// perform the action you requested until the first action finishes. Try again later.</p>
+    /// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3515,8 +3477,7 @@ pub struct ExportBackupPlanTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportBackupPlanTemplateErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3650,8 +3611,7 @@ pub struct GetBackupPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupPlanErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3777,14 +3737,11 @@ pub struct GetBackupPlanFromJSONError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupPlanFromJSONErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -3917,8 +3874,7 @@ pub struct GetBackupPlanFromTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupPlanFromTemplateErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4054,8 +4010,7 @@ pub struct GetBackupSelectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupSelectionErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4181,8 +4136,7 @@ pub struct GetBackupVaultAccessPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupVaultAccessPolicyErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4320,8 +4274,7 @@ pub struct GetBackupVaultNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBackupVaultNotificationsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4461,8 +4414,7 @@ pub struct GetRecoveryPointRestoreMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRecoveryPointRestoreMetadataErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4702,8 +4654,7 @@ pub struct ListBackupJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupJobsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4807,8 +4758,7 @@ pub struct ListBackupPlansError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupPlansErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -4934,8 +4884,7 @@ pub struct ListBackupPlanTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupPlanTemplatesErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -5069,8 +5018,7 @@ pub struct ListBackupPlanVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupPlanVersionsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -5200,8 +5148,7 @@ pub struct ListBackupSelectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupSelectionsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -5327,8 +5274,7 @@ pub struct ListBackupVaultsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBackupVaultsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -5454,8 +5400,7 @@ pub struct ListCopyJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCopyJobsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -5559,8 +5504,7 @@ pub struct ListFrameworksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFrameworksErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -5664,8 +5608,7 @@ pub struct ListProtectedResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProtectedResourcesErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -5771,8 +5714,7 @@ pub struct ListRecoveryPointsByBackupVaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecoveryPointsByBackupVaultErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -5917,8 +5859,7 @@ pub struct ListRecoveryPointsByResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecoveryPointsByResourceErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6060,8 +6001,7 @@ pub struct ListReportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReportJobsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -6165,8 +6105,7 @@ pub struct ListReportPlansError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReportPlansErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -6270,8 +6209,7 @@ pub struct ListRestoreJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRestoreJobsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6397,8 +6335,7 @@ pub struct ListTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6521,8 +6458,7 @@ pub struct PutBackupVaultAccessPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBackupVaultAccessPolicyErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6660,11 +6596,9 @@ pub struct PutBackupVaultLockConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBackupVaultLockConfigurationErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6822,8 +6756,7 @@ pub struct PutBackupVaultNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBackupVaultNotificationsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -6963,14 +6896,11 @@ pub struct StartBackupJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartBackupJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7114,14 +7044,11 @@ pub struct StartCopyJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartCopyJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7262,8 +7189,7 @@ pub struct StartReportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartReportJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7389,8 +7315,7 @@ pub struct StartRestoreJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartRestoreJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7516,11 +7441,9 @@ pub struct StopBackupJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopBackupJobErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7655,11 +7578,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7791,8 +7712,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -7918,8 +7838,7 @@ pub struct UpdateBackupPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBackupPlanErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -8047,14 +7966,11 @@ pub struct UpdateFrameworkError {
 pub enum UpdateFrameworkErrorKind {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Backup can't perform the action that you requested until it finishes
-    /// performing a previous action. Try again later.</p>
+    /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -8204,11 +8120,9 @@ pub struct UpdateGlobalSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGlobalSettingsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -8332,11 +8246,9 @@ pub struct UpdateRecoveryPointLifecycleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRecoveryPointLifecycleErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -8487,8 +8399,7 @@ pub struct UpdateRegionSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRegionSettingsErrorKind {
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -8603,11 +8514,9 @@ pub struct UpdateReportPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReportPlanErrorKind {
-    /// <p>Backup can't perform the action that you requested until it finishes
-    /// performing a previous action. Try again later.</p>
+    /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
@@ -9095,8 +9004,7 @@ impl MissingParameterValueException {
     }
 }
 
-/// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-/// out of range.</p>
+/// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
@@ -9219,8 +9127,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>Backup can't perform the action that you requested until it finishes
-/// performing a previous action. Try again later.</p>
+/// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -9343,8 +9250,7 @@ impl ConflictException {
     }
 }
 
-/// <p>Indicates that something is wrong with the input to the request. For example, a
-/// parameter is of the wrong type.</p>
+/// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -9467,8 +9373,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-/// in a request.</p>
+/// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -9755,8 +9660,7 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>Backup is already performing an action on this recovery point. It can't
-/// perform the action you requested until the first action finishes. Try again later.</p>
+/// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {

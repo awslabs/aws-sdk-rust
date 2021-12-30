@@ -36,14 +36,12 @@ pub mod create_api_cache_input {
             self.ttl = input;
             self
         }
-        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-        /// creation.</p>
+        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
         pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
             self.transit_encryption_enabled = Some(input);
             self
         }
-        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-        /// creation.</p>
+        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -60,16 +58,8 @@ pub mod create_api_cache_input {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
             self.api_caching_behavior = Some(input);
@@ -77,16 +67,8 @@ pub mod create_api_cache_input {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn set_api_caching_behavior(
             mut self,
@@ -97,77 +79,25 @@ pub mod create_api_cache_input {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
             self.r#type = Some(input);
@@ -175,77 +105,25 @@ pub mod create_api_cache_input {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
             self.r#type = input;
@@ -433,16 +311,12 @@ pub mod create_api_key_input {
             self.description = input;
             self
         }
-        /// <p>The time from creation time after which the API key expires. The date is represented as
-        /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-        /// parameter is 7 days from creation time. For more information, see .</p>
+        /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
         pub fn expires(mut self, input: i64) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The time from creation time after which the API key expires. The date is represented as
-        /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-        /// parameter is 7 days from creation time. For more information, see .</p>
+        /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
             self.expires = input;
             self
@@ -659,14 +533,12 @@ pub mod create_data_source_input {
             self.r#type = input;
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-        /// role when accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-        /// role when accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -701,8 +573,7 @@ pub mod create_data_source_input {
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             input: crate::model::ElasticsearchDataSourceConfig,
@@ -711,8 +582,7 @@ pub mod create_data_source_input {
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
         pub fn set_elasticsearch_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -967,14 +837,12 @@ pub mod create_function_input {
             self.description = input;
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_name = Some(input.into());
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -982,14 +850,12 @@ pub mod create_function_input {
             self.data_source_name = input;
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_mapping_template = Some(input.into());
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1010,14 +876,12 @@ pub mod create_function_input {
             self.response_mapping_template = input;
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_version = Some(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1026,15 +890,13 @@ pub mod create_function_input {
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
             self.sync_config = Some(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -1239,14 +1101,12 @@ pub mod create_graphql_api_input {
             self.log_config = input;
             self
         }
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-        /// pools, or Amazon Web Services Lambda.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
         }
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-        /// pools, or Amazon Web Services Lambda.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -1309,8 +1169,7 @@ pub mod create_graphql_api_input {
         ///
         /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
         ///
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn additional_authentication_providers(
             mut self,
             input: crate::model::AdditionalAuthenticationProvider,
@@ -1320,8 +1179,7 @@ pub mod create_graphql_api_input {
             self.additional_authentication_providers = Some(v);
             self
         }
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn set_additional_authentication_providers(
             mut self,
             input: std::option::Option<
@@ -1331,14 +1189,12 @@ pub mod create_graphql_api_input {
             self.additional_authentication_providers = input;
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn xray_enabled(mut self, input: bool) -> Self {
             self.xray_enabled = Some(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.xray_enabled = input;
             self
@@ -1559,21 +1415,15 @@ pub mod create_resolver_input {
             self
         }
         /// <p>The mapping template to be used for requests.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_mapping_template = Some(input.into());
             self
         }
         /// <p>The mapping template to be used for requests.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1596,19 +1446,8 @@ pub mod create_resolver_input {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
             self.kind = Some(input);
@@ -1616,19 +1455,8 @@ pub mod create_resolver_input {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
             self.kind = input;
@@ -1870,15 +1698,13 @@ pub mod create_type_input {
             self
         }
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.definition = Some(input.into());
             self
         }
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.definition = input;
             self
@@ -4885,14 +4711,12 @@ pub mod list_api_keys_input {
             self.api_id = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5079,14 +4903,12 @@ pub mod list_data_sources_input {
             self.api_id = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5273,14 +5095,12 @@ pub mod list_functions_input {
             self.api_id = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5456,14 +5276,12 @@ pub mod list_graphql_apis_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5644,14 +5462,12 @@ pub mod list_resolvers_input {
             self.type_name = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5870,14 +5686,12 @@ pub mod list_resolvers_by_function_input {
             self.function_id = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which you can
-        /// use to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which you can
-        /// use to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6251,14 +6065,12 @@ pub mod list_types_input {
             self.format = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7018,16 +6830,8 @@ pub mod update_api_cache_input {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
             self.api_caching_behavior = Some(input);
@@ -7035,16 +6839,8 @@ pub mod update_api_cache_input {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn set_api_caching_behavior(
             mut self,
@@ -7055,77 +6851,25 @@ pub mod update_api_cache_input {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
             self.r#type = Some(input);
@@ -7133,77 +6877,25 @@ pub mod update_api_cache_input {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
             self.r#type = input;
@@ -7400,14 +7092,12 @@ pub mod update_api_key_input {
             self.description = input;
             self
         }
-        /// <p>The time from update time after which the API key expires. The date is represented as
-        /// seconds since the epoch. For more information, see .</p>
+        /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
         pub fn expires(mut self, input: i64) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The time from update time after which the API key expires. The date is represented as
-        /// seconds since the epoch. For more information, see .</p>
+        /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
             self.expires = input;
             self
@@ -7685,8 +7375,7 @@ pub mod update_data_source_input {
             self
         }
         /// <p>The new OpenSearch configuration.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             input: crate::model::ElasticsearchDataSourceConfig,
@@ -7695,8 +7384,7 @@ pub mod update_data_source_input {
             self
         }
         /// <p>The new OpenSearch configuration.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
         pub fn set_elasticsearch_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -7982,14 +7670,12 @@ pub mod update_function_input {
             self.function_id = input;
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_name = Some(input.into());
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7997,14 +7683,12 @@ pub mod update_function_input {
             self.data_source_name = input;
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_mapping_template = Some(input.into());
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8025,14 +7709,12 @@ pub mod update_function_input {
             self.response_mapping_template = input;
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_version = Some(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8041,15 +7723,13 @@ pub mod update_function_input {
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
             self.sync_config = Some(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -8296,14 +7976,12 @@ pub mod update_graphql_api_input {
             self.authentication_type = input;
             self
         }
-        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-        /// object.</p>
+        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
         pub fn user_pool_config(mut self, input: crate::model::UserPoolConfig) -> Self {
             self.user_pool_config = Some(input);
             self
         }
-        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-        /// object.</p>
+        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
         pub fn set_user_pool_config(
             mut self,
             input: std::option::Option<crate::model::UserPoolConfig>,
@@ -8328,8 +8006,7 @@ pub mod update_graphql_api_input {
         ///
         /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
         ///
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn additional_authentication_providers(
             mut self,
             input: crate::model::AdditionalAuthenticationProvider,
@@ -8339,8 +8016,7 @@ pub mod update_graphql_api_input {
             self.additional_authentication_providers = Some(v);
             self
         }
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn set_additional_authentication_providers(
             mut self,
             input: std::option::Option<
@@ -8350,14 +8026,12 @@ pub mod update_graphql_api_input {
             self.additional_authentication_providers = input;
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn xray_enabled(mut self, input: bool) -> Self {
             self.xray_enabled = Some(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.xray_enabled = input;
             self
@@ -8593,21 +8267,15 @@ pub mod update_resolver_input {
             self
         }
         /// <p>The new request mapping template.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_mapping_template = Some(input.into());
             self
         }
         /// <p>The new request mapping template.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8630,19 +8298,8 @@ pub mod update_resolver_input {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
             self.kind = Some(input);
@@ -8650,19 +8307,8 @@ pub mod update_resolver_input {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
             self.kind = input;
@@ -9176,29 +8822,15 @@ pub struct UpdateResolverInput {
     /// <p>The new data source name.</p>
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The new request mapping template.</p>
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-    /// that a data source can understand. Mapping templates are written in Apache Velocity
-    /// Template Language (VTL).</p>
-    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-    /// other data sources, VTL request and response mapping templates are required.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The new response mapping template.</p>
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-    /// against a single data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-    /// sources.</p>
-    /// </li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
@@ -9226,11 +8858,8 @@ impl UpdateResolverInput {
         self.data_source_name.as_deref()
     }
     /// <p>The new request mapping template.</p>
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-    /// that a data source can understand. Mapping templates are written in Apache Velocity
-    /// Template Language (VTL).</p>
-    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-    /// other data sources, VTL request and response mapping templates are required.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub fn request_mapping_template(&self) -> std::option::Option<&str> {
         self.request_mapping_template.as_deref()
     }
@@ -9240,19 +8869,8 @@ impl UpdateResolverInput {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-    /// against a single data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-    /// sources.</p>
-    /// </li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
         self.kind.as_ref()
@@ -9299,17 +8917,14 @@ pub struct UpdateGraphqlApiInput {
     pub log_config: std::option::Option<crate::model::LogConfig>,
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
-    /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-    /// object.</p>
+    /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
     pub user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
-    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-    /// API.</p>
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub additional_authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
-    /// <p>A flag indicating whether to enable X-Ray tracing for the
-    /// <code>GraphqlApi</code>.</p>
+    /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub xray_enabled: bool,
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
@@ -9331,8 +8946,7 @@ impl UpdateGraphqlApiInput {
     pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-    /// object.</p>
+    /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
     pub fn user_pool_config(&self) -> std::option::Option<&crate::model::UserPoolConfig> {
         self.user_pool_config.as_ref()
     }
@@ -9342,15 +8956,13 @@ impl UpdateGraphqlApiInput {
     ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
-    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-    /// API.</p>
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn additional_authentication_providers(
         &self,
     ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
         self.additional_authentication_providers.as_deref()
     }
-    /// <p>A flag indicating whether to enable X-Ray tracing for the
-    /// <code>GraphqlApi</code>.</p>
+    /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(&self) -> bool {
         self.xray_enabled
     }
@@ -9392,20 +9004,16 @@ pub struct UpdateFunctionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The function ID.</p>
     pub function_id: std::option::Option<std::string::String>,
-    /// <p>The <code>Function</code>
-    /// <code>DataSource</code> name.</p>
+    /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
     pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The <code>Function</code> request mapping template. Functions support only the
-    /// 2018-05-29 version of the request mapping template.</p>
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> request mapping template. </p>
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-    /// is 2018-05-29. </p>
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
-    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-    /// be performed when the resolver is invoked.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
 }
 impl UpdateFunctionInput {
@@ -9425,13 +9033,11 @@ impl UpdateFunctionInput {
     pub fn function_id(&self) -> std::option::Option<&str> {
         self.function_id.as_deref()
     }
-    /// <p>The <code>Function</code>
-    /// <code>DataSource</code> name.</p>
+    /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
     pub fn data_source_name(&self) -> std::option::Option<&str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The <code>Function</code> request mapping template. Functions support only the
-    /// 2018-05-29 version of the request mapping template.</p>
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     pub fn request_mapping_template(&self) -> std::option::Option<&str> {
         self.request_mapping_template.as_deref()
     }
@@ -9439,14 +9045,12 @@ impl UpdateFunctionInput {
     pub fn response_mapping_template(&self) -> std::option::Option<&str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-    /// is 2018-05-29. </p>
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
     pub fn function_version(&self) -> std::option::Option<&str> {
         self.function_version.as_deref()
     }
     /// <p>Describes a Sync configuration for a resolver.</p>
-    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-    /// be performed when the resolver is invoked.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
     pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
@@ -9486,8 +9090,7 @@ pub struct UpdateDataSourceInput {
     /// <p>The new Amazon Web Services Lambda configuration.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
-    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-    /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
     pub open_search_service_config:
@@ -9528,8 +9131,7 @@ impl UpdateDataSourceInput {
         self.lambda_config.as_ref()
     }
     /// <p>The new OpenSearch configuration.</p>
-    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-    /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
     pub fn elasticsearch_config(
         &self,
     ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
@@ -9586,8 +9188,7 @@ pub struct UpdateApiKeyInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The time from update time after which the API key expires. The date is represented as
-    /// seconds since the epoch. For more information, see .</p>
+    /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub expires: i64,
 }
 impl UpdateApiKeyInput {
@@ -9603,8 +9204,7 @@ impl UpdateApiKeyInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The time from update time after which the API key expires. The date is represented as
-    /// seconds since the epoch. For more information, see .</p>
+    /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub fn expires(&self) -> i64 {
         self.expires
     }
@@ -9631,91 +9231,31 @@ pub struct UpdateApiCacheInput {
     pub ttl: i64,
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-    /// cached.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-    /// that you specify are cached.</p>
-    /// </li>
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMALL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MEDIUM</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XLARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_2X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_4X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_8X</code> (not available in all regions)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_12X</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMALL</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LARGE</code> </p> </li>
+    /// <li> <p> <code>XLARGE</code> </p> </li>
+    /// <li> <p> <code>LARGE_2X</code> </p> </li>
+    /// <li> <p> <code>LARGE_4X</code> </p> </li>
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+    /// <li> <p> <code>LARGE_12X</code> </p> </li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-    /// </li>
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
 }
@@ -9731,93 +9271,33 @@ impl UpdateApiCacheInput {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-    /// cached.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-    /// that you specify are cached.</p>
-    /// </li>
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMALL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MEDIUM</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XLARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_2X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_4X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_8X</code> (not available in all regions)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_12X</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMALL</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LARGE</code> </p> </li>
+    /// <li> <p> <code>XLARGE</code> </p> </li>
+    /// <li> <p> <code>LARGE_2X</code> </p> </li>
+    /// <li> <p> <code>LARGE_4X</code> </p> </li>
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+    /// <li> <p> <code>LARGE_12X</code> </p> </li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-    /// </li>
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
         self.r#type.as_ref()
@@ -9930,8 +9410,7 @@ pub struct ListTypesInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -9945,8 +9424,7 @@ impl ListTypesInput {
     pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
         self.format.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9995,8 +9473,7 @@ pub struct ListResolversByFunctionInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The Function ID.</p>
     pub function_id: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which you can
-    /// use to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -10010,8 +9487,7 @@ impl ListResolversByFunctionInput {
     pub fn function_id(&self) -> std::option::Option<&str> {
         self.function_id.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which you can
-    /// use to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10039,8 +9515,7 @@ pub struct ListResolversInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type name.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -10054,8 +9529,7 @@ impl ListResolversInput {
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10079,15 +9553,13 @@ impl std::fmt::Debug for ListResolversInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphqlApisInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
 }
 impl ListGraphqlApisInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10111,8 +9583,7 @@ impl std::fmt::Debug for ListGraphqlApisInput {
 pub struct ListFunctionsInput {
     /// <p>The GraphQL API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -10122,8 +9593,7 @@ impl ListFunctionsInput {
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10148,8 +9618,7 @@ impl std::fmt::Debug for ListFunctionsInput {
 pub struct ListDataSourcesInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -10159,8 +9628,7 @@ impl ListDataSourcesInput {
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list. </p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10185,8 +9653,7 @@ impl std::fmt::Debug for ListDataSourcesInput {
 pub struct ListApiKeysInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results you want the request to return.</p>
     pub max_results: i32,
@@ -10196,8 +9663,7 @@ impl ListApiKeysInput {
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10657,8 +10123,7 @@ pub struct CreateTypeInput {
     /// <p>The API ID.</p>
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub definition: std::option::Option<std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
@@ -10669,8 +10134,7 @@ impl CreateTypeInput {
         self.api_id.as_deref()
     }
     /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
@@ -10702,29 +10166,15 @@ pub struct CreateResolverInput {
     /// <p>The name of the data source for which the resolver is being created.</p>
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The mapping template to be used for requests.</p>
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-    /// that a data source can understand. Mapping templates are written in Apache Velocity
-    /// Template Language (VTL).</p>
-    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-    /// other data sources, VTL request and response mapping templates are required.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The mapping template to be used for responses from the data source.</p>
     pub response_mapping_template: std::option::Option<std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-    /// against a single data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-    /// sources.</p>
-    /// </li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
@@ -10752,11 +10202,8 @@ impl CreateResolverInput {
         self.data_source_name.as_deref()
     }
     /// <p>The mapping template to be used for requests.</p>
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-    /// that a data source can understand. Mapping templates are written in Apache Velocity
-    /// Template Language (VTL).</p>
-    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-    /// other data sources, VTL request and response mapping templates are required.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+    /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub fn request_mapping_template(&self) -> std::option::Option<&str> {
         self.request_mapping_template.as_deref()
     }
@@ -10766,19 +10213,8 @@ impl CreateResolverInput {
     }
     /// <p>The resolver type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-    /// against a single data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-    /// sources.</p>
-    /// </li>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
         self.kind.as_ref()
@@ -10821,8 +10257,7 @@ pub struct CreateGraphqlApiInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub log_config: std::option::Option<crate::model::LogConfig>,
-    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-    /// pools, or Amazon Web Services Lambda.</p>
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
@@ -10831,12 +10266,10 @@ pub struct CreateGraphqlApiInput {
     /// <p>A <code>TagMap</code> object.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-    /// API.</p>
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub additional_authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
-    /// <p>A flag indicating whether to enable X-Ray tracing for the
-    /// <code>GraphqlApi</code>.</p>
+    /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub xray_enabled: bool,
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
@@ -10850,8 +10283,7 @@ impl CreateGraphqlApiInput {
     pub fn log_config(&self) -> std::option::Option<&crate::model::LogConfig> {
         self.log_config.as_ref()
     }
-    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-    /// pools, or Amazon Web Services Lambda.</p>
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
     pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
@@ -10872,15 +10304,13 @@ impl CreateGraphqlApiInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-    /// API.</p>
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn additional_authentication_providers(
         &self,
     ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
         self.additional_authentication_providers.as_deref()
     }
-    /// <p>A flag indicating whether to enable X-Ray tracing for the
-    /// <code>GraphqlApi</code>.</p>
+    /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(&self) -> bool {
         self.xray_enabled
     }
@@ -10920,20 +10350,16 @@ pub struct CreateFunctionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <code>Function</code>
-    /// <code>DataSource</code> name.</p>
+    /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
     pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The <code>Function</code> request mapping template. Functions support only the
-    /// 2018-05-29 version of the request mapping template.</p>
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The <code>Function</code> response mapping template. </p>
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-    /// is 2018-05-29. </p>
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
     pub function_version: std::option::Option<std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
-    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-    /// be performed when the resolver is invoked.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
 }
 impl CreateFunctionInput {
@@ -10949,13 +10375,11 @@ impl CreateFunctionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <code>Function</code>
-    /// <code>DataSource</code> name.</p>
+    /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
     pub fn data_source_name(&self) -> std::option::Option<&str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The <code>Function</code> request mapping template. Functions support only the
-    /// 2018-05-29 version of the request mapping template.</p>
+    /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
     pub fn request_mapping_template(&self) -> std::option::Option<&str> {
         self.request_mapping_template.as_deref()
     }
@@ -10963,14 +10387,12 @@ impl CreateFunctionInput {
     pub fn response_mapping_template(&self) -> std::option::Option<&str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-    /// is 2018-05-29. </p>
+    /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
     pub fn function_version(&self) -> std::option::Option<&str> {
         self.function_version.as_deref()
     }
     /// <p>Describes a Sync configuration for a resolver.</p>
-    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-    /// be performed when the resolver is invoked.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
     pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
@@ -11002,16 +10424,14 @@ pub struct CreateDataSourceInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the <code>DataSource</code>.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-    /// role when accessing the data source.</p>
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Amazon DynamoDB settings.</p>
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
     /// <p>Amazon Web Services Lambda settings.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
-    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-    /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
     pub open_search_service_config:
@@ -11039,8 +10459,7 @@ impl CreateDataSourceInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-    /// role when accessing the data source.</p>
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
@@ -11053,8 +10472,7 @@ impl CreateDataSourceInput {
         self.lambda_config.as_ref()
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-    /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
     pub fn elasticsearch_config(
         &self,
     ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
@@ -11109,9 +10527,7 @@ pub struct CreateApiKeyInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The time from creation time after which the API key expires. The date is represented as
-    /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-    /// parameter is 7 days from creation time. For more information, see .</p>
+    /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub expires: i64,
 }
 impl CreateApiKeyInput {
@@ -11123,9 +10539,7 @@ impl CreateApiKeyInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The time from creation time after which the API key expires. The date is represented as
-    /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-    /// parameter is 7 days from creation time. For more information, see .</p>
+    /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub fn expires(&self) -> i64 {
         self.expires
     }
@@ -11149,98 +10563,37 @@ pub struct CreateApiCacheInput {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are between 1 and 3600 seconds.</p>
     pub ttl: i64,
-    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-    /// creation.</p>
+    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
     pub transit_encryption_enabled: bool,
     /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
     pub at_rest_encryption_enabled: bool,
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-    /// cached.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-    /// that you specify are cached.</p>
-    /// </li>
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMALL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MEDIUM</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XLARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_2X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_4X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_8X</code> (not available in all regions)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_12X</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMALL</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LARGE</code> </p> </li>
+    /// <li> <p> <code>XLARGE</code> </p> </li>
+    /// <li> <p> <code>LARGE_2X</code> </p> </li>
+    /// <li> <p> <code>LARGE_4X</code> </p> </li>
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+    /// <li> <p> <code>LARGE_12X</code> </p> </li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-    /// </li>
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
 }
@@ -11254,8 +10607,7 @@ impl CreateApiCacheInput {
     pub fn ttl(&self) -> i64 {
         self.ttl
     }
-    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-    /// creation.</p>
+    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
     pub fn transit_encryption_enabled(&self) -> bool {
         self.transit_encryption_enabled
     }
@@ -11265,93 +10617,33 @@ impl CreateApiCacheInput {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-    /// cached.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-    /// that you specify are cached.</p>
-    /// </li>
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMALL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MEDIUM</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XLARGE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_2X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_4X</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_8X</code> (not available in all regions)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LARGE_12X</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMALL</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LARGE</code> </p> </li>
+    /// <li> <p> <code>XLARGE</code> </p> </li>
+    /// <li> <p> <code>LARGE_2X</code> </p> </li>
+    /// <li> <p> <code>LARGE_4X</code> </p> </li>
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+    /// <li> <p> <code>LARGE_12X</code> </p> </li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-    /// </li>
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
         self.r#type.as_ref()

@@ -18,11 +18,9 @@ pub enum BatchAssociateClientDeviceWithCoreDeviceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -182,11 +180,9 @@ pub enum BatchDisassociateClientDeviceFromCoreDeviceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -346,18 +342,15 @@ pub struct CancelDeploymentError {
 pub enum CancelDeploymentErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -494,23 +487,17 @@ pub struct CreateComponentVersionError {
 pub enum CreateComponentVersionErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The request is already in progress. This exception occurs when you use a client token for
-    /// multiple requests while IoT Greengrass is still processing an earlier request that uses the same client
-    /// token.</p>
+    /// <p>The request is already in progress. This exception occurs when you use a client token for multiple requests while IoT Greengrass is still processing an earlier request that uses the same client token.</p>
     RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
-    /// <p>Your request exceeds a service quota. For example, you might have the maximum number of
-    /// components that you can create.</p>
+    /// <p>Your request exceeds a service quota. For example, you might have the maximum number of components that you can create.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -665,17 +652,13 @@ pub enum CreateDeploymentErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The request is already in progress. This exception occurs when you use a client token for
-    /// multiple requests while IoT Greengrass is still processing an earlier request that uses the same client
-    /// token.</p>
+    /// <p>The request is already in progress. This exception occurs when you use a client token for multiple requests while IoT Greengrass is still processing an earlier request that uses the same client token.</p>
     RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -815,18 +798,15 @@ pub struct DeleteComponentError {
 pub enum DeleteComponentErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -957,18 +937,15 @@ pub struct DeleteCoreDeviceError {
 pub enum DeleteCoreDeviceErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1109,11 +1086,9 @@ pub enum DescribeComponentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1248,11 +1223,9 @@ pub enum GetComponentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1378,11 +1351,9 @@ pub enum GetComponentVersionArtifactErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1519,11 +1490,9 @@ pub enum GetCoreDeviceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1649,11 +1618,9 @@ pub enum GetDeploymentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1779,11 +1746,9 @@ pub enum ListClientDevicesAssociatedWithCoreDeviceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1941,11 +1906,9 @@ pub enum ListComponentsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2065,11 +2028,9 @@ pub enum ListComponentVersionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2202,11 +2163,9 @@ pub enum ListCoreDevicesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2324,11 +2283,9 @@ pub enum ListDeploymentsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2448,11 +2405,9 @@ pub enum ListEffectiveDeploymentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2587,11 +2542,9 @@ pub enum ListInstalledComponentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2724,8 +2677,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2838,18 +2790,15 @@ pub struct ResolveComponentCandidatesError {
 pub enum ResolveComponentCandidatesErrorKind {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2991,8 +2940,7 @@ pub enum TagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3101,8 +3049,7 @@ pub enum UntagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3197,8 +3144,7 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-/// unsupported characters.</p>
+/// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3507,8 +3453,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-/// amount of times that you can retrieve device or deployment status per second.</p>
+/// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -3631,8 +3576,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-/// than one operation on the same resource at the same time.</p>
+/// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3803,9 +3747,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request is already in progress. This exception occurs when you use a client token for
-/// multiple requests while IoT Greengrass is still processing an earlier request that uses the same client
-/// token.</p>
+/// <p>The request is already in progress. This exception occurs when you use a client token for multiple requests while IoT Greengrass is still processing an earlier request that uses the same client token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestAlreadyInProgressException {
@@ -3869,8 +3811,7 @@ impl RequestAlreadyInProgressException {
     }
 }
 
-/// <p>Your request exceeds a service quota. For example, you might have the maximum number of
-/// components that you can create.</p>
+/// <p>Your request exceeds a service quota. For example, you might have the maximum number of components that you can create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

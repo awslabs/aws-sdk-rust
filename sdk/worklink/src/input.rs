@@ -226,14 +226,12 @@ pub mod associate_website_authorization_provider_input {
             self.authorization_provider_type = input;
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -585,14 +583,12 @@ pub mod create_fleet_input {
             self.display_name = input;
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.optimize_for_end_user_location = Some(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -2677,14 +2673,12 @@ pub mod list_devices_input {
             self.fleet_arn = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2851,14 +2845,12 @@ pub mod list_domains_input {
             self.fleet_arn = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3014,14 +3006,12 @@ pub mod list_fleets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3525,14 +3515,12 @@ pub mod list_website_certificate_authorities_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5280,14 +5268,12 @@ pub mod update_fleet_metadata_input {
             self.display_name = input;
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.optimize_for_end_user_location = Some(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -5461,8 +5447,7 @@ pub mod update_identity_provider_configuration_input {
             self.identity_provider_type = input;
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn identity_provider_saml_metadata(
             mut self,
             input: impl Into<std::string::String>,
@@ -5470,8 +5455,7 @@ pub mod update_identity_provider_configuration_input {
             self.identity_provider_saml_metadata = Some(input.into());
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn set_identity_provider_saml_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5623,8 +5607,7 @@ pub struct UpdateIdentityProviderConfigurationInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The type of identity provider.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-    /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
 }
 impl UpdateIdentityProviderConfigurationInput {
@@ -5638,8 +5621,7 @@ impl UpdateIdentityProviderConfigurationInput {
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-    /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn identity_provider_saml_metadata(&self) -> std::option::Option<&str> {
         self.identity_provider_saml_metadata.as_deref()
     }
@@ -5665,8 +5647,7 @@ pub struct UpdateFleetMetadataInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
 }
 impl UpdateFleetMetadataInput {
@@ -5678,8 +5659,7 @@ impl UpdateFleetMetadataInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
@@ -5982,8 +5962,7 @@ pub struct ListWebsiteCertificateAuthoritiesInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesInput {
@@ -5995,8 +5974,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6071,15 +6049,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFleetsInput {
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6103,8 +6079,7 @@ impl std::fmt::Debug for ListFleetsInput {
 pub struct ListDomainsInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6114,8 +6089,7 @@ impl ListDomainsInput {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6140,8 +6114,7 @@ impl std::fmt::Debug for ListDomainsInput {
 pub struct ListDevicesInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6151,8 +6124,7 @@ impl ListDevicesInput {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6473,8 +6445,7 @@ pub struct CreateFleetInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
     /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
     pub tags:
@@ -6489,8 +6460,7 @@ impl CreateFleetInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
@@ -6559,8 +6529,7 @@ pub struct AssociateWebsiteAuthorizationProviderInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The authorization provider type.</p>
     pub authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteAuthorizationProviderInput {
@@ -6574,8 +6543,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
     ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }

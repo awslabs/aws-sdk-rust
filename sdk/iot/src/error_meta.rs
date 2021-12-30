@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Unable to verify the CA certificate used to sign the device certificate you are
-    /// attempting to register. This is happens when you have registered more than one CA
-    /// certificate that has the same subject field and public key.</p>
+    /// <p>Unable to verify the CA certificate used to sign the device certificate you are attempting to register. This is happens when you have registered more than one CA certificate that has the same subject field and public key.</p>
     CertificateConflictException(crate::error::CertificateConflictException),
     /// <p>The certificate operation is not allowed.</p>
     CertificateStateException(crate::error::CertificateStateException),
@@ -13,11 +11,9 @@ pub enum Error {
     CertificateValidationException(crate::error::CertificateValidationException),
     /// <p>A resource with the same name already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>The index is not ready.</p>
     IndexNotReadyException(crate::error::IndexNotReadyException),
@@ -25,8 +21,7 @@ pub enum Error {
     InternalException(crate::error::InternalException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Internal error from the service that indicates an unexpected error or that the service
-    /// is unavailable.</p>
+    /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The aggregation is invalid.</p>
     InvalidAggregationException(crate::error::InvalidAggregationException),
@@ -36,9 +31,7 @@ pub enum Error {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The response is invalid.</p>
     InvalidResponseException(crate::error::InvalidResponseException),
-    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a
-    /// job execution which is "IN_PROGRESS" without setting the <code>force</code>
-    /// parameter.</p>
+    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>A limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -58,23 +51,17 @@ pub enum Error {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The Rule-SQL expression can't be parsed correctly.</p>
     SqlParseException(crate::error::SqlParseException),
-    /// <p>
-    /// This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.
-    /// </p>
+    /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
     TaskAlreadyExistsException(crate::error::TaskAlreadyExistsException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You can't revert the certificate transfer because the transfer is already
-    /// complete.</p>
+    /// <p>You can't revert the certificate transfer because the transfer is already complete.</p>
     TransferAlreadyCompletedException(crate::error::TransferAlreadyCompletedException),
-    /// <p>You can't transfer the certificate because authorization policies are still
-    /// attached.</p>
+    /// <p>You can't transfer the certificate because authorization policies are still attached.</p>
     TransferConflictException(crate::error::TransferConflictException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// <p>The number of policy versions exceeds the limit.</p>
     VersionsLimitExceededException(crate::error::VersionsLimitExceededException),

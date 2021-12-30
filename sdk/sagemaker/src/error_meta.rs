@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
-    /// <code>Experiment</code> or <code>Artifact</code>.</p>
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
-    /// training jobs created. </p>
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),

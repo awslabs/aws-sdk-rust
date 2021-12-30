@@ -13,18 +13,9 @@ pub mod accept_portfolio_share_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -32,18 +23,9 @@ pub mod accept_portfolio_share_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -64,44 +46,22 @@ pub mod accept_portfolio_share_input {
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.portfolio_share_type = Some(input);
             self
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -430,18 +390,9 @@ pub mod associate_principal_with_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -449,18 +400,9 @@ pub mod associate_principal_with_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -660,18 +602,9 @@ pub mod associate_product_with_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -679,18 +612,9 @@ pub mod associate_product_with_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -923,18 +847,9 @@ pub mod associate_service_action_with_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -942,18 +857,9 @@ pub mod associate_service_action_with_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1313,18 +1219,9 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -1332,18 +1229,9 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1530,18 +1418,9 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -1549,18 +1428,9 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1736,18 +1606,9 @@ pub mod copy_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -1755,18 +1616,9 @@ pub mod copy_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1818,8 +1670,7 @@ pub mod copy_product_input {
         ///
         /// To override the contents of this collection use [`set_source_provisioning_artifact_identifiers`](Self::set_source_provisioning_artifact_identifiers).
         ///
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
             input: std::collections::HashMap<
@@ -1834,8 +1685,7 @@ pub mod copy_product_input {
             self.source_provisioning_artifact_identifiers = Some(v);
             self
         }
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn set_source_provisioning_artifact_identifiers(
             mut self,
             input: std::option::Option<
@@ -1854,16 +1704,14 @@ pub mod copy_product_input {
         ///
         /// To override the contents of this collection use [`set_copy_options`](Self::set_copy_options).
         ///
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
         pub fn copy_options(mut self, input: crate::model::CopyOption) -> Self {
             let mut v = self.copy_options.unwrap_or_default();
             v.push(input);
             self.copy_options = Some(v);
             self
         }
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
         pub fn set_copy_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
@@ -1871,14 +1719,12 @@ pub mod copy_product_input {
             self.copy_options = input;
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2047,18 +1893,9 @@ pub mod create_constraint_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -2066,18 +1903,9 @@ pub mod create_constraint_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2108,54 +1936,51 @@ pub mod create_constraint_input {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2164,54 +1989,51 @@ pub mod create_constraint_input {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2220,31 +2042,11 @@ pub mod create_constraint_input {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -2252,31 +2054,11 @@ pub mod create_constraint_input {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -2292,14 +2074,12 @@ pub mod create_constraint_input {
             self.description = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2467,18 +2247,9 @@ pub mod create_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -2486,18 +2257,9 @@ pub mod create_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2558,14 +2320,12 @@ pub mod create_portfolio_input {
             self.tags = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2731,18 +2491,9 @@ pub mod create_portfolio_share_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -2750,18 +2501,9 @@ pub mod create_portfolio_share_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2790,22 +2532,12 @@ pub mod create_portfolio_share_input {
             self.account_id = input;
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
             self.organization_node = Some(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2987,18 +2719,9 @@ pub mod create_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -3006,18 +2729,9 @@ pub mod create_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3093,15 +2807,13 @@ pub mod create_product_input {
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.support_url = Some(input.into());
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_url = input;
             self
@@ -3154,14 +2866,12 @@ pub mod create_product_input {
             self.provisioning_artifact_parameters = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3339,18 +3049,9 @@ pub mod create_provisioned_product_plan_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -3358,18 +3059,9 @@ pub mod create_provisioned_product_plan_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3405,16 +3097,14 @@ pub mod create_provisioned_product_plan_input {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3422,16 +3112,12 @@ pub mod create_provisioned_product_plan_input {
             self.notification_arns = input;
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_id = Some(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -3446,14 +3132,12 @@ pub mod create_provisioned_product_plan_input {
             self.product_id = input;
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3478,8 +3162,7 @@ pub mod create_provisioned_product_plan_input {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: crate::model::UpdateProvisioningParameter,
@@ -3489,8 +3172,7 @@ pub mod create_provisioned_product_plan_input {
             self.provisioning_parameters = Some(v);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -3498,14 +3180,12 @@ pub mod create_provisioned_product_plan_input {
             self.provisioning_parameters = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3699,18 +3379,9 @@ pub mod create_provisioning_artifact_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -3718,18 +3389,9 @@ pub mod create_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3761,14 +3423,12 @@ pub mod create_provisioning_artifact_input {
             self.parameters = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3968,22 +3628,29 @@ pub mod create_service_action_input {
         ///
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -4001,22 +3668,29 @@ pub mod create_service_action_input {
         }
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -4046,18 +3720,9 @@ pub mod create_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -4065,18 +3730,9 @@ pub mod create_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4085,14 +3741,12 @@ pub mod create_service_action_input {
             self.accept_language = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4421,18 +4075,9 @@ pub mod delete_constraint_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -4440,18 +4085,9 @@ pub mod delete_constraint_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4618,18 +4254,9 @@ pub mod delete_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -4637,18 +4264,9 @@ pub mod delete_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4817,18 +4435,9 @@ pub mod delete_portfolio_share_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -4836,18 +4445,9 @@ pub mod delete_portfolio_share_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5041,18 +4641,9 @@ pub mod delete_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -5060,18 +4651,9 @@ pub mod delete_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5238,18 +4820,9 @@ pub mod delete_provisioned_product_plan_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -5257,18 +4830,9 @@ pub mod delete_provisioned_product_plan_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5287,14 +4851,12 @@ pub mod delete_provisioned_product_plan_input {
             self.plan_id = input;
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.ignore_errors = Some(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
@@ -5452,18 +5014,9 @@ pub mod delete_provisioning_artifact_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -5471,18 +5024,9 @@ pub mod delete_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5676,18 +5220,9 @@ pub mod delete_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -5695,18 +5230,9 @@ pub mod delete_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6015,18 +5541,9 @@ pub mod describe_constraint_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -6034,18 +5551,9 @@ pub mod describe_constraint_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6212,18 +5720,9 @@ pub mod describe_copy_product_status_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -6231,18 +5730,9 @@ pub mod describe_copy_product_status_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6251,12 +5741,12 @@ pub mod describe_copy_product_status_input {
             self.accept_language = input;
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
         pub fn copy_product_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_product_token = Some(input.into());
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
         pub fn set_copy_product_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6415,18 +5905,9 @@ pub mod describe_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -6434,18 +5915,9 @@ pub mod describe_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6977,18 +6449,9 @@ pub mod describe_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -6996,18 +6459,9 @@ pub mod describe_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7187,18 +6641,9 @@ pub mod describe_product_as_admin_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -7206,18 +6651,9 @@ pub mod describe_product_as_admin_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7246,22 +6682,14 @@ pub mod describe_product_as_admin_input {
             self.name = input;
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
         pub fn source_portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_portfolio_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
         pub fn set_source_portfolio_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7421,18 +6849,9 @@ pub mod describe_product_view_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -7440,18 +6859,9 @@ pub mod describe_product_view_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7619,18 +7029,9 @@ pub mod describe_provisioned_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -7638,18 +7039,9 @@ pub mod describe_provisioned_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7836,18 +7228,9 @@ pub mod describe_provisioned_product_plan_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -7855,18 +7238,9 @@ pub mod describe_provisioned_product_plan_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8062,18 +7436,9 @@ pub mod describe_provisioning_artifact_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -8081,18 +7446,9 @@ pub mod describe_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8317,18 +7673,9 @@ pub mod describe_provisioning_parameters_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -8336,18 +7683,9 @@ pub mod describe_provisioning_parameters_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8402,16 +7740,12 @@ pub mod describe_provisioning_parameters_input {
             self.provisioning_artifact_name = input;
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_id = Some(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -8584,18 +7918,9 @@ pub mod describe_record_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -8603,18 +7928,9 @@ pub mod describe_record_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8623,14 +7939,12 @@ pub mod describe_record_input {
             self.accept_language = input;
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8815,18 +8129,9 @@ pub mod describe_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -8834,18 +8139,9 @@ pub mod describe_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9031,18 +8327,9 @@ pub mod describe_service_action_execution_parameters_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -9050,18 +8337,9 @@ pub mod describe_service_action_execution_parameters_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9681,18 +8959,9 @@ pub mod disassociate_principal_from_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -9700,18 +8969,9 @@ pub mod disassociate_principal_from_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9896,18 +9156,9 @@ pub mod disassociate_product_from_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -9915,18 +9166,9 @@ pub mod disassociate_product_from_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10145,18 +9387,9 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -10164,18 +9397,9 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10649,18 +9873,9 @@ pub mod execute_provisioned_product_plan_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -10668,18 +9883,9 @@ pub mod execute_provisioned_product_plan_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10698,14 +9904,12 @@ pub mod execute_provisioned_product_plan_input {
             self.plan_id = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10912,18 +10116,9 @@ pub mod execute_provisioned_product_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -10931,18 +10126,9 @@ pub mod execute_provisioned_product_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10955,9 +10141,7 @@ pub mod execute_provisioned_product_service_action_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -10968,9 +10152,7 @@ pub mod execute_provisioned_product_service_action_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -11276,18 +10458,9 @@ pub mod get_provisioned_product_outputs_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -11295,18 +10468,9 @@ pub mod get_provisioned_product_outputs_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11539,18 +10703,9 @@ pub mod import_as_provisioned_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -11558,18 +10713,9 @@ pub mod import_as_provisioned_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11601,14 +10747,12 @@ pub mod import_as_provisioned_product_input {
             self.provisioning_artifact_id = input;
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11616,26 +10760,22 @@ pub mod import_as_provisioned_product_input {
             self.provisioned_product_name = input;
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
         pub fn physical_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
         pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.physical_id = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11802,18 +10942,9 @@ pub mod list_accepted_portfolio_shares_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -11821,18 +10952,9 @@ pub mod list_accepted_portfolio_shares_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11863,19 +10985,9 @@ pub mod list_accepted_portfolio_shares_input {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.portfolio_share_type = Some(input);
@@ -11883,19 +10995,9 @@ pub mod list_accepted_portfolio_shares_input {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
         pub fn set_portfolio_share_type(
             mut self,
@@ -12058,18 +11160,9 @@ pub mod list_budgets_for_resource_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -12077,18 +11170,9 @@ pub mod list_budgets_for_resource_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12282,18 +11366,9 @@ pub mod list_constraints_for_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -12301,18 +11376,9 @@ pub mod list_constraints_for_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12516,18 +11582,9 @@ pub mod list_launch_paths_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -12535,18 +11592,9 @@ pub mod list_launch_paths_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12738,18 +11786,9 @@ pub mod list_organization_portfolio_access_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -12757,18 +11796,9 @@ pub mod list_organization_portfolio_access_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12789,18 +11819,9 @@ pub mod list_organization_portfolio_access_input {
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
         pub fn organization_node_type(mut self, input: crate::model::OrganizationNodeType) -> Self {
             self.organization_node_type = Some(input);
@@ -12808,18 +11829,9 @@ pub mod list_organization_portfolio_access_input {
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
         pub fn set_organization_node_type(
             mut self,
@@ -13005,18 +12017,9 @@ pub mod list_portfolio_access_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -13024,18 +12027,9 @@ pub mod list_portfolio_access_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -13239,18 +12233,9 @@ pub mod list_portfolios_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -13258,18 +12243,9 @@ pub mod list_portfolios_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -13449,18 +12425,9 @@ pub mod list_portfolios_for_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -13468,18 +12435,9 @@ pub mod list_portfolios_for_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -13673,18 +12631,9 @@ pub mod list_principals_for_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -13692,18 +12641,9 @@ pub mod list_principals_for_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -13897,18 +12837,9 @@ pub mod list_provisioned_product_plans_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -13916,18 +12847,9 @@ pub mod list_provisioned_product_plans_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -14135,18 +13057,9 @@ pub mod list_provisioning_artifacts_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -14154,18 +13067,9 @@ pub mod list_provisioning_artifacts_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -14370,18 +13274,9 @@ pub mod list_provisioning_artifacts_for_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -14389,18 +13284,9 @@ pub mod list_provisioning_artifacts_for_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -14568,18 +13454,9 @@ pub mod list_record_history_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -14587,18 +13464,9 @@ pub mod list_record_history_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -14819,16 +13687,8 @@ pub mod list_resources_for_tag_option_input {
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -14836,16 +13696,8 @@ pub mod list_resources_for_tag_option_input {
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -15027,18 +13879,9 @@ pub mod list_service_actions_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -15046,18 +13889,9 @@ pub mod list_service_actions_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -15281,18 +14115,9 @@ pub mod list_service_actions_for_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -15300,18 +14125,9 @@ pub mod list_service_actions_for_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -15479,18 +14295,9 @@ pub mod list_stack_instances_for_provisioned_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -15498,18 +14305,9 @@ pub mod list_stack_instances_for_provisioned_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -15898,18 +14696,9 @@ pub mod provision_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -15917,18 +14706,9 @@ pub mod provision_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -15983,16 +14763,12 @@ pub mod provision_product_input {
             self.provisioning_artifact_name = input;
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_id = Some(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -16007,14 +14783,12 @@ pub mod provision_product_input {
             self.path_name = input;
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16026,8 +14800,7 @@ pub mod provision_product_input {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: crate::model::ProvisioningParameter,
@@ -16037,8 +14810,7 @@ pub mod provision_product_input {
             self.provisioning_parameters = Some(v);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
@@ -16085,16 +14857,14 @@ pub mod provision_product_input {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16278,18 +15048,9 @@ pub mod reject_portfolio_share_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -16297,18 +15058,9 @@ pub mod reject_portfolio_share_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -16329,44 +15081,22 @@ pub mod reject_portfolio_share_input {
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.portfolio_share_type = Some(input);
             self
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -16527,18 +15257,9 @@ pub mod scan_provisioned_products_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -16546,18 +15267,9 @@ pub mod scan_provisioned_products_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -16761,18 +15473,9 @@ pub mod search_products_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -16780,18 +15483,9 @@ pub mod search_products_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -16804,8 +15498,7 @@ pub mod search_products_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn filters(
             mut self,
             k: crate::model::ProductViewFilterBy,
@@ -16816,8 +15509,7 @@ pub mod search_products_input {
             self.filters = Some(hash_map);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -17039,18 +15731,9 @@ pub mod search_products_as_admin_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -17058,18 +15741,9 @@ pub mod search_products_as_admin_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -17092,8 +15766,7 @@ pub mod search_products_as_admin_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn filters(
             mut self,
             k: crate::model::ProductViewFilterBy,
@@ -17104,8 +15777,7 @@ pub mod search_products_as_admin_input {
             self.filters = Some(hash_map);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -17343,18 +16015,9 @@ pub mod search_provisioned_products_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -17362,18 +16025,9 @@ pub mod search_provisioned_products_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -17400,14 +16054,8 @@ pub mod search_provisioned_products_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn filters(
             mut self,
             k: crate::model::ProvisionedProductViewFilterBy,
@@ -17419,14 +16067,8 @@ pub mod search_provisioned_products_input {
             self
         }
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -17439,14 +16081,12 @@ pub mod search_provisioned_products_input {
             self.filters = input;
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.sort_by = Some(input.into());
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sort_by = input;
             self
@@ -17642,14 +16282,12 @@ pub mod terminate_provisioned_product_input {
         pub(crate) retain_physical_resources: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17657,14 +16295,12 @@ pub mod terminate_provisioned_product_input {
             self.provisioned_product_name = input;
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17672,18 +16308,12 @@ pub mod terminate_provisioned_product_input {
             self.provisioned_product_id = input;
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
         pub fn terminate_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.terminate_token = Some(input.into());
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
         pub fn set_terminate_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17691,32 +16321,21 @@ pub mod terminate_provisioned_product_input {
             self.terminate_token = input;
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.ignore_errors = Some(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -17724,18 +16343,9 @@ pub mod terminate_provisioned_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -17744,18 +16354,12 @@ pub mod terminate_provisioned_product_input {
             self.accept_language = input;
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
         pub fn retain_physical_resources(mut self, input: bool) -> Self {
             self.retain_physical_resources = Some(input);
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
         pub fn set_retain_physical_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_physical_resources = input;
             self
@@ -17919,18 +16523,9 @@ pub mod update_constraint_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -17938,18 +16533,9 @@ pub mod update_constraint_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -17980,54 +16566,51 @@ pub mod update_constraint_input {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18036,54 +16619,51 @@ pub mod update_constraint_input {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -18245,18 +16825,9 @@ pub mod update_portfolio_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -18264,18 +16835,9 @@ pub mod update_portfolio_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -18521,18 +17083,9 @@ pub mod update_portfolio_share_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -18540,18 +17093,9 @@ pub mod update_portfolio_share_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -18765,18 +17309,9 @@ pub mod update_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -18784,18 +17319,9 @@ pub mod update_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -19097,18 +17623,9 @@ pub mod update_provisioned_product_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -19116,18 +17633,9 @@ pub mod update_provisioned_product_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -19136,14 +17644,12 @@ pub mod update_provisioned_product_input {
             self.accept_language = input;
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19210,14 +17716,12 @@ pub mod update_provisioned_product_input {
             self.provisioning_artifact_name = input;
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_id = Some(input.into());
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -19468,18 +17972,9 @@ pub mod update_provisioned_product_properties_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -19487,18 +17982,9 @@ pub mod update_provisioned_product_properties_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -19525,24 +18011,10 @@ pub mod update_provisioned_product_properties_input {
         /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
         ///
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
             k: crate::model::PropertyKey,
@@ -19554,24 +18026,10 @@ pub mod update_provisioned_product_properties_input {
             self
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,
             input: std::option::Option<
@@ -19755,18 +18213,9 @@ pub mod update_provisioning_artifact_input {
     impl Builder {
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -19774,18 +18223,9 @@ pub mod update_provisioning_artifact_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -19851,18 +18291,14 @@ pub mod update_provisioning_artifact_input {
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn guidance(mut self, input: crate::model::ProvisioningArtifactGuidance) -> Self {
             self.guidance = Some(input);
             self
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -20092,18 +18528,9 @@ pub mod update_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept_language = Some(input.into());
@@ -20111,18 +18538,9 @@ pub mod update_service_action_input {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -20499,18 +18917,9 @@ pub struct UpdateServiceActionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -20537,18 +18946,9 @@ impl UpdateServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -20572,18 +18972,9 @@ impl std::fmt::Debug for UpdateServiceActionInput {
 pub struct UpdateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -20599,26 +18990,15 @@ pub struct UpdateProvisioningArtifactInput {
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-    /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-    /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-    /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+    /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
 impl UpdateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -20646,9 +19026,7 @@ impl UpdateProvisioningArtifactInput {
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-    /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-    /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-    /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+    /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     pub fn guidance(&self) -> std::option::Option<&crate::model::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
@@ -20673,41 +19051,18 @@ impl std::fmt::Debug for UpdateProvisioningArtifactInput {
 pub struct UpdateProvisionedProductPropertiesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the provisioned product properties to be updated.</p>
-    /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-    /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-    /// role that is associated with a provisioned product. This role is used when an end user
-    /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-    /// <code>TerminateProvisionedProduct</code>, or
-    /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-    ///
-    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-    /// that has permission to see, update, terminate, and execute service actions in the
-    /// provisioned product.</p>
-    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-    /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-    /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-    /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-    /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-    /// Service Catalog console such as update, terminate, and execute service actions.
-    /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-    /// API or the Service Catalog console on that provisioned product.</p>
+    /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+    /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub provisioned_product_properties: std::option::Option<
         std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
     >,
@@ -20717,18 +19072,9 @@ pub struct UpdateProvisionedProductPropertiesInput {
 impl UpdateProvisionedProductPropertiesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -20738,24 +19084,10 @@ impl UpdateProvisionedProductPropertiesInput {
         self.provisioned_product_id.as_deref()
     }
     /// <p>A map that contains the provisioned product properties to be updated.</p>
-    /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-    /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-    /// role that is associated with a provisioned product. This role is used when an end user
-    /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-    /// <code>TerminateProvisionedProduct</code>, or
-    /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-    ///
-    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-    /// that has permission to see, update, terminate, and execute service actions in the
-    /// provisioned product.</p>
-    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-    /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-    /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-    /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-    /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-    /// Service Catalog console such as update, terminate, and execute service actions.
-    /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-    /// API or the Service Catalog console on that provisioned product.</p>
+    /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+    /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn provisioned_product_properties(
         &self,
     ) -> std::option::Option<
@@ -20788,22 +19120,12 @@ impl std::fmt::Debug for UpdateProvisionedProductPropertiesInput {
 pub struct UpdateProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>The name of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
     pub provisioned_product_id: std::option::Option<std::string::String>,
@@ -20815,8 +19137,7 @@ pub struct UpdateProvisionedProductInput {
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
-    /// <p>The path identifier. This value is optional if the product
-    /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub path_name: std::option::Option<std::string::String>,
@@ -20833,24 +19154,14 @@ pub struct UpdateProvisionedProductInput {
 impl UpdateProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>The name of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -20874,8 +19185,7 @@ impl UpdateProvisionedProductInput {
     pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_name.as_deref()
     }
-    /// <p>The path identifier. This value is optional if the product
-    /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
     pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -20933,18 +19243,9 @@ impl std::fmt::Debug for UpdateProvisionedProductInput {
 pub struct UpdateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -20971,18 +19272,9 @@ pub struct UpdateProductInput {
 impl UpdateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21052,18 +19344,9 @@ impl std::fmt::Debug for UpdateProductInput {
 pub struct UpdatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
@@ -21078,18 +19361,9 @@ pub struct UpdatePortfolioShareInput {
 impl UpdatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21129,18 +19403,9 @@ impl std::fmt::Debug for UpdatePortfolioShareInput {
 pub struct UpdatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -21159,18 +19424,9 @@ pub struct UpdatePortfolioInput {
 impl UpdatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21220,18 +19476,9 @@ impl std::fmt::Debug for UpdatePortfolioInput {
 pub struct UpdateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
@@ -21240,54 +19487,51 @@ pub struct UpdateConstraintInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
-    /// <dt>LAUNCH</dt>
+    /// <dt>
+    /// LAUNCH
+    /// </dt>
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p>
-    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-    /// </p>
+    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p>
-    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-    /// </p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-    /// <note>
+    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
     /// </dd>
-    /// <dt>NOTIFICATION</dt>
+    /// <dt>
+    /// NOTIFICATION
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p>
-    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-    /// </p>
+    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
     /// </dd>
-    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dt>
+    /// RESOURCE_UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
-    /// <dt>STACKSET</dt>
+    /// <dt>
+    /// STACKSET
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
     /// </dd>
-    /// <dt>TEMPLATE</dt>
+    /// <dt>
+    /// TEMPLATE
+    /// </dt>
     /// <dd>
-    /// <p>Specify the <code>Rules</code> property. For more information, see
-    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
     pub parameters: std::option::Option<std::string::String>,
@@ -21295,18 +19539,9 @@ pub struct UpdateConstraintInput {
 impl UpdateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21321,54 +19556,51 @@ impl UpdateConstraintInput {
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
-    /// <dt>LAUNCH</dt>
+    /// <dt>
+    /// LAUNCH
+    /// </dt>
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p>
-    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-    /// </p>
+    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p>
-    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-    /// </p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-    /// <note>
+    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
     /// </dd>
-    /// <dt>NOTIFICATION</dt>
+    /// <dt>
+    /// NOTIFICATION
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p>
-    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-    /// </p>
+    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
     /// </dd>
-    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dt>
+    /// RESOURCE_UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
-    /// <dt>STACKSET</dt>
+    /// <dt>
+    /// STACKSET
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
     /// </dd>
-    /// <dt>TEMPLATE</dt>
+    /// <dt>
+    /// TEMPLATE
+    /// </dt>
     /// <dd>
-    /// <p>Specify the <code>Rules</code> property. For more information, see
-    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
     pub fn parameters(&self) -> std::option::Option<&str> {
@@ -21390,87 +19622,51 @@ impl std::fmt::Debug for UpdateConstraintInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateProvisionedProductInput {
-    /// <p>The name of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub provisioned_product_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub provisioned_product_id: std::option::Option<std::string::String>,
-    /// <p>An idempotency token that uniquely identifies the termination request. This token is
-    /// only valid during the termination process. After the provisioned product is terminated,
-    /// subsequent requests to terminate the same provisioned product always return
-    /// <b>ResourceNotFound</b>.</p>
+    /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
     pub terminate_token: std::option::Option<std::string::String>,
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-    /// if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub ignore_errors: bool,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-    /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-    /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-    /// default value is false.</p>
+    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     pub retain_physical_resources: bool,
 }
 impl TerminateProvisionedProductInput {
-    /// <p>The name of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
-    /// <p>The identifier of the provisioned product. You cannot specify both
-    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
         self.provisioned_product_id.as_deref()
     }
-    /// <p>An idempotency token that uniquely identifies the termination request. This token is
-    /// only valid during the termination process. After the provisioned product is terminated,
-    /// subsequent requests to terminate the same provisioned product always return
-    /// <b>ResourceNotFound</b>.</p>
+    /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
     pub fn terminate_token(&self) -> std::option::Option<&str> {
         self.terminate_token.as_deref()
     }
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-    /// if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(&self) -> bool {
         self.ignore_errors
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-    /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-    /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-    /// default value is false.</p>
+    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     pub fn retain_physical_resources(&self) -> bool {
         self.retain_physical_resources
     }
@@ -21494,39 +19690,23 @@ impl std::fmt::Debug for TerminateProvisionedProductInput {
 pub struct SearchProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
     /// <p>The search filters.</p>
-    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-    /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-    /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-    /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-    /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-    /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-    /// </p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProvisionedProductViewFilterBy,
             std::vec::Vec<std::string::String>,
         >,
     >,
-    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-    /// and <code>lastRecordId</code>.</p>
+    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
@@ -21538,18 +19718,9 @@ pub struct SearchProvisionedProductsInput {
 impl SearchProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21559,14 +19730,8 @@ impl SearchProvisionedProductsInput {
         self.access_level_filter.as_ref()
     }
     /// <p>The search filters.</p>
-    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-    /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-    /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-    /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-    /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-    /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-    /// </p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     pub fn filters(
         &self,
     ) -> std::option::Option<
@@ -21577,8 +19742,7 @@ impl SearchProvisionedProductsInput {
     > {
         self.filters.as_ref()
     }
-    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-    /// and <code>lastRecordId</code>.</p>
+    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&str> {
         self.sort_by.as_deref()
     }
@@ -21615,24 +19779,14 @@ impl std::fmt::Debug for SearchProvisionedProductsInput {
 pub struct SearchProductsAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The search filters. If no search filters are specified, the output includes all products
-    /// to which the administrator has access.</p>
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProductViewFilterBy,
@@ -21653,18 +19807,9 @@ pub struct SearchProductsAsAdminInput {
 impl SearchProductsAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21673,8 +19818,7 @@ impl SearchProductsAsAdminInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The search filters. If no search filters are specified, the output includes all products
-    /// to which the administrator has access.</p>
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<
@@ -21727,22 +19871,12 @@ impl std::fmt::Debug for SearchProductsAsAdminInput {
 pub struct SearchProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>The search filters. If no search filters are specified, the output includes
-    /// all products to which the caller has access.</p>
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub filters: std::option::Option<
         std::collections::HashMap<
             crate::model::ProductViewFilterBy,
@@ -21761,24 +19895,14 @@ pub struct SearchProductsInput {
 impl SearchProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>The search filters. If no search filters are specified, the output includes
-    /// all products to which the caller has access.</p>
+    /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<
@@ -21825,18 +19949,9 @@ impl std::fmt::Debug for SearchProductsInput {
 pub struct ScanProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -21849,18 +19964,9 @@ pub struct ScanProvisionedProductsInput {
 impl ScanProvisionedProductsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21895,57 +20001,28 @@ impl std::fmt::Debug for ScanProvisionedProductsInput {
 pub struct RejectPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-    /// organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
-    /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-    /// </p>
+    /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl RejectPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -21956,22 +20033,11 @@ impl RejectPortfolioShareInput {
     }
     /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-    /// organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
-    /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-    /// </p>
+    /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
         self.portfolio_share_type.as_ref()
     }
@@ -21992,18 +20058,9 @@ impl std::fmt::Debug for RejectPortfolioShareInput {
 pub struct ProvisionProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
@@ -22014,25 +20071,20 @@ pub struct ProvisionProductInput {
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub path_name: std::option::Option<std::string::String>,
-    /// <p>A user-friendly name for the provisioned product. This value must be
-    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
     pub provisioned_product_name: std::option::Option<std::string::String>,
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub provisioning_preferences: std::option::Option<crate::model::ProvisioningPreferences>,
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub provision_token: std::option::Option<std::string::String>,
@@ -22040,18 +20092,9 @@ pub struct ProvisionProductInput {
 impl ProvisionProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22072,9 +20115,7 @@ impl ProvisionProductInput {
     pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_name.as_deref()
     }
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -22082,13 +20123,11 @@ impl ProvisionProductInput {
     pub fn path_name(&self) -> std::option::Option<&str> {
         self.path_name.as_deref()
     }
-    /// <p>A user-friendly name for the provisioned product. This value must be
-    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::ProvisioningParameter]> {
@@ -22104,8 +20143,7 @@ impl ProvisionProductInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.notification_arns.as_deref()
     }
@@ -22178,18 +20216,9 @@ impl std::fmt::Debug for ListTagOptionsInput {
 pub struct ListStackInstancesForProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
@@ -22202,18 +20231,9 @@ pub struct ListStackInstancesForProvisionedProductInput {
 impl ListStackInstancesForProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22256,18 +20276,9 @@ pub struct ListServiceActionsForProvisioningArtifactInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -22290,18 +20301,9 @@ impl ListServiceActionsForProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22325,18 +20327,9 @@ impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactInput {
 pub struct ListServiceActionsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
@@ -22347,18 +20340,9 @@ pub struct ListServiceActionsInput {
 impl ListServiceActionsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22390,16 +20374,8 @@ pub struct ListResourcesForTagOptionInput {
     pub tag_option_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Portfolio</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Product</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Portfolio</code> </p> </li>
+    /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
@@ -22414,16 +20390,8 @@ impl ListResourcesForTagOptionInput {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Portfolio</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Product</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Portfolio</code> </p> </li>
+    /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -22454,18 +20422,9 @@ impl std::fmt::Debug for ListResourcesForTagOptionInput {
 pub struct ListRecordHistoryInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -22480,18 +20439,9 @@ pub struct ListRecordHistoryInput {
 impl ListRecordHistoryInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22539,18 +20489,9 @@ pub struct ListProvisioningArtifactsForServiceActionInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -22569,18 +20510,9 @@ impl ListProvisioningArtifactsForServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22603,18 +20535,9 @@ impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionInput {
 pub struct ListProvisioningArtifactsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -22623,18 +20546,9 @@ pub struct ListProvisioningArtifactsInput {
 impl ListProvisioningArtifactsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22659,18 +20573,9 @@ impl std::fmt::Debug for ListProvisioningArtifactsInput {
 pub struct ListProvisionedProductPlansInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -22685,18 +20590,9 @@ pub struct ListProvisionedProductPlansInput {
 impl ListProvisionedProductPlansInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22736,18 +20632,9 @@ impl std::fmt::Debug for ListProvisionedProductPlansInput {
 pub struct ListPrincipalsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -22760,18 +20647,9 @@ pub struct ListPrincipalsForPortfolioInput {
 impl ListPrincipalsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22806,18 +20684,9 @@ impl std::fmt::Debug for ListPrincipalsForPortfolioInput {
 pub struct ListPortfoliosForProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -22830,18 +20699,9 @@ pub struct ListPortfoliosForProductInput {
 impl ListPortfoliosForProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22876,18 +20736,9 @@ impl std::fmt::Debug for ListPortfoliosForProductInput {
 pub struct ListPortfoliosInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -22898,18 +20749,9 @@ pub struct ListPortfoliosInput {
 impl ListPortfoliosInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -22939,18 +20781,9 @@ impl std::fmt::Debug for ListPortfoliosInput {
 pub struct ListPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -22965,18 +20798,9 @@ pub struct ListPortfolioAccessInput {
 impl ListPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23016,36 +20840,18 @@ impl std::fmt::Debug for ListPortfolioAccessInput {
 pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-    /// </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
     pub organization_node_type: std::option::Option<crate::model::OrganizationNodeType>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -23056,18 +20862,9 @@ pub struct ListOrganizationPortfolioAccessInput {
 impl ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23078,18 +20875,9 @@ impl ListOrganizationPortfolioAccessInput {
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-    /// </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+    /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+    /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
     pub fn organization_node_type(
         &self,
@@ -23123,18 +20911,9 @@ impl std::fmt::Debug for ListOrganizationPortfolioAccessInput {
 pub struct ListLaunchPathsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -23147,18 +20926,9 @@ pub struct ListLaunchPathsInput {
 impl ListLaunchPathsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23193,18 +20963,9 @@ impl std::fmt::Debug for ListLaunchPathsInput {
 pub struct ListConstraintsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -23219,18 +20980,9 @@ pub struct ListConstraintsForPortfolioInput {
 impl ListConstraintsForPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23270,18 +21022,9 @@ impl std::fmt::Debug for ListConstraintsForPortfolioInput {
 pub struct ListBudgetsForResourceInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The resource identifier.</p>
@@ -23294,18 +21037,9 @@ pub struct ListBudgetsForResourceInput {
 impl ListBudgetsForResourceInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23340,18 +21074,9 @@ impl std::fmt::Debug for ListBudgetsForResourceInput {
 pub struct ListAcceptedPortfolioSharesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -23360,37 +21085,18 @@ pub struct ListAcceptedPortfolioSharesInput {
     pub page_size: i32,
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-    /// account of your organization</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - List imported portfolios</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
     /// </ul>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl ListAcceptedPortfolioSharesInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23405,19 +21111,9 @@ impl ListAcceptedPortfolioSharesInput {
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-    /// account of your organization</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - List imported portfolios</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
     /// </ul>
     pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
         self.portfolio_share_type.as_ref()
@@ -23440,49 +21136,28 @@ impl std::fmt::Debug for ListAcceptedPortfolioSharesInput {
 pub struct ImportAsProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-    /// account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
     pub provisioned_product_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the resource to be imported. It only currently supports
-    /// CloudFormation stack IDs.</p>
+    /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
     pub physical_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl ImportAsProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23495,18 +21170,15 @@ impl ImportAsProvisionedProductInput {
     pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-    /// account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
-    /// <p>The unique identifier of the resource to be imported. It only currently supports
-    /// CloudFormation stack IDs.</p>
+    /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
     pub fn physical_id(&self) -> std::option::Option<&str> {
         self.physical_id.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -23530,18 +21202,9 @@ impl std::fmt::Debug for ImportAsProvisionedProductInput {
 pub struct GetProvisionedProductOutputsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
@@ -23558,18 +21221,9 @@ pub struct GetProvisionedProductOutputsInput {
 impl GetProvisionedProductOutputsInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23631,23 +21285,12 @@ pub struct ExecuteProvisionedProductServiceActionInput {
     pub execute_token: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-    /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-    /// any special parameters such as <code>TARGET</code>.</p>
+    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -23667,25 +21310,14 @@ impl ExecuteProvisionedProductServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-    /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-    /// any special parameters such as <code>TARGET</code>.</p>
+    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<
@@ -23712,41 +21344,22 @@ impl std::fmt::Debug for ExecuteProvisionedProductServiceActionInput {
 pub struct ExecuteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
     pub plan_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl ExecuteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23755,8 +21368,7 @@ impl ExecuteProvisionedProductPlanInput {
     pub fn plan_id(&self) -> std::option::Option<&str> {
         self.plan_id.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -23822,18 +21434,9 @@ pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -23852,18 +21455,9 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23887,18 +21481,9 @@ impl std::fmt::Debug for DisassociateServiceActionFromProvisioningArtifactInput 
 pub struct DisassociateProductFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -23909,18 +21494,9 @@ pub struct DisassociateProductFromPortfolioInput {
 impl DisassociateProductFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -23950,18 +21526,9 @@ impl std::fmt::Debug for DisassociateProductFromPortfolioInput {
 pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -23972,18 +21539,9 @@ pub struct DisassociatePrincipalFromPortfolioInput {
 impl DisassociatePrincipalFromPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24077,18 +21635,9 @@ pub struct DescribeServiceActionExecutionParametersInput {
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -24103,18 +21652,9 @@ impl DescribeServiceActionExecutionParametersInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24138,18 +21678,9 @@ pub struct DescribeServiceActionInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -24160,18 +21691,9 @@ impl DescribeServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24192,22 +21714,12 @@ impl std::fmt::Debug for DescribeServiceActionInput {
 pub struct DescribeRecordInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>The record identifier of the provisioned product. This identifier is returned by the
-    /// request operation.</p>
+    /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
@@ -24217,24 +21729,14 @@ pub struct DescribeRecordInput {
 impl DescribeRecordInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>The record identifier of the provisioned product. This identifier is returned by the
-    /// request operation.</p>
+    /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -24264,18 +21766,9 @@ impl std::fmt::Debug for DescribeRecordInput {
 pub struct DescribeProvisioningParametersInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
@@ -24286,9 +21779,7 @@ pub struct DescribeProvisioningParametersInput {
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub provisioning_artifact_name: std::option::Option<std::string::String>,
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub path_name: std::option::Option<std::string::String>,
@@ -24296,18 +21787,9 @@ pub struct DescribeProvisioningParametersInput {
 impl DescribeProvisioningParametersInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24328,9 +21810,7 @@ impl DescribeProvisioningParametersInput {
     pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_name.as_deref()
     }
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -24362,18 +21842,9 @@ impl std::fmt::Debug for DescribeProvisioningParametersInput {
 pub struct DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
@@ -24390,18 +21861,9 @@ pub struct DescribeProvisioningArtifactInput {
 impl DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24449,18 +21911,9 @@ impl std::fmt::Debug for DescribeProvisioningArtifactInput {
 pub struct DescribeProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
@@ -24473,18 +21926,9 @@ pub struct DescribeProvisionedProductPlanInput {
 impl DescribeProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24513,33 +21957,15 @@ impl std::fmt::Debug for DescribeProvisionedProductPlanInput {
     }
 }
 
-/// DescribeProvisionedProductAPI input structure.
-///
-/// AcceptLanguage - [Optional]
-/// The language code for localization.
-///
-/// Id - [Optional]
-/// The provisioned product identifier.
-///
-/// Name - [Optional]
-/// Another provisioned product identifier. Customers must provide either Id or Name.
+/// DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned product identifier. Customers must provide either Id or Name.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
@@ -24552,18 +21978,9 @@ pub struct DescribeProvisionedProductInput {
 impl DescribeProvisionedProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24595,18 +22012,9 @@ impl std::fmt::Debug for DescribeProvisionedProductInput {
 pub struct DescribeProductViewInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product view identifier.</p>
@@ -24615,18 +22023,9 @@ pub struct DescribeProductViewInput {
 impl DescribeProductViewInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24651,47 +22050,25 @@ impl std::fmt::Debug for DescribeProductViewInput {
 pub struct DescribeProductAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The product name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the shared portfolio that the specified product is associated
-    /// with.</p>
-    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-    /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-    /// portfolio share, the API returns both local and shared TagOptions associated with the
-    /// product. Otherwise only local TagOptions will be returned. </p>
+    /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
 impl DescribeProductAsAdminInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24704,12 +22081,8 @@ impl DescribeProductAsAdminInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The unique identifier of the shared portfolio that the specified product is associated
-    /// with.</p>
-    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-    /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-    /// portfolio share, the API returns both local and shared TagOptions associated with the
-    /// product. Otherwise only local TagOptions will be returned. </p>
+    /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
     pub fn source_portfolio_id(&self) -> std::option::Option<&str> {
         self.source_portfolio_id.as_deref()
     }
@@ -24731,18 +22104,9 @@ impl std::fmt::Debug for DescribeProductAsAdminInput {
 pub struct DescribeProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -24753,18 +22117,9 @@ pub struct DescribeProductInput {
 impl DescribeProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24865,18 +22220,9 @@ impl std::fmt::Debug for DescribePortfolioSharesInput {
 pub struct DescribePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -24885,18 +22231,9 @@ pub struct DescribePortfolioInput {
 impl DescribePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -24921,43 +22258,25 @@ impl std::fmt::Debug for DescribePortfolioInput {
 pub struct DescribeCopyProductStatusInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+    /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
     pub copy_product_token: std::option::Option<std::string::String>,
 }
 impl DescribeCopyProductStatusInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+    /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
     pub fn copy_product_token(&self) -> std::option::Option<&str> {
         self.copy_product_token.as_deref()
     }
@@ -24977,18 +22296,9 @@ impl std::fmt::Debug for DescribeCopyProductStatusInput {
 pub struct DescribeConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
@@ -24997,18 +22307,9 @@ pub struct DescribeConstraintInput {
 impl DescribeConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25056,18 +22357,9 @@ pub struct DeleteServiceActionInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -25078,18 +22370,9 @@ impl DeleteServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25110,18 +22393,9 @@ impl std::fmt::Debug for DeleteServiceActionInput {
 pub struct DeleteProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -25132,18 +22406,9 @@ pub struct DeleteProvisioningArtifactInput {
 impl DeleteProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25173,41 +22438,22 @@ impl std::fmt::Debug for DeleteProvisioningArtifactInput {
 pub struct DeleteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The plan identifier.</p>
     pub plan_id: std::option::Option<std::string::String>,
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-    /// if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub ignore_errors: bool,
 }
 impl DeleteProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25216,8 +22462,7 @@ impl DeleteProvisionedProductPlanInput {
     pub fn plan_id(&self) -> std::option::Option<&str> {
         self.plan_id.as_deref()
     }
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-    /// if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(&self) -> bool {
         self.ignore_errors
     }
@@ -25238,18 +22483,9 @@ impl std::fmt::Debug for DeleteProvisionedProductPlanInput {
 pub struct DeleteProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -25258,18 +22494,9 @@ pub struct DeleteProductInput {
 impl DeleteProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25294,18 +22521,9 @@ impl std::fmt::Debug for DeleteProductInput {
 pub struct DeletePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -25318,18 +22536,9 @@ pub struct DeletePortfolioShareInput {
 impl DeletePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25364,18 +22573,9 @@ impl std::fmt::Debug for DeletePortfolioShareInput {
 pub struct DeletePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -25384,18 +22584,9 @@ pub struct DeletePortfolioInput {
 impl DeletePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25420,18 +22611,9 @@ impl std::fmt::Debug for DeletePortfolioInput {
 pub struct DeleteConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The identifier of the constraint.</p>
@@ -25440,18 +22622,9 @@ pub struct DeleteConstraintInput {
 impl DeleteConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25508,22 +22681,29 @@ pub struct CreateServiceActionInput {
     pub definition_type: std::option::Option<crate::model::ServiceActionDefinitionType>,
     /// <p>The self-service action definition. Can be one of the following:</p>
     /// <dl>
-    /// <dt>Name</dt>
+    /// <dt>
+    /// Name
+    /// </dt>
     /// <dd>
     /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
     /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
     /// </dd>
-    /// <dt>Version</dt>
+    /// <dt>
+    /// Version
+    /// </dt>
     /// <dd>
-    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-    /// </p>
+    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
     /// </dd>
-    /// <dt>AssumeRole</dt>
+    /// <dt>
+    /// AssumeRole
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
     /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
     /// </dd>
-    /// <dt>Parameters</dt>
+    /// <dt>
+    /// Parameters
+    /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -25536,22 +22716,12 @@ pub struct CreateServiceActionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceActionInput {
@@ -25567,22 +22737,29 @@ impl CreateServiceActionInput {
     }
     /// <p>The self-service action definition. Can be one of the following:</p>
     /// <dl>
-    /// <dt>Name</dt>
+    /// <dt>
+    /// Name
+    /// </dt>
     /// <dd>
     /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
     /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
     /// </dd>
-    /// <dt>Version</dt>
+    /// <dt>
+    /// Version
+    /// </dt>
     /// <dd>
-    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-    /// </p>
+    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
     /// </dd>
-    /// <dt>AssumeRole</dt>
+    /// <dt>
+    /// AssumeRole
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
     /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
     /// </dd>
-    /// <dt>Parameters</dt>
+    /// <dt>
+    /// Parameters
+    /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -25601,24 +22778,14 @@ impl CreateServiceActionInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -25642,43 +22809,24 @@ impl std::fmt::Debug for CreateServiceActionInput {
 pub struct CreateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The configuration for the provisioning artifact.</p>
     pub parameters: std::option::Option<crate::model::ProvisioningArtifactProperties>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateProvisioningArtifactInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25691,8 +22839,7 @@ impl CreateProvisioningArtifactInput {
     pub fn parameters(&self) -> std::option::Option<&crate::model::ProvisioningArtifactProperties> {
         self.parameters.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -25714,44 +22861,29 @@ impl std::fmt::Debug for CreateProvisioningArtifactInput {
 pub struct CreateProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name of the plan.</p>
     pub plan_name: std::option::Option<std::string::String>,
     /// <p>The plan type.</p>
     pub plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: std::option::Option<std::string::String>,
-    /// <p>A user-friendly name for the provisioned product. This value must be
-    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
@@ -25760,18 +22892,9 @@ pub struct CreateProvisionedProductPlanInput {
 impl CreateProvisionedProductPlanInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25784,14 +22907,11 @@ impl CreateProvisionedProductPlanInput {
     pub fn plan_type(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanType> {
         self.plan_type.as_ref()
     }
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.notification_arns.as_deref()
     }
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -25799,8 +22919,7 @@ impl CreateProvisionedProductPlanInput {
     pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
-    /// <p>A user-friendly name for the provisioned product. This value must be
-    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -25808,15 +22927,13 @@ impl CreateProvisionedProductPlanInput {
     pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::UpdateProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -25850,18 +22967,9 @@ impl std::fmt::Debug for CreateProvisionedProductPlanInput {
 pub struct CreateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name of the product.</p>
@@ -25877,8 +22985,7 @@ pub struct CreateProductInput {
     /// <p>The contact email for product support.</p>
     pub support_email: std::option::Option<std::string::String>,
     /// <p>The contact URL for product support.</p>
-    /// <p>
-    /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub support_url: std::option::Option<std::string::String>,
     /// <p>The type of product.</p>
     pub product_type: std::option::Option<crate::model::ProductType>,
@@ -25887,25 +22994,15 @@ pub struct CreateProductInput {
     /// <p>The configuration of the provisioning artifact. </p>
     pub provisioning_artifact_parameters:
         std::option::Option<crate::model::ProvisioningArtifactProperties>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -25935,8 +23032,7 @@ impl CreateProductInput {
         self.support_email.as_deref()
     }
     /// <p>The contact URL for product support.</p>
-    /// <p>
-    /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn support_url(&self) -> std::option::Option<&str> {
         self.support_url.as_deref()
     }
@@ -25954,8 +23050,7 @@ impl CreateProductInput {
     ) -> std::option::Option<&crate::model::ProvisioningArtifactProperties> {
         self.provisioning_artifact_parameters.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -25988,30 +23083,16 @@ impl std::fmt::Debug for CreateProductInput {
 pub struct CreatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-    /// is passed in, <code>PortfolioShare</code> will be created for the node an
-    /// ListOrganizationPortfolioAccessd its children (when applies), and a
-    /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-    /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-    /// process.</p>
+    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     pub share_tag_options: bool,
@@ -26019,18 +23100,9 @@ pub struct CreatePortfolioShareInput {
 impl CreatePortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26043,12 +23115,7 @@ impl CreatePortfolioShareInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-    /// is passed in, <code>PortfolioShare</code> will be created for the node an
-    /// ListOrganizationPortfolioAccessd its children (when applies), and a
-    /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-    /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-    /// process.</p>
+    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
         self.organization_node.as_ref()
     }
@@ -26075,18 +23142,9 @@ impl std::fmt::Debug for CreatePortfolioShareInput {
 pub struct CreatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The name to use for display purposes.</p>
@@ -26097,25 +23155,15 @@ pub struct CreatePortfolioInput {
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26136,8 +23184,7 @@ impl CreatePortfolioInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -26161,18 +23208,9 @@ impl std::fmt::Debug for CreatePortfolioInput {
 pub struct CreateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -26181,107 +23219,74 @@ pub struct CreateConstraintInput {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
-    /// <dt>LAUNCH</dt>
+    /// <dt>
+    /// LAUNCH
+    /// </dt>
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p>
-    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-    /// </p>
+    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p>
-    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-    /// </p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-    /// <note>
+    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
     /// </dd>
-    /// <dt>NOTIFICATION</dt>
+    /// <dt>
+    /// NOTIFICATION
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p>
-    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-    /// </p>
+    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
     /// </dd>
-    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dt>
+    /// RESOURCE_UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
-    /// <dt>STACKSET</dt>
+    /// <dt>
+    /// STACKSET
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
     /// </dd>
-    /// <dt>TEMPLATE</dt>
+    /// <dt>
+    /// TEMPLATE
+    /// </dt>
     /// <dd>
-    /// <p>Specify the <code>Rules</code> property. For more information, see
-    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_UPDATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STACKSET</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+    /// <li> <p> <code>STACKSET</code> </p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26296,54 +23301,51 @@ impl CreateConstraintInput {
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
-    /// <dt>LAUNCH</dt>
+    /// <dt>
+    /// LAUNCH
+    /// </dt>
     /// <dd>
     /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
     /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-    /// <p>
-    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-    /// </p>
+    /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-    /// <p>
-    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-    /// </p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-    /// <note>
+    /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
     /// </dd>
-    /// <dt>NOTIFICATION</dt>
+    /// <dt>
+    /// NOTIFICATION
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p>
-    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-    /// </p>
+    /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
     /// </dd>
-    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dt>
+    /// RESOURCE_UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
     /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
     /// </dd>
-    /// <dt>STACKSET</dt>
+    /// <dt>
+    /// STACKSET
+    /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p>
-    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-    /// </p>
+    /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
     /// </dd>
-    /// <dt>TEMPLATE</dt>
+    /// <dt>
+    /// TEMPLATE
+    /// </dt>
     /// <dd>
-    /// <p>Specify the <code>Rules</code> property. For more information, see
-    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
     pub fn parameters(&self) -> std::option::Option<&str> {
@@ -26351,31 +23353,11 @@ impl CreateConstraintInput {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_UPDATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STACKSET</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+    /// <li> <p> <code>STACKSET</code> </p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -26384,8 +23366,7 @@ impl CreateConstraintInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -26410,18 +23391,9 @@ impl std::fmt::Debug for CreateConstraintInput {
 pub struct CopyProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
@@ -26430,8 +23402,7 @@ pub struct CopyProductInput {
     pub target_product_id: std::option::Option<std::string::String>,
     /// <p>A name for the target product. The default is the name of the source product.</p>
     pub target_product_name: std::option::Option<std::string::String>,
-    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-    /// By default, all provisioning artifacts are copied.</p>
+    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
     pub source_provisioning_artifact_identifiers: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<
@@ -26440,28 +23411,17 @@ pub struct CopyProductInput {
             >,
         >,
     >,
-    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-    /// product are copied to the target product.</p>
+    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
     pub copy_options: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
-    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request. </p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CopyProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26478,8 +23438,7 @@ impl CopyProductInput {
     pub fn target_product_name(&self) -> std::option::Option<&str> {
         self.target_product_name.as_deref()
     }
-    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-    /// By default, all provisioning artifacts are copied.</p>
+    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
     pub fn source_provisioning_artifact_identifiers(
         &self,
     ) -> std::option::Option<
@@ -26490,13 +23449,11 @@ impl CopyProductInput {
     > {
         self.source_provisioning_artifact_identifiers.as_deref()
     }
-    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-    /// product are copied to the target product.</p>
+    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
     pub fn copy_options(&self) -> std::option::Option<&[crate::model::CopyOption]> {
         self.copy_options.as_deref()
     }
-    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request. </p>
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -26527,18 +23484,9 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
         std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -26551,18 +23499,9 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26590,18 +23529,9 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
         std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -26614,18 +23544,9 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26684,18 +23605,9 @@ pub struct AssociateServiceActionWithProvisioningArtifactInput {
     pub service_action_id: std::option::Option<std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
@@ -26714,18 +23626,9 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26748,18 +23651,9 @@ impl std::fmt::Debug for AssociateServiceActionWithProvisioningArtifactInput {
 pub struct AssociateProductWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
@@ -26772,18 +23666,9 @@ pub struct AssociateProductWithPortfolioInput {
 impl AssociateProductWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26818,18 +23703,9 @@ impl std::fmt::Debug for AssociateProductWithPortfolioInput {
 pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -26842,18 +23718,9 @@ pub struct AssociatePrincipalWithPortfolioInput {
 impl AssociatePrincipalWithPortfolioInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26916,57 +23783,28 @@ impl std::fmt::Debug for AssociateBudgetWithResourceInput {
 pub struct AcceptPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
     /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-    /// organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
-    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-    /// </p>
+    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
 impl AcceptPortfolioShareInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>en</code> - English (default)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jp</code> - Japanese</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh</code> - Chinese</p>
-    /// </li>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -26977,22 +23815,11 @@ impl AcceptPortfolioShareInput {
     }
     /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-    /// organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-    /// </li>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
-    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-    /// </p>
+    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
         self.portfolio_share_type.as_ref()
     }

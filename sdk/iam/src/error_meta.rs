@@ -3,88 +3,59 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because the most recent credential report has expired. To
-    /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more
-    /// information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
     CredentialReportExpiredException(crate::error::CredentialReportExpiredException),
-    /// <p>The request was rejected because the credential report does not exist. To generate a
-    /// credential report, use <a>GenerateCredentialReport</a>.</p>
+    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <code>GenerateCredentialReport</code>.</p>
     CredentialReportNotPresentException(crate::error::CredentialReportNotPresentException),
     /// <p>The request was rejected because the credential report is still being generated.</p>
     CredentialReportNotReadyException(crate::error::CredentialReportNotReadyException),
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because the same certificate is associated with an IAM user in
-    /// the account.</p>
+    /// <p>The request was rejected because the same certificate is associated with an IAM user in the account.</p>
     DuplicateCertificateException(crate::error::DuplicateCertificateException),
-    /// <p>The request was rejected because the SSH public key is already associated with the
-    /// specified IAM user.</p>
+    /// <p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>
     DuplicateSshPublicKeyException(crate::error::DuplicateSshPublicKeyException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because the authentication code was not recognized. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
     InvalidAuthenticationCodeException(crate::error::InvalidAuthenticationCodeException),
     /// <p>The request was rejected because the certificate is invalid.</p>
     InvalidCertificateException(crate::error::InvalidCertificateException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because the public key is malformed or otherwise invalid.</p>
     InvalidPublicKeyException(crate::error::InvalidPublicKeyException),
-    /// <p>The request was rejected because the type of user for the transaction was
-    /// incorrect.</p>
+    /// <p>The request was rejected because the type of user for the transaction was incorrect.</p>
     InvalidUserTypeException(crate::error::InvalidUserTypeException),
-    /// <p>The request was rejected because the public key certificate and the private key do not
-    /// match.</p>
+    /// <p>The request was rejected because the public key certificate and the private key do not match.</p>
     KeyPairMismatchException(crate::error::KeyPairMismatchException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the certificate was malformed or expired. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error.</p>
     MalformedCertificateException(crate::error::MalformedCertificateException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the provided password did not meet the requirements
-    /// imposed by the account password policy.</p>
+    /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
-    /// <p>The request failed because a provided policy could not be successfully evaluated. An
-    /// additional detailed message indicates the source of the failure.</p>
+    /// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
     PolicyEvaluationException(crate::error::PolicyEvaluationException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request failed because the maximum number of concurrent requests for this account are
-    /// already running.</p>
+    /// <p>The request failed because the maximum number of concurrent requests for this account are already running.</p>
     ReportGenerationLimitExceededException(crate::error::ReportGenerationLimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The specified service does not support service-specific credentials.</p>
     ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
-    /// <p>The request was rejected because the public key encoding format is unsupported or
-    /// unrecognized.</p>
+    /// <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

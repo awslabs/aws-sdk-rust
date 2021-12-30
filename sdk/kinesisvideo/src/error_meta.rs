@@ -5,16 +5,13 @@
 pub enum Error {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You have reached the maximum limit of active signaling channels for this AWS account
-    /// in this region.</p>
+    /// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
     AccountChannelLimitExceededException(crate::error::AccountChannelLimitExceededException),
     /// <p>The number of streams created for the account is too high.</p>
     AccountStreamLimitExceededException(crate::error::AccountStreamLimitExceededException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>Not implemented.
-    /// </p>
+    /// <p>Not implemented. </p>
     DeviceStreamLimitExceededException(crate::error::DeviceStreamLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -28,12 +25,9 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource.
-    /// Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

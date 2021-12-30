@@ -14,9 +14,7 @@ pub struct CloneReceiptRuleSetError {
 pub enum CloneReceiptRuleSetErrorKind {
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
@@ -129,15 +127,11 @@ pub struct CreateConfigurationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConfigurationSetErrorKind {
-    /// <p>Indicates that the configuration set could not be created because of a naming
-    /// conflict.</p>
+    /// <p>Indicates that the configuration set could not be created because of a naming conflict.</p>
     ConfigurationSetAlreadyExistsException(crate::error::ConfigurationSetAlreadyExistsException),
-    /// <p>Indicates that the configuration set is invalid. See the error message for
-    /// details.</p>
+    /// <p>Indicates that the configuration set is invalid. See the error message for details.</p>
     InvalidConfigurationSetException(crate::error::InvalidConfigurationSetException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -258,21 +252,15 @@ pub struct CreateConfigurationSetEventDestinationError {
 pub enum CreateConfigurationSetEventDestinationErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// <p>Indicates that the event destination could not be created because of a naming
-    /// conflict.</p>
+    /// <p>Indicates that the event destination could not be created because of a naming conflict.</p>
     EventDestinationAlreadyExistsException(crate::error::EventDestinationAlreadyExistsException),
-    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for
-    /// details.</p>
+    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
     InvalidCloudWatchDestinationException(crate::error::InvalidCloudWatchDestinationException),
-    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error
-    /// message for details.</p>
+    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
     InvalidFirehoseDestinationException(crate::error::InvalidFirehoseDestinationException),
-    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is
-    /// invalid. See the error message for details.</p>
+    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
     InvalidSnsDestinationException(crate::error::InvalidSnsDestinationException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -449,20 +437,13 @@ pub struct CreateConfigurationSetTrackingOptionsError {
 pub enum CreateConfigurationSetTrackingOptionsErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is
-    /// invalid. This error appears most often in the following situations:</p>
+    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>When the tracking domain you specified is not verified in Amazon SES.</p>
-    /// </li>
-    /// <li>
-    /// <p>When the tracking domain you specified is not a valid domain or
-    /// subdomain.</p>
-    /// </li>
+    /// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+    /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
     /// </ul>
     InvalidTrackingOptionsException(crate::error::InvalidTrackingOptionsException),
-    /// <p>Indicates that the configuration set you specified already contains a TrackingOptions
-    /// object.</p>
+    /// <p>Indicates that the configuration set you specified already contains a TrackingOptions object.</p>
     TrackingOptionsAlreadyExistsException(crate::error::TrackingOptionsAlreadyExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -600,17 +581,13 @@ pub enum CreateCustomVerificationEmailTemplateErrorKind {
     CustomVerificationEmailInvalidContentException(
         crate::error::CustomVerificationEmailInvalidContentException,
     ),
-    /// <p>Indicates that a custom verification email template with the name you specified
-    /// already exists.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified already exists.</p>
     CustomVerificationEmailTemplateAlreadyExistsException(
         crate::error::CustomVerificationEmailTemplateAlreadyExistsException,
     ),
-    /// <p>Indicates that the sender address specified for a custom verification email is not
-    /// verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::error::FromEmailAddressNotVerifiedException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -749,9 +726,7 @@ pub struct CreateReceiptFilterError {
 pub enum CreateReceiptFilterErrorKind {
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -855,24 +830,13 @@ pub struct CreateReceiptRuleError {
 pub enum CreateReceiptRuleErrorKind {
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
-    /// not execute the provided function, possibly due to permissions issues. For information
-    /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidLambdaFunctionException(crate::error::InvalidLambdaFunctionException),
-    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or
-    /// that Amazon SES could not publish to the bucket, possibly due to permissions issues. For
-    /// information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidS3ConfigurationException(crate::error::InvalidS3ConfigurationException),
-    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not
-    /// publish to the topic, possibly due to permissions issues. For information about giving
-    /// permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidSnsTopicException(crate::error::InvalidSnsTopicException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that the provided receipt rule does not exist.</p>
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
@@ -1025,9 +989,7 @@ pub struct CreateReceiptRuleSetError {
 pub enum CreateReceiptRuleSetErrorKind {
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1131,12 +1093,9 @@ pub struct CreateTemplateError {
 pub enum CreateTemplateErrorKind {
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Indicates that the template that you specified could not be rendered. This issue may
-    /// occur when a template refers to a partial that does not exist.</p>
+    /// <p>Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to a partial that does not exist.</p>
     InvalidTemplateException(crate::error::InvalidTemplateException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2729,8 +2688,7 @@ pub struct GetCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCustomVerificationEmailTemplateErrorKind {
-    /// <p>Indicates that a custom verification email template with the name you specified does
-    /// not exist.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(
         crate::error::CustomVerificationEmailTemplateDoesNotExistException,
     ),
@@ -3418,8 +3376,7 @@ pub struct GetTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTemplateErrorKind {
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4288,8 +4245,7 @@ pub struct PutIdentityPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutIdentityPolicyErrorKind {
-    /// <p>Indicates that the provided policy is invalid. Check the error stack for more
-    /// information about what caused the error.</p>
+    /// <p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4486,8 +4442,7 @@ pub struct SendBounceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendBounceErrorKind {
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4578,23 +4533,18 @@ pub struct SendBulkTemplatedEmailError {
 #[derive(std::fmt::Debug)]
 pub enum SendBulkTemplatedEmailErrorKind {
     /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-    /// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
     AccountSendingPausedException(crate::error::AccountSendingPausedException),
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that email sending is disabled for the configuration set.</p>
-    /// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     ConfigurationSetSendingPausedException(crate::error::ConfigurationSetSendingPausedException),
-    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-    /// record required to use the specified MAIL FROM domain. For information about editing the
-    /// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4746,16 +4696,13 @@ pub struct SendCustomVerificationEmailError {
 pub enum SendCustomVerificationEmailErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// <p>Indicates that a custom verification email template with the name you specified does
-    /// not exist.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(
         crate::error::CustomVerificationEmailTemplateDoesNotExistException,
     ),
-    /// <p>Indicates that the sender address specified for a custom verification email is not
-    /// verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::error::FromEmailAddressNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
     /// <p>Indicates that the account has not been granted production access.</p>
     ProductionAccessNotGrantedException(crate::error::ProductionAccessNotGrantedException),
@@ -4908,20 +4855,16 @@ pub struct SendEmailError {
 #[derive(std::fmt::Debug)]
 pub enum SendEmailErrorKind {
     /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-    /// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
     AccountSendingPausedException(crate::error::AccountSendingPausedException),
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that email sending is disabled for the configuration set.</p>
-    /// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     ConfigurationSetSendingPausedException(crate::error::ConfigurationSetSendingPausedException),
-    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-    /// record required to use the specified MAIL FROM domain. For information about editing the
-    /// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5048,20 +4991,16 @@ pub struct SendRawEmailError {
 #[derive(std::fmt::Debug)]
 pub enum SendRawEmailErrorKind {
     /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-    /// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
     AccountSendingPausedException(crate::error::AccountSendingPausedException),
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that email sending is disabled for the configuration set.</p>
-    /// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     ConfigurationSetSendingPausedException(crate::error::ConfigurationSetSendingPausedException),
-    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-    /// record required to use the specified MAIL FROM domain. For information about editing the
-    /// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5188,23 +5127,18 @@ pub struct SendTemplatedEmailError {
 #[derive(std::fmt::Debug)]
 pub enum SendTemplatedEmailErrorKind {
     /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-    /// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
     AccountSendingPausedException(crate::error::AccountSendingPausedException),
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that email sending is disabled for the configuration set.</p>
-    /// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     ConfigurationSetSendingPausedException(crate::error::ConfigurationSetSendingPausedException),
-    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-    /// record required to use the specified MAIL FROM domain. For information about editing the
-    /// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5966,15 +5900,11 @@ pub struct TestRenderTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestRenderTemplateErrorKind {
-    /// <p>Indicates that one or more of the replacement values you provided is invalid. This
-    /// error may occur when the TemplateData object contains invalid JSON.</p>
+    /// <p>Indicates that one or more of the replacement values you provided is invalid. This error may occur when the TemplateData object contains invalid JSON.</p>
     InvalidRenderingParameterException(crate::error::InvalidRenderingParameterException),
-    /// <p>Indicates that one or more of the replacement values for the specified template was
-    /// not specified. Ensure that the TemplateData object contains references to all of the
-    /// replacement tags in the specified template.</p>
+    /// <p>Indicates that one or more of the replacement values for the specified template was not specified. Ensure that the TemplateData object contains references to all of the replacement tags in the specified template.</p>
     MissingRenderingAttributeException(crate::error::MissingRenderingAttributeException),
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6175,14 +6105,11 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that the event destination does not exist.</p>
     EventDestinationDoesNotExistException(crate::error::EventDestinationDoesNotExistException),
-    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for
-    /// details.</p>
+    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
     InvalidCloudWatchDestinationException(crate::error::InvalidCloudWatchDestinationException),
-    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error
-    /// message for details.</p>
+    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
     InvalidFirehoseDestinationException(crate::error::InvalidFirehoseDestinationException),
-    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is
-    /// invalid. See the error message for details.</p>
+    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
     InvalidSnsDestinationException(crate::error::InvalidSnsDestinationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6553,16 +6480,10 @@ pub struct UpdateConfigurationSetTrackingOptionsError {
 pub enum UpdateConfigurationSetTrackingOptionsErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is
-    /// invalid. This error appears most often in the following situations:</p>
+    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>When the tracking domain you specified is not verified in Amazon SES.</p>
-    /// </li>
-    /// <li>
-    /// <p>When the tracking domain you specified is not a valid domain or
-    /// subdomain.</p>
-    /// </li>
+    /// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+    /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
     /// </ul>
     InvalidTrackingOptionsException(crate::error::InvalidTrackingOptionsException),
     /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
@@ -6701,13 +6622,11 @@ pub enum UpdateCustomVerificationEmailTemplateErrorKind {
     CustomVerificationEmailInvalidContentException(
         crate::error::CustomVerificationEmailInvalidContentException,
     ),
-    /// <p>Indicates that a custom verification email template with the name you specified does
-    /// not exist.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(
         crate::error::CustomVerificationEmailTemplateDoesNotExistException,
     ),
-    /// <p>Indicates that the sender address specified for a custom verification email is not
-    /// verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::error::FromEmailAddressNotVerifiedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6831,24 +6750,13 @@ pub struct UpdateReceiptRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReceiptRuleErrorKind {
-    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
-    /// not execute the provided function, possibly due to permissions issues. For information
-    /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidLambdaFunctionException(crate::error::InvalidLambdaFunctionException),
-    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or
-    /// that Amazon SES could not publish to the bucket, possibly due to permissions issues. For
-    /// information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidS3ConfigurationException(crate::error::InvalidS3ConfigurationException),
-    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not
-    /// publish to the topic, possibly due to permissions issues. For information about giving
-    /// permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidSnsTopicException(crate::error::InvalidSnsTopicException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that the provided receipt rule does not exist.</p>
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
@@ -6990,11 +6898,9 @@ pub struct UpdateTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTemplateErrorKind {
-    /// <p>Indicates that the template that you specified could not be rendered. This issue may
-    /// occur when a template refers to a partial that does not exist.</p>
+    /// <p>Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to a partial that does not exist.</p>
     InvalidTemplateException(crate::error::InvalidTemplateException),
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7411,8 +7317,7 @@ impl std::error::Error for VerifyEmailIdentityError {
     }
 }
 
-/// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-/// account.</p>
+/// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TemplateDoesNotExistException {
@@ -7500,8 +7405,7 @@ impl TemplateDoesNotExistException {
     }
 }
 
-/// <p>Indicates that the template that you specified could not be rendered. This issue may
-/// occur when a template refers to a partial that does not exist.</p>
+/// <p>Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to a partial that does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTemplateException {
@@ -7759,9 +7663,7 @@ impl RuleDoesNotExistException {
     }
 }
 
-/// <p>Indicates that a resource could not be created because of service limits. For a list
-/// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7825,10 +7727,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not
-/// publish to the topic, possibly due to permissions issues. For information about giving
-/// permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicException {
@@ -7913,10 +7812,7 @@ impl InvalidSnsTopicException {
     }
 }
 
-/// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or
-/// that Amazon SES could not publish to the bucket, possibly due to permissions issues. For
-/// information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3ConfigurationException {
@@ -8001,10 +7897,7 @@ impl InvalidS3ConfigurationException {
     }
 }
 
-/// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
-/// not execute the provided function, possibly due to permissions issues. For information
-/// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaFunctionException {
@@ -8089,20 +7982,17 @@ impl InvalidLambdaFunctionException {
     }
 }
 
-/// <p>Indicates that the sender address specified for a custom verification email is not
-/// verified, and is therefore not eligible to send the custom verification email. </p>
+/// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FromEmailAddressNotVerifiedException {
-    /// <p>Indicates that the from email address associated with the custom verification email
-    /// template is not verified.</p>
+    /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl FromEmailAddressNotVerifiedException {
-    /// <p>Indicates that the from email address associated with the custom verification email
-    /// template is not verified.</p>
+    /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
     pub fn from_email_address(&self) -> std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
@@ -8141,14 +8031,12 @@ pub mod from_email_address_not_verified_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that the from email address associated with the custom verification email
-        /// template is not verified.</p>
+        /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.from_email_address = Some(input.into());
             self
         }
-        /// <p>Indicates that the from email address associated with the custom verification email
-        /// template is not verified.</p>
+        /// <p>Indicates that the from email address associated with the custom verification email template is not verified.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8182,8 +8070,7 @@ impl FromEmailAddressNotVerifiedException {
     }
 }
 
-/// <p>Indicates that a custom verification email template with the name you specified does
-/// not exist.</p>
+/// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplateDoesNotExistException {
@@ -8349,15 +8236,13 @@ impl CustomVerificationEmailInvalidContentException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptionsDoesNotExistException {
-    /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration
-    /// set.</p>
+    /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl TrackingOptionsDoesNotExistException {
-    /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration
-    /// set.</p>
+    /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -8396,14 +8281,12 @@ pub mod tracking_options_does_not_exist_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration
-        /// set.</p>
+        /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration
-        /// set.</p>
+        /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8437,16 +8320,10 @@ impl TrackingOptionsDoesNotExistException {
     }
 }
 
-/// <p>Indicates that the custom domain to be used for open and click tracking redirects is
-/// invalid. This error appears most often in the following situations:</p>
+/// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
 /// <ul>
-/// <li>
-/// <p>When the tracking domain you specified is not verified in Amazon SES.</p>
-/// </li>
-/// <li>
-/// <p>When the tracking domain you specified is not a valid domain or
-/// subdomain.</p>
-/// </li>
+/// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+/// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8599,8 +8476,7 @@ impl ConfigurationSetDoesNotExistException {
     }
 }
 
-/// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is
-/// invalid. See the error message for details.</p>
+/// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsDestinationException {
@@ -8713,8 +8589,7 @@ impl InvalidSnsDestinationException {
     }
 }
 
-/// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error
-/// message for details.</p>
+/// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFirehoseDestinationException {
@@ -8824,8 +8699,7 @@ impl InvalidFirehoseDestinationException {
     }
 }
 
-/// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for
-/// details.</p>
+/// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCloudWatchDestinationException {
@@ -9045,9 +8919,7 @@ impl EventDestinationDoesNotExistException {
     }
 }
 
-/// <p>Indicates that one or more of the replacement values for the specified template was
-/// not specified. Ensure that the TemplateData object contains references to all of the
-/// replacement tags in the specified template.</p>
+/// <p>Indicates that one or more of the replacement values for the specified template was not specified. Ensure that the TemplateData object contains references to all of the replacement tags in the specified template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRenderingAttributeException {
@@ -9135,8 +9007,7 @@ impl MissingRenderingAttributeException {
     }
 }
 
-/// <p>Indicates that one or more of the replacement values you provided is invalid. This
-/// error may occur when the TemplateData object contains invalid JSON.</p>
+/// <p>Indicates that one or more of the replacement values you provided is invalid. This error may occur when the TemplateData object contains invalid JSON.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRenderingParameterException {
@@ -9224,8 +9095,7 @@ impl InvalidRenderingParameterException {
     }
 }
 
-/// <p>Indicates that the action failed, and the message could not be sent. Check the error
-/// stack for more information about what caused the error.</p>
+/// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageRejected {
@@ -9289,10 +9159,7 @@ impl MessageRejected {
     }
 }
 
-/// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-/// record required to use the specified MAIL FROM domain. For information about editing the
-/// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailFromDomainNotVerifiedException {
@@ -9357,7 +9224,7 @@ impl MailFromDomainNotVerifiedException {
 }
 
 /// <p>Indicates that email sending is disabled for the configuration set.</p>
-/// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+/// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationSetSendingPausedException {
@@ -9446,7 +9313,7 @@ impl ConfigurationSetSendingPausedException {
 }
 
 /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-/// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+/// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSendingPausedException {
@@ -9574,8 +9441,7 @@ impl ProductionAccessNotGrantedException {
     }
 }
 
-/// <p>Indicates that the provided policy is invalid. Check the error stack for more
-/// information about what caused the error.</p>
+/// <p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyException {
@@ -9707,15 +9573,13 @@ impl InvalidDeliveryOptionsException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotDeleteException {
-    /// <p>Indicates that a resource could not be deleted because no resource with the specified
-    /// name exists.</p>
+    /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl CannotDeleteException {
-    /// <p>Indicates that a resource could not be deleted because no resource with the specified
-    /// name exists.</p>
+    /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9754,14 +9618,12 @@ pub mod cannot_delete_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that a resource could not be deleted because no resource with the specified
-        /// name exists.</p>
+        /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Indicates that a resource could not be deleted because no resource with the specified
-        /// name exists.</p>
+        /// <p>Indicates that a resource could not be deleted because no resource with the specified name exists.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9796,15 +9658,13 @@ impl CannotDeleteException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
-    /// <p>Indicates that a resource could not be created because the resource name already
-    /// exists.</p>
+    /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
     pub name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
-    /// <p>Indicates that a resource could not be created because the resource name already
-    /// exists.</p>
+    /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9843,14 +9703,12 @@ pub mod already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that a resource could not be created because the resource name already
-        /// exists.</p>
+        /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Indicates that a resource could not be created because the resource name already
-        /// exists.</p>
+        /// <p>Indicates that a resource could not be created because the resource name already exists.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9881,20 +9739,17 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>Indicates that a custom verification email template with the name you specified
-/// already exists.</p>
+/// <p>Indicates that a custom verification email template with the name you specified already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomVerificationEmailTemplateAlreadyExistsException {
-    /// <p>Indicates that the provided custom verification email template with the specified
-    /// template name already exists.</p>
+    /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
     pub custom_verification_email_template_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomVerificationEmailTemplateAlreadyExistsException {
-    /// <p>Indicates that the provided custom verification email template with the specified
-    /// template name already exists.</p>
+    /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
     pub fn custom_verification_email_template_name(&self) -> std::option::Option<&str> {
         self.custom_verification_email_template_name.as_deref()
     }
@@ -9937,8 +9792,7 @@ pub mod custom_verification_email_template_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that the provided custom verification email template with the specified
-        /// template name already exists.</p>
+        /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
         pub fn custom_verification_email_template_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -9946,8 +9800,7 @@ pub mod custom_verification_email_template_already_exists_exception {
             self.custom_verification_email_template_name = Some(input.into());
             self
         }
-        /// <p>Indicates that the provided custom verification email template with the specified
-        /// template name already exists.</p>
+        /// <p>Indicates that the provided custom verification email template with the specified template name already exists.</p>
         pub fn set_custom_verification_email_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9984,20 +9837,17 @@ impl CustomVerificationEmailTemplateAlreadyExistsException {
     }
 }
 
-/// <p>Indicates that the configuration set you specified already contains a TrackingOptions
-/// object.</p>
+/// <p>Indicates that the configuration set you specified already contains a TrackingOptions object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptionsAlreadyExistsException {
-    /// <p>Indicates that a TrackingOptions object already exists in the specified configuration
-    /// set.</p>
+    /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl TrackingOptionsAlreadyExistsException {
-    /// <p>Indicates that a TrackingOptions object already exists in the specified configuration
-    /// set.</p>
+    /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -10036,14 +9886,12 @@ pub mod tracking_options_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates that a TrackingOptions object already exists in the specified configuration
-        /// set.</p>
+        /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>Indicates that a TrackingOptions object already exists in the specified configuration
-        /// set.</p>
+        /// <p>Indicates that a TrackingOptions object already exists in the specified configuration set.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10077,8 +9925,7 @@ impl TrackingOptionsAlreadyExistsException {
     }
 }
 
-/// <p>Indicates that the event destination could not be created because of a naming
-/// conflict.</p>
+/// <p>Indicates that the event destination could not be created because of a naming conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestinationAlreadyExistsException {
@@ -10188,8 +10035,7 @@ impl EventDestinationAlreadyExistsException {
     }
 }
 
-/// <p>Indicates that the configuration set is invalid. See the error message for
-/// details.</p>
+/// <p>Indicates that the configuration set is invalid. See the error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationSetException {
@@ -10253,8 +10099,7 @@ impl InvalidConfigurationSetException {
     }
 }
 
-/// <p>Indicates that the configuration set could not be created because of a naming
-/// conflict.</p>
+/// <p>Indicates that the configuration set could not be created because of a naming conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationSetAlreadyExistsException {

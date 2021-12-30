@@ -460,14 +460,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ttl(input);
             self
         }
-        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-        /// creation.</p>
+        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
         pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.transit_encryption_enabled(input);
             self
         }
-        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
-        /// creation.</p>
+        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after creation.</p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_transit_encryption_enabled(input);
             self
@@ -484,16 +482,8 @@ pub mod fluent_builders {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
             self.inner = self.inner.api_caching_behavior(input);
@@ -501,16 +491,8 @@ pub mod fluent_builders {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn set_api_caching_behavior(
             mut self,
@@ -521,77 +503,25 @@ pub mod fluent_builders {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -599,77 +529,25 @@ pub mod fluent_builders {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
             self.inner = self.inner.set_type(input);
@@ -678,8 +556,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApiKey`.
     ///
-    /// <p>Creates a unique key that you can distribute to clients who are executing your
-    /// API.</p>
+    /// <p>Creates a unique key that you can distribute to clients who are executing your API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiKey<
         C = aws_smithy_client::erase::DynConnector,
@@ -756,16 +633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The time from creation time after which the API key expires. The date is represented as
-        /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-        /// parameter is 7 days from creation time. For more information, see .</p>
+        /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
         pub fn expires(mut self, input: i64) -> Self {
             self.inner = self.inner.expires(input);
             self
         }
-        /// <p>The time from creation time after which the API key expires. The date is represented as
-        /// seconds since the epoch, rounded down to the nearest hour. The default value for this
-        /// parameter is 7 days from creation time. For more information, see .</p>
+        /// <p>The time from creation time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -873,14 +746,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-        /// role when accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
-        /// role when accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -915,8 +786,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             input: crate::model::ElasticsearchDataSourceConfig,
@@ -925,8 +795,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
         pub fn set_elasticsearch_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -983,8 +852,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunction`.
     ///
     /// <p>Creates a <code>Function</code> object.</p>
-    /// <p>A function is a reusable entity. Multiple functions can be used to compose the resolver
-    /// logic.</p>
+    /// <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
@@ -1071,14 +939,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_name(input.into());
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1086,14 +952,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source_name(input);
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_mapping_template(input.into());
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1114,14 +978,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_mapping_template(input);
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.function_version(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1130,15 +992,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
             self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -1229,14 +1089,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_config(input);
             self
         }
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-        /// pools, or Amazon Web Services Lambda.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.inner = self.inner.authentication_type(input);
             self
         }
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
-        /// pools, or Amazon Web Services Lambda.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user pools, or Amazon Web Services Lambda.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -1297,8 +1155,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
         ///
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn additional_authentication_providers(
             mut self,
             input: crate::model::AdditionalAuthenticationProvider,
@@ -1306,8 +1163,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_authentication_providers(input);
             self
         }
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn set_additional_authentication_providers(
             mut self,
             input: std::option::Option<
@@ -1317,14 +1173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_authentication_providers(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn xray_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.xray_enabled(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_xray_enabled(input);
             self
@@ -1349,8 +1203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResolver`.
     ///
     /// <p>Creates a <code>Resolver</code> object.</p>
-    /// <p>A resolver converts incoming requests into a format that a data source can understand
-    /// and converts the data source's responses into GraphQL.</p>
+    /// <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolver<
         C = aws_smithy_client::erase::DynConnector,
@@ -1451,21 +1304,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mapping template to be used for requests.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The mapping template to be used for requests.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1488,19 +1335,8 @@ pub mod fluent_builders {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
             self.inner = self.inner.kind(input);
@@ -1508,19 +1344,8 @@ pub mod fluent_builders {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
             self.inner = self.inner.set_kind(input);
@@ -1636,15 +1461,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_definition(input);
             self
@@ -2928,12 +2751,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApiKeys`.
     ///
-    /// <p>Lists the API keys for a given API.</p>
-    /// <note>
-    /// <p>API keys are deleted automatically 60 days after they expire. However, they may still
-    /// be included in the response until they have actually been deleted. You can safely call
-    /// <code>DeleteApiKey</code> to manually delete a key before it's automatically
-    /// deleted.</p>
+    /// <p>Lists the API keys for a given API.</p> <note>
+    /// <p>API keys are deleted automatically 60 days after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApiKeys<
@@ -3001,14 +2820,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_id(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3093,14 +2910,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_id(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3185,14 +3000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_id(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3267,14 +3080,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3369,14 +3180,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_name(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3471,14 +3280,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_id(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which you can
-        /// use to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which you can
-        /// use to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3646,14 +3453,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list. </p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3672,8 +3477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSchemaCreation`.
     ///
     /// <p>Adds a new schema to your GraphQL API.</p>
-    /// <p>This operation is asynchronous. Use  to
-    /// determine when it has completed.</p>
+    /// <p>This operation is asynchronous. Use to determine when it has completed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSchemaCreation<
         C = aws_smithy_client::erase::DynConnector,
@@ -4017,16 +3821,8 @@ pub mod fluent_builders {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
             self.inner = self.inner.api_caching_behavior(input);
@@ -4034,16 +3830,8 @@ pub mod fluent_builders {
         }
         /// <p>Caching behavior.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
-        /// cached.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
-        /// that you specify are cached.</p>
-        /// </li>
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
         /// </ul>
         pub fn set_api_caching_behavior(
             mut self,
@@ -4054,77 +3842,25 @@ pub mod fluent_builders {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -4132,77 +3868,25 @@ pub mod fluent_builders {
         }
         /// <p>The cache instance type. Valid values are </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMALL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MEDIUM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XLARGE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_2X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_4X</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_8X</code> (not available in all regions)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LARGE_12X</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMALL</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LARGE</code> </p> </li>
+        /// <li> <p> <code>XLARGE</code> </p> </li>
+        /// <li> <p> <code>LARGE_2X</code> </p> </li>
+        /// <li> <p> <code>LARGE_4X</code> </p> </li>
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
+        /// <li> <p> <code>LARGE_12X</code> </p> </li>
         /// </ul>
         /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
         /// <p>The following legacy instance types are available, but their use is discouraged:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
-        /// </li>
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
             self.inner = self.inner.set_type(input);
@@ -4298,14 +3982,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The time from update time after which the API key expires. The date is represented as
-        /// seconds since the epoch. For more information, see .</p>
+        /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
         pub fn expires(mut self, input: i64) -> Self {
             self.inner = self.inner.expires(input);
             self
         }
-        /// <p>The time from update time after which the API key expires. The date is represented as
-        /// seconds since the epoch. For more information, see .</p>
+        /// <p>The time from update time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_expires(input);
             self
@@ -4453,8 +4135,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new OpenSearch configuration.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             input: crate::model::ElasticsearchDataSourceConfig,
@@ -4463,8 +4144,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new OpenSearch configuration.</p>
-        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
-        /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
         pub fn set_elasticsearch_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -4617,14 +4297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_id(input);
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_name(input.into());
             self
         }
-        /// <p>The <code>Function</code>
-        /// <code>DataSource</code> name.</p>
+        /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4632,14 +4310,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source_name(input);
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_mapping_template(input.into());
             self
         }
-        /// <p>The <code>Function</code> request mapping template. Functions support only the
-        /// 2018-05-29 version of the request mapping template.</p>
+        /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4660,14 +4336,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_mapping_template(input);
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.function_version(input.into());
             self
         }
-        /// <p>The <code>version</code> of the request mapping template. Currently the supported value
-        /// is 2018-05-29. </p>
+        /// <p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4676,15 +4350,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
             self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
-        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
-        /// be performed when the resolver is invoked.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -4798,14 +4470,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authentication_type(input);
             self
         }
-        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-        /// object.</p>
+        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
         pub fn user_pool_config(mut self, input: crate::model::UserPoolConfig) -> Self {
             self.inner = self.inner.user_pool_config(input);
             self
         }
-        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
-        /// object.</p>
+        /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>
         pub fn set_user_pool_config(
             mut self,
             input: std::option::Option<crate::model::UserPoolConfig>,
@@ -4830,8 +4500,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
         ///
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn additional_authentication_providers(
             mut self,
             input: crate::model::AdditionalAuthenticationProvider,
@@ -4839,8 +4508,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_authentication_providers(input);
             self
         }
-        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
-        /// API.</p>
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
         pub fn set_additional_authentication_providers(
             mut self,
             input: std::option::Option<
@@ -4850,14 +4518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_authentication_providers(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn xray_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.xray_enabled(input);
             self
         }
-        /// <p>A flag indicating whether to enable X-Ray tracing for the
-        /// <code>GraphqlApi</code>.</p>
+        /// <p>A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_xray_enabled(input);
             self
@@ -4982,21 +4648,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new request mapping template.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The new request mapping template.</p>
-        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).</p>
-        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
-        /// other data sources, VTL request and response mapping templates are required.</p>
+        /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+        /// <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5019,19 +4679,8 @@ pub mod fluent_builders {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
             self.inner = self.inner.kind(input);
@@ -5039,19 +4688,8 @@ pub mod fluent_builders {
         }
         /// <p>The resolver type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
-        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
-        /// against a single data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
-        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
-        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
-        /// sources.</p>
-        /// </li>
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li>
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
             self.inner = self.inner.set_kind(input);

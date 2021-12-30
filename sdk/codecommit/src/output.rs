@@ -614,8 +614,7 @@ impl UntagResourceOutput {
 pub struct TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
     pub successful_executions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of triggers that were not tested. This list provides the names of the
-    /// triggers that could not be tested, separated by commas.</p>
+    /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     pub failed_executions:
         std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
 }
@@ -624,8 +623,7 @@ impl TestRepositoryTriggersOutput {
     pub fn successful_executions(&self) -> std::option::Option<&[std::string::String]> {
         self.successful_executions.as_deref()
     }
-    /// <p>The list of triggers that were not tested. This list provides the names of the
-    /// triggers that could not be tested, separated by commas.</p>
+    /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     pub fn failed_executions(
         &self,
     ) -> std::option::Option<&[crate::model::RepositoryTriggerExecutionFailure]> {
@@ -674,8 +672,7 @@ pub mod test_repository_triggers_output {
         ///
         /// To override the contents of this collection use [`set_failed_executions`](Self::set_failed_executions).
         ///
-        /// <p>The list of triggers that were not tested. This list provides the names of the
-        /// triggers that could not be tested, separated by commas.</p>
+        /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
         pub fn failed_executions(
             mut self,
             input: crate::model::RepositoryTriggerExecutionFailure,
@@ -685,8 +682,7 @@ pub mod test_repository_triggers_output {
             self.failed_executions = Some(v);
             self
         }
-        /// <p>The list of triggers that were not tested. This list provides the names of the
-        /// triggers that could not be tested, separated by commas.</p>
+        /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
         pub fn set_failed_executions(
             mut self,
             input: std::option::Option<
@@ -983,11 +979,9 @@ pub struct PostCommentForPullRequestOutput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The system-generated ID of the pull request. </p>
     pub pull_request_id: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the commit in the source branch used to create the pull request,
-    /// or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub before_commit_id: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the commit in the destination branch where the pull request is
-    /// merged.</p>
+    /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
     pub before_blob_id: std::option::Option<std::string::String>,
@@ -1007,13 +1001,11 @@ impl PostCommentForPullRequestOutput {
     pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
-    /// <p>The full commit ID of the commit in the source branch used to create the pull request,
-    /// or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub fn before_commit_id(&self) -> std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
-    /// <p>The full commit ID of the commit in the destination branch where the pull request is
-    /// merged.</p>
+    /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
     pub fn after_commit_id(&self) -> std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
@@ -1090,14 +1082,12 @@ pub mod post_comment_for_pull_request_output {
             self.pull_request_id = input;
             self
         }
-        /// <p>The full commit ID of the commit in the source branch used to create the pull request,
-        /// or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+        /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.before_commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the commit in the source branch used to create the pull request,
-        /// or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+        /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1105,14 +1095,12 @@ pub mod post_comment_for_pull_request_output {
             self.before_commit_id = input;
             self
         }
-        /// <p>The full commit ID of the commit in the destination branch where the pull request is
-        /// merged.</p>
+        /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
         pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.after_commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the commit in the destination branch where the pull request is
-        /// merged.</p>
+        /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1974,9 +1962,7 @@ impl ListRepositoriesForApprovalRuleTemplateOutput {
 pub struct ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositoryNameIdPair>>,
-    /// <p>An enumeration token that allows the operation to batch the results of the operation.
-    /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-    /// another page of 1,000 records is retrieved.</p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesOutput {
@@ -1984,9 +1970,7 @@ impl ListRepositoriesOutput {
     pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositoryNameIdPair]> {
         self.repositories.as_deref()
     }
-    /// <p>An enumeration token that allows the operation to batch the results of the operation.
-    /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-    /// another page of 1,000 records is retrieved.</p>
+    /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2029,16 +2013,12 @@ pub mod list_repositories_output {
             self.repositories = input;
             self
         }
-        /// <p>An enumeration token that allows the operation to batch the results of the operation.
-        /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-        /// another page of 1,000 records is retrieved.</p>
+        /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that allows the operation to batch the results of the operation.
-        /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-        /// another page of 1,000 records is retrieved.</p>
+        /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2882,8 +2862,7 @@ pub struct GetMergeConflictsOutput {
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: std::option::Option<std::string::String>,
-    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
-    /// FAST_FORWARD_MERGE, this list is always empty.</p>
+    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
     pub conflict_metadata_list: std::option::Option<std::vec::Vec<crate::model::ConflictMetadata>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2905,8 +2884,7 @@ impl GetMergeConflictsOutput {
     pub fn base_commit_id(&self) -> std::option::Option<&str> {
         self.base_commit_id.as_deref()
     }
-    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
-    /// FAST_FORWARD_MERGE, this list is always empty.</p>
+    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
     pub fn conflict_metadata_list(&self) -> std::option::Option<&[crate::model::ConflictMetadata]> {
         self.conflict_metadata_list.as_deref()
     }
@@ -2995,16 +2973,14 @@ pub mod get_merge_conflicts_output {
         ///
         /// To override the contents of this collection use [`set_conflict_metadata_list`](Self::set_conflict_metadata_list).
         ///
-        /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
-        /// FAST_FORWARD_MERGE, this list is always empty.</p>
+        /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
         pub fn conflict_metadata_list(mut self, input: crate::model::ConflictMetadata) -> Self {
             let mut v = self.conflict_metadata_list.unwrap_or_default();
             v.push(input);
             self.conflict_metadata_list = Some(v);
             self
         }
-        /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
-        /// FAST_FORWARD_MERGE, this list is always empty.</p>
+        /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
         pub fn set_conflict_metadata_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConflictMetadata>>,
@@ -3052,9 +3028,7 @@ pub struct GetMergeCommitOutput {
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: std::option::Option<std::string::String>,
-    /// <p>The commit ID for the merge commit created when the source branch was merged into the
-    /// destination branch. If the fast-forward merge strategy was used, there is no merge
-    /// commit.</p>
+    /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     pub merged_commit_id: std::option::Option<std::string::String>,
 }
 impl GetMergeCommitOutput {
@@ -3070,9 +3044,7 @@ impl GetMergeCommitOutput {
     pub fn base_commit_id(&self) -> std::option::Option<&str> {
         self.base_commit_id.as_deref()
     }
-    /// <p>The commit ID for the merge commit created when the source branch was merged into the
-    /// destination branch. If the fast-forward merge strategy was used, there is no merge
-    /// commit.</p>
+    /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     pub fn merged_commit_id(&self) -> std::option::Option<&str> {
         self.merged_commit_id.as_deref()
     }
@@ -3138,16 +3110,12 @@ pub mod get_merge_commit_output {
             self.base_commit_id = input;
             self
         }
-        /// <p>The commit ID for the merge commit created when the source branch was merged into the
-        /// destination branch. If the fast-forward merge strategy was used, there is no merge
-        /// commit.</p>
+        /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
         pub fn merged_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.merged_commit_id = Some(input.into());
             self
         }
-        /// <p>The commit ID for the merge commit created when the source branch was merged into the
-        /// destination branch. If the fast-forward merge strategy was used, there is no merge
-        /// commit.</p>
+        /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
         pub fn set_merged_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3177,8 +3145,7 @@ impl GetMergeCommitOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFolderOutput {
-    /// <p>The full commit ID used as a reference for the returned version of the folder
-    /// content.</p>
+    /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
     pub folder_path: std::option::Option<std::string::String>,
@@ -3188,15 +3155,13 @@ pub struct GetFolderOutput {
     pub sub_folders: std::option::Option<std::vec::Vec<crate::model::Folder>>,
     /// <p>The list of files in the specified folder, if any.</p>
     pub files: std::option::Option<std::vec::Vec<crate::model::File>>,
-    /// <p>The list of symbolic links to other files and folders in the specified folder, if
-    /// any.</p>
+    /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
     pub symbolic_links: std::option::Option<std::vec::Vec<crate::model::SymbolicLink>>,
     /// <p>The list of submodules in the specified folder, if any.</p>
     pub sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
 }
 impl GetFolderOutput {
-    /// <p>The full commit ID used as a reference for the returned version of the folder
-    /// content.</p>
+    /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     pub fn commit_id(&self) -> std::option::Option<&str> {
         self.commit_id.as_deref()
     }
@@ -3216,8 +3181,7 @@ impl GetFolderOutput {
     pub fn files(&self) -> std::option::Option<&[crate::model::File]> {
         self.files.as_deref()
     }
-    /// <p>The list of symbolic links to other files and folders in the specified folder, if
-    /// any.</p>
+    /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
     pub fn symbolic_links(&self) -> std::option::Option<&[crate::model::SymbolicLink]> {
         self.symbolic_links.as_deref()
     }
@@ -3254,14 +3218,12 @@ pub mod get_folder_output {
         pub(crate) sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
     }
     impl Builder {
-        /// <p>The full commit ID used as a reference for the returned version of the folder
-        /// content.</p>
+        /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
         pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID used as a reference for the returned version of the folder
-        /// content.</p>
+        /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -3328,16 +3290,14 @@ pub mod get_folder_output {
         ///
         /// To override the contents of this collection use [`set_symbolic_links`](Self::set_symbolic_links).
         ///
-        /// <p>The list of symbolic links to other files and folders in the specified folder, if
-        /// any.</p>
+        /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
         pub fn symbolic_links(mut self, input: crate::model::SymbolicLink) -> Self {
             let mut v = self.symbolic_links.unwrap_or_default();
             v.push(input);
             self.symbolic_links = Some(v);
             self
         }
-        /// <p>The list of symbolic links to other files and folders in the specified folder, if
-        /// any.</p>
+        /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
         pub fn set_symbolic_links(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SymbolicLink>>,
@@ -3393,14 +3353,10 @@ pub struct GetFileOutput {
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The blob ID of the object that represents the file content.</p>
     pub blob_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified path to the specified file. Returns the name and extension of the
-    /// file.</p>
+    /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     pub file_path: std::option::Option<std::string::String>,
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p>
-    /// <note>
-    /// <p>The file mode permissions returned by this API are not the standard file mode
-    /// permission values, such as 100644, but rather extrapolated values. See the supported
-    /// return values.</p>
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The size of the contents of the file, in bytes.</p>
@@ -3417,16 +3373,12 @@ impl GetFileOutput {
     pub fn blob_id(&self) -> std::option::Option<&str> {
         self.blob_id.as_deref()
     }
-    /// <p>The fully qualified path to the specified file. Returns the name and extension of the
-    /// file.</p>
+    /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p>
-    /// <note>
-    /// <p>The file mode permissions returned by this API are not the standard file mode
-    /// permission values, such as 100644, but rather extrapolated values. See the supported
-    /// return values.</p>
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
     pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
         self.file_mode.as_ref()
@@ -3486,33 +3438,25 @@ pub mod get_file_output {
             self.blob_id = input;
             self
         }
-        /// <p>The fully qualified path to the specified file. Returns the name and extension of the
-        /// file.</p>
+        /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
         pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_path = Some(input.into());
             self
         }
-        /// <p>The fully qualified path to the specified file. Returns the name and extension of the
-        /// file.</p>
+        /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
         }
-        /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p>
-        /// <note>
-        /// <p>The file mode permissions returned by this API are not the standard file mode
-        /// permission values, such as 100644, but rather extrapolated values. See the supported
-        /// return values.</p>
+        /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+        /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
         /// </note>
         pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
             self.file_mode = Some(input);
             self
         }
-        /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p>
-        /// <note>
-        /// <p>The file mode permissions returned by this API are not the standard file mode
-        /// permission values, such as 100644, but rather extrapolated values. See the supported
-        /// return values.</p>
+        /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+        /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
         /// </note>
         pub fn set_file_mode(
             mut self,
@@ -3568,15 +3512,13 @@ impl GetFileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDifferencesOutput {
-    /// <p>A data type object that contains information about the differences, including whether
-    /// the difference is added, modified, or deleted (A, D, M).</p>
+    /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
     pub differences: std::option::Option<std::vec::Vec<crate::model::Difference>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDifferencesOutput {
-    /// <p>A data type object that contains information about the differences, including whether
-    /// the difference is added, modified, or deleted (A, D, M).</p>
+    /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
     pub fn differences(&self) -> std::option::Option<&[crate::model::Difference]> {
         self.differences.as_deref()
     }
@@ -3607,16 +3549,14 @@ pub mod get_differences_output {
         ///
         /// To override the contents of this collection use [`set_differences`](Self::set_differences).
         ///
-        /// <p>A data type object that contains information about the differences, including whether
-        /// the difference is added, modified, or deleted (A, D, M).</p>
+        /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
         pub fn differences(mut self, input: crate::model::Difference) -> Self {
             let mut v = self.differences.unwrap_or_default();
             v.push(input);
             self.differences = Some(v);
             self
         }
-        /// <p>A data type object that contains information about the differences, including whether
-        /// the difference is added, modified, or deleted (A, D, M).</p>
+        /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
         pub fn set_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Difference>>,
@@ -4198,13 +4138,11 @@ impl GetApprovalRuleTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluatePullRequestApprovalRulesOutput {
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
-    /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub evaluation: std::option::Option<crate::model::Evaluation>,
 }
 impl EvaluatePullRequestApprovalRulesOutput {
-    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
-    /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn evaluation(&self) -> std::option::Option<&crate::model::Evaluation> {
         self.evaluation.as_ref()
     }
@@ -4225,14 +4163,12 @@ pub mod evaluate_pull_request_approval_rules_output {
         pub(crate) evaluation: std::option::Option<crate::model::Evaluation>,
     }
     impl Builder {
-        /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
-        /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+        /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
         pub fn evaluation(mut self, input: crate::model::Evaluation) -> Self {
             self.evaluation = Some(input);
             self
         }
-        /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
-        /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+        /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
         pub fn set_evaluation(
             mut self,
             input: std::option::Option<crate::model::Evaluation>,
@@ -4601,18 +4537,14 @@ impl DeleteRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePullRequestApprovalRuleOutput {
-    /// <p>The ID of the deleted approval rule. </p>
-    /// <note>
-    /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without
-    /// content.</p>
+    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub approval_rule_id: std::option::Option<std::string::String>,
 }
 impl DeletePullRequestApprovalRuleOutput {
-    /// <p>The ID of the deleted approval rule. </p>
-    /// <note>
-    /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without
-    /// content.</p>
+    /// <p>The ID of the deleted approval rule. </p> <note>
+    /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub fn approval_rule_id(&self) -> std::option::Option<&str> {
         self.approval_rule_id.as_deref()
@@ -4634,19 +4566,15 @@ pub mod delete_pull_request_approval_rule_output {
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the deleted approval rule. </p>
-        /// <note>
-        /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without
-        /// content.</p>
+        /// <p>The ID of the deleted approval rule. </p> <note>
+        /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
         /// </note>
         pub fn approval_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_id = Some(input.into());
             self
         }
-        /// <p>The ID of the deleted approval rule. </p>
-        /// <note>
-        /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without
-        /// content.</p>
+        /// <p>The ID of the deleted approval rule. </p> <note>
+        /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
         /// </note>
         pub fn set_approval_rule_id(
             mut self,
@@ -4680,8 +4608,7 @@ pub struct DeleteFileOutput {
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
     pub tree_id: std::option::Option<std::string::String>,
-    /// <p>The fully qualified path to the file to be deleted, including the full name and
-    /// extension of that file.</p>
+    /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     pub file_path: std::option::Option<std::string::String>,
 }
 impl DeleteFileOutput {
@@ -4697,8 +4624,7 @@ impl DeleteFileOutput {
     pub fn tree_id(&self) -> std::option::Option<&str> {
         self.tree_id.as_deref()
     }
-    /// <p>The fully qualified path to the file to be deleted, including the full name and
-    /// extension of that file.</p>
+    /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
@@ -4755,14 +4681,12 @@ pub mod delete_file_output {
             self.tree_id = input;
             self
         }
-        /// <p>The fully qualified path to the file to be deleted, including the full name and
-        /// extension of that file.</p>
+        /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
         pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_path = Some(input.into());
             self
         }
-        /// <p>The fully qualified path to the file to be deleted, including the full name and
-        /// extension of that file.</p>
+        /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -4900,13 +4824,11 @@ impl DeleteBranchOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApprovalRuleTemplateOutput {
-    /// <p>The system-generated ID of the deleted approval rule template. If the template has
-    /// been previously deleted, the only response is a 200 OK.</p>
+    /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     pub approval_rule_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteApprovalRuleTemplateOutput {
-    /// <p>The system-generated ID of the deleted approval rule template. If the template has
-    /// been previously deleted, the only response is a 200 OK.</p>
+    /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
         self.approval_rule_template_id.as_deref()
     }
@@ -4927,14 +4849,12 @@ pub mod delete_approval_rule_template_output {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The system-generated ID of the deleted approval rule template. If the template has
-        /// been previously deleted, the only response is a 200 OK.</p>
+        /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
         pub fn approval_rule_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.approval_rule_template_id = Some(input.into());
             self
         }
-        /// <p>The system-generated ID of the deleted approval rule template. If the template has
-        /// been previously deleted, the only response is a 200 OK.</p>
+        /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
         pub fn set_approval_rule_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5545,9 +5465,7 @@ impl BatchGetRepositoriesOutput {
 pub struct BatchGetCommitsOutput {
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
     pub commits: std::option::Option<std::vec::Vec<crate::model::Commit>>,
-    /// <p>Returns any commit IDs for which information could not be found. For example, if one
-    /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
-    /// repository, the ID returns an error object with more information.</p>
+    /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
 }
 impl BatchGetCommitsOutput {
@@ -5555,9 +5473,7 @@ impl BatchGetCommitsOutput {
     pub fn commits(&self) -> std::option::Option<&[crate::model::Commit]> {
         self.commits.as_deref()
     }
-    /// <p>Returns any commit IDs for which information could not be found. For example, if one
-    /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
-    /// repository, the ID returns an error object with more information.</p>
+    /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetCommitsError]> {
         self.errors.as_deref()
     }
@@ -5603,18 +5519,14 @@ pub mod batch_get_commits_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Returns any commit IDs for which information could not be found. For example, if one
-        /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
-        /// repository, the ID returns an error object with more information.</p>
+        /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
         pub fn errors(mut self, input: crate::model::BatchGetCommitsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Returns any commit IDs for which information could not be found. For example, if one
-        /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
-        /// repository, the ID returns an error object with more information.</p>
+        /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
@@ -5642,8 +5554,7 @@ impl BatchGetCommitsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
-    /// <p>A list of repository names that have had their association with the template
-    /// removed.</p>
+    /// <p>A list of repository names that have had their association with the template removed.</p>
     pub disassociated_repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
     pub errors: std::option::Option<
@@ -5651,8 +5562,7 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     >,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
-    /// <p>A list of repository names that have had their association with the template
-    /// removed.</p>
+    /// <p>A list of repository names that have had their association with the template removed.</p>
     pub fn disassociated_repository_names(&self) -> std::option::Option<&[std::string::String]> {
         self.disassociated_repository_names.as_deref()
     }
@@ -5694,8 +5604,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
         ///
         /// To override the contents of this collection use [`set_disassociated_repository_names`](Self::set_disassociated_repository_names).
         ///
-        /// <p>A list of repository names that have had their association with the template
-        /// removed.</p>
+        /// <p>A list of repository names that have had their association with the template removed.</p>
         pub fn disassociated_repository_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5705,8 +5614,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
             self.disassociated_repository_names = Some(v);
             self
         }
-        /// <p>A list of repository names that have had their association with the template
-        /// removed.</p>
+        /// <p>A list of repository names that have had their association with the template removed.</p>
         pub fn set_disassociated_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

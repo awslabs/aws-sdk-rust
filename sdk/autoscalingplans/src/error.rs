@@ -12,13 +12,11 @@ pub struct CreateScalingPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateScalingPlanErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Your account exceeded a limit. This exception is thrown when a per-account resource
-    /// limit is exceeded.</p>
+    /// <p>Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
@@ -140,8 +138,7 @@ pub struct DeleteScalingPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScalingPlanErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -267,8 +264,7 @@ pub struct DescribeScalingPlanResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingPlanResourcesErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -404,8 +400,7 @@ pub struct DescribeScalingPlansError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingPlansErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -646,8 +641,7 @@ pub struct UpdateScalingPlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateScalingPlanErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -952,8 +946,7 @@ impl InternalServiceException {
     }
 }
 
-/// <p>Concurrent updates caused an exception, for example, if you request an update to a
-/// scaling plan that already has a pending update.</p>
+/// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentUpdateException {
@@ -1081,8 +1074,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>Your account exceeded a limit. This exception is thrown when a per-account resource
-/// limit is exceeded.</p>
+/// <p>Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

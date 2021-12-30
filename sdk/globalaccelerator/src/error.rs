@@ -187,8 +187,7 @@ pub enum AdvertiseByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1339,8 +1338,7 @@ pub enum DeleteAcceleratorErrorKind {
     AcceleratorNotDisabledException(crate::error::AcceleratorNotDisabledException),
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-    /// accelerator before you can delete it.</p>
+    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1477,8 +1475,7 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     AcceleratorNotDisabledException(crate::error::AcceleratorNotDisabledException),
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-    /// accelerator before you can delete it.</p>
+    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1764,8 +1761,7 @@ pub struct DeleteCustomRoutingListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomRoutingListenerErrorKind {
-    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-    /// from a listener before you can delete it.</p>
+    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2016,8 +2012,7 @@ pub struct DeleteListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteListenerErrorKind {
-    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-    /// from a listener before you can delete it.</p>
+    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2255,8 +2250,7 @@ pub enum DeprovisionByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -4712,8 +4706,7 @@ pub struct ProvisionByoipCidrError {
 pub enum ProvisionByoipCidrErrorKind {
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -6189,8 +6182,7 @@ pub enum WithdrawByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -6438,8 +6430,7 @@ impl InternalServiceErrorException {
     }
 }
 
-/// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-/// incorrect for this action.</p>
+/// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectCidrStateException {
@@ -7143,8 +7134,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-/// from a listener before you can delete it.</p>
+/// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedEndpointGroupFoundException {
@@ -7208,8 +7198,7 @@ impl AssociatedEndpointGroupFoundException {
     }
 }
 
-/// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-/// accelerator before you can delete it.</p>
+/// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedListenerFoundException {

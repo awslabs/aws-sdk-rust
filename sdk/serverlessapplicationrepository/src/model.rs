@@ -10,38 +10,20 @@ pub struct Version {
     /// <p>An array of parameter types supported by the application.</p>
     pub parameter_definitions:
         std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-    /// <p>A list of values that you must specify before you can deploy certain applications.
-    /// Some applications might include resources that can affect permissions in your AWS
-    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-    /// For those applications, you must explicitly acknowledge their capabilities by
-    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-    /// CAPABILITY_NAMED_IAM:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-    /// all permissions associated with the application before deploying. If you don't specify
-    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+    /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+    /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+    /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
     pub required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>Whether all of the AWS resources contained in this application are supported in the region
-    /// in which it is being retrieved.</p>
+    /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub resources_supported: bool,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
-    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+    /// <p>Maximum size 50 MB</p>
     pub source_code_archive_url: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub source_code_url: std::option::Option<std::string::String>,
@@ -63,44 +45,26 @@ impl Version {
     ) -> std::option::Option<&[crate::model::ParameterDefinition]> {
         self.parameter_definitions.as_deref()
     }
-    /// <p>A list of values that you must specify before you can deploy certain applications.
-    /// Some applications might include resources that can affect permissions in your AWS
-    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-    /// For those applications, you must explicitly acknowledge their capabilities by
-    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-    /// CAPABILITY_NAMED_IAM:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-    /// all permissions associated with the application before deploying. If you don't specify
-    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+    /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+    /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+    /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+    /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
     pub fn required_capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.required_capabilities.as_deref()
     }
-    /// <p>Whether all of the AWS resources contained in this application are supported in the region
-    /// in which it is being retrieved.</p>
+    /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn resources_supported(&self) -> bool {
         self.resources_supported
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+    /// <p>Maximum size 50 MB</p>
     pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
         self.source_code_archive_url.as_deref()
     }
@@ -196,58 +160,24 @@ pub mod version {
         ///
         /// To override the contents of this collection use [`set_required_capabilities`](Self::set_required_capabilities).
         ///
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
             v.push(input);
             self.required_capabilities = Some(v);
             self
         }
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn set_required_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -255,28 +185,24 @@ pub mod version {
             self.required_capabilities = input;
             self
         }
-        /// <p>Whether all of the AWS resources contained in this application are supported in the region
-        /// in which it is being retrieved.</p>
+        /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn resources_supported(mut self, input: bool) -> Self {
             self.resources_supported = Some(input);
             self
         }
-        /// <p>Whether all of the AWS resources contained in this application are supported in the region
-        /// in which it is being retrieved.</p>
+        /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn set_resources_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.resources_supported = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -284,12 +210,14 @@ pub mod version {
             self.semantic_version = input;
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_code_archive_url = Some(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -419,17 +347,12 @@ pub struct ParameterDefinition {
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>An array containing the list of values allowed for the parameter.</p>
     pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description,
-    /// a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user
-    /// specifies an invalid value:</p><p>
-    /// Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
-    /// </p><p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display
-    /// the following customized error message:</p><p>
-    /// Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.
-    /// </p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
+    /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub constraint_description: std::option::Option<std::string::String>,
-    /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created.
-    /// If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+    /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub default_value: std::option::Option<std::string::String>,
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
     pub description: std::option::Option<std::string::String>,
@@ -443,20 +366,20 @@ pub struct ParameterDefinition {
     pub min_value: i32,
     /// <p>The name of the parameter.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the
-    /// value to true, the parameter value is masked with asterisks (*****).</p>
+    /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     pub no_echo: bool,
     /// <p>A list of AWS SAM resources that use this parameter.</p>
     pub referenced_by_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of the parameter.</p><p>Valid values: String | Number | List&lt;Number> | CommaDelimitedList
-    /// </p><p>
-    /// String: A literal string.</p><p>For example, users can specify "MyUserName".</p><p>
-    /// Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the
-    /// parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p><p>For example, users might specify "8888".</p><p>
-    /// List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when
-    /// you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p><p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p><p>
-    /// CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas.
-    /// Also, each member string is space-trimmed.</p><p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+    /// <p>The type of the parameter.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
+    /// <p>For example, users can specify "MyUserName".</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p>For example, users might specify "8888".</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ParameterDefinition {
@@ -468,19 +391,14 @@ impl ParameterDefinition {
     pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_values.as_deref()
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description,
-    /// a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user
-    /// specifies an invalid value:</p><p>
-    /// Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
-    /// </p><p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display
-    /// the following customized error message:</p><p>
-    /// Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.
-    /// </p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+    /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
+    /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
+    /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
     pub fn constraint_description(&self) -> std::option::Option<&str> {
         self.constraint_description.as_deref()
     }
-    /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created.
-    /// If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+    /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
@@ -508,8 +426,7 @@ impl ParameterDefinition {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the
-    /// value to true, the parameter value is masked with asterisks (*****).</p>
+    /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     pub fn no_echo(&self) -> bool {
         self.no_echo
     }
@@ -517,15 +434,16 @@ impl ParameterDefinition {
     pub fn referenced_by_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.referenced_by_resources.as_deref()
     }
-    /// <p>The type of the parameter.</p><p>Valid values: String | Number | List&lt;Number> | CommaDelimitedList
-    /// </p><p>
-    /// String: A literal string.</p><p>For example, users can specify "MyUserName".</p><p>
-    /// Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the
-    /// parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p><p>For example, users might specify "8888".</p><p>
-    /// List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when
-    /// you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p><p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p><p>
-    /// CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas.
-    /// Also, each member string is space-trimmed.</p><p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+    /// <p>The type of the parameter.</p>
+    /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+    /// <p> String: A literal string.</p>
+    /// <p>For example, users can specify "MyUserName".</p>
+    /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+    /// <p>For example, users might specify "8888".</p>
+    /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+    /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
+    /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+    /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -602,26 +520,18 @@ pub mod parameter_definition {
             self.allowed_values = input;
             self
         }
-        /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description,
-        /// a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user
-        /// specifies an invalid value:</p><p>
-        /// Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
-        /// </p><p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display
-        /// the following customized error message:</p><p>
-        /// Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.
-        /// </p>
+        /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+        /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
+        /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
+        /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
         pub fn constraint_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.constraint_description = Some(input.into());
             self
         }
-        /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description,
-        /// a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user
-        /// specifies an invalid value:</p><p>
-        /// Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
-        /// </p><p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display
-        /// the following customized error message:</p><p>
-        /// Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.
-        /// </p>
+        /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+        /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
+        /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
+        /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
         pub fn set_constraint_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -629,14 +539,12 @@ pub mod parameter_definition {
             self.constraint_description = input;
             self
         }
-        /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created.
-        /// If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+        /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
         }
-        /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created.
-        /// If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
+        /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -704,14 +612,12 @@ pub mod parameter_definition {
             self.name = input;
             self
         }
-        /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the
-        /// value to true, the parameter value is masked with asterisks (*****).</p>
+        /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
         pub fn no_echo(mut self, input: bool) -> Self {
             self.no_echo = Some(input);
             self
         }
-        /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the
-        /// value to true, the parameter value is masked with asterisks (*****).</p>
+        /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
         pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
             self.no_echo = input;
             self
@@ -735,28 +641,30 @@ pub mod parameter_definition {
             self.referenced_by_resources = input;
             self
         }
-        /// <p>The type of the parameter.</p><p>Valid values: String | Number | List&lt;Number> | CommaDelimitedList
-        /// </p><p>
-        /// String: A literal string.</p><p>For example, users can specify "MyUserName".</p><p>
-        /// Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the
-        /// parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p><p>For example, users might specify "8888".</p><p>
-        /// List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when
-        /// you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p><p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p><p>
-        /// CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas.
-        /// Also, each member string is space-trimmed.</p><p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+        /// <p>The type of the parameter.</p>
+        /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+        /// <p> String: A literal string.</p>
+        /// <p>For example, users can specify "MyUserName".</p>
+        /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+        /// <p>For example, users might specify "8888".</p>
+        /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+        /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
+        /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+        /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of the parameter.</p><p>Valid values: String | Number | List&lt;Number> | CommaDelimitedList
-        /// </p><p>
-        /// String: A literal string.</p><p>For example, users can specify "MyUserName".</p><p>
-        /// Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the
-        /// parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p><p>For example, users might specify "8888".</p><p>
-        /// List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when
-        /// you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p><p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p><p>
-        /// CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas.
-        /// Also, each member string is space-trimmed.</p><p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
+        /// <p>The type of the parameter.</p>
+        /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
+        /// <p> String: A literal string.</p>
+        /// <p>For example, users can specify "MyUserName".</p>
+        /// <p> Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+        /// <p>For example, users might specify "8888".</p>
+        /// <p> List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+        /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
+        /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+        /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -792,8 +700,7 @@ impl ParameterDefinition {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationPolicyStatement {
-    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    /// Permissions</a>.</p>
+    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
     pub principal_org_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -803,8 +710,7 @@ pub struct ApplicationPolicyStatement {
     pub statement_id: std::option::Option<std::string::String>,
 }
 impl ApplicationPolicyStatement {
-    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    /// Permissions</a>.</p>
+    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
@@ -847,16 +753,14 @@ pub mod application_policy_statement {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-        /// Permissions</a>.</p>
+        /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-        /// Permissions</a>.</p>
+        /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -938,9 +842,8 @@ pub struct VersionSummary {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub source_code_url: std::option::Option<std::string::String>,
@@ -954,9 +857,8 @@ impl VersionSummary {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The semantic version of the application:</p><p>
-    /// <a href="https://semver.org/">https://semver.org/</a>
-    /// </p>
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
@@ -1013,16 +915,14 @@ pub mod version_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1067,17 +967,24 @@ impl VersionSummary {
 pub struct ApplicationSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub author: std::option::Option<std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: std::option::Option<std::string::String>,
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub home_page_url: std::option::Option<std::string::String>,
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
     pub spdx_license_id: std::option::Option<std::string::String>,
@@ -1087,7 +994,9 @@ impl ApplicationSummary {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -1095,7 +1004,8 @@ impl ApplicationSummary {
     pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
-    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -1103,11 +1013,15 @@ impl ApplicationSummary {
     pub fn home_page_url(&self) -> std::option::Option<&str> {
         self.home_page_url.as_deref()
     }
-    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
-    /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>The name of the application.</p>
+    /// <p>Minimum length=1. Maximum length=140</p>
+    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1159,12 +1073,16 @@ pub mod application_summary {
             self.application_id = input;
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author = input;
             self
@@ -1182,12 +1100,14 @@ pub mod application_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1209,14 +1129,18 @@ pub mod application_summary {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1224,12 +1148,16 @@ pub mod application_summary {
             self.labels = input;
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the application.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1407,30 +1335,21 @@ impl AsRef<str> for Status {
     }
 }
 
-/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
-/// </i> Data Type.</p>
+/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">
-    /// Tag</a>
-    /// </i>
-    /// Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">
-    /// Tag</a>
-    /// </i>
-    /// Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1453,30 +1372,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">
-        /// Tag</a>
-        /// </i>
-        /// Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">
-        /// Tag</a>
-        /// </i>
-        /// Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1497,26 +1408,21 @@ impl Tag {
     }
 }
 
-/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-/// </i> Data Type.</p>
+/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackConfiguration {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub monitoring_time_in_minutes: i32,
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub rollback_triggers: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
 }
 impl RollbackConfiguration {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn monitoring_time_in_minutes(&self) -> i32 {
         self.monitoring_time_in_minutes
     }
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn rollback_triggers(&self) -> std::option::Option<&[crate::model::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
     }
@@ -1543,14 +1449,12 @@ pub mod rollback_configuration {
             std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
     }
     impl Builder {
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn monitoring_time_in_minutes(mut self, input: i32) -> Self {
             self.monitoring_time_in_minutes = Some(input);
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.monitoring_time_in_minutes = input;
             self
@@ -1559,16 +1463,14 @@ pub mod rollback_configuration {
         ///
         /// To override the contents of this collection use [`set_rollback_triggers`](Self::set_rollback_triggers).
         ///
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn rollback_triggers(mut self, input: crate::model::RollbackTrigger) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
             v.push(input);
             self.rollback_triggers = Some(v);
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
         pub fn set_rollback_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
@@ -1592,26 +1494,21 @@ impl RollbackConfiguration {
     }
 }
 
-/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-/// </i> Data Type.</p>
+/// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackTrigger {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl RollbackTrigger {
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-    /// </i> Data Type.</p>
+    /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -1634,26 +1531,22 @@ pub mod rollback_trigger {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-        /// </i> Data Type.</p>
+        /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1678,15 +1571,13 @@ impl RollbackTrigger {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterValue {
-    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation
-    /// uses the default value that is specified in your template.</p>
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The input value associated with the parameter.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ParameterValue {
-    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation
-    /// uses the default value that is specified in your template.</p>
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1713,14 +1604,12 @@ pub mod parameter_value {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation
-        /// uses the default value that is specified in your template.</p>
+        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation
-        /// uses the default value that is specified in your template.</p>
+        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

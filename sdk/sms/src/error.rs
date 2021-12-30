@@ -20,8 +20,7 @@ pub enum CreateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -160,8 +159,7 @@ pub enum CreateReplicationJobErrorKind {
     ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -343,8 +341,7 @@ pub enum DeleteAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -475,8 +472,7 @@ pub enum DeleteAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -629,8 +625,7 @@ pub enum DeleteAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -786,8 +781,7 @@ pub enum DeleteAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -943,8 +937,7 @@ pub enum DeleteReplicationJobErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified replication job does not exist.</p>
     ReplicationJobNotFoundException(crate::error::ReplicationJobNotFoundException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1083,8 +1076,7 @@ pub enum DeleteServerCatalogErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1212,8 +1204,7 @@ pub enum DisassociateConnectorErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1345,8 +1336,7 @@ pub enum GenerateChangeSetErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1480,8 +1470,7 @@ pub enum GenerateTemplateErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1615,8 +1604,7 @@ pub enum GetAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1747,8 +1735,7 @@ pub enum GetAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1897,8 +1884,7 @@ pub enum GetAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2054,8 +2040,7 @@ pub enum GetAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2211,8 +2196,7 @@ pub enum GetAppValidationOutputErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2349,8 +2333,7 @@ pub struct GetConnectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConnectorsErrorKind {
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2447,8 +2430,7 @@ pub enum GetReplicationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2563,8 +2545,7 @@ pub enum GetReplicationRunsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2681,8 +2662,7 @@ pub enum GetServersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2807,8 +2787,7 @@ pub enum ImportAppCatalogErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2942,8 +2921,7 @@ pub enum ImportServerCatalogErrorKind {
     NoConnectorsAvailableException(crate::error::NoConnectorsAvailableException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3082,8 +3060,7 @@ pub enum LaunchAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3214,8 +3191,7 @@ pub enum ListAppsErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3346,8 +3322,7 @@ pub enum NotifyAppValidationOutputErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3496,8 +3471,7 @@ pub enum PutAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3646,8 +3620,7 @@ pub enum PutAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3803,8 +3776,7 @@ pub enum PutAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3960,8 +3932,7 @@ pub enum StartAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4097,8 +4068,7 @@ pub enum StartOnDemandAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4241,8 +4211,7 @@ pub struct StartOnDemandReplicationRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartOnDemandReplicationRunErrorKind {
-    /// <p>The user has the required permissions, so the request would have succeeded,
-    /// but a dry run was performed.</p>
+    /// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
     DryRunOperationException(crate::error::DryRunOperationException),
     /// <p>A specified parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4250,11 +4219,9 @@ pub enum StartOnDemandReplicationRunErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You have exceeded the number of on-demand replication runs you can request in a
-    /// 24-hour period.</p>
+    /// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
     ReplicationRunLimitExceededException(crate::error::ReplicationRunLimitExceededException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4418,8 +4385,7 @@ pub enum StopAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4553,8 +4519,7 @@ pub enum TerminateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4688,8 +4653,7 @@ pub enum UpdateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4826,8 +4790,7 @@ pub enum UpdateReplicationJobErrorKind {
     ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4975,8 +4938,7 @@ impl std::error::Error for UpdateReplicationJobError {
     }
 }
 
-/// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-/// and ensure that you are using the correct access keys.</p>
+/// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedOperationException {
@@ -5488,8 +5450,7 @@ impl InternalError {
     }
 }
 
-/// <p>You have exceeded the number of on-demand replication runs you can request in a
-/// 24-hour period.</p>
+/// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRunLimitExceededException {
@@ -5553,8 +5514,7 @@ impl ReplicationRunLimitExceededException {
     }
 }
 
-/// <p>The user has the required permissions, so the request would have succeeded,
-/// but a dry run was performed.</p>
+/// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunOperationException {

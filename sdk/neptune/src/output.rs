@@ -4,12 +4,12 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -31,13 +31,13 @@ pub mod stop_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -65,12 +65,12 @@ impl StopDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -92,13 +92,13 @@ pub mod start_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -126,12 +126,12 @@ impl StartDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterToPointInTimeOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -153,13 +153,13 @@ pub mod restore_db_cluster_to_point_in_time_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -187,12 +187,12 @@ impl RestoreDbClusterToPointInTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterFromSnapshotOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -214,13 +214,13 @@ pub mod restore_db_cluster_from_snapshot_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -307,17 +307,10 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -326,17 +319,10 @@ impl ResetDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
@@ -365,17 +351,10 @@ pub mod reset_db_cluster_parameter_group_output {
         /// <p>The name of the DB cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>First character must be a letter</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn db_cluster_parameter_group_name(
@@ -388,17 +367,10 @@ pub mod reset_db_cluster_parameter_group_output {
         /// <p>The name of the DB cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>First character must be a letter</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn set_db_cluster_parameter_group_name(
@@ -457,11 +429,11 @@ impl RemoveTagsFromResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveSourceIdentifierFromSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
@@ -482,12 +454,12 @@ pub mod remove_source_identifier_from_subscription_output {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
             self.event_subscription = Some(input);
             self
         }
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -545,12 +517,12 @@ impl RemoveRoleFromDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
@@ -572,13 +544,13 @@ pub mod reboot_db_instance_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn set_db_instance(
             mut self,
             input: std::option::Option<crate::model::DbInstance>,
@@ -606,12 +578,12 @@ impl RebootDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteReadReplicaDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl PromoteReadReplicaDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -633,13 +605,13 @@ pub mod promote_read_replica_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -666,11 +638,11 @@ impl PromoteReadReplicaDbClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
@@ -691,12 +663,12 @@ pub mod modify_event_subscription_output {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
             self.event_subscription = Some(input);
             self
         }
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -724,12 +696,12 @@ impl ModifyEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
@@ -751,13 +723,13 @@ pub mod modify_db_subnet_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn db_subnet_group(mut self, input: crate::model::DbSubnetGroup) -> Self {
             self.db_subnet_group = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn set_db_subnet_group(
             mut self,
             input: std::option::Option<crate::model::DbSubnetGroup>,
@@ -842,12 +814,12 @@ impl ModifyDbParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
@@ -869,13 +841,13 @@ pub mod modify_db_instance_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn set_db_instance(
             mut self,
             input: std::option::Option<crate::model::DbInstance>,
@@ -902,16 +874,14 @@ impl ModifyDbInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-    /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-    /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub fn db_cluster_snapshot_attributes_result(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
@@ -938,9 +908,8 @@ pub mod modify_db_cluster_snapshot_attribute_output {
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-        /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
             input: crate::model::DbClusterSnapshotAttributesResult,
@@ -948,9 +917,8 @@ pub mod modify_db_cluster_snapshot_attribute_output {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-        /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -980,17 +948,10 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -999,17 +960,10 @@ impl ModifyDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
@@ -1038,17 +992,10 @@ pub mod modify_db_cluster_parameter_group_output {
         /// <p>The name of the DB cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>First character must be a letter</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn db_cluster_parameter_group_name(
@@ -1061,17 +1008,10 @@ pub mod modify_db_cluster_parameter_group_output {
         /// <p>The name of the DB cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>First character must be a letter</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn set_db_cluster_parameter_group_name(
@@ -1096,57 +1036,34 @@ impl ModifyDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster.
-/// This data type is used as a response element in the following actions:</p>
+/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>CreateDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DescribeDBClusterEndpoints</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ModifyDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DeleteDBClusterEndpoint</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
 /// </ul>
-/// <p>For the data structure that represents Amazon RDS DB instance endpoints,
-/// see <code>Endpoint</code>.</p>
+/// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
@@ -1156,8 +1073,7 @@ impl ModifyDbClusterEndpointOutput {
     pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -1169,8 +1085,7 @@ impl ModifyDbClusterEndpointOutput {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -1178,8 +1093,7 @@ impl ModifyDbClusterEndpointOutput {
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
         self.custom_endpoint_type.as_deref()
     }
@@ -1187,9 +1101,7 @@ impl ModifyDbClusterEndpointOutput {
     pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
         self.static_members.as_deref()
     }
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_members.as_deref()
     }
@@ -1255,14 +1167,12 @@ pub mod modify_db_cluster_endpoint_output {
             self.db_cluster_endpoint_identifier = input;
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,14 +1206,12 @@ pub mod modify_db_cluster_endpoint_output {
             self.endpoint = input;
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1321,14 +1229,12 @@ pub mod modify_db_cluster_endpoint_output {
             self.endpoint_type = input;
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_endpoint_type = Some(input.into());
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn set_custom_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1359,18 +1265,14 @@ pub mod modify_db_cluster_endpoint_output {
         ///
         /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
         ///
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
             v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn set_excluded_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1421,12 +1323,12 @@ impl ModifyDbClusterEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -1448,13 +1350,13 @@ pub mod modify_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -1545,12 +1447,12 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -1572,13 +1474,13 @@ pub mod failover_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -1605,18 +1507,12 @@ impl FailoverDbClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeValidDbInstanceModificationsOutput {
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the
-    /// result of a successful call to the <a>DescribeValidDBInstanceModifications</a>
-    /// action. You can use this information when you call <a>ModifyDBInstance</a>.
-    /// </p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub valid_db_instance_modifications_message:
         std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
 }
 impl DescribeValidDbInstanceModificationsOutput {
-    /// <p>Information about valid modifications that you can make to your DB instance. Contains the
-    /// result of a successful call to the <a>DescribeValidDBInstanceModifications</a>
-    /// action. You can use this information when you call <a>ModifyDBInstance</a>.
-    /// </p>
+    /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     pub fn valid_db_instance_modifications_message(
         &self,
     ) -> std::option::Option<&crate::model::ValidDbInstanceModificationsMessage> {
@@ -1643,10 +1539,7 @@ pub mod describe_valid_db_instance_modifications_output {
             std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
     }
     impl Builder {
-        /// <p>Information about valid modifications that you can make to your DB instance. Contains the
-        /// result of a successful call to the <a>DescribeValidDBInstanceModifications</a>
-        /// action. You can use this information when you call <a>ModifyDBInstance</a>.
-        /// </p>
+        /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
         pub fn valid_db_instance_modifications_message(
             mut self,
             input: crate::model::ValidDbInstanceModificationsMessage,
@@ -1654,10 +1547,7 @@ pub mod describe_valid_db_instance_modifications_output {
             self.valid_db_instance_modifications_message = Some(input);
             self
         }
-        /// <p>Information about valid modifications that you can make to your DB instance. Contains the
-        /// result of a successful call to the <a>DescribeValidDBInstanceModifications</a>
-        /// action. You can use this information when you call <a>ModifyDBInstance</a>.
-        /// </p>
+        /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
         pub fn set_valid_db_instance_modifications_message(
             mut self,
             input: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
@@ -1688,10 +1578,7 @@ pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to a number of records specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -1701,10 +1588,7 @@ impl DescribePendingMaintenanceActionsOutput {
     ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to a number of records specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1755,18 +1639,12 @@ pub mod describe_pending_maintenance_actions_output {
             self.pending_maintenance_actions = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to a number of records specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to a number of records specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1791,26 +1669,20 @@ impl DescribePendingMaintenanceActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
-    /// <p>An <a>OrderableDBInstanceOption</a> structure
-    /// containing information about orderable options for the DB instance.</p>
+    /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
     pub orderable_db_instance_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
-    /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request.
-    /// If this parameter is specified, the response includes only records beyond the marker, up to
-    /// the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
-    /// <p>An <a>OrderableDBInstanceOption</a> structure
-    /// containing information about orderable options for the DB instance.</p>
+    /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
     pub fn orderable_db_instance_options(
         &self,
     ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request.
-    /// If this parameter is specified, the response includes only records beyond the marker, up to
-    /// the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1841,8 +1713,7 @@ pub mod describe_orderable_db_instance_options_output {
         ///
         /// To override the contents of this collection use [`set_orderable_db_instance_options`](Self::set_orderable_db_instance_options).
         ///
-        /// <p>An <a>OrderableDBInstanceOption</a> structure
-        /// containing information about orderable options for the DB instance.</p>
+        /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
         pub fn orderable_db_instance_options(
             mut self,
             input: crate::model::OrderableDbInstanceOption,
@@ -1852,8 +1723,7 @@ pub mod describe_orderable_db_instance_options_output {
             self.orderable_db_instance_options = Some(v);
             self
         }
-        /// <p>An <a>OrderableDBInstanceOption</a> structure
-        /// containing information about orderable options for the DB instance.</p>
+        /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
         pub fn set_orderable_db_instance_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
@@ -1861,16 +1731,12 @@ pub mod describe_orderable_db_instance_options_output {
             self.orderable_db_instance_options = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request.
-        /// If this parameter is specified, the response includes only records beyond the marker, up to
-        /// the value specified by <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request.
-        /// If this parameter is specified, the response includes only records beyond the marker, up to
-        /// the value specified by <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1895,18 +1761,14 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
-    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
-    /// request. If this parameter is specified, the response includes only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
-    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
-    /// request. If this parameter is specified, the response includes only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1936,16 +1798,12 @@ pub mod describe_event_subscriptions_output {
             std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
-        /// request. If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
-        /// request. If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1989,21 +1847,17 @@ impl DescribeEventSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p> An optional pagination token provided by a previous Events request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p> A list of <a>Event</a> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
-    /// <p> An optional pagination token provided by a previous Events request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p> A list of <a>Event</a> instances.</p>
+    /// <p> A list of <code>Event</code> instances.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
@@ -2026,16 +1880,12 @@ pub mod describe_events_output {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous Events request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous Events request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2044,14 +1894,14 @@ pub mod describe_events_output {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p> A list of <a>Event</a> instances.</p>
+        /// <p> A list of <code>Event</code> instances.</p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p> A list of <a>Event</a> instances.</p>
+        /// <p> A list of <code>Event</code> instances.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -2149,11 +1999,11 @@ impl DescribeEventCategoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
@@ -2174,12 +2024,12 @@ pub mod describe_engine_default_parameters_output {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
     }
     impl Builder {
-        /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+        /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
         pub fn engine_defaults(mut self, input: crate::model::EngineDefaults) -> Self {
             self.engine_defaults = Some(input);
             self
         }
-        /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+        /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
         pub fn set_engine_defaults(
             mut self,
             input: std::option::Option<crate::model::EngineDefaults>,
@@ -2206,11 +2056,11 @@ impl DescribeEngineDefaultParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
-    /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+    /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
@@ -2231,12 +2081,12 @@ pub mod describe_engine_default_cluster_parameters_output {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
     }
     impl Builder {
-        /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+        /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
         pub fn engine_defaults(mut self, input: crate::model::EngineDefaults) -> Self {
             self.engine_defaults = Some(input);
             self
         }
-        /// <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.</p>
+        /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
         pub fn set_engine_defaults(
             mut self,
             input: std::option::Option<crate::model::EngineDefaults>,
@@ -2263,21 +2113,17 @@ impl DescribeEngineDefaultClusterParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p> A list of <a>DBSubnetGroup</a> instances.</p>
+    /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
 }
 impl DescribeDbSubnetGroupsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p> A list of <a>DBSubnetGroup</a> instances.</p>
+    /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
     pub fn db_subnet_groups(&self) -> std::option::Option<&[crate::model::DbSubnetGroup]> {
         self.db_subnet_groups.as_deref()
     }
@@ -2301,16 +2147,12 @@ pub mod describe_db_subnet_groups_output {
             std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2319,14 +2161,14 @@ pub mod describe_db_subnet_groups_output {
         ///
         /// To override the contents of this collection use [`set_db_subnet_groups`](Self::set_db_subnet_groups).
         ///
-        /// <p> A list of <a>DBSubnetGroup</a> instances.</p>
+        /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
         pub fn db_subnet_groups(mut self, input: crate::model::DbSubnetGroup) -> Self {
             let mut v = self.db_subnet_groups.unwrap_or_default();
             v.push(input);
             self.db_subnet_groups = Some(v);
             self
         }
-        /// <p> A list of <a>DBSubnetGroup</a> instances.</p>
+        /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
         pub fn set_db_subnet_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
@@ -2354,21 +2196,17 @@ impl DescribeDbSubnetGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParametersOutput {
-    /// <p>A list of <a>Parameter</a> values.</p>
+    /// <p>A list of <code>Parameter</code> values.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbParametersOutput {
-    /// <p>A list of <a>Parameter</a> values.</p>
+    /// <p>A list of <code>Parameter</code> values.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2395,14 +2233,14 @@ pub mod describe_db_parameters_output {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <a>Parameter</a> values.</p>
+        /// <p>A list of <code>Parameter</code> values.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <a>Parameter</a> values.</p>
+        /// <p>A list of <code>Parameter</code> values.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -2410,16 +2248,12 @@ pub mod describe_db_parameters_output {
             self.parameters = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2444,21 +2278,17 @@ impl DescribeDbParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbParameterGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>DBParameterGroup</a> instances.</p>
+    /// <p>A list of <code>DBParameterGroup</code> instances.</p>
     pub db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
 }
 impl DescribeDbParameterGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>DBParameterGroup</a> instances.</p>
+    /// <p>A list of <code>DBParameterGroup</code> instances.</p>
     pub fn db_parameter_groups(&self) -> std::option::Option<&[crate::model::DbParameterGroup]> {
         self.db_parameter_groups.as_deref()
     }
@@ -2482,16 +2312,12 @@ pub mod describe_db_parameter_groups_output {
             std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2500,14 +2326,14 @@ pub mod describe_db_parameter_groups_output {
         ///
         /// To override the contents of this collection use [`set_db_parameter_groups`](Self::set_db_parameter_groups).
         ///
-        /// <p>A list of <a>DBParameterGroup</a> instances.</p>
+        /// <p>A list of <code>DBParameterGroup</code> instances.</p>
         pub fn db_parameter_groups(mut self, input: crate::model::DbParameterGroup) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
             v.push(input);
             self.db_parameter_groups = Some(v);
             self
         }
-        /// <p>A list of <a>DBParameterGroup</a> instances.</p>
+        /// <p>A list of <code>DBParameterGroup</code> instances.</p>
         pub fn set_db_parameter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
@@ -2535,21 +2361,17 @@ impl DescribeDbParameterGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p> A list of <a>DBInstance</a> instances.</p>
+    /// <p> A list of <code>DBInstance</code> instances.</p>
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
 impl DescribeDbInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p> A list of <a>DBInstance</a> instances.</p>
+    /// <p> A list of <code>DBInstance</code> instances.</p>
     pub fn db_instances(&self) -> std::option::Option<&[crate::model::DbInstance]> {
         self.db_instances.as_deref()
     }
@@ -2572,16 +2394,12 @@ pub mod describe_db_instances_output {
         pub(crate) db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2590,14 +2408,14 @@ pub mod describe_db_instances_output {
         ///
         /// To override the contents of this collection use [`set_db_instances`](Self::set_db_instances).
         ///
-        /// <p> A list of <a>DBInstance</a> instances.</p>
+        /// <p> A list of <code>DBInstance</code> instances.</p>
         pub fn db_instances(mut self, input: crate::model::DbInstance) -> Self {
             let mut v = self.db_instances.unwrap_or_default();
             v.push(input);
             self.db_instances = Some(v);
             self
         }
-        /// <p> A list of <a>DBInstance</a> instances.</p>
+        /// <p> A list of <code>DBInstance</code> instances.</p>
         pub fn set_db_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
@@ -2625,17 +2443,13 @@ impl DescribeDbInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p> A list of <code>DBEngineVersion</code> elements.</p>
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
 impl DescribeDbEngineVersionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2663,16 +2477,12 @@ pub mod describe_db_engine_versions_output {
             std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2716,17 +2526,13 @@ impl DescribeDbEngineVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotsOutput {
-    /// <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-    /// </p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
 impl DescribeDbClusterSnapshotsOutput {
-    /// <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-    /// </p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2754,16 +2560,12 @@ pub mod describe_db_cluster_snapshots_output {
             std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-        /// </p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
-        /// </p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2807,16 +2609,14 @@ impl DescribeDbClusterSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-    /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-    /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub fn db_cluster_snapshot_attributes_result(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
@@ -2843,9 +2643,8 @@ pub mod describe_db_cluster_snapshot_attributes_output {
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-        /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
             input: crate::model::DbClusterSnapshotAttributesResult,
@@ -2853,9 +2652,8 @@ pub mod describe_db_cluster_snapshot_attributes_output {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or
-        /// restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -2966,9 +2764,7 @@ impl DescribeDbClustersOutput {
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request.
-    /// If this parameter is specified, the response includes only records beyond the marker, up to
-    /// the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersOutput {
@@ -2976,9 +2772,7 @@ impl DescribeDbClusterParametersOutput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request.
-    /// If this parameter is specified, the response includes only records beyond the marker, up to
-    /// the value specified by <code>MaxRecords</code> .</p>
+    /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3020,16 +2814,12 @@ pub mod describe_db_cluster_parameters_output {
             self.parameters = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request.
-        /// If this parameter is specified, the response includes only records beyond the marker, up to
-        /// the value specified by <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request.
-        /// If this parameter is specified, the response includes only records beyond the marker, up to
-        /// the value specified by <code>MaxRecords</code> .</p>
+        /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3054,20 +2844,14 @@ impl DescribeDbClusterParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParameterGroupsOutput {
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster parameter groups.</p>
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3100,18 +2884,12 @@ pub mod describe_db_cluster_parameter_groups_output {
             std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3158,29 +2936,17 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterEndpointsOutput {
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribeDBClusterEndpoints</code> request.
-    /// If this parameter is specified, the response includes
-    /// only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.
-    /// </p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Contains the details of the endpoints associated with the cluster
-    /// and matching any filter conditions.</p>
+    /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     pub db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
 }
 impl DescribeDbClusterEndpointsOutput {
-    /// <p> An optional pagination token provided by a previous
-    /// <code>DescribeDBClusterEndpoints</code> request.
-    /// If this parameter is specified, the response includes
-    /// only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.
-    /// </p>
+    /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Contains the details of the endpoints associated with the cluster
-    /// and matching any filter conditions.</p>
+    /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     pub fn db_cluster_endpoints(&self) -> std::option::Option<&[crate::model::DbClusterEndpoint]> {
         self.db_cluster_endpoints.as_deref()
     }
@@ -3204,22 +2970,12 @@ pub mod describe_db_cluster_endpoints_output {
             std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribeDBClusterEndpoints</code> request.
-        /// If this parameter is specified, the response includes
-        /// only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.
-        /// </p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous
-        /// <code>DescribeDBClusterEndpoints</code> request.
-        /// If this parameter is specified, the response includes
-        /// only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.
-        /// </p>
+        /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3228,16 +2984,14 @@ pub mod describe_db_cluster_endpoints_output {
         ///
         /// To override the contents of this collection use [`set_db_cluster_endpoints`](Self::set_db_cluster_endpoints).
         ///
-        /// <p>Contains the details of the endpoints associated with the cluster
-        /// and matching any filter conditions.</p>
+        /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
         pub fn db_cluster_endpoints(mut self, input: crate::model::DbClusterEndpoint) -> Self {
             let mut v = self.db_cluster_endpoints.unwrap_or_default();
             v.push(input);
             self.db_cluster_endpoints = Some(v);
             self
         }
-        /// <p>Contains the details of the endpoints associated with the cluster
-        /// and matching any filter conditions.</p>
+        /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
         pub fn set_db_cluster_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
@@ -3265,11 +3019,11 @@ impl DescribeDbClusterEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
@@ -3290,12 +3044,12 @@ pub mod delete_event_subscription_output {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
             self.event_subscription = Some(input);
             self
         }
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -3383,12 +3137,12 @@ impl DeleteDbParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
@@ -3410,13 +3164,13 @@ pub mod delete_db_instance_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn set_db_instance(
             mut self,
             input: std::option::Option<crate::model::DbInstance>,
@@ -3444,12 +3198,12 @@ impl DeleteDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
@@ -3471,13 +3225,13 @@ pub mod delete_db_cluster_snapshot_output {
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn set_db_cluster_snapshot(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -3530,57 +3284,34 @@ impl DeleteDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster.
-/// This data type is used as a response element in the following actions:</p>
+/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>CreateDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DescribeDBClusterEndpoints</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ModifyDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DeleteDBClusterEndpoint</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
 /// </ul>
-/// <p>For the data structure that represents Amazon RDS DB instance endpoints,
-/// see <code>Endpoint</code>.</p>
+/// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
@@ -3590,8 +3321,7 @@ impl DeleteDbClusterEndpointOutput {
     pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -3603,8 +3333,7 @@ impl DeleteDbClusterEndpointOutput {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -3612,8 +3341,7 @@ impl DeleteDbClusterEndpointOutput {
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
         self.custom_endpoint_type.as_deref()
     }
@@ -3621,9 +3349,7 @@ impl DeleteDbClusterEndpointOutput {
     pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
         self.static_members.as_deref()
     }
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_members.as_deref()
     }
@@ -3689,14 +3415,12 @@ pub mod delete_db_cluster_endpoint_output {
             self.db_cluster_endpoint_identifier = input;
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3730,14 +3454,12 @@ pub mod delete_db_cluster_endpoint_output {
             self.endpoint = input;
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3755,14 +3477,12 @@ pub mod delete_db_cluster_endpoint_output {
             self.endpoint_type = input;
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_endpoint_type = Some(input.into());
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn set_custom_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3793,18 +3513,14 @@ pub mod delete_db_cluster_endpoint_output {
         ///
         /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
         ///
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
             v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn set_excluded_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3855,12 +3571,12 @@ impl DeleteDbClusterEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -3882,13 +3598,13 @@ pub mod delete_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -3915,11 +3631,11 @@ impl DeleteDbClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
@@ -3940,12 +3656,12 @@ pub mod create_event_subscription_output {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
             self.event_subscription = Some(input);
             self
         }
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -3973,12 +3689,12 @@ impl CreateEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
@@ -4000,13 +3716,13 @@ pub mod create_db_subnet_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn db_subnet_group(mut self, input: crate::model::DbSubnetGroup) -> Self {
             self.db_subnet_group = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn set_db_subnet_group(
             mut self,
             input: std::option::Option<crate::model::DbSubnetGroup>,
@@ -4034,12 +3750,12 @@ impl CreateDbSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CreateDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
         self.db_parameter_group.as_ref()
     }
@@ -4061,13 +3777,13 @@ pub mod create_db_parameter_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn db_parameter_group(mut self, input: crate::model::DbParameterGroup) -> Self {
             self.db_parameter_group = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn set_db_parameter_group(
             mut self,
             input: std::option::Option<crate::model::DbParameterGroup>,
@@ -4095,12 +3811,12 @@ impl CreateDbParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
@@ -4122,13 +3838,13 @@ pub mod create_db_instance_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB instance.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
         pub fn set_db_instance(
             mut self,
             input: std::option::Option<crate::model::DbInstance>,
@@ -4156,12 +3872,12 @@ impl CreateDbInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
@@ -4183,13 +3899,13 @@ pub mod create_db_cluster_snapshot_output {
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn set_db_cluster_snapshot(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -4217,12 +3933,12 @@ impl CreateDbClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     pub fn db_cluster_parameter_group(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
@@ -4250,7 +3966,7 @@ pub mod create_db_cluster_parameter_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
         pub fn db_cluster_parameter_group(
             mut self,
             input: crate::model::DbClusterParameterGroup,
@@ -4259,7 +3975,7 @@ pub mod create_db_cluster_parameter_group_output {
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
         pub fn set_db_cluster_parameter_group(
             mut self,
             input: std::option::Option<crate::model::DbClusterParameterGroup>,
@@ -4282,57 +3998,34 @@ impl CreateDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster.
-/// This data type is used as a response element in the following actions:</p>
+/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>CreateDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DescribeDBClusterEndpoints</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ModifyDBClusterEndpoint</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DeleteDBClusterEndpoint</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
 /// </ul>
-/// <p>For the data structure that represents Amazon Neptune DB instance endpoints,
-/// see <code>Endpoint</code>.</p>
+/// <p>For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub custom_endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
@@ -4342,8 +4035,7 @@ impl CreateDbClusterEndpointOutput {
     pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
-    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-    /// stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -4355,8 +4047,7 @@ impl CreateDbClusterEndpointOutput {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -4364,8 +4055,7 @@ impl CreateDbClusterEndpointOutput {
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
-    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
         self.custom_endpoint_type.as_deref()
     }
@@ -4373,9 +4063,7 @@ impl CreateDbClusterEndpointOutput {
     pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
         self.static_members.as_deref()
     }
-    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-    /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_members.as_deref()
     }
@@ -4441,14 +4129,12 @@ pub mod create_db_cluster_endpoint_output {
             self.db_cluster_endpoint_identifier = input;
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
-        /// stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4482,14 +4168,12 @@ pub mod create_db_cluster_endpoint_output {
             self.endpoint = input;
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
-        /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+        /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4507,14 +4191,12 @@ pub mod create_db_cluster_endpoint_output {
             self.endpoint_type = input;
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_endpoint_type = Some(input.into());
             self
         }
-        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-        /// <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn set_custom_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4545,18 +4227,14 @@ pub mod create_db_cluster_endpoint_output {
         ///
         /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
         ///
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
             v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
-        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
-        /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn set_excluded_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4607,12 +4285,12 @@ impl CreateDbClusterEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -4634,13 +4312,13 @@ pub mod create_db_cluster_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -4668,12 +4346,12 @@ impl CreateDbClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
         self.db_parameter_group.as_ref()
     }
@@ -4695,13 +4373,13 @@ pub mod copy_db_parameter_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn db_parameter_group(mut self, input: crate::model::DbParameterGroup) -> Self {
             self.db_parameter_group = Some(input);
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn set_db_parameter_group(
             mut self,
             input: std::option::Option<crate::model::DbParameterGroup>,
@@ -4729,12 +4407,12 @@ impl CopyDbParameterGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
@@ -4756,13 +4434,13 @@ pub mod copy_db_cluster_snapshot_output {
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn set_db_cluster_snapshot(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -4790,12 +4468,12 @@ impl CopyDbClusterSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-    /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     pub fn db_cluster_parameter_group(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
@@ -4823,7 +4501,7 @@ pub mod copy_db_cluster_parameter_group_output {
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
         pub fn db_cluster_parameter_group(
             mut self,
             input: crate::model::DbClusterParameterGroup,
@@ -4832,7 +4510,7 @@ pub mod copy_db_cluster_parameter_group_output {
             self
         }
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
-        /// <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p>
+        /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
         pub fn set_db_cluster_parameter_group(
             mut self,
             input: std::option::Option<crate::model::DbClusterParameterGroup>,
@@ -4956,11 +4634,11 @@ impl AddTagsToResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddSourceIdentifierToSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {
-    /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
@@ -4981,12 +4659,12 @@ pub mod add_source_identifier_to_subscription_output {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn event_subscription(mut self, input: crate::model::EventSubscription) -> Self {
             self.event_subscription = Some(input);
             self
         }
-        /// <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+        /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,

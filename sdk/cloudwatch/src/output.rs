@@ -296,18 +296,14 @@ impl PutInsightRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDashboardOutput {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be
-    /// created or modified, but some elements of the dashboard
-    /// might not render.</p>
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
     pub dashboard_validation_messages:
         std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
 }
 impl PutDashboardOutput {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be
-    /// created or modified, but some elements of the dashboard
-    /// might not render.</p>
+    /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
     pub fn dashboard_validation_messages(
         &self,
@@ -340,9 +336,7 @@ pub mod put_dashboard_output {
         /// To override the contents of this collection use [`set_dashboard_validation_messages`](Self::set_dashboard_validation_messages).
         ///
         /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be
-        /// created or modified, but some elements of the dashboard
-        /// might not render.</p>
+        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
         /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
         pub fn dashboard_validation_messages(
             mut self,
@@ -354,9 +348,7 @@ pub mod put_dashboard_output {
             self
         }
         /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
-        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be
-        /// created or modified, but some elements of the dashboard
-        /// might not render.</p>
+        /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
         /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
         pub fn set_dashboard_validation_messages(
             mut self,
@@ -505,15 +497,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMetricStreamsOutput {
-    /// <p>The token that marks the start of the next batch of returned results. You can use this
-    /// token in a subsequent operation to get the next batch of results.</p>
+    /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The array of metric stream information.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>,
 }
 impl ListMetricStreamsOutput {
-    /// <p>The token that marks the start of the next batch of returned results. You can use this
-    /// token in a subsequent operation to get the next batch of results.</p>
+    /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -540,14 +530,12 @@ pub mod list_metric_streams_output {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::MetricStreamEntry>>,
     }
     impl Builder {
-        /// <p>The token that marks the start of the next batch of returned results. You can use this
-        /// token in a subsequent operation to get the next batch of results.</p>
+        /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that marks the start of the next batch of returned results. You can use this
-        /// token in a subsequent operation to get the next batch of results.</p>
+        /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -817,21 +805,15 @@ pub struct GetMetricStreamOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the metric stream.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If this array of metric namespaces is present, then these
-    /// namespaces are the only
-    /// metric namespaces that are streamed by this metric stream.</p>
+    /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
     pub include_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-    /// <p>If this array of metric namespaces is present, then these namespaces are the only
-    /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
-    /// the account are streamed by this metric stream.</p>
+    /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
     pub exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by
-    /// this metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
     pub firehose_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The state of the metric stream. The possible values are <code>running</code>
-    /// and <code>stopped</code>.</p>
+    /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -849,20 +831,15 @@ impl GetMetricStreamOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If this array of metric namespaces is present, then these
-    /// namespaces are the only
-    /// metric namespaces that are streamed by this metric stream.</p>
+    /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
     pub fn include_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
         self.include_filters.as_deref()
     }
-    /// <p>If this array of metric namespaces is present, then these namespaces are the only
-    /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
-    /// the account are streamed by this metric stream.</p>
+    /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
     pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
         self.exclude_filters.as_deref()
     }
-    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by
-    /// this metric stream.</p>
+    /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
     pub fn firehose_arn(&self) -> std::option::Option<&str> {
         self.firehose_arn.as_deref()
     }
@@ -870,8 +847,7 @@ impl GetMetricStreamOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The state of the metric stream. The possible values are <code>running</code>
-    /// and <code>stopped</code>.</p>
+    /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -948,18 +924,14 @@ pub mod get_metric_stream_output {
         ///
         /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
         ///
-        /// <p>If this array of metric namespaces is present, then these
-        /// namespaces are the only
-        /// metric namespaces that are streamed by this metric stream.</p>
+        /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
         pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.include_filters.unwrap_or_default();
             v.push(input);
             self.include_filters = Some(v);
             self
         }
-        /// <p>If this array of metric namespaces is present, then these
-        /// namespaces are the only
-        /// metric namespaces that are streamed by this metric stream.</p>
+        /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
         pub fn set_include_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
@@ -971,18 +943,14 @@ pub mod get_metric_stream_output {
         ///
         /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
         ///
-        /// <p>If this array of metric namespaces is present, then these namespaces are the only
-        /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
-        /// the account are streamed by this metric stream.</p>
+        /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
         pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.exclude_filters.unwrap_or_default();
             v.push(input);
             self.exclude_filters = Some(v);
             self
         }
-        /// <p>If this array of metric namespaces is present, then these namespaces are the only
-        /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
-        /// the account are streamed by this metric stream.</p>
+        /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
         pub fn set_exclude_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
@@ -990,14 +958,12 @@ pub mod get_metric_stream_output {
             self.exclude_filters = input;
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by
-        /// this metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firehose_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by
-        /// this metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firehose_arn = input;
             self
@@ -1012,14 +978,12 @@ pub mod get_metric_stream_output {
             self.role_arn = input;
             self
         }
-        /// <p>The state of the metric stream. The possible values are <code>running</code>
-        /// and <code>stopped</code>.</p>
+        /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the metric stream. The possible values are <code>running</code>
-        /// and <code>stopped</code>.</p>
+        /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -1177,12 +1141,8 @@ pub struct GetMetricDataOutput {
     pub metric_data_results: std::option::Option<std::vec::Vec<crate::model::MetricDataResult>>,
     /// <p>A token that marks the next batch of returned results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-    /// An example of a message that
-    /// might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the
-    /// operation as possible is still executed.</p>
-    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
-    /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
 }
 impl GetMetricDataOutput {
@@ -1194,12 +1154,8 @@ impl GetMetricDataOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-    /// An example of a message that
-    /// might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the
-    /// operation as possible is still executed.</p>
-    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
-    /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+    /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::MessageData]> {
         self.messages.as_deref()
     }
@@ -1258,24 +1214,16 @@ pub mod get_metric_data_output {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-        /// An example of a message that
-        /// might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the
-        /// operation as possible is still executed.</p>
-        /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
-        /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+        /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
         pub fn messages(mut self, input: crate::model::MessageData) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-        /// An example of a message that
-        /// might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the
-        /// operation as possible is still executed.</p>
-        /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
-        /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+        /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
+        /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
@@ -1304,8 +1252,7 @@ impl GetMetricDataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightRuleReportOutput {
-    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors.
-    /// If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
     pub key_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
     pub aggregation_statistic: std::option::Option<std::string::String>,
@@ -1313,16 +1260,14 @@ pub struct GetInsightRuleReportOutput {
     pub aggregate_value: std::option::Option<f64>,
     /// <p>An approximate count of the unique contributors found by this rule in this time period.</p>
     pub approximate_unique_count: std::option::Option<i64>,
-    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
-    /// for the keys counts as a unique contributor.</p>
+    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
     pub contributors: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
     pub metric_datapoints:
         std::option::Option<std::vec::Vec<crate::model::InsightRuleMetricDatapoint>>,
 }
 impl GetInsightRuleReportOutput {
-    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors.
-    /// If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
     pub fn key_labels(&self) -> std::option::Option<&[std::string::String]> {
         self.key_labels.as_deref()
     }
@@ -1338,8 +1283,7 @@ impl GetInsightRuleReportOutput {
     pub fn approximate_unique_count(&self) -> std::option::Option<i64> {
         self.approximate_unique_count
     }
-    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
-    /// for the keys counts as a unique contributor.</p>
+    /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
     pub fn contributors(&self) -> std::option::Option<&[crate::model::InsightRuleContributor]> {
         self.contributors.as_deref()
     }
@@ -1382,16 +1326,14 @@ pub mod get_insight_rule_report_output {
         ///
         /// To override the contents of this collection use [`set_key_labels`](Self::set_key_labels).
         ///
-        /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors.
-        /// If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+        /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
         pub fn key_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.key_labels.unwrap_or_default();
             v.push(input.into());
             self.key_labels = Some(v);
             self
         }
-        /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors.
-        /// If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+        /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
         pub fn set_key_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1436,16 +1378,14 @@ pub mod get_insight_rule_report_output {
         ///
         /// To override the contents of this collection use [`set_contributors`](Self::set_contributors).
         ///
-        /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
-        /// for the keys counts as a unique contributor.</p>
+        /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
         pub fn contributors(mut self, input: crate::model::InsightRuleContributor) -> Self {
             let mut v = self.contributors.unwrap_or_default();
             v.push(input);
             self.contributors = Some(v);
             self
         }
-        /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
-        /// for the keys counts as a unique contributor.</p>
+        /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
         pub fn set_contributors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightRuleContributor>>,
@@ -1501,9 +1441,7 @@ impl GetInsightRuleReportOutput {
 pub struct GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub dashboard_arn: std::option::Option<std::string::String>,
-    /// <p>The detailed information about the dashboard, including what widgets are included and their location
-    /// on the dashboard. For more information about the <code>DashboardBody</code> syntax,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     pub dashboard_body: std::option::Option<std::string::String>,
     /// <p>The name of the dashboard.</p>
     pub dashboard_name: std::option::Option<std::string::String>,
@@ -1513,9 +1451,7 @@ impl GetDashboardOutput {
     pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
-    /// <p>The detailed information about the dashboard, including what widgets are included and their location
-    /// on the dashboard. For more information about the <code>DashboardBody</code> syntax,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     pub fn dashboard_body(&self) -> std::option::Option<&str> {
         self.dashboard_body.as_deref()
     }
@@ -1557,16 +1493,12 @@ pub mod get_dashboard_output {
             self.dashboard_arn = input;
             self
         }
-        /// <p>The detailed information about the dashboard, including what widgets are included and their location
-        /// on the dashboard. For more information about the <code>DashboardBody</code> syntax,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+        /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
         pub fn dashboard_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_body = Some(input.into());
             self
         }
-        /// <p>The detailed information about the dashboard, including what widgets are included and their location
-        /// on the dashboard. For more information about the <code>DashboardBody</code> syntax,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+        /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
         pub fn set_dashboard_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1794,13 +1726,13 @@ impl DisableAlarmActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInsightRulesOutput {
-    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.      </p>
+    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The rules returned by the operation.</p>
     pub insight_rules: std::option::Option<std::vec::Vec<crate::model::InsightRule>>,
 }
 impl DescribeInsightRulesOutput {
-    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.      </p>
+    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1827,12 +1759,12 @@ pub mod describe_insight_rules_output {
         pub(crate) insight_rules: std::option::Option<std::vec::Vec<crate::model::InsightRule>>,
     }
     impl Builder {
-        /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.      </p>
+        /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.      </p>
+        /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1878,8 +1810,7 @@ impl DescribeInsightRulesOutput {
 pub struct DescribeAnomalyDetectorsOutput {
     /// <p>The list of anomaly detection models returned by the operation.</p>
     pub anomaly_detectors: std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>>,
-    /// <p>A token that you can use in a subsequent operation to
-    /// retrieve the next set of results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAnomalyDetectorsOutput {
@@ -1887,8 +1818,7 @@ impl DescribeAnomalyDetectorsOutput {
     pub fn anomaly_detectors(&self) -> std::option::Option<&[crate::model::AnomalyDetector]> {
         self.anomaly_detectors.as_deref()
     }
-    /// <p>A token that you can use in a subsequent operation to
-    /// retrieve the next set of results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1931,14 +1861,12 @@ pub mod describe_anomaly_detectors_output {
             self.anomaly_detectors = input;
             self
         }
-        /// <p>A token that you can use in a subsequent operation to
-        /// retrieve the next set of results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent operation to
-        /// retrieve the next set of results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

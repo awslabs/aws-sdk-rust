@@ -746,23 +746,15 @@ pub mod create_connection_alias_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
         pub fn connection_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_string = Some(input.into());
             self
         }
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
         pub fn set_connection_string(
             mut self,
@@ -1146,14 +1138,12 @@ pub mod create_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1361,11 +1351,8 @@ pub mod create_updated_workspace_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -1373,11 +1360,8 @@ pub mod create_updated_workspace_image_input {
             self.tags = Some(v);
             self
         }
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1617,11 +1601,8 @@ pub mod create_workspace_bundle_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -1629,11 +1610,8 @@ pub mod create_workspace_bundle_input {
             self.tags = Some(v);
             self
         }
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -2268,14 +2246,12 @@ pub mod delete_tags_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2755,16 +2731,12 @@ pub mod deregister_workspace_directory_input {
         pub(crate) directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -3048,14 +3020,12 @@ pub mod describe_account_modifications_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3415,14 +3385,12 @@ pub mod describe_connection_aliases_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3589,14 +3557,12 @@ pub mod describe_connection_alias_permissions_input {
             self.alias_id = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3781,14 +3747,12 @@ pub mod describe_ip_groups_input {
             self.group_ids = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3949,14 +3913,12 @@ pub mod describe_tags_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -4126,15 +4088,13 @@ pub mod describe_workspace_bundles_input {
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -4304,16 +4264,14 @@ pub mod describe_workspace_directories_input {
         ///
         /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).
         ///
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
         pub fn directory_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.directory_ids.unwrap_or_default();
             v.push(input.into());
             self.directory_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
         pub fn set_directory_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4331,14 +4289,12 @@ pub mod describe_workspace_directories_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4504,14 +4460,12 @@ pub mod describe_workspace_image_permissions_input {
             self.image_id = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4710,14 +4664,12 @@ pub mod describe_workspace_images_input {
             self.image_type = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4891,20 +4843,16 @@ pub mod describe_workspaces_input {
         ///
         /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).
         ///
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
         pub fn workspace_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.workspace_ids.unwrap_or_default();
             v.push(input.into());
             self.workspace_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
         pub fn set_workspace_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4912,40 +4860,32 @@ pub mod describe_workspaces_input {
             self.workspace_ids = input;
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -4960,14 +4900,12 @@ pub mod describe_workspaces_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5141,14 +5079,12 @@ pub mod describe_workspaces_connection_status_input {
             self.workspace_ids = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5807,13 +5743,8 @@ pub mod import_workspace_image_input {
             self.ec2_image_id = input;
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -5821,13 +5752,8 @@ pub mod import_workspace_image_input {
             self.ingestion_process = Some(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -5881,12 +5807,7 @@ pub mod import_workspace_image_input {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
@@ -5895,12 +5816,7 @@ pub mod import_workspace_image_input {
             self.applications = Some(v);
             self
         }
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn set_applications(
@@ -6063,8 +5979,7 @@ pub mod list_available_management_cidr_ranges_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn management_cidr_range_constraint(
             mut self,
             input: impl Into<std::string::String>,
@@ -6072,8 +5987,7 @@ pub mod list_available_management_cidr_ranges_input {
             self.management_cidr_range_constraint = Some(input.into());
             self
         }
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn set_management_cidr_range_constraint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6091,14 +6005,12 @@ pub mod list_available_management_cidr_ranges_input {
             self.max_results = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6440,11 +6352,7 @@ pub mod modify_account_input {
             self.dedicated_tenancy_support = input;
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
             input: impl Into<std::string::String>,
@@ -6452,11 +6360,7 @@ pub mod modify_account_input {
             self.dedicated_tenancy_management_cidr_range = Some(input.into());
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7984,20 +7888,12 @@ pub mod register_workspace_directory_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -8006,18 +7902,14 @@ pub mod register_workspace_directory_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8025,16 +7917,12 @@ pub mod register_workspace_directory_input {
             self.subnet_ids = input;
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
         pub fn enable_work_docs(mut self, input: bool) -> Self {
             self.enable_work_docs = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_work_docs = input;
             self
@@ -8049,20 +7937,12 @@ pub mod register_workspace_directory_input {
             self.enable_self_service = input;
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
             self.tenancy = Some(input);
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<crate::model::Tenancy>) -> Self {
             self.tenancy = input;
             self
@@ -9595,30 +9475,24 @@ pub mod update_workspace_image_permission_input {
             self.image_id = input;
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
         pub fn allow_copy_image(mut self, input: bool) -> Self {
             self.allow_copy_image = Some(input);
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
         pub fn set_allow_copy_image(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_copy_image = input;
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn set_shared_account_id(
@@ -9774,12 +9648,9 @@ impl UpdateWorkspaceImagePermissionInput {
 pub struct UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The permission to copy the image. This permission can be revoked only after an image
-    /// has been shared.</p>
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub allow_copy_image: std::option::Option<bool>,
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-    ///
-    /// <important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub shared_account_id: std::option::Option<std::string::String>,
@@ -9789,14 +9660,11 @@ impl UpdateWorkspaceImagePermissionInput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The permission to copy the image. This permission can be revoked only after an image
-    /// has been shared.</p>
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn allow_copy_image(&self) -> std::option::Option<bool> {
         self.allow_copy_image
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-    ///
-    /// <important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn shared_account_id(&self) -> std::option::Option<&str> {
@@ -10024,49 +9892,29 @@ impl std::fmt::Debug for RestoreWorkspaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-    /// of Active. If the directory does not have a status of Active, you will receive an
-    /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-    /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-    /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-    /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-    /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-    /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-    /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub enable_self_service: std::option::Option<bool>,
-    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-    /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-    /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-    /// InvalidParameterValuesException error. For more information about BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The tags associated with the directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-    /// of Active. If the directory does not have a status of Active, you will receive an
-    /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-    /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-    /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-    /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-    /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-    /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-    /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
     pub fn enable_work_docs(&self) -> std::option::Option<bool> {
         self.enable_work_docs
     }
@@ -10074,11 +9922,7 @@ impl RegisterWorkspaceDirectoryInput {
     pub fn enable_self_service(&self) -> std::option::Option<bool> {
         self.enable_self_service
     }
-    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-    /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-    /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-    /// InvalidParameterValuesException error. For more information about BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn tenancy(&self) -> std::option::Option<&crate::model::Tenancy> {
         self.tenancy.as_ref()
     }
@@ -10335,11 +10179,7 @@ impl std::fmt::Debug for ModifyClientPropertiesInput {
 pub struct ModifyAccountInput {
     /// <p>The status of BYOL.</p>
     pub dedicated_tenancy_support: std::option::Option<crate::model::DedicatedTenancySupportEnum>,
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface. Specify an IP address range that is compatible with your network and in CIDR
-    /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-    /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-    /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
 impl ModifyAccountInput {
@@ -10349,11 +10189,7 @@ impl ModifyAccountInput {
     ) -> std::option::Option<&crate::model::DedicatedTenancySupportEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface. Specify an IP address range that is compatible with your network and in CIDR
-    /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-    /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-    /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
@@ -10402,18 +10238,15 @@ impl std::fmt::Debug for MigrateWorkspaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagementCidrRangesInput {
-    /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-    /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub management_cidr_range_constraint: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagementCidrRangesInput {
-    /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-    /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub fn management_cidr_range_constraint(&self) -> std::option::Option<&str> {
         self.management_cidr_range_constraint.as_deref()
     }
@@ -10421,8 +10254,7 @@ impl ListAvailableManagementCidrRangesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10446,13 +10278,8 @@ impl std::fmt::Debug for ListAvailableManagementCidrRangesInput {
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     pub ec2_image_id: std::option::Option<std::string::String>,
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol
-    /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-    /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-    /// that does not end in <code>_WSP</code>. </p>
-    ///
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-    /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
     pub ingestion_process: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
     pub image_name: std::option::Option<std::string::String>,
@@ -10460,12 +10287,7 @@ pub struct ImportWorkspaceImageInput {
     pub image_description: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-    /// BYOL images. For more information about subscribing to Office for BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-    /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    ///
-    /// <note>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
     /// </note>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -10475,13 +10297,8 @@ impl ImportWorkspaceImageInput {
     pub fn ec2_image_id(&self) -> std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol
-    /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-    /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-    /// that does not end in <code>_WSP</code>. </p>
-    ///
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-    /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
     pub fn ingestion_process(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageIngestionProcess> {
@@ -10499,12 +10316,7 @@ impl ImportWorkspaceImageInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-    /// BYOL images. For more information about subscribing to Office for BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-    /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    ///
-    /// <note>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
     /// </note>
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
@@ -10600,8 +10412,7 @@ impl std::fmt::Debug for DescribeWorkspaceSnapshotsInput {
 pub struct DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesConnectionStatusInput {
@@ -10609,8 +10420,7 @@ impl DescribeWorkspacesConnectionStatusInput {
     pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_ids.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10628,48 +10438,35 @@ impl std::fmt::Debug for DescribeWorkspacesConnectionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspacesInput {
-    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-    /// filter.</p>
-    /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-    /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+    /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-    /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-    /// other filter.</p>
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The name of the directory user. You must specify this parameter with
-    /// <code>DirectoryId</code>.</p>
+    /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-    /// retrieved. You cannot combine this parameter with any other filter.</p>
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesInput {
-    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-    /// filter.</p>
-    /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-    /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+    /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
     pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_ids.as_deref()
     }
-    /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-    /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-    /// other filter.</p>
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The name of the directory user. You must specify this parameter with
-    /// <code>DirectoryId</code>.</p>
+    /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-    /// retrieved. You cannot combine this parameter with any other filter.</p>
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -10677,8 +10474,7 @@ impl DescribeWorkspacesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10704,8 +10500,7 @@ pub struct DescribeWorkspaceImagesInput {
     pub image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type (owned or shared) of the image.</p>
     pub image_type: std::option::Option<crate::model::ImageType>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10719,8 +10514,7 @@ impl DescribeWorkspaceImagesInput {
     pub fn image_type(&self) -> std::option::Option<&crate::model::ImageType> {
         self.image_type.as_ref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10746,8 +10540,7 @@ impl std::fmt::Debug for DescribeWorkspaceImagesInput {
 pub struct DescribeWorkspaceImagePermissionsInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10757,8 +10550,7 @@ impl DescribeWorkspaceImagePermissionsInput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10781,18 +10573,15 @@ impl std::fmt::Debug for DescribeWorkspaceImagePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceDirectoriesInput {
-    /// <p>The identifiers of the directories. If the value is null, all directories are
-    /// retrieved.</p>
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of directories to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceDirectoriesInput {
-    /// <p>The identifiers of the directories. If the value is null, all directories are
-    /// retrieved.</p>
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.directory_ids.as_deref()
     }
@@ -10800,8 +10589,7 @@ impl DescribeWorkspaceDirectoriesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10823,8 +10611,7 @@ pub struct DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
     pub bundle_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-    /// To describe the bundles that belong to your account, don't specify a value.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10835,8 +10622,7 @@ impl DescribeWorkspaceBundlesInput {
         self.bundle_ids.as_deref()
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-    /// To describe the bundles that belong to your account, don't specify a value.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -10859,13 +10645,11 @@ impl std::fmt::Debug for DescribeWorkspaceBundlesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -10884,8 +10668,7 @@ impl std::fmt::Debug for DescribeTagsInput {
 pub struct DescribeIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10895,8 +10678,7 @@ impl DescribeIpGroupsInput {
     pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.group_ids.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10921,8 +10703,7 @@ impl std::fmt::Debug for DescribeIpGroupsInput {
 pub struct DescribeConnectionAliasPermissionsInput {
     /// <p>The identifier of the connection alias.</p>
     pub alias_id: std::option::Option<std::string::String>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10932,8 +10713,7 @@ impl DescribeConnectionAliasPermissionsInput {
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10962,8 +10742,7 @@ pub struct DescribeConnectionAliasesInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of connection aliases to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionAliasesInput {
@@ -10979,8 +10758,7 @@ impl DescribeConnectionAliasesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11021,13 +10799,11 @@ impl std::fmt::Debug for DescribeClientPropertiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountModificationsInput {
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountModificationsInput {
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11055,15 +10831,11 @@ impl std::fmt::Debug for DescribeAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-    /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-    /// error.</p>
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeregisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-    /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-    /// error.</p>
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -11122,15 +10894,13 @@ impl std::fmt::Debug for DeleteWorkspaceBundleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -11227,11 +10997,8 @@ pub struct CreateWorkspaceBundleInput {
     pub user_storage: std::option::Option<crate::model::UserStorage>,
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub root_storage: std::option::Option<crate::model::RootStorage>,
-    /// <p>The tags associated with the bundle.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-    /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11260,11 +11027,8 @@ impl CreateWorkspaceBundleInput {
     pub fn root_storage(&self) -> std::option::Option<&crate::model::RootStorage> {
         self.root_storage.as_ref()
     }
-    /// <p>The tags associated with the bundle.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-    /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11294,11 +11058,8 @@ pub struct CreateUpdatedWorkspaceImageInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the source WorkSpace image.</p>
     pub source_image_id: std::option::Option<std::string::String>,
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create
-    /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11315,11 +11076,8 @@ impl CreateUpdatedWorkspaceImageInput {
     pub fn source_image_id(&self) -> std::option::Option<&str> {
         self.source_image_id.as_deref()
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create
-    /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11340,15 +11098,13 @@ impl std::fmt::Debug for CreateUpdatedWorkspaceImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -11412,24 +11168,16 @@ impl std::fmt::Debug for CreateIpGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionAliasInput {
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    ///
-    /// <important>
-    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-    /// connection string with a different account, even if you delete all instances of it from the original account. The
-    /// connection string is globally reserved for your account.</p>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub connection_string: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the connection alias.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionAliasInput {
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    ///
-    /// <important>
-    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-    /// connection string with a different account, even if you delete all instances of it from the original account. The
-    /// connection string is globally reserved for your account.</p>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn connection_string(&self) -> std::option::Option<&str> {
         self.connection_string.as_deref()

@@ -463,30 +463,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_service_role_arn(input);
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.oauth_token(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_oauth_token(input);
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -524,26 +516,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_branch_auto_build(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_basic_auth(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_basic_auth(input);
             self
@@ -1043,14 +1031,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_environment_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1061,8 +1047,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
-    /// <p> Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
-    /// not connected to a repository. </p>
+    /// <p> Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a repository. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1143,10 +1128,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
         ///
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn file_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -1155,10 +1137,7 @@ pub mod fluent_builders {
             self.inner = self.inner.file_map(k.into(), v.into());
             self
         }
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn set_file_map(
             mut self,
             input: std::option::Option<
@@ -1171,8 +1150,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomainAssociation`.
     ///
-    /// <p> Creates a new domain association for an Amplify app. This action associates a custom
-    /// domain with the Amplify app </p>
+    /// <p> Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1296,14 +1274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1877,8 +1853,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GenerateAccessLogs`.
     ///
-    /// <p> Returns the website access logs for a specific time range using a presigned URL.
-    /// </p>
+    /// <p> Returns the website access logs for a specific time range using a presigned URL. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateAccessLogs<
         C = aws_smithy_client::erase::DynConnector,
@@ -1935,14 +1910,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1950,14 +1923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2588,14 +2559,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2700,16 +2669,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2807,16 +2772,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_name(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2901,16 +2862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2995,16 +2952,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3099,16 +3052,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3263,16 +3212,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3290,8 +3235,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDeployment`.
     ///
-    /// <p> Starts a deployment for a manually deployed app. Manually deployed apps are not
-    /// connected to a repository. </p>
+    /// <p> Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -3378,16 +3322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_url(input.into());
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_url(input);
             self
@@ -3472,32 +3412,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.inner = self.inner.job_type(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
             self
@@ -3964,14 +3894,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_branch_auto_build(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_branch_auto_deletion(input);
             self
@@ -4095,30 +4023,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.oauth_token(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_oauth_token(input);
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -4367,14 +4287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_environment_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4509,14 +4427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,

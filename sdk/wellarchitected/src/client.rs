@@ -372,15 +372,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateLenses`.
     ///
     /// <p>Associate a lens to a workload.</p>
-    /// <p>Up to 10 lenses can be associated with a workload in a single API operation. A
-    /// maximum of 20 lenses can be associated with a workload.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account,
-    /// you acknowledge that custom lenses created by other users and shared with you are
-    /// Third Party Content as defined in the Amazon Web Services Customer Agreement.    </p>
+    /// <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLenses<
@@ -453,13 +447,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_aliases(input.into());
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -471,18 +465,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLensShare`.
     ///
     /// <p>Create a lens share.</p>
-    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region.
-    /// Shared access to a lens is not removed until the lens invitation is deleted.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Shared access to a lens is not removed until the lens invitation is deleted.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensShare<
@@ -541,13 +526,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -562,29 +547,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shared_with(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -598,9 +571,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a new lens version.</p>
     /// <p>A lens can have up to 100 versions.</p>
-    /// <p>After a lens has been imported, create a new lens version to publish it.  The owner of a lens can share the lens with other
-    /// Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it.
-    /// </p>
+    /// <p>After a lens has been imported, create a new lens version to publish it. The owner of a lens can share the lens with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -658,13 +629,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -689,29 +660,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_is_major_version(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -805,29 +764,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_milestone_name(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -840,10 +787,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkload`.
     ///
     /// <p>Create a new workload.</p>
-    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users
-    /// in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the
-    /// <i>Well-Architected Tool User Guide</i>.</p>
+    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkload<
         C = aws_smithy_client::erase::DynConnector,
@@ -901,15 +846,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -961,14 +904,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_regions(input.into());
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -997,14 +938,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pillar_priorities(input.into());
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1025,299 +964,81 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architectural_design(input);
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.review_owner(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_review_owner(input);
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -1340,12 +1061,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
         ///
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lenses(input.into());
             self
         }
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1363,29 +1084,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notes(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1421,11 +1130,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkloadShare`.
     ///
     /// <p>Create a workload share.</p>
-    /// <p>The owner of a workload can share it with other Amazon Web Services accounts and IAM users in the same
-    /// Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is
-    /// deleted.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the
-    /// <i>Well-Architected Tool User Guide</i>.</p>
+    /// <p>The owner of a workload can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
@@ -1515,29 +1221,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_type(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1550,19 +1244,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLens`.
     ///
     /// <p>Delete an existing lens.</p>
-    /// <p>Only the owner of a lens can delete it.  After the lens is deleted,  Amazon Web Services accounts and IAM users
-    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLens<
@@ -1621,40 +1305,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1680,18 +1352,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLensShare`.
     ///
     /// <p>Delete a lens share.</p>
-    /// <p>After the lens share is deleted,  Amazon Web Services accounts and IAM users
-    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>After the lens share is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLensShare<
@@ -1760,40 +1423,28 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1872,29 +1523,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1983,29 +1622,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2018,10 +1645,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLenses`.
     ///
     /// <p>Disassociate a lens from a workload.</p>
-    /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p>
-    /// <note>
-    /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be
-    /// removed from a workload.</p>
+    /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note>
+    /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLenses<
@@ -2094,13 +1719,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_aliases(input.into());
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2112,19 +1737,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportLens`.
     ///
     /// <p>Export an existing lens.</p>
-    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
-    /// in the <i>Well-Architected Tool User Guide</i>. Only the owner of a lens can export it.               
-    /// </p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>Do not include or gather personal identifiable information (PII) of end users or
-    /// other identifiable individuals in or via your custom lenses. If your custom
-    /// lens or those shared with you and used in your account do include or collect
-    /// PII you are responsible for: ensuring that the included PII is processed in accordance
-    /// with applicable law, providing adequate privacy notices, and obtaining necessary
-    /// consents for processing such data.</p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only the owner of a lens can export it. </p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportLens<
@@ -2183,13 +1798,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2275,13 +1890,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2369,13 +1984,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2461,13 +2076,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2555,13 +2170,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2639,13 +2254,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2832,23 +2447,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportLens`.
     ///
     /// <p>Import a new lens.</p>
-    /// <p>The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
-    /// until it's published with <a>CreateLensVersion</a>
-    /// </p>
-    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
-    /// in the <i>Well-Architected Tool User Guide</i>.</p>
-    /// <p>A custom lens cannot exceed 500 KB in size.</p>
-    ///
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>Do not include or gather personal identifiable information (PII) of end users or
-    /// other identifiable individuals in or via your custom lenses. If your custom
-    /// lens or those shared with you and used in your account do include or collect
-    /// PII you are responsible for: ensuring that the included PII is processed in accordance
-    /// with applicable law, providing adequate privacy notices, and obtaining necessary
-    /// consents for processing such data.</p>
+    /// <p>The lens cannot be applied to workloads or shared with other Amazon Web Services accounts until it's published with <code>CreateLensVersion</code> </p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+    /// <p>A custom lens cannot exceed 500 KB in size.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportLens<
@@ -2907,13 +2510,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -2928,29 +2531,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_json_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -3053,25 +2644,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pillar_id(input);
             self
@@ -3292,25 +2883,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pillar_id(input);
             self
@@ -3510,13 +3101,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -3737,7 +3328,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListShareInvitations`.
     ///
-    /// <p>List  the workload invitations.</p>
+    /// <p>List the workload invitations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -3794,14 +3385,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3985,14 +3574,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4221,9 +3808,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes specified tags from a resource.</p>
     /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
-    /// <p>
-    /// <code>DELETE /tags/WorkloadArn?tagKeys=key1&tagKeys=key2</code>
-    /// </p>
+    /// <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4294,14 +3879,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4380,13 +3963,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -4424,8 +4007,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
         ///
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn choice_updates(
             mut self,
             k: impl Into<std::string::String>,
@@ -4434,8 +4016,7 @@ pub mod fluent_builders {
             self.inner = self.inner.choice_updates(k.into(), v);
             self
         }
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn set_choice_updates(
             mut self,
             input: std::option::Option<
@@ -4549,13 +4130,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -4753,15 +4334,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4813,14 +4392,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_regions(input.into());
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4849,14 +4426,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pillar_priorities(input.into());
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4877,32 +4452,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architectural_design(input);
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.review_owner(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_review_owner(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
             self.inner = self.inner.is_review_owner_update_acknowledged(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -4911,286 +4478,70 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -5399,13 +4750,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
@@ -5425,29 +4776,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_milestone_name(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,

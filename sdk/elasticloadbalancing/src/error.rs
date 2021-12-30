@@ -768,9 +768,7 @@ pub struct CreateLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLoadBalancerErrorKind {
-    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM)
-    /// or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might
-    /// indicate that the certificate is not fully available yet.</p>
+    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
     CertificateNotFoundException(crate::error::CertificateNotFoundException),
     /// <p>The specified load balancer name already exists for this account.</p>
     DuplicateAccessPointNameException(crate::error::DuplicateAccessPointNameException),
@@ -990,9 +988,7 @@ pub struct CreateLoadBalancerListenersError {
 pub enum CreateLoadBalancerListenersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM)
-    /// or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might
-    /// indicate that the certificate is not fully available yet.</p>
+    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
     CertificateNotFoundException(crate::error::CertificateNotFoundException),
     /// <p>A listener already exists for the specified load balancer name and port, but with a different instance port, protocol, or SSL certificate.</p>
     DuplicateListenerException(crate::error::DuplicateListenerException),
@@ -3079,9 +3075,7 @@ pub struct SetLoadBalancerListenerSSLCertificateError {
 pub enum SetLoadBalancerListenerSSLCertificateErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM)
-    /// or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might
-    /// indicate that the certificate is not fully available yet.</p>
+    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
     CertificateNotFoundException(crate::error::CertificateNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
@@ -3831,9 +3825,7 @@ impl UnsupportedProtocolException {
     }
 }
 
-/// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM)
-/// or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might
-/// indicate that the certificate is not fully available yet.</p>
+/// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundException {

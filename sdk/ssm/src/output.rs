@@ -75,18 +75,13 @@ pub struct UpdatePatchBaselineOutput {
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The compliance severity level assigned to the patch baseline after the update
-    /// completed.</p>
+    /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
-    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-    /// nodes only.</p>
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-    /// with packages that include it as a dependency.</p>
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>The date when the patch baseline was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -94,8 +89,7 @@ pub struct UpdatePatchBaselineOutput {
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the patches to use to update the managed nodes, including target operating
-    /// systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl UpdatePatchBaselineOutput {
@@ -123,16 +117,13 @@ impl UpdatePatchBaselineOutput {
     pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
         self.approved_patches.as_deref()
     }
-    /// <p>The compliance severity level assigned to the patch baseline after the update
-    /// completed.</p>
+    /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
     pub fn approved_patches_compliance_level(
         &self,
     ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
-    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-    /// nodes only.</p>
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
         self.approved_patches_enable_non_security
     }
@@ -140,9 +131,7 @@ impl UpdatePatchBaselineOutput {
     pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
         self.rejected_patches.as_deref()
     }
-    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-    /// with packages that include it as a dependency.</p>
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
@@ -158,8 +147,7 @@ impl UpdatePatchBaselineOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the patches to use to update the managed nodes, including target operating
-    /// systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
     }
@@ -291,8 +279,7 @@ pub mod update_patch_baseline_output {
             self.approved_patches = input;
             self
         }
-        /// <p>The compliance severity level assigned to the patch baseline after the update
-        /// completed.</p>
+        /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
         pub fn approved_patches_compliance_level(
             mut self,
             input: crate::model::PatchComplianceLevel,
@@ -300,8 +287,7 @@ pub mod update_patch_baseline_output {
             self.approved_patches_compliance_level = Some(input);
             self
         }
-        /// <p>The compliance severity level assigned to the patch baseline after the update
-        /// completed.</p>
+        /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
         pub fn set_approved_patches_compliance_level(
             mut self,
             input: std::option::Option<crate::model::PatchComplianceLevel>,
@@ -309,16 +295,12 @@ pub mod update_patch_baseline_output {
             self.approved_patches_compliance_level = input;
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -345,16 +327,12 @@ pub mod update_patch_baseline_output {
             self.rejected_patches = input;
             self
         }
-        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-        /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-        /// with packages that include it as a dependency.</p>
+        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
             self.rejected_patches_action = Some(input);
             self
         }
-        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-        /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-        /// with packages that include it as a dependency.</p>
+        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn set_rejected_patches_action(
             mut self,
             input: std::option::Option<crate::model::PatchAction>,
@@ -402,16 +380,14 @@ pub mod update_patch_baseline_output {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input);
             self.sources = Some(v);
             self
         }
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -576,16 +552,10 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The updated task ARN value.</p>
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The updated parameter values.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The updated parameter values.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
@@ -602,21 +572,15 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The updated <code>MaxErrors</code> value.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The updated logging information in Amazon S3.</p>
-    /// <note>
-    /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The updated task name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated task description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified
-    /// in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl UpdateMaintenanceWindowTaskOutput {
@@ -636,18 +600,12 @@ impl UpdateMaintenanceWindowTaskOutput {
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The updated parameter values.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The updated parameter values.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
         &self,
@@ -677,13 +635,8 @@ impl UpdateMaintenanceWindowTaskOutput {
     pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>The updated logging information in Amazon S3.</p>
-    /// <note>
-    /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
         self.logging_info.as_ref()
@@ -696,8 +649,7 @@ impl UpdateMaintenanceWindowTaskOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified
-    /// in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     pub fn cutoff_behavior(
         &self,
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
@@ -808,14 +760,12 @@ pub mod update_maintenance_window_task_output {
             self.task_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -827,13 +777,8 @@ pub mod update_maintenance_window_task_output {
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The updated parameter values.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The updated parameter values.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn task_parameters(
             mut self,
@@ -845,13 +790,8 @@ pub mod update_maintenance_window_task_output {
             self.task_parameters = Some(hash_map);
             self
         }
-        /// <p>The updated parameter values.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The updated parameter values.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_task_parameters(
             mut self,
@@ -914,25 +854,15 @@ pub mod update_maintenance_window_task_output {
             self.max_errors = input;
             self
         }
-        /// <p>The updated logging information in Amazon S3.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The updated logging information in Amazon S3.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.logging_info = Some(input);
             self
         }
-        /// <p>The updated logging information in Amazon S3.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The updated logging information in Amazon S3.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_logging_info(
             mut self,
@@ -961,8 +891,7 @@ pub mod update_maintenance_window_task_output {
             self.description = input;
             self
         }
-        /// <p>The specification for whether tasks should continue to run after the cutoff time specified
-        /// in the maintenance windows is reached. </p>
+        /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         pub fn cutoff_behavior(
             mut self,
             input: crate::model::MaintenanceWindowTaskCutoffBehavior,
@@ -970,8 +899,7 @@ pub mod update_maintenance_window_task_output {
             self.cutoff_behavior = Some(input);
             self
         }
-        /// <p>The specification for whether tasks should continue to run after the cutoff time specified
-        /// in the maintenance windows is reached. </p>
+        /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         pub fn set_cutoff_behavior(
             mut self,
             input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
@@ -1181,29 +1109,21 @@ pub struct UpdateMaintenanceWindowOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become active. The maintenance window won't run before this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub start_date: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-    /// Zone Database</a> on the IANA website.</p>
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub schedule_timezone: std::option::Option<std::string::String>,
-    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-    /// date and time.</p>
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
     pub duration: i32,
-    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-    /// new tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub cutoff: i32,
-    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-    /// for those targets.</p>
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub allow_unassociated_targets: bool,
     /// <p>Whether the maintenance window is enabled.</p>
     pub enabled: bool,
@@ -1221,13 +1141,11 @@ impl UpdateMaintenanceWindowOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become active. The maintenance window won't run before this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
@@ -1235,15 +1153,11 @@ impl UpdateMaintenanceWindowOutput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-    /// Zone Database</a> on the IANA website.</p>
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn schedule_timezone(&self) -> std::option::Option<&str> {
         self.schedule_timezone.as_deref()
     }
-    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-    /// date and time.</p>
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
@@ -1251,13 +1165,11 @@ impl UpdateMaintenanceWindowOutput {
     pub fn duration(&self) -> i32 {
         self.duration
     }
-    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-    /// new tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn cutoff(&self) -> i32 {
         self.cutoff
     }
-    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-    /// for those targets.</p>
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub fn allow_unassociated_targets(&self) -> bool {
         self.allow_unassociated_targets
     }
@@ -1337,26 +1249,22 @@ pub mod update_maintenance_window_output {
             self.description = input;
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become active. The maintenance window won't run before this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become active. The maintenance window won't run before this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become inactive. The maintenance window won't run after this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become inactive. The maintenance window won't run after this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
@@ -1371,18 +1279,12 @@ pub mod update_maintenance_window_output {
             self.schedule = input;
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_timezone = Some(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn set_schedule_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1390,14 +1292,12 @@ pub mod update_maintenance_window_output {
             self.schedule_timezone = input;
             self
         }
-        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-        /// date and time.</p>
+        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
             self.schedule_offset = Some(input);
             self
         }
-        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-        /// date and time.</p>
+        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.schedule_offset = input;
             self
@@ -1412,26 +1312,22 @@ pub mod update_maintenance_window_output {
             self.duration = input;
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.cutoff = Some(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
             self.cutoff = input;
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
             self.allow_unassociated_targets = Some(input);
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_unassociated_targets = input;
             self
@@ -1929,20 +1825,11 @@ impl StopAutomationExecutionOutput {
 pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-    /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
-    /// </p>
-    /// <p>
-    /// <b>region</b> represents the Region identifier for an
-    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>
-    /// <b>session-id</b> represents the ID of a Session Manager session, such as
-    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl StartSessionOutput {
@@ -1950,22 +1837,13 @@ impl StartSessionOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-    /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
-    /// </p>
-    /// <p>
-    /// <b>region</b> represents the Region identifier for an
-    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>
-    /// <b>session-id</b> represents the ID of a Session Manager session, such as
-    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
     }
@@ -2000,44 +1878,26 @@ pub mod start_session_output {
             self.session_id = input;
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_value = Some(input.into());
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-        /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
-        /// </p>
-        /// <p>
-        /// <b>region</b> represents the Region identifier for an
-        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-        /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>
-        /// <b>session-id</b> represents the ID of a Session Manager session, such as
-        /// <code>1a2b3c4dEXAMPLE</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-        /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
-        /// </p>
-        /// <p>
-        /// <b>region</b> represents the Region identifier for an
-        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-        /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>
-        /// <b>session-id</b> represents the ID of a Session Manager session, such as
-        /// <code>1a2b3c4dEXAMPLE</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_url = input;
             self
@@ -2063,13 +1923,11 @@ impl StartSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeRequestExecutionOutput {
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation
-    /// operation.) </p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl StartChangeRequestExecutionOutput {
-    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation
-    /// operation.) </p>
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     pub fn automation_execution_id(&self) -> std::option::Option<&str> {
         self.automation_execution_id.as_deref()
     }
@@ -2090,14 +1948,12 @@ pub mod start_change_request_execution_output {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation
-        /// operation.) </p>
+        /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
         pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.automation_execution_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation
-        /// operation.) </p>
+        /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
         pub fn set_automation_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2211,13 +2067,11 @@ impl StartAssociationsOnceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCommandOutput {
-    /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
-    /// future references to this request.</p>
+    /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub command: std::option::Option<crate::model::Command>,
 }
 impl SendCommandOutput {
-    /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
-    /// future references to this request.</p>
+    /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub fn command(&self) -> std::option::Option<&crate::model::Command> {
         self.command.as_ref()
     }
@@ -2238,14 +2092,12 @@ pub mod send_command_output {
         pub(crate) command: std::option::Option<crate::model::Command>,
     }
     impl Builder {
-        /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
-        /// future references to this request.</p>
+        /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
         pub fn command(mut self, input: crate::model::Command) -> Self {
             self.command = Some(input);
             self
         }
-        /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
-        /// future references to this request.</p>
+        /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
         pub fn set_command(mut self, input: std::option::Option<crate::model::Command>) -> Self {
             self.command = input;
             self
@@ -2301,19 +2153,11 @@ impl SendAutomationSignalOutput {
 pub struct ResumeSessionOutput {
     /// <p>The ID of the session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-    /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p>
-    /// <b>region</b> represents the Region identifier for an
-    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>
-    /// <b>session-id</b> represents the ID of a Session Manager session, such as
-    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl ResumeSessionOutput {
@@ -2321,21 +2165,13 @@ impl ResumeSessionOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the managed node.</p>
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-    /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p>
-    /// <b>region</b> represents the Region identifier for an
-    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>
-    /// <b>session-id</b> represents the ID of a Session Manager session, such as
-    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
     }
@@ -2370,42 +2206,26 @@ pub mod resume_session_output {
             self.session_id = input;
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_value = Some(input.into());
             self
         }
-        /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the managed node.</p>
+        /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-        /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-        /// <p>
-        /// <b>region</b> represents the Region identifier for an
-        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-        /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>
-        /// <b>session-id</b> represents the ID of a Session Manager session, such as
-        /// <code>1a2b3c4dEXAMPLE</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
-        /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-        /// <p>
-        /// <b>region</b> represents the Region identifier for an
-        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
-        /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>
-        /// <b>session-id</b> represents the ID of a Session Manager session, such as
-        /// <code>1a2b3c4dEXAMPLE</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_url = input;
             self
@@ -2431,13 +2251,11 @@ impl ResumeSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetServiceSettingOutput {
-    /// <p>The current, effective service setting after calling the ResetServiceSetting API
-    /// operation.</p>
+    /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
 impl ResetServiceSettingOutput {
-    /// <p>The current, effective service setting after calling the ResetServiceSetting API
-    /// operation.</p>
+    /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
         self.service_setting.as_ref()
     }
@@ -2458,14 +2276,12 @@ pub mod reset_service_setting_output {
         pub(crate) service_setting: std::option::Option<crate::model::ServiceSetting>,
     }
     impl Builder {
-        /// <p>The current, effective service setting after calling the ResetServiceSetting API
-        /// operation.</p>
+        /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
         pub fn service_setting(mut self, input: crate::model::ServiceSetting) -> Self {
             self.service_setting = Some(input);
             self
         }
-        /// <p>The current, effective service setting after calling the ResetServiceSetting API
-        /// operation.</p>
+        /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
         pub fn set_service_setting(
             mut self,
             input: std::option::Option<crate::model::ServiceSetting>,
@@ -2763,21 +2579,13 @@ impl RegisterDefaultPatchBaselineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutParameterOutput {
-    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store
-    /// automatically creates a new version and assigns this new version a unique ID. You can reference a
-    /// parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you
-    /// don't specify a specific version, the system returns the latest parameter value when a parameter
-    /// is called.</p>
+    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     pub version: i64,
     /// <p>The tier assigned to the parameter.</p>
     pub tier: std::option::Option<crate::model::ParameterTier>,
 }
 impl PutParameterOutput {
-    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store
-    /// automatically creates a new version and assigns this new version a unique ID. You can reference a
-    /// parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you
-    /// don't specify a specific version, the system returns the latest parameter value when a parameter
-    /// is called.</p>
+    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     pub fn version(&self) -> i64 {
         self.version
     }
@@ -2804,20 +2612,12 @@ pub mod put_parameter_output {
         pub(crate) tier: std::option::Option<crate::model::ParameterTier>,
     }
     impl Builder {
-        /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store
-        /// automatically creates a new version and assigns this new version a unique ID. You can reference a
-        /// parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you
-        /// don't specify a specific version, the system returns the latest parameter value when a parameter
-        /// is called.</p>
+        /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
         pub fn version(mut self, input: i64) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store
-        /// automatically creates a new version and assigns this new version a unique ID. You can reference a
-        /// parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you
-        /// don't specify a specific version, the system returns the latest parameter value when a parameter
-        /// is called.</p>
+        /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -3032,8 +2832,7 @@ pub struct ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
     pub resource_data_sync_items:
         std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDataSyncOutput {
@@ -3043,8 +2842,7 @@ impl ListResourceDataSyncOutput {
     ) -> std::option::Option<&[crate::model::ResourceDataSyncItem]> {
         self.resource_data_sync_items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3090,14 +2888,12 @@ pub mod list_resource_data_sync_output {
             self.resource_data_sync_items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3122,26 +2918,20 @@ impl ListResourceDataSyncOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
-    /// about compliant and non-compliant State Manager associations, patch status, or custom items
-    /// according to the filter criteria that you specify. </p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub resource_compliance_summary_items:
         std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
-    /// about compliant and non-compliant State Manager associations, patch status, or custom items
-    /// according to the filter criteria that you specify. </p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     pub fn resource_compliance_summary_items(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceComplianceSummaryItem]> {
         self.resource_compliance_summary_items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3172,9 +2962,7 @@ pub mod list_resource_compliance_summaries_output {
         ///
         /// To override the contents of this collection use [`set_resource_compliance_summary_items`](Self::set_resource_compliance_summary_items).
         ///
-        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
-        /// about compliant and non-compliant State Manager associations, patch status, or custom items
-        /// according to the filter criteria that you specify. </p>
+        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
         pub fn resource_compliance_summary_items(
             mut self,
             input: crate::model::ResourceComplianceSummaryItem,
@@ -3184,9 +2972,7 @@ pub mod list_resource_compliance_summaries_output {
             self.resource_compliance_summary_items = Some(v);
             self
         }
-        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
-        /// about compliant and non-compliant State Manager associations, patch status, or custom items
-        /// according to the filter criteria that you specify. </p>
+        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
         pub fn set_resource_compliance_summary_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
@@ -3194,14 +2980,12 @@ pub mod list_resource_compliance_summaries_output {
             self.resource_compliance_summary_items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3228,8 +3012,7 @@ impl ListResourceComplianceSummariesOutput {
 pub struct ListOpsMetadataOutput {
     /// <p>Returns a list of OpsMetadata objects.</p>
     pub ops_metadata_list: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOpsMetadataOutput {
@@ -3237,8 +3020,7 @@ impl ListOpsMetadataOutput {
     pub fn ops_metadata_list(&self) -> std::option::Option<&[crate::model::OpsMetadata]> {
         self.ops_metadata_list.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3280,14 +3062,12 @@ pub mod list_ops_metadata_output {
             self.ops_metadata_list = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3312,15 +3092,13 @@ impl ListOpsMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemRelatedItemsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of related-item resources for the specified OpsItem.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
 }
 impl ListOpsItemRelatedItemsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3348,14 +3126,12 @@ pub mod list_ops_item_related_items_output {
             std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
     }
     impl Builder {
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3399,15 +3175,13 @@ impl ListOpsItemRelatedItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemEventsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of event information for the specified OpsItems.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>,
 }
 impl ListOpsItemEventsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3434,14 +3208,12 @@ pub mod list_ops_item_events_output {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>,
     }
     impl Builder {
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results. </p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results. </p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3497,8 +3269,7 @@ pub struct ListInventoryEntriesOutput {
     pub entries: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInventoryEntriesOutput {
@@ -3525,8 +3296,7 @@ impl ListInventoryEntriesOutput {
     {
         self.entries.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3626,14 +3396,12 @@ pub mod list_inventory_entries_output {
             self.entries = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3664,8 +3432,7 @@ impl ListInventoryEntriesOutput {
 pub struct ListDocumentVersionsOutput {
     /// <p>The document versions.</p>
     pub document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentVersionsOutput {
@@ -3673,8 +3440,7 @@ impl ListDocumentVersionsOutput {
     pub fn document_versions(&self) -> std::option::Option<&[crate::model::DocumentVersionInfo]> {
         self.document_versions.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3717,14 +3483,12 @@ pub mod list_document_versions_output {
             self.document_versions = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3751,8 +3515,7 @@ impl ListDocumentVersionsOutput {
 pub struct ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
     pub document_identifiers: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentsOutput {
@@ -3760,8 +3523,7 @@ impl ListDocumentsOutput {
     pub fn document_identifiers(&self) -> std::option::Option<&[crate::model::DocumentIdentifier]> {
         self.document_identifiers.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3804,14 +3566,12 @@ pub mod list_documents_output {
             self.document_identifiers = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3840,13 +3600,11 @@ pub struct ListDocumentMetadataHistoryOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the change template.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The user ID of the person in the organization who requested the review of the
-    /// change template.</p>
+    /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
     pub author: std::option::Option<std::string::String>,
     /// <p>Information about the response to the change template approval request.</p>
     pub metadata: std::option::Option<crate::model::DocumentMetadataResponseInfo>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you
-    /// can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentMetadataHistoryOutput {
@@ -3858,8 +3616,7 @@ impl ListDocumentMetadataHistoryOutput {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The user ID of the person in the organization who requested the review of the
-    /// change template.</p>
+    /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
     pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -3867,8 +3624,7 @@ impl ListDocumentMetadataHistoryOutput {
     pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadataResponseInfo> {
         self.metadata.as_ref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you
-    /// can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3920,14 +3676,12 @@ pub mod list_document_metadata_history_output {
             self.document_version = input;
             self
         }
-        /// <p>The user ID of the person in the organization who requested the review of the
-        /// change template.</p>
+        /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
         }
-        /// <p>The user ID of the person in the organization who requested the review of the
-        /// change template.</p>
+        /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author = input;
             self
@@ -3945,14 +3699,12 @@ pub mod list_document_metadata_history_output {
             self.metadata = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3980,26 +3732,20 @@ impl ListDocumentMetadataHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceSummariesOutput {
-    /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example,
-    /// this call returns State Manager associations, patches, or custom compliance types according to
-    /// the filter criteria that you specified.</p>
+    /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     pub compliance_summary_items:
         std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceSummariesOutput {
-    /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example,
-    /// this call returns State Manager associations, patches, or custom compliance types according to
-    /// the filter criteria that you specified.</p>
+    /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     pub fn compliance_summary_items(
         &self,
     ) -> std::option::Option<&[crate::model::ComplianceSummaryItem]> {
         self.compliance_summary_items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4027,9 +3773,7 @@ pub mod list_compliance_summaries_output {
         ///
         /// To override the contents of this collection use [`set_compliance_summary_items`](Self::set_compliance_summary_items).
         ///
-        /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example,
-        /// this call returns State Manager associations, patches, or custom compliance types according to
-        /// the filter criteria that you specified.</p>
+        /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
         pub fn compliance_summary_items(
             mut self,
             input: crate::model::ComplianceSummaryItem,
@@ -4039,9 +3783,7 @@ pub mod list_compliance_summaries_output {
             self.compliance_summary_items = Some(v);
             self
         }
-        /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example,
-        /// this call returns State Manager associations, patches, or custom compliance types according to
-        /// the filter criteria that you specified.</p>
+        /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
         pub fn set_compliance_summary_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
@@ -4049,14 +3791,12 @@ pub mod list_compliance_summaries_output {
             self.compliance_summary_items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4083,8 +3823,7 @@ impl ListComplianceSummariesOutput {
 pub struct ListComplianceItemsOutput {
     /// <p>A list of compliance information for the specified resource ID. </p>
     pub compliance_items: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceItemsOutput {
@@ -4092,8 +3831,7 @@ impl ListComplianceItemsOutput {
     pub fn compliance_items(&self) -> std::option::Option<&[crate::model::ComplianceItem]> {
         self.compliance_items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4136,14 +3874,12 @@ pub mod list_compliance_items_output {
             self.compliance_items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4170,8 +3906,7 @@ impl ListComplianceItemsOutput {
 pub struct ListCommandsOutput {
     /// <p>(Optional) The list of commands requested by the user. </p>
     pub commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
-    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCommandsOutput {
@@ -4179,8 +3914,7 @@ impl ListCommandsOutput {
     pub fn commands(&self) -> std::option::Option<&[crate::model::Command]> {
         self.commands.as_deref()
     }
-    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4222,14 +3956,12 @@ pub mod list_commands_output {
             self.commands = input;
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4256,8 +3988,7 @@ impl ListCommandsOutput {
 pub struct ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
     pub command_invocations: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
-    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCommandInvocationsOutput {
@@ -4265,8 +3996,7 @@ impl ListCommandInvocationsOutput {
     pub fn command_invocations(&self) -> std::option::Option<&[crate::model::CommandInvocation]> {
         self.command_invocations.as_deref()
     }
-    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4309,14 +4039,12 @@ pub mod list_command_invocations_output {
             self.command_invocations = input;
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4344,8 +4072,7 @@ pub struct ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     pub association_versions:
         std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationVersionsOutput {
@@ -4355,8 +4082,7 @@ impl ListAssociationVersionsOutput {
     ) -> std::option::Option<&[crate::model::AssociationVersionInfo]> {
         self.association_versions.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4399,14 +4125,12 @@ pub mod list_association_versions_output {
             self.association_versions = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4433,8 +4157,7 @@ impl ListAssociationVersionsOutput {
 pub struct ListAssociationsOutput {
     /// <p>The associations.</p>
     pub associations: std::option::Option<std::vec::Vec<crate::model::Association>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsOutput {
@@ -4442,8 +4165,7 @@ impl ListAssociationsOutput {
     pub fn associations(&self) -> std::option::Option<&[crate::model::Association]> {
         self.associations.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4485,14 +4207,12 @@ pub mod list_associations_output {
             self.associations = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4517,17 +4237,13 @@ impl ListAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelParameterVersionOutput {
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a>
-    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the parameter that has been labeled.</p>
     pub parameter_version: i64,
 }
 impl LabelParameterVersionOutput {
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a>
-    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
         self.invalid_labels.as_deref()
     }
@@ -4558,18 +4274,14 @@ pub mod label_parameter_version_output {
         ///
         /// To override the contents of this collection use [`set_invalid_labels`](Self::set_invalid_labels).
         ///
-        /// <p>The label doesn't meet the requirements. For information about parameter label requirements,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn invalid_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_labels.unwrap_or_default();
             v.push(input.into());
             self.invalid_labels = Some(v);
             self
         }
-        /// <p>The label doesn't meet the requirements. For information about parameter label requirements,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_invalid_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4771,18 +4483,13 @@ pub struct GetPatchBaselineOutput {
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Returns the specified compliance severity level for approved patches in the patch
-    /// baseline.</p>
+    /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
-    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-    /// nodes only.</p>
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-    /// with packages that include it as a dependency.</p>
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>Patch groups included in the patch baseline.</p>
     pub patch_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4792,8 +4499,7 @@ pub struct GetPatchBaselineOutput {
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the patches to use to update the managed nodes, including target operating
-    /// systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl GetPatchBaselineOutput {
@@ -4821,16 +4527,13 @@ impl GetPatchBaselineOutput {
     pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
         self.approved_patches.as_deref()
     }
-    /// <p>Returns the specified compliance severity level for approved patches in the patch
-    /// baseline.</p>
+    /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub fn approved_patches_compliance_level(
         &self,
     ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
-    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-    /// nodes only.</p>
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
         self.approved_patches_enable_non_security
     }
@@ -4838,9 +4541,7 @@ impl GetPatchBaselineOutput {
     pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
         self.rejected_patches.as_deref()
     }
-    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-    /// with packages that include it as a dependency.</p>
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
@@ -4860,8 +4561,7 @@ impl GetPatchBaselineOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the patches to use to update the managed nodes, including target operating
-    /// systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
     }
@@ -4995,8 +4695,7 @@ pub mod get_patch_baseline_output {
             self.approved_patches = input;
             self
         }
-        /// <p>Returns the specified compliance severity level for approved patches in the patch
-        /// baseline.</p>
+        /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
         pub fn approved_patches_compliance_level(
             mut self,
             input: crate::model::PatchComplianceLevel,
@@ -5004,8 +4703,7 @@ pub mod get_patch_baseline_output {
             self.approved_patches_compliance_level = Some(input);
             self
         }
-        /// <p>Returns the specified compliance severity level for approved patches in the patch
-        /// baseline.</p>
+        /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
         pub fn set_approved_patches_compliance_level(
             mut self,
             input: std::option::Option<crate::model::PatchComplianceLevel>,
@@ -5013,16 +4711,12 @@ pub mod get_patch_baseline_output {
             self.approved_patches_compliance_level = input;
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -5049,16 +4743,12 @@ pub mod get_patch_baseline_output {
             self.rejected_patches = input;
             self
         }
-        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-        /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-        /// with packages that include it as a dependency.</p>
+        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
             self.rejected_patches_action = Some(input);
             self
         }
-        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
-        /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-        /// with packages that include it as a dependency.</p>
+        /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn set_rejected_patches_action(
             mut self,
             input: std::option::Option<crate::model::PatchAction>,
@@ -5125,16 +4815,14 @@ pub mod get_patch_baseline_output {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input);
             self.sources = Some(v);
             self
         }
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -5177,8 +4865,7 @@ impl GetPatchBaselineOutput {
 pub struct GetParametersByPathOutput {
     /// <p>A list of parameters found in the specified hierarchy.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParametersByPathOutput {
@@ -5186,8 +4873,7 @@ impl GetParametersByPathOutput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5229,14 +4915,12 @@ pub mod get_parameters_by_path_output {
             self.parameters = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5263,8 +4947,7 @@ impl GetParametersByPathOutput {
 pub struct GetParametersOutput {
     /// <p>A list of details for a parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>A list of parameters that aren't formatted correctly or don't run during an
-    /// execution.</p>
+    /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
     pub invalid_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetParametersOutput {
@@ -5272,8 +4955,7 @@ impl GetParametersOutput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>A list of parameters that aren't formatted correctly or don't run during an
-    /// execution.</p>
+    /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
     pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.invalid_parameters.as_deref()
     }
@@ -5319,16 +5001,14 @@ pub mod get_parameters_output {
         ///
         /// To override the contents of this collection use [`set_invalid_parameters`](Self::set_invalid_parameters).
         ///
-        /// <p>A list of parameters that aren't formatted correctly or don't run during an
-        /// execution.</p>
+        /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
         pub fn invalid_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_parameters.unwrap_or_default();
             v.push(input.into());
             self.invalid_parameters = Some(v);
             self
         }
-        /// <p>A list of parameters that aren't formatted correctly or don't run during an
-        /// execution.</p>
+        /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
         pub fn set_invalid_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5358,8 +5038,7 @@ impl GetParametersOutput {
 pub struct GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParameterHistoryOutput {
@@ -5367,8 +5046,7 @@ impl GetParameterHistoryOutput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterHistory]> {
         self.parameters.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5410,14 +5088,12 @@ pub mod get_parameter_history_output {
             self.parameters = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5501,8 +5177,7 @@ impl GetParameterOutput {
 pub struct GetOpsSummaryOutput {
     /// <p>The list of aggregated details and filtered OpsData.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsSummaryOutput {
@@ -5510,8 +5185,7 @@ impl GetOpsSummaryOutput {
     pub fn entities(&self) -> std::option::Option<&[crate::model::OpsEntity]> {
         self.entities.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5553,14 +5227,12 @@ pub mod get_ops_summary_output {
             self.entities = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5591,8 +5263,7 @@ pub struct GetOpsMetadataOutput {
     pub metadata: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
     >,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsMetadataOutput {
@@ -5608,8 +5279,7 @@ impl GetOpsMetadataOutput {
     > {
         self.metadata.as_ref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5671,14 +5341,12 @@ pub mod get_ops_metadata_output {
             self.metadata = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5764,23 +5432,14 @@ pub struct GetMaintenanceWindowTaskOutput {
     pub window_task_id: std::option::Option<std::string::String>,
     /// <p>The targets where the task should run.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and
-    /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
-    /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For
-    /// <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The type of task to run.</p>
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-    /// <p>The parameters to pass to the task when it runs.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
@@ -5791,44 +5450,25 @@ pub struct GetMaintenanceWindowTaskOutput {
     /// <p>The parameters to pass to the task when it runs.</p>
     pub task_invocation_parameters:
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
-    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
-    /// that have the same priority are scheduled in parallel.</p>
+    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub priority: i32,
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value doesn't affect the running of your task and can be
-    /// ignored.</p>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value doesn't affect the running of your task and can be
-    /// ignored.</p>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are
-    /// logged.</p>
-    /// <note>
-    /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The retrieved task name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The retrieved task description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
-    /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
-    /// running task invocations continue, but no new task invocations are started. For Run Command
-    /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
-    /// <code>CancelCommand</code> operation.</p>
+    /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl GetMaintenanceWindowTaskOutput {
@@ -5844,15 +5484,11 @@ impl GetMaintenanceWindowTaskOutput {
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
-    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and
-    /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
-    /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For
-    /// <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
     pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
@@ -5860,13 +5496,8 @@ impl GetMaintenanceWindowTaskOutput {
     pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
-    /// <p>The parameters to pass to the task when it runs.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
         &self,
@@ -5884,39 +5515,24 @@ impl GetMaintenanceWindowTaskOutput {
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
         self.task_invocation_parameters.as_ref()
     }
-    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
-    /// that have the same priority are scheduled in parallel.</p>
+    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value doesn't affect the running of your task and can be
-    /// ignored.</p>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value doesn't affect the running of your task and can be
-    /// ignored.</p>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are
-    /// logged.</p>
-    /// <note>
-    /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
         self.logging_info.as_ref()
@@ -5929,11 +5545,7 @@ impl GetMaintenanceWindowTaskOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
-    /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
-    /// running task invocations continue, but no new task invocations are started. For Run Command
-    /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
-    /// <code>CancelCommand</code> operation.</p>
+    /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
     pub fn cutoff_behavior(
         &self,
     ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
@@ -6036,30 +5648,22 @@ pub mod get_maintenance_window_task_output {
             self.targets = input;
             self
         }
-        /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and
-        /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
-        /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For
-        /// <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+        /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_arn = Some(input.into());
             self
         }
-        /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and
-        /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
-        /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For
-        /// <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+        /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
-        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6084,13 +5688,8 @@ pub mod get_maintenance_window_task_output {
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters to pass to the task when it runs.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters to pass to the task when it runs.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn task_parameters(
             mut self,
@@ -6102,13 +5701,8 @@ pub mod get_maintenance_window_task_output {
             self.task_parameters = Some(hash_map);
             self
         }
-        /// <p>The parameters to pass to the task when it runs.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters to pass to the task when it runs.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_task_parameters(
             mut self,
@@ -6138,35 +5732,25 @@ pub mod get_maintenance_window_task_output {
             self.task_invocation_parameters = input;
             self
         }
-        /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
-        /// that have the same priority are scheduled in parallel.</p>
+        /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
-        /// that have the same priority are scheduled in parallel.</p>
+        /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn set_max_concurrency(
             mut self,
@@ -6175,49 +5759,29 @@ pub mod get_maintenance_window_task_output {
             self.max_concurrency = input;
             self
         }
-        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
         }
-        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_errors = input;
             self
         }
-        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are
-        /// logged.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.logging_info = Some(input);
             self
         }
-        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are
-        /// logged.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_logging_info(
             mut self,
@@ -6246,11 +5810,7 @@ pub mod get_maintenance_window_task_output {
             self.description = input;
             self
         }
-        /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
-        /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
-        /// running task invocations continue, but no new task invocations are started. For Run Command
-        /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
-        /// <code>CancelCommand</code> operation.</p>
+        /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
         pub fn cutoff_behavior(
             mut self,
             input: crate::model::MaintenanceWindowTaskCutoffBehavior,
@@ -6258,11 +5818,7 @@ pub mod get_maintenance_window_task_output {
             self.cutoff_behavior = Some(input);
             self
         }
-        /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
-        /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
-        /// running task invocations continue, but no new task invocations are started. For Run Command
-        /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
-        /// <code>CancelCommand</code> operation.</p>
+        /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
         pub fn set_cutoff_behavior(
             mut self,
             input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
@@ -6317,15 +5873,13 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The task status for an invocation.</p>
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-    /// <p>The details explaining the status. Details are only available for certain status
-    /// values.</p>
+    /// <p>The details explaining the status. Details are only available for certain status values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time that the task started running on the target.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the task finished running on the target.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
-    /// events raised while running tasks for these targets in this maintenance window.</p>
+    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The maintenance window target ID.</p>
     pub window_target_id: std::option::Option<std::string::String>,
@@ -6359,8 +5913,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The details explaining the status. Details are only available for certain status
-    /// values.</p>
+    /// <p>The details explaining the status. Details are only available for certain status values.</p>
     pub fn status_details(&self) -> std::option::Option<&str> {
         self.status_details.as_deref()
     }
@@ -6372,8 +5925,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
-    /// events raised while running tasks for these targets in this maintenance window.</p>
+    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(&self) -> std::option::Option<&str> {
         self.owner_information.as_deref()
     }
@@ -6505,14 +6057,12 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self.status = input;
             self
         }
-        /// <p>The details explaining the status. Details are only available for certain status
-        /// values.</p>
+        /// <p>The details explaining the status. Details are only available for certain status values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
             self
         }
-        /// <p>The details explaining the status. Details are only available for certain status
-        /// values.</p>
+        /// <p>The details explaining the status. Details are only available for certain status values.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6546,14 +6096,12 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self.end_time = input;
             self
         }
-        /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
-        /// events raised while running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_information = Some(input.into());
             self
         }
-        /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
-        /// events raised while running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
         pub fn set_owner_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6607,8 +6155,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
 pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub window_execution_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the specific task execution in the maintenance window task that was
-    /// retrieved.</p>
+    /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
     pub task_arn: std::option::Option<std::string::String>,
@@ -6616,24 +6163,13 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The type of task that was run.</p>
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-    /// <p>The parameters passed to the task when it was run.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Key</code>: string, between 1 and 255 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code>: an array of strings, each between 1 and 255 characters</p>
-    /// </li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub task_parameters: std::option::Option<
         std::vec::Vec<
@@ -6647,8 +6183,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     pub priority: i32,
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
-    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task
-    /// execution would have been stopped.</p>
+    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The status of the task.</p>
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
@@ -6664,8 +6199,7 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     pub fn window_execution_id(&self) -> std::option::Option<&str> {
         self.window_execution_id.as_deref()
     }
-    /// <p>The ID of the specific task execution in the maintenance window task that was
-    /// retrieved.</p>
+    /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
     pub fn task_execution_id(&self) -> std::option::Option<&str> {
         self.task_execution_id.as_deref()
     }
@@ -6681,24 +6215,13 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameters passed to the task when it was run.</p>
-    /// <note>
-    /// <p>
-    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-    /// about how Systems Manager handles these options for the supported maintenance window task
-    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     /// <p>The map has the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Key</code>: string, between 1 and 255 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code>: an array of strings, each between 1 and 255 characters</p>
-    /// </li>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     pub fn task_parameters(
         &self,
@@ -6718,8 +6241,7 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task
-    /// execution would have been stopped.</p>
+    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
     pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
     }
@@ -6800,14 +6322,12 @@ pub mod get_maintenance_window_execution_task_output {
             self.window_execution_id = input;
             self
         }
-        /// <p>The ID of the specific task execution in the maintenance window task that was
-        /// retrieved.</p>
+        /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
         pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_execution_id = Some(input.into());
             self
         }
-        /// <p>The ID of the specific task execution in the maintenance window task that was
-        /// retrieved.</p>
+        /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
         pub fn set_task_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6852,24 +6372,13 @@ pub mod get_maintenance_window_execution_task_output {
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters passed to the task when it was run.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters passed to the task when it was run.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         /// <p>The map has the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key</code>: string, between 1 and 255 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code>: an array of strings, each between 1 and 255 characters</p>
-        /// </li>
+        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
         /// </ul>
         pub fn task_parameters(
             mut self,
@@ -6883,24 +6392,13 @@ pub mod get_maintenance_window_execution_task_output {
             self.task_parameters = Some(v);
             self
         }
-        /// <p>The parameters passed to the task when it was run.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters passed to the task when it was run.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         /// <p>The map has the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key</code>: string, between 1 and 255 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code>: an array of strings, each between 1 and 255 characters</p>
-        /// </li>
+        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
         /// </ul>
         pub fn set_task_parameters(
             mut self,
@@ -6939,14 +6437,12 @@ pub mod get_maintenance_window_execution_task_output {
             self.max_concurrency = input;
             self
         }
-        /// <p>The defined maximum number of task execution errors allowed before scheduling of the task
-        /// execution would have been stopped.</p>
+        /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
         }
-        /// <p>The defined maximum number of task execution errors allowed before scheduling of the task
-        /// execution would have been stopped.</p>
+        /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_errors = input;
             self
@@ -7213,32 +6709,23 @@ pub struct GetMaintenanceWindowOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the maintenance window.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become active. The maintenance window won't run before this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub start_date: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-    /// Zone Database</a> on the IANA website.</p>
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub schedule_timezone: std::option::Option<std::string::String>,
-    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-    /// date and time.</p>
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub schedule_offset: std::option::Option<i32>,
-    /// <p>The next time the maintenance window will actually run, taking into account any specified
-    /// times for the maintenance window to become active or inactive.</p>
+    /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
     pub next_execution_time: std::option::Option<std::string::String>,
     /// <p>The duration of the maintenance window in hours.</p>
     pub duration: i32,
-    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-    /// new tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub cutoff: i32,
-    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-    /// for those targets.</p>
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub allow_unassociated_targets: bool,
     /// <p>Indicates whether the maintenance window is enabled.</p>
     pub enabled: bool,
@@ -7260,13 +6747,11 @@ impl GetMaintenanceWindowOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become active. The maintenance window won't run before this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
@@ -7274,20 +6759,15 @@ impl GetMaintenanceWindowOutput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-    /// Zone Database</a> on the IANA website.</p>
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn schedule_timezone(&self) -> std::option::Option<&str> {
         self.schedule_timezone.as_deref()
     }
-    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-    /// date and time.</p>
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub fn schedule_offset(&self) -> std::option::Option<i32> {
         self.schedule_offset
     }
-    /// <p>The next time the maintenance window will actually run, taking into account any specified
-    /// times for the maintenance window to become active or inactive.</p>
+    /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
     pub fn next_execution_time(&self) -> std::option::Option<&str> {
         self.next_execution_time.as_deref()
     }
@@ -7295,13 +6775,11 @@ impl GetMaintenanceWindowOutput {
     pub fn duration(&self) -> i32 {
         self.duration
     }
-    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-    /// new tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn cutoff(&self) -> i32 {
         self.cutoff
     }
-    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-    /// for those targets.</p>
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub fn allow_unassociated_targets(&self) -> bool {
         self.allow_unassociated_targets
     }
@@ -7395,26 +6873,22 @@ pub mod get_maintenance_window_output {
             self.description = input;
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become active. The maintenance window won't run before this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become active. The maintenance window won't run before this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become inactive. The maintenance window won't run after this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
-        /// to become inactive. The maintenance window won't run after this specified time.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
@@ -7429,18 +6903,12 @@ pub mod get_maintenance_window_output {
             self.schedule = input;
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_timezone = Some(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn set_schedule_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7448,26 +6916,22 @@ pub mod get_maintenance_window_output {
             self.schedule_timezone = input;
             self
         }
-        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-        /// date and time.</p>
+        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
             self.schedule_offset = Some(input);
             self
         }
-        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
-        /// date and time.</p>
+        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.schedule_offset = input;
             self
         }
-        /// <p>The next time the maintenance window will actually run, taking into account any specified
-        /// times for the maintenance window to become active or inactive.</p>
+        /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
         pub fn next_execution_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_execution_time = Some(input.into());
             self
         }
-        /// <p>The next time the maintenance window will actually run, taking into account any specified
-        /// times for the maintenance window to become active or inactive.</p>
+        /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
         pub fn set_next_execution_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7485,26 +6949,22 @@ pub mod get_maintenance_window_output {
             self.duration = input;
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.cutoff = Some(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
             self.cutoff = input;
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
             self.allow_unassociated_targets = Some(input);
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_unassociated_targets = input;
             self
@@ -7580,8 +7040,7 @@ impl GetMaintenanceWindowOutput {
 pub struct GetInventorySchemaOutput {
     /// <p>Inventory schemas returned by the request.</p>
     pub schemas: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInventorySchemaOutput {
@@ -7589,8 +7048,7 @@ impl GetInventorySchemaOutput {
     pub fn schemas(&self) -> std::option::Option<&[crate::model::InventoryItemSchema]> {
         self.schemas.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7632,14 +7090,12 @@ pub mod get_inventory_schema_output {
             self.schemas = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7666,8 +7122,7 @@ impl GetInventorySchemaOutput {
 pub struct GetInventoryOutput {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInventoryOutput {
@@ -7675,8 +7130,7 @@ impl GetInventoryOutput {
     pub fn entities(&self) -> std::option::Option<&[crate::model::InventoryResultEntity]> {
         self.entities.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7719,14 +7173,12 @@ pub mod get_inventory_output {
             self.entities = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7755,20 +7207,15 @@ pub struct GetDocumentOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the SSM document was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The friendly name of the SSM document. This value can differ for each version of the
-    /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-    /// 6". This value is unique across all versions of a document, and can't be changed.</p>
+    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
-    /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub status: std::option::Option<crate::model::DocumentStatus>,
-    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
-    /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-    /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The contents of the SSM document.</p>
     pub content: std::option::Option<std::string::String>,
@@ -7776,17 +7223,12 @@ pub struct GetDocumentOutput {
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>The document format, either JSON or YAML.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
-    /// <p>A list of SSM documents required by a document. For example, an
-    /// <code>ApplicationConfiguration</code> document requires an
-    /// <code>ApplicationConfigurationSchema</code> document.</p>
+    /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
-    /// <p>A description of the document attachments, including names, locations, sizes, and so
-    /// on.</p>
+    /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     pub attachments_content: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member
-    /// of your organization, or of the latest version of an existing SSM document.</p>
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new
-    /// version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
 }
@@ -7799,13 +7241,11 @@ impl GetDocumentOutput {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The friendly name of the SSM document. This value can differ for each version of the
-    /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-    /// 6". This value is unique across all versions of a document, and can't be changed.</p>
+    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
@@ -7813,14 +7253,11 @@ impl GetDocumentOutput {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
-    /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::DocumentStatus> {
         self.status.as_ref()
     }
-    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
-    /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-    /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn status_information(&self) -> std::option::Option<&str> {
         self.status_information.as_deref()
     }
@@ -7836,21 +7273,16 @@ impl GetDocumentOutput {
     pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
         self.document_format.as_ref()
     }
-    /// <p>A list of SSM documents required by a document. For example, an
-    /// <code>ApplicationConfiguration</code> document requires an
-    /// <code>ApplicationConfigurationSchema</code> document.</p>
+    /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
     pub fn requires(&self) -> std::option::Option<&[crate::model::DocumentRequires]> {
         self.requires.as_deref()
     }
-    /// <p>A description of the document attachments, including names, locations, sizes, and so
-    /// on.</p>
+    /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     pub fn attachments_content(&self) -> std::option::Option<&[crate::model::AttachmentContent]> {
         self.attachments_content.as_deref()
     }
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member
-    /// of your organization, or of the latest version of an existing SSM document.</p>
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new
-    /// version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
         self.review_status.as_ref()
@@ -7920,26 +7352,22 @@ pub mod get_document_output {
             self.created_date = input;
             self
         }
-        /// <p>The friendly name of the SSM document. This value can differ for each version of the
-        /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+        /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the SSM document. This value can differ for each version of the
-        /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+        /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-        /// 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
         }
-        /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-        /// 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -7957,14 +7385,12 @@ pub mod get_document_output {
             self.document_version = input;
             self
         }
-        /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
-        /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+        /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
         pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
-        /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+        /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DocumentStatus>,
@@ -7972,16 +7398,12 @@ pub mod get_document_output {
             self.status = input;
             self
         }
-        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
-        /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-        /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
         pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_information = Some(input.into());
             self
         }
-        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
-        /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-        /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
         pub fn set_status_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8029,18 +7451,14 @@ pub mod get_document_output {
         ///
         /// To override the contents of this collection use [`set_requires`](Self::set_requires).
         ///
-        /// <p>A list of SSM documents required by a document. For example, an
-        /// <code>ApplicationConfiguration</code> document requires an
-        /// <code>ApplicationConfigurationSchema</code> document.</p>
+        /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
         pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             let mut v = self.requires.unwrap_or_default();
             v.push(input);
             self.requires = Some(v);
             self
         }
-        /// <p>A list of SSM documents required by a document. For example, an
-        /// <code>ApplicationConfiguration</code> document requires an
-        /// <code>ApplicationConfigurationSchema</code> document.</p>
+        /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
         pub fn set_requires(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
@@ -8052,16 +7470,14 @@ pub mod get_document_output {
         ///
         /// To override the contents of this collection use [`set_attachments_content`](Self::set_attachments_content).
         ///
-        /// <p>A description of the document attachments, including names, locations, sizes, and so
-        /// on.</p>
+        /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
         pub fn attachments_content(mut self, input: crate::model::AttachmentContent) -> Self {
             let mut v = self.attachments_content.unwrap_or_default();
             v.push(input);
             self.attachments_content = Some(v);
             self
         }
-        /// <p>A description of the document attachments, including names, locations, sizes, and so
-        /// on.</p>
+        /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
         pub fn set_attachments_content(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
@@ -8069,19 +7485,15 @@ pub mod get_document_output {
             self.attachments_content = input;
             self
         }
-        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member
-        /// of your organization, or of the latest version of an existing SSM document.</p>
-        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new
-        /// version is approved, the status of the previous version changes to REJECTED.</p>
+        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
         /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
         pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
             self.review_status = Some(input);
             self
         }
-        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member
-        /// of your organization, or of the latest version of an existing SSM document.</p>
-        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new
-        /// version is approved, the status of the previous version changes to REJECTED.</p>
+        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
         /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
         pub fn set_review_status(
             mut self,
@@ -8125,11 +7537,9 @@ pub struct GetDeployablePatchSnapshotForInstanceOutput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The user-defined snapshot ID.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the
-    /// patch snapshot.</p>
+    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
     pub snapshot_download_url: std::option::Option<std::string::String>,
-    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-    /// 2015.09) on the managed node for the specified patch snapshot.</p>
+    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub product: std::option::Option<std::string::String>,
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
@@ -8141,13 +7551,11 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the
-    /// patch snapshot.</p>
+    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
     pub fn snapshot_download_url(&self) -> std::option::Option<&str> {
         self.snapshot_download_url.as_deref()
     }
-    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-    /// 2015.09) on the managed node for the specified patch snapshot.</p>
+    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
     }
@@ -8194,14 +7602,12 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
             self.snapshot_id = input;
             self
         }
-        /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the
-        /// patch snapshot.</p>
+        /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
         pub fn snapshot_download_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_download_url = Some(input.into());
             self
         }
-        /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the
-        /// patch snapshot.</p>
+        /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
         pub fn set_snapshot_download_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8209,14 +7615,12 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
             self.snapshot_download_url = input;
             self
         }
-        /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-        /// 2015.09) on the managed node for the specified patch snapshot.</p>
+        /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
             self.product = Some(input.into());
             self
         }
-        /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-        /// 2015.09) on the managed node for the specified patch snapshot.</p>
+        /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product = input;
             self
@@ -8321,8 +7725,7 @@ impl GetDefaultPatchBaselineOutput {
 pub struct GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status. </p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
-    /// Connected'.</p>
+    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
 }
 impl GetConnectionStatusOutput {
@@ -8330,8 +7733,7 @@ impl GetConnectionStatusOutput {
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
-    /// Connected'.</p>
+    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
         self.status.as_ref()
     }
@@ -8364,14 +7766,12 @@ pub mod get_connection_status_output {
             self.target = input;
             self
         }
-        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
-        /// Connected'.</p>
+        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
         pub fn status(mut self, input: crate::model::ConnectionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
-        /// Connected'.</p>
+        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -8401,8 +7801,7 @@ impl GetConnectionStatusOutput {
 pub struct GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
     pub command_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-    /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The comment text for the command.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -8410,101 +7809,43 @@ pub struct GetCommandInvocationOutput {
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported.
-    /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
     pub plugin_name: std::option::Option<std::string::String>,
-    /// <p>The error level response code for the plugin script. If the response code is
-    /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
-    /// by the node.</p>
+    /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     pub response_code: i32,
-    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
-    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-    /// the <code>InvokedBefore</code> filter.</p>
-    /// <p>
-    /// <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
-    /// </p>
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub execution_start_date_time: std::option::Option<std::string::String>,
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
     pub execution_elapsed_time: std::option::Option<std::string::String>,
-    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format.
-    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-    /// the <code>InvokedAfter</code> filter.</p>
-    /// <p>
-    /// <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
-    /// </p>
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub execution_end_date_time: std::option::Option<std::string::String>,
-    /// <p>The status of this invocation plugin. This status can be different than
-    /// <code>StatusDetails</code>.</p>
+    /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
     pub status: std::option::Option<crate::model::CommandInvocationStatus>,
-    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-    /// includes more information than <code>Status</code> because it includes states resulting from
-    /// error and concurrency control parameters. <code>StatusDetails</code> can show different results
-    /// than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-    /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-    /// <code>StatusDetails</code> can be one of the following values:</p>
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-    /// available. The managed node might not be available because of network issues, because the node
-    /// was stopped, or for similar reasons. The system will try to send the command again.</p>
-    /// </li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-    /// timeout expired. Delivery timeouts don't count against the parent command's
-    /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
-    /// Success or Incomplete. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
-    /// complete before the timeout expired. Execution timeouts count against the
-    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
-    /// that the result code wasn't zero. For a command invocation, this indicates that the result code
-    /// for one or more plugins wasn't zero. Invocation failures count against the
-    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Canceled: The command was terminated before it was completed. This is a terminal
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
-    /// exist or might not be responding. Undeliverable invocations don't count against the parent
-    /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
-    /// status is Success or Incomplete. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
-    /// command invocations were canceled by the system. This is a terminal state.</p>
-    /// </li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
-    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-    /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then
-    /// this string is empty.</p>
+    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
     pub standard_output_content: std::option::Option<std::string::String>,
-    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
-    /// empty.</p>
+    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
     pub standard_output_url: std::option::Option<std::string::String>,
-    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
-    /// hasn't finished running, then this string is empty.</p>
+    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub standard_error_content: std::option::Option<std::string::String>,
-    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command
-    /// hasn't finished running, then this string is empty.</p>
+    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
@@ -8514,8 +7855,7 @@ impl GetCommandInvocationOutput {
     pub fn command_id(&self) -> std::option::Option<&str> {
         self.command_id.as_deref()
     }
-    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-    /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -8531,23 +7871,16 @@ impl GetCommandInvocationOutput {
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported.
-    /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
     pub fn plugin_name(&self) -> std::option::Option<&str> {
         self.plugin_name.as_deref()
     }
-    /// <p>The error level response code for the plugin script. If the response code is
-    /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
-    /// by the node.</p>
+    /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     pub fn response_code(&self) -> i32 {
         self.response_code
     }
-    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
-    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-    /// the <code>InvokedBefore</code> filter.</p>
-    /// <p>
-    /// <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
-    /// </p>
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_start_date_time(&self) -> std::option::Option<&str> {
         self.execution_start_date_time.as_deref()
@@ -8556,96 +7889,45 @@ impl GetCommandInvocationOutput {
     pub fn execution_elapsed_time(&self) -> std::option::Option<&str> {
         self.execution_elapsed_time.as_deref()
     }
-    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format.
-    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-    /// the <code>InvokedAfter</code> filter.</p>
-    /// <p>
-    /// <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
-    /// </p>
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     pub fn execution_end_date_time(&self) -> std::option::Option<&str> {
         self.execution_end_date_time.as_deref()
     }
-    /// <p>The status of this invocation plugin. This status can be different than
-    /// <code>StatusDetails</code>.</p>
+    /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CommandInvocationStatus> {
         self.status.as_ref()
     }
-    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-    /// includes more information than <code>Status</code> because it includes states resulting from
-    /// error and concurrency control parameters. <code>StatusDetails</code> can show different results
-    /// than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-    /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-    /// <code>StatusDetails</code> can be one of the following values:</p>
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The command hasn't been sent to the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-    /// available. The managed node might not be available because of network issues, because the node
-    /// was stopped, or for similar reasons. The system will try to send the command again.</p>
-    /// </li>
-    /// <li>
-    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-    /// timeout expired. Delivery timeouts don't count against the parent command's
-    /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
-    /// Success or Incomplete. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
-    /// complete before the timeout expired. Execution timeouts count against the
-    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
-    /// that the result code wasn't zero. For a command invocation, this indicates that the result code
-    /// for one or more plugins wasn't zero. Invocation failures count against the
-    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Canceled: The command was terminated before it was completed. This is a terminal
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
-    /// exist or might not be responding. Undeliverable invocations don't count against the parent
-    /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
-    /// status is Success or Incomplete. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
-    /// command invocations were canceled by the system. This is a terminal state.</p>
-    /// </li>
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     pub fn status_details(&self) -> std::option::Option<&str> {
         self.status_details.as_deref()
     }
-    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-    /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then
-    /// this string is empty.</p>
+    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
     pub fn standard_output_content(&self) -> std::option::Option<&str> {
         self.standard_output_content.as_deref()
     }
-    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
-    /// empty.</p>
+    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
     pub fn standard_output_url(&self) -> std::option::Option<&str> {
         self.standard_output_url.as_deref()
     }
-    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
-    /// hasn't finished running, then this string is empty.</p>
+    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub fn standard_error_content(&self) -> std::option::Option<&str> {
         self.standard_error_content.as_deref()
     }
-    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command
-    /// hasn't finished running, then this string is empty.</p>
+    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
     pub fn standard_error_url(&self) -> std::option::Option<&str> {
         self.standard_error_url.as_deref()
     }
@@ -8715,14 +7997,12 @@ pub mod get_command_invocation_output {
             self.command_id = input;
             self
         }
-        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8763,49 +8043,35 @@ pub mod get_command_invocation_output {
             self.document_version = input;
             self
         }
-        /// <p>The name of the plugin, or <i>step name</i>, for which details are reported.
-        /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
+        /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
         pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.plugin_name = Some(input.into());
             self
         }
-        /// <p>The name of the plugin, or <i>step name</i>, for which details are reported.
-        /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
+        /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
         pub fn set_plugin_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plugin_name = input;
             self
         }
-        /// <p>The error level response code for the plugin script. If the response code is
-        /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
-        /// by the node.</p>
+        /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
         pub fn response_code(mut self, input: i32) -> Self {
             self.response_code = Some(input);
             self
         }
-        /// <p>The error level response code for the plugin script. If the response code is
-        /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
-        /// by the node.</p>
+        /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
         pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
             self.response_code = input;
             self
         }
-        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
-        /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-        /// the <code>InvokedBefore</code> filter.</p>
-        /// <p>
-        /// <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
-        /// </p>
+        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
+        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn execution_start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_start_date_time = Some(input.into());
             self
         }
-        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
-        /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-        /// the <code>InvokedBefore</code> filter.</p>
-        /// <p>
-        /// <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
-        /// </p>
+        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
+        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn set_execution_start_date_time(
             mut self,
@@ -8827,23 +8093,15 @@ pub mod get_command_invocation_output {
             self.execution_elapsed_time = input;
             self
         }
-        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format.
-        /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-        /// the <code>InvokedAfter</code> filter.</p>
-        /// <p>
-        /// <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
-        /// </p>
+        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
+        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn execution_end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_end_date_time = Some(input.into());
             self
         }
-        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format.
-        /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
-        /// the <code>InvokedAfter</code> filter.</p>
-        /// <p>
-        /// <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
-        /// </p>
+        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
+        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn set_execution_end_date_time(
             mut self,
@@ -8852,14 +8110,12 @@ pub mod get_command_invocation_output {
             self.execution_end_date_time = input;
             self
         }
-        /// <p>The status of this invocation plugin. This status can be different than
-        /// <code>StatusDetails</code>.</p>
+        /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
         pub fn status(mut self, input: crate::model::CommandInvocationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of this invocation plugin. This status can be different than
-        /// <code>StatusDetails</code>.</p>
+        /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CommandInvocationStatus>,
@@ -8867,117 +8123,35 @@ pub mod get_command_invocation_output {
             self.status = input;
             self
         }
-        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-        /// includes more information than <code>Status</code> because it includes states resulting from
-        /// error and concurrency control parameters. <code>StatusDetails</code> can show different results
-        /// than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-        /// <code>StatusDetails</code> can be one of the following values:</p>
+        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pending: The command hasn't been sent to the managed node.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-        /// available. The managed node might not be available because of network issues, because the node
-        /// was stopped, or for similar reasons. The system will try to send the command again.</p>
-        /// </li>
-        /// <li>
-        /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-        /// timeout expired. Delivery timeouts don't count against the parent command's
-        /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
-        /// Success or Incomplete. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
-        /// complete before the timeout expired. Execution timeouts count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
-        /// that the result code wasn't zero. For a command invocation, this indicates that the result code
-        /// for one or more plugins wasn't zero. Invocation failures count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Canceled: The command was terminated before it was completed. This is a terminal
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
-        /// exist or might not be responding. Undeliverable invocations don't count against the parent
-        /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
-        /// status is Success or Incomplete. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
-        /// command invocations were canceled by the system. This is a terminal state.</p>
-        /// </li>
+        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
             self
         }
-        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-        /// includes more information than <code>Status</code> because it includes states resulting from
-        /// error and concurrency control parameters. <code>StatusDetails</code> can show different results
-        /// than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-        /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-        /// <code>StatusDetails</code> can be one of the following values:</p>
+        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pending: The command hasn't been sent to the managed node.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-        /// available. The managed node might not be available because of network issues, because the node
-        /// was stopped, or for similar reasons. The system will try to send the command again.</p>
-        /// </li>
-        /// <li>
-        /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-        /// timeout expired. Delivery timeouts don't count against the parent command's
-        /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
-        /// Success or Incomplete. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
-        /// complete before the timeout expired. Execution timeouts count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
-        /// that the result code wasn't zero. For a command invocation, this indicates that the result code
-        /// for one or more plugins wasn't zero. Invocation failures count against the
-        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Canceled: The command was terminated before it was completed. This is a terminal
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
-        /// exist or might not be responding. Undeliverable invocations don't count against the parent
-        /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
-        /// status is Success or Incomplete. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
-        /// command invocations were canceled by the system. This is a terminal state.</p>
-        /// </li>
+        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
+        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
+        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
+        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
+        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
+        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
         pub fn set_status_details(
             mut self,
@@ -8986,16 +8160,12 @@ pub mod get_command_invocation_output {
             self.status_details = input;
             self
         }
-        /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-        /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then
-        /// this string is empty.</p>
+        /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
         pub fn standard_output_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_output_content = Some(input.into());
             self
         }
-        /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-        /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then
-        /// this string is empty.</p>
+        /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
         pub fn set_standard_output_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9003,14 +8173,12 @@ pub mod get_command_invocation_output {
             self.standard_output_content = input;
             self
         }
-        /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
-        /// empty.</p>
+        /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
         pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_output_url = Some(input.into());
             self
         }
-        /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
-        /// empty.</p>
+        /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
         pub fn set_standard_output_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9018,14 +8186,12 @@ pub mod get_command_invocation_output {
             self.standard_output_url = input;
             self
         }
-        /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
-        /// hasn't finished running, then this string is empty.</p>
+        /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn standard_error_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_error_content = Some(input.into());
             self
         }
-        /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
-        /// hasn't finished running, then this string is empty.</p>
+        /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn set_standard_error_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9033,14 +8199,12 @@ pub mod get_command_invocation_output {
             self.standard_error_content = input;
             self
         }
-        /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command
-        /// hasn't finished running, then this string is empty.</p>
+        /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_error_url = Some(input.into());
             self
         }
-        /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command
-        /// hasn't finished running, then this string is empty.</p>
+        /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn set_standard_error_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9099,37 +8263,23 @@ impl GetCommandInvocationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCalendarStateOutput {
-    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed
-    /// to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to
-    /// proceed.</p>
+    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
     pub state: std::option::Option<crate::model::CalendarState>,
-    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-    /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
-    /// uses the current time.</p>
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
     pub at_time: std::option::Option<std::string::String>,
-    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-    /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
-    /// <code>NextTransitionTime</code> indicates when the calendar state changes to
-    /// <code>CLOSED</code>, and vice-versa.</p>
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
     pub next_transition_time: std::option::Option<std::string::String>,
 }
 impl GetCalendarStateOutput {
-    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed
-    /// to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to
-    /// proceed.</p>
+    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CalendarState> {
         self.state.as_ref()
     }
-    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-    /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
-    /// uses the current time.</p>
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
     pub fn at_time(&self) -> std::option::Option<&str> {
         self.at_time.as_deref()
     }
-    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-    /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
-    /// <code>NextTransitionTime</code> indicates when the calendar state changes to
-    /// <code>CLOSED</code>, and vice-versa.</p>
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
     pub fn next_transition_time(&self) -> std::option::Option<&str> {
         self.next_transition_time.as_deref()
     }
@@ -9154,16 +8304,12 @@ pub mod get_calendar_state_output {
         pub(crate) next_transition_time: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed
-        /// to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to
-        /// proceed.</p>
+        /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
         pub fn state(mut self, input: crate::model::CalendarState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed
-        /// to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to
-        /// proceed.</p>
+        /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CalendarState>,
@@ -9171,32 +8317,22 @@ pub mod get_calendar_state_output {
             self.state = input;
             self
         }
-        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
-        /// uses the current time.</p>
+        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
         pub fn at_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.at_time = Some(input.into());
             self
         }
-        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
-        /// uses the current time.</p>
+        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
         pub fn set_at_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.at_time = input;
             self
         }
-        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
-        /// <code>NextTransitionTime</code> indicates when the calendar state changes to
-        /// <code>CLOSED</code>, and vice-versa.</p>
+        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
         pub fn next_transition_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_transition_time = Some(input.into());
             self
         }
-        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
-        /// <code>NextTransitionTime</code> indicates when the calendar state changes to
-        /// <code>CLOSED</code>, and vice-versa.</p>
+        /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
         pub fn set_next_transition_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9314,8 +8450,7 @@ impl DisassociateOpsItemRelatedItemOutput {
 pub struct DescribeSessionsOutput {
     /// <p>A list of sessions meeting the request parameters.</p>
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
-    /// <p>The token for the next set of items to return. (You received this token from a previous
-    /// call.)</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSessionsOutput {
@@ -9323,8 +8458,7 @@ impl DescribeSessionsOutput {
     pub fn sessions(&self) -> std::option::Option<&[crate::model::Session]> {
         self.sessions.as_deref()
     }
-    /// <p>The token for the next set of items to return. (You received this token from a previous
-    /// call.)</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9366,14 +8500,12 @@ pub mod describe_sessions_output {
             self.sessions = input;
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9496,45 +8628,27 @@ pub struct DescribePatchGroupStateOutput {
     pub instances: i32,
     /// <p>The number of managed nodes with installed patches.</p>
     pub instances_with_installed_patches: i32,
-    /// <p>The number of managed nodes with patches installed that aren't defined in the patch
-    /// baseline.</p>
+    /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
     pub instances_with_installed_other_patches: i32,
-    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
-    /// rebooted after the patch installation. The status of these managed nodes is
-    /// <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_installed_pending_reboot_patches: std::option::Option<i32>,
-    /// <p>The number of managed nodes with patches installed that are specified in a
-    /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
-    /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
-    /// <note>
-    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
-    /// <code>RejectedPatchesAction</code>, the value of
-    /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
+    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub instances_with_installed_rejected_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
     pub instances_with_missing_patches: i32,
-    /// <p>The number of managed nodes with patches from the patch baseline that failed to
-    /// install.</p>
+    /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
     pub instances_with_failed_patches: i32,
     /// <p>The number of managed nodes with patches that aren't applicable.</p>
     pub instances_with_not_applicable_patches: i32,
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
-    /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub instances_with_unreported_not_applicable_patches: std::option::Option<i32>,
-    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
-    /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
-    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_critical_non_compliant_patches: std::option::Option<i32>,
-    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
-    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
-    /// nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_security_non_compliant_patches: std::option::Option<i32>,
-    /// <p>The number of managed nodes with patches installed that are specified as other than
-    /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_other_non_compliant_patches: std::option::Option<i32>,
 }
 impl DescribePatchGroupStateOutput {
@@ -9546,24 +8660,16 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_installed_patches(&self) -> i32 {
         self.instances_with_installed_patches
     }
-    /// <p>The number of managed nodes with patches installed that aren't defined in the patch
-    /// baseline.</p>
+    /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
     pub fn instances_with_installed_other_patches(&self) -> i32 {
         self.instances_with_installed_other_patches
     }
-    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
-    /// rebooted after the patch installation. The status of these managed nodes is
-    /// <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_installed_pending_reboot_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_pending_reboot_patches
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a
-    /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
-    /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
-    /// <note>
-    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
-    /// <code>RejectedPatchesAction</code>, the value of
-    /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
+    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn instances_with_installed_rejected_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_rejected_patches
@@ -9572,8 +8678,7 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_missing_patches(&self) -> i32 {
         self.instances_with_missing_patches
     }
-    /// <p>The number of managed nodes with patches from the patch baseline that failed to
-    /// install.</p>
+    /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
     pub fn instances_with_failed_patches(&self) -> i32 {
         self.instances_with_failed_patches
     }
@@ -9581,28 +8686,19 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_not_applicable_patches(&self) -> i32 {
         self.instances_with_not_applicable_patches
     }
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
-    /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub fn instances_with_unreported_not_applicable_patches(&self) -> std::option::Option<i32> {
         self.instances_with_unreported_not_applicable_patches
     }
-    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
-    /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
-    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_critical_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_critical_non_compliant_patches
     }
-    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
-    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
-    /// nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_security_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_security_non_compliant_patches
     }
-    /// <p>The number of managed nodes with patches installed that are specified as other than
-    /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_other_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_other_non_compliant_patches
     }
@@ -9701,14 +8797,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_patches = input;
             self
         }
-        /// <p>The number of managed nodes with patches installed that aren't defined in the patch
-        /// baseline.</p>
+        /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
         pub fn instances_with_installed_other_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_other_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed that aren't defined in the patch
-        /// baseline.</p>
+        /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
         pub fn set_instances_with_installed_other_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9716,16 +8810,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_other_patches = input;
             self
         }
-        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
-        /// rebooted after the patch installation. The status of these managed nodes is
-        /// <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_installed_pending_reboot_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_pending_reboot_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
-        /// rebooted after the patch installation. The status of these managed nodes is
-        /// <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_installed_pending_reboot_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9733,25 +8823,15 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_pending_reboot_patches = input;
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified in a
-        /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
-        /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
-        /// <note>
-        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
-        /// <code>RejectedPatchesAction</code>, the value of
-        /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
+        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
         /// </note>
         pub fn instances_with_installed_rejected_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_rejected_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified in a
-        /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
-        /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
-        /// <note>
-        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
-        /// <code>RejectedPatchesAction</code>, the value of
-        /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
+        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
         /// </note>
         pub fn set_instances_with_installed_rejected_patches(
             mut self,
@@ -9773,14 +8853,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_missing_patches = input;
             self
         }
-        /// <p>The number of managed nodes with patches from the patch baseline that failed to
-        /// install.</p>
+        /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
         pub fn instances_with_failed_patches(mut self, input: i32) -> Self {
             self.instances_with_failed_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches from the patch baseline that failed to
-        /// install.</p>
+        /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
         pub fn set_instances_with_failed_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9801,14 +8879,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_not_applicable_patches = input;
             self
         }
-        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
-        /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn instances_with_unreported_not_applicable_patches(mut self, input: i32) -> Self {
             self.instances_with_unreported_not_applicable_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
-        /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_instances_with_unreported_not_applicable_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9816,18 +8892,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_unreported_not_applicable_patches = input;
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
-        /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
-        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_critical_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_critical_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
-        /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
-        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_critical_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9835,18 +8905,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_critical_non_compliant_patches = input;
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
-        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
-        /// nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_security_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_security_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
-        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
-        /// nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_security_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9854,16 +8918,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_security_non_compliant_patches = input;
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified as other than
-        /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_other_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_other_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified as other than
-        /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_other_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9919,41 +8979,23 @@ impl DescribePatchGroupStateOutput {
 pub struct DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
-    /// <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p>
-    /// </li>
+    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
+    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
     pub mappings: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
-    /// <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p>
-    /// </li>
+    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
+    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
     pub fn mappings(&self) -> std::option::Option<&[crate::model::PatchGroupPatchBaselineMapping]> {
         self.mappings.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9983,16 +9025,8 @@ pub mod describe_patch_groups_output {
         ///
         /// <p>Each entry in the array contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
-        /// <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p>
-        /// </li>
+        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
+        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
         /// </ul>
         pub fn mappings(mut self, input: crate::model::PatchGroupPatchBaselineMapping) -> Self {
             let mut v = self.mappings.unwrap_or_default();
@@ -10002,16 +9036,8 @@ pub mod describe_patch_groups_output {
         }
         /// <p>Each entry in the array contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
-        /// <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p>
-        /// </li>
+        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
+        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
         /// </ul>
         pub fn set_mappings(
             mut self,
@@ -10020,14 +9046,12 @@ pub mod describe_patch_groups_output {
             self.mappings = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10055,8 +9079,7 @@ pub struct DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     pub baseline_identities:
         std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchBaselinesOutput {
@@ -10066,8 +9089,7 @@ impl DescribePatchBaselinesOutput {
     ) -> std::option::Option<&[crate::model::PatchBaselineIdentity]> {
         self.baseline_identities.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10110,14 +9132,12 @@ pub mod describe_patch_baselines_output {
             self.baseline_identities = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10224,15 +9244,13 @@ impl DescribeParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOpsItemsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of OpsItems.</p>
     pub ops_item_summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
 }
 impl DescribeOpsItemsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10260,14 +9278,12 @@ pub mod describe_ops_items_output {
             std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
     }
     impl Builder {
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10313,8 +9329,7 @@ impl DescribeOpsItemsOutput {
 pub struct DescribeMaintenanceWindowTasksOutput {
     /// <p>Information about the tasks in the maintenance window.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTasksOutput {
@@ -10322,8 +9337,7 @@ impl DescribeMaintenanceWindowTasksOutput {
     pub fn tasks(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTask]> {
         self.tasks.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10365,14 +9379,12 @@ pub mod describe_maintenance_window_tasks_output {
             self.tasks = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10399,8 +9411,7 @@ impl DescribeMaintenanceWindowTasksOutput {
 pub struct DescribeMaintenanceWindowTargetsOutput {
     /// <p>Information about the targets in the maintenance window.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTargetsOutput {
@@ -10408,8 +9419,7 @@ impl DescribeMaintenanceWindowTargetsOutput {
     pub fn targets(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTarget]> {
         self.targets.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10452,14 +9462,12 @@ pub mod describe_maintenance_window_targets_output {
             self.targets = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10484,16 +9492,14 @@ impl DescribeMaintenanceWindowTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsForTargetOutput {
-    /// <p>Information about the maintenance window targets and tasks a managed node is associated
-    /// with.</p>
+    /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     pub window_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
-    /// <p>Information about the maintenance window targets and tasks a managed node is associated
-    /// with.</p>
+    /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     pub fn window_identities(
         &self,
     ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentityForTarget]> {
@@ -10527,8 +9533,7 @@ pub mod describe_maintenance_windows_for_target_output {
         ///
         /// To override the contents of this collection use [`set_window_identities`](Self::set_window_identities).
         ///
-        /// <p>Information about the maintenance window targets and tasks a managed node is associated
-        /// with.</p>
+        /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
         pub fn window_identities(
             mut self,
             input: crate::model::MaintenanceWindowIdentityForTarget,
@@ -10538,8 +9543,7 @@ pub mod describe_maintenance_windows_for_target_output {
             self.window_identities = Some(v);
             self
         }
-        /// <p>Information about the maintenance window targets and tasks a managed node is associated
-        /// with.</p>
+        /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
         pub fn set_window_identities(
             mut self,
             input: std::option::Option<
@@ -10579,16 +9583,14 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowScheduleOutput {
-    /// <p>Information about maintenance window executions scheduled for the specified time
-    /// range.</p>
+    /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
     pub scheduled_window_executions:
         std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowScheduleOutput {
-    /// <p>Information about maintenance window executions scheduled for the specified time
-    /// range.</p>
+    /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
     pub fn scheduled_window_executions(
         &self,
     ) -> std::option::Option<&[crate::model::ScheduledWindowExecution]> {
@@ -10625,8 +9627,7 @@ pub mod describe_maintenance_window_schedule_output {
         ///
         /// To override the contents of this collection use [`set_scheduled_window_executions`](Self::set_scheduled_window_executions).
         ///
-        /// <p>Information about maintenance window executions scheduled for the specified time
-        /// range.</p>
+        /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
         pub fn scheduled_window_executions(
             mut self,
             input: crate::model::ScheduledWindowExecution,
@@ -10636,8 +9637,7 @@ pub mod describe_maintenance_window_schedule_output {
             self.scheduled_window_executions = Some(v);
             self
         }
-        /// <p>Information about maintenance window executions scheduled for the specified time
-        /// range.</p>
+        /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
         pub fn set_scheduled_window_executions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
@@ -10678,8 +9678,7 @@ pub struct DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
     pub window_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsOutput {
@@ -10689,8 +9688,7 @@ impl DescribeMaintenanceWindowsOutput {
     ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentity]> {
         self.window_identities.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10733,14 +9731,12 @@ pub mod describe_maintenance_windows_output {
             self.window_identities = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10768,8 +9764,7 @@ pub struct DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
     pub window_execution_task_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
@@ -10779,8 +9774,7 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
     ) -> std::option::Option<&[crate::model::MaintenanceWindowExecutionTaskIdentity]> {
         self.window_execution_task_identities.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10832,14 +9826,12 @@ pub mod describe_maintenance_window_execution_tasks_output {
             self.window_execution_task_identities = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10868,8 +9860,7 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     pub window_execution_task_invocation_identities: std::option::Option<
         std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>,
     >,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
@@ -10880,8 +9871,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     {
         self.window_execution_task_invocation_identities.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10936,14 +9926,12 @@ pub mod describe_maintenance_window_execution_task_invocations_output {
             self.window_execution_task_invocation_identities = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10975,8 +9963,7 @@ pub struct DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
     pub window_executions:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionsOutput {
@@ -10986,8 +9973,7 @@ impl DescribeMaintenanceWindowExecutionsOutput {
     ) -> std::option::Option<&[crate::model::MaintenanceWindowExecution]> {
         self.window_executions.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11033,14 +10019,12 @@ pub mod describe_maintenance_window_executions_output {
             self.window_executions = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11068,8 +10052,7 @@ pub struct DescribeInventoryDeletionsOutput {
     /// <p>A list of status items for deleted inventory.</p>
     pub inventory_deletions:
         std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInventoryDeletionsOutput {
@@ -11079,8 +10062,7 @@ impl DescribeInventoryDeletionsOutput {
     ) -> std::option::Option<&[crate::model::InventoryDeletionStatusItem]> {
         self.inventory_deletions.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11126,14 +10108,12 @@ pub mod describe_inventory_deletions_output {
             self.inventory_deletions = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11160,8 +10140,7 @@ impl DescribeInventoryDeletionsOutput {
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
@@ -11171,8 +10150,7 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
     ) -> std::option::Option<&[crate::model::InstancePatchState]> {
         self.instance_patch_states.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11215,14 +10193,12 @@ pub mod describe_instance_patch_states_for_patch_group_output {
             self.instance_patch_states = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11250,8 +10226,7 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 pub struct DescribeInstancePatchStatesOutput {
     /// <p>The high-level patch state for the requested managed nodes.</p>
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesOutput {
@@ -11261,8 +10236,7 @@ impl DescribeInstancePatchStatesOutput {
     ) -> std::option::Option<&[crate::model::InstancePatchState]> {
         self.instance_patch_states.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11305,14 +10279,12 @@ pub mod describe_instance_patch_states_output {
             self.instance_patch_states = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11339,63 +10311,33 @@ impl DescribeInstancePatchStatesOutput {
 pub struct DescribeInstancePatchesOutput {
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li>
-    /// <p>Title (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>KBId (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>Classification (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>Severity (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>State (string, such as "INSTALLED" or "FAILED")</p>
-    /// </li>
-    /// <li>
-    /// <p>InstalledTime (DateTime)</p>
-    /// </li>
-    /// <li>
-    /// <p>InstalledBy (string)</p>
-    /// </li>
+    /// <li> <p>Title (string)</p> </li>
+    /// <li> <p>KBId (string)</p> </li>
+    /// <li> <p>Classification (string)</p> </li>
+    /// <li> <p>Severity (string)</p> </li>
+    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
+    /// <li> <p>InstalledTime (DateTime)</p> </li>
+    /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
     pub patches: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchesOutput {
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li>
-    /// <p>Title (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>KBId (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>Classification (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>Severity (string)</p>
-    /// </li>
-    /// <li>
-    /// <p>State (string, such as "INSTALLED" or "FAILED")</p>
-    /// </li>
-    /// <li>
-    /// <p>InstalledTime (DateTime)</p>
-    /// </li>
-    /// <li>
-    /// <p>InstalledBy (string)</p>
-    /// </li>
+    /// <li> <p>Title (string)</p> </li>
+    /// <li> <p>KBId (string)</p> </li>
+    /// <li> <p>Classification (string)</p> </li>
+    /// <li> <p>Severity (string)</p> </li>
+    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
+    /// <li> <p>InstalledTime (DateTime)</p> </li>
+    /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
     pub fn patches(&self) -> std::option::Option<&[crate::model::PatchComplianceData]> {
         self.patches.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11424,27 +10366,13 @@ pub mod describe_instance_patches_output {
         ///
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Title (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>KBId (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Classification (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Severity (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>State (string, such as "INSTALLED" or "FAILED")</p>
-        /// </li>
-        /// <li>
-        /// <p>InstalledTime (DateTime)</p>
-        /// </li>
-        /// <li>
-        /// <p>InstalledBy (string)</p>
-        /// </li>
+        /// <li> <p>Title (string)</p> </li>
+        /// <li> <p>KBId (string)</p> </li>
+        /// <li> <p>Classification (string)</p> </li>
+        /// <li> <p>Severity (string)</p> </li>
+        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
+        /// <li> <p>InstalledTime (DateTime)</p> </li>
+        /// <li> <p>InstalledBy (string)</p> </li>
         /// </ul>
         pub fn patches(mut self, input: crate::model::PatchComplianceData) -> Self {
             let mut v = self.patches.unwrap_or_default();
@@ -11454,27 +10382,13 @@ pub mod describe_instance_patches_output {
         }
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Title (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>KBId (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Classification (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Severity (string)</p>
-        /// </li>
-        /// <li>
-        /// <p>State (string, such as "INSTALLED" or "FAILED")</p>
-        /// </li>
-        /// <li>
-        /// <p>InstalledTime (DateTime)</p>
-        /// </li>
-        /// <li>
-        /// <p>InstalledBy (string)</p>
-        /// </li>
+        /// <li> <p>Title (string)</p> </li>
+        /// <li> <p>KBId (string)</p> </li>
+        /// <li> <p>Classification (string)</p> </li>
+        /// <li> <p>Severity (string)</p> </li>
+        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
+        /// <li> <p>InstalledTime (DateTime)</p> </li>
+        /// <li> <p>InstalledBy (string)</p> </li>
         /// </ul>
         pub fn set_patches(
             mut self,
@@ -11483,14 +10397,12 @@ pub mod describe_instance_patches_output {
             self.patches = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11518,8 +10430,7 @@ pub struct DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
     pub instance_information_list:
         std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty. </p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInformationOutput {
@@ -11529,8 +10440,7 @@ impl DescribeInstanceInformationOutput {
     ) -> std::option::Option<&[crate::model::InstanceInformation]> {
         self.instance_information_list.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty. </p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11576,14 +10486,12 @@ pub mod describe_instance_information_output {
             self.instance_information_list = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty. </p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty. </p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11611,8 +10519,7 @@ pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
     pub instance_association_status_infos:
         std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAssociationsStatusOutput {
@@ -11622,8 +10529,7 @@ impl DescribeInstanceAssociationsStatusOutput {
     ) -> std::option::Option<&[crate::model::InstanceAssociationStatusInfo]> {
         self.instance_association_status_infos.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11672,14 +10578,12 @@ pub mod describe_instance_associations_status_output {
             self.instance_association_status_infos = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11706,8 +10610,7 @@ impl DescribeInstanceAssociationsStatusOutput {
 pub struct DescribeEffectivePatchesForPatchBaselineOutput {
     /// <p>An array of patches and patch status.</p>
     pub effective_patches: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePatchesForPatchBaselineOutput {
@@ -11715,8 +10618,7 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
     pub fn effective_patches(&self) -> std::option::Option<&[crate::model::EffectivePatch]> {
         self.effective_patches.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11759,14 +10661,12 @@ pub mod describe_effective_patches_for_patch_baseline_output {
             self.effective_patches = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11794,8 +10694,7 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 pub struct DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The associations for the requested managed node.</p>
     pub associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
@@ -11803,8 +10702,7 @@ impl DescribeEffectiveInstanceAssociationsOutput {
     pub fn associations(&self) -> std::option::Option<&[crate::model::InstanceAssociation]> {
         self.associations.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11847,14 +10745,12 @@ pub mod describe_effective_instance_associations_output {
             self.associations = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11879,32 +10775,26 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentPermissionOutput {
-    /// <p>The account IDs that have permission to use this document. The ID can be either an
-    /// Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
-    /// each account.</p>
+    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     pub account_sharing_info_list:
         std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentPermissionOutput {
-    /// <p>The account IDs that have permission to use this document. The ID can be either an
-    /// Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
-    /// each account.</p>
+    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     pub fn account_sharing_info_list(
         &self,
     ) -> std::option::Option<&[crate::model::AccountSharingInfo]> {
         self.account_sharing_info_list.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11934,16 +10824,14 @@ pub mod describe_document_permission_output {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The account IDs that have permission to use this document. The ID can be either an
-        /// Amazon Web Services account or <i>All</i>.</p>
+        /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The account IDs that have permission to use this document. The ID can be either an
-        /// Amazon Web Services account or <i>All</i>.</p>
+        /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11955,8 +10843,7 @@ pub mod describe_document_permission_output {
         ///
         /// To override the contents of this collection use [`set_account_sharing_info_list`](Self::set_account_sharing_info_list).
         ///
-        /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
-        /// each account.</p>
+        /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
         pub fn account_sharing_info_list(
             mut self,
             input: crate::model::AccountSharingInfo,
@@ -11966,8 +10853,7 @@ pub mod describe_document_permission_output {
             self.account_sharing_info_list = Some(v);
             self
         }
-        /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
-        /// each account.</p>
+        /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
         pub fn set_account_sharing_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
@@ -11975,14 +10861,12 @@ pub mod describe_document_permission_output {
             self.account_sharing_info_list = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12067,8 +10951,7 @@ impl DescribeDocumentOutput {
 pub struct DescribeAvailablePatchesOutput {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
     pub patches: std::option::Option<std::vec::Vec<crate::model::Patch>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAvailablePatchesOutput {
@@ -12076,8 +10959,7 @@ impl DescribeAvailablePatchesOutput {
     pub fn patches(&self) -> std::option::Option<&[crate::model::Patch]> {
         self.patches.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12119,14 +11001,12 @@ pub mod describe_available_patches_output {
             self.patches = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12153,8 +11033,7 @@ impl DescribeAvailablePatchesOutput {
 pub struct DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
     pub step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationStepExecutionsOutput {
@@ -12162,8 +11041,7 @@ impl DescribeAutomationStepExecutionsOutput {
     pub fn step_executions(&self) -> std::option::Option<&[crate::model::StepExecution]> {
         self.step_executions.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12205,14 +11083,12 @@ pub mod describe_automation_step_executions_output {
             self.step_executions = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12237,24 +11113,20 @@ impl DescribeAutomationStepExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutomationExecutionsOutput {
-    /// <p>The list of details about each automation execution which has occurred which matches the
-    /// filter specification, if any.</p>
+    /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     pub automation_execution_metadata_list:
         std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationExecutionsOutput {
-    /// <p>The list of details about each automation execution which has occurred which matches the
-    /// filter specification, if any.</p>
+    /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     pub fn automation_execution_metadata_list(
         &self,
     ) -> std::option::Option<&[crate::model::AutomationExecutionMetadata]> {
         self.automation_execution_metadata_list.as_deref()
     }
-    /// <p>The token to use when requesting the next set of items. If there are no additional items to
-    /// return, the string is empty.</p>
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12285,8 +11157,7 @@ pub mod describe_automation_executions_output {
         ///
         /// To override the contents of this collection use [`set_automation_execution_metadata_list`](Self::set_automation_execution_metadata_list).
         ///
-        /// <p>The list of details about each automation execution which has occurred which matches the
-        /// filter specification, if any.</p>
+        /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
         pub fn automation_execution_metadata_list(
             mut self,
             input: crate::model::AutomationExecutionMetadata,
@@ -12296,8 +11167,7 @@ pub mod describe_automation_executions_output {
             self.automation_execution_metadata_list = Some(v);
             self
         }
-        /// <p>The list of details about each automation execution which has occurred which matches the
-        /// filter specification, if any.</p>
+        /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
         pub fn set_automation_execution_metadata_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
@@ -12305,14 +11175,12 @@ pub mod describe_automation_executions_output {
             self.automation_execution_metadata_list = input;
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of items. If there are no additional items to
-        /// return, the string is empty.</p>
+        /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12340,8 +11208,7 @@ pub struct DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
     pub association_execution_targets:
         std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionTargetsOutput {
@@ -12351,8 +11218,7 @@ impl DescribeAssociationExecutionTargetsOutput {
     ) -> std::option::Option<&[crate::model::AssociationExecutionTarget]> {
         self.association_execution_targets.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12401,14 +11267,12 @@ pub mod describe_association_execution_targets_output {
             self.association_execution_targets = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12436,8 +11300,7 @@ pub struct DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
     pub association_executions:
         std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionsOutput {
@@ -12447,8 +11310,7 @@ impl DescribeAssociationExecutionsOutput {
     ) -> std::option::Option<&[crate::model::AssociationExecution]> {
         self.association_executions.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12491,14 +11353,12 @@ pub mod describe_association_executions_output {
             self.association_executions = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12588,8 +11448,7 @@ impl DescribeAssociationOutput {
 pub struct DescribeActivationsOutput {
     /// <p>A list of activations for your Amazon Web Services account.</p>
     pub activation_list: std::option::Option<std::vec::Vec<crate::model::Activation>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeActivationsOutput {
@@ -12597,8 +11456,7 @@ impl DescribeActivationsOutput {
     pub fn activation_list(&self) -> std::option::Option<&[crate::model::Activation]> {
         self.activation_list.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12640,14 +11498,12 @@ pub mod describe_activations_output {
             self.activation_list = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results. </p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results. </p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13216,9 +12072,7 @@ impl DeleteMaintenanceWindowOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInventoryOutput {
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a
-    /// unique ID. You can use this ID to query the status of a delete operation. This option is useful
-    /// for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>The name of the inventory data type specified in the request.</p>
     pub type_name: std::option::Option<std::string::String>,
@@ -13226,9 +12080,7 @@ pub struct DeleteInventoryOutput {
     pub deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
 }
 impl DeleteInventoryOutput {
-    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a
-    /// unique ID. You can use this ID to query the status of a delete operation. This option is useful
-    /// for ensuring that a delete operation has completed before you begin other operations. </p>
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
     pub fn deletion_id(&self) -> std::option::Option<&str> {
         self.deletion_id.as_deref()
     }
@@ -13261,16 +12113,12 @@ pub mod delete_inventory_output {
         pub(crate) deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
     }
     impl Builder {
-        /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a
-        /// unique ID. You can use this ID to query the status of a delete operation. This option is useful
-        /// for ensuring that a delete operation has completed before you begin other operations. </p>
+        /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
         pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_id = Some(input.into());
             self
         }
-        /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a
-        /// unique ID. You can use this ID to query the status of a delete operation. This option is useful
-        /// for ensuring that a delete operation has completed before you begin other operations. </p>
+        /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
         pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.deletion_id = input;
             self
@@ -13871,21 +12719,17 @@ impl CreateAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActivationOutput {
-    /// <p>The ID number generated by the system when it processed the activation. The activation ID
-    /// functions like a user name.</p>
+    /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
     pub activation_id: std::option::Option<std::string::String>,
-    /// <p>The code the system generates when it processes the activation. The activation code
-    /// functions like a password to validate the activation ID. </p>
+    /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
     pub activation_code: std::option::Option<std::string::String>,
 }
 impl CreateActivationOutput {
-    /// <p>The ID number generated by the system when it processed the activation. The activation ID
-    /// functions like a user name.</p>
+    /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
     pub fn activation_id(&self) -> std::option::Option<&str> {
         self.activation_id.as_deref()
     }
-    /// <p>The code the system generates when it processes the activation. The activation code
-    /// functions like a password to validate the activation ID. </p>
+    /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
     pub fn activation_code(&self) -> std::option::Option<&str> {
         self.activation_code.as_deref()
     }
@@ -13908,14 +12752,12 @@ pub mod create_activation_output {
         pub(crate) activation_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID number generated by the system when it processed the activation. The activation ID
-        /// functions like a user name.</p>
+        /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
         pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.activation_id = Some(input.into());
             self
         }
-        /// <p>The ID number generated by the system when it processed the activation. The activation ID
-        /// functions like a user name.</p>
+        /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
         pub fn set_activation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13923,14 +12765,12 @@ pub mod create_activation_output {
             self.activation_id = input;
             self
         }
-        /// <p>The code the system generates when it processes the activation. The activation code
-        /// functions like a password to validate the activation ID. </p>
+        /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
         pub fn activation_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.activation_code = Some(input.into());
             self
         }
-        /// <p>The code the system generates when it processes the activation. The activation code
-        /// functions like a password to validate the activation ID. </p>
+        /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
         pub fn set_activation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14011,8 +12851,7 @@ impl CancelMaintenanceWindowExecutionOutput {
     }
 }
 
-/// <p>Whether or not the command was successfully canceled. There is no guarantee that a request
-/// can be canceled.</p>
+/// <p>Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCommandOutput {}

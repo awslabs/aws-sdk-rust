@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),

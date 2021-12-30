@@ -343,30 +343,22 @@ pub mod create_data_catalog_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -388,73 +380,20 @@ pub mod create_data_catalog_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -466,73 +405,20 @@ pub mod create_data_catalog_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -755,29 +641,15 @@ pub mod create_named_query_input {
             self.query_string = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1160,24 +1032,12 @@ pub mod create_work_group_input {
             self.name = input;
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1856,14 +1716,12 @@ pub mod delete_work_group_input {
             self.work_group = input;
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn recursive_delete_option(mut self, input: bool) -> Self {
             self.recursive_delete_option = Some(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
             self.recursive_delete_option = input;
             self
@@ -2333,14 +2191,12 @@ pub mod get_named_query_input {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.named_query_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn set_named_query_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2835,16 +2691,12 @@ pub mod get_query_results_input {
             self.query_execution_id = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3007,14 +2859,12 @@ pub mod get_table_metadata_input {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_name = input;
             self
@@ -3353,16 +3203,12 @@ pub mod list_databases_input {
             self.catalog_name = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3523,16 +3369,12 @@ pub mod list_data_catalogs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3693,16 +3535,12 @@ pub mod list_engine_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3864,16 +3702,12 @@ pub mod list_named_queries_input {
         pub(crate) work_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3888,16 +3722,12 @@ pub mod list_named_queries_input {
             self.max_results = input;
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.work_group = Some(input.into());
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.work_group = input;
             self
@@ -4060,16 +3890,12 @@ pub mod list_prepared_statements_input {
             self.work_group = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4234,16 +4060,12 @@ pub mod list_query_executions_input {
         pub(crate) work_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4258,16 +4080,12 @@ pub mod list_query_executions_input {
             self.max_results = input;
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.work_group = Some(input.into());
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.work_group = input;
             self
@@ -4445,28 +4263,22 @@ pub mod list_table_metadata_input {
             self.database_name = input;
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4641,28 +4453,22 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4816,16 +4622,12 @@ pub mod list_work_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5000,29 +4802,15 @@ pub mod start_query_execution_input {
             self.query_string = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -5047,18 +4835,12 @@ pub mod start_query_execution_input {
             self.query_execution_context = input;
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_result_configuration(
             mut self,
             input: std::option::Option<crate::model::ResultConfiguration>,
@@ -5388,14 +5170,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5578,16 +5358,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5744,30 +5522,22 @@ pub mod update_data_catalog_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -5789,44 +5559,14 @@ pub mod update_data_catalog_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -5838,44 +5578,14 @@ pub mod update_data_catalog_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -6513,68 +6223,30 @@ impl std::fmt::Debug for UpdatePreparedStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataCatalogInput {
-    /// <p>The name of the data catalog to update. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-    /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-    /// <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>New or modified text that describes the data catalog.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the Lambda function or functions to use for updating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateDataCatalogInput {
-    /// <p>The name of the data catalog to update. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-    /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-    /// <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -6582,44 +6254,14 @@ impl UpdateDataCatalogInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the Lambda function or functions to use for updating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn parameters(
         &self,
@@ -6645,8 +6287,7 @@ impl std::fmt::Debug for UpdateDataCatalogInput {
 pub struct UntagResourceInput {
     /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-    /// specified resource.</p>
+    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6654,8 +6295,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-    /// specified resource.</p>
+    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -6673,15 +6313,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-    /// which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-    /// which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6726,23 +6364,13 @@ impl std::fmt::Debug for StopQueryExecutionInput {
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The database within which the query executes.</p>
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
-    /// <p>Specifies information about where and how to save the results of the query execution.
-    /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-    /// This affects the query results location. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub work_group: std::option::Option<std::string::String>,
@@ -6752,15 +6380,8 @@ impl StartQueryExecutionInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -6771,10 +6392,7 @@ impl StartQueryExecutionInput {
     ) -> std::option::Option<&crate::model::QueryExecutionContext> {
         self.query_execution_context.as_ref()
     }
-    /// <p>Specifies information about where and how to save the results of the query execution.
-    /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-    /// This affects the query results location. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
@@ -6799,17 +6417,13 @@ impl std::fmt::Debug for StartQueryExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkGroupsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workgroups to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkGroupsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6833,12 +6447,9 @@ impl std::fmt::Debug for ListWorkGroupsInput {
 pub struct ListTagsForResourceInput {
     /// <p>Lists the tags for the resource with the specified ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results, or null if there are no additional results for
-    /// this request, where the request lists the tags for the resource with the specified
-    /// ARN.</p>
+    /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per request that lists the tags for the
-    /// resource.</p>
+    /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -6846,14 +6457,11 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The token for the next set of results, or null if there are no additional results for
-    /// this request, where the request lists the tags for the resource with the specified
-    /// ARN.</p>
+    /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to be returned per request that lists the tags for the
-    /// resource.</p>
+    /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6876,12 +6484,9 @@ pub struct ListTableMetadataInput {
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database for which table metadata should be returned.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-    /// metadata for all tables are listed.</p>
+    /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
     pub expression: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -6895,14 +6500,11 @@ impl ListTableMetadataInput {
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-    /// metadata for all tables are listed.</p>
+    /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6927,21 +6529,15 @@ impl std::fmt::Debug for ListTableMetadataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueryExecutionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of query executions to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-    /// specified, a list of available query execution IDs for the queries in the primary
-    /// workgroup is returned.</p>
+    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListQueryExecutionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6949,9 +6545,7 @@ impl ListQueryExecutionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-    /// specified, a list of available query execution IDs for the queries in the primary
-    /// workgroup is returned.</p>
+    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
@@ -6972,9 +6566,7 @@ impl std::fmt::Debug for ListQueryExecutionsInput {
 pub struct ListPreparedStatementsInput {
     /// <p>The workgroup to list the prepared statements for.</p>
     pub work_group: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
@@ -6984,9 +6576,7 @@ impl ListPreparedStatementsInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7009,21 +6599,15 @@ impl std::fmt::Debug for ListPreparedStatementsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamedQueriesInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of queries to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The name of the workgroup from which the named queries are being returned. If a
-    /// workgroup is not specified, the saved queries for the primary workgroup are
-    /// returned.</p>
+    /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListNamedQueriesInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7031,9 +6615,7 @@ impl ListNamedQueriesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The name of the workgroup from which the named queries are being returned. If a
-    /// workgroup is not specified, the saved queries for the primary workgroup are
-    /// returned.</p>
+    /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
@@ -7052,17 +6634,13 @@ impl std::fmt::Debug for ListNamedQueriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngineVersionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engine versions to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEngineVersionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7084,17 +6662,13 @@ impl std::fmt::Debug for ListEngineVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataCatalogsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of data catalogs to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataCatalogsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7118,9 +6692,7 @@ impl std::fmt::Debug for ListDataCatalogsInput {
 pub struct ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
     pub catalog_name: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -7130,9 +6702,7 @@ impl ListDatabasesInput {
     pub fn catalog_name(&self) -> std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7176,8 +6746,7 @@ impl std::fmt::Debug for GetWorkGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableMetadataInput {
-    /// <p>The name of the data catalog that contains the database and table metadata to
-    /// return.</p>
+    /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the table metadata to return.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -7185,8 +6754,7 @@ pub struct GetTableMetadataInput {
     pub table_name: std::option::Option<std::string::String>,
 }
 impl GetTableMetadataInput {
-    /// <p>The name of the data catalog that contains the database and table metadata to
-    /// return.</p>
+    /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
     pub fn catalog_name(&self) -> std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
@@ -7215,9 +6783,7 @@ impl std::fmt::Debug for GetTableMetadataInput {
 pub struct GetQueryResultsInput {
     /// <p>The unique ID of the query execution.</p>
     pub query_execution_id: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results (rows) to return in this request.</p>
     pub max_results: std::option::Option<i32>,
@@ -7227,9 +6793,7 @@ impl GetQueryResultsInput {
     pub fn query_execution_id(&self) -> std::option::Option<&str> {
         self.query_execution_id.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7301,13 +6865,11 @@ impl std::fmt::Debug for GetPreparedStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamedQueryInput {
-    /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-    /// IDs.</p>
+    /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl GetNamedQueryInput {
-    /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-    /// IDs.</p>
+    /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     pub fn named_query_id(&self) -> std::option::Option<&str> {
         self.named_query_id.as_deref()
     }
@@ -7375,8 +6937,7 @@ impl std::fmt::Debug for GetDatabaseInput {
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
     pub work_group: std::option::Option<std::string::String>,
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-    /// named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
     pub recursive_delete_option: std::option::Option<bool>,
 }
 impl DeleteWorkGroupInput {
@@ -7384,8 +6945,7 @@ impl DeleteWorkGroupInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-    /// named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
     pub fn recursive_delete_option(&self) -> std::option::Option<bool> {
         self.recursive_delete_option
     }
@@ -7475,13 +7035,7 @@ impl std::fmt::Debug for DeleteDataCatalogInput {
 pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-    /// where query results are stored, the encryption configuration, if any, used for
-    /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-    /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-    /// specified, and whether workgroup's settings (specified with
-    /// <code>EnforceWorkGroupConfiguration</code>) in the
-    /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7493,13 +7047,7 @@ impl CreateWorkGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-    /// where query results are stored, the encryption configuration, if any, used for
-    /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-    /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-    /// specified, and whether workgroup's settings (specified with
-    /// <code>EnforceWorkGroupConfiguration</code>) in the
-    /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
@@ -7577,15 +7125,8 @@ pub struct CreateNamedQueryInput {
     pub database: std::option::Option<std::string::String>,
     /// <p>The contents of the query with all query statements.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup in which the named query is being created.</p>
@@ -7608,15 +7149,8 @@ impl CreateNamedQueryInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -7643,83 +7177,26 @@ impl std::fmt::Debug for CreateNamedQueryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataCatalogInput {
-    /// <p>The name of the data catalog to create. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-    /// Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the Lambda function or functions to use for creating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-    /// <code>
-    /// <i>catalog_id</i>
-    /// </code> is the account ID of the
-    /// Amazon Web Services account to which the Glue Data Catalog
-    /// belongs.</p>
-    /// <p>
-    /// <code>catalog-id=<i>catalog_id</i>
-    /// </code>
-    /// </p>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>GLUE</code> data catalog type also applies to the default
-    /// <code>AwsDataCatalog</code> that already exists in your account, of
-    /// which you can have only one and cannot modify.</p>
-    /// </li>
-    /// <li>
-    /// <p>Queries that specify a Glue Data Catalog other than the default
-    /// <code>AwsDataCatalog</code> must be run on Athena engine
-    /// version 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Regions where Athena engine version 2 is not available,
-    /// creating new Glue data catalogs results in an
-    /// <code>INVALID_INPUT</code> error.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+    /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+    /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7727,15 +7204,11 @@ pub struct CreateDataCatalogInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataCatalogInput {
-    /// <p>The name of the data catalog to create. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-    /// Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -7743,73 +7216,20 @@ impl CreateDataCatalogInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the Lambda function or functions to use for creating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-    /// <code>
-    /// <i>catalog_id</i>
-    /// </code> is the account ID of the
-    /// Amazon Web Services account to which the Glue Data Catalog
-    /// belongs.</p>
-    /// <p>
-    /// <code>catalog-id=<i>catalog_id</i>
-    /// </code>
-    /// </p>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>GLUE</code> data catalog type also applies to the default
-    /// <code>AwsDataCatalog</code> that already exists in your account, of
-    /// which you can have only one and cannot modify.</p>
-    /// </li>
-    /// <li>
-    /// <p>Queries that specify a Glue Data Catalog other than the default
-    /// <code>AwsDataCatalog</code> must be run on Athena engine
-    /// version 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Regions where Athena engine version 2 is not available,
-    /// creating new Glue data catalogs results in an
-    /// <code>INVALID_INPUT</code> error.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+    /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+    /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn parameters(
         &self,

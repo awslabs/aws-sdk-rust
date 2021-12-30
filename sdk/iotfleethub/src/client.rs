@@ -150,8 +150,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -236,31 +235,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_description(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
@@ -292,8 +285,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -365,14 +357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -380,8 +370,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeApplication`.
     ///
-    /// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -456,8 +445,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p>
-    /// <note>
+    /// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -529,8 +517,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags for the specified resource.</p>
-    /// <note>
+    /// <p>Lists the tags for the specified resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -602,8 +589,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p>
-    /// <note>
+    /// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -698,8 +684,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the specified tags (metadata) from the resource.</p>
-    /// <note>
+    /// <p>Removes the specified tags (metadata) from the resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -788,8 +773,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
-    /// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -887,14 +871,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_description(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self

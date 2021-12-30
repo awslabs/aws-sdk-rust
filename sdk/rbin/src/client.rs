@@ -150,8 +150,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateRule`.
     ///
-    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
-    /// Create Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -248,14 +247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -267,21 +264,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -293,8 +282,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRule`.
     ///
-    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule">
-    /// Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule"> Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -511,14 +499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -790,8 +776,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRule`.
     ///
-    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
-    /// Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -898,21 +883,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,

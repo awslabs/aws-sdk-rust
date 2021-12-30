@@ -236,14 +236,12 @@ pub mod associate_identity_provider_config_input {
             self.cluster_name = input;
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider
-        /// configuration.</p>
+        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn oidc(mut self, input: crate::model::OidcIdentityProviderConfigRequest) -> Self {
             self.oidc = Some(input);
             self
         }
-        /// <p>An object that represents an OpenID Connect (OIDC) identity provider
-        /// configuration.</p>
+        /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn set_oidc(
             mut self,
             input: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
@@ -255,8 +253,7 @@ pub mod associate_identity_provider_config_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -267,8 +264,7 @@ pub mod associate_identity_provider_config_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -278,14 +274,12 @@ pub mod associate_identity_provider_config_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,30 +473,22 @@ pub mod create_addon_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
         }
-        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_version = Some(input.into());
             self
         }
-        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn set_addon_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -510,25 +496,15 @@ pub mod create_addon_input {
             self.addon_version = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-        /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-        /// <note>
-        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-        /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-        /// IAM roles for service accounts on your cluster</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
         /// </note>
         pub fn service_account_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-        /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-        /// <note>
-        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-        /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-        /// IAM roles for service accounts on your cluster</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
         /// </note>
         pub fn set_service_account_role_arn(
             mut self,
@@ -537,14 +513,12 @@ pub mod create_addon_input {
             self.service_account_role_arn = input;
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
-        /// add-on.</p>
+        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.resolve_conflicts = Some(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
-        /// add-on.</p>
+        /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,
@@ -552,14 +526,12 @@ pub mod create_addon_input {
             self.resolve_conflicts = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -571,8 +543,7 @@ pub mod create_addon_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -583,8 +554,7 @@ pub mod create_addon_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -783,54 +753,32 @@ pub mod create_cluster_input {
             self.name = input;
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
-        /// the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
-        /// the latest version available in Amazon EKS is used.</p>
+        /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-        /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
-        /// Service IAM Role</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-        /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
-        /// Service IAM Role</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
-        /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-        /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-        /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups. However, we recommend that you use a dedicated security group for your
-        /// cluster control plane.</p>
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
         pub fn resources_vpc_config(mut self, input: crate::model::VpcConfigRequest) -> Self {
             self.resources_vpc_config = Some(input);
             self
         }
-        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
-        /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-        /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-        /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups. However, we recommend that you use a dedicated security group for your
-        /// cluster control plane.</p>
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
         pub fn set_resources_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigRequest>,
@@ -854,42 +802,26 @@ pub mod create_cluster_input {
             self.kubernetes_network_config = input;
             self
         }
-        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
-        /// <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        /// <note>
-        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
             self.logging = Some(input);
             self
         }
-        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
-        /// <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        /// <note>
-        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
             self.logging = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -901,8 +833,7 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -913,8 +844,7 @@ pub mod create_cluster_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1124,20 +1054,12 @@ pub mod create_fargate_profile_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
-        /// the Fargate profile. The pod execution role allows Fargate infrastructure to register with
-        /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
-        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn pod_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pod_execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
-        /// the Fargate profile. The pod execution role allows Fargate infrastructure to register with
-        /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
-        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_pod_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1149,18 +1071,14 @@ pub mod create_fargate_profile_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
-        /// not assigned public IP addresses, so only private subnets (with no direct route to an
-        /// Internet Gateway) are accepted for this parameter.</p>
+        /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
-        /// not assigned public IP addresses, so only private subnets (with no direct route to an
-        /// Internet Gateway) are accepted for this parameter.</p>
+        /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1172,18 +1090,14 @@ pub mod create_fargate_profile_input {
         ///
         /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
         ///
-        /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
-        /// associated namespace. Optionally, you can also specify labels for a namespace. You may
-        /// specify up to five selectors in a Fargate profile.</p>
+        /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
         pub fn selectors(mut self, input: crate::model::FargateProfileSelector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
             v.push(input);
             self.selectors = Some(v);
             self
         }
-        /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
-        /// associated namespace. Optionally, you can also specify labels for a namespace. You may
-        /// specify up to five selectors in a Fargate profile.</p>
+        /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
         pub fn set_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FargateProfileSelector>>,
@@ -1191,14 +1105,12 @@ pub mod create_fargate_profile_input {
             self.selectors = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1210,10 +1122,7 @@ pub mod create_fargate_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You define both.
-        /// Fargate profile tags do not propagate to any other resources associated with the
-        /// Fargate profile, such as the pods that are scheduled with it.</p>
+        /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1224,10 +1133,7 @@ pub mod create_fargate_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You define both.
-        /// Fargate profile tags do not propagate to any other resources associated with the
-        /// Fargate profile, such as the pods that are scheduled with it.</p>
+        /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1451,14 +1357,12 @@ pub mod create_nodegroup_input {
             self.nodegroup_name = input;
             self
         }
-        /// <p>The scaling configuration details for the Auto Scaling group that is created for your
-        /// node group.</p>
+        /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
         pub fn scaling_config(mut self, input: crate::model::NodegroupScalingConfig) -> Self {
             self.scaling_config = Some(input);
             self
         }
-        /// <p>The scaling configuration details for the Auto Scaling group that is created for your
-        /// node group.</p>
+        /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
         pub fn set_scaling_config(
             mut self,
             input: std::option::Option<crate::model::NodegroupScalingConfig>,
@@ -1466,16 +1370,12 @@ pub mod create_nodegroup_input {
             self.scaling_config = input;
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk
-        /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn disk_size(mut self, input: i32) -> Self {
             self.disk_size = Some(input);
             self
         }
-        /// <p>The root device disk size (in GiB) for your node group instances. The default disk
-        /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_disk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size = input;
             self
@@ -1484,22 +1384,14 @@ pub mod create_nodegroup_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
-        /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-        /// <code>SubnetId</code>
-        /// </a> in your launch template, or the node group
-        /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
-        /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-        /// <code>SubnetId</code>
-        /// </a> in your launch template, or the node group
-        /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1511,34 +1403,14 @@ pub mod create_nodegroup_input {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
-        /// sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If
-        /// you specify <code>launchTemplate</code>, then you can specify zero or one instance type
-        /// in your launch template <i>or</i> you can specify 0-20 instance types for
-        /// <code>instanceTypes</code>. If however, you specify an instance type in your launch
-        /// template <i>and</i> specify any <code>instanceTypes</code>, the node group
-        /// deployment will fail. If you don't specify an instance type in a launch template or for
-        /// <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you
-        /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
-        /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
-        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
-        /// sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If
-        /// you specify <code>launchTemplate</code>, then you can specify zero or one instance type
-        /// in your launch template <i>or</i> you can specify 0-20 instance types for
-        /// <code>instanceTypes</code>. If however, you specify an instance type in your launch
-        /// template <i>and</i> specify any <code>instanceTypes</code>, the node group
-        /// deployment will fail. If you don't specify an instance type in a launch template or for
-        /// <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you
-        /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
-        /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1546,36 +1418,22 @@ pub mod create_nodegroup_input {
             self.instance_types = input;
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the
-        /// <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-        /// <code>AL2_x86_64</code> AMI type. Arm instances should use the
-        /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
-        /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn ami_type(mut self, input: crate::model::AmiTypes) -> Self {
             self.ami_type = Some(input);
             self
         }
-        /// <p>The AMI type for your node group. GPU instance types should use the
-        /// <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-        /// <code>AL2_x86_64</code> AMI type. Arm instances should use the
-        /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
-        /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_ami_type(mut self, input: std::option::Option<crate::model::AmiTypes>) -> Self {
             self.ami_type = input;
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
-        /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
-        /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn remote_access(mut self, input: crate::model::RemoteAccessConfig) -> Self {
             self.remote_access = Some(input);
             self
         }
-        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
-        /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
-        /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_remote_access(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessConfig>,
@@ -1583,34 +1441,12 @@ pub mod create_nodegroup_input {
             self.remote_access = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-        /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
-        /// permissions for these API calls through an IAM instance profile and associated
-        /// policies. Before you can launch nodes and register them into a cluster, you must create
-        /// an IAM role for those nodes to use when they are launched. For more information, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.
-        /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-        /// <code>IamInstanceProfile</code>
-        /// </a> in your launch template,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn node_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-        /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
-        /// permissions for these API calls through an IAM instance profile and associated
-        /// policies. Before you can launch nodes and register them into a cluster, you must create
-        /// an IAM role for those nodes to use when they are launched. For more information, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.
-        /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-        /// <code>IamInstanceProfile</code>
-        /// </a> in your launch template,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_node_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_role = input;
             self
@@ -1619,8 +1455,7 @@ pub mod create_nodegroup_input {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
-        /// created.</p>
+        /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
         pub fn labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -1631,8 +1466,7 @@ pub mod create_nodegroup_input {
             self.labels = Some(hash_map);
             self
         }
-        /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
-        /// created.</p>
+        /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<
@@ -1665,10 +1499,7 @@ pub mod create_nodegroup_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You
-        /// define both. Node group tags do not propagate to any other resources associated with the node
-        /// group, such as the Amazon EC2 instances or subnets.</p>
+        /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1679,10 +1510,7 @@ pub mod create_nodegroup_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value. You
-        /// define both. Node group tags do not propagate to any other resources associated with the node
-        /// group, such as the Amazon EC2 instances or subnets.</p>
+        /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1692,14 +1520,12 @@ pub mod create_nodegroup_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1707,18 +1533,12 @@ pub mod create_nodegroup_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An object representing a node group's launch template specification. If specified,
-        /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
-        /// <code>remoteAccess</code> and make sure that the launch template meets the
-        /// requirements in <code>launchTemplateSpecification</code>.</p>
+        /// <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
             self
         }
-        /// <p>An object representing a node group's launch template specification. If specified,
-        /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
-        /// <code>remoteAccess</code> and make sure that the launch template meets the
-        /// requirements in <code>launchTemplateSpecification</code>.</p>
+        /// <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -1752,38 +1572,22 @@ pub mod create_nodegroup_input {
             self.capacity_type = input;
             self
         }
-        /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
-        /// version of the cluster is used, and this is the only accepted specified value.
-        /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
-        /// version of the cluster is used, and this is the only accepted specified value.
-        /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
-        /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
-        /// the latest available AMI version for the node group's current Kubernetes version is
-        /// used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS
-        /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
-        /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
-        /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_version = Some(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
-        /// the latest available AMI version for the node group's current Kubernetes version is
-        /// used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS
-        /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
-        /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
-        /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1982,16 +1786,12 @@ pub mod delete_addon_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -2863,16 +2663,12 @@ pub mod describe_addon_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -3065,40 +2861,26 @@ pub mod describe_addon_versions_input {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -4004,16 +3786,12 @@ pub mod describe_update_input {
             self.nodegroup_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -4228,14 +4006,12 @@ pub mod disassociate_identity_provider_config_input {
             self.identity_provider_config = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4422,51 +4198,25 @@ pub mod list_addons_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
-        /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
-        /// only <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. You can see the remaining results of the
-        /// initial request by sending another <code>ListAddonsRequest</code> request with the
-        /// returned <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if
-        /// applicable.</p>
+        /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
-        /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
-        /// only <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. You can see the remaining results of the
-        /// initial request by sending another <code>ListAddonsRequest</code> request with the
-        /// returned <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if
-        /// applicable.</p>
+        /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -4638,49 +4388,25 @@ pub mod list_clusters_input {
         pub(crate) include: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
-        /// paginated output. When you use this parameter, <code>ListClusters</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListClusters</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
-        /// paginated output. When you use this parameter, <code>ListClusters</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListClusters</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListClusters</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListClusters</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -4866,44 +4592,22 @@ pub mod list_fargate_profiles_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The maximum number of Fargate profile results returned by
-        /// <code>ListFargateProfiles</code> in paginated output. When you use this parameter,
-        /// <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. You can see the
-        /// remaining results of the initial request by sending another
-        /// <code>ListFargateProfiles</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of Fargate profile results returned by
-        /// <code>ListFargateProfiles</code> in paginated output. When you use this parameter,
-        /// <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. You can see the
-        /// remaining results of the initial request by sending another
-        /// <code>ListFargateProfiles</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5084,46 +4788,22 @@ pub mod list_identity_provider_configs_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The maximum number of identity provider configurations returned by
-        /// <code>ListIdentityProviderConfigs</code> in paginated output. When you use this
-        /// parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can
-        /// see the remaining results of the initial request by sending another
-        /// <code>ListIdentityProviderConfigs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If you don't use this parameter,
-        /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
-        /// and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of identity provider configurations returned by
-        /// <code>ListIdentityProviderConfigs</code> in paginated output. When you use this
-        /// parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can
-        /// see the remaining results of the initial request by sending another
-        /// <code>ListIdentityProviderConfigs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If you don't use this parameter,
-        /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
-        /// and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
-        /// and the results exceeded the value of that parameter. Pagination continues from the end
-        /// of the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
-        /// and the results exceeded the value of that parameter. Pagination continues from the end
-        /// of the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5305,42 +4985,22 @@ pub mod list_nodegroups_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
-        /// paginated output. When you use this parameter, <code>ListNodegroups</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListNodegroups</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListNodegroups</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
-        /// paginated output. When you use this parameter, <code>ListNodegroups</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListNodegroups</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't
-        /// use this parameter, <code>ListNodegroups</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5509,14 +5169,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// supported resources are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// supported resources are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5699,42 +5357,22 @@ pub mod list_updates_input {
             self.addon_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
-        /// output. When you use this parameter, <code>ListUpdates</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListUpdates</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
-        /// output. When you use this parameter, <code>ListUpdates</code> returns only
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListUpdates</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5955,10 +5593,7 @@ pub mod register_cluster_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the cluster to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Cluster tags do not propagate to any other resources associated with the
-        /// cluster.</p>
+        /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5969,10 +5604,7 @@ pub mod register_cluster_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The metadata that you apply to the cluster to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Cluster tags do not propagate to any other resources associated with the
-        /// cluster.</p>
+        /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6130,14 +5762,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-        /// are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-        /// are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6323,14 +5953,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resources are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resources are Amazon EKS clusters and managed node groups.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6524,30 +6152,22 @@ pub mod update_addon_input {
             self.cluster_name = input;
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_name = Some(input.into());
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
-        /// </a>.</p>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
         }
-        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.addon_version = Some(input.into());
             self
         }
-        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code>
-        /// </a>.</p>
+        /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
         pub fn set_addon_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6555,25 +6175,15 @@ pub mod update_addon_input {
             self.addon_version = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-        /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-        /// <note>
-        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-        /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-        /// IAM roles for service accounts on your cluster</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
         /// </note>
         pub fn service_account_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-        /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-        /// <note>
-        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-        /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-        /// IAM roles for service accounts on your cluster</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+        /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
         /// </note>
         pub fn set_service_account_role_arn(
             mut self,
@@ -6582,14 +6192,12 @@ pub mod update_addon_input {
             self.service_account_role_arn = input;
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
-        /// to the cluster.</p>
+        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
         pub fn resolve_conflicts(mut self, input: crate::model::ResolveConflicts) -> Self {
             self.resolve_conflicts = Some(input);
             self
         }
-        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
-        /// to the cluster.</p>
+        /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
         pub fn set_resolve_conflicts(
             mut self,
             input: std::option::Option<crate::model::ResolveConflicts>,
@@ -6597,14 +6205,12 @@ pub mod update_addon_input {
             self.resolve_conflicts = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6820,42 +6426,26 @@ pub mod update_cluster_config_input {
             self.resources_vpc_config = input;
             self
         }
-        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
-        /// <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        /// <note>
-        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
             self.logging = Some(input);
             self
         }
-        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
-        /// <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        /// <note>
-        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+        /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+        /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
             self.logging = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7046,14 +6636,12 @@ pub mod update_cluster_version_input {
             self.version = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7252,14 +6840,12 @@ pub mod update_nodegroup_config_input {
             self.nodegroup_name = input;
             self
         }
-        /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
-        /// update.</p>
+        /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
         pub fn labels(mut self, input: crate::model::UpdateLabelsPayload) -> Self {
             self.labels = Some(input);
             self
         }
-        /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
-        /// update.</p>
+        /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<crate::model::UpdateLabelsPayload>,
@@ -7267,14 +6853,12 @@ pub mod update_nodegroup_config_input {
             self.labels = input;
             self
         }
-        /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
-        /// update.</p>
+        /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>
         pub fn taints(mut self, input: crate::model::UpdateTaintsPayload) -> Self {
             self.taints = Some(input);
             self
         }
-        /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
-        /// update.</p>
+        /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>
         pub fn set_taints(
             mut self,
             input: std::option::Option<crate::model::UpdateTaintsPayload>,
@@ -7308,14 +6892,12 @@ pub mod update_nodegroup_config_input {
             self.update_config = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7515,14 +7097,12 @@ pub mod update_nodegroup_version_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
-        /// update.</p>
+        /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
-        /// update.</p>
+        /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -7540,42 +7120,22 @@ pub mod update_nodegroup_version_input {
             self.nodegroup_name = input;
             self
         }
-        /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
-        /// version of the node group does not change. You can specify the Kubernetes version of the
-        /// cluster to update the node group to the latest AMI version of the cluster's Kubernetes
-        /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-        /// <code>version</code>, or the node group  update will fail.
-        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
-        /// version of the node group does not change. You can specify the Kubernetes version of the
-        /// cluster to update the node group to the latest AMI version of the cluster's Kubernetes
-        /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-        /// <code>version</code>, or the node group  update will fail.
-        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
-        /// latest available AMI version for the node group's Kubernetes version is used. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the
-        /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-        /// <code>releaseVersion</code>, or the node group  update will fail.
-        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_version = Some(input.into());
             self
         }
-        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
-        /// latest available AMI version for the node group's Kubernetes version is used. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the
-        /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-        /// <code>releaseVersion</code>, or the node group  update will fail.
-        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+        /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7583,16 +7143,12 @@ pub mod update_nodegroup_version_input {
             self.release_version = input;
             self
         }
-        /// <p>An object representing a node group's launch template specification. You can only
-        /// update a node group using a launch template if the node group was originally deployed
-        /// with a launch template.</p>
+        /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
             self
         }
-        /// <p>An object representing a node group's launch template specification. You can only
-        /// update a node group using a launch template if the node group was originally deployed
-        /// with a launch template.</p>
+        /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -7600,30 +7156,22 @@ pub mod update_nodegroup_version_input {
             self.launch_template = input;
             self
         }
-        /// <p>Force the update if the existing node group's pods are unable to be drained due to a
-        /// pod disruption budget issue. If an update fails because pods could not be drained, you
-        /// can force the update after it fails to terminate the old node whether or not any pods
-        /// are running on the node.</p>
+        /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>Force the update if the existing node group's pods are unable to be drained due to a
-        /// pod disruption budget issue. If an update fails because pods could not be drained, you
-        /// can force the update after it fails to terminate the old node whether or not any pods
-        /// are running on the node.</p>
+        /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7812,41 +7360,23 @@ impl UpdateNodegroupVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNodegroupVersionInput {
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
-    /// update.</p>
+    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed node group to update.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
-    /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
-    /// version of the node group does not change. You can specify the Kubernetes version of the
-    /// cluster to update the node group to the latest AMI version of the cluster's Kubernetes
-    /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-    /// <code>version</code>, or the node group  update will fail.
-    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
-    /// latest available AMI version for the node group's Kubernetes version is used. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the
-    /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-    /// <code>releaseVersion</code>, or the node group  update will fail.
-    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub release_version: std::option::Option<std::string::String>,
-    /// <p>An object representing a node group's launch template specification. You can only
-    /// update a node group using a launch template if the node group was originally deployed
-    /// with a launch template.</p>
+    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a
-    /// pod disruption budget issue. If an update fails because pods could not be drained, you
-    /// can force the update after it fails to terminate the old node whether or not any pods
-    /// are running on the node.</p>
+    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
     pub force: bool,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpdateNodegroupVersionInput {
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
-    /// update.</p>
+    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -7854,41 +7384,25 @@ impl UpdateNodegroupVersionInput {
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
-    /// version of the node group does not change. You can specify the Kubernetes version of the
-    /// cluster to update the node group to the latest AMI version of the cluster's Kubernetes
-    /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-    /// <code>version</code>, or the node group  update will fail.
-    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
-    /// latest available AMI version for the node group's Kubernetes version is used. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the
-    /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-    /// <code>releaseVersion</code>, or the node group  update will fail.
-    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn release_version(&self) -> std::option::Option<&str> {
         self.release_version.as_deref()
     }
-    /// <p>An object representing a node group's launch template specification. You can only
-    /// update a node group using a launch template if the node group was originally deployed
-    /// with a launch template.</p>
+    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
     pub fn launch_template(
         &self,
     ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a
-    /// pod disruption budget issue. If an update fails because pods could not be drained, you
-    /// can force the update after it fails to terminate the old node whether or not any pods
-    /// are running on the node.</p>
+    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
     pub fn force(&self) -> bool {
         self.force
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -7915,18 +7429,15 @@ pub struct UpdateNodegroupConfigInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed node group to update.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
-    /// update.</p>
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
     pub labels: std::option::Option<crate::model::UpdateLabelsPayload>,
-    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
-    /// update.</p>
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>
     pub taints: std::option::Option<crate::model::UpdateTaintsPayload>,
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
     pub scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
     /// <p>The node group update configuration.</p>
     pub update_config: std::option::Option<crate::model::NodegroupUpdateConfig>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpdateNodegroupConfigInput {
@@ -7938,13 +7449,11 @@ impl UpdateNodegroupConfigInput {
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
-    /// update.</p>
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
     pub fn labels(&self) -> std::option::Option<&crate::model::UpdateLabelsPayload> {
         self.labels.as_ref()
     }
-    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
-    /// update.</p>
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>
     pub fn taints(&self) -> std::option::Option<&crate::model::UpdateTaintsPayload> {
         self.taints.as_ref()
     }
@@ -7956,8 +7465,7 @@ impl UpdateNodegroupConfigInput {
     pub fn update_config(&self) -> std::option::Option<&crate::model::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -7984,8 +7492,7 @@ pub struct UpdateClusterVersionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpdateClusterVersionInput {
@@ -7997,8 +7504,7 @@ impl UpdateClusterVersionInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8021,19 +7527,11 @@ pub struct UpdateClusterConfigInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
     pub resources_vpc_config: std::option::Option<crate::model::VpcConfigRequest>,
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
-    /// <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    /// <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpdateClusterConfigInput {
@@ -8045,21 +7543,13 @@ impl UpdateClusterConfigInput {
     pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigRequest> {
         self.resources_vpc_config.as_ref()
     }
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
-    /// <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    /// <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
         self.logging.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8081,28 +7571,17 @@ impl std::fmt::Debug for UpdateClusterConfigInput {
 pub struct UpdateAddonInput {
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
-    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_version: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    /// <note>
-    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-    /// IAM roles for service accounts on your cluster</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub service_account_role_arn: std::option::Option<std::string::String>,
-    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
-    /// to the cluster.</p>
+    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
     pub resolve_conflicts: std::option::Option<crate::model::ResolveConflicts>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl UpdateAddonInput {
@@ -8110,36 +7589,25 @@ impl UpdateAddonInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
-    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_version(&self) -> std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    /// <note>
-    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-    /// IAM roles for service accounts on your cluster</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
-    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
-    /// to the cluster.</p>
+    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
     pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8161,15 +7629,13 @@ impl std::fmt::Debug for UpdateAddonInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resources are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resources are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -8191,16 +7657,14 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-    /// are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-    /// are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -8231,10 +7695,7 @@ pub struct RegisterClusterInput {
     pub connector_config: std::option::Option<crate::model::ConnectorConfigRequest>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The metadata that you apply to the cluster to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Cluster tags do not propagate to any other resources associated with the
-    /// cluster.</p>
+    /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8251,10 +7712,7 @@ impl RegisterClusterInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata that you apply to the cluster to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Cluster tags do not propagate to any other resources associated with the
-    /// cluster.</p>
+    /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8283,19 +7741,9 @@ pub struct ListUpdatesInput {
     pub nodegroup_name: std::option::Option<std::string::String>,
     /// <p>The names of the installed add-ons that have available updates.</p>
     pub addon_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
-    /// output. When you use this parameter, <code>ListUpdates</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListUpdates</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListUpdatesInput {
@@ -8311,21 +7759,11 @@ impl ListUpdatesInput {
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
-    /// output. When you use this parameter, <code>ListUpdates</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListUpdates</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8346,13 +7784,11 @@ impl std::fmt::Debug for ListUpdatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// supported resources are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// supported resources are Amazon EKS clusters and managed node groups.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -8371,19 +7807,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListNodegroupsInput {
     /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
-    /// paginated output. When you use this parameter, <code>ListNodegroups</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListNodegroups</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListNodegroups</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodegroupsInput {
@@ -8391,21 +7817,11 @@ impl ListNodegroupsInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
-    /// paginated output. When you use this parameter, <code>ListNodegroups</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListNodegroups</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListNodegroups</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8426,21 +7842,9 @@ impl std::fmt::Debug for ListNodegroupsInput {
 pub struct ListIdentityProviderConfigsInput {
     /// <p>The cluster name that you want to list identity provider configurations for.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of identity provider configurations returned by
-    /// <code>ListIdentityProviderConfigs</code> in paginated output. When you use this
-    /// parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can
-    /// see the remaining results of the initial request by sending another
-    /// <code>ListIdentityProviderConfigs</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If you don't use this parameter,
-    /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
-    /// and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
-    /// and the results exceeded the value of that parameter. Pagination continues from the end
-    /// of the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProviderConfigsInput {
@@ -8448,23 +7852,11 @@ impl ListIdentityProviderConfigsInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The maximum number of identity provider configurations returned by
-    /// <code>ListIdentityProviderConfigs</code> in paginated output. When you use this
-    /// parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can
-    /// see the remaining results of the initial request by sending another
-    /// <code>ListIdentityProviderConfigs</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If you don't use this parameter,
-    /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
-    /// and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
-    /// and the results exceeded the value of that parameter. Pagination continues from the end
-    /// of the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8485,20 +7877,9 @@ impl std::fmt::Debug for ListIdentityProviderConfigsInput {
 pub struct ListFargateProfilesInput {
     /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of Fargate profile results returned by
-    /// <code>ListFargateProfiles</code> in paginated output. When you use this parameter,
-    /// <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a
-    /// single page along with a <code>nextToken</code> response element. You can see the
-    /// remaining results of the initial request by sending another
-    /// <code>ListFargateProfiles</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFargateProfilesInput {
@@ -8506,22 +7887,11 @@ impl ListFargateProfilesInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The maximum number of Fargate profile results returned by
-    /// <code>ListFargateProfiles</code> in paginated output. When you use this parameter,
-    /// <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a
-    /// single page along with a <code>nextToken</code> response element. You can see the
-    /// remaining results of the initial request by sending another
-    /// <code>ListFargateProfiles</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8540,46 +7910,22 @@ impl std::fmt::Debug for ListFargateProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
-    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
-    /// paginated output. When you use this parameter, <code>ListClusters</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListClusters</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListClusters</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
     pub include: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListClustersInput {
-    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
-    /// paginated output. When you use this parameter, <code>ListClusters</code> returns only
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't
-    /// use this parameter, <code>ListClusters</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListClusters</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -8605,23 +7951,10 @@ impl std::fmt::Debug for ListClustersInput {
 pub struct ListAddonsInput {
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
-    /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
-    /// only <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. You can see the remaining results of the
-    /// initial request by sending another <code>ListAddonsRequest</code> request with the
-    /// returned <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
-    /// returns up to 100 results and a <code>nextToken</code> value, if
-    /// applicable.</p>
+    /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -8630,25 +7963,12 @@ impl ListAddonsInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
-    /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
-    /// only <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. You can see the remaining results of the
-    /// initial request by sending another <code>ListAddonsRequest</code> request with the
-    /// returned <code>nextToken</code> value. This value can be between 1 and
-    /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
-    /// returns up to 100 results and a <code>nextToken</code> value, if
-    /// applicable.</p>
+    /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -8672,8 +7992,7 @@ pub struct DisassociateIdentityProviderConfigInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>An object that represents an identity provider configuration.</p>
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfig>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl DisassociateIdentityProviderConfigInput {
@@ -8687,8 +8006,7 @@ impl DisassociateIdentityProviderConfigInput {
     ) -> std::option::Option<&crate::model::IdentityProviderConfig> {
         self.identity_provider_config.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8713,9 +8031,7 @@ pub struct DescribeUpdateInput {
     pub update_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EKS node group associated with the update.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
 impl DescribeUpdateInput {
@@ -8731,9 +8047,7 @@ impl DescribeUpdateInput {
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -8864,18 +8178,11 @@ pub struct DescribeAddonVersionsInput {
     pub kubernetes_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
 impl DescribeAddonVersionsInput {
@@ -8887,20 +8194,13 @@ impl DescribeAddonVersionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -8922,9 +8222,7 @@ impl std::fmt::Debug for DescribeAddonVersionsInput {
 pub struct DescribeAddonInput {
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
 impl DescribeAddonInput {
@@ -8932,9 +8230,7 @@ impl DescribeAddonInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -9052,9 +8348,7 @@ impl std::fmt::Debug for DeleteClusterInput {
 pub struct DeleteAddonInput {
     /// <p>The name of the cluster to delete the add-on from.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
     pub preserve: bool,
@@ -9064,9 +8358,7 @@ impl DeleteAddonInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-    /// <code>ListAddons</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -9093,90 +8385,39 @@ pub struct CreateNodegroupInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The unique name to give your node group.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
-    /// <p>The scaling configuration details for the Auto Scaling group that is created for your
-    /// node group.</p>
+    /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
     pub scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
-    /// <p>The root device disk size (in GiB) for your node group instances. The default disk
-    /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub disk_size: std::option::Option<i32>,
-    /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
-    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-    /// <code>SubnetId</code>
-    /// </a> in your launch template, or the node group
-    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
-    /// sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If
-    /// you specify <code>launchTemplate</code>, then you can specify zero or one instance type
-    /// in your launch template <i>or</i> you can specify 0-20 instance types for
-    /// <code>instanceTypes</code>. If however, you specify an instance type in your launch
-    /// template <i>and</i> specify any <code>instanceTypes</code>, the node group
-    /// deployment will fail. If you don't specify an instance type in a launch template or for
-    /// <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you
-    /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
-    /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The AMI type for your node group. GPU instance types should use the
-    /// <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-    /// <code>AL2_x86_64</code> AMI type. Arm instances should use the
-    /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
-    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub ami_type: std::option::Option<crate::model::AmiTypes>,
-    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
-    /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
-    /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub remote_access: std::option::Option<crate::model::RemoteAccessConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-    /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
-    /// permissions for these API calls through an IAM instance profile and associated
-    /// policies. Before you can launch nodes and register them into a cluster, you must create
-    /// an IAM role for those nodes to use when they are launched. For more information, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.
-    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-    /// <code>IamInstanceProfile</code>
-    /// </a> in your launch template,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub node_role: std::option::Option<std::string::String>,
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
-    /// created.</p>
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
     pub taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
-    /// <p>The metadata to apply to the node group to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You
-    /// define both. Node group tags do not propagate to any other resources associated with the node
-    /// group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An object representing a node group's launch template specification. If specified,
-    /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
-    /// <code>remoteAccess</code> and make sure that the launch template meets the
-    /// requirements in <code>launchTemplateSpecification</code>.</p>
+    /// <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The node group update configuration.</p>
     pub update_config: std::option::Option<crate::model::NodegroupUpdateConfig>,
     /// <p>The capacity type for your node group.</p>
     pub capacity_type: std::option::Option<crate::model::CapacityTypes>,
-    /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
-    /// version of the cluster is used, and this is the only accepted specified value.
-    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
-    /// the latest available AMI version for the node group's current Kubernetes version is
-    /// used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS
-    /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
-    /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
-    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub release_version: std::option::Option<std::string::String>,
 }
 impl CreateNodegroupInput {
@@ -9188,71 +8429,35 @@ impl CreateNodegroupInput {
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The scaling configuration details for the Auto Scaling group that is created for your
-    /// node group.</p>
+    /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
     pub fn scaling_config(&self) -> std::option::Option<&crate::model::NodegroupScalingConfig> {
         self.scaling_config.as_ref()
     }
-    /// <p>The root device disk size (in GiB) for your node group instances. The default disk
-    /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn disk_size(&self) -> std::option::Option<i32> {
         self.disk_size
     }
-    /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
-    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
-    /// <code>SubnetId</code>
-    /// </a> in your launch template, or the node group
-    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
-    /// sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If
-    /// you specify <code>launchTemplate</code>, then you can specify zero or one instance type
-    /// in your launch template <i>or</i> you can specify 0-20 instance types for
-    /// <code>instanceTypes</code>. If however, you specify an instance type in your launch
-    /// template <i>and</i> specify any <code>instanceTypes</code>, the node group
-    /// deployment will fail. If you don't specify an instance type in a launch template or for
-    /// <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you
-    /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
-    /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
-    /// <p>The AMI type for your node group. GPU instance types should use the
-    /// <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-    /// <code>AL2_x86_64</code> AMI type. Arm instances should use the
-    /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
-    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn ami_type(&self) -> std::option::Option<&crate::model::AmiTypes> {
         self.ami_type.as_ref()
     }
-    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
-    /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
-    /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn remote_access(&self) -> std::option::Option<&crate::model::RemoteAccessConfig> {
         self.remote_access.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-    /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
-    /// permissions for these API calls through an IAM instance profile and associated
-    /// policies. Before you can launch nodes and register them into a cluster, you must create
-    /// an IAM role for those nodes to use when they are launched. For more information, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.
-    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
-    /// <code>IamInstanceProfile</code>
-    /// </a> in your launch template,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn node_role(&self) -> std::option::Option<&str> {
         self.node_role.as_deref()
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
-    /// created.</p>
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
     pub fn labels(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9263,25 +8468,18 @@ impl CreateNodegroupInput {
     pub fn taints(&self) -> std::option::Option<&[crate::model::Taint]> {
         self.taints.as_deref()
     }
-    /// <p>The metadata to apply to the node group to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You
-    /// define both. Node group tags do not propagate to any other resources associated with the node
-    /// group, such as the Amazon EC2 instances or subnets.</p>
+    /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An object representing a node group's launch template specification. If specified,
-    /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
-    /// <code>remoteAccess</code> and make sure that the launch template meets the
-    /// requirements in <code>launchTemplateSpecification</code>.</p>
+    /// <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
     pub fn launch_template(
         &self,
     ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
@@ -9295,19 +8493,11 @@ impl CreateNodegroupInput {
     pub fn capacity_type(&self) -> std::option::Option<&crate::model::CapacityTypes> {
         self.capacity_type.as_ref()
     }
-    /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
-    /// version of the cluster is used, and this is the only accepted specified value.
-    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
-    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
-    /// the latest available AMI version for the node group's current Kubernetes version is
-    /// used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS
-    /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
-    /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
-    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub fn release_version(&self) -> std::option::Option<&str> {
         self.release_version.as_deref()
     }
@@ -9345,27 +8535,15 @@ pub struct CreateFargateProfileInput {
     pub fargate_profile_name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
-    /// the Fargate profile. The pod execution role allows Fargate infrastructure to register with
-    /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
-    /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub pod_execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
-    /// not assigned public IP addresses, so only private subnets (with no direct route to an
-    /// Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
-    /// associated namespace. Optionally, you can also specify labels for a namespace. You may
-    /// specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
     pub selectors: std::option::Option<std::vec::Vec<crate::model::FargateProfileSelector>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You define both.
-    /// Fargate profile tags do not propagate to any other resources associated with the
-    /// Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9378,35 +8556,23 @@ impl CreateFargateProfileInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
-    /// the Fargate profile. The pod execution role allows Fargate infrastructure to register with
-    /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
-    /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn pod_execution_role_arn(&self) -> std::option::Option<&str> {
         self.pod_execution_role_arn.as_deref()
     }
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
-    /// not assigned public IP addresses, so only private subnets (with no direct route to an
-    /// Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
-    /// associated namespace. Optionally, you can also specify labels for a namespace. You may
-    /// specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
     pub fn selectors(&self) -> std::option::Option<&[crate::model::FargateProfileSelector]> {
         self.selectors.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You define both.
-    /// Fargate profile tags do not propagate to any other resources associated with the
-    /// Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9434,42 +8600,22 @@ impl std::fmt::Debug for CreateFargateProfileInput {
 pub struct CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
-    /// the latest version available in Amazon EKS is used.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-    /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
-    /// Service IAM Role</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
-    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-    /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-    /// security groups. However, we recommend that you use a dedicated security group for your
-    /// cluster control plane.</p>
+    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
     pub resources_vpc_config: std::option::Option<crate::model::VpcConfigRequest>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
     pub kubernetes_network_config:
         std::option::Option<crate::model::KubernetesNetworkConfigRequest>,
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
-    /// <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    /// <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
@@ -9480,26 +8626,15 @@ impl CreateClusterInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
-    /// the latest version available in Amazon EKS is used.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-    /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
-    /// Service IAM Role</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
-    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-    /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-    /// security groups. However, we recommend that you use a dedicated security group for your
-    /// cluster control plane.</p>
+    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
     pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigRequest> {
         self.resources_vpc_config.as_ref()
     }
@@ -9509,26 +8644,17 @@ impl CreateClusterInput {
     ) -> std::option::Option<&crate::model::KubernetesNetworkConfigRequest> {
         self.kubernetes_network_config.as_ref()
     }
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
-    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
-    /// <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    /// <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
         self.logging.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9562,31 +8688,19 @@ impl std::fmt::Debug for CreateClusterInput {
 pub struct CreateAddonInput {
     /// <p>The name of the cluster to create the add-on for.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
-    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_version: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    /// <note>
-    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-    /// IAM roles for service accounts on your cluster</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub service_account_role_arn: std::option::Option<std::string::String>,
-    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
-    /// add-on.</p>
+    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
     pub resolve_conflicts: std::option::Option<crate::model::ResolveConflicts>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9595,41 +8709,29 @@ impl CreateAddonInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
     }
-    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-    /// <code>DescribeAddonVersions</code>
-    /// </a>.</p>
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_version(&self) -> std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
-    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    /// <note>
-    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
-    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
-    /// IAM roles for service accounts on your cluster</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
-    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
-    /// add-on.</p>
+    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
     pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9657,15 +8759,12 @@ impl std::fmt::Debug for CreateAddonInput {
 pub struct AssociateIdentityProviderConfigInput {
     /// <p>The name of the cluster to associate the configuration to.</p>
     pub cluster_name: std::option::Option<std::string::String>,
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider
-    /// configuration.</p>
+    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
-    /// <p>The metadata to apply to the configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl AssociateIdentityProviderConfigInput {
@@ -9673,21 +8772,18 @@ impl AssociateIdentityProviderConfigInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>An object that represents an OpenID Connect (OIDC) identity provider
-    /// configuration.</p>
+    /// <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfigRequest> {
         self.oidc.as_ref()
     }
-    /// <p>The metadata to apply to the configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

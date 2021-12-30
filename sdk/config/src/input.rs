@@ -201,18 +201,14 @@ pub mod batch_get_resource_config_input {
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
         pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
             v.push(input);
             self.resource_keys = Some(v);
             self
         }
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
         pub fn set_resource_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -367,14 +363,12 @@ pub mod delete_aggregation_authorization_input {
         pub(crate) authorized_aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
         pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorized_account_id = Some(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
         pub fn set_authorized_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -543,14 +537,12 @@ pub mod delete_config_rule_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
+        /// <p>The name of the Config rule that you want to delete.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
+        /// <p>The name of the Config rule that you want to delete.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -865,9 +857,7 @@ pub mod delete_configuration_recorder_input {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn configuration_recorder_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -875,9 +865,7 @@ pub mod delete_configuration_recorder_input {
             self.configuration_recorder_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,14 +1337,12 @@ pub mod delete_evaluation_results_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1838,14 +1824,12 @@ pub mod delete_pending_aggregation_request_input {
         pub(crate) requester_aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
         pub fn requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_account_id = Some(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
         pub fn set_requester_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2863,14 +2847,12 @@ pub mod deliver_config_snapshot_input {
         pub(crate) delivery_channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
         pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_channel_name = Some(input.into());
             self
         }
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
         pub fn set_delivery_channel_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3043,14 +3025,12 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
         pub fn filters(mut self, input: crate::model::ConfigRuleComplianceFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
@@ -3058,30 +3038,22 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3448,28 +3420,22 @@ pub mod describe_aggregation_authorizations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3629,16 +3595,14 @@ pub mod describe_compliance_by_config_rule_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3667,16 +3631,12 @@ pub mod describe_compliance_by_config_rule_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3835,18 +3795,12 @@ pub mod describe_compliance_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3854,18 +3808,12 @@ pub mod describe_compliance_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3891,30 +3839,22 @@ pub mod describe_compliance_by_resource_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4076,20 +4016,14 @@ pub mod describe_config_rule_evaluation_status_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4097,40 +4031,26 @@ pub mod describe_config_rule_evaluation_status_input {
             self.config_rule_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4289,18 +4209,14 @@ pub mod describe_config_rules_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4308,16 +4224,12 @@ pub mod describe_config_rules_input {
             self.config_rule_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4492,28 +4404,22 @@ pub mod describe_configuration_aggregators_input {
             self.configuration_aggregator_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4693,18 +4599,9 @@ pub mod describe_configuration_aggregator_sources_status_input {
         ///
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
         pub fn update_status(mut self, input: crate::model::AggregatedSourceStatusType) -> Self {
             let mut v = self.update_status.unwrap_or_default();
@@ -4714,18 +4611,9 @@ pub mod describe_configuration_aggregator_sources_status_input {
         }
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
         pub fn set_update_status(
             mut self,
@@ -4734,28 +4622,22 @@ pub mod describe_configuration_aggregator_sources_status_input {
             self.update_status = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5088,9 +4970,7 @@ pub mod describe_configuration_recorder_status_input {
         ///
         /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
         ///
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
         pub fn configuration_recorder_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5100,9 +4980,7 @@ pub mod describe_configuration_recorder_status_input {
             self.configuration_recorder_names = Some(v);
             self
         }
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
         pub fn set_configuration_recorder_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6581,26 +6459,22 @@ pub mod describe_organization_conformance_packs_input {
             self.organization_conformance_pack_names = input;
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6761,8 +6635,7 @@ pub mod describe_organization_conformance_pack_statuses_input {
         ///
         /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
         ///
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn organization_conformance_pack_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -6772,8 +6645,7 @@ pub mod describe_organization_conformance_pack_statuses_input {
             self.organization_conformance_pack_names = Some(v);
             self
         }
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn set_organization_conformance_pack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6781,14 +6653,12 @@ pub mod describe_organization_conformance_pack_statuses_input {
             self.organization_conformance_pack_names = input;
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6956,28 +6826,22 @@ pub mod describe_pending_aggregation_requests_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7718,12 +7582,8 @@ pub mod describe_retention_configurations_input {
         ///
         /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
         ///
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn retention_configuration_names(
             mut self,
@@ -7734,12 +7594,8 @@ pub mod describe_retention_configurations_input {
             self.retention_configuration_names = Some(v);
             self
         }
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn set_retention_configuration_names(
             mut self,
@@ -7748,16 +7604,12 @@ pub mod describe_retention_configurations_input {
             self.retention_configuration_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7932,14 +7784,12 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7967,27 +7817,15 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.aws_region = input;
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
             self.compliance_type = Some(input);
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
         pub fn set_compliance_type(
             mut self,
@@ -7996,28 +7834,22 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.compliance_type = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8199,14 +8031,12 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
         pub fn filters(mut self, input: crate::model::ConfigRuleComplianceSummaryFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
@@ -8230,28 +8060,22 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8685,12 +8509,12 @@ pub mod get_aggregate_discovered_resource_counts_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9041,14 +8865,12 @@ pub mod get_compliance_details_by_config_rule_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9061,9 +8883,7 @@ pub mod get_compliance_details_by_config_rule_input {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
             v.push(input);
@@ -9071,9 +8891,7 @@ pub mod get_compliance_details_by_config_rule_input {
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -9081,30 +8899,22 @@ pub mod get_compliance_details_by_config_rule_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9263,14 +9073,12 @@ pub mod get_compliance_details_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9278,14 +9086,12 @@ pub mod get_compliance_details_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -9295,9 +9101,7 @@ pub mod get_compliance_details_by_resource_input {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
             v.push(input);
@@ -9305,9 +9109,7 @@ pub mod get_compliance_details_by_resource_input {
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -9315,16 +9117,12 @@ pub mod get_compliance_details_by_resource_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9618,26 +9416,16 @@ pub mod get_compliance_summary_by_resource_type_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10187,19 +9975,9 @@ pub mod get_discovered_resource_counts_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
@@ -10207,19 +9985,9 @@ pub mod get_discovered_resource_counts_input {
             self.resource_types = Some(v);
             self
         }
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
         pub fn set_resource_types(
             mut self,
@@ -10228,32 +9996,22 @@ pub mod get_discovered_resource_counts_input {
             self.resource_types = input;
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10644,14 +10402,12 @@ pub mod get_organization_conformance_pack_detailed_status_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10838,26 +10594,22 @@ pub mod get_resource_config_history_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
         pub fn later_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.later_time = Some(input);
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
         pub fn set_later_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10865,18 +10617,12 @@ pub mod get_resource_config_history_input {
             self.later_time = input;
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
         pub fn earlier_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.earlier_time = Some(input);
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
         pub fn set_earlier_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10884,16 +10630,12 @@ pub mod get_resource_config_history_input {
             self.earlier_time = input;
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
         pub fn chronological_order(mut self, input: crate::model::ChronologicalOrder) -> Self {
             self.chronological_order = Some(input);
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
         pub fn set_chronological_order(
             mut self,
             input: std::option::Option<crate::model::ChronologicalOrder>,
@@ -10901,30 +10643,22 @@ pub mod get_resource_config_history_input {
             self.chronological_order = input;
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11458,14 +11192,12 @@ pub mod list_discovered_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -11477,18 +11209,14 @@ pub mod list_discovered_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11496,16 +11224,12 @@ pub mod list_discovered_resources_input {
             self.resource_ids = input;
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11513,42 +11237,32 @@ pub mod list_discovered_resources_input {
             self.resource_name = input;
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn include_deleted_resources(mut self, input: bool) -> Self {
             self.include_deleted_resources = Some(input);
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn set_include_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted_resources = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12449,9 +12163,7 @@ pub mod put_configuration_aggregator_input {
         ///
         /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
         ///
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn account_aggregation_sources(
             mut self,
             input: crate::model::AccountAggregationSource,
@@ -12461,9 +12173,7 @@ pub mod put_configuration_aggregator_input {
             self.account_aggregation_sources = Some(v);
             self
         }
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn set_account_aggregation_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
@@ -12656,8 +12366,7 @@ pub mod put_configuration_recorder_input {
         pub(crate) configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
     }
     impl Builder {
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
         pub fn configuration_recorder(
             mut self,
             input: crate::model::ConfigurationRecorder,
@@ -12665,8 +12374,7 @@ pub mod put_configuration_recorder_input {
             self.configuration_recorder = Some(input);
             self
         }
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder(
             mut self,
             input: std::option::Option<crate::model::ConfigurationRecorder>,
@@ -12840,16 +12548,14 @@ pub mod put_conformance_pack_input {
             self.conformance_pack_name = input;
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_s3_uri = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -12859,16 +12565,14 @@ pub mod put_conformance_pack_input {
             self.template_s3_uri = input;
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
         pub fn set_template_body(
@@ -12878,16 +12582,14 @@ pub mod put_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -12897,16 +12599,14 @@ pub mod put_conformance_pack_input {
             self.delivery_s3_bucket = input;
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -13087,16 +12787,12 @@ pub mod put_delivery_channel_input {
         pub(crate) delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
     }
     impl Builder {
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
         pub fn delivery_channel(mut self, input: crate::model::DeliveryChannel) -> Self {
             self.delivery_channel = Some(input);
             self
         }
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
         pub fn set_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::DeliveryChannel>,
@@ -13254,20 +12950,14 @@ pub mod put_evaluations_input {
         ///
         /// To override the contents of this collection use [`set_evaluations`](Self::set_evaluations).
         ///
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
         pub fn evaluations(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.evaluations.unwrap_or_default();
             v.push(input);
             self.evaluations = Some(v);
             self
         }
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
         pub fn set_evaluations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -13275,43 +12965,25 @@ pub mod put_evaluations_input {
             self.evaluations = input;
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
         pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_token = Some(input.into());
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
         pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_token = input;
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
         pub fn test_mode(mut self, input: bool) -> Self {
             self.test_mode = Some(input);
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
         pub fn set_test_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.test_mode = input;
@@ -13882,18 +13554,14 @@ pub mod put_organization_conformance_pack_input {
             self.organization_conformance_pack_name = input;
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_s3_uri = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -13903,14 +13571,12 @@ pub mod put_organization_conformance_pack_input {
             self.template_s3_uri = input;
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13918,16 +13584,14 @@ pub mod put_organization_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
         pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -13937,16 +13601,14 @@ pub mod put_organization_conformance_pack_input {
             self.delivery_s3_bucket = input;
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -14541,16 +14203,14 @@ pub mod put_resource_config_input {
         >,
     }
     impl Builder {
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn set_resource_type(
@@ -14596,16 +14256,14 @@ pub mod put_resource_config_input {
             self.resource_name = input;
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
         pub fn set_configuration(
@@ -14789,21 +14447,15 @@ pub mod put_retention_configuration_input {
         pub(crate) retention_period_in_days: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
         pub fn retention_period_in_days(mut self, input: i32) -> Self {
             self.retention_period_in_days = Some(input);
             self
         }
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
         pub fn set_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_in_days = input;
@@ -14957,21 +14609,15 @@ pub mod put_stored_query_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
         pub fn stored_query(mut self, input: crate::model::StoredQuery) -> Self {
             self.stored_query = Some(input);
             self
         }
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
         pub fn set_stored_query(
             mut self,
@@ -15539,16 +15185,14 @@ pub mod start_config_rules_evaluation_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15702,8 +15346,7 @@ pub mod start_configuration_recorder_input {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn configuration_recorder_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -15711,8 +15354,7 @@ pub mod start_configuration_recorder_input {
             self.configuration_recorder_name = Some(input.into());
             self
         }
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16606,7 +16248,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
-/// <p>The input for the <a>StopConfigurationRecorder</a> action.</p>
+/// <p>The input for the <code>StopConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopConfigurationRecorderInput {
@@ -16658,18 +16300,15 @@ impl std::fmt::Debug for StartRemediationExecutionInput {
     }
 }
 
-/// <p>The input for the <a>StartConfigurationRecorder</a>
-/// action.</p>
+/// <p>The input for the <code>StartConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigurationRecorderInput {
-    /// <p>The name of the recorder object that records each configuration
-    /// change made to the resources.</p>
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl StartConfigurationRecorderInput {
-    /// <p>The name of the recorder object that records each configuration
-    /// change made to the resources.</p>
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
         self.configuration_recorder_name.as_deref()
     }
@@ -16689,13 +16328,11 @@ impl std::fmt::Debug for StartConfigurationRecorderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigRulesEvaluationInput {
-    /// <p>The list of names of Config rules that you want to run
-    /// evaluations for.</p>
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartConfigRulesEvaluationInput {
-    /// <p>The list of names of Config rules that you want to run
-    /// evaluations for.</p>
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
@@ -16799,22 +16436,16 @@ impl std::fmt::Debug for SelectAggregateResourceConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStoredQueryInput {
-    /// <p>A list of <code>StoredQuery</code> objects.
-    /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-    /// <note>
-    /// <p>When you are creating a query, you must provide a query name and an expression.
-    /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub stored_query: std::option::Option<crate::model::StoredQuery>,
     /// <p>A list of <code>Tags</code> object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutStoredQueryInput {
-    /// <p>A list of <code>StoredQuery</code> objects.
-    /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-    /// <note>
-    /// <p>When you are creating a query, you must provide a query name and an expression.
-    /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub fn stored_query(&self) -> std::option::Option<&crate::model::StoredQuery> {
         self.stored_query.as_ref()
@@ -16837,20 +16468,14 @@ impl std::fmt::Debug for PutStoredQueryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionConfigurationInput {
-    /// <p>Number of days Config stores your historical
-    /// information.</p>
-    /// <note>
-    /// <p>Currently, only applicable to the configuration item
-    /// history.</p>
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub retention_period_in_days: i32,
 }
 impl PutRetentionConfigurationInput {
-    /// <p>Number of days Config stores your historical
-    /// information.</p>
-    /// <note>
-    /// <p>Currently, only applicable to the configuration item
-    /// history.</p>
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn retention_period_in_days(&self) -> i32 {
         self.retention_period_in_days
@@ -16868,8 +16493,7 @@ impl std::fmt::Debug for PutRetentionConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-    /// <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub resource_type: std::option::Option<std::string::String>,
@@ -16879,8 +16503,7 @@ pub struct PutResourceConfigInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-    /// <note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub configuration: std::option::Option<std::string::String>,
@@ -16889,8 +16512,7 @@ pub struct PutResourceConfigInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-    /// <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn resource_type(&self) -> std::option::Option<&str> {
@@ -16908,8 +16530,7 @@ impl PutResourceConfigInput {
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-    /// <note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub fn configuration(&self) -> std::option::Option<&str> {
@@ -17014,22 +16635,17 @@ impl std::fmt::Debug for PutRemediationConfigurationsInput {
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-    /// (max size: 300 KB).</p>
-    /// <note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
-    /// <p>A string containing full conformance pack template body. Structure containing the template body
-    /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket.</p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
@@ -17044,28 +16660,23 @@ impl PutOrganizationConformancePackInput {
     pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
         self.organization_conformance_pack_name.as_deref()
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-    /// (max size: 300 KB).</p>
-    /// <note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
-    /// <p>A string containing full conformance pack template body. Structure containing the template body
-    /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
@@ -17191,50 +16802,26 @@ impl std::fmt::Debug for PutExternalEvaluationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsInput {
-    /// <p>The assessments that the Lambda function performs. Each
-    /// evaluation identifies an Amazon Web Services resource and indicates whether it
-    /// complies with the Config rule that invokes the Lambda
-    /// function.</p>
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
-    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-    /// evaluation.</p>
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub result_token: std::option::Option<std::string::String>,
-    /// <p>Use this parameter to specify a test run for
-    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-    /// updates occur to your existing evaluations, and evaluation results
-    /// are not sent to Config.</p>
-    ///
-    /// <note>
-    /// <p>When <code>TestMode</code> is <code>true</code>,
-    /// <code>PutEvaluations</code> doesn't require a valid value
-    /// for the <code>ResultToken</code> parameter, but the value cannot
-    /// be null.</p>
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     pub test_mode: bool,
 }
 impl PutEvaluationsInput {
-    /// <p>The assessments that the Lambda function performs. Each
-    /// evaluation identifies an Amazon Web Services resource and indicates whether it
-    /// complies with the Config rule that invokes the Lambda
-    /// function.</p>
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub fn evaluations(&self) -> std::option::Option<&[crate::model::Evaluation]> {
         self.evaluations.as_deref()
     }
-    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-    /// evaluation.</p>
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub fn result_token(&self) -> std::option::Option<&str> {
         self.result_token.as_deref()
     }
-    /// <p>Use this parameter to specify a test run for
-    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-    /// updates occur to your existing evaluations, and evaluation results
-    /// are not sent to Config.</p>
-    ///
-    /// <note>
-    /// <p>When <code>TestMode</code> is <code>true</code>,
-    /// <code>PutEvaluations</code> doesn't require a valid value
-    /// for the <code>ResultToken</code> parameter, but the value cannot
-    /// be null.</p>
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     pub fn test_mode(&self) -> bool {
         self.test_mode
@@ -17250,20 +16837,15 @@ impl std::fmt::Debug for PutEvaluationsInput {
     }
 }
 
-/// <p>The input for the <a>PutDeliveryChannel</a>
-/// action.</p>
+/// <p>The input for the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the
-    /// configuration information to an Amazon S3 bucket and to an Amazon
-    /// SNS topic.</p>
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the
-    /// configuration information to an Amazon S3 bucket and to an Amazon
-    /// SNS topic.</p>
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub fn delivery_channel(&self) -> std::option::Option<&crate::model::DeliveryChannel> {
         self.delivery_channel.as_ref()
     }
@@ -17282,23 +16864,19 @@ impl std::fmt::Debug for PutDeliveryChannelInput {
 pub struct PutConformancePackInput {
     /// <p>Name of the conformance pack you want to create.</p>
     pub conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-    /// <note>
+    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
-    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    /// <note>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
     /// </note>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket. </p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
@@ -17311,29 +16889,25 @@ impl PutConformancePackInput {
     pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-    /// <note>
+    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
-    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    /// <note>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
     /// </note>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket. </p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
@@ -17362,18 +16936,15 @@ impl std::fmt::Debug for PutConformancePackInput {
     }
 }
 
-/// <p>The input for the <a>PutConfigurationRecorder</a>
-/// action.</p>
+/// <p>The input for the <code>PutConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each
-    /// configuration change made to the resources.</p>
+    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each
-    /// configuration change made to the resources.</p>
+    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     pub fn configuration_recorder(
         &self,
     ) -> std::option::Option<&crate::model::ConfigurationRecorder> {
@@ -17394,9 +16965,7 @@ impl std::fmt::Debug for PutConfigurationRecorderInput {
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>A list of AccountAggregationSource object.
-    ///
-    /// </p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub account_aggregation_sources:
         std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
     /// <p>An OrganizationAggregationSource object.</p>
@@ -17410,9 +16979,7 @@ impl PutConfigurationAggregatorInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>A list of AccountAggregationSource object.
-    ///
-    /// </p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub fn account_aggregation_sources(
         &self,
     ) -> std::option::Option<&[crate::model::AccountAggregationSource]> {
@@ -17579,61 +17146,41 @@ impl std::fmt::Debug for ListStoredQueriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
-    /// <p>The type of resources that you want Config to list in the
-    /// response.</p>
+    /// <p>The type of resources that you want Config to list in the response.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The IDs of only those resources that you want Config to
-    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-    /// discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-    /// parameter, Config lists all resources of the specified type that
-    /// it has discovered.</p>
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of resource identifiers returned on each
-    /// page. The default is 100. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>Specifies whether Config includes deleted resources in the
-    /// results. By default, deleted resources are not included.</p>
+    /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub include_deleted_resources: bool,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoveredResourcesInput {
-    /// <p>The type of resources that you want Config to list in the
-    /// response.</p>
+    /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The IDs of only those resources that you want Config to
-    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-    /// discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
     }
-    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-    /// parameter, Config lists all resources of the specified type that
-    /// it has discovered.</p>
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The maximum number of resource identifiers returned on each
-    /// page. The default is 100. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>Specifies whether Config includes deleted resources in the
-    /// results. By default, deleted resources are not included.</p>
+    /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub fn include_deleted_resources(&self) -> bool {
         self.include_deleted_resources
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17724,35 +17271,23 @@ impl std::fmt::Debug for GetStoredQueryInput {
     }
 }
 
-/// <p>The input for the <a>GetResourceConfigHistory</a>
-/// action.</p>
+/// <p>The input for the <code>GetResourceConfigHistory</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceConfigHistoryInput {
     /// <p>The resource type.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The ID of the resource (for example.,
-    /// <code>sg-xxxxxx</code>).</p>
+    /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The time stamp that indicates a later time. If not specified,
-    /// current time is taken.</p>
+    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
     pub later_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time stamp that indicates an earlier time. If not
-    /// specified, the action returns paginated results that contain
-    /// configuration items that start when the first configuration item was
-    /// recorded.</p>
+    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub earlier_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The chronological order for configuration items listed. By
-    /// default, the results are listed in reverse chronological
-    /// order.</p>
+    /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub chronological_order: std::option::Option<crate::model::ChronologicalOrder>,
-    /// <p>The maximum number of configuration items returned on each
-    /// page. The default is 10. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceConfigHistoryInput {
@@ -17760,38 +17295,27 @@ impl GetResourceConfigHistoryInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The ID of the resource (for example.,
-    /// <code>sg-xxxxxx</code>).</p>
+    /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The time stamp that indicates a later time. If not specified,
-    /// current time is taken.</p>
+    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
     pub fn later_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.later_time.as_ref()
     }
-    /// <p>The time stamp that indicates an earlier time. If not
-    /// specified, the action returns paginated results that contain
-    /// configuration items that start when the first configuration item was
-    /// recorded.</p>
+    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earlier_time.as_ref()
     }
-    /// <p>The chronological order for configuration items listed. By
-    /// default, the results are listed in reverse chronological
-    /// order.</p>
+    /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub fn chronological_order(&self) -> std::option::Option<&crate::model::ChronologicalOrder> {
         self.chronological_order.as_ref()
     }
-    /// <p>The maximum number of configuration items returned on each
-    /// page. The default is 10. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17818,8 +17342,7 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::OrganizationResourceDetailedStatusFilters>,
-    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-    /// If you do not specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -17835,8 +17358,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     ) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatusFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-    /// If you do not specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -17908,59 +17430,29 @@ impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredResourceCountsInput {
-    /// <p>The comma-separated list that specifies the resource types that
-    /// you want Config to return (for example,
-    /// <code>"AWS::EC2::Instance"</code>,
-    /// <code>"AWS::IAM::User"</code>).</p>
-    ///
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-    /// the region for your account.</p>
-    /// <note>
-    /// <p>If the configuration recorder is turned off, Config
-    /// returns an empty list of <a>ResourceCount</a>
-    /// objects. If the configuration recorder is not recording a
-    /// specific resource type (for example, S3 buckets), that resource
-    /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of <a>ResourceCount</a> objects
-    /// returned on each page. The default is 100. You cannot specify a
-    /// number greater than 100. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsInput {
-    /// <p>The comma-separated list that specifies the resource types that
-    /// you want Config to return (for example,
-    /// <code>"AWS::EC2::Instance"</code>,
-    /// <code>"AWS::IAM::User"</code>).</p>
-    ///
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-    /// the region for your account.</p>
-    /// <note>
-    /// <p>If the configuration recorder is turned off, Config
-    /// returns an empty list of <a>ResourceCount</a>
-    /// objects. If the configuration recorder is not recording a
-    /// specific resource type (for example, S3 buckets), that resource
-    /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
-    /// <p>The maximum number of <a>ResourceCount</a> objects
-    /// returned on each page. The default is 100. You cannot specify a
-    /// number greater than 100. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18056,23 +17548,13 @@ impl std::fmt::Debug for GetConformancePackComplianceDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByResourceTypeInput {
-    /// <p>Specify one or more resource types to get the number of
-    /// resources that are compliant and the number that are noncompliant
-    /// for each resource type.</p>
-    /// <p>For this request, you can specify an Amazon Web Services resource type such as
-    /// <code>AWS::EC2::Instance</code>. You can specify that the
-    /// resource type is an Amazon Web Services account by specifying
-    /// <code>AWS::::Account</code>.</p>
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInput {
-    /// <p>Specify one or more resource types to get the number of
-    /// resources that are compliant and the number that are noncompliant
-    /// for each resource type.</p>
-    /// <p>For this request, you can specify an Amazon Web Services resource type such as
-    /// <code>AWS::EC2::Instance</code>. You can specify that the
-    /// resource type is an Amazon Web Services account by specifying
-    /// <code>AWS::::Account</code>.</p>
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
@@ -18100,43 +17582,31 @@ impl std::fmt::Debug for GetComplianceSummaryByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceInput {
-    /// <p>The type of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceInput {
-    /// <p>The type of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18156,45 +17626,31 @@ impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleInput {
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleInput {
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18253,7 +17709,7 @@ pub struct GetAggregateDiscoveredResourceCountsInput {
     pub filters: std::option::Option<crate::model::ResourceCountFilters>,
     /// <p>The key to group the resource counts.</p>
     pub group_by_key: std::option::Option<crate::model::ResourceCountGroupKey>,
-    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -18271,7 +17727,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
     pub fn group_by_key(&self) -> std::option::Option<&crate::model::ResourceCountGroupKey> {
         self.group_by_key.as_ref()
     }
-    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -18359,17 +17815,13 @@ impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryInput {
 pub struct GetAggregateConfigRuleComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>Filters the results based on the
-    /// ConfigRuleComplianceSummaryFilters object.</p>
+    /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
     pub group_by_key: std::option::Option<crate::model::ConfigRuleComplianceSummaryGroupKey>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 1000. You cannot specify a number greater than 1000.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConfigRuleComplianceSummaryInput {
@@ -18377,8 +17829,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>Filters the results based on the
-    /// ConfigRuleComplianceSummaryFilters object.</p>
+    /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryFilters> {
@@ -18390,14 +17841,11 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryGroupKey> {
         self.group_by_key.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 1000. You cannot specify a number greater than 1000.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18423,29 +17871,19 @@ impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
 pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The 12-digit account ID of the source account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
-    /// <p>The resource compliance status.</p>
-    /// <note>
-    /// <p>For the
-    /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-    /// data type, Config supports only the <code>COMPLIANT</code>
-    /// and <code>NON_COMPLIANT</code>. Config does not support the
-    /// <code>NOT_APPLICABLE</code> and
-    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    /// <p>The resource compliance status.</p> <note>
+    /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 50. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateComplianceDetailsByConfigRuleInput {
@@ -18453,8 +17891,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -18466,26 +17903,17 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    /// <p>The resource compliance status.</p>
-    /// <note>
-    /// <p>For the
-    /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-    /// data type, Config supports only the <code>COMPLIANT</code>
-    /// and <code>NON_COMPLIANT</code>. Config does not support the
-    /// <code>NOT_APPLICABLE</code> and
-    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    /// <p>The resource compliance status.</p> <note>
+    /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
         self.compliance_type.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 50. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18511,33 +17939,21 @@ impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRetentionConfigurationsInput {
-    /// <p>A list of names of retention configurations for which you want
-    /// details. If you do not specify a name, Config returns details
-    /// for all the retention configurations for that account.</p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub retention_configuration_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRetentionConfigurationsInput {
-    /// <p>A list of names of retention configurations for which you want
-    /// details. If you do not specify a name, Config returns details
-    /// for all the retention configurations for that account.</p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn retention_configuration_names(&self) -> std::option::Option<&[std::string::String]> {
         self.retention_configuration_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18666,23 +18082,17 @@ impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingAggregationRequestsInput {
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePendingAggregationRequestsInput {
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18700,26 +18110,22 @@ impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details.
-    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-    /// If you do no specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details.
-    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub fn organization_conformance_pack_names(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.organization_conformance_pack_names.as_deref()
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-    /// If you do no specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -18748,11 +18154,9 @@ pub struct DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-    /// number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePacksInput {
@@ -18762,13 +18166,11 @@ impl DescribeOrganizationConformancePacksInput {
     ) -> std::option::Option<&[std::string::String]> {
         self.organization_conformance_pack_names.as_deref()
     }
-    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-    /// number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18862,8 +18264,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigRulesInput {
     }
 }
 
-/// <p>The input for the <a>DeliveryChannelStatus</a>
-/// action.</p>
+/// <p>The input for the <code>DeliveryChannelStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelStatusInput {
@@ -18884,8 +18285,7 @@ impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
     }
 }
 
-/// <p>The input for the <a>DescribeDeliveryChannels</a>
-/// action.</p>
+/// <p>The input for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelsInput {
@@ -19018,20 +18418,15 @@ impl std::fmt::Debug for DescribeConformancePackComplianceInput {
     }
 }
 
-/// <p>The input for the <a>DescribeConfigurationRecorderStatus</a>
-/// action.</p>
+/// <p>The input for the <code>DescribeConfigurationRecorderStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecorderStatusInput {
-    /// <p>The name(s) of the configuration recorder. If the name is not
-    /// specified, the action returns the current status of all the
-    /// configuration recorders associated with the account.</p>
+    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationRecorderStatusInput {
-    /// <p>The name(s) of the configuration recorder. If the name is not
-    /// specified, the action returns the current status of all the
-    /// configuration recorders associated with the account.</p>
+    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     pub fn configuration_recorder_names(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_recorder_names.as_deref()
     }
@@ -19047,7 +18442,7 @@ impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
     }
 }
 
-/// <p>The input for the <a>DescribeConfigurationRecorders</a> action.</p>
+/// <p>The input for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecordersInput {
@@ -19079,26 +18474,14 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid value FAILED indicates errors while moving
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value SUCCEEDED indicates the data was
-    /// successfully moved.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value OUTDATED indicates the data is not the most
-    /// recent.</p>
-    /// </li>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     pub update_status: std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatusType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of AggregatorSourceStatus returned on each
-    /// page. The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorSourcesStatusInput {
@@ -19108,32 +18491,20 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid value FAILED indicates errors while moving
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value SUCCEEDED indicates the data was
-    /// successfully moved.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value OUTDATED indicates the data is not the most
-    /// recent.</p>
-    /// </li>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     pub fn update_status(
         &self,
     ) -> std::option::Option<&[crate::model::AggregatedSourceStatusType]> {
         self.update_status.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of AggregatorSourceStatus returned on each
-    /// page. The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19158,12 +18529,9 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusInput {
 pub struct DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
     pub configuration_aggregator_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of configuration aggregators returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorsInput {
@@ -19171,14 +18539,11 @@ impl DescribeConfigurationAggregatorsInput {
     pub fn configuration_aggregator_names(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_aggregator_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of configuration aggregators returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19200,25 +18565,17 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesInput {
-    /// <p>The names of the Config rules for which you want details.
-    /// If you do not specify any names, Config returns details for all
-    /// your rules.</p>
+    /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRulesInput {
-    /// <p>The names of the Config rules for which you want details.
-    /// If you do not specify any names, Config returns details for all
-    /// your rules.</p>
+    /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19236,47 +18593,27 @@ impl std::fmt::Debug for DescribeConfigRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusInput {
-    /// <p>The name of the Config managed rules for which you want
-    /// status information. If you do not specify any names, Config
-    /// returns status information for all Config managed rules that you
-    /// use.</p>
+    /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of rule evaluation results that you want
-    /// returned.</p>
-    ///
-    /// <p>This parameter is required if the rule limit for your account
-    /// is more than the default of 150 rules.</p>
-    /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-    /// Reference Guide</i>.</p>
+    /// <p>The number of rule evaluation results that you want returned.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub limit: i32,
 }
 impl DescribeConfigRuleEvaluationStatusInput {
-    /// <p>The name of the Config managed rules for which you want
-    /// status information. If you do not specify any names, Config
-    /// returns status information for all Config managed rules that you
-    /// use.</p>
+    /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of rule evaluation results that you want
-    /// returned.</p>
-    ///
-    /// <p>This parameter is required if the rule limit for your account
-    /// is more than the default of 150 rules.</p>
-    /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-    /// Reference Guide</i>.</p>
+    /// <p>The number of rule evaluation results that you want returned.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19295,40 +18632,24 @@ impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceInput {
-    /// <p>The types of Amazon Web Services resources for which you want compliance
-    /// information (for example, <code>AWS::EC2::Instance</code>). For this
-    /// action, you can specify that the resource type is an Amazon Web Services account by
-    /// specifying <code>AWS::::Account</code>.</p>
+    /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information. You can specify only one resource ID. If you specify a
-    /// resource ID, you must also specify a type for
-    /// <code>ResourceType</code>.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByResourceInput {
-    /// <p>The types of Amazon Web Services resources for which you want compliance
-    /// information (for example, <code>AWS::EC2::Instance</code>). For this
-    /// action, you can specify that the resource type is an Amazon Web Services account by
-    /// specifying <code>AWS::::Account</code>.</p>
+    /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information. You can specify only one resource ID. If you specify a
-    /// resource ID, you must also specify a type for
-    /// <code>ResourceType</code>.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -19337,15 +18658,11 @@ impl DescribeComplianceByResourceInput {
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19366,20 +18683,16 @@ impl std::fmt::Debug for DescribeComplianceByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleInput {
-    /// <p>Specify one or more Config rule names to filter the results
-    /// by rule.</p>
+    /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInput {
-    /// <p>Specify one or more Config rule names to filter the results
-    /// by rule.</p>
+    /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
@@ -19388,9 +18701,7 @@ impl DescribeComplianceByConfigRuleInput {
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19409,23 +18720,17 @@ impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsInput {
-    /// <p>The maximum number of AggregationAuthorizations returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregationAuthorizationsInput {
-    /// <p>The maximum number of AggregationAuthorizations returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19492,16 +18797,11 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksInput {
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.
-    /// </p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is
-    /// maximum.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesInput {
@@ -19509,20 +18809,15 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.
-    /// </p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ConfigRuleComplianceFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is
-    /// maximum.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19541,18 +18836,15 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesInput {
     }
 }
 
-/// <p>The input for the <a>DeliverConfigSnapshot</a>
-/// action.</p>
+/// <p>The input for the <code>DeliverConfigSnapshot</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverConfigSnapshotInput {
-    /// <p>The name of the delivery channel through which the snapshot is
-    /// delivered.</p>
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
 impl DeliverConfigSnapshotInput {
-    /// <p>The name of the delivery channel through which the snapshot is
-    /// delivered.</p>
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
         self.delivery_channel_name.as_deref()
     }
@@ -19701,15 +18993,13 @@ impl std::fmt::Debug for DeleteRemediationConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePendingAggregationRequestInput {
-    /// <p>The 12-digit account ID of the account requesting to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub requester_account_id: std::option::Option<std::string::String>,
     /// <p>The region requesting to aggregate data.</p>
     pub requester_aws_region: std::option::Option<std::string::String>,
 }
 impl DeletePendingAggregationRequestInput {
-    /// <p>The 12-digit account ID of the account requesting to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub fn requester_account_id(&self) -> std::option::Option<&str> {
         self.requester_account_id.as_deref()
     }
@@ -19779,13 +19069,11 @@ impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsInput {
-    /// <p>The name of the Config rule for which you want to delete
-    /// the evaluation results.</p>
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationResultsInput {
-    /// <p>The name of the Config rule for which you want to delete
-    /// the evaluation results.</p>
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -19798,9 +19086,7 @@ impl std::fmt::Debug for DeleteEvaluationResultsInput {
     }
 }
 
-/// <p>The input for the <a>DeleteDeliveryChannel</a>
-/// action. The action accepts the following data, in JSON format.
-/// </p>
+/// <p>The input for the <code>DeleteDeliveryChannel</code> action. The action accepts the following data, in JSON format. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeliveryChannelInput {
@@ -19842,20 +19128,15 @@ impl std::fmt::Debug for DeleteConformancePackInput {
     }
 }
 
-/// <p>The request object for the
-/// <code>DeleteConfigurationRecorder</code> action.</p>
+/// <p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationRecorderInput {
-    /// <p>The name of the configuration recorder to be deleted. You can
-    /// retrieve the name of your configuration recorder by using the
-    /// <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationRecorderInput {
-    /// <p>The name of the configuration recorder to be deleted. You can
-    /// retrieve the name of your configuration recorder by using the
-    /// <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
         self.configuration_recorder_name.as_deref()
     }
@@ -19899,13 +19180,11 @@ impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigRuleInput {
-    /// <p>The name of the Config rule that you want to
-    /// delete.</p>
+    /// <p>The name of the Config rule that you want to delete.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigRuleInput {
-    /// <p>The name of the Config rule that you want to
-    /// delete.</p>
+    /// <p>The name of the Config rule that you want to delete.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -19922,15 +19201,13 @@ impl std::fmt::Debug for DeleteConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAggregationAuthorizationInput {
-    /// <p>The 12-digit account ID of the account authorized to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub authorized_account_id: std::option::Option<std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
     pub authorized_aws_region: std::option::Option<std::string::String>,
 }
 impl DeleteAggregationAuthorizationInput {
-    /// <p>The 12-digit account ID of the account authorized to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn authorized_account_id(&self) -> std::option::Option<&str> {
         self.authorized_account_id.as_deref()
     }
@@ -19952,15 +19229,11 @@ impl std::fmt::Debug for DeleteAggregationAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetResourceConfigInput {
-    /// <p>A list of resource keys to be processed with the current
-    /// request. Each element in the list consists of the resource type and
-    /// resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl BatchGetResourceConfigInput {
-    /// <p>A list of resource keys to be processed with the current
-    /// request. Each element in the list consists of the resource type and
-    /// resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
         self.resource_keys.as_deref()
     }

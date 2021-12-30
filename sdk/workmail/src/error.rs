@@ -12,19 +12,15 @@ pub struct AssociateDelegateToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateDelegateToResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -169,19 +165,15 @@ pub enum AssociateMemberToGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -343,16 +335,13 @@ pub struct CancelMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -472,14 +461,11 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -487,14 +473,11 @@ pub enum CreateAliasErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -660,11 +643,9 @@ pub enum CreateGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -829,11 +810,9 @@ pub enum CreateMobileDeviceAccessRuleErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1112,11 +1091,9 @@ pub enum CreateResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -1277,16 +1254,13 @@ pub enum CreateUserErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The supplied password doesn't match the minimum security constraints, such as length
-    /// or use of special characters.</p>
+    /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -1453,11 +1427,9 @@ pub struct DeleteAccessControlRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessControlRuleErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1561,19 +1533,15 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1702,16 +1670,13 @@ pub enum DeleteGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -1861,19 +1826,15 @@ pub struct DeleteMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2006,16 +1967,13 @@ pub struct DeleteMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2156,11 +2114,9 @@ pub struct DeleteMobileDeviceAccessRuleError {
 pub enum DeleteMobileDeviceAccessRuleErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2285,11 +2241,9 @@ pub struct DeleteOrganizationError {
 pub enum DeleteOrganizationErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2400,16 +2354,13 @@ pub struct DeleteResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceErrorKind {
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2528,11 +2479,9 @@ pub struct DeleteRetentionPolicyError {
 pub enum DeleteRetentionPolicyErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2649,16 +2598,13 @@ pub enum DeleteUserErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -2808,19 +2754,15 @@ pub struct DeregisterFromWorkMailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterFromWorkMailErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2949,18 +2891,15 @@ pub struct DeregisterMailDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterMailDomainErrorKind {
-    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
-    /// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
     InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain you're trying to change is in use by another user or organization in your account. See the error message for details.</p>
     MailDomainInUseException(crate::error::MailDomainInUseException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3093,16 +3032,13 @@ pub struct DescribeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGroupErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3222,11 +3158,9 @@ pub struct DescribeInboundDmarcSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInboundDmarcSettingsErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3336,16 +3270,13 @@ pub struct DescribeMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3471,8 +3402,7 @@ pub struct DescribeOrganizationError {
 pub enum DescribeOrganizationErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3574,16 +3504,13 @@ pub struct DescribeResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3703,16 +3630,13 @@ pub struct DescribeUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUserErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3832,19 +3756,15 @@ pub struct DisassociateDelegateFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateDelegateFromResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4000,19 +3920,15 @@ pub enum DisassociateMemberFromGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -4192,16 +4108,13 @@ pub struct GetAccessControlEffectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessControlEffectErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4321,16 +4234,13 @@ pub struct GetDefaultRetentionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDefaultRetentionPolicyErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4454,14 +4364,11 @@ pub struct GetMailboxDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMailboxDetailsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4576,11 +4483,9 @@ pub enum GetMailDomainErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4702,11 +4607,9 @@ pub struct GetMobileDeviceAccessEffectError {
 pub enum GetMobileDeviceAccessEffectErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4827,16 +4730,13 @@ pub struct GetMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4988,11 +4888,9 @@ pub struct ListAccessControlRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessControlRulesErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5094,19 +4992,15 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5229,19 +5123,15 @@ pub struct ListGroupMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupMembersErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5370,16 +5260,13 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5498,11 +5385,9 @@ pub struct ListMailboxExportJobsError {
 pub enum ListMailboxExportJobsErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5613,16 +5498,13 @@ pub struct ListMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5744,11 +5626,9 @@ pub struct ListMailDomainsError {
 pub enum ListMailDomainsErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5859,16 +5739,13 @@ pub struct ListMobileDeviceAccessOverridesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMobileDeviceAccessOverridesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6009,11 +5886,9 @@ pub struct ListMobileDeviceAccessRulesError {
 pub enum ListMobileDeviceAccessRulesErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6227,19 +6102,15 @@ pub struct ListResourceDelegatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceDelegatesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6370,11 +6241,9 @@ pub struct ListResourcesError {
 pub enum ListResourcesErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6580,11 +6449,9 @@ pub struct ListUsersError {
 pub enum ListUsersErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6692,18 +6559,15 @@ pub struct PutAccessControlRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccessControlRuleErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6832,11 +6696,9 @@ pub struct PutInboundDmarcSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInboundDmarcSettingsErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6940,19 +6802,15 @@ pub struct PutMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7081,19 +6939,15 @@ pub struct PutMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7243,11 +7097,9 @@ pub enum PutRetentionPolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7373,11 +7225,9 @@ pub enum RegisterMailDomainErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The domain you're trying to change is in use by another user or organization in your account. See the error message for details.</p>
     MailDomainInUseException(crate::error::MailDomainInUseException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7512,30 +7362,23 @@ pub enum RegisterToWorkMailErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The user, group, or resource that you're trying to register is already
-    /// registered.</p>
+    /// <p>The user, group, or resource that you're trying to register is already registered.</p>
     EntityAlreadyRegisteredException(crate::error::EntityAlreadyRegisteredException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7728,22 +7571,17 @@ pub enum ResetPasswordErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The supplied password doesn't match the minimum security constraints, such as length
-    /// or use of special characters.</p>
+    /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -7911,18 +7749,15 @@ pub struct StartMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8051,8 +7886,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -8261,14 +8095,11 @@ pub enum UpdateDefaultMailDomainErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8399,19 +8230,15 @@ pub struct UpdateMailboxQuotaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMailboxQuotaErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8540,16 +8367,13 @@ pub struct UpdateMobileDeviceAccessRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMobileDeviceAccessRuleErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8687,27 +8511,21 @@ pub enum UpdatePrimaryEmailAddressErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -8912,31 +8730,23 @@ pub struct UpdateResourceError {
 pub enum UpdateResourceErrorKind {
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
-    /// <p>The configuration for a resource isn't valid. A resource must either be able to
-    /// auto-respond to requests or have at least one delegate associated that can do so on its
-    /// behalf.</p>
+    /// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9094,8 +8904,7 @@ impl std::error::Error for UpdateResourceError {
     }
 }
 
-/// <p>The organization must have a valid state to perform certain
-/// operations on the organization or its members.</p>
+/// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationStateException {
@@ -9159,8 +8968,7 @@ impl OrganizationStateException {
     }
 }
 
-/// <p>An operation received a valid organization identifier that either doesn't belong or
-/// exist in the system.</p>
+/// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotFoundException {
@@ -9288,8 +9096,7 @@ impl NameAvailabilityException {
     }
 }
 
-/// <p>After a domain has been added to the organization, it must be verified. The domain is
-/// not yet verified.</p>
+/// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainStateException {
@@ -9417,9 +9224,7 @@ impl MailDomainNotFoundException {
     }
 }
 
-/// <p>The configuration for a resource isn't valid. A resource must either be able to
-/// auto-respond to requests or have at least one delegate associated that can do so on its
-/// behalf.</p>
+/// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationException {
@@ -9483,8 +9288,7 @@ impl InvalidConfigurationException {
     }
 }
 
-/// <p>You are performing an operation on a user, group, or resource that isn't in the
-/// expected state, such as trying to delete an active user.</p>
+/// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityStateException {
@@ -9548,8 +9352,7 @@ impl EntityStateException {
     }
 }
 
-/// <p>The identifier supplied for the user, group, or resource does not exist in your
-/// organization.</p>
+/// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityNotFoundException {
@@ -9613,8 +9416,7 @@ impl EntityNotFoundException {
     }
 }
 
-/// <p>The email address that you're trying to assign is already created for a different
-/// user, group, or resource.</p>
+/// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailAddressInUseException {
@@ -10126,8 +9928,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The supplied password doesn't match the minimum security constraints, such as length
-/// or use of special characters.</p>
+/// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
@@ -10191,8 +9992,7 @@ impl InvalidPasswordException {
     }
 }
 
-/// <p>The user, group, or resource that you're trying to register is already
-/// registered.</p>
+/// <p>The user, group, or resource that you're trying to register is already registered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyRegisteredException {
@@ -10320,8 +10120,7 @@ impl MailDomainInUseException {
     }
 }
 
-/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
-/// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomSesConfigurationException {

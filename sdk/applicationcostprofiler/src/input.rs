@@ -633,14 +633,12 @@ pub mod put_report_definition_input {
         pub(crate) destination_s3_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_id = Some(input.into());
             self
         }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -681,14 +679,12 @@ pub mod put_report_definition_input {
             self.format = input;
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
             self.destination_s3_location = Some(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -889,14 +885,12 @@ pub mod update_report_definition_input {
             self.format = input;
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
             self.destination_s3_location = Some(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -1068,8 +1062,7 @@ pub struct UpdateReportDefinitionInput {
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Required. The format to use for the generated report.</p>
     pub format: std::option::Option<crate::model::Format>,
-    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-    /// report.</p>
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl UpdateReportDefinitionInput {
@@ -1089,8 +1082,7 @@ impl UpdateReportDefinitionInput {
     pub fn format(&self) -> std::option::Option<&crate::model::Format> {
         self.format.as_ref()
     }
-    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-    /// report.</p>
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.destination_s3_location.as_ref()
     }
@@ -1111,8 +1103,7 @@ impl std::fmt::Debug for UpdateReportDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionInput {
-    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-    /// ID.</p>
+    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     pub report_id: std::option::Option<std::string::String>,
     /// <p>Required. Description of the report.</p>
     pub report_description: std::option::Option<std::string::String>,
@@ -1120,13 +1111,11 @@ pub struct PutReportDefinitionInput {
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Required. The format to use for the generated report.</p>
     pub format: std::option::Option<crate::model::Format>,
-    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-    /// report.</p>
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl PutReportDefinitionInput {
-    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-    /// ID.</p>
+    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
     }
@@ -1142,8 +1131,7 @@ impl PutReportDefinitionInput {
     pub fn format(&self) -> std::option::Option<&crate::model::Format> {
         self.format.as_ref()
     }
-    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-    /// report.</p>
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub fn destination_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.destination_s3_location.as_ref()
     }

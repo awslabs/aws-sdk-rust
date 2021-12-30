@@ -196,11 +196,9 @@ pub struct HumanLoopSummary {
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
     /// <p>When Amazon Augmented AI created the human loop.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
-    /// human loop is <code>Failed</code>.</p>
+    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
-    /// loop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
 }
 impl HumanLoopSummary {
@@ -216,13 +214,11 @@ impl HumanLoopSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
-    /// human loop is <code>Failed</code>.</p>
+    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
-    /// loop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
@@ -290,14 +286,12 @@ pub mod human_loop_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
-        /// human loop is <code>Failed</code>.</p>
+        /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
         }
-        /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
-        /// human loop is <code>Failed</code>.</p>
+        /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -305,14 +299,12 @@ pub mod human_loop_summary {
             self.failure_reason = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
         pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_definition_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,

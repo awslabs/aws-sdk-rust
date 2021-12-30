@@ -150,8 +150,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateLifecyclePolicy`.
     ///
-    /// <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can
-    /// create up to 100 lifecycle policies.</p>
+    /// <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can create up to 100 lifecycle policies.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -208,14 +207,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -223,14 +220,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -287,8 +282,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
     ///
-    /// <p>Deletes the specified lifecycle policy and halts the automated operations that the
-    /// policy specified.</p>
+    /// <p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -359,7 +353,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLifecyclePolicies`.
     ///
     /// <p>Gets summary information about all or the specified data lifecycle policies.</p>
-    /// <p>To get complete information about a policy, use <a>GetLifecyclePolicy</a>.</p>
+    /// <p>To get complete information about a policy, use <code>GetLifecyclePolicy</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLifecyclePolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -893,14 +887,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -931,14 +923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn policy_details(mut self, input: crate::model::PolicyDetails) -> Self {
             self.inner = self.inner.policy_details(input);
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,

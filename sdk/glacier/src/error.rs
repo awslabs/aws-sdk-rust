@@ -16,8 +16,7 @@ pub enum AbortMultipartUploadErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -143,8 +142,7 @@ pub enum AbortVaultLockErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -272,8 +270,7 @@ pub enum AddTagsToVaultErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -408,8 +405,7 @@ pub enum CompleteMultipartUploadErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -543,8 +539,7 @@ pub enum CompleteVaultLockErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -793,8 +788,7 @@ pub enum DeleteArchiveErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -920,8 +914,7 @@ pub enum DeleteVaultErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1047,8 +1040,7 @@ pub enum DeleteVaultAccessPolicyErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1182,8 +1174,7 @@ pub enum DeleteVaultNotificationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1317,8 +1308,7 @@ pub enum DescribeJobErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1444,8 +1434,7 @@ pub enum DescribeVaultErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1690,8 +1679,7 @@ pub enum GetJobOutputErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1817,8 +1805,7 @@ pub enum GetVaultAccessPolicyErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1944,8 +1931,7 @@ pub enum GetVaultLockErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2071,8 +2057,7 @@ pub enum GetVaultNotificationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2194,19 +2179,15 @@ pub struct InitiateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitiateJobErrorKind {
-    /// <p>Returned if there is insufficient capacity to process this expedited request. This
-    /// error only applies to expedited retrievals and not to standard or bulk
-    /// retrievals.</p>
+    /// <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
     /// <p>Returned if a parameter of the request is incorrectly specified.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate
-    /// limit. For more information about data retrieval policies,</p>
+    /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
     PolicyEnforcedException(crate::error::PolicyEnforcedException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2347,8 +2328,7 @@ pub enum InitiateMultipartUploadErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2482,8 +2462,7 @@ pub enum InitiateVaultLockErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2609,8 +2588,7 @@ pub enum ListJobsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2733,8 +2711,7 @@ pub enum ListMultipartUploadsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2860,8 +2837,7 @@ pub enum ListPartsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3107,8 +3083,7 @@ pub enum ListTagsForVaultErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3234,8 +3209,7 @@ pub enum ListVaultsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3499,8 +3473,7 @@ pub enum RemoveTagsFromVaultErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3745,8 +3718,7 @@ pub enum SetVaultAccessPolicyErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3872,8 +3844,7 @@ pub enum SetVaultNotificationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3999,11 +3970,9 @@ pub enum UploadArchiveErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-    /// upload.</p>
+    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
     RequestTimeoutException(crate::error::RequestTimeoutException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4138,11 +4107,9 @@ pub enum UploadMultipartPartErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-    /// upload.</p>
+    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
     RequestTimeoutException(crate::error::RequestTimeoutException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4364,8 +4331,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-/// exist.</p>
+/// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -4373,8 +4339,7 @@ pub struct ResourceNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>404 Not Found</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -4443,14 +4408,12 @@ pub mod resource_not_found_exception {
             self.code = input;
             self
         }
-        /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-        /// exist.</p>
+        /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-        /// exist.</p>
+        /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4472,8 +4435,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-/// upload.</p>
+/// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTimeoutException {
@@ -4481,8 +4443,7 @@ pub struct RequestTimeoutException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>408 Request Timeout</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-    /// upload.</p>
+    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestTimeoutException {
@@ -4551,14 +4512,12 @@ pub mod request_timeout_exception {
             self.code = input;
             self
         }
-        /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-        /// upload.</p>
+        /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-        /// upload.</p>
+        /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4892,8 +4851,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate
-/// limit. For more information about data retrieval policies,</p>
+/// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyEnforcedException {
@@ -4997,9 +4955,7 @@ impl PolicyEnforcedException {
     }
 }
 
-/// <p>Returned if there is insufficient capacity to process this expedited request. This
-/// error only applies to expedited retrievals and not to standard or bulk
-/// retrievals.</p>
+/// <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapacityException {

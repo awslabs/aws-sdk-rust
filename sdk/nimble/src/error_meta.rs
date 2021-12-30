@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -12,8 +11,7 @@ pub enum Error {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>

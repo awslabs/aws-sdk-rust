@@ -12,14 +12,11 @@ pub struct CancelClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelClusterErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -130,14 +127,11 @@ pub struct CancelJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelJobErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -239,12 +233,9 @@ pub struct CreateAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAddressErrorKind {
-    /// <p>The address provided was invalid. Check the address with your region's carrier, and try
-    /// again.</p>
+    /// <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
     InvalidAddressException(crate::error::InvalidAddressException),
-    /// <p>The address is either outside the serviceable area for your region, or an error
-    /// occurred. Check the address with your region's carrier and try again. If the issue persists,
-    /// contact Amazon Web Services Support.</p>
+    /// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -346,16 +337,13 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -475,20 +463,15 @@ pub struct CreateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateJobErrorKind {
-    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-    /// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-    /// create jobs until your cluster has exactly five nodes.</p>
+    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
     ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -608,8 +591,7 @@ pub struct CreateLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLongTermPricingErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -702,20 +684,15 @@ pub struct CreateReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-    /// when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
-    /// return shipping label already exists. In this case, use
-    /// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
+    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the URL.</p>
     ReturnShippingLabelAlreadyExistsException(
         crate::error::ReturnShippingLabelAlreadyExistsException,
     ),
@@ -854,8 +831,7 @@ pub struct DescribeAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -948,12 +924,9 @@ pub struct DescribeAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressesErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1055,8 +1028,7 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1149,8 +1121,7 @@ pub struct DescribeJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1243,14 +1214,11 @@ pub struct DescribeReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-    /// when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1361,11 +1329,9 @@ pub struct GetJobManifestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetJobManifestErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1467,11 +1433,9 @@ pub struct GetJobUnlockCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetJobUnlockCodeErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1655,11 +1619,9 @@ pub struct GetSoftwareUpdatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSoftwareUpdatesErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1761,12 +1723,9 @@ pub struct ListClusterJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClusterJobsErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1868,9 +1827,7 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1963,12 +1920,9 @@ pub struct ListCompatibleImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCompatibleImagesErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2070,9 +2024,7 @@ pub struct ListJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJobsErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2162,12 +2114,9 @@ pub struct ListLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLongTermPricingErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2269,19 +2218,15 @@ pub struct UpdateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2410,23 +2355,17 @@ pub struct UpdateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobErrorKind {
-    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-    /// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-    /// create jobs until your cluster has exactly five nodes.</p>
+    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
     ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2552,11 +2491,9 @@ pub struct UpdateJobShipmentStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobShipmentStateErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2658,8 +2595,7 @@ pub struct UpdateLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLongTermPricingErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2739,8 +2675,7 @@ impl std::error::Error for UpdateLongTermPricingError {
     }
 }
 
-/// <p>The specified resource can't be found. Check the information you provided in your last
-/// request, and try again.</p>
+/// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceException {
@@ -2828,8 +2763,7 @@ impl InvalidResourceException {
     }
 }
 
-/// <p>The action can't be performed because the job's current state doesn't allow that action
-/// to be performed.</p>
+/// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobStateException {
@@ -2893,8 +2827,7 @@ impl InvalidJobStateException {
     }
 }
 
-/// <p>The provided Key Management Service key lacks the permissions to perform the specified
-/// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+/// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsRequestFailedException {
@@ -2958,7 +2891,7 @@ impl KmsRequestFailedException {
     }
 }
 
-/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputCombinationException {
@@ -3022,8 +2955,7 @@ impl InvalidInputCombinationException {
     }
 }
 
-/// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-/// action.</p>
+/// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2RequestFailedException {
@@ -3087,9 +3019,7 @@ impl Ec2RequestFailedException {
     }
 }
 
-/// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-/// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-/// create jobs until your cluster has exactly five nodes.</p>
+/// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterLimitExceededException {
@@ -3153,9 +3083,7 @@ impl ClusterLimitExceededException {
     }
 }
 
-/// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-/// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-/// again.</p>
+/// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -3219,8 +3147,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-/// when other requests are not completed.</p>
+/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3308,9 +3235,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
-/// return shipping label already exists. In this case, use
-/// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
+/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReturnShippingLabelAlreadyExistsException {
@@ -3374,9 +3299,7 @@ impl ReturnShippingLabelAlreadyExistsException {
     }
 }
 
-/// <p>The address is either outside the serviceable area for your region, or an error
-/// occurred. Check the address with your region's carrier and try again. If the issue persists,
-/// contact Amazon Web Services Support.</p>
+/// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAddressException {
@@ -3440,8 +3363,7 @@ impl UnsupportedAddressException {
     }
 }
 
-/// <p>The address provided was invalid. Check the address with your region's carrier, and try
-/// again.</p>
+/// <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAddressException {

@@ -329,11 +329,8 @@ pub mod finalize_device_claim_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -344,11 +341,8 @@ pub mod finalize_device_claim_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1033,16 +1027,12 @@ pub mod list_device_events_input {
             self.device_id = input;
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn from_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time_stamp = Some(input);
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_from_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1050,14 +1040,12 @@ pub mod list_device_events_input {
             self.from_time_stamp = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1072,16 +1060,12 @@ pub mod list_device_events_input {
             self.next_token = input;
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn to_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time_stamp = Some(input);
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_to_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1281,14 +1265,12 @@ pub mod list_devices_input {
             self.device_type = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1618,11 +1600,8 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1633,11 +1612,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2149,14 +2125,12 @@ pub mod update_device_state_input {
             self.device_id = input;
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2314,8 +2288,7 @@ impl UpdateDeviceStateInput {
 pub struct UpdateDeviceStateInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>If true, the device is enabled. If false, the device is
-    /// disabled.</p>
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub enabled: bool,
 }
 impl UpdateDeviceStateInput {
@@ -2323,8 +2296,7 @@ impl UpdateDeviceStateInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>If true, the device is enabled. If false, the device is
-    /// disabled.</p>
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -2393,11 +2365,8 @@ impl std::fmt::Debug for UnclaimDeviceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2406,11 +2375,8 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2454,8 +2420,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListDevicesInput {
     /// <p>The type of the device, such as "button".</p>
     pub device_type: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2465,8 +2430,7 @@ impl ListDevicesInput {
     pub fn device_type(&self) -> std::option::Option<&str> {
         self.device_type.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2491,18 +2455,13 @@ impl std::fmt::Debug for ListDevicesInput {
 pub struct ListDeviceEventsInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>The start date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub from_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The end date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub to_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDeviceEventsInput {
@@ -2510,14 +2469,11 @@ impl ListDeviceEventsInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn from_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time_stamp.as_ref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2525,9 +2481,7 @@ impl ListDeviceEventsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn to_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time_stamp.as_ref()
     }
@@ -2627,11 +2581,8 @@ impl std::fmt::Debug for GetDeviceMethodsInput {
 pub struct FinalizeDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2640,11 +2591,8 @@ impl FinalizeDeviceClaimInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

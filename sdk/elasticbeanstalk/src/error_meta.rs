@@ -7,16 +7,13 @@ pub enum Error {
     CodeBuildNotInServiceRegionException(crate::error::CodeBuildNotInServiceRegionException),
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// <p>One or more input parameters is not valid. Please correct the input parameters and try
-    /// the operation again.</p>
+    /// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Cannot modify the managed action in its current state.</p>
     ManagedActionInvalidStateException(crate::error::ManagedActionInvalidStateException),
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>You cannot delete the platform version because there are still environments running on it.</p>
     PlatformVersionStillReferencedException(crate::error::PlatformVersionStillReferencedException),
@@ -24,24 +21,16 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.</p>
     ResourceTypeNotSupportedException(crate::error::ResourceTypeNotSupportedException),
-    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is
-    /// running. The following regions are supported:</p>
+    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>IAD/us-east-1</p>
-    /// </li>
-    /// <li>
-    /// <p>PDX/us-west-2</p>
-    /// </li>
-    /// <li>
-    /// <p>DUB/eu-west-1</p>
-    /// </li>
+    /// <li> <p>IAD/us-east-1</p> </li>
+    /// <li> <p>PDX/us-west-2</p> </li>
+    /// <li> <p>DUB/eu-west-1</p> </li>
     /// </ul>
     S3LocationNotInServiceRegionException(crate::error::S3LocationNotInServiceRegionException),
     /// <p>The specified account does not have a subscription to Amazon S3.</p>
     S3SubscriptionRequiredException(crate::error::S3SubscriptionRequiredException),
-    /// <p>Unable to delete the Amazon S3 source bundle associated with the application version.
-    /// The application version was deleted successfully.</p>
+    /// <p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>
     SourceBundleDeletionException(crate::error::SourceBundleDeletionException),
     /// <p>The specified account has reached its limit of application versions.</p>
     TooManyApplicationVersionsException(crate::error::TooManyApplicationVersionsException),
@@ -55,10 +44,8 @@ pub enum Error {
     TooManyEnvironmentsException(crate::error::TooManyEnvironmentsException),
     /// <p>You have exceeded the maximum number of allowed platforms associated with the account.</p>
     TooManyPlatformsException(crate::error::TooManyPlatformsException),
-    /// <p>The number of tags in the resource would exceed the number of tags that each resource
-    /// can have.</p>
-    /// <p>To calculate this, the operation considers both the number of tags the resource already has
-    /// and the tags this operation would add if it succeeded.</p>
+    /// <p>The number of tags in the resource would exceed the number of tags that each resource can have.</p>
+    /// <p>To calculate this, the operation considers both the number of tags the resource already has and the tags this operation would add if it succeeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

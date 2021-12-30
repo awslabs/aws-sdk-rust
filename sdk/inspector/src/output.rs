@@ -210,15 +210,13 @@ impl SetTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesFromFindingsOutput {
-    /// <p>Attributes details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
 }
 impl RemoveAttributesFromFindingsOutput {
-    /// <p>Attributes details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -249,8 +247,7 @@ pub mod remove_attributes_from_findings_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Attributes details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -261,8 +258,7 @@ pub mod remove_attributes_from_findings_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Attributes details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -323,9 +319,7 @@ impl RegisterCrossAccountAccessRoleOutput {
 pub struct PreviewAgentsOutput {
     /// <p>The resulting list of agents.</p>
     pub agent_previews: std::option::Option<std::vec::Vec<crate::model::AgentPreview>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl PreviewAgentsOutput {
@@ -333,9 +327,7 @@ impl PreviewAgentsOutput {
     pub fn agent_previews(&self) -> std::option::Option<&[crate::model::AgentPreview]> {
         self.agent_previews.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -377,16 +369,12 @@ pub mod preview_agents_output {
             self.agent_previews = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -474,9 +462,7 @@ impl ListTagsForResourceOutput {
 pub struct ListRulesPackagesOutput {
     /// <p>The list of ARNs that specifies the rules packages returned by the action.</p>
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesPackagesOutput {
@@ -484,9 +470,7 @@ impl ListRulesPackagesOutput {
     pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rules_package_arns.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -528,16 +512,12 @@ pub mod list_rules_packages_output {
             self.rules_package_arns = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -564,9 +544,7 @@ impl ListRulesPackagesOutput {
 pub struct ListFindingsOutput {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -574,9 +552,7 @@ impl ListFindingsOutput {
     pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -618,16 +594,12 @@ pub mod list_findings_output {
             self.finding_arns = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -654,10 +626,7 @@ impl ListFindingsOutput {
 pub struct ListExclusionsOutput {
     /// <p>A list of exclusions' ARNs returned by the action.</p>
     pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When a response is generated, if there is more data to be listed, this parameters is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-    /// to null.</p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExclusionsOutput {
@@ -665,10 +634,7 @@ impl ListExclusionsOutput {
     pub fn exclusion_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_arns.as_deref()
     }
-    /// <p>When a response is generated, if there is more data to be listed, this parameters is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-    /// to null.</p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -710,18 +676,12 @@ pub mod list_exclusions_output {
             self.exclusion_arns = input;
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameters is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-        /// to null.</p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameters is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-        /// to null.</p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -748,9 +708,7 @@ impl ListExclusionsOutput {
 pub struct ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventSubscriptionsOutput {
@@ -758,9 +716,7 @@ impl ListEventSubscriptionsOutput {
     pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
         self.subscriptions.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -802,16 +758,12 @@ pub mod list_event_subscriptions_output {
             self.subscriptions = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -836,23 +788,17 @@ impl ListEventSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTemplatesOutput {
-    /// <p>A list of ARNs that specifies the assessment templates returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentTemplatesOutput {
-    /// <p>A list of ARNs that specifies the assessment templates returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
     pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -880,16 +826,14 @@ pub mod list_assessment_templates_output {
         ///
         /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
         ///
-        /// <p>A list of ARNs that specifies the assessment templates returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
         pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_template_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_template_arns = Some(v);
             self
         }
-        /// <p>A list of ARNs that specifies the assessment templates returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
         pub fn set_assessment_template_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -897,16 +841,12 @@ pub mod list_assessment_templates_output {
             self.assessment_template_arns = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -931,23 +871,17 @@ impl ListAssessmentTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTargetsOutput {
-    /// <p>A list of ARNs that specifies the assessment targets that are returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentTargetsOutput {
-    /// <p>A list of ARNs that specifies the assessment targets that are returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
     pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_target_arns.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -974,16 +908,14 @@ pub mod list_assessment_targets_output {
         ///
         /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
         ///
-        /// <p>A list of ARNs that specifies the assessment targets that are returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
         pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_target_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_target_arns = Some(v);
             self
         }
-        /// <p>A list of ARNs that specifies the assessment targets that are returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
         pub fn set_assessment_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -991,16 +923,12 @@ pub mod list_assessment_targets_output {
             self.assessment_target_arns = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1025,23 +953,17 @@ impl ListAssessmentTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunsOutput {
-    /// <p>A list of ARNs that specifies the assessment runs that are returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentRunsOutput {
-    /// <p>A list of ARNs that specifies the assessment runs that are returned by the
-    /// action.</p>
+    /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
     pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1068,16 +990,14 @@ pub mod list_assessment_runs_output {
         ///
         /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
         ///
-        /// <p>A list of ARNs that specifies the assessment runs that are returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
         pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_run_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_run_arns = Some(v);
             self
         }
-        /// <p>A list of ARNs that specifies the assessment runs that are returned by the
-        /// action.</p>
+        /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
         pub fn set_assessment_run_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1085,16 +1005,12 @@ pub mod list_assessment_runs_output {
             self.assessment_run_arns = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1121,9 +1037,7 @@ impl ListAssessmentRunsOutput {
 pub struct ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
     pub assessment_run_agents: std::option::Option<std::vec::Vec<crate::model::AssessmentRunAgent>>,
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentRunAgentsOutput {
@@ -1133,9 +1047,7 @@ impl ListAssessmentRunAgentsOutput {
     ) -> std::option::Option<&[crate::model::AssessmentRunAgent]> {
         self.assessment_run_agents.as_deref()
     }
-    /// <p> When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-    /// data to be listed, this parameter is set to null.</p>
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1178,16 +1090,12 @@ pub mod list_assessment_run_agents_output {
             self.assessment_run_agents = input;
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
-        /// data to be listed, this parameter is set to null.</p>
+        /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1280,10 +1188,7 @@ pub struct GetExclusionsPreviewOutput {
     pub preview_status: std::option::Option<crate::model::PreviewStatus>,
     /// <p>Information about the exclusions included in the preview.</p>
     pub exclusion_previews: std::option::Option<std::vec::Vec<crate::model::ExclusionPreview>>,
-    /// <p>When a response is generated, if there is more data to be listed, this parameters is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-    /// to null.</p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExclusionsPreviewOutput {
@@ -1295,10 +1200,7 @@ impl GetExclusionsPreviewOutput {
     pub fn exclusion_previews(&self) -> std::option::Option<&[crate::model::ExclusionPreview]> {
         self.exclusion_previews.as_deref()
     }
-    /// <p>When a response is generated, if there is more data to be listed, this parameters is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-    /// to null.</p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1356,18 +1258,12 @@ pub mod get_exclusions_preview_output {
             self.exclusion_previews = input;
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameters is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-        /// to null.</p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameters is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set
-        /// to null.</p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1395,8 +1291,7 @@ impl GetExclusionsPreviewOutput {
 pub struct GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
     pub status: std::option::Option<crate::model::ReportStatus>,
-    /// <p>Specifies the URL where you can find the generated assessment report. This parameter
-    /// is only returned if the report is successfully generated.</p>
+    /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl GetAssessmentReportOutput {
@@ -1404,8 +1299,7 @@ impl GetAssessmentReportOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ReportStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies the URL where you can find the generated assessment report. This parameter
-    /// is only returned if the report is successfully generated.</p>
+    /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -1441,14 +1335,12 @@ pub mod get_assessment_report_output {
             self.status = input;
             self
         }
-        /// <p>Specifies the URL where you can find the generated assessment report. This parameter
-        /// is only returned if the report is successfully generated.</p>
+        /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>Specifies the URL where you can find the generated assessment report. This parameter
-        /// is only returned if the report is successfully generated.</p>
+        /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -1475,8 +1367,7 @@ impl GetAssessmentReportOutput {
 pub struct DescribeRulesPackagesOutput {
     /// <p>Information about the rules package.</p>
     pub rules_packages: std::option::Option<std::vec::Vec<crate::model::RulesPackage>>,
-    /// <p>Rules package details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1486,8 +1377,7 @@ impl DescribeRulesPackagesOutput {
     pub fn rules_packages(&self) -> std::option::Option<&[crate::model::RulesPackage]> {
         self.rules_packages.as_deref()
     }
-    /// <p>Rules package details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -1539,8 +1429,7 @@ pub mod describe_rules_packages_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Rules package details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -1551,8 +1440,7 @@ pub mod describe_rules_packages_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Rules package details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -1584,8 +1472,7 @@ impl DescribeRulesPackagesOutput {
 pub struct DescribeResourceGroupsOutput {
     /// <p>Information about a resource group.</p>
     pub resource_groups: std::option::Option<std::vec::Vec<crate::model::ResourceGroup>>,
-    /// <p>Resource group details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1595,8 +1482,7 @@ impl DescribeResourceGroupsOutput {
     pub fn resource_groups(&self) -> std::option::Option<&[crate::model::ResourceGroup]> {
         self.resource_groups.as_deref()
     }
-    /// <p>Resource group details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -1648,8 +1534,7 @@ pub mod describe_resource_groups_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Resource group details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -1660,8 +1545,7 @@ pub mod describe_resource_groups_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Resource group details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -1693,8 +1577,7 @@ impl DescribeResourceGroupsOutput {
 pub struct DescribeFindingsOutput {
     /// <p>Information about the finding.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
-    /// <p>Finding details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1704,8 +1587,7 @@ impl DescribeFindingsOutput {
     pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
         self.findings.as_deref()
     }
-    /// <p>Finding details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -1757,8 +1639,7 @@ pub mod describe_findings_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Finding details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -1769,8 +1650,7 @@ pub mod describe_findings_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Finding details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -1804,8 +1684,7 @@ pub struct DescribeExclusionsOutput {
     pub exclusions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Exclusion>,
     >,
-    /// <p>Exclusion details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1818,8 +1697,7 @@ impl DescribeExclusionsOutput {
     {
         self.exclusions.as_ref()
     }
-    /// <p>Exclusion details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -1879,8 +1757,7 @@ pub mod describe_exclusions_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Exclusion details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -1891,8 +1768,7 @@ pub mod describe_exclusions_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Exclusion details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -1922,23 +1798,19 @@ impl DescribeExclusionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCrossAccountAccessRoleOutput {
-    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
-    /// account.</p>
+    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies
-    /// attached to enable Amazon Inspector to access your AWS account.</p>
+    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     pub valid: std::option::Option<bool>,
     /// <p>The date when the cross-account access role was registered.</p>
     pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCrossAccountAccessRoleOutput {
-    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
-    /// account.</p>
+    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies
-    /// attached to enable Amazon Inspector to access your AWS account.</p>
+    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     pub fn valid(&self) -> std::option::Option<bool> {
         self.valid
     }
@@ -1967,26 +1839,22 @@ pub mod describe_cross_account_access_role_output {
         pub(crate) registered_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
-        /// account.</p>
+        /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
-        /// account.</p>
+        /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>A Boolean value that specifies whether the IAM role has the necessary policies
-        /// attached to enable Amazon Inspector to access your AWS account.</p>
+        /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
         pub fn valid(mut self, input: bool) -> Self {
             self.valid = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether the IAM role has the necessary policies
-        /// attached to enable Amazon Inspector to access your AWS account.</p>
+        /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
         pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
             self.valid = input;
             self
@@ -2027,8 +1895,7 @@ impl DescribeCrossAccountAccessRoleOutput {
 pub struct DescribeAssessmentTemplatesOutput {
     /// <p>Information about the assessment templates.</p>
     pub assessment_templates: std::option::Option<std::vec::Vec<crate::model::AssessmentTemplate>>,
-    /// <p>Assessment template details that cannot be described. An error code is provided for
-    /// each failed item.</p>
+    /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2038,8 +1905,7 @@ impl DescribeAssessmentTemplatesOutput {
     pub fn assessment_templates(&self) -> std::option::Option<&[crate::model::AssessmentTemplate]> {
         self.assessment_templates.as_deref()
     }
-    /// <p>Assessment template details that cannot be described. An error code is provided for
-    /// each failed item.</p>
+    /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -2092,8 +1958,7 @@ pub mod describe_assessment_templates_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Assessment template details that cannot be described. An error code is provided for
-        /// each failed item.</p>
+        /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -2104,8 +1969,7 @@ pub mod describe_assessment_templates_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Assessment template details that cannot be described. An error code is provided for
-        /// each failed item.</p>
+        /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -2137,8 +2001,7 @@ impl DescribeAssessmentTemplatesOutput {
 pub struct DescribeAssessmentTargetsOutput {
     /// <p>Information about the assessment targets.</p>
     pub assessment_targets: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
-    /// <p>Assessment target details that cannot be described. An error code is provided for
-    /// each failed item.</p>
+    /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2148,8 +2011,7 @@ impl DescribeAssessmentTargetsOutput {
     pub fn assessment_targets(&self) -> std::option::Option<&[crate::model::AssessmentTarget]> {
         self.assessment_targets.as_deref()
     }
-    /// <p>Assessment target details that cannot be described. An error code is provided for
-    /// each failed item.</p>
+    /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -2202,8 +2064,7 @@ pub mod describe_assessment_targets_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Assessment target details that cannot be described. An error code is provided for
-        /// each failed item.</p>
+        /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -2214,8 +2075,7 @@ pub mod describe_assessment_targets_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Assessment target details that cannot be described. An error code is provided for
-        /// each failed item.</p>
+        /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -2247,8 +2107,7 @@ impl DescribeAssessmentTargetsOutput {
 pub struct DescribeAssessmentRunsOutput {
     /// <p>Information about the assessment run.</p>
     pub assessment_runs: std::option::Option<std::vec::Vec<crate::model::AssessmentRun>>,
-    /// <p>Assessment run details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2258,8 +2117,7 @@ impl DescribeAssessmentRunsOutput {
     pub fn assessment_runs(&self) -> std::option::Option<&[crate::model::AssessmentRun]> {
         self.assessment_runs.as_deref()
     }
-    /// <p>Assessment run details that cannot be described. An error code is provided for each
-    /// failed item.</p>
+    /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -2311,8 +2169,7 @@ pub mod describe_assessment_runs_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Assessment run details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -2323,8 +2180,7 @@ pub mod describe_assessment_runs_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Assessment run details that cannot be described. An error code is provided for each
-        /// failed item.</p>
+        /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -2501,15 +2357,11 @@ impl CreateResourceGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExclusionsPreviewOutput {
-    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the
-    /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
-    /// API.</p>
+    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
     pub preview_token: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewOutput {
-    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the
-    /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
-    /// API.</p>
+    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
     pub fn preview_token(&self) -> std::option::Option<&str> {
         self.preview_token.as_deref()
     }
@@ -2530,16 +2382,12 @@ pub mod create_exclusions_preview_output {
         pub(crate) preview_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the
-        /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
-        /// API.</p>
+        /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
         pub fn preview_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.preview_token = Some(input.into());
             self
         }
-        /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the
-        /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
-        /// API.</p>
+        /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
         pub fn set_preview_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2680,15 +2528,13 @@ impl CreateAssessmentTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttributesToFindingsOutput {
-    /// <p>Attribute details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
 }
 impl AddAttributesToFindingsOutput {
-    /// <p>Attribute details that cannot be described. An error code is provided for each failed
-    /// item.</p>
+    /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(
         &self,
     ) -> std::option::Option<
@@ -2719,8 +2565,7 @@ pub mod add_attributes_to_findings_output {
         ///
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
-        /// <p>Attribute details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -2731,8 +2576,7 @@ pub mod add_attributes_to_findings_output {
             self.failed_items = Some(hash_map);
             self
         }
-        /// <p>Attribute details that cannot be described. An error code is provided for each failed
-        /// item.</p>
+        /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<

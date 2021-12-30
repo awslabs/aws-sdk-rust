@@ -1169,14 +1169,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteObjectsOnCancel`.
     ///
-    /// <p>For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted
-    /// if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels.
-    /// </p>
-    /// <p>
-    /// The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes an option to automatically
-    /// call <code>DeleteObjectsOnCancel</code> before writes. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling Back Amazon S3 Writes</a>.
-    /// </p>
+    /// <p>For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels. </p>
+    /// <p> The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes an option to automatically call <code>DeleteObjectsOnCancel</code> before writes. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling Back Amazon S3 Writes</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObjectsOnCancel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1300,7 +1294,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterResource`.
     ///
     /// <p>Deregisters the resource as managed by the Data Catalog.</p>
-    ///
     /// <p>When you deregister a path, Lake Formation removes the path from the inline policy attached to your service-linked role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterResource<
@@ -1515,7 +1508,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExtendTransaction`.
     ///
     /// <p>Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted.</p>
-    ///
     /// <p>Write transactions that remain idle for a long period are automatically aborted unless explicitly extended.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExtendTransaction<
@@ -1659,8 +1651,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEffectivePermissionsForPath`.
     ///
-    /// <p>Returns the Lake Formation permissions for a specified table or database resource located
-    /// at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>
+    /// <p>Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEffectivePermissionsForPath<
         C = aws_smithy_client::erase::DynConnector,
@@ -2188,15 +2179,9 @@ pub mod fluent_builders {
         }
         /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
         /// <ul>
-        /// <li>
-        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-        /// </li>
-        /// <li>
-        /// <p>The logical operators supported are: AND</p>
-        /// </li>
-        /// <li>
-        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-        /// </li>
+        /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+        /// <li> <p>The logical operators supported are: AND</p> </li>
+        /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
         /// </ul>
         pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.partition_predicate(input.into());
@@ -2204,15 +2189,9 @@ pub mod fluent_builders {
         }
         /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
         /// <ul>
-        /// <li>
-        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-        /// </li>
-        /// <li>
-        /// <p>The logical operators supported are: AND</p>
-        /// </li>
-        /// <li>
-        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-        /// </li>
+        /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+        /// <li> <p>The logical operators supported are: AND</p> </li>
+        /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
         /// </ul>
         pub fn set_partition_predicate(
             mut self,
@@ -3224,7 +3203,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDataLakeSettings`.
     ///
     /// <p>Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake Formation Permissions</a>.</p>
-    ///
     /// <p>This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the current list and add the new admin to that list and pass that list in this API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDataLakeSettings<
@@ -3309,21 +3287,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterResource`.
     ///
     /// <p>Registers the resource as managed by the Data Catalog.</p>
-    ///
     /// <p>To add or update data, Lake Formation needs read/write access to the chosen Amazon S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When you register subsequent paths, Lake Formation adds the path to the existing policy.</p>
-    ///
     /// <p>The following request registers a new location and gives Lake Formation permission to use the service-linked role to access that location.</p>
-    ///
-    /// <p>
-    /// <code>ResourceArn = arn:aws:s3:::my-bucket
-    /// UseServiceLinkedRole = true</code>
-    /// </p>
-    ///
+    /// <p> <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> </p>
     /// <p>If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the <code>RoleArn</code>:</p>
-    ///
-    /// <p>
-    /// <code>arn:aws:iam::12345:role/my-data-access-role</code>
-    /// </p>
+    /// <p> <code>arn:aws:iam::12345:role/my-data-access-role</code> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3391,14 +3359,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn use_service_linked_role(mut self, input: bool) -> Self {
             self.inner = self.inner.use_service_linked_role(input);
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn set_use_service_linked_role(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_use_service_linked_role(input);
@@ -3608,14 +3574,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-        /// and Access Control to Metadata and Data</a>.</p>
+        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             self.inner = self.inner.permissions(input);
             self
         }
-        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-        /// and Access Control to Metadata and Data</a>.</p>
+        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -3858,7 +3822,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartQueryPlanning`.
     ///
     /// <p>Submits a request to process a query statement.</p>
-    ///
     /// <p>This operation generates work units that can be retrieved with the <code>GetWorkUnits</code> operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQueryPlanning<

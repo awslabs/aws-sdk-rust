@@ -10,14 +10,12 @@ pub mod associate_gateway_to_server_input {
         pub(crate) server_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_arn = input;
             self
@@ -869,14 +867,12 @@ pub mod import_hypervisor_configuration_input {
             self.name = input;
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.host = Some(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
@@ -1093,18 +1089,12 @@ pub mod list_gateways_input {
             self.max_results = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1264,18 +1254,12 @@ pub mod list_hypervisors_input {
             self.max_results = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1592,18 +1576,12 @@ pub mod list_virtual_machines_input {
             self.max_results = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1757,14 +1735,12 @@ pub mod put_maintenance_start_time_input {
         pub(crate) day_of_month: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_arn = input;
             self
@@ -2149,14 +2125,12 @@ pub mod test_hypervisor_configuration_input {
             self.gateway_arn = input;
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.host = Some(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
@@ -2692,14 +2666,12 @@ pub mod update_hypervisor_input {
             self.hypervisor_arn = input;
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.host = Some(input.into());
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
@@ -2868,10 +2840,7 @@ impl UpdateHypervisorInput {
 pub struct ListHypervisorsInput {
     /// <p>The maximum number of hypervisors to list.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHypervisorsInput {
@@ -2879,10 +2848,7 @@ impl ListHypervisorsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2902,8 +2868,7 @@ impl std::fmt::Debug for ListHypervisorsInput {
 pub struct ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub host: std::option::Option<std::string::String>,
     /// <p>The username for the hypervisor.</p>
     pub username: std::option::Option<std::string::String>,
@@ -2919,8 +2884,7 @@ impl ImportHypervisorConfigurationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
@@ -2981,8 +2945,7 @@ impl std::fmt::Debug for DeleteHypervisorInput {
 pub struct UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
     pub hypervisor_arn: std::option::Option<std::string::String>,
-    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub host: std::option::Option<std::string::String>,
     /// <p>The updated username for the hypervisor.</p>
     pub username: std::option::Option<std::string::String>,
@@ -2994,8 +2957,7 @@ impl UpdateHypervisorInput {
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
     }
-    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
@@ -3025,8 +2987,7 @@ impl std::fmt::Debug for UpdateHypervisorInput {
 pub struct TestHypervisorConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub host: std::option::Option<std::string::String>,
     /// <p>The username for the hypervisor.</p>
     pub username: std::option::Option<std::string::String>,
@@ -3038,8 +2999,7 @@ impl TestHypervisorConfigurationInput {
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-    /// domain name (FQDN).</p>
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
@@ -3067,8 +3027,7 @@ impl std::fmt::Debug for TestHypervisorConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMaintenanceStartTimeInput {
-    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-    /// time.</p>
+    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour of the day to start maintenance on a gateway.</p>
     pub hour_of_day: std::option::Option<i32>,
@@ -3081,8 +3040,7 @@ pub struct PutMaintenanceStartTimeInput {
     pub day_of_month: std::option::Option<i32>,
 }
 impl PutMaintenanceStartTimeInput {
-    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-    /// time.</p>
+    /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -3141,15 +3099,13 @@ impl std::fmt::Debug for DisassociateGatewayFromServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateGatewayToServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-    /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
     pub server_arn: std::option::Option<std::string::String>,
 }
 impl AssociateGatewayToServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-    /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -3173,10 +3129,7 @@ impl std::fmt::Debug for AssociateGatewayToServerInput {
 pub struct ListGatewaysInput {
     /// <p>The maximum number of gateways to list.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysInput {
@@ -3184,10 +3137,7 @@ impl ListGatewaysInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3354,10 +3304,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListVirtualMachinesInput {
     /// <p>The maximum number of virtual machines to list.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualMachinesInput {
@@ -3365,10 +3312,7 @@ impl ListVirtualMachinesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

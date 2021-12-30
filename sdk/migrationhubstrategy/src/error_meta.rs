@@ -3,24 +3,17 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// Exception to indicate that there is an ongoing task when a new task is created.
-    /// Return when once the existing tasks are complete.
-    /// </p>
+    /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The specified ID in the request is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// Exception to indicate that the service-linked role (SLR) is locked.
-    /// </p>
+    /// <p> Exception to indicate that the service-linked role (SLR) is locked. </p>
     ServiceLinkedRoleLockClientException(crate::error::ServiceLinkedRoleLockClientException),
-    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the
-    /// quota for this account. </p>
+    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request was denied due to request throttling. </p>
     ThrottlingException(crate::error::ThrottlingException),

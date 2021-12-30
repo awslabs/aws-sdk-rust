@@ -873,8 +873,7 @@ pub struct CreateDeliverabilityTestReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeliverabilityTestReportErrorKind {
-    /// <p>The message can't be sent because the account's ability to send email has been
-    /// permanently restricted.</p>
+    /// <p>The message can't be sent because the account's ability to send email has been permanently restricted.</p>
     AccountSuspendedException(crate::error::AccountSuspendedException),
     /// <p>The input you provided is invalid.</p>
     BadRequestException(crate::error::BadRequestException),
@@ -888,8 +887,7 @@ pub enum CreateDeliverabilityTestReportErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The resource you attempted to access doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The message can't be sent because the account's ability to send email is currently
-    /// paused.</p>
+    /// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8427,8 +8425,7 @@ pub struct SendBulkEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendBulkEmailErrorKind {
-    /// <p>The message can't be sent because the account's ability to send email has been
-    /// permanently restricted.</p>
+    /// <p>The message can't be sent because the account's ability to send email has been permanently restricted.</p>
     AccountSuspendedException(crate::error::AccountSuspendedException),
     /// <p>The input you provided is invalid.</p>
     BadRequestException(crate::error::BadRequestException),
@@ -8440,8 +8437,7 @@ pub enum SendBulkEmailErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The resource you attempted to access doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The message can't be sent because the account's ability to send email is currently
-    /// paused.</p>
+    /// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8600,8 +8596,7 @@ pub enum SendCustomVerificationEmailErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The resource you attempted to access doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The message can't be sent because the account's ability to send email is currently
-    /// paused.</p>
+    /// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8754,8 +8749,7 @@ pub struct SendEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendEmailErrorKind {
-    /// <p>The message can't be sent because the account's ability to send email has been
-    /// permanently restricted.</p>
+    /// <p>The message can't be sent because the account's ability to send email has been permanently restricted.</p>
     AccountSuspendedException(crate::error::AccountSuspendedException),
     /// <p>The input you provided is invalid.</p>
     BadRequestException(crate::error::BadRequestException),
@@ -8767,8 +8761,7 @@ pub enum SendEmailErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The resource you attempted to access doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The message can't be sent because the account's ability to send email is currently
-    /// paused.</p>
+    /// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -10240,8 +10233,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The message can't be sent because the account's ability to send email is currently
-/// paused.</p>
+/// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendingPausedException {
@@ -10497,8 +10489,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The message can't be sent because the account's ability to send email has been
-/// permanently restricted.</p>
+/// <p>The message can't be sent because the account's ability to send email has been permanently restricted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSuspendedException {

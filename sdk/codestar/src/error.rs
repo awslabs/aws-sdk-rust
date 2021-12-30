@@ -12,8 +12,7 @@ pub struct AssociateTeamMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTeamMemberErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
@@ -176,20 +175,17 @@ pub struct CreateProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProjectErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
     /// <p>A resource limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.
-    /// AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
+    /// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account. AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
     ProjectAlreadyExistsException(crate::error::ProjectAlreadyExistsException),
     /// <p>Project configuration information is required but not specified.</p>
     ProjectConfigurationException(crate::error::ProjectConfigurationException),
-    /// <p>The project creation request was valid, but a nonspecific exception or error occurred
-    /// during project creation. The project could not be created in AWS CodeStar.</p>
+    /// <p>The project creation request was valid, but a nonspecific exception or error occurred during project creation. The project could not be created in AWS CodeStar.</p>
     ProjectCreationFailedException(crate::error::ProjectCreationFailedException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
@@ -335,8 +331,7 @@ pub struct CreateUserProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUserProfileErrorKind {
-    /// <p>A user profile with that name already exists in this region for the AWS account. AWS
-    /// CodeStar user profile names must be unique within a region for the AWS account. </p>
+    /// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
     UserProfileAlreadyExistsException(crate::error::UserProfileAlreadyExistsException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
@@ -440,8 +435,7 @@ pub struct DeleteProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProjectErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
@@ -646,8 +640,7 @@ pub struct DescribeProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProjectErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
@@ -885,8 +878,7 @@ pub struct DisassociateTeamMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTeamMemberErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
@@ -1560,8 +1552,7 @@ pub struct TagProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagProjectErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A resource limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1678,8 +1669,7 @@ pub struct UntagProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagProjectErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A resource limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1900,8 +1890,7 @@ pub struct UpdateTeamMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTeamMemberErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The service role is not valid.</p>
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
@@ -2599,8 +2588,7 @@ impl InvalidServiceRoleException {
     }
 }
 
-/// <p>Another modification is being made. That modification must complete before you can make
-/// your change.</p>
+/// <p>Another modification is being made. That modification must complete before you can make your change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -2728,8 +2716,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>A user profile with that name already exists in this region for the AWS account. AWS
-/// CodeStar user profile names must be unique within a region for the AWS account. </p>
+/// <p>A user profile with that name already exists in this region for the AWS account. AWS CodeStar user profile names must be unique within a region for the AWS account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserProfileAlreadyExistsException {
@@ -2793,8 +2780,7 @@ impl UserProfileAlreadyExistsException {
     }
 }
 
-/// <p>The project creation request was valid, but a nonspecific exception or error occurred
-/// during project creation. The project could not be created in AWS CodeStar.</p>
+/// <p>The project creation request was valid, but a nonspecific exception or error occurred during project creation. The project could not be created in AWS CodeStar.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectCreationFailedException {
@@ -2858,8 +2844,7 @@ impl ProjectCreationFailedException {
     }
 }
 
-/// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.
-/// AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
+/// <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account. AWS CodeStar project IDs must be unique within a region for the AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectAlreadyExistsException {

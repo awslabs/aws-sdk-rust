@@ -14,9 +14,7 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountError {
 pub enum AcceptDomainTransferFromAnotherAwsAccountErrorKind {
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -146,9 +144,7 @@ pub struct CancelDomainTransferToAnotherAwsAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelDomainTransferToAnotherAwsAccountErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -261,9 +257,7 @@ pub struct CheckDomainAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckDomainAvailabilityErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -367,9 +361,7 @@ pub struct CheckDomainTransferabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckDomainTransferabilityErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -473,9 +465,7 @@ pub struct DeleteTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -584,9 +574,7 @@ pub struct DisableDomainAutoRenewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableDomainAutoRenewErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -689,9 +677,7 @@ pub struct DisableDomainTransferLockError {
 pub enum DisableDomainTransferLockErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -826,9 +812,7 @@ pub struct EnableDomainAutoRenewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableDomainAutoRenewErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The top-level domain does not support this operation.</p>
     TldRulesViolation(crate::error::TldRulesViolation),
@@ -942,9 +926,7 @@ pub struct EnableDomainTransferLockError {
 pub enum EnableDomainTransferLockErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1079,9 +1061,7 @@ pub struct GetContactReachabilityStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContactReachabilityStatusErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1196,9 +1176,7 @@ pub struct GetDomainDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainDetailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -1296,9 +1274,7 @@ pub struct GetDomainSuggestionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainSuggestionsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -1396,9 +1372,7 @@ pub struct GetOperationDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationDetailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1488,9 +1462,7 @@ pub struct ListDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1580,9 +1552,7 @@ pub struct ListOperationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOperationsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1672,9 +1642,7 @@ pub struct ListTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1787,9 +1755,7 @@ pub enum RegisterDomainErrorKind {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1918,9 +1884,7 @@ pub struct RejectDomainTransferFromAnotherAwsAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectDomainTransferFromAnotherAwsAccountErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2039,9 +2003,7 @@ pub struct RenewDomainError {
 pub enum RenewDomainErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2161,9 +2123,7 @@ pub struct ResendContactReachabilityEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResendContactReachabilityEmailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2283,9 +2243,7 @@ pub struct RetrieveDomainAuthCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveDomainAuthCodeErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -2390,9 +2348,7 @@ pub enum TransferDomainErrorKind {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2523,9 +2479,7 @@ pub struct TransferDomainToAnotherAwsAccountError {
 pub enum TransferDomainToAnotherAwsAccountErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2647,9 +2601,7 @@ pub struct UpdateDomainContactError {
 pub enum UpdateDomainContactErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2780,9 +2732,7 @@ pub struct UpdateDomainContactPrivacyError {
 pub enum UpdateDomainContactPrivacyErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2919,9 +2869,7 @@ pub struct UpdateDomainNameserversError {
 pub enum UpdateDomainNameserversErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -3056,9 +3004,7 @@ pub struct UpdateTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -3167,9 +3113,7 @@ pub struct ViewBillingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ViewBillingErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3246,14 +3190,11 @@ impl std::error::Error for ViewBillingError {
     }
 }
 
-/// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-/// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-/// the password might be invalid.</p>
+/// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
-    /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-    /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+    /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInput {
@@ -3288,14 +3229,12 @@ pub mod invalid_input {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-        /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-        /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

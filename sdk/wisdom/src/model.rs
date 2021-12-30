@@ -13,8 +13,7 @@ pub struct KnowledgeBaseData {
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
     /// <p>The status of the knowledge base.</p>
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
-    /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
-    /// base. If no content exists in a knowledge base, this value is unset.</p>
+    /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
     pub last_content_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Source configuration information about the knowledge base.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
@@ -50,8 +49,7 @@ impl KnowledgeBaseData {
     pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
         self.status.as_ref()
     }
-    /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
-    /// base. If no content exists in a knowledge base, this value is unset.</p>
+    /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
     pub fn last_content_modification_time(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -193,14 +191,12 @@ pub mod knowledge_base_data {
             self.status = input;
             self
         }
-        /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
-        /// base. If no content exists in a knowledge base, this value is unset.</p>
+        /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
         pub fn last_content_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_content_modification_time = Some(input);
             self
         }
-        /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
-        /// base. If no content exists in a knowledge base, this value is unset.</p>
+        /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>
         pub fn set_last_content_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -317,13 +313,11 @@ impl KnowledgeBaseData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
-    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -344,14 +338,12 @@ pub mod server_side_encryption_configuration {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -375,42 +367,20 @@ impl ServerSideEncryptionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenderingConfiguration {
-    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
-    /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
-    /// the variable must be one of the following:</p>
+    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
-    /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
-    /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
+    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     pub template_uri: std::option::Option<std::string::String>,
 }
 impl RenderingConfiguration {
-    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
-    /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
-    /// the variable must be one of the following:</p>
+    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
-    /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
-    /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
+    /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     pub fn template_uri(&self) -> std::option::Option<&str> {
         self.template_uri.as_deref()
@@ -432,43 +402,21 @@ pub mod rendering_configuration {
         pub(crate) template_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
-        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
-        /// the variable must be one of the following:</p>
+        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
-        /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
-        /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
+        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn template_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_uri = Some(input.into());
             self
         }
-        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
-        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
-        /// the variable must be one of the following:</p>
+        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
-        /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
-        /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li>
+        /// <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn set_template_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_uri = input;
@@ -536,19 +484,10 @@ pub struct AppIntegrationsConfiguration {
     pub app_integration_arn: std::option::Option<std::string::String>,
     /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
     /// <ul>
-    /// <li>
-    /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
-    /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
-    /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
-    /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
-    /// and <code>active</code>. </p>
-    /// </li>
+    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
+    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
     /// </ul>
-    /// <p>Make sure to include additional field(s); these are indexed and used to source
-    /// recommendations. </p>
+    /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
     pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AppIntegrationsConfiguration {
@@ -558,19 +497,10 @@ impl AppIntegrationsConfiguration {
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
     /// <ul>
-    /// <li>
-    /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
-    /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
-    /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
-    /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
-    /// and <code>active</code>. </p>
-    /// </li>
+    /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
+    /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
     /// </ul>
-    /// <p>Make sure to include additional field(s); these are indexed and used to source
-    /// recommendations. </p>
+    /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
     pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
         self.object_fields.as_deref()
     }
@@ -612,19 +542,10 @@ pub mod app_integrations_configuration {
         ///
         /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
         /// <ul>
-        /// <li>
-        /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
-        /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
-        /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
-        /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
-        /// and <code>active</code>. </p>
-        /// </li>
+        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
+        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
         /// </ul>
-        /// <p>Make sure to include additional field(s); these are indexed and used to source
-        /// recommendations. </p>
+        /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
         pub fn object_fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_fields.unwrap_or_default();
             v.push(input.into());
@@ -633,19 +554,10 @@ pub mod app_integrations_configuration {
         }
         /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
         /// <ul>
-        /// <li>
-        /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
-        /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
-        /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
-        /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
-        /// and <code>active</code>. </p>
-        /// </li>
+        /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
+        /// <li> <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li>
         /// </ul>
-        /// <p>Make sure to include additional field(s); these are indexed and used to source
-        /// recommendations. </p>
+        /// <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>
         pub fn set_object_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -824,8 +736,7 @@ pub struct ContentSummary {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The status of the content.</p>
     pub status: std::option::Option<crate::model::ContentStatus>,
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -869,8 +780,7 @@ impl ContentSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
         self.status.as_ref()
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1028,8 +938,7 @@ pub mod content_summary {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -1040,8 +949,7 @@ pub mod content_summary {
             self.metadata = Some(hash_map);
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -1749,8 +1657,7 @@ pub struct ContentData {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The status of the content.</p>
     pub status: std::option::Option<crate::model::ContentStatus>,
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -1800,8 +1707,7 @@ impl ContentData {
     pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
         self.status.as_ref()
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1977,8 +1883,7 @@ pub mod content_data {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -1989,8 +1894,7 @@ pub mod content_data {
             self.metadata = Some(hash_map);
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -2472,8 +2376,7 @@ impl DocumentText {
     }
 }
 
-/// <p>Offset specification to describe highlighting of document excerpts for rendering search
-/// results and recommendations.</p>
+/// <p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Highlight {

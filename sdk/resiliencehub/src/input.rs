@@ -11,20 +11,12 @@ pub mod add_draft_app_version_resource_mappings_input {
             std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -33,22 +25,14 @@ pub mod add_draft_app_version_resource_mappings_input {
         ///
         /// To override the contents of this collection use [`set_resource_mappings`](Self::set_resource_mappings).
         ///
-        /// <p> Mappings used to map logical resources from the template to physical resources. You can
-        /// use the mapping type <code>CFN_STACK</code> if the application template uses
-        /// a logical stack name. Or you can map individual resources by using the mapping type
-        /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-        /// application is backed by a CloudFormation stack.</p>
+        /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
         pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
             v.push(input);
             self.resource_mappings = Some(v);
             self
         }
-        /// <p> Mappings used to map logical resources from the template to physical resources. You can
-        /// use the mapping type <code>CFN_STACK</code> if the application template uses
-        /// a logical stack name. Or you can map individual resources by using the mapping type
-        /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-        /// application is backed by a CloudFormation stack.</p>
+        /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
         pub fn set_resource_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
@@ -226,20 +210,12 @@ pub mod create_app_input {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -248,8 +224,7 @@ pub mod create_app_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -260,8 +235,7 @@ pub mod create_app_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -271,14 +245,12 @@ pub mod create_app_input {
             self.tags = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -455,11 +427,15 @@ pub mod create_recommendation_template_input {
         }
         /// <p>The format for the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
@@ -470,11 +446,15 @@ pub mod create_recommendation_template_input {
         }
         /// <p>The format for the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
@@ -492,17 +472,23 @@ pub mod create_recommendation_template_input {
         ///
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn recommendation_types(
@@ -516,17 +502,23 @@ pub mod create_recommendation_template_input {
         }
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn set_recommendation_types(
@@ -536,20 +528,12 @@ pub mod create_recommendation_template_input {
             self.recommendation_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -567,14 +551,12 @@ pub mod create_recommendation_template_input {
             self.name = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -583,8 +565,7 @@ pub mod create_recommendation_template_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -595,8 +576,7 @@ pub mod create_recommendation_template_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -802,8 +782,7 @@ pub mod create_resiliency_policy_input {
             self.policy_description = input;
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
             input: crate::model::DataLocationConstraint,
@@ -811,8 +790,7 @@ pub mod create_resiliency_policy_input {
             self.data_location_constraint = Some(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn set_data_location_constraint(
             mut self,
             input: std::option::Option<crate::model::DataLocationConstraint>,
@@ -820,14 +798,12 @@ pub mod create_resiliency_policy_input {
             self.data_location_constraint = input;
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::ResiliencyPolicyTier>,
@@ -839,8 +815,7 @@ pub mod create_resiliency_policy_input {
         ///
         /// To override the contents of this collection use [`set_policy`](Self::set_policy).
         ///
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
             k: crate::model::DisruptionType,
@@ -851,8 +826,7 @@ pub mod create_resiliency_policy_input {
             self.policy = Some(hash_map);
             self
         }
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<
@@ -865,14 +839,12 @@ pub mod create_resiliency_policy_input {
             self.policy = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -881,8 +853,7 @@ pub mod create_resiliency_policy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -893,8 +864,7 @@ pub mod create_resiliency_policy_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1056,20 +1026,12 @@ pub mod delete_app_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -1084,14 +1046,12 @@ pub mod delete_app_input {
             self.force_delete = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1236,20 +1196,12 @@ pub mod delete_app_assessment_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1257,14 +1209,12 @@ pub mod delete_app_assessment_input {
             self.assessment_arn = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1429,14 +1379,12 @@ pub mod delete_recommendation_template_input {
             self.recommendation_template_arn = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1588,32 +1536,22 @@ pub mod delete_resiliency_policy_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1763,20 +1701,12 @@ pub mod describe_app_input {
         pub(crate) app_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -1919,20 +1849,12 @@ pub mod describe_app_assessment_input {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2083,20 +2005,12 @@ pub mod describe_app_version_resources_resolution_status_input {
         pub(crate) resolution_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -2273,20 +2187,12 @@ pub mod describe_app_version_template_input {
         pub(crate) app_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -2443,20 +2349,12 @@ pub mod describe_draft_app_version_resources_import_status_input {
         pub(crate) app_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -2610,20 +2508,12 @@ pub mod describe_resiliency_policy_input {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -2771,20 +2661,12 @@ pub mod import_resources_to_draft_app_version_input {
         pub(crate) source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -2954,20 +2836,12 @@ pub mod list_alarm_recommendations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2985,14 +2859,12 @@ pub mod list_alarm_recommendations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3149,20 +3021,12 @@ pub mod list_app_assessments_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -3212,14 +3076,12 @@ pub mod list_app_assessments_input {
             self.compliance_status = input;
             self
         }
-        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-        /// <code>System</code>.</p>
+        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
         pub fn invoker(mut self, input: crate::model::AssessmentInvoker) -> Self {
             self.invoker = Some(input);
             self
         }
-        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-        /// <code>System</code>.</p>
+        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
         pub fn set_invoker(
             mut self,
             input: std::option::Option<crate::model::AssessmentInvoker>,
@@ -3227,14 +3089,12 @@ pub mod list_app_assessments_input {
             self.invoker = input;
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -3249,14 +3109,12 @@ pub mod list_app_assessments_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3454,32 +3312,22 @@ pub mod list_app_component_compliances_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3632,20 +3480,12 @@ pub mod list_app_component_recommendations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3663,14 +3503,12 @@ pub mod list_app_component_recommendations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3833,14 +3671,12 @@ pub mod list_apps_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3855,20 +3691,12 @@ pub mod list_apps_input {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -4023,20 +3851,12 @@ pub mod list_app_version_resource_mappings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -4061,14 +3881,12 @@ pub mod list_app_version_resource_mappings_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4223,20 +4041,12 @@ pub mod list_app_version_resources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -4274,14 +4084,12 @@ pub mod list_app_version_resources_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4434,20 +4242,12 @@ pub mod list_app_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -4462,14 +4262,12 @@ pub mod list_app_versions_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4622,20 +4420,12 @@ pub mod list_recommendation_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4643,14 +4433,12 @@ pub mod list_recommendation_templates_input {
             self.assessment_arn = input;
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -4710,14 +4498,12 @@ pub mod list_recommendation_templates_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4919,14 +4705,12 @@ pub mod list_resiliency_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5090,32 +4874,22 @@ pub mod list_sop_recommendations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5277,14 +5051,12 @@ pub mod list_suggested_resiliency_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5435,14 +5207,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-        /// application.</p>
+        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-        /// application.</p>
+        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5600,32 +5370,22 @@ pub mod list_test_recommendations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5781,20 +5541,12 @@ pub mod list_unsupported_app_version_resources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -5832,14 +5584,12 @@ pub mod list_unsupported_app_version_resources_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5991,20 +5741,12 @@ pub mod publish_app_version_input {
         pub(crate) app_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6149,20 +5891,12 @@ pub mod put_draft_app_version_template_input {
         pub(crate) app_template_body: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6326,20 +6060,12 @@ pub mod remove_draft_app_version_resource_mappings_input {
         pub(crate) resource_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6568,20 +6294,12 @@ pub mod resolve_app_version_resources_input {
         pub(crate) app_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6744,20 +6462,12 @@ pub mod start_app_assessment_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6785,14 +6495,12 @@ pub mod start_app_assessment_input {
             self.assessment_name = input;
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -6801,8 +6509,7 @@ pub mod start_app_assessment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6813,8 +6520,7 @@ pub mod start_app_assessment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7351,20 +7057,12 @@ pub mod update_app_input {
         pub(crate) clear_resiliency_policy_arn: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -7379,20 +7077,12 @@ pub mod update_app_input {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -7552,20 +7242,12 @@ pub mod update_resiliency_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -7593,8 +7275,7 @@ pub mod update_resiliency_policy_input {
             self.policy_description = input;
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
             input: crate::model::DataLocationConstraint,
@@ -7602,8 +7283,7 @@ pub mod update_resiliency_policy_input {
             self.data_location_constraint = Some(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn set_data_location_constraint(
             mut self,
             input: std::option::Option<crate::model::DataLocationConstraint>,
@@ -7611,14 +7291,12 @@ pub mod update_resiliency_policy_input {
             self.data_location_constraint = input;
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::ResiliencyPolicyTier>,
@@ -7630,8 +7308,7 @@ pub mod update_resiliency_policy_input {
         ///
         /// To override the contents of this collection use [`set_policy`](Self::set_policy).
         ///
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
             k: crate::model::DisruptionType,
@@ -7642,8 +7319,7 @@ pub mod update_resiliency_policy_input {
             self.policy = Some(hash_map);
             self
         }
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<
@@ -7797,34 +7473,23 @@ impl UpdateResiliencyPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The name of the policy</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
     pub policy_description: std::option::Option<std::string::String>,
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-    /// and recovery point objective (RPO) in seconds.</p>
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub policy: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
     >,
 }
 impl UpdateResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -7836,20 +7501,17 @@ impl UpdateResiliencyPolicyInput {
     pub fn policy_description(&self) -> std::option::Option<&str> {
         self.policy_description.as_deref()
     }
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(
         &self,
     ) -> std::option::Option<&crate::model::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-    /// and recovery point objective (RPO) in seconds.</p>
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(
         &self,
     ) -> std::option::Option<
@@ -7875,29 +7537,17 @@ impl std::fmt::Debug for UpdateResiliencyPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
     pub clear_resiliency_policy_arn: std::option::Option<bool>,
 }
 impl UpdateAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -7905,11 +7555,7 @@ impl UpdateAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -7996,30 +7642,20 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
     /// <p>The name for the assessment.</p>
     pub assessment_name: std::option::Option<std::string::String>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8031,13 +7667,11 @@ impl StartAppAssessmentInput {
     pub fn assessment_name(&self) -> std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8061,21 +7695,13 @@ impl std::fmt::Debug for StartAppAssessmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
 }
 impl ResolveAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8097,11 +7723,7 @@ impl std::fmt::Debug for ResolveAppVersionResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveDraftAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The names of the resources to remove from the resource mappings.</p>
     pub resource_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8113,11 +7735,7 @@ pub struct RemoveDraftAppVersionResourceMappingsInput {
     pub resource_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveDraftAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8154,21 +7772,13 @@ impl std::fmt::Debug for RemoveDraftAppVersionResourceMappingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDraftAppVersionTemplateInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>A JSON string that contains the body of the app template.</p>
     pub app_template_body: std::option::Option<std::string::String>,
 }
 impl PutDraftAppVersionTemplateInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8190,19 +7800,11 @@ impl std::fmt::Debug for PutDraftAppVersionTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishAppVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl PublishAppVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8219,11 +7821,7 @@ impl std::fmt::Debug for PublishAppVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUnsupportedAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
@@ -8231,16 +7829,11 @@ pub struct ListUnsupportedAppVersionResourcesInput {
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListUnsupportedAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8256,8 +7849,7 @@ impl ListUnsupportedAppVersionResourcesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8280,14 +7872,9 @@ impl std::fmt::Debug for ListUnsupportedAppVersionResourcesInput {
 pub struct ListTestRecommendationsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListTestRecommendationsInput {
@@ -8295,16 +7882,11 @@ impl ListTestRecommendationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -8323,13 +7905,11 @@ impl std::fmt::Debug for ListTestRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-    /// application.</p>
+    /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-    /// application.</p>
+    /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -8348,8 +7928,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListSuggestedResiliencyPoliciesInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListSuggestedResiliencyPoliciesInput {
@@ -8357,8 +7936,7 @@ impl ListSuggestedResiliencyPoliciesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8378,14 +7956,9 @@ impl std::fmt::Debug for ListSuggestedResiliencyPoliciesInput {
 pub struct ListSopRecommendationsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListSopRecommendationsInput {
@@ -8393,16 +7966,11 @@ impl ListSopRecommendationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -8425,8 +7993,7 @@ pub struct ListResiliencyPoliciesInput {
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResiliencyPoliciesInput {
@@ -8438,8 +8005,7 @@ impl ListResiliencyPoliciesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8458,14 +8024,9 @@ impl std::fmt::Debug for ListResiliencyPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationTemplatesInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
-    /// <p>The default is to sort by ascending <b>startTime</b>.
-    /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub reverse_order: std::option::Option<bool>,
     /// <p>The status of the action.</p>
     pub status: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplateStatus>>,
@@ -8475,21 +8036,15 @@ pub struct ListRecommendationTemplatesInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendationTemplatesInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
-    /// <p>The default is to sort by ascending <b>startTime</b>.
-    /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
     }
@@ -8509,8 +8064,7 @@ impl ListRecommendationTemplatesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8536,24 +8090,15 @@ impl std::fmt::Debug for ListRecommendationTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8561,8 +8106,7 @@ impl ListAppVersionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8581,11 +8125,7 @@ impl std::fmt::Debug for ListAppVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
@@ -8593,16 +8133,11 @@ pub struct ListAppVersionResourcesInput {
     pub resolution_id: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8618,8 +8153,7 @@ impl ListAppVersionResourcesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8640,26 +8174,17 @@ impl std::fmt::Debug for ListAppVersionResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8671,8 +8196,7 @@ impl ListAppVersionResourceMappingsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8694,16 +8218,11 @@ impl std::fmt::Debug for ListAppVersionResourceMappingsInput {
 pub struct ListAppsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The name for the one of the listed applications.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl ListAppsInput {
@@ -8711,8 +8230,7 @@ impl ListAppsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8720,11 +8238,7 @@ impl ListAppsInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8744,24 +8258,15 @@ impl std::fmt::Debug for ListAppsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppComponentRecommendationsInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppComponentRecommendationsInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -8769,8 +8274,7 @@ impl ListAppComponentRecommendationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8791,14 +8295,9 @@ impl std::fmt::Debug for ListAppComponentRecommendationsInput {
 pub struct ListAppComponentCompliancesInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl ListAppComponentCompliancesInput {
@@ -8806,16 +8305,11 @@ impl ListAppComponentCompliancesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -8834,11 +8328,7 @@ impl std::fmt::Debug for ListAppComponentCompliancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppAssessmentsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name for the assessment.</p>
     pub assessment_name: std::option::Option<std::string::String>,
@@ -8846,24 +8336,17 @@ pub struct ListAppAssessmentsInput {
     pub assessment_status: std::option::Option<std::vec::Vec<crate::model::AssessmentStatus>>,
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
-    /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-    /// <code>System</code>.</p>
+    /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
     pub invoker: std::option::Option<crate::model::AssessmentInvoker>,
-    /// <p>The default is to sort by ascending <b>startTime</b>.
-    /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub reverse_order: std::option::Option<bool>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppAssessmentsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8879,13 +8362,11 @@ impl ListAppAssessmentsInput {
     pub fn compliance_status(&self) -> std::option::Option<&crate::model::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
-    /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-    /// <code>System</code>.</p>
+    /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
     pub fn invoker(&self) -> std::option::Option<&crate::model::AssessmentInvoker> {
         self.invoker.as_ref()
     }
-    /// <p>The default is to sort by ascending <b>startTime</b>.
-    /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+    /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
     }
@@ -8893,8 +8374,7 @@ impl ListAppAssessmentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8918,24 +8398,15 @@ impl std::fmt::Debug for ListAppAssessmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmRecommendationsInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAlarmRecommendationsInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -8943,8 +8414,7 @@ impl ListAlarmRecommendationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified
-    /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8963,21 +8433,13 @@ impl std::fmt::Debug for ListAlarmRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportResourcesToDraftAppVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
     pub source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ImportResourcesToDraftAppVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -8999,19 +8461,11 @@ impl std::fmt::Debug for ImportResourcesToDraftAppVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -9028,19 +8482,11 @@ impl std::fmt::Debug for DescribeResiliencyPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDraftAppVersionResourcesImportStatusInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -9057,21 +8503,13 @@ impl std::fmt::Debug for DescribeDraftAppVersionResourcesImportStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionTemplateInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionTemplateInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -9093,11 +8531,7 @@ impl std::fmt::Debug for DescribeAppVersionTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppVersionResourcesResolutionStatusInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
@@ -9105,11 +8539,7 @@ pub struct DescribeAppVersionResourcesResolutionStatusInput {
     pub resolution_id: std::option::Option<std::string::String>,
 }
 impl DescribeAppVersionResourcesResolutionStatusInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -9136,19 +8566,11 @@ impl std::fmt::Debug for DescribeAppVersionResourcesResolutionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -9165,19 +8587,11 @@ impl std::fmt::Debug for DescribeAppAssessmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -9194,27 +8608,17 @@ impl std::fmt::Debug for DescribeAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteResiliencyPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9234,8 +8638,7 @@ impl std::fmt::Debug for DeleteResiliencyPolicyInput {
 pub struct DeleteRecommendationTemplateInput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub recommendation_template_arn: std::option::Option<std::string::String>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteRecommendationTemplateInput {
@@ -9243,8 +8646,7 @@ impl DeleteRecommendationTemplateInput {
     pub fn recommendation_template_arn(&self) -> std::option::Option<&str> {
         self.recommendation_template_arn.as_deref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9265,27 +8667,17 @@ impl std::fmt::Debug for DeleteRecommendationTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAppAssessmentInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9303,24 +8695,15 @@ impl std::fmt::Debug for DeleteAppAssessmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
     pub force_delete: std::option::Option<bool>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -9328,8 +8711,7 @@ impl DeleteAppInput {
     pub fn force_delete(&self) -> std::option::Option<bool> {
         self.force_delete
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9352,22 +8734,17 @@ pub struct CreateResiliencyPolicyInput {
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
     pub policy_description: std::option::Option<std::string::String>,
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-    /// and recovery point objective (RPO) in seconds.</p>
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub policy: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
     >,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9380,20 +8757,17 @@ impl CreateResiliencyPolicyInput {
     pub fn policy_description(&self) -> std::option::Option<&str> {
         self.policy_description.as_deref()
     }
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(
         &self,
     ) -> std::option::Option<&crate::model::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-    /// and recovery point objective (RPO) in seconds.</p>
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(
         &self,
     ) -> std::option::Option<
@@ -9401,13 +8775,11 @@ impl CreateResiliencyPolicyInput {
     > {
         self.policy.as_ref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9437,11 +8809,15 @@ pub struct CreateRecommendationTemplateInput {
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The format for the recommendation template.</p>
     /// <dl>
-    /// <dt>CfnJson</dt>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation JSON.</p>
     /// </dd>
-    /// <dt>CfnYaml</dt>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
@@ -9449,34 +8825,34 @@ pub struct CreateRecommendationTemplateInput {
     pub format: std::option::Option<crate::model::TemplateFormat>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
-    /// <dt>Alarm</dt>
+    /// <dt>
+    /// Alarm
+    /// </dt>
     /// <dd>
-    /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Sop</dt>
+    /// <dt>
+    /// Sop
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>SopRecommendation</a> template.</p>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Test</dt>
+    /// <dt>
+    /// Test
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>TestRecommendation</a> template.</p>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
     pub recommendation_types:
         std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The name for the recommendation template.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
@@ -9489,11 +8865,15 @@ impl CreateRecommendationTemplateInput {
     }
     /// <p>The format for the recommendation template.</p>
     /// <dl>
-    /// <dt>CfnJson</dt>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation JSON.</p>
     /// </dd>
-    /// <dt>CfnYaml</dt>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
@@ -9503,17 +8883,23 @@ impl CreateRecommendationTemplateInput {
     }
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
-    /// <dt>Alarm</dt>
+    /// <dt>
+    /// Alarm
+    /// </dt>
     /// <dd>
-    /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Sop</dt>
+    /// <dt>
+    /// Sop
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>SopRecommendation</a> template.</p>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Test</dt>
+    /// <dt>
+    /// Test
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>TestRecommendation</a> template.</p>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
     pub fn recommendation_types(
@@ -9521,11 +8907,7 @@ impl CreateRecommendationTemplateInput {
     ) -> std::option::Option<&[crate::model::RenderRecommendationType]> {
         self.recommendation_types.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -9533,13 +8915,11 @@ impl CreateRecommendationTemplateInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9574,18 +8954,12 @@ pub struct CreateAppInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAppInput {
@@ -9597,24 +8971,18 @@ impl CreateAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-    /// You should not reuse the same client token for other API requests.</p>
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9635,33 +9003,17 @@ impl std::fmt::Debug for CreateAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddDraftAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
-    /// <p> Mappings used to map logical resources from the template to physical resources. You can
-    /// use the mapping type <code>CFN_STACK</code> if the application template uses
-    /// a logical stack name. Or you can map individual resources by using the mapping type
-    /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-    /// application is backed by a CloudFormation stack.</p>
+    /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
 }
 impl AddDraftAppVersionResourceMappingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p> Mappings used to map logical resources from the template to physical resources. You can
-    /// use the mapping type <code>CFN_STACK</code> if the application template uses
-    /// a logical stack name. Or you can map individual resources by using the mapping type
-    /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-    /// application is backed by a CloudFormation stack.</p>
+    /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     pub fn resource_mappings(&self) -> std::option::Option<&[crate::model::ResourceMapping]> {
         self.resource_mappings.as_deref()
     }

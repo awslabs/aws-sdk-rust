@@ -234,17 +234,10 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -253,17 +246,10 @@ impl ResetDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
@@ -292,17 +278,10 @@ pub mod reset_db_cluster_parameter_group_output {
         /// <p>The name of a cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be from 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn db_cluster_parameter_group_name(
@@ -315,17 +294,10 @@ pub mod reset_db_cluster_parameter_group_output {
         /// <p>The name of a cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be from 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn set_db_cluster_parameter_group_name(
@@ -783,14 +755,12 @@ impl ModifyDbInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Detailed information about the attributes that are associated with a cluster
-    /// snapshot.</p>
+    /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Detailed information about the attributes that are associated with a cluster
-    /// snapshot.</p>
+    /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     pub fn db_cluster_snapshot_attributes_result(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
@@ -817,8 +787,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Detailed information about the attributes that are associated with a cluster
-        /// snapshot.</p>
+        /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
             input: crate::model::DbClusterSnapshotAttributesResult,
@@ -826,8 +795,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Detailed information about the attributes that are associated with a cluster
-        /// snapshot.</p>
+        /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -857,17 +825,10 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -876,17 +837,10 @@ impl ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must be from 1 to 255 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
@@ -915,17 +869,10 @@ pub mod modify_db_cluster_parameter_group_output {
         /// <p>The name of a cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be from 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn db_cluster_parameter_group_name(
@@ -938,17 +885,10 @@ pub mod modify_db_cluster_parameter_group_output {
         /// <p>The name of a cluster parameter group.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be from 1 to 255 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+        /// </ul> <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
         pub fn set_db_cluster_parameter_group_name(
@@ -1030,7 +970,7 @@ impl ModifyDbClusterOutput {
     }
 }
 
-/// <p>Represents the output of <a>ListTagsForResource</a>.</p>
+/// <p>Represents the output of <code>ListTagsForResource</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1150,16 +1090,14 @@ impl FailoverDbClusterOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribePendingMaintenanceActions</a>.</p>
+/// <p>Represents the output of <code>DescribePendingMaintenanceActions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>The maintenance actions to be applied.</p>
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -1169,9 +1107,7 @@ impl DescribePendingMaintenanceActionsOutput {
     ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1222,16 +1158,12 @@ pub mod describe_pending_maintenance_actions_output {
             self.pending_maintenance_actions = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1252,16 +1184,14 @@ impl DescribePendingMaintenanceActionsOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeOrderableDBInstanceOptions</a>.</p>
+/// <p>Represents the output of <code>DescribeOrderableDBInstanceOptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>The options that are available for a particular orderable instance.</p>
     pub orderable_db_instance_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
@@ -1271,9 +1201,7 @@ impl DescribeOrderableDbInstanceOptionsOutput {
     ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1322,16 +1250,12 @@ pub mod describe_orderable_db_instance_options_output {
             self.orderable_db_instance_options = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1434,22 +1358,18 @@ impl DescribeGlobalClustersOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeEventSubscriptions</a>.</p>
+/// <p>Represents the output of <code>DescribeEventSubscriptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1479,16 +1399,12 @@ pub mod describe_event_subscriptions_output {
             std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1528,21 +1444,17 @@ impl DescribeEventSubscriptionsOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeEvents</a>.</p>
+/// <p>Represents the output of <code>DescribeEvents</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more events. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1569,16 +1481,12 @@ pub mod describe_events_output {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1618,7 +1526,7 @@ impl DescribeEventsOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeEventCategories</a>.</p>
+/// <p>Represents the output of <code>DescribeEventCategories</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
@@ -1692,13 +1600,11 @@ impl DescribeEventCategoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEngineDefaultClusterParametersOutput {
-    /// <p>Contains the result of a successful invocation of the
-    /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
-    /// <p>Contains the result of a successful invocation of the
-    /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+    /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
     pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
@@ -1719,14 +1625,12 @@ pub mod describe_engine_default_cluster_parameters_output {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
     }
     impl Builder {
-        /// <p>Contains the result of a successful invocation of the
-        /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+        /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
         pub fn engine_defaults(mut self, input: crate::model::EngineDefaults) -> Self {
             self.engine_defaults = Some(input);
             self
         }
-        /// <p>Contains the result of a successful invocation of the
-        /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+        /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
         pub fn set_engine_defaults(
             mut self,
             input: std::option::Option<crate::model::EngineDefaults>,
@@ -1749,21 +1653,17 @@ impl DescribeEngineDefaultClusterParametersOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeDBSubnetGroups</a>.</p>
+/// <p>Represents the output of <code>DescribeDBSubnetGroups</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSubnetGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more subnet groups.</p>
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
 }
 impl DescribeDbSubnetGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1791,16 +1691,12 @@ pub mod describe_db_subnet_groups_output {
             std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1840,21 +1736,17 @@ impl DescribeDbSubnetGroupsOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeDBInstances</a>.</p>
+/// <p>Represents the output of <code>DescribeDBInstances</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbInstancesOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more instances. </p>
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
 impl DescribeDbInstancesOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1881,16 +1773,12 @@ pub mod describe_db_instances_output {
         pub(crate) db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1930,21 +1818,17 @@ impl DescribeDbInstancesOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeDBEngineVersions</a>.</p>
+/// <p>Represents the output of <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbEngineVersionsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more engine versions.</p>
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
 impl DescribeDbEngineVersionsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1972,16 +1856,12 @@ pub mod describe_db_engine_versions_output {
             std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2021,21 +1901,17 @@ impl DescribeDbEngineVersionsOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeDBClusterSnapshots</a>.</p>
+/// <p>Represents the output of <code>DescribeDBClusterSnapshots</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Provides a list of cluster snapshots.</p>
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
 impl DescribeDbClusterSnapshotsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2063,16 +1939,12 @@ pub mod describe_db_cluster_snapshots_output {
             std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2116,14 +1988,12 @@ impl DescribeDbClusterSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Detailed information about the attributes that are associated with a cluster
-    /// snapshot.</p>
+    /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Detailed information about the attributes that are associated with a cluster
-    /// snapshot.</p>
+    /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     pub fn db_cluster_snapshot_attributes_result(
         &self,
     ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
@@ -2150,8 +2020,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Detailed information about the attributes that are associated with a cluster
-        /// snapshot.</p>
+        /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
         pub fn db_cluster_snapshot_attributes_result(
             mut self,
             input: crate::model::DbClusterSnapshotAttributesResult,
@@ -2159,8 +2028,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Detailed information about the attributes that are associated with a cluster
-        /// snapshot.</p>
+        /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
         pub fn set_db_cluster_snapshot_attributes_result(
             mut self,
             input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -2183,21 +2051,17 @@ impl DescribeDbClusterSnapshotAttributesOutput {
     }
 }
 
-/// <p>Represents the output of <a>DescribeDBClusters</a>.</p>
+/// <p>Represents the output of <code>DescribeDBClusters</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClustersOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of clusters.</p>
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
 }
 impl DescribeDbClustersOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2224,16 +2088,12 @@ pub mod describe_db_clusters_output {
         pub(crate) db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2273,15 +2133,13 @@ impl DescribeDbClustersOutput {
     }
 }
 
-/// <p>Represents the output of <a>DBClusterParameterGroup</a>.</p>
+/// <p>Represents the output of <code>DBClusterParameterGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParametersOutput {
@@ -2289,9 +2147,7 @@ impl DescribeDbClusterParametersOutput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2333,16 +2189,12 @@ pub mod describe_db_cluster_parameters_output {
             self.parameters = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2363,22 +2215,18 @@ impl DescribeDbClusterParametersOutput {
     }
 }
 
-/// <p>Represents the output of <a>DBClusterParameterGroups</a>.</p>
+/// <p>Represents the output of <code>DBClusterParameterGroups</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbClusterParameterGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cluster parameter groups.</p>
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2411,16 +2259,12 @@ pub mod describe_db_cluster_parameter_groups_output {
             std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3425,14 +3269,12 @@ impl CopyDbClusterParameterGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
-    /// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
-    /// </p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
 impl ApplyPendingMaintenanceActionOutput {
-    /// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
-    /// </p>
+    /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
     pub fn resource_pending_maintenance_actions(
         &self,
     ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
@@ -3459,8 +3301,7 @@ pub mod apply_pending_maintenance_action_output {
             std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
     }
     impl Builder {
-        /// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
-        /// </p>
+        /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
         pub fn resource_pending_maintenance_actions(
             mut self,
             input: crate::model::ResourcePendingMaintenanceActions,
@@ -3468,8 +3309,7 @@ pub mod apply_pending_maintenance_action_output {
             self.resource_pending_maintenance_actions = Some(input);
             self
         }
-        /// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
-        /// </p>
+        /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
         pub fn set_resource_pending_maintenance_actions(
             mut self,
             input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,

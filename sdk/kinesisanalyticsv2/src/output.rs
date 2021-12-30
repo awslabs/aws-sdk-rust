@@ -274,13 +274,11 @@ impl StartApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackApplicationOutput {
-    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-    /// latest version, and input and output configurations.</p>
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl RollbackApplicationOutput {
-    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-    /// latest version, and input and output configurations.</p>
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
@@ -301,14 +299,12 @@ pub mod rollback_application_output {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
     }
     impl Builder {
-        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-        /// latest version, and input and output configurations.</p>
+        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
         pub fn application_detail(mut self, input: crate::model::ApplicationDetail) -> Self {
             self.application_detail = Some(input);
             self
         }
-        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-        /// latest version, and input and output configurations.</p>
+        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
         pub fn set_application_detail(
             mut self,
             input: std::option::Option<crate::model::ApplicationDetail>,
@@ -397,25 +393,21 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
-    /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
+    /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     pub application_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
-    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-    /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
-    /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
+    /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     pub fn application_version_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::ApplicationVersionSummary]> {
         self.application_version_summaries.as_deref()
     }
-    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-    /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -447,7 +439,7 @@ pub mod list_application_versions_output {
         /// To override the contents of this collection use [`set_application_version_summaries`](Self::set_application_version_summaries).
         ///
         /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
-        /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
+        /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
         pub fn application_version_summaries(
             mut self,
             input: crate::model::ApplicationVersionSummary,
@@ -458,7 +450,7 @@ pub mod list_application_versions_output {
             self
         }
         /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
-        /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
+        /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
         pub fn set_application_version_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
@@ -466,16 +458,12 @@ pub mod list_application_versions_output {
             self.application_version_summaries = input;
             self
         }
-        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-        /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-        /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -585,10 +573,7 @@ impl ListApplicationSnapshotsOutput {
 pub struct ListApplicationsOutput {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-    /// Pass this token into a subsequent command to retrieve the next set of items
-    /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -598,10 +583,7 @@ impl ListApplicationsOutput {
     ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
         self.application_summaries.as_deref()
     }
-    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-    /// Pass this token into a subsequent command to retrieve the next set of items
-    /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -644,18 +626,12 @@ pub mod list_applications_output {
             self.application_summaries = input;
             self
         }
-        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-        /// Pass this token into a subsequent command to retrieve the next set of items
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
-        /// Pass this token into a subsequent command to retrieve the next set of items
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -680,36 +656,28 @@ impl ListApplicationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverInputSchemaOutput {
-    /// <p>The schema inferred from the streaming source. It identifies the format of the data in the
-    /// streaming source and how each data element maps to corresponding columns in the in-application
-    /// stream that you can create.</p>
+    /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
-    /// <p>An array of elements, where each element corresponds to a row in a stream record
-    /// (a stream record can have more than one row).</p>
+    /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
     pub parsed_input_records:
         std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    /// <p>The stream data that was modified by the processor specified in the
-    /// <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The raw stream data that was sampled to infer the schema.</p>
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DiscoverInputSchemaOutput {
-    /// <p>The schema inferred from the streaming source. It identifies the format of the data in the
-    /// streaming source and how each data element maps to corresponding columns in the in-application
-    /// stream that you can create.</p>
+    /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
         self.input_schema.as_ref()
     }
-    /// <p>An array of elements, where each element corresponds to a row in a stream record
-    /// (a stream record can have more than one row).</p>
+    /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
     pub fn parsed_input_records(
         &self,
     ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.parsed_input_records.as_deref()
     }
-    /// <p>The stream data that was modified by the processor specified in the
-    /// <code>InputProcessingConfiguration</code> parameter.</p>
+    /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
         self.processed_input_records.as_deref()
     }
@@ -741,16 +709,12 @@ pub mod discover_input_schema_output {
         pub(crate) raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The schema inferred from the streaming source. It identifies the format of the data in the
-        /// streaming source and how each data element maps to corresponding columns in the in-application
-        /// stream that you can create.</p>
+        /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
         pub fn input_schema(mut self, input: crate::model::SourceSchema) -> Self {
             self.input_schema = Some(input);
             self
         }
-        /// <p>The schema inferred from the streaming source. It identifies the format of the data in the
-        /// streaming source and how each data element maps to corresponding columns in the in-application
-        /// stream that you can create.</p>
+        /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
         pub fn set_input_schema(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -762,16 +726,14 @@ pub mod discover_input_schema_output {
         ///
         /// To override the contents of this collection use [`set_parsed_input_records`](Self::set_parsed_input_records).
         ///
-        /// <p>An array of elements, where each element corresponds to a row in a stream record
-        /// (a stream record can have more than one row).</p>
+        /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
         pub fn parsed_input_records(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.parsed_input_records.unwrap_or_default();
             v.push(input);
             self.parsed_input_records = Some(v);
             self
         }
-        /// <p>An array of elements, where each element corresponds to a row in a stream record
-        /// (a stream record can have more than one row).</p>
+        /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
         pub fn set_parsed_input_records(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -783,16 +745,14 @@ pub mod discover_input_schema_output {
         ///
         /// To override the contents of this collection use [`set_processed_input_records`](Self::set_processed_input_records).
         ///
-        /// <p>The stream data that was modified by the processor specified in the
-        /// <code>InputProcessingConfiguration</code> parameter.</p>
+        /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
         pub fn processed_input_records(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.processed_input_records.unwrap_or_default();
             v.push(input.into());
             self.processed_input_records = Some(v);
             self
         }
-        /// <p>The stream data that was modified by the processor specified in the
-        /// <code>InputProcessingConfiguration</code> parameter.</p>
+        /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
         pub fn set_processed_input_records(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -841,13 +801,11 @@ impl DiscoverInputSchemaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionOutput {
-    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-    /// latest version, and input and output configurations.</p>
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     pub application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationVersionOutput {
-    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-    /// latest version, and input and output configurations.</p>
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     pub fn application_version_detail(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationDetail> {
@@ -873,8 +831,7 @@ pub mod describe_application_version_output {
         pub(crate) application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
     }
     impl Builder {
-        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-        /// latest version, and input and output configurations.</p>
+        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
         pub fn application_version_detail(
             mut self,
             input: crate::model::ApplicationDetail,
@@ -882,8 +839,7 @@ pub mod describe_application_version_output {
             self.application_version_detail = Some(input);
             self
         }
-        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status,
-        /// latest version, and input and output configurations.</p>
+        /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
         pub fn set_application_version_detail(
             mut self,
             input: std::option::Option<crate::model::ApplicationDetail>,
@@ -967,13 +923,11 @@ impl DescribeApplicationSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationOutput {
-    /// <p>Provides a description of the application, such as the application's Amazon Resource Name
-    /// (ARN), status, and latest version.</p>
+    /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationOutput {
-    /// <p>Provides a description of the application, such as the application's Amazon Resource Name
-    /// (ARN), status, and latest version.</p>
+    /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
     pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
@@ -994,14 +948,12 @@ pub mod describe_application_output {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
     }
     impl Builder {
-        /// <p>Provides a description of the application, such as the application's Amazon Resource Name
-        /// (ARN), status, and latest version.</p>
+        /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
         pub fn application_detail(mut self, input: crate::model::ApplicationDetail) -> Self {
             self.application_detail = Some(input);
             self
         }
-        /// <p>Provides a description of the application, such as the application's Amazon Resource Name
-        /// (ARN), status, and latest version.</p>
+        /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
         pub fn set_application_detail(
             mut self,
             input: std::option::Option<crate::model::ApplicationDetail>,
@@ -1365,9 +1317,7 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
 pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's Amazon Resource Name (ARN).</p>
     pub application_arn: std::option::Option<std::string::String>,
-    /// <p>The version ID of the application. Kinesis Data Analytics updates the
-    /// <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-    /// options.</p>
+    /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     pub cloud_watch_logging_option_descriptions:
@@ -1378,9 +1328,7 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The version ID of the application. Kinesis Data Analytics updates the
-    /// <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-    /// options.</p>
+    /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
@@ -1428,16 +1376,12 @@ pub mod delete_application_cloud_watch_logging_option_output {
             self.application_arn = input;
             self
         }
-        /// <p>The version ID of the application. Kinesis Data Analytics updates the
-        /// <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-        /// options.</p>
+        /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
             self.application_version_id = Some(input);
             self
         }
-        /// <p>The version ID of the application. Kinesis Data Analytics updates the
-        /// <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-        /// options.</p>
+        /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -1608,13 +1552,11 @@ impl CreateApplicationPresignedUrlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
-    /// response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
-    /// response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
     pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
@@ -1635,14 +1577,12 @@ pub mod create_application_output {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
     }
     impl Builder {
-        /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
-        /// response with details of the application it created.</p>
+        /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
         pub fn application_detail(mut self, input: crate::model::ApplicationDetail) -> Self {
             self.application_detail = Some(input);
             self
         }
-        /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a
-        /// response with details of the application it created.</p>
+        /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
         pub fn set_application_detail(
             mut self,
             input: std::option::Option<crate::model::ApplicationDetail>,
@@ -1671,8 +1611,7 @@ impl CreateApplicationOutput {
 pub struct AddApplicationVpcConfigurationOutput {
     /// <p>The ARN of the application.</p>
     pub application_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-    /// time you update the application.</p>
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     pub vpc_configuration_description:
@@ -1683,8 +1622,7 @@ impl AddApplicationVpcConfigurationOutput {
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-    /// time you update the application.</p>
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
@@ -1732,14 +1670,12 @@ pub mod add_application_vpc_configuration_output {
             self.application_arn = input;
             self
         }
-        /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-        /// time you update the application.</p>
+        /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
             self.application_version_id = Some(input);
             self
         }
-        /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-        /// time you update the application.</p>
+        /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -1783,14 +1719,9 @@ impl AddApplicationVpcConfigurationOutput {
 pub struct AddApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_arn: std::option::Option<std::string::String>,
-    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when
-    /// the application is updated.</p>
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub application_version_id: std::option::Option<i64>,
-    /// <p>Describes reference data sources configured for the application.
-    ///
-    ///
-    ///
-    /// </p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
 }
@@ -1799,16 +1730,11 @@ impl AddApplicationReferenceDataSourceOutput {
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when
-    /// the application is updated.</p>
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes reference data sources configured for the application.
-    ///
-    ///
-    ///
-    /// </p>
+    /// <p>Describes reference data sources configured for the application. </p>
     pub fn reference_data_source_descriptions(
         &self,
     ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
@@ -1852,14 +1778,12 @@ pub mod add_application_reference_data_source_output {
             self.application_arn = input;
             self
         }
-        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when
-        /// the application is updated.</p>
+        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
             self.application_version_id = Some(input);
             self
         }
-        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when
-        /// the application is updated.</p>
+        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -1868,11 +1792,7 @@ pub mod add_application_reference_data_source_output {
         ///
         /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
         ///
-        /// <p>Describes reference data sources configured for the application.
-        ///
-        ///
-        ///
-        /// </p>
+        /// <p>Describes reference data sources configured for the application. </p>
         pub fn reference_data_source_descriptions(
             mut self,
             input: crate::model::ReferenceDataSourceDescription,
@@ -1882,11 +1802,7 @@ pub mod add_application_reference_data_source_output {
             self.reference_data_source_descriptions = Some(v);
             self
         }
-        /// <p>Describes reference data sources configured for the application.
-        ///
-        ///
-        ///
-        /// </p>
+        /// <p>Describes reference data sources configured for the application. </p>
         pub fn set_reference_data_source_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
@@ -1917,14 +1833,9 @@ impl AddApplicationReferenceDataSourceOutput {
 pub struct AddApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_arn: std::option::Option<std::string::String>,
-    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is
-    /// updated.</p>
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub application_version_id: std::option::Option<i64>,
-    /// <p>Describes the application output configuration.
-    /// For more information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
-    ///
-    /// </p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
 }
 impl AddApplicationOutputOutput {
@@ -1932,16 +1843,11 @@ impl AddApplicationOutputOutput {
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is
-    /// updated.</p>
+    /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes the application output configuration.
-    /// For more information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
-    ///
-    /// </p>
+    /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn output_descriptions(&self) -> std::option::Option<&[crate::model::OutputDescription]> {
         self.output_descriptions.as_deref()
     }
@@ -1980,14 +1886,12 @@ pub mod add_application_output_output {
             self.application_arn = input;
             self
         }
-        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is
-        /// updated.</p>
+        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
             self.application_version_id = Some(input);
             self
         }
-        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is
-        /// updated.</p>
+        /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -1996,22 +1900,14 @@ pub mod add_application_output_output {
         ///
         /// To override the contents of this collection use [`set_output_descriptions`](Self::set_output_descriptions).
         ///
-        /// <p>Describes the application output configuration.
-        /// For more information,
-        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
-        ///
-        /// </p>
+        /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
         pub fn output_descriptions(mut self, input: crate::model::OutputDescription) -> Self {
             let mut v = self.output_descriptions.unwrap_or_default();
             v.push(input);
             self.output_descriptions = Some(v);
             self
         }
-        /// <p>Describes the application output configuration.
-        /// For more information,
-        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
-        ///
-        /// </p>
+        /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
         pub fn set_output_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
@@ -2044,9 +1940,7 @@ pub struct AddApplicationInputProcessingConfigurationOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Provides the current application version. </p>
     pub application_version_id: std::option::Option<i64>,
-    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns
-    /// to each input configuration that you add to your
-    /// application.</p>
+    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     pub input_processing_configuration_description:
@@ -2061,9 +1955,7 @@ impl AddApplicationInputProcessingConfigurationOutput {
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns
-    /// to each input configuration that you add to your
-    /// application.</p>
+    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
@@ -2123,16 +2015,12 @@ pub mod add_application_input_processing_configuration_output {
             self.application_version_id = input;
             self
         }
-        /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns
-        /// to each input configuration that you add to your
-        /// application.</p>
+        /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_id = Some(input.into());
             self
         }
-        /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns
-        /// to each input configuration that you add to your
-        /// application.</p>
+        /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -2181,10 +2069,7 @@ pub struct AddApplicationInputOutput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>Provides the current application version.</p>
     pub application_version_id: std::option::Option<i64>,
-    /// <p>Describes the application input configuration.
-    ///
-    ///
-    /// </p>
+    /// <p>Describes the application input configuration. </p>
     pub input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
 }
 impl AddApplicationInputOutput {
@@ -2196,10 +2081,7 @@ impl AddApplicationInputOutput {
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>Describes the application input configuration.
-    ///
-    ///
-    /// </p>
+    /// <p>Describes the application input configuration. </p>
     pub fn input_descriptions(&self) -> std::option::Option<&[crate::model::InputDescription]> {
         self.input_descriptions.as_deref()
     }
@@ -2252,20 +2134,14 @@ pub mod add_application_input_output {
         ///
         /// To override the contents of this collection use [`set_input_descriptions`](Self::set_input_descriptions).
         ///
-        /// <p>Describes the application input configuration.
-        ///
-        ///
-        /// </p>
+        /// <p>Describes the application input configuration. </p>
         pub fn input_descriptions(mut self, input: crate::model::InputDescription) -> Self {
             let mut v = self.input_descriptions.unwrap_or_default();
             v.push(input);
             self.input_descriptions = Some(v);
             self
         }
-        /// <p>Describes the application input configuration.
-        ///
-        ///
-        /// </p>
+        /// <p>Describes the application input configuration. </p>
         pub fn set_input_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
@@ -2296,9 +2172,7 @@ impl AddApplicationInputOutput {
 pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
     pub application_arn: std::option::Option<std::string::String>,
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-    /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-    /// options. </p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
     pub cloud_watch_logging_option_descriptions:
@@ -2309,9 +2183,7 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-    /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-    /// options. </p>
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn application_version_id(&self) -> std::option::Option<i64> {
         self.application_version_id
     }
@@ -2359,16 +2231,12 @@ pub mod add_application_cloud_watch_logging_option_output {
             self.application_arn = input;
             self
         }
-        /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-        /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-        /// options. </p>
+        /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
         pub fn application_version_id(mut self, input: i64) -> Self {
             self.application_version_id = Some(input);
             self
         }
-        /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-        /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging
-        /// options. </p>
+        /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self

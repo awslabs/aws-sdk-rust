@@ -601,7 +601,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bandwidth_throttling(input);
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn data_plane_routing(
             mut self,
             input: crate::model::ReplicationConfigurationDataPlaneRouting,
@@ -609,7 +609,7 @@ pub mod fluent_builders {
             self.inner = self.inner.data_plane_routing(input);
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn set_data_plane_routing(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,

@@ -29,26 +29,22 @@ pub mod create_savings_plan_input {
             self.savings_plan_offering_id = input;
             self
         }
-        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-        /// than three digits after the decimal point.</p>
+        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
         pub fn commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.commitment = Some(input.into());
             self
         }
-        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-        /// than three digits after the decimal point.</p>
+        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
         pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commitment = input;
             self
         }
-        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-        /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
         pub fn upfront_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.upfront_payment_amount = Some(input.into());
             self
         }
-        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-        /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
         pub fn set_upfront_payment_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -451,14 +447,12 @@ pub mod describe_savings_plan_rates_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -661,14 +655,12 @@ pub mod describe_savings_plans_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1042,14 +1034,12 @@ pub mod describe_savings_plans_offering_rates_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1432,14 +1422,12 @@ pub mod describe_savings_plans_offerings_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2195,8 +2183,7 @@ pub struct DescribeSavingsPlansOfferingsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingFilterElement>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: i32,
 }
 impl DescribeSavingsPlansOfferingsInput {
@@ -2252,8 +2239,7 @@ impl DescribeSavingsPlansOfferingsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2302,8 +2288,7 @@ pub struct DescribeSavingsPlansOfferingRatesInput {
         std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateFilterElement>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: i32,
 }
 impl DescribeSavingsPlansOfferingRatesInput {
@@ -2349,8 +2334,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2385,8 +2369,7 @@ pub struct DescribeSavingsPlansInput {
     pub savings_plan_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The states.</p>
     pub states: std::option::Option<std::vec::Vec<crate::model::SavingsPlanState>>,
@@ -2406,8 +2389,7 @@ impl DescribeSavingsPlansInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2443,8 +2425,7 @@ pub struct DescribeSavingsPlanRatesInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateFilter>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeSavingsPlanRatesInput {
@@ -2460,8 +2441,7 @@ impl DescribeSavingsPlanRatesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-    /// call with the returned token value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2504,11 +2484,9 @@ impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
     pub savings_plan_offering_id: std::option::Option<std::string::String>,
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-    /// than three digits after the decimal point.</p>
+    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
     pub commitment: std::option::Option<std::string::String>,
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-    /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
     pub upfront_payment_amount: std::option::Option<std::string::String>,
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub purchase_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2523,13 +2501,11 @@ impl CreateSavingsPlanInput {
     pub fn savings_plan_offering_id(&self) -> std::option::Option<&str> {
         self.savings_plan_offering_id.as_deref()
     }
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-    /// than three digits after the decimal point.</p>
+    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
     pub fn commitment(&self) -> std::option::Option<&str> {
         self.commitment.as_deref()
     }
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-    /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
     pub fn upfront_payment_amount(&self) -> std::option::Option<&str> {
         self.upfront_payment_amount.as_deref()
     }

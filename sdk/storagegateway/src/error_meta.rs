@@ -3,14 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// <p>An internal server error has occurred because the service is unavailable. For more
-    /// information, see the error and message fields.</p>
+    /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

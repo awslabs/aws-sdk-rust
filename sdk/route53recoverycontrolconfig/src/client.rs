@@ -409,7 +409,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRoutingControl`.
     ///
-    /// <p>Creates a new routing control.</p> <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p> <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
+    /// <p>Creates a new routing control.</p>
+    /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
+    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoutingControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -515,7 +517,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSafetyRule`.
     ///
-    /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling routing controls, to help prevent unexpected outcomes.</p> <p>There are two types of safety rules: assertion rules and gating rules.</p> <p>Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p> <p>Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling routing controls, to help prevent unexpected outcomes.</p>
+    /// <p>There are two types of safety rules: assertion rules and gating rules.</p>
+    /// <p>Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSafetyRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1043,7 +1048,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRoutingControl`.
     ///
-    /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p> <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
+    /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>
+    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRoutingControl<
         C = aws_smithy_client::erase::DynConnector,

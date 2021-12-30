@@ -171,8 +171,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchAcknowledgeAlarm`.
     ///
-    /// <p>Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state
-    /// after you acknowledge them.</p>
+    /// <p>Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAcknowledgeAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -252,8 +251,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisableAlarm`.
     ///
-    /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after
-    /// you disable them.</p>
+    /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisableAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -333,8 +331,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchEnableAlarm`.
     ///
-    /// <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you
-    /// enable them.</p>
+    /// <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEnableAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -414,11 +411,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchPutMessage`.
     ///
-    /// <p>Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into
-    /// the input you specify (<code>"inputName"</code>) and ingested into any detectors that monitor
-    /// that input. If multiple messages are sent, the order in which the messages are processed isn't
-    /// guaranteed. To guarantee ordering, you must send messages one at a time and wait for a
-    /// successful response.</p>
+    /// <p>Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into the input you specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send messages one at a time and wait for a successful response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutMessage<
         C = aws_smithy_client::erase::DynConnector,
@@ -479,16 +472,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             self.inner = self.inner.messages(input);
             self
         }
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -499,8 +488,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchResetAlarm`.
     ///
-    /// <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you
-    /// reset them.</p>
+    /// <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchResetAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -580,8 +568,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchSnoozeAlarm`.
     ///
-    /// <p>Changes one or more alarms to the snooze mode. The alarms change to the
-    /// <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
+    /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchSnoozeAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -661,8 +648,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpdateDetector`.
     ///
-    /// <p>Updates the state, variable values, and timer settings of one or more detectors
-    /// (instances) of a specified detector model.</p>
+    /// <p>Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified detector model.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateDetector<
         C = aws_smithy_client::erase::DynConnector,
@@ -809,14 +795,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_model_name(input);
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_value(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_value(input);
             self
@@ -881,14 +865,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.detector_model_name(input.into());
             self
         }
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -896,14 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_model_name(input);
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_value(input.into());
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_value(input);
             self
@@ -911,8 +891,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlarms`.
     ///
-    /// <p>Lists one or more alarms. The operation returns only the metadata associated with each
-    /// alarm.</p>
+    /// <p>Lists one or more alarms. The operation returns only the metadata associated with each alarm.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarms<
         C = aws_smithy_client::erase::DynConnector,

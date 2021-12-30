@@ -432,11 +432,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConfigurationSet`.
     ///
-    /// <p>Create a configuration set. <i>Configuration sets</i> are groups of
-    /// rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration
-    /// set to an email by including a reference to the configuration set in the headers of the
-    /// email. When you apply a configuration set to an email, all of the rules in that
-    /// configuration set are applied to the email. </p>
+    /// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -506,14 +502,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
             self.inner = self.inner.tracking_options(input);
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -521,14 +515,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tracking_options(input);
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
             self.inner = self.inner.delivery_options(input);
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -536,14 +528,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
+        /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
             self.inner = self.inner.reputation_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
+        /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn set_reputation_options(
             mut self,
             input: std::option::Option<crate::model::ReputationOptions>,
@@ -551,14 +541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reputation_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the
-        /// configuration set.</p>
+        /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
         pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
             self.inner = self.inner.sending_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the
-        /// configuration set.</p>
+        /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
         pub fn set_sending_options(
             mut self,
             input: std::option::Option<crate::model::SendingOptions>,
@@ -570,14 +558,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -588,12 +574,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConfigurationSetEventDestination`.
     ///
-    /// <p>Create an event destination. In Amazon Pinpoint, <i>events</i> include message
-    /// sends, deliveries, opens, clicks, bounces, and complaints. <i>Event
-    /// destinations</i> are places that you can send information about these events
-    /// to. For example, you can send event data to Amazon SNS to receive notifications when you
-    /// receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term
-    /// storage.</p>
+    /// <p>Create an event destination. In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
     /// <p>A single configuration set can include more than one event destination.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
@@ -698,10 +679,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDedicatedIpPool`.
     ///
-    /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-    /// IP addresses that are associated with your Amazon Pinpoint account. You can associate a pool with
-    /// a configuration set. When you send an email that uses that configuration set, Amazon Pinpoint
-    /// sends it using only the IP addresses in the associated pool.</p>
+    /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Pinpoint account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, Amazon Pinpoint sends it using only the IP addresses in the associated pool.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
@@ -772,14 +750,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -790,13 +766,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeliverabilityTestReport`.
     ///
-    /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled
-    /// by various email providers around the world. When you perform a predictive inbox placement test, you provide a
-    /// sample message that contains the content that you plan to send to your customers. Amazon Pinpoint
-    /// then sends that message to special email addresses spread across several major email
-    /// providers. After about 24 hours, the test is complete, and you can use the
-    /// <code>GetDeliverabilityTestReport</code> operation to view the results of the
-    /// test.</p>
+    /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
@@ -853,14 +823,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.report_name(input.into());
             self
         }
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_name(input);
             self
@@ -895,14 +863,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -913,20 +879,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEmailIdentity`.
     ///
-    /// <p>Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint, an identity is an email
-    /// address or domain that you use when you send email. Before you can use an identity to
-    /// send email with Amazon Pinpoint, you first have to verify it. By verifying an address, you
-    /// demonstrate that you're the owner of the address, and that you've given Amazon Pinpoint permission
-    /// to send email from the address.</p>
-    /// <p>When you verify an email address, Amazon Pinpoint sends an email to the address. Your email
-    /// address is verified as soon as you follow the link in the verification email.
-    ///
-    /// </p>
-    /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can
-    /// convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your
-    /// domain. Your domain is verified when Amazon Pinpoint detects these records in the DNS
-    /// configuration for your domain. It usually takes around 72 hours to complete the domain
-    /// verification process.</p>
+    /// <p>Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint, an identity is an email address or domain that you use when you send email. Before you can use an identity to send email with Amazon Pinpoint, you first have to verify it. By verifying an address, you demonstrate that you're the owner of the address, and that you've given Amazon Pinpoint permission to send email from the address.</p>
+    /// <p>When you verify an email address, Amazon Pinpoint sends an email to the address. Your email address is verified as soon as you follow the link in the verification email. </p>
+    /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon Pinpoint detects these records in the DNS configuration for your domain. It usually takes around 72 hours to complete the domain verification process.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
@@ -1000,14 +955,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the email identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the email identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1019,11 +972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSet`.
     ///
     /// <p>Delete an existing configuration set.</p>
-    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can
-    /// apply to the emails you send. You apply a configuration set to an email by including a
-    /// reference to the configuration set in the headers of the email. When you apply a
-    /// configuration set to an email, all of the rules in that configuration set are applied to
-    /// the email.</p>
+    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1097,11 +1046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSetEventDestination`.
     ///
     /// <p>Delete an event destination.</p>
-    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens,
-    /// clicks, bounces, and complaints. <i>Event destinations</i> are places that
-    /// you can send information about these events to. For example, you can send event data to
-    /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
-    /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -1160,14 +1105,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// delete.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// delete.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1261,8 +1204,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEmailIdentity`.
     ///
-    /// <p>Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity
-    /// can be either an email address or a domain name.</p>
+    /// <p>Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity can be either an email address or a domain name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
@@ -1319,14 +1261,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identity (that is, the email address or domain) that you want to delete from your
-        /// Amazon Pinpoint account.</p>
+        /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
         pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(input.into());
             self
         }
-        /// <p>The identity (that is, the email address or domain) that you want to delete from your
-        /// Amazon Pinpoint account.</p>
+        /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
         pub fn set_email_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1337,8 +1277,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccount`.
     ///
-    /// <p>Obtain information about the email-sending status and capabilities of your Amazon Pinpoint
-    /// account in the current AWS Region.</p>
+    /// <p>Obtain information about the email-sending status and capabilities of your Amazon Pinpoint account in the current AWS Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -1459,16 +1398,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_blacklist_item_names`](Self::set_blacklist_item_names).
         ///
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or
-        /// Amazon SES.</p>
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
         pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.blacklist_item_names(input.into());
             self
         }
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or
-        /// Amazon SES.</p>
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
         pub fn set_blacklist_item_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1479,14 +1414,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfigurationSet`.
     ///
-    /// <p>Get information about an existing configuration set, including the dedicated IP pool
-    /// that it's associated with, whether or not it's enabled for sending email, and
-    /// more.</p>
-    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can
-    /// apply to the emails you send. You apply a configuration set to an email by including a
-    /// reference to the configuration set in the headers of the email. When you apply a
-    /// configuration set to an email, all of the rules in that configuration set are applied to
-    /// the email.</p>
+    /// <p>Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.</p>
+    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1543,14 +1472,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to obtain more information
-        /// about.</p>
+        /// <p>The name of the configuration set that you want to obtain more information about.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to obtain more information
-        /// about.</p>
+        /// <p>The name of the configuration set that you want to obtain more information about.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1561,13 +1488,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfigurationSetEventDestinations`.
     ///
-    /// <p>Retrieve a list of event destinations that are associated with a configuration
-    /// set.</p>
-    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens,
-    /// clicks, bounces, and complaints. <i>Event destinations</i> are places that
-    /// you can send information about these events to. For example, you can send event data to
-    /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
-    /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    /// <p>Retrieve a list of event destinations that are associated with a configuration set.</p>
+    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1642,9 +1564,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDedicatedIp`.
     ///
-    /// <p>Get information about a dedicated IP address, including the name of the dedicated IP
-    /// pool that it's associated with, as well information about the automatic warm-up process
-    /// for the address.</p>
+    /// <p>Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIp<
         C = aws_smithy_client::erase::DynConnector,
@@ -1701,14 +1621,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
         pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip(input.into());
             self
         }
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip(input);
             self
@@ -1716,8 +1634,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDedicatedIps`.
     ///
-    /// <p>List the dedicated IP addresses that are associated with your Amazon Pinpoint
-    /// account.</p>
+    /// <p>List the dedicated IP addresses that are associated with your Amazon Pinpoint account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIps<
         C = aws_smithy_client::erase::DynConnector,
@@ -1784,30 +1701,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pool_name(input);
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -1815,13 +1724,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeliverabilityDashboardOptions`.
     ///
-    /// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account.
-    /// When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and
-    /// other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the
-    /// ability to perform predictive inbox placement tests.</p>
-    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-    /// to any other fees that you accrue by using Amazon Pinpoint. For more information about the
-    /// features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
+    /// <p>Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityDashboardOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1951,10 +1855,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDomainDeliverabilityCampaign`.
     ///
-    /// <p>Retrieve all the deliverability data for a specific campaign. This data is available
-    /// for a campaign only if the campaign sent email by using a domain that the
-    /// Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
-    /// operation).</p>
+    /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainDeliverabilityCampaign<
         C = aws_smithy_client::erase::DynConnector,
@@ -2011,18 +1912,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this
-        /// identifier to a campaign. This value is not the same as the campaign identifier that
-        /// Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the
-        /// Amazon Pinpoint console.</p>
+        /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
         pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.campaign_id(input.into());
             self
         }
-        /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this
-        /// identifier to a campaign. This value is not the same as the campaign identifier that
-        /// Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the
-        /// Amazon Pinpoint console.</p>
+        /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_campaign_id(input);
             self
@@ -2030,8 +1925,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDomainStatisticsReport`.
     ///
-    /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send
-    /// email.</p>
+    /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainStatisticsReport<
         C = aws_smithy_client::erase::DynConnector,
@@ -2098,14 +1992,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2113,16 +2005,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2133,9 +2021,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEmailIdentity`.
     ///
-    /// <p>Provides information about a specific identity associated with your Amazon Pinpoint account,
-    /// including the identity's verification status, its DKIM authentication status, and its
-    /// custom Mail-From settings.</p>
+    /// <p>Provides information about a specific identity associated with your Amazon Pinpoint account, including the identity's verification status, its DKIM authentication status, and its custom Mail-From settings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
@@ -2208,13 +2094,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConfigurationSets`.
     ///
-    /// <p>List all of the configuration sets associated with your Amazon Pinpoint account in the current
-    /// region.</p>
-    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can
-    /// apply to the emails you send. You apply a configuration set to an email by including a
-    /// reference to the configuration set in the headers of the email. When you apply a
-    /// configuration set to an email, all of the rules in that configuration set are applied to
-    /// the email.</p>
+    /// <p>List all of the configuration sets associated with your Amazon Pinpoint account in the current region.</p>
+    /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -2271,30 +2152,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -2302,8 +2175,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDedicatedIpPools`.
     ///
-    /// <p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current
-    /// AWS Region.</p>
+    /// <p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDedicatedIpPools<
         C = aws_smithy_client::erase::DynConnector,
@@ -2360,30 +2232,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -2391,9 +2255,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeliverabilityTestReports`.
     ///
-    /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
-    /// predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
-    /// operation to view the results.</p>
+    /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliverabilityTestReports<
         C = aws_smithy_client::erase::DynConnector,
@@ -2450,33 +2312,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -2485,10 +2337,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomainDeliverabilityCampaigns`.
     ///
-    /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send
-    /// email during a specified time range. This data is available for a domain only if you
-    /// enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation)
-    /// for the domain.</p>
+    /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainDeliverabilityCampaigns<
         C = aws_smithy_client::erase::DynConnector,
@@ -2545,14 +2394,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2560,16 +2407,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2590,34 +2433,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscribed_domain(input);
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -2625,9 +2456,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEmailIdentities`.
     ///
-    /// <p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint
-    /// account. An identity can be either an email address or a domain. This operation returns
-    /// identities that are verified as well as those that aren't.</p>
+    /// <p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailIdentities<
         C = aws_smithy_client::erase::DynConnector,
@@ -2684,31 +2513,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -2717,12 +2538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified
-    /// resource. A <i>tag</i> is a label that you optionally define and associate
-    /// with a resource in Amazon Pinpoint. Each tag consists of a required <i>tag
-    /// key</i> and an optional associated <i>tag value</i>. A tag key
-    /// is a general label that acts as a category for more specific tag values. A tag value
-    /// acts as a descriptor within a tag key.</p>
+    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified resource. A&nbsp;<i>tag</i>&nbsp;is a label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an optional associated&nbsp;<i>tag value</i>. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2779,14 +2595,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2853,18 +2667,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn auto_warmup_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_warmup_enabled(input);
             self
         }
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_warmup_enabled(input);
             self
@@ -2929,21 +2737,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If AWS paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.sending_enabled(input);
             self
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If AWS paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sending_enabled(input);
@@ -2952,8 +2754,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetDeliveryOptions`.
     ///
-    /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools
-    /// to create groups of dedicated IP addresses for sending specific types of email.</p>
+    /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetDeliveryOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3012,14 +2813,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to associate with a dedicated IP
-        /// pool.</p>
+        /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to associate with a dedicated IP
-        /// pool.</p>
+        /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3027,18 +2826,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
             self.inner = self.inner.tls_policy(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn set_tls_policy(
             mut self,
             input: std::option::Option<crate::model::TlsPolicy>,
@@ -3046,14 +2839,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tls_policy(input);
             self
         }
-        /// <p>The name of the dedicated IP pool that you want to associate with the configuration
-        /// set.</p>
+        /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
         pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sending_pool_name(input.into());
             self
         }
-        /// <p>The name of the dedicated IP pool that you want to associate with the configuration
-        /// set.</p>
+        /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
         pub fn set_sending_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3064,8 +2855,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetReputationOptions`.
     ///
-    /// <p>Enable or disable collection of reputation metrics for emails that you send using a
-    /// particular configuration set in a specific AWS Region.</p>
+    /// <p>Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific AWS Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetReputationOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3124,14 +2914,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to enable or disable reputation metric
-        /// tracking for.</p>
+        /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to enable or disable reputation metric
-        /// tracking for.</p>
+        /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3139,16 +2927,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.reputation_metrics_enabled(input);
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reputation_metrics_enabled(input);
             self
@@ -3156,8 +2940,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetSendingOptions`.
     ///
-    /// <p>Enable or disable email sending for messages that use a particular configuration set
-    /// in a specific AWS Region.</p>
+    /// <p>Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSendingOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3214,14 +2997,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to enable or disable email sending
-        /// for.</p>
+        /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to enable or disable email sending
-        /// for.</p>
+        /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3229,14 +3010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.sending_enabled(input);
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sending_enabled(input);
             self
@@ -3244,8 +3023,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetTrackingOptions`.
     ///
-    /// <p>Specify a custom domain to use for open and click tracking elements in email that you
-    /// send using Amazon Pinpoint.</p>
+    /// <p>Specify a custom domain to use for open and click tracking elements in email that you send using Amazon Pinpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3304,14 +3082,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to add a custom tracking domain
-        /// to.</p>
+        /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to add a custom tracking domain
-        /// to.</p>
+        /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3335,15 +3111,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDedicatedIpInPool`.
     ///
-    /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p>
-    /// <note>
-    /// <p>The dedicated IP address that you specify must already exist, and must be
-    /// associated with your Amazon Pinpoint account.
-    ///
-    /// </p>
-    /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by
-    /// using the <code>CreateDedicatedIpPool</code> operation.</p>
-    ///
+    /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+    /// <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Pinpoint account. </p>
+    /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by using the <code>CreateDedicatedIpPool</code> operation.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpInPool<
@@ -3401,26 +3171,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
         pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip(input.into());
             self
         }
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip(input);
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_pool_name(input.into());
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn set_destination_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3498,14 +3264,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip(input);
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn warmup_percentage(mut self, input: i32) -> Self {
             self.inner = self.inner.warmup_percentage(input);
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_warmup_percentage(input);
             self
@@ -3513,13 +3277,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDeliverabilityDashboardOption`.
     ///
-    /// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the
-    /// Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for
-    /// the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform
-    /// predictive inbox placement tests.</p>
-    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-    /// to any other fees that you accrue by using Amazon Pinpoint. For more information about the
-    /// features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
+    /// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliverabilityDashboardOption<
         C = aws_smithy_client::erase::DynConnector,
@@ -3576,14 +3335,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
-        /// dashboard, set this value to <code>true</code>.</p>
+        /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn dashboard_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.dashboard_enabled(input);
             self
         }
-        /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
-        /// dashboard, set this value to <code>true</code>.</p>
+        /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dashboard_enabled(input);
             self
@@ -3592,8 +3349,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
         ///
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn subscribed_domains(
             mut self,
             input: crate::model::DomainDeliverabilityTrackingOption,
@@ -3601,8 +3357,7 @@ pub mod fluent_builders {
             self.inner = self.inner.subscribed_domains(input);
             self
         }
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn set_subscribed_domains(
             mut self,
             input: std::option::Option<
@@ -3686,17 +3441,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the
-        /// identity are DKIM-signed. When you set this value to <code>false</code>, then the
-        /// messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+        /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
         pub fn signing_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.signing_enabled(input);
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the
-        /// identity are DKIM-signed. When you set this value to <code>false</code>, then the
-        /// messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+        /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_signing_enabled(input);
             self
@@ -3704,17 +3455,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEmailIdentityFeedbackAttributes`.
     ///
-    /// <p>Used to enable or disable feedback forwarding for an identity. This setting determines
-    /// what happens when an identity is used to send an email that results in a bounce or
-    /// complaint event.</p>
-    /// <p>When you enable feedback forwarding, Amazon Pinpoint sends you email notifications when bounce
-    /// or complaint events occur. Amazon Pinpoint sends this notification to the address that you
-    /// specified in the Return-Path header of the original email.</p>
-    /// <p>When you disable feedback forwarding, Amazon Pinpoint sends notifications through other
-    /// mechanisms, such as by notifying an Amazon SNS topic. You're required to have a method of
-    /// tracking bounces and complaints. If you haven't set up another mechanism for receiving
-    /// bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events
-    /// occur (even if this setting is disabled).</p>
+    /// <p>Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.</p>
+    /// <p>When you enable feedback forwarding, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>When you disable feedback forwarding, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityFeedbackAttributes<
         C = aws_smithy_client::erase::DynConnector,
@@ -3773,14 +3516,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
-        /// for.</p>
+        /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
         pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(input.into());
             self
         }
-        /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
-        /// for.</p>
+        /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
         pub fn set_email_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3789,27 +3530,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or
-        /// complaint events occur. Amazon Pinpoint sends this notification to the address that you specified
-        /// in the Return-Path header of the original email.</p>
-        /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other
-        /// mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're
-        /// required to have a method of tracking bounces and complaints. If you haven't set up
-        /// another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email
-        /// notification when these events occur (even if this setting is disabled).</p>
+        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+        /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
         pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.email_forwarding_enabled(input);
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or
-        /// complaint events occur. Amazon Pinpoint sends this notification to the address that you specified
-        /// in the Return-Path header of the original email.</p>
-        /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other
-        /// mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're
-        /// required to have a method of tracking bounces and complaints. If you haven't set up
-        /// another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email
-        /// notification when these events occur (even if this setting is disabled).</p>
+        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+        /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
         pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_email_forwarding_enabled(input);
             self
@@ -3817,8 +3546,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEmailIdentityMailFromAttributes`.
     ///
-    /// <p>Used to enable or disable the custom Mail-From domain configuration for an email
-    /// identity.</p>
+    /// <p>Used to enable or disable the custom Mail-From domain configuration for an email identity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityMailFromAttributes<
         C = aws_smithy_client::erase::DynConnector,
@@ -3877,14 +3605,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
-        /// for.</p>
+        /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
         pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(input.into());
             self
         }
-        /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
-        /// for.</p>
+        /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
         pub fn set_email_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3892,37 +3618,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_identity(input);
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
         pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mail_from_domain(input.into());
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
         pub fn set_mail_from_domain(
             mut self,
@@ -3931,26 +3641,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mail_from_domain(input);
             self
         }
-        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when
-        /// you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code>
-        /// error, and doesn't attempt to deliver the email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
+        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.inner = self.inner.behavior_on_mx_failure(input);
             self
         }
-        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when
-        /// you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code>
-        /// error, and doesn't attempt to deliver the email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
+        /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -3961,23 +3659,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendEmail`.
     ///
-    /// <p>Sends an email message. You can use the Amazon Pinpoint Email API to send two types of
-    /// messages:</p>
+    /// <p>Sends an email message. You can use the Amazon Pinpoint Email API to send two types of messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Simple</b> – A standard email message. When
-    /// you create this type of message, you specify the sender, the recipient, and the
-    /// message body, and Amazon Pinpoint assembles the message for you.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Raw</b> –  A raw, MIME-formatted email
-    /// message. When you send this type of email, you have to specify all of the
-    /// message headers, as well as the message body. You can use this message type to
-    /// send messages that contain attachments. The message that you specify has to be a
-    /// valid MIME message.</p>
-    /// </li>
+    /// <li> <p> <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon Pinpoint assembles the message for you.</p> </li>
+    /// <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEmail<
@@ -4035,16 +3720,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address that you want to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
+        /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.from_email_address(input.into());
             self
         }
-        /// <p>The email address that you want to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
+        /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4069,14 +3750,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4100,14 +3779,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feedback_forwarding_email_address(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// or a Raw message.</p>
+        /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
         pub fn content(mut self, input: crate::model::EmailContent) -> Self {
             self.inner = self.inner.content(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// or a Raw message.</p>
+        /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<crate::model::EmailContent>,
@@ -4119,16 +3796,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
             self.inner = self.inner.email_tags(input);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn set_email_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -4152,15 +3825,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add one or more tags (keys and values) to a specified resource. A
-    /// <i>tag</i> is a label that you optionally define and associate with a
-    /// resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways,
-    /// such as by purpose, owner, environment, or other criteria. A resource can have as many
-    /// as 50 tags.</p>
-    /// <p>Each tag consists of a required <i>tag key</i> and an
-    /// associated <i>tag value</i>, both of which you define. A tag key is a
-    /// general label that acts as a category for more specific tag values. A tag value acts as
-    /// a descriptor within a tag key.</p>
+    /// <p>Add one or more tags (keys and values) to a specified resource. A <i>tag</i>&nbsp;is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p>
+    /// <p>Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an associated&nbsp;<i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4217,14 +3883,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4233,18 +3897,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4312,14 +3970,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4328,24 +3984,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v1/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v1/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4357,11 +4003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
     ///
     /// <p>Update the configuration of an event destination for a configuration set.</p>
-    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens,
-    /// clicks, bounces, and complaints. <i>Event destinations</i> are places that
-    /// you can send information about these events to. For example, you can send event data to
-    /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
-    /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
@@ -4420,14 +4062,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// modify.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// modify.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to modify.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,

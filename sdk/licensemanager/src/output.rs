@@ -1537,23 +1537,19 @@ impl ListAssociationsForLicenseConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingsOutput {
-    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-    /// and so on.</p>
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether Organizations is integrated with License Manager for
-    /// cross-account discovery.</p>
+    /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     pub organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
-    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-    /// provides member accounts with access to this share.</p>
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingsOutput {
-    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-    /// and so on.</p>
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
     }
@@ -1561,8 +1557,7 @@ impl GetServiceSettingsOutput {
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>Indicates whether Organizations is integrated with License Manager for
-    /// cross-account discovery.</p>
+    /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     pub fn organization_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
@@ -1572,8 +1567,7 @@ impl GetServiceSettingsOutput {
     pub fn enable_cross_accounts_discovery(&self) -> std::option::Option<bool> {
         self.enable_cross_accounts_discovery
     }
-    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-    /// provides member accounts with access to this share.</p>
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub fn license_manager_resource_share_arn(&self) -> std::option::Option<&str> {
         self.license_manager_resource_share_arn.as_deref()
     }
@@ -1612,14 +1606,12 @@ pub mod get_service_settings_output {
         pub(crate) license_manager_resource_share_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-        /// and so on.</p>
+        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_arn = Some(input.into());
             self
         }
-        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-        /// and so on.</p>
+        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
         pub fn set_s3_bucket_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1640,8 +1632,7 @@ pub mod get_service_settings_output {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>Indicates whether Organizations is integrated with License Manager for
-        /// cross-account discovery.</p>
+        /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
         pub fn organization_configuration(
             mut self,
             input: crate::model::OrganizationConfiguration,
@@ -1649,8 +1640,7 @@ pub mod get_service_settings_output {
             self.organization_configuration = Some(input);
             self
         }
-        /// <p>Indicates whether Organizations is integrated with License Manager for
-        /// cross-account discovery.</p>
+        /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
         pub fn set_organization_configuration(
             mut self,
             input: std::option::Option<crate::model::OrganizationConfiguration>,
@@ -1671,8 +1661,7 @@ pub mod get_service_settings_output {
             self.enable_cross_accounts_discovery = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-        /// provides member accounts with access to this share.</p>
+        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
         pub fn license_manager_resource_share_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1680,8 +1669,7 @@ pub mod get_service_settings_output {
             self.license_manager_resource_share_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-        /// provides member accounts with access to this share.</p>
+        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
         pub fn set_license_manager_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,

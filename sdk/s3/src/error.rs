@@ -184,8 +184,7 @@ pub struct CopyObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyObjectErrorKind {
-    /// <p>The source object of the COPY action is not in the active tier and is only stored in
-    /// Amazon S3 Glacier.</p>
+    /// <p>The source object of the COPY action is not in the active tier and is only stored in Amazon S3 Glacier.</p>
     ObjectNotInActiveTierError(crate::error::ObjectNotInActiveTierError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -278,13 +277,9 @@ pub struct CreateBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBucketErrorKind {
-    /// <p>The requested bucket name is not available. The bucket namespace is shared by all users
-    /// of the system. Select a different name and try again.</p>
+    /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
-    /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error
-    /// in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you
-    /// re-create an existing bucket that you already own in the North Virginia Region, Amazon S3
-    /// returns 200 OK and resets the bucket access control lists (ACLs).</p>
+    /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8108,10 +8103,7 @@ impl InvalidObjectState {
     }
 }
 
-/// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error
-/// in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you
-/// re-create an existing bucket that you already own in the North Virginia Region, Amazon S3
-/// returns 200 OK and resets the bucket access control lists (ACLs).</p>
+/// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketAlreadyOwnedByYou {
@@ -8175,8 +8167,7 @@ impl BucketAlreadyOwnedByYou {
     }
 }
 
-/// <p>The requested bucket name is not available. The bucket namespace is shared by all users
-/// of the system. Select a different name and try again.</p>
+/// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketAlreadyExists {
@@ -8240,8 +8231,7 @@ impl BucketAlreadyExists {
     }
 }
 
-/// <p>The source object of the COPY action is not in the active tier and is only stored in
-/// Amazon S3 Glacier.</p>
+/// <p>The source object of the COPY action is not in the active tier and is only stored in Amazon S3 Glacier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotInActiveTierError {

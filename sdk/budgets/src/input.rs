@@ -240,16 +240,12 @@ pub mod create_budget_action_input {
             self.notification_type = input;
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -257,16 +253,12 @@ pub mod create_budget_action_input {
             self.action_type = input;
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -274,16 +266,12 @@ pub mod create_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -291,16 +279,12 @@ pub mod create_budget_action_input {
             self.definition = input;
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -308,16 +292,12 @@ pub mod create_budget_action_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.approval_model = Some(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -1081,16 +1061,12 @@ pub mod delete_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1806,16 +1782,12 @@ pub mod describe_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1993,16 +1965,12 @@ pub mod describe_budget_action_histories_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3376,30 +3344,22 @@ pub mod execute_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
             self.execution_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -3747,16 +3707,12 @@ pub mod update_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3774,16 +3730,12 @@ pub mod update_budget_action_input {
             self.notification_type = input;
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -3791,16 +3743,12 @@ pub mod update_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -3808,16 +3756,12 @@ pub mod update_budget_action_input {
             self.definition = input;
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3825,16 +3769,12 @@ pub mod update_budget_action_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.approval_model = Some(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -4510,27 +4450,17 @@ pub struct UpdateBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -4544,9 +4474,7 @@ impl UpdateBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -4554,27 +4482,19 @@ impl UpdateBudgetActionInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }
@@ -4635,13 +4555,9 @@ pub struct ExecuteBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionInput {
@@ -4653,15 +4569,11 @@ impl ExecuteBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
         self.execution_type.as_ref()
     }
@@ -4937,9 +4849,7 @@ pub struct DescribeBudgetActionHistoriesInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub time_period: std::option::Option<crate::model::TimePeriod>,
@@ -4957,9 +4867,7 @@ impl DescribeBudgetActionHistoriesInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -4997,9 +4905,7 @@ pub struct DescribeBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionInput {
@@ -5011,9 +4917,7 @@ impl DescribeBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -5141,9 +5045,7 @@ pub struct DeleteBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DeleteBudgetActionInput {
@@ -5155,9 +5057,7 @@ impl DeleteBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -5294,25 +5194,15 @@ pub struct CreateBudgetActionInput {
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -5330,33 +5220,23 @@ impl CreateBudgetActionInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }

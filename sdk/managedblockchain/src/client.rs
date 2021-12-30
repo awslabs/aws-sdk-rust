@@ -482,9 +482,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_version(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn framework_configuration(
             mut self,
             input: crate::model::NetworkFrameworkConfiguration,
@@ -492,9 +490,7 @@ pub mod fluent_builders {
             self.inner = self.inner.framework_configuration(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn set_framework_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
@@ -502,16 +498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_configuration(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
             self.inner = self.inner.voting_policy(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn set_voting_policy(
             mut self,
             input: std::option::Option<crate::model::VotingPolicy>,
@@ -636,21 +628,9 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
@@ -659,21 +639,9 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
@@ -805,14 +773,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
@@ -1022,21 +988,9 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
@@ -1045,21 +999,9 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
@@ -1588,16 +1530,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn is_owned(mut self, input: bool) -> Self {
             self.inner = self.inner.is_owned(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_owned(input);
             self
@@ -1915,44 +1853,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2018,58 +1944,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.proposal_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2670,42 +2580,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.proposal_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.voter_member_id(input.into());
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn set_voter_member_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2713,16 +2613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_voter_member_id(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
             self.inner = self.inner.vote(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
             self.inner = self.inner.set_vote(input);
             self

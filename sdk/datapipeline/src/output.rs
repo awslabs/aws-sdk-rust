@@ -229,11 +229,11 @@ impl ReportTaskRunnerHeartbeatOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskProgressOutput {
-    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     pub canceled: bool,
 }
 impl ReportTaskProgressOutput {
-    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+    /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     pub fn canceled(&self) -> bool {
         self.canceled
     }
@@ -254,12 +254,12 @@ pub mod report_task_progress_output {
         pub(crate) canceled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+        /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
         pub fn canceled(mut self, input: bool) -> Self {
             self.canceled = Some(input);
             self
         }
-        /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
+        /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
         pub fn set_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.canceled = input;
             self
@@ -315,8 +315,7 @@ impl RemoveTagsOutput {
 pub struct QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub has_more_results: bool,
@@ -326,8 +325,7 @@ impl QueryObjectsOutput {
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -375,14 +373,12 @@ pub mod query_objects_output {
             self.ids = input;
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -422,8 +418,7 @@ pub struct PutPipelineDefinitionOutput {
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     pub validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
-    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
-    /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub errored: bool,
 }
 impl PutPipelineDefinitionOutput {
@@ -435,8 +430,7 @@ impl PutPipelineDefinitionOutput {
     pub fn validation_warnings(&self) -> std::option::Option<&[crate::model::ValidationWarning]> {
         self.validation_warnings.as_deref()
     }
-    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
-    /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn errored(&self) -> bool {
         self.errored
     }
@@ -501,14 +495,12 @@ pub mod put_pipeline_definition_output {
             self.validation_warnings = input;
             self
         }
-        /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
-        /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+        /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
         pub fn errored(mut self, input: bool) -> Self {
             self.errored = Some(input);
             self
         }
-        /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
-        /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+        /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
             self.errored = input;
             self
@@ -534,15 +526,11 @@ impl PutPipelineDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForTaskOutput {
-    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
-    /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
-    /// and <a>SetTaskStatus</a>.</p>
+    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     pub task_object: std::option::Option<crate::model::TaskObject>,
 }
 impl PollForTaskOutput {
-    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
-    /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
-    /// and <a>SetTaskStatus</a>.</p>
+    /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     pub fn task_object(&self) -> std::option::Option<&crate::model::TaskObject> {
         self.task_object.as_ref()
     }
@@ -563,16 +551,12 @@ pub mod poll_for_task_output {
         pub(crate) task_object: std::option::Option<crate::model::TaskObject>,
     }
     impl Builder {
-        /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
-        /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
-        /// and <a>SetTaskStatus</a>.</p>
+        /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
         pub fn task_object(mut self, input: crate::model::TaskObject) -> Self {
             self.task_object = Some(input);
             self
         }
-        /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
-        /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
-        /// and <a>SetTaskStatus</a>.</p>
+        /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
         pub fn set_task_object(
             mut self,
             input: std::option::Option<crate::model::TaskObject>,
@@ -599,23 +583,19 @@ impl PollForTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesOutput {
-    /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
-    /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
+    /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     pub pipeline_id_list: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub has_more_results: bool,
 }
 impl ListPipelinesOutput {
-    /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
-    /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
+    /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     pub fn pipeline_id_list(&self) -> std::option::Option<&[crate::model::PipelineIdName]> {
         self.pipeline_id_list.as_deref()
     }
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -649,16 +629,14 @@ pub mod list_pipelines_output {
         ///
         /// To override the contents of this collection use [`set_pipeline_id_list`](Self::set_pipeline_id_list).
         ///
-        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
-        /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
+        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
         pub fn pipeline_id_list(mut self, input: crate::model::PipelineIdName) -> Self {
             let mut v = self.pipeline_id_list.unwrap_or_default();
             v.push(input);
             self.pipeline_id_list = Some(v);
             self
         }
-        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
-        /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
+        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
         pub fn set_pipeline_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
@@ -666,14 +644,12 @@ pub mod list_pipelines_output {
             self.pipeline_id_list = input;
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -960,8 +936,7 @@ impl DescribePipelinesOutput {
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
     pub has_more_results: bool,
@@ -971,8 +946,7 @@ impl DescribeObjectsOutput {
     pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
-    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
-    /// again with this marker value. If the value is null, there are no more results.</p>
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1021,14 +995,12 @@ pub mod describe_objects_output {
             self.pipeline_objects = input;
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
-        /// again with this marker value. If the value is null, there are no more results.</p>
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self

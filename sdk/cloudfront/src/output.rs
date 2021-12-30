@@ -5,8 +5,7 @@
 pub struct UpdateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingDistributionOutput {
@@ -16,8 +15,7 @@ impl UpdateStreamingDistributionOutput {
     ) -> std::option::Option<&crate::model::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -56,14 +54,12 @@ pub mod update_streaming_distribution_output {
             self.streaming_distribution = input;
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -616,8 +612,7 @@ impl UpdateFieldLevelEncryptionProfileOutput {
 pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
     pub field_level_encryption: std::option::Option<crate::model::FieldLevelEncryption>,
-    /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigOutput {
@@ -627,8 +622,7 @@ impl UpdateFieldLevelEncryptionConfigOutput {
     ) -> std::option::Option<&crate::model::FieldLevelEncryption> {
         self.field_level_encryption.as_ref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -664,14 +658,12 @@ pub mod update_field_level_encryption_config_output {
             self.field_level_encryption = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -698,8 +690,7 @@ impl UpdateFieldLevelEncryptionConfigOutput {
 pub struct UpdateDistributionOutput {
     /// <p>The distribution's information.</p>
     pub distribution: std::option::Option<crate::model::Distribution>,
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionOutput {
@@ -707,8 +698,7 @@ impl UpdateDistributionOutput {
     pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
         self.distribution.as_ref()
     }
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -744,14 +734,12 @@ pub mod update_distribution_output {
             self.distribution = input;
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -779,8 +767,7 @@ pub struct UpdateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     pub cloud_front_origin_access_identity:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl UpdateCloudFrontOriginAccessIdentityOutput {
@@ -790,8 +777,7 @@ impl UpdateCloudFrontOriginAccessIdentityOutput {
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentity> {
         self.cloud_front_origin_access_identity.as_ref()
     }
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -834,14 +820,12 @@ pub mod update_cloud_front_origin_access_identity_output {
             self.cloud_front_origin_access_identity = input;
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -972,13 +956,11 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFunctionOutput {
-    /// <p>An object that represents the result of running the function with the provided event
-    /// object.</p>
+    /// <p>An object that represents the result of running the function with the provided event object.</p>
     pub test_result: std::option::Option<crate::model::TestResult>,
 }
 impl TestFunctionOutput {
-    /// <p>An object that represents the result of running the function with the provided event
-    /// object.</p>
+    /// <p>An object that represents the result of running the function with the provided event object.</p>
     pub fn test_result(&self) -> std::option::Option<&crate::model::TestResult> {
         self.test_result.as_ref()
     }
@@ -999,14 +981,12 @@ pub mod test_function_output {
         pub(crate) test_result: std::option::Option<crate::model::TestResult>,
     }
     impl Builder {
-        /// <p>An object that represents the result of running the function with the provided event
-        /// object.</p>
+        /// <p>An object that represents the result of running the function with the provided event object.</p>
         pub fn test_result(mut self, input: crate::model::TestResult) -> Self {
             self.test_result = Some(input);
             self
         }
-        /// <p>An object that represents the result of running the function with the provided event
-        /// object.</p>
+        /// <p>An object that represents the result of running the function with the provided event object.</p>
         pub fn set_test_result(
             mut self,
             input: std::option::Option<crate::model::TestResult>,
@@ -1784,8 +1764,7 @@ impl ListFieldLevelEncryptionConfigsOutput {
     }
 }
 
-/// <p>The response to a request to list the distributions that are associated with a
-/// specified WAF web ACL.</p>
+/// <p>The response to a request to list the distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByWebAclIdOutput {
@@ -2381,8 +2360,7 @@ pub struct GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
-    /// </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionConfigOutput {
@@ -2392,8 +2370,7 @@ impl GetStreamingDistributionConfigOutput {
     ) -> std::option::Option<&crate::model::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
-    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
-    /// </p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -2436,14 +2413,12 @@ pub mod get_streaming_distribution_config_output {
             self.streaming_distribution_config = input;
             self
         }
-        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
-        /// </p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
-        /// </p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2470,8 +2445,7 @@ impl GetStreamingDistributionConfigOutput {
 pub struct GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     pub streaming_distribution: std::option::Option<crate::model::StreamingDistribution>,
-    /// <p>The current version of the streaming distribution's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionOutput {
@@ -2481,8 +2455,7 @@ impl GetStreamingDistributionOutput {
     ) -> std::option::Option<&crate::model::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
-    /// <p>The current version of the streaming distribution's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -2521,14 +2494,12 @@ pub mod get_streaming_distribution_output {
             self.streaming_distribution = input;
             self
         }
-        /// <p>The current version of the streaming distribution's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the streaming distribution's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3091,13 +3062,11 @@ impl GetOriginRequestPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMonitoringSubscriptionOutput {
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl GetMonitoringSubscriptionOutput {
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub fn monitoring_subscription(
         &self,
     ) -> std::option::Option<&crate::model::MonitoringSubscription> {
@@ -3121,8 +3090,7 @@ pub mod get_monitoring_subscription_output {
             std::option::Option<crate::model::MonitoringSubscription>,
     }
     impl Builder {
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn monitoring_subscription(
             mut self,
             input: crate::model::MonitoringSubscription,
@@ -3130,8 +3098,7 @@ pub mod get_monitoring_subscription_output {
             self.monitoring_subscription = Some(input);
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -3797,8 +3764,7 @@ impl GetFieldLevelEncryptionOutput {
 pub struct GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigOutput {
@@ -3806,8 +3772,7 @@ impl GetDistributionConfigOutput {
     pub fn distribution_config(&self) -> std::option::Option<&crate::model::DistributionConfig> {
         self.distribution_config.as_ref()
     }
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -3843,14 +3808,12 @@ pub mod get_distribution_config_output {
             self.distribution_config = input;
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3877,8 +3840,7 @@ impl GetDistributionConfigOutput {
 pub struct GetDistributionOutput {
     /// <p>The distribution's information.</p>
     pub distribution: std::option::Option<crate::model::Distribution>,
-    /// <p>The current version of the distribution's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetDistributionOutput {
@@ -3886,8 +3848,7 @@ impl GetDistributionOutput {
     pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
         self.distribution.as_ref()
     }
-    /// <p>The current version of the distribution's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -3923,14 +3884,12 @@ pub mod get_distribution_output {
             self.distribution = input;
             self
         }
-        /// <p>The current version of the distribution's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the distribution's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3958,8 +3917,7 @@ pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information. </p>
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
@@ -3969,8 +3927,7 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
-    /// <p>The current version of the configuration. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -4013,14 +3970,12 @@ pub mod get_cloud_front_origin_access_identity_config_output {
             self.cloud_front_origin_access_identity_config = input;
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the configuration. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4050,8 +4005,7 @@ pub struct GetCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     pub cloud_front_origin_access_identity:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
-    /// <p>The current version of the origin access identity's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub e_tag: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityOutput {
@@ -4061,8 +4015,7 @@ impl GetCloudFrontOriginAccessIdentityOutput {
     ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentity> {
         self.cloud_front_origin_access_identity.as_ref()
     }
-    /// <p>The current version of the origin access identity's information. For example:
-    /// <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -4105,14 +4058,12 @@ pub mod get_cloud_front_origin_access_identity_output {
             self.cloud_front_origin_access_identity = input;
             self
         }
-        /// <p>The current version of the origin access identity's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The current version of the origin access identity's information. For example:
-        /// <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -5303,13 +5254,11 @@ impl CreateOriginRequestPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitoringSubscriptionOutput {
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl CreateMonitoringSubscriptionOutput {
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub fn monitoring_subscription(
         &self,
     ) -> std::option::Option<&crate::model::MonitoringSubscription> {
@@ -5333,8 +5282,7 @@ pub mod create_monitoring_subscription_output {
             std::option::Option<crate::model::MonitoringSubscription>,
     }
     impl Builder {
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn monitoring_subscription(
             mut self,
             input: crate::model::MonitoringSubscription,
@@ -5342,8 +5290,7 @@ pub mod create_monitoring_subscription_output {
             self.monitoring_subscription = Some(input);
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -5462,15 +5409,13 @@ impl CreateKeyGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInvalidationOutput {
-    /// <p>The fully qualified URI of the distribution and invalidation batch request, including
-    /// the <code>Invalidation ID</code>.</p>
+    /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The invalidation's information.</p>
     pub invalidation: std::option::Option<crate::model::Invalidation>,
 }
 impl CreateInvalidationOutput {
-    /// <p>The fully qualified URI of the distribution and invalidation batch request, including
-    /// the <code>Invalidation ID</code>.</p>
+    /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -5497,14 +5442,12 @@ pub mod create_invalidation_output {
         pub(crate) invalidation: std::option::Option<crate::model::Invalidation>,
     }
     impl Builder {
-        /// <p>The fully qualified URI of the distribution and invalidation batch request, including
-        /// the <code>Invalidation ID</code>.</p>
+        /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fully qualified URI of the distribution and invalidation batch request, including
-        /// the <code>Invalidation ID</code>.</p>
+        /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -5544,8 +5487,7 @@ impl CreateInvalidationOutput {
 pub struct CreateFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub function_summary: std::option::Option<crate::model::FunctionSummary>,
-    /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
-    /// API.</p>
+    /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub e_tag: std::option::Option<std::string::String>,
@@ -5555,8 +5497,7 @@ impl CreateFunctionOutput {
     pub fn function_summary(&self) -> std::option::Option<&crate::model::FunctionSummary> {
         self.function_summary.as_ref()
     }
-    /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
-    /// API.</p>
+    /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -5598,14 +5539,12 @@ pub mod create_function_output {
             self.function_summary = input;
             self
         }
-        /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
-        /// API.</p>
+        /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
-        /// API.</p>
+        /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self

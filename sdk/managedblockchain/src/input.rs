@@ -295,9 +295,7 @@ pub mod create_network_input {
             self.framework_version = input;
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn framework_configuration(
             mut self,
             input: crate::model::NetworkFrameworkConfiguration,
@@ -305,9 +303,7 @@ pub mod create_network_input {
             self.framework_configuration = Some(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn set_framework_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
@@ -315,16 +311,12 @@ pub mod create_network_input {
             self.framework_configuration = input;
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
             self.voting_policy = Some(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn set_voting_policy(
             mut self,
             input: std::option::Option<crate::model::VotingPolicy>,
@@ -545,21 +537,9 @@ pub mod create_node_input {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
@@ -568,21 +548,9 @@ pub mod create_node_input {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
@@ -827,14 +795,12 @@ pub mod create_proposal_input {
             self.client_request_token = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
@@ -1256,21 +1222,9 @@ pub mod delete_node_input {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
@@ -1279,21 +1233,9 @@ pub mod delete_node_input {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
@@ -2414,16 +2356,12 @@ pub mod list_members_input {
             self.status = input;
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn is_owned(mut self, input: bool) -> Self {
             self.is_owned = Some(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
             self.is_owned = input;
             self
@@ -3070,44 +3008,32 @@ pub mod list_proposals_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3279,58 +3205,42 @@ pub mod list_proposal_votes_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposal_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4650,42 +4560,32 @@ pub mod vote_on_proposal_input {
         pub(crate) vote: std::option::Option<crate::model::VoteValue>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposal_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.voter_member_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn set_voter_member_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4693,16 +4593,12 @@ pub mod vote_on_proposal_input {
             self.voter_member_id = input;
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
             self.vote = Some(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
             self.vote = input;
             self
@@ -4880,43 +4776,29 @@ impl VoteOnProposalInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoteOnProposalInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub proposal_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the member casting the vote.
-    /// </p>
+    /// <p>The unique identifier of the member casting the vote. </p>
     pub voter_member_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The value of the vote.
-    /// </p>
+    /// <p> The value of the vote. </p>
     pub vote: std::option::Option<crate::model::VoteValue>,
 }
 impl VoteOnProposalInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(&self) -> std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>The unique identifier of the member casting the vote.
-    /// </p>
+    /// <p>The unique identifier of the member casting the vote. </p>
     pub fn voter_member_id(&self) -> std::option::Option<&str> {
         self.voter_member_id.as_deref()
     }
-    /// <p>
-    /// The value of the vote.
-    /// </p>
+    /// <p> The value of the vote. </p>
     pub fn vote(&self) -> std::option::Option<&crate::model::VoteValue> {
         self.vote.as_ref()
     }
@@ -5129,45 +5011,29 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub proposal_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of votes to return.
-    /// </p>
+    /// <p> The maximum number of votes to return. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(&self) -> std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>
-    /// The maximum number of votes to return.
-    /// </p>
+    /// <p> The maximum number of votes to return. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5187,35 +5053,23 @@ impl std::fmt::Debug for ListProposalVotesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalsInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of proposals to return.
-    /// </p>
+    /// <p> The maximum number of proposals to return. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalsInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The maximum number of proposals to return.
-    /// </p>
+    /// <p> The maximum number of proposals to return. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5342,9 +5196,7 @@ pub struct ListMembersInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
     pub status: std::option::Option<crate::model::MemberStatus>,
-    /// <p>An optional Boolean value. If provided, the request is limited either to
-    /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-    /// own (<code>false</code>). If omitted, all members are listed.</p>
+    /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
     pub is_owned: std::option::Option<bool>,
     /// <p>The maximum number of members to return in the request.</p>
     pub max_results: std::option::Option<i32>,
@@ -5364,9 +5216,7 @@ impl ListMembersInput {
     pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
         self.status.as_ref()
     }
-    /// <p>An optional Boolean value. If provided, the request is limited either to
-    /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-    /// own (<code>false</code>). If omitted, all members are listed.</p>
+    /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
     pub fn is_owned(&self) -> std::option::Option<bool> {
         self.is_owned
     }
@@ -5541,21 +5391,9 @@ pub struct DeleteNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -5568,21 +5406,9 @@ impl DeleteNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
@@ -5641,8 +5467,7 @@ impl std::fmt::Debug for DeleteMemberInput {
 pub struct CreateProposalInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the network for which the proposal is made.</p>
+    /// <p> The unique identifier of the network for which the proposal is made.</p>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
     pub member_id: std::option::Option<std::string::String>,
@@ -5661,8 +5486,7 @@ impl CreateProposalInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the network for which the proposal is made.</p>
+    /// <p> The unique identifier of the network for which the proposal is made.</p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
@@ -5710,21 +5534,9 @@ pub struct CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -5746,21 +5558,9 @@ impl CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
@@ -5810,13 +5610,9 @@ pub struct CreateNetworkInput {
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
     pub framework_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// Configuration properties of the blockchain framework relevant to the network configuration.
-    /// </p>
+    /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
     pub framework_configuration: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
-    /// <p>
-    /// The voting rules used by the network to determine if a proposal is approved.
-    /// </p>
+    /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
     pub voting_policy: std::option::Option<crate::model::VotingPolicy>,
     /// <p>Configuration properties for the first member within the network.</p>
     pub member_configuration: std::option::Option<crate::model::MemberConfiguration>,
@@ -5847,17 +5643,13 @@ impl CreateNetworkInput {
     pub fn framework_version(&self) -> std::option::Option<&str> {
         self.framework_version.as_deref()
     }
-    /// <p>
-    /// Configuration properties of the blockchain framework relevant to the network configuration.
-    /// </p>
+    /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
     pub fn framework_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NetworkFrameworkConfiguration> {
         self.framework_configuration.as_ref()
     }
-    /// <p>
-    /// The voting rules used by the network to determine if a proposal is approved.
-    /// </p>
+    /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
     pub fn voting_policy(&self) -> std::option::Option<&crate::model::VotingPolicy> {
         self.voting_policy.as_ref()
     }

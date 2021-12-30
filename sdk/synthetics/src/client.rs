@@ -185,20 +185,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateCanary`.
     ///
-    /// <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the
-    /// outside-in. Canaries help you check the availability and latency of your web services and
-    /// troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and
-    /// metrics. You can set up a canary to run continuously or just once. </p>
+    /// <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once. </p>
     /// <p>Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a> instead.</p>
-    /// <p>To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-    /// If you are creating a new IAM role for the canary, you also need the
-    /// the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-    /// <code>iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
-    /// Roles and Permissions</a>.</p>
-    /// <p>Do not include secrets or proprietary information in your canary names. The canary name
-    /// makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in
-    /// outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
-    /// Considerations for Synthetics Canaries</a>.</p>
+    /// <p>To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new IAM role for the canary, you also need the the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary Roles and Permissions</a>.</p>
+    /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -255,38 +245,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for this canary. Be sure to give it a descriptive name
-        /// that distinguishes it from other canaries in your account.</p>
-        /// <p>Do not include secrets or proprietary information in your canary names. The canary name
-        /// makes up part of the canary ARN, and the ARN is included in outbound calls over the
-        /// internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
-        /// Considerations for Synthetics Canaries</a>.</p>
+        /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+        /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name for this canary. Be sure to give it a descriptive name
-        /// that distinguishes it from other canaries in your account.</p>
-        /// <p>Do not include secrets or proprietary information in your canary names. The canary name
-        /// makes up part of the canary ARN, and the ARN is included in outbound calls over the
-        /// internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
-        /// Considerations for Synthetics Canaries</a>.</p>
+        /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+        /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A structure that includes the entry point from which the canary should start
-        /// running your script. If the script is stored in
-        /// an S3 bucket, the bucket name, key, and version are also included.
-        /// </p>
+        /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
         pub fn code(mut self, input: crate::model::CanaryCodeInput) -> Self {
             self.inner = self.inner.code(input);
             self
         }
-        /// <p>A structure that includes the entry point from which the canary should start
-        /// running your script. If the script is stored in
-        /// an S3 bucket, the bucket name, key, and version are also included.
-        /// </p>
+        /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::CanaryCodeInput>,
@@ -294,16 +270,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_code(input);
             self
         }
-        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
-        /// canary. Artifacts include the log file, screenshots, and HAR files.  The name of the
-        /// S3 bucket can't include a period (.).</p>
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
         pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.artifact_s3_location(input.into());
             self
         }
-        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
-        /// canary. Artifacts include the log file, screenshots, and HAR files.  The name of the
-        /// S3 bucket can't include a period (.).</p>
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
         pub fn set_artifact_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -311,89 +283,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_artifact_s3_location(input);
             self
         }
-        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
-        /// policy. The role must also have the following permissions:</p>
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>s3:PutObject</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:GetBucketLocation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:ListAllMyBuckets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cloudwatch:PutMetricData</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:PutLogEvents</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>s3:PutObject</code> </p> </li>
+        /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+        /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
+        /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+        /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
         /// </ul>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
-        /// policy. The role must also have the following permissions:</p>
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>s3:PutObject</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:GetBucketLocation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:ListAllMyBuckets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cloudwatch:PutMetricData</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:PutLogEvents</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>s3:PutObject</code> </p> </li>
+        /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+        /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
+        /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+        /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
         /// </ul>
         pub fn set_execution_role_arn(
             mut self,
@@ -402,14 +314,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>A structure that contains information about how often the canary is to run and when
-        /// these test runs are to stop.</p>
+        /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
         pub fn schedule(mut self, input: crate::model::CanaryScheduleInput) -> Self {
             self.inner = self.inner.schedule(input);
             self
         }
-        /// <p>A structure that contains information about how often the canary is to run and when
-        /// these test runs are to stop.</p>
+        /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::CanaryScheduleInput>,
@@ -417,14 +327,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>A structure that contains the configuration for individual canary runs,
-        /// such as timeout value.</p>
+        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
         pub fn run_config(mut self, input: crate::model::CanaryRunConfigInput) -> Self {
             self.inner = self.inner.run_config(input);
             self
         }
-        /// <p>A structure that contains the configuration for individual canary runs,
-        /// such as timeout value.</p>
+        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,
@@ -432,14 +340,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_run_config(input);
             self
         }
-        /// <p>The number of days to retain data about successful runs of this canary. If you omit
-        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+        /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
             self.inner = self.inner.success_retention_period_in_days(input);
             self
         }
-        /// <p>The number of days to retain data about successful runs of this canary. If you omit
-        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+        /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn set_success_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -447,14 +353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_success_retention_period_in_days(input);
             self
         }
-        /// <p>The number of days to retain data about failed runs of this canary. If you omit
-        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+        /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
             self.inner = self.inner.failure_retention_period_in_days(input);
             self
         }
-        /// <p>The number of days to retain data about failed runs of this canary. If you omit
-        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+        /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn set_failure_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -462,18 +366,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_failure_retention_period_in_days(input);
             self
         }
-        /// <p>Specifies the runtime version to use for the canary. For a list of valid
-        /// runtime versions and more information about
-        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
-        /// Canary Runtime Versions</a>.</p>
+        /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.runtime_version(input.into());
             self
         }
-        /// <p>Specifies the runtime version to use for the canary. For a list of valid
-        /// runtime versions and more information about
-        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
-        /// Canary Runtime Versions</a>.</p>
+        /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn set_runtime_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -481,18 +379,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_runtime_version(input);
             self
         }
-        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
-        /// information about the subnet and security groups of the VPC endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
-        /// Running a Canary in a VPC</a>.</p>
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigInput) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
-        /// information about the subnet and security groups of the VPC endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
-        /// Running a Canary in a VPC</a>.</p>
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigInput>,
@@ -504,12 +396,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the canary.
-        /// You can associate as many as 50 tags with a canary.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by
-        /// granting a user permission to access or change only the resources that have
-        /// certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -518,12 +406,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs to associate with the canary.
-        /// You can associate as many as 50 tags with a canary.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by
-        /// granting a user permission to access or change only the resources that have
-        /// certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -533,14 +417,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A structure that contains the configuration for canary artifacts, including
-        /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+        /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn artifact_config(mut self, input: crate::model::ArtifactConfigInput) -> Self {
             self.inner = self.inner.artifact_config(input);
             self
         }
-        /// <p>A structure that contains the configuration for canary artifacts, including
-        /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+        /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn set_artifact_config(
             mut self,
             input: std::option::Option<crate::model::ArtifactConfigInput>,
@@ -552,40 +434,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCanary`.
     ///
     /// <p>Permanently deletes the specified canary.</p>
-    /// <p>When you delete a canary, resources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to
-    /// use again, you
-    /// should also delete the following:</p>
+    /// <p>When you delete a canary, resources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to use again, you should also delete the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The Lambda functions and layers used by this canary. These have the prefix
-    /// <code>cwsyn-<i>MyCanaryName</i>
-    /// </code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The CloudWatch alarms created for this canary. These alarms have a name of
-    /// <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
-    /// </code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon S3 objects and buckets, such as the canary's artifact location.</p>
-    /// </li>
-    /// <li>
-    /// <p>IAM roles created for the canary. If they were created in the console, these roles
-    /// have the name <code>
-    /// role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i>
-    /// </code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>CloudWatch Logs log groups created for the canary. These logs groups have the name
-    /// <code>/aws/lambda/cwsyn-<i>MyCanaryName</i>
-    /// </code>. </p>
-    /// </li>
+    /// <li> <p>The Lambda functions and layers used by this canary. These have the prefix <code>cwsyn-<i>MyCanaryName</i> </code>.</p> </li>
+    /// <li> <p>The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i> </code>.</p> </li>
+    /// <li> <p>Amazon S3 objects and buckets, such as the canary's artifact location.</p> </li>
+    /// <li> <p>IAM roles created for the canary. If they were created in the console, these roles have the name <code> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </code>.</p> </li>
+    /// <li> <p>CloudWatch Logs log groups created for the canary. These logs groups have the name <code>/aws/lambda/cwsyn-<i>MyCanaryName</i> </code>. </p> </li>
     /// </ul>
-    ///
-    /// <p>Before you delete a canary, you might want to use <code>GetCanary</code> to display
-    /// the information about this canary. Make
-    /// note of the information returned by this operation so that you can delete these resources
-    /// after you delete the canary.</p>
+    /// <p>Before you delete a canary, you might want to use <code>GetCanary</code> to display the information about this canary. Make note of the information returned by this operation so that you can delete these resources after you delete the canary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -655,12 +512,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCanaries`.
     ///
-    /// <p>This operation returns a list of the canaries in your account, along with full details
-    /// about each canary.</p>
-    /// <p>This operation does not have resource-level authorization, so if a user is able to use
-    /// <code>DescribeCanaries</code>, the user can see all of the canaries in the account. A
-    /// deny policy can only be used to restrict access to all canaries. It cannot be used on
-    /// specific resources. </p>
+    /// <p>This operation returns a list of the canaries in your account, along with full details about each canary.</p>
+    /// <p>This operation does not have resource-level authorization, so if a user is able to use <code>DescribeCanaries</code>, the user can see all of the canaries in the account. A deny policy can only be used to restrict access to all canaries. It cannot be used on specific resources. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCanaries<
         C = aws_smithy_client::erase::DynConnector,
@@ -717,28 +570,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specify this parameter to limit how many canaries are returned each time you use
-        /// the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specify this parameter to limit how many canaries are returned each time you use
-        /// the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -803,28 +650,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -832,9 +673,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRuntimeVersions`.
     ///
-    /// <p>Returns a list of Synthetics canary runtime versions. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
-    /// Canary Runtime Versions</a>.</p>
+    /// <p>Returns a list of Synthetics canary runtime versions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuntimeVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -891,28 +730,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -920,9 +753,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCanary`.
     ///
-    /// <p>Retrieves complete information about one canary. You must specify
-    /// the name of the canary that you want. To get a list of canaries
-    /// and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    /// <p>Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a list of canaries and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -1059,28 +890,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specify this parameter to limit how many runs are returned each time you use
-        /// the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
+        /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1146,17 +971,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the canary that you want to view tags for.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the canary that you want to view tags for.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1164,9 +985,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCanary`.
     ///
-    /// <p>Use this operation to run a canary that has already been created.  
-    /// The frequency of the canary runs is determined by the value of the canary's <code>Schedule</code>. To see a canary's schedule,
-    /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.</p>
+    /// <p>Use this operation to run a canary that has already been created. The frequency of the canary runs is determined by the value of the canary's <code>Schedule</code>. To see a canary's schedule, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -1223,14 +1042,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the canary that you want to run. To find
-        /// canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the canary that you want to run. To find
-        /// canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1238,12 +1055,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopCanary`.
     ///
-    /// <p>Stops the canary to prevent all future runs. If the canary is currently running,
-    /// Synthetics stops waiting for the current run of the specified canary to complete. The
-    /// run that is in progress completes on its own, publishes metrics, and uploads artifacts, but
-    /// it is not recorded in Synthetics as a completed run.</p>
-    /// <p>You can use <code>StartCanary</code> to start it running again
-    /// with the canary’s current schedule at any point in the future.  </p>
+    /// <p>Stops the canary to prevent all future runs. If the canary is currently running, Synthetics stops waiting for the current run of the specified canary to complete. The run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
+    /// <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -1300,14 +1113,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the canary that you want to stop. To find the names of your
-        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the canary that you want to stop. To find the names of your
-        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1316,14 +1127,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns one or more tags (key-value pairs) to the specified canary. </p>
-    /// <p>Tags can help you organize and categorize your
-    /// resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with
-    /// certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key for the alarm,
-    /// this tag is appended to the list of tags associated
-    /// with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces
-    /// the previous value for that tag.</p>
+    /// <p>You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a canary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
@@ -1382,17 +1188,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the canary that you're adding tags to.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the canary that you're adding tags to.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1481,17 +1283,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the canary that you're removing tags from.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the canary that you're removing tags from.</p>
-        /// <p>The ARN format of a canary is
-        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.</p>
+        /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1516,11 +1314,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCanary`.
     ///
-    /// <p>Use this operation to change the settings of a canary that has
-    /// already been created.</p>
-    /// <p>You can't use this operation to update the tags of an existing canary. To
-    /// change the tags of an existing canary, use
-    /// <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+    /// <p>Use this operation to change the settings of a canary that has already been created.</p>
+    /// <p>You can't use this operation to update the tags of an existing canary. To change the tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCanary<
         C = aws_smithy_client::erase::DynConnector,
@@ -1577,32 +1372,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the canary that you want to update. To find the names of your
-        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         /// <p>You cannot change the name of a canary that has already been created.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the canary that you want to update. To find the names of your
-        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         /// <p>You cannot change the name of a canary that has already been created.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A structure that includes the entry point from which the canary should start
-        /// running your script. If the script is stored in
-        /// an S3 bucket, the bucket name, key, and version are also included.
-        /// </p>
+        /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
         pub fn code(mut self, input: crate::model::CanaryCodeInput) -> Self {
             self.inner = self.inner.code(input);
             self
         }
-        /// <p>A structure that includes the entry point from which the canary should start
-        /// running your script. If the script is stored in
-        /// an S3 bucket, the bucket name, key, and version are also included.
-        /// </p>
+        /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::CanaryCodeInput>,
@@ -1610,89 +1397,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_code(input);
             self
         }
-        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
-        /// policy. The role must also have the following permissions:</p>
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>s3:PutObject</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:GetBucketLocation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:ListAllMyBuckets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cloudwatch:PutMetricData</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>s3:PutObject</code> </p> </li>
+        /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+        /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
+        /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
         /// </ul>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
-        /// policy. The role must also have the following permissions:</p>
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>s3:PutObject</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:GetBucketLocation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>s3:ListAllMyBuckets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cloudwatch:PutMetricData</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>logs:CreateLogStream</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>s3:PutObject</code> </p> </li>
+        /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+        /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
+        /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+        /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
         /// </ul>
         pub fn set_execution_role_arn(
             mut self,
@@ -1701,18 +1428,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>Specifies the runtime version to use for the canary.  
-        /// For a list of valid runtime versions and for more information about
-        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
-        /// Canary Runtime Versions</a>.</p>
+        /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.runtime_version(input.into());
             self
         }
-        /// <p>Specifies the runtime version to use for the canary.  
-        /// For a list of valid runtime versions and for more information about
-        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
-        /// Canary Runtime Versions</a>.</p>
+        /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn set_runtime_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1720,14 +1441,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_runtime_version(input);
             self
         }
-        /// <p>A structure that contains information about how often the canary is to run, and when
-        /// these runs are to stop.</p>
+        /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
         pub fn schedule(mut self, input: crate::model::CanaryScheduleInput) -> Self {
             self.inner = self.inner.schedule(input);
             self
         }
-        /// <p>A structure that contains information about how often the canary is to run, and when
-        /// these runs are to stop.</p>
+        /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::CanaryScheduleInput>,
@@ -1735,14 +1454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>A structure that contains the timeout value that is used for each individual run of the
-        /// canary.</p>
+        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
         pub fn run_config(mut self, input: crate::model::CanaryRunConfigInput) -> Self {
             self.inner = self.inner.run_config(input);
             self
         }
-        /// <p>A structure that contains the timeout value that is used for each individual run of the
-        /// canary.</p>
+        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,
@@ -1776,18 +1493,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_failure_retention_period_in_days(input);
             self
         }
-        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
-        /// information about the subnet and security groups of the VPC endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
-        /// Running a Canary in a VPC</a>.</p>
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigInput) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
-        /// information about the subnet and security groups of the VPC endpoint.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
-        /// Running a Canary in a VPC</a>.</p>
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigInput>,
@@ -1795,24 +1506,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this
-        /// parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
-        /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
-        /// runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
-        /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
-        /// Visual monitoring blueprint</a>
-        /// </p>
+        /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
+        /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
         pub fn visual_reference(mut self, input: crate::model::VisualReferenceInput) -> Self {
             self.inner = self.inner.visual_reference(input);
             self
         }
-        /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this
-        /// parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
-        /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
-        /// runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
-        /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
-        /// Visual monitoring blueprint</a>
-        /// </p>
+        /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
+        /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
         pub fn set_visual_reference(
             mut self,
             input: std::option::Option<crate::model::VisualReferenceInput>,
@@ -1820,16 +1521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visual_reference(input);
             self
         }
-        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
-        /// Artifacts include the log file, screenshots, and HAR files. The name of the
-        /// S3 bucket can't include a period (.).</p>
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
         pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.artifact_s3_location(input.into());
             self
         }
-        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
-        /// Artifacts include the log file, screenshots, and HAR files. The name of the
-        /// S3 bucket can't include a period (.).</p>
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
         pub fn set_artifact_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1837,16 +1534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_artifact_s3_location(input);
             self
         }
-        /// <p>A structure that contains the configuration for canary artifacts,
-        /// including the encryption-at-rest settings for artifacts that
-        /// the canary uploads to Amazon S3.</p>
+        /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn artifact_config(mut self, input: crate::model::ArtifactConfigInput) -> Self {
             self.inner = self.inner.artifact_config(input);
             self
         }
-        /// <p>A structure that contains the configuration for canary artifacts,
-        /// including the encryption-at-rest settings for artifacts that
-        /// the canary uploads to Amazon S3.</p>
+        /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn set_artifact_config(
             mut self,
             input: std::option::Option<crate::model::ArtifactConfigInput>,

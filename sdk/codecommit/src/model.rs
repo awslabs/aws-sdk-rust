@@ -5,8 +5,7 @@
 pub struct PullRequest {
     /// <p>The system-generated ID of the pull request. </p>
     pub pull_request_id: std::option::Option<std::string::String>,
-    /// <p>The user-defined title of the pull request. This title is displayed in the list of
-    /// pull requests to other repository users.</p>
+    /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
     pub description: std::option::Option<std::string::String>,
@@ -20,10 +19,7 @@ pub struct PullRequest {
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
     pub pull_request_targets: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request is received with
-    /// the same parameters and a token is included, the request returns information about the
-    /// initial request that used that token.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The system-generated revision ID for the pull request.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -35,8 +31,7 @@ impl PullRequest {
     pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
-    /// <p>The user-defined title of the pull request. This title is displayed in the list of
-    /// pull requests to other repository users.</p>
+    /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -64,10 +59,7 @@ impl PullRequest {
     pub fn pull_request_targets(&self) -> std::option::Option<&[crate::model::PullRequestTarget]> {
         self.pull_request_targets.as_deref()
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request is received with
-    /// the same parameters and a token is included, the request returns information about the
-    /// initial request that used that token.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -130,14 +122,12 @@ pub mod pull_request {
             self.pull_request_id = input;
             self
         }
-        /// <p>The user-defined title of the pull request. This title is displayed in the list of
-        /// pull requests to other repository users.</p>
+        /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>The user-defined title of the pull request. This title is displayed in the list of
-        /// pull requests to other repository users.</p>
+        /// <p>The user-defined title of the pull request. This title is displayed in the list of pull requests to other repository users.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -220,18 +210,12 @@ pub mod pull_request {
             self.pull_request_targets = input;
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -607,14 +591,11 @@ pub struct PullRequestTarget {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub source_reference: std::option::Option<std::string::String>,
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as
-    /// the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
     pub destination_reference: std::option::Option<std::string::String>,
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
     pub destination_commit: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the tip of the source branch used to create the pull request. If
-    /// the pull request branch is updated by a push while the pull request is open, the commit
-    /// ID changes to reflect the new tip of the branch.</p>
+    /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
     pub source_commit: std::option::Option<std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub merge_base: std::option::Option<std::string::String>,
@@ -630,8 +611,7 @@ impl PullRequestTarget {
     pub fn source_reference(&self) -> std::option::Option<&str> {
         self.source_reference.as_deref()
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as
-    /// the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
     pub fn destination_reference(&self) -> std::option::Option<&str> {
         self.destination_reference.as_deref()
     }
@@ -639,9 +619,7 @@ impl PullRequestTarget {
     pub fn destination_commit(&self) -> std::option::Option<&str> {
         self.destination_commit.as_deref()
     }
-    /// <p>The full commit ID of the tip of the source branch used to create the pull request. If
-    /// the pull request branch is updated by a push while the pull request is open, the commit
-    /// ID changes to reflect the new tip of the branch.</p>
+    /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
     pub fn source_commit(&self) -> std::option::Option<&str> {
         self.source_commit.as_deref()
     }
@@ -708,14 +686,12 @@ pub mod pull_request_target {
             self.source_reference = input;
             self
         }
-        /// <p>The branch of the repository where the pull request changes are merged. Also known as
-        /// the destination branch. </p>
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
         pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_reference = Some(input.into());
             self
         }
-        /// <p>The branch of the repository where the pull request changes are merged. Also known as
-        /// the destination branch. </p>
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
         pub fn set_destination_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -736,16 +712,12 @@ pub mod pull_request_target {
             self.destination_commit = input;
             self
         }
-        /// <p>The full commit ID of the tip of the source branch used to create the pull request. If
-        /// the pull request branch is updated by a push while the pull request is open, the commit
-        /// ID changes to reflect the new tip of the branch.</p>
+        /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
         pub fn source_commit(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_commit = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the tip of the source branch used to create the pull request. If
-        /// the pull request branch is updated by a push while the pull request is open, the commit
-        /// ID changes to reflect the new tip of the branch.</p>
+        /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
         pub fn set_source_commit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1101,10 +1073,7 @@ pub struct Comment {
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
     pub deleted: bool,
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request is received with
-    /// the same parameters and a token is included, the request returns information about the
-    /// initial request that used that token.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
     pub caller_reactions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1140,10 +1109,7 @@ impl Comment {
     pub fn deleted(&self) -> bool {
         self.deleted
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request is received with
-    /// the same parameters and a token is included, the request returns information about the
-    /// initial request that used that token.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -1269,18 +1235,12 @@ pub mod comment {
             self.deleted = input;
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1661,23 +1621,15 @@ impl RepositoryTriggerExecutionFailure {
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a
-    /// topic in Amazon SNS).</p>
+    /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
     pub destination_arn: std::option::Option<std::string::String>,
-    /// <p>Any custom data associated with the trigger to be included in the information sent to
-    /// the target of the trigger.</p>
+    /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub custom_data: std::option::Option<std::string::String>,
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty
-    /// array, the trigger applies to all branches.</p>
-    /// <note>
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The repository events that cause the trigger to run actions in another service, such
-    /// as sending a notification through Amazon SNS.
-    ///
-    /// </p>
-    /// <note>
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
     pub events: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
@@ -1687,29 +1639,21 @@ impl RepositoryTrigger {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a
-    /// topic in Amazon SNS).</p>
+    /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
     pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
-    /// <p>Any custom data associated with the trigger to be included in the information sent to
-    /// the target of the trigger.</p>
+    /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub fn custom_data(&self) -> std::option::Option<&str> {
         self.custom_data.as_deref()
     }
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty
-    /// array, the trigger applies to all branches.</p>
-    /// <note>
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
     pub fn branches(&self) -> std::option::Option<&[std::string::String]> {
         self.branches.as_deref()
     }
-    /// <p>The repository events that cause the trigger to run actions in another service, such
-    /// as sending a notification through Amazon SNS.
-    ///
-    /// </p>
-    /// <note>
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
     pub fn events(&self) -> std::option::Option<&[crate::model::RepositoryTriggerEventEnum]> {
@@ -1751,14 +1695,12 @@ pub mod repository_trigger {
             self.name = input;
             self
         }
-        /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a
-        /// topic in Amazon SNS).</p>
+        /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a
-        /// topic in Amazon SNS).</p>
+        /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1766,14 +1708,12 @@ pub mod repository_trigger {
             self.destination_arn = input;
             self
         }
-        /// <p>Any custom data associated with the trigger to be included in the information sent to
-        /// the target of the trigger.</p>
+        /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
         pub fn custom_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_data = Some(input.into());
             self
         }
-        /// <p>Any custom data associated with the trigger to be included in the information sent to
-        /// the target of the trigger.</p>
+        /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
         pub fn set_custom_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_data = input;
             self
@@ -1782,9 +1722,7 @@ pub mod repository_trigger {
         ///
         /// To override the contents of this collection use [`set_branches`](Self::set_branches).
         ///
-        /// <p>The branches to be included in the trigger configuration. If you specify an empty
-        /// array, the trigger applies to all branches.</p>
-        /// <note>
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
         /// <p>Although no content is required in the array, you must include the array itself.</p>
         /// </note>
         pub fn branches(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1793,9 +1731,7 @@ pub mod repository_trigger {
             self.branches = Some(v);
             self
         }
-        /// <p>The branches to be included in the trigger configuration. If you specify an empty
-        /// array, the trigger applies to all branches.</p>
-        /// <note>
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
         /// <p>Although no content is required in the array, you must include the array itself.</p>
         /// </note>
         pub fn set_branches(
@@ -1809,11 +1745,7 @@ pub mod repository_trigger {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>The repository events that cause the trigger to run actions in another service, such
-        /// as sending a notification through Amazon SNS.
-        ///
-        /// </p>
-        /// <note>
+        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
         /// <p>The valid value "all" cannot be used with any other values.</p>
         /// </note>
         pub fn events(mut self, input: crate::model::RepositoryTriggerEventEnum) -> Self {
@@ -1822,11 +1754,7 @@ pub mod repository_trigger {
             self.events = Some(v);
             self
         }
-        /// <p>The repository events that cause the trigger to run actions in another service, such
-        /// as sending a notification through Amazon SNS.
-        ///
-        /// </p>
-        /// <note>
+        /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
         /// <p>The valid value "all" cannot be used with any other values.</p>
         /// </note>
         pub fn set_events(
@@ -1990,8 +1918,7 @@ pub struct Location {
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The position of a change in a compared file, in line number format.</p>
     pub file_position: std::option::Option<i64>,
-    /// <p>In a comparison of commits or a pull request, whether the change is in the before or
-    /// after of that comparison.</p>
+    /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub relative_file_version: std::option::Option<crate::model::RelativeFileVersionEnum>,
 }
 impl Location {
@@ -2003,8 +1930,7 @@ impl Location {
     pub fn file_position(&self) -> std::option::Option<i64> {
         self.file_position
     }
-    /// <p>In a comparison of commits or a pull request, whether the change is in the before or
-    /// after of that comparison.</p>
+    /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub fn relative_file_version(
         &self,
     ) -> std::option::Option<&crate::model::RelativeFileVersionEnum> {
@@ -2052,8 +1978,7 @@ pub mod location {
             self.file_position = input;
             self
         }
-        /// <p>In a comparison of commits or a pull request, whether the change is in the before or
-        /// after of that comparison.</p>
+        /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
         pub fn relative_file_version(
             mut self,
             input: crate::model::RelativeFileVersionEnum,
@@ -2061,8 +1986,7 @@ pub mod location {
             self.relative_file_version = Some(input);
             self
         }
-        /// <p>In a comparison of commits or a pull request, whether the change is in the before or
-        /// after of that comparison.</p>
+        /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
         pub fn set_relative_file_version(
             mut self,
             input: std::option::Option<crate::model::RelativeFileVersionEnum>,
@@ -2197,8 +2121,7 @@ impl AsRef<str> for OverrideStatus {
     }
 }
 
-/// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-/// resolving conflicts during a merge.</p>
+/// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictResolution {
@@ -3510,15 +3433,13 @@ impl ConflictMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeOperations {
-    /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull
-    /// request.</p>
+    /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     pub source: std::option::Option<crate::model::ChangeTypeEnum>,
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     pub destination: std::option::Option<crate::model::ChangeTypeEnum>,
 }
 impl MergeOperations {
-    /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull
-    /// request.</p>
+    /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ChangeTypeEnum> {
         self.source.as_ref()
     }
@@ -3545,14 +3466,12 @@ pub mod merge_operations {
         pub(crate) destination: std::option::Option<crate::model::ChangeTypeEnum>,
     }
     impl Builder {
-        /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull
-        /// request.</p>
+        /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
         pub fn source(mut self, input: crate::model::ChangeTypeEnum) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull
-        /// request.</p>
+        /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -4009,7 +3928,7 @@ impl FileModes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSizes {
-    /// <p>The  size of a file in the source of a merge or pull request.</p>
+    /// <p>The size of a file in the source of a merge or pull request.</p>
     pub source: i64,
     /// <p>The size of a file in the destination of a merge or pull request.</p>
     pub destination: i64,
@@ -4017,7 +3936,7 @@ pub struct FileSizes {
     pub base: i64,
 }
 impl FileSizes {
-    /// <p>The  size of a file in the source of a merge or pull request.</p>
+    /// <p>The size of a file in the source of a merge or pull request.</p>
     pub fn source(&self) -> i64 {
         self.source
     }
@@ -4050,12 +3969,12 @@ pub mod file_sizes {
         pub(crate) base: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The  size of a file in the source of a merge or pull request.</p>
+        /// <p>The size of a file in the source of a merge or pull request.</p>
         pub fn source(mut self, input: i64) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The  size of a file in the source of a merge or pull request.</p>
+        /// <p>The size of a file in the source of a merge or pull request.</p>
         pub fn set_source(mut self, input: std::option::Option<i64>) -> Self {
             self.source = input;
             self
@@ -4537,23 +4456,19 @@ impl Folder {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Difference {
-    /// <p>Information about a <code>beforeBlob</code> data type object, including the ID,
-    /// the file mode permission code, and the path.</p>
+    /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     pub before_blob: std::option::Option<crate::model::BlobMetadata>,
-    /// <p>Information about an <code>afterBlob</code> data type object, including the ID,
-    /// the file mode permission code, and the path.</p>
+    /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     pub after_blob: std::option::Option<crate::model::BlobMetadata>,
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
     pub change_type: std::option::Option<crate::model::ChangeTypeEnum>,
 }
 impl Difference {
-    /// <p>Information about a <code>beforeBlob</code> data type object, including the ID,
-    /// the file mode permission code, and the path.</p>
+    /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     pub fn before_blob(&self) -> std::option::Option<&crate::model::BlobMetadata> {
         self.before_blob.as_ref()
     }
-    /// <p>Information about an <code>afterBlob</code> data type object, including the ID,
-    /// the file mode permission code, and the path.</p>
+    /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
     pub fn after_blob(&self) -> std::option::Option<&crate::model::BlobMetadata> {
         self.after_blob.as_ref()
     }
@@ -4582,14 +4497,12 @@ pub mod difference {
         pub(crate) change_type: std::option::Option<crate::model::ChangeTypeEnum>,
     }
     impl Builder {
-        /// <p>Information about a <code>beforeBlob</code> data type object, including the ID,
-        /// the file mode permission code, and the path.</p>
+        /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
         pub fn before_blob(mut self, input: crate::model::BlobMetadata) -> Self {
             self.before_blob = Some(input);
             self
         }
-        /// <p>Information about a <code>beforeBlob</code> data type object, including the ID,
-        /// the file mode permission code, and the path.</p>
+        /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
         pub fn set_before_blob(
             mut self,
             input: std::option::Option<crate::model::BlobMetadata>,
@@ -4597,14 +4510,12 @@ pub mod difference {
             self.before_blob = input;
             self
         }
-        /// <p>Information about an <code>afterBlob</code> data type object, including the ID,
-        /// the file mode permission code, and the path.</p>
+        /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
         pub fn after_blob(mut self, input: crate::model::BlobMetadata) -> Self {
             self.after_blob = Some(input);
             self
         }
-        /// <p>Information about an <code>afterBlob</code> data type object, including the ID,
-        /// the file mode permission code, and the path.</p>
+        /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
         pub fn set_after_blob(
             mut self,
             input: std::option::Option<crate::model::BlobMetadata>,
@@ -4652,22 +4563,10 @@ pub struct BlobMetadata {
     pub path: std::option::Option<std::string::String>,
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>100644</code> indicates read/write</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>100755</code> indicates read/write/execute</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>160000</code> indicates a submodule</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>120000</code> indicates a symlink</p>
-    /// </li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub mode: std::option::Option<std::string::String>,
 }
@@ -4682,22 +4581,10 @@ impl BlobMetadata {
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>100644</code> indicates read/write</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>100755</code> indicates read/write/execute</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>160000</code> indicates a submodule</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>120000</code> indicates a symlink</p>
-    /// </li>
+    /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+    /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+    /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+    /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     pub fn mode(&self) -> std::option::Option<&str> {
         self.mode.as_deref()
@@ -4745,22 +4632,10 @@ pub mod blob_metadata {
         }
         /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>100644</code> indicates read/write</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>100755</code> indicates read/write/execute</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>160000</code> indicates a submodule</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>120000</code> indicates a symlink</p>
-        /// </li>
+        /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+        /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+        /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
         /// </ul>
         pub fn mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.mode = Some(input.into());
@@ -4768,22 +4643,10 @@ pub mod blob_metadata {
         }
         /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>100644</code> indicates read/write</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>100755</code> indicates read/write/execute</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>160000</code> indicates a submodule</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>120000</code> indicates a symlink</p>
-        /// </li>
+        /// <li> <p> <code>100644</code> indicates read/write</p> </li>
+        /// <li> <p> <code>100755</code> indicates read/write/execute</p> </li>
+        /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
+        /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
         /// </ul>
         pub fn set_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mode = input;
@@ -4818,16 +4681,10 @@ pub struct Commit {
     pub parents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The commit message associated with the specified commit.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>Information about the author of the specified commit. Information includes
-    /// the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured
-    /// in Git.</p>
+    /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
     pub author: std::option::Option<crate::model::UserInfo>,
-    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes
-    /// the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured
-    /// in Git.</p>
-    /// <p>For more information
-    /// about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git
-    /// by Scott Chacon and Ben Straub.</p>
+    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+    /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
     pub committer: std::option::Option<crate::model::UserInfo>,
     /// <p>Any other data associated with the specified commit.</p>
     pub additional_data: std::option::Option<std::string::String>,
@@ -4849,18 +4706,12 @@ impl Commit {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Information about the author of the specified commit. Information includes
-    /// the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured
-    /// in Git.</p>
+    /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
     pub fn author(&self) -> std::option::Option<&crate::model::UserInfo> {
         self.author.as_ref()
     }
-    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes
-    /// the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured
-    /// in Git.</p>
-    /// <p>For more information
-    /// about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git
-    /// by Scott Chacon and Ben Straub.</p>
+    /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+    /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
     pub fn committer(&self) -> std::option::Option<&crate::model::UserInfo> {
         self.committer.as_ref()
     }
@@ -4946,36 +4797,24 @@ pub mod commit {
             self.message = input;
             self
         }
-        /// <p>Information about the author of the specified commit. Information includes
-        /// the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured
-        /// in Git.</p>
+        /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
         pub fn author(mut self, input: crate::model::UserInfo) -> Self {
             self.author = Some(input);
             self
         }
-        /// <p>Information about the author of the specified commit. Information includes
-        /// the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured
-        /// in Git.</p>
+        /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
         pub fn set_author(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
             self.author = input;
             self
         }
-        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes
-        /// the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured
-        /// in Git.</p>
-        /// <p>For more information
-        /// about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git
-        /// by Scott Chacon and Ben Straub.</p>
+        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+        /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
         pub fn committer(mut self, input: crate::model::UserInfo) -> Self {
             self.committer = Some(input);
             self
         }
-        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes
-        /// the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured
-        /// in Git.</p>
-        /// <p>For more information
-        /// about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git
-        /// by Scott Chacon and Ben Straub.</p>
+        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
+        /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
         pub fn set_committer(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
             self.committer = input;
             self
@@ -5114,20 +4953,15 @@ pub struct CommentsForPullRequest {
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the pull request.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the commit that was the tip of the destination branch when the
-    /// pull request was created. This commit is superceded by the after commit in the source
-    /// branch when and if you merge the source branch into the destination branch.</p>
+    /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
     pub before_commit_id: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the
-    /// comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
     pub after_commit_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
     pub after_blob_id: std::option::Option<std::string::String>,
-    /// <p>Location information about the comment on the pull request, including the file name,
-    /// line number, and whether the version of the file where the comment was made is BEFORE
-    /// (destination branch) or AFTER (source branch).</p>
+    /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
     pub location: std::option::Option<crate::model::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -5141,14 +4975,11 @@ impl CommentsForPullRequest {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The full commit ID of the commit that was the tip of the destination branch when the
-    /// pull request was created. This commit is superceded by the after commit in the source
-    /// branch when and if you merge the source branch into the destination branch.</p>
+    /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
     pub fn before_commit_id(&self) -> std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
-    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the
-    /// comment was made. </p>
+    /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
     pub fn after_commit_id(&self) -> std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
@@ -5160,9 +4991,7 @@ impl CommentsForPullRequest {
     pub fn after_blob_id(&self) -> std::option::Option<&str> {
         self.after_blob_id.as_deref()
     }
-    /// <p>Location information about the comment on the pull request, including the file name,
-    /// line number, and whether the version of the file where the comment was made is BEFORE
-    /// (destination branch) or AFTER (source branch).</p>
+    /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
     pub fn location(&self) -> std::option::Option<&crate::model::Location> {
         self.location.as_ref()
     }
@@ -5227,16 +5056,12 @@ pub mod comments_for_pull_request {
             self.repository_name = input;
             self
         }
-        /// <p>The full commit ID of the commit that was the tip of the destination branch when the
-        /// pull request was created. This commit is superceded by the after commit in the source
-        /// branch when and if you merge the source branch into the destination branch.</p>
+        /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.before_commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the commit that was the tip of the destination branch when the
-        /// pull request was created. This commit is superceded by the after commit in the source
-        /// branch when and if you merge the source branch into the destination branch.</p>
+        /// <p>The full commit ID of the commit that was the tip of the destination branch when the pull request was created. This commit is superceded by the after commit in the source branch when and if you merge the source branch into the destination branch.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5244,14 +5069,12 @@ pub mod comments_for_pull_request {
             self.before_commit_id = input;
             self
         }
-        /// <p>The full commit ID of the commit that was the tip of the source branch at the time the
-        /// comment was made. </p>
+        /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
         pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.after_commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the commit that was the tip of the source branch at the time the
-        /// comment was made. </p>
+        /// <p>The full commit ID of the commit that was the tip of the source branch at the time the comment was made. </p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5285,16 +5108,12 @@ pub mod comments_for_pull_request {
             self.after_blob_id = input;
             self
         }
-        /// <p>Location information about the comment on the pull request, including the file name,
-        /// line number, and whether the version of the file where the comment was made is BEFORE
-        /// (destination branch) or AFTER (source branch).</p>
+        /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>Location information about the comment on the pull request, including the file name,
-        /// line number, and whether the version of the file where the comment was made is BEFORE
-        /// (destination branch) or AFTER (source branch).</p>
+        /// <p>Location information about the comment on the pull request, including the file name, line number, and whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
@@ -5346,8 +5165,7 @@ impl CommentsForPullRequest {
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The full commit ID of the commit used to establish the before of the
-    /// comparison.</p>
+    /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
     pub before_commit_id: std::option::Option<std::string::String>,
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
     pub after_commit_id: std::option::Option<std::string::String>,
@@ -5355,12 +5173,9 @@ pub struct CommentsForComparedCommit {
     pub before_blob_id: std::option::Option<std::string::String>,
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
     pub after_blob_id: std::option::Option<std::string::String>,
-    /// <p>Location information about the comment on the comparison, including the file name,
-    /// line number, and whether the version of the file where the comment was made is BEFORE or
-    /// AFTER.</p>
+    /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
     pub location: std::option::Option<crate::model::Location>,
-    /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
-    /// between commits.</p>
+    /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
 }
 impl CommentsForComparedCommit {
@@ -5368,8 +5183,7 @@ impl CommentsForComparedCommit {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The full commit ID of the commit used to establish the before of the
-    /// comparison.</p>
+    /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
     pub fn before_commit_id(&self) -> std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
@@ -5385,14 +5199,11 @@ impl CommentsForComparedCommit {
     pub fn after_blob_id(&self) -> std::option::Option<&str> {
         self.after_blob_id.as_deref()
     }
-    /// <p>Location information about the comment on the comparison, including the file name,
-    /// line number, and whether the version of the file where the comment was made is BEFORE or
-    /// AFTER.</p>
+    /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::Location> {
         self.location.as_ref()
     }
-    /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
-    /// between commits.</p>
+    /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
     pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
         self.comments.as_deref()
     }
@@ -5438,14 +5249,12 @@ pub mod comments_for_compared_commit {
             self.repository_name = input;
             self
         }
-        /// <p>The full commit ID of the commit used to establish the before of the
-        /// comparison.</p>
+        /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
         pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.before_commit_id = Some(input.into());
             self
         }
-        /// <p>The full commit ID of the commit used to establish the before of the
-        /// comparison.</p>
+        /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5492,16 +5301,12 @@ pub mod comments_for_compared_commit {
             self.after_blob_id = input;
             self
         }
-        /// <p>Location information about the comment on the comparison, including the file name,
-        /// line number, and whether the version of the file where the comment was made is BEFORE or
-        /// AFTER.</p>
+        /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>Location information about the comment on the comparison, including the file name,
-        /// line number, and whether the version of the file where the comment was made is BEFORE or
-        /// AFTER.</p>
+        /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
@@ -5510,16 +5315,14 @@ pub mod comments_for_compared_commit {
         ///
         /// To override the contents of this collection use [`set_comments`](Self::set_comments).
         ///
-        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
-        /// between commits.</p>
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
         pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
             v.push(input);
             self.comments = Some(v);
             self
         }
-        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
-        /// between commits.</p>
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
         pub fn set_comments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -5556,8 +5359,7 @@ pub struct ReactionForComment {
     pub reaction: std::option::Option<crate::model::ReactionValueFormats>,
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
     pub reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted
-    /// from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub reactions_from_deleted_users_count: std::option::Option<i32>,
 }
 impl ReactionForComment {
@@ -5569,8 +5371,7 @@ impl ReactionForComment {
     pub fn reaction_users(&self) -> std::option::Option<&[std::string::String]> {
         self.reaction_users.as_deref()
     }
-    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted
-    /// from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(&self) -> std::option::Option<i32> {
         self.reactions_from_deleted_users_count
     }
@@ -5630,14 +5431,12 @@ pub mod reaction_for_comment {
             self.reaction_users = input;
             self
         }
-        /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted
-        /// from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+        /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
         pub fn reactions_from_deleted_users_count(mut self, input: i32) -> Self {
             self.reactions_from_deleted_users_count = Some(input);
             self
         }
-        /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted
-        /// from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+        /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
         pub fn set_reactions_from_deleted_users_count(
             mut self,
             input: std::option::Option<i32>,
@@ -5972,13 +5771,9 @@ pub struct PullRequestEvent {
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The day and time of the pull request event, in timestamp format.</p>
     pub event_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of the pull request event (for example, a status change event
-    /// (PULL_REQUEST_STATUS_CHANGED) or update event
-    /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
+    /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
     pub pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
-    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-    /// Examples include updating the pull request with more commits or changing the status of a
-    /// pull request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
     pub actor_arn: std::option::Option<std::string::String>,
     /// <p>Information about the source and destination branches for the pull request.</p>
     pub pull_request_created_event_metadata:
@@ -6010,17 +5805,13 @@ impl PullRequestEvent {
     pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
-    /// <p>The type of the pull request event (for example, a status change event
-    /// (PULL_REQUEST_STATUS_CHANGED) or update event
-    /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
+    /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
     pub fn pull_request_event_type(
         &self,
     ) -> std::option::Option<&crate::model::PullRequestEventType> {
         self.pull_request_event_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-    /// Examples include updating the pull request with more commits or changing the status of a
-    /// pull request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
     pub fn actor_arn(&self) -> std::option::Option<&str> {
         self.actor_arn.as_deref()
     }
@@ -6159,9 +5950,7 @@ pub mod pull_request_event {
             self.event_date = input;
             self
         }
-        /// <p>The type of the pull request event (for example, a status change event
-        /// (PULL_REQUEST_STATUS_CHANGED) or update event
-        /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
+        /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
         pub fn pull_request_event_type(
             mut self,
             input: crate::model::PullRequestEventType,
@@ -6169,9 +5958,7 @@ pub mod pull_request_event {
             self.pull_request_event_type = Some(input);
             self
         }
-        /// <p>The type of the pull request event (for example, a status change event
-        /// (PULL_REQUEST_STATUS_CHANGED) or update event
-        /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
+        /// <p>The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
         pub fn set_pull_request_event_type(
             mut self,
             input: std::option::Option<crate::model::PullRequestEventType>,
@@ -6179,16 +5966,12 @@ pub mod pull_request_event {
             self.pull_request_event_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-        /// Examples include updating the pull request with more commits or changing the status of a
-        /// pull request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
         pub fn actor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.actor_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-        /// Examples include updating the pull request with more commits or changing the status of a
-        /// pull request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
         pub fn set_actor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.actor_arn = input;
             self
@@ -7113,11 +6896,7 @@ impl AsRef<str> for PullRequestEventType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeHunk {
-    /// <p>A Boolean value indicating whether a combination of hunks contains a conflict.
-    /// Conflicts occur when the same file or the same lines in a file were modified in both the
-    /// source and destination of a merge or pull request. Valid values include true, false, and
-    /// null. True when the hunk represents a conflict and one or more files contains a line
-    /// conflict. File mode conflicts in a merge do not set this to true.</p>
+    /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     pub is_conflict: bool,
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
     pub source: std::option::Option<crate::model::MergeHunkDetail>,
@@ -7127,11 +6906,7 @@ pub struct MergeHunk {
     pub base: std::option::Option<crate::model::MergeHunkDetail>,
 }
 impl MergeHunk {
-    /// <p>A Boolean value indicating whether a combination of hunks contains a conflict.
-    /// Conflicts occur when the same file or the same lines in a file were modified in both the
-    /// source and destination of a merge or pull request. Valid values include true, false, and
-    /// null. True when the hunk represents a conflict and one or more files contains a line
-    /// conflict. File mode conflicts in a merge do not set this to true.</p>
+    /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     pub fn is_conflict(&self) -> bool {
         self.is_conflict
     }
@@ -7170,20 +6945,12 @@ pub mod merge_hunk {
         pub(crate) base: std::option::Option<crate::model::MergeHunkDetail>,
     }
     impl Builder {
-        /// <p>A Boolean value indicating whether a combination of hunks contains a conflict.
-        /// Conflicts occur when the same file or the same lines in a file were modified in both the
-        /// source and destination of a merge or pull request. Valid values include true, false, and
-        /// null. True when the hunk represents a conflict and one or more files contains a line
-        /// conflict. File mode conflicts in a merge do not set this to true.</p>
+        /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
         pub fn is_conflict(mut self, input: bool) -> Self {
             self.is_conflict = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether a combination of hunks contains a conflict.
-        /// Conflicts occur when the same file or the same lines in a file were modified in both the
-        /// source and destination of a merge or pull request. Valid values include true, false, and
-        /// null. True when the hunk represents a conflict and one or more files contains a line
-        /// conflict. File mode conflicts in a merge do not set this to true.</p>
+        /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
         pub fn set_is_conflict(mut self, input: std::option::Option<bool>) -> Self {
             self.is_conflict = input;
             self
@@ -7253,8 +7020,7 @@ pub struct MergeHunkDetail {
     pub start_line: std::option::Option<i32>,
     /// <p>The end position of the hunk in the merge result.</p>
     pub end_line: std::option::Option<i32>,
-    /// <p>The base-64 encoded content of the hunk merged region that might contain a
-    /// conflict.</p>
+    /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
     pub hunk_content: std::option::Option<std::string::String>,
 }
 impl MergeHunkDetail {
@@ -7266,8 +7032,7 @@ impl MergeHunkDetail {
     pub fn end_line(&self) -> std::option::Option<i32> {
         self.end_line
     }
-    /// <p>The base-64 encoded content of the hunk merged region that might contain a
-    /// conflict.</p>
+    /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
     pub fn hunk_content(&self) -> std::option::Option<&str> {
         self.hunk_content.as_deref()
     }
@@ -7312,14 +7077,12 @@ pub mod merge_hunk_detail {
             self.end_line = input;
             self
         }
-        /// <p>The base-64 encoded content of the hunk merged region that might contain a
-        /// conflict.</p>
+        /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
         pub fn hunk_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.hunk_content = Some(input.into());
             self
         }
-        /// <p>The base-64 encoded content of the hunk merged region that might contain a
-        /// conflict.</p>
+        /// <p>The base-64 encoded content of the hunk merged region that might contain a conflict.</p>
         pub fn set_hunk_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hunk_content = input;
             self
@@ -7349,8 +7112,7 @@ pub struct Target {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub source_reference: std::option::Option<std::string::String>,
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as
-    /// the destination branch.</p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub destination_reference: std::option::Option<std::string::String>,
 }
 impl Target {
@@ -7362,8 +7124,7 @@ impl Target {
     pub fn source_reference(&self) -> std::option::Option<&str> {
         self.source_reference.as_deref()
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as
-    /// the destination branch.</p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(&self) -> std::option::Option<&str> {
         self.destination_reference.as_deref()
     }
@@ -7414,14 +7175,12 @@ pub mod target {
             self.source_reference = input;
             self
         }
-        /// <p>The branch of the repository where the pull request changes are merged. Also known as
-        /// the destination branch.</p>
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
         pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_reference = Some(input.into());
             self
         }
-        /// <p>The branch of the repository where the pull request changes are merged. Also known as
-        /// the destination branch.</p>
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
         pub fn set_destination_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7450,8 +7209,7 @@ impl Target {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileMetadata {
-    /// <p>The full path to the file to be added or updated, including the name of the
-    /// file.</p>
+    /// <p>The full path to the file to be added or updated, including the name of the file.</p>
     pub absolute_path: std::option::Option<std::string::String>,
     /// <p>The blob ID that contains the file information.</p>
     pub blob_id: std::option::Option<std::string::String>,
@@ -7459,8 +7217,7 @@ pub struct FileMetadata {
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
 impl FileMetadata {
-    /// <p>The full path to the file to be added or updated, including the name of the
-    /// file.</p>
+    /// <p>The full path to the file to be added or updated, including the name of the file.</p>
     pub fn absolute_path(&self) -> std::option::Option<&str> {
         self.absolute_path.as_deref()
     }
@@ -7493,14 +7250,12 @@ pub mod file_metadata {
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     }
     impl Builder {
-        /// <p>The full path to the file to be added or updated, including the name of the
-        /// file.</p>
+        /// <p>The full path to the file to be added or updated, including the name of the file.</p>
         pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.absolute_path = Some(input.into());
             self
         }
-        /// <p>The full path to the file to be added or updated, including the name of the
-        /// file.</p>
+        /// <p>The full path to the file to be added or updated, including the name of the file.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7558,8 +7313,7 @@ pub struct PutFileEntry {
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The content of the file, if a source file is not specified.</p>
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
-    /// if you are not providing the file content directly.</p>
+    /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub source_file: std::option::Option<crate::model::SourceFileSpecifier>,
 }
 impl PutFileEntry {
@@ -7575,8 +7329,7 @@ impl PutFileEntry {
     pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
-    /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
-    /// if you are not providing the file content directly.</p>
+    /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub fn source_file(&self) -> std::option::Option<&crate::model::SourceFileSpecifier> {
         self.source_file.as_ref()
     }
@@ -7639,14 +7392,12 @@ pub mod put_file_entry {
             self.file_content = input;
             self
         }
-        /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
-        /// if you are not providing the file content directly.</p>
+        /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
         pub fn source_file(mut self, input: crate::model::SourceFileSpecifier) -> Self {
             self.source_file = Some(input);
             self
         }
-        /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
-        /// if you are not providing the file content directly.</p>
+        /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
         pub fn set_source_file(
             mut self,
             input: std::option::Option<crate::model::SourceFileSpecifier>,
@@ -7846,8 +7597,7 @@ impl BatchGetCommitsError {
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     /// <p>The name of the repository where the association with the template was not able to be removed.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>An error code that specifies whether the repository name was not valid or not
-    /// found.</p>
+    /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -7857,8 +7607,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>An error code that specifies whether the repository name was not valid or not
-    /// found.</p>
+    /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -7901,14 +7650,12 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self.repository_name = input;
             self
         }
-        /// <p>An error code that specifies whether the repository name was not valid or not
-        /// found.</p>
+        /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>An error code that specifies whether the repository name was not valid or not
-        /// found.</p>
+        /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self

@@ -475,8 +475,7 @@ pub struct ApplicationSettingsResponse {
     pub enabled: bool,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
     pub settings_group: std::option::Option<std::string::String>,
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
-    /// </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
 }
 impl ApplicationSettingsResponse {
@@ -488,8 +487,7 @@ impl ApplicationSettingsResponse {
     pub fn settings_group(&self) -> std::option::Option<&str> {
         self.settings_group.as_deref()
     }
-    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
-    /// </p>
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -537,14 +535,12 @@ pub mod application_settings_response {
             self.settings_group = input;
             self
         }
-        /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
-        /// </p>
+        /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
-        /// </p>
+        /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1351,121 +1347,56 @@ pub struct Fleet {
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN for the public, private, or shared image.</p>
     pub image_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The fleet type.</p>
     /// <dl>
-    /// <dt>ALWAYS_ON</dt>
+    /// <dt>
+    /// ALWAYS_ON
+    /// </dt>
     /// <dd>
-    /// <p>Provides users with instant-on access to their apps.
-    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
     /// </dd>
-    /// <dt>ON_DEMAND</dt>
+    /// <dt>
+    /// ON_DEMAND
+    /// </dt>
     /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-    /// You are charged for instance streaming when users are connected and a
-    /// small hourly fee for instances that are not streaming apps.</p>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
     pub fleet_type: std::option::Option<crate::model::FleetType>,
@@ -1489,28 +1420,15 @@ pub struct Fleet {
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// users try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    ///
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
     /// <p>The platform of the fleet.</p>
@@ -1545,123 +1463,58 @@ impl Fleet {
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The fleet type.</p>
     /// <dl>
-    /// <dt>ALWAYS_ON</dt>
+    /// <dt>
+    /// ALWAYS_ON
+    /// </dt>
     /// <dd>
-    /// <p>Provides users with instant-on access to their apps.
-    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
     /// </dd>
-    /// <dt>ON_DEMAND</dt>
+    /// <dt>
+    /// ON_DEMAND
+    /// </dt>
     /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-    /// You are charged for instance streaming when users are connected and a
-    /// small hourly fee for instances that are not streaming apps.</p>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
     pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
@@ -1707,32 +1560,19 @@ impl Fleet {
     pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// users try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    ///
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_seconds
     }
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
         self.stream_view.as_ref()
@@ -1884,213 +1724,81 @@ pub mod fleet {
             self.image_arn = input;
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -2101,16 +1809,17 @@ pub mod fleet {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
@@ -2119,16 +1828,17 @@ pub mod fleet {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn set_fleet_type(
@@ -2262,38 +1972,16 @@ pub mod fleet {
             self.domain_join_info = input;
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.idle_disconnect_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -2304,28 +1992,24 @@ pub mod fleet {
             self
         }
         /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.stream_view = Some(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -3106,8 +2790,7 @@ pub struct ComputeCapacityStatus {
     pub running: std::option::Option<i32>,
     /// <p>The number of instances in use for streaming.</p>
     pub in_use: std::option::Option<i32>,
-    /// <p>The number of currently available instances that can be used to stream
-    /// sessions.</p>
+    /// <p>The number of currently available instances that can be used to stream sessions.</p>
     pub available: std::option::Option<i32>,
 }
 impl ComputeCapacityStatus {
@@ -3123,8 +2806,7 @@ impl ComputeCapacityStatus {
     pub fn in_use(&self) -> std::option::Option<i32> {
         self.in_use
     }
-    /// <p>The number of currently available instances that can be used to stream
-    /// sessions.</p>
+    /// <p>The number of currently available instances that can be used to stream sessions.</p>
     pub fn available(&self) -> std::option::Option<i32> {
         self.available
     }
@@ -3181,14 +2863,12 @@ pub mod compute_capacity_status {
             self.in_use = input;
             self
         }
-        /// <p>The number of currently available instances that can be used to stream
-        /// sessions.</p>
+        /// <p>The number of currently available instances that can be used to stream sessions.</p>
         pub fn available(mut self, input: i32) -> Self {
             self.available = Some(input);
             self
         }
-        /// <p>The number of currently available instances that can be used to stream
-        /// sessions.</p>
+        /// <p>The number of currently available instances that can be used to stream sessions.</p>
         pub fn set_available(mut self, input: std::option::Option<i32>) -> Self {
             self.available = input;
             self
@@ -3556,17 +3236,13 @@ impl DirectoryConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceAccountCredentials {
-    /// <p>The user name of the account. This account must have the following privileges: create computer objects,
-    /// join computers to the domain, and change/reset the password on descendant computer objects for the
-    /// organizational units specified.</p>
+    /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The password for the account.</p>
     pub account_password: std::option::Option<std::string::String>,
 }
 impl ServiceAccountCredentials {
-    /// <p>The user name of the account. This account must have the following privileges: create computer objects,
-    /// join computers to the domain, and change/reset the password on descendant computer objects for the
-    /// organizational units specified.</p>
+    /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     pub fn account_name(&self) -> std::option::Option<&str> {
         self.account_name.as_deref()
     }
@@ -3593,16 +3269,12 @@ pub mod service_account_credentials {
         pub(crate) account_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user name of the account. This account must have the following privileges: create computer objects,
-        /// join computers to the domain, and change/reset the password on descendant computer objects for the
-        /// organizational units specified.</p>
+        /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_name = Some(input.into());
             self
         }
-        /// <p>The user name of the account. This account must have the following privileges: create computer objects,
-        /// join computers to the domain, and change/reset the password on descendant computer objects for the
-        /// organizational units specified.</p>
+        /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_name = input;
             self
@@ -4154,113 +3826,46 @@ pub struct ImageBuilder {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The VPC configuration of the image builder.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>The instance type for the image builder. The following instance types are available:</p>   
+    /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The operating system platform of the image builder.</p>
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the image builder.</p>
@@ -4307,107 +3912,41 @@ impl ImageBuilder {
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The instance type for the image builder. The following instance types are available:</p>   
+    /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -4417,7 +3956,6 @@ impl ImageBuilder {
         self.platform.as_ref()
     }
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
@@ -4586,213 +4124,81 @@ pub mod image_builder {
             self.vpc_config = input;
             self
         }
-        /// <p>The instance type for the image builder. The following instance types are available:</p>   
+        /// <p>The instance type for the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type for the image builder. The following instance types are available:</p>   
+        /// <p>The instance type for the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -4815,14 +4221,12 @@ pub mod image_builder {
             self
         }
         /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
@@ -5471,9 +4875,7 @@ impl AsRef<str> for AuthenticationType {
 pub struct UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The email address of the user who is associated with the stack.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -5487,9 +4889,7 @@ impl UserStackAssociation {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The email address of the user who is associated with the stack.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -5536,18 +4936,14 @@ pub mod user_stack_association {
             self.stack_name = input;
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5601,9 +4997,7 @@ impl UserStackAssociation {
 pub struct User {
     /// <p>The ARN of the user.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -5611,21 +5005,11 @@ pub struct User {
     pub enabled: bool,
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
-    /// </li>
-    /// <li>
-    /// <p>CONFIRMED – The user is confirmed.</p>
-    /// </li>
-    /// <li>
-    /// <p>ARCHIVED – The user is no longer active.</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
-    /// </li>
-    /// <li>
-    /// <p>UNKNOWN – The user status is not known.</p>
-    /// </li>
+    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
+    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
+    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
+    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
+    /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The first name, or given name, of the user.</p>
@@ -5642,9 +5026,7 @@ impl User {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -5656,21 +5038,11 @@ impl User {
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
-    /// </li>
-    /// <li>
-    /// <p>CONFIRMED – The user is confirmed.</p>
-    /// </li>
-    /// <li>
-    /// <p>ARCHIVED – The user is no longer active.</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
-    /// </li>
-    /// <li>
-    /// <p>UNKNOWN – The user status is not known.</p>
-    /// </li>
+    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
+    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
+    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
+    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
+    /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5732,18 +5104,14 @@ pub mod user {
             self.arn = input;
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5762,21 +5130,11 @@ pub mod user {
         }
         /// <p>The status of the user in the user pool. The status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
-        /// </li>
-        /// <li>
-        /// <p>CONFIRMED – The user is confirmed.</p>
-        /// </li>
-        /// <li>
-        /// <p>ARCHIVED – The user is no longer active.</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
-        /// </li>
-        /// <li>
-        /// <p>UNKNOWN – The user status is not known.</p>
-        /// </li>
+        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
+        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
+        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
+        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
+        /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -5784,21 +5142,11 @@ pub mod user {
         }
         /// <p>The status of the user in the user pool. The status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
-        /// </li>
-        /// <li>
-        /// <p>CONFIRMED – The user is confirmed.</p>
-        /// </li>
-        /// <li>
-        /// <p>ARCHIVED – The user is no longer active.</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
-        /// </li>
-        /// <li>
-        /// <p>UNKNOWN – The user status is not known.</p>
-        /// </li>
+        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
+        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
+        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
+        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
+        /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -5877,12 +5225,7 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
@@ -5894,12 +5237,7 @@ pub struct UsageReportSubscription {
 }
 impl UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -5945,23 +5283,13 @@ pub mod usage_report_subscription {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6250,8 +5578,7 @@ pub struct Session {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
     pub max_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The authentication method. The user is authenticated using a streaming URL
-    /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+    /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
     pub network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
@@ -6289,8 +5616,7 @@ impl Session {
     pub fn max_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.max_expiration_time.as_ref()
     }
-    /// <p>The authentication method. The user is authenticated using a streaming URL
-    /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+    /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
     pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
@@ -6428,14 +5754,12 @@ pub mod session {
             self.max_expiration_time = input;
             self
         }
-        /// <p>The authentication method. The user is authenticated using a streaming URL
-        /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+        /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
         }
-        /// <p>The authentication method. The user is authenticated using a streaming URL
-        /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+        /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -6609,8 +5933,7 @@ pub struct Image {
     pub base_image_arn: std::option::Option<std::string::String>,
     /// <p>The image name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
-    /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+    /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>Indicates whether the image is public or private.</p>
     pub visibility: std::option::Option<crate::model::VisibilityType>,
@@ -6628,8 +5951,7 @@ pub struct Image {
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>The time the image was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The release date of the public base image.
-    /// For private images, this date is the release date of the base image from which the image was created.</p>
+    /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub public_base_image_released_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
     pub appstream_agent_version: std::option::Option<std::string::String>,
@@ -6655,8 +5977,7 @@ impl Image {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
-    /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+    /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
         self.state.as_ref()
     }
@@ -6694,8 +6015,7 @@ impl Image {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The release date of the public base image.
-    /// For private images, this date is the release date of the base image from which the image was created.</p>
+    /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub fn public_base_image_released_date(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -6808,14 +6128,12 @@ pub mod image {
             self.display_name = input;
             self
         }
-        /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
-        /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+        /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
         pub fn state(mut self, input: crate::model::ImageState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
-        /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+        /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
             self.state = input;
             self
@@ -6924,8 +6242,7 @@ pub mod image {
             self.created_time = input;
             self
         }
-        /// <p>The release date of the public base image.
-        /// For private images, this date is the release date of the base image from which the image was created.</p>
+        /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
         pub fn public_base_image_released_date(
             mut self,
             input: aws_smithy_types::DateTime,
@@ -6933,8 +6250,7 @@ pub mod image {
             self.public_base_image_released_date = Some(input);
             self
         }
-        /// <p>The release date of the public base image.
-        /// For private images, this date is the release date of the base image from which the image was created.</p>
+        /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
         pub fn set_public_base_image_released_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7455,11 +6771,7 @@ impl ApplicationFleetAssociation {
 }
 
 /// <p>Describes an app block.</p>
-/// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the
-/// virtual hard disk in an S3 bucket. It also stores the setup script with details about
-/// how to mount the virtual hard disk. The virtual hard disk includes the application
-/// binaries and other files necessary to launch your applications. Multiple applications
-/// can be assigned to a single app block.</p>
+/// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p>
 /// <p>This is only supported for Elastic fleets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

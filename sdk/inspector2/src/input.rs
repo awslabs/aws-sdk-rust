@@ -665,16 +665,12 @@ pub mod create_filter_input {
             self.filter_criteria = input;
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2566,18 +2562,12 @@ pub mod list_account_permissions_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2737,30 +2727,22 @@ pub mod list_coverage_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -2910,14 +2892,12 @@ pub mod list_coverage_statistics_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -2935,18 +2915,12 @@ pub mod list_coverage_statistics_input {
             self.group_by = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3105,18 +3079,12 @@ pub mod list_delegated_admin_accounts_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3298,18 +3266,12 @@ pub mod list_filters_input {
             self.action = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3482,18 +3444,12 @@ pub mod list_finding_aggregations_input {
             self.aggregation_type = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3699,18 +3655,12 @@ pub mod list_findings_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3884,14 +3834,12 @@ pub mod list_members_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn only_associated(mut self, input: bool) -> Self {
             self.only_associated = Some(input);
             self
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.only_associated = input;
             self
@@ -3906,18 +3854,12 @@ pub mod list_members_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4225,18 +4167,12 @@ pub mod list_usage_totals_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5263,10 +5199,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListUsageTotalsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5276,10 +5209,7 @@ impl ListUsageTotalsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5323,20 +5253,15 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
-    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-    /// list all members within the organization if <code>False</code>.</p>
+    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     pub only_associated: std::option::Option<bool>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
-    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-    /// list all members within the organization if <code>False</code>.</p>
+    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     pub fn only_associated(&self) -> std::option::Option<bool> {
         self.only_associated
     }
@@ -5344,10 +5269,7 @@ impl ListMembersInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5368,10 +5290,7 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListFindingsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Details on the filters to apply to your finding results.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
@@ -5383,10 +5302,7 @@ impl ListFindingsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5416,10 +5332,7 @@ impl std::fmt::Debug for ListFindingsInput {
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -5433,10 +5346,7 @@ impl ListFindingAggregationsInput {
     pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
         self.aggregation_type.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5473,10 +5383,7 @@ pub struct ListFiltersInput {
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action the filter applies to matched findings.</p>
     pub action: std::option::Option<crate::model::FilterAction>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -5490,10 +5397,7 @@ impl ListFiltersInput {
     pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
         self.action.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5519,10 +5423,7 @@ impl std::fmt::Debug for ListFiltersInput {
 pub struct ListDelegatedAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdminAccountsInput {
@@ -5530,10 +5431,7 @@ impl ListDelegatedAdminAccountsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5551,20 +5449,15 @@ impl std::fmt::Debug for ListDelegatedAdminAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoverageStatisticsInput {
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
     /// <p>The value to group the results by.</p>
     pub group_by: std::option::Option<crate::model::GroupKey>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoverageStatisticsInput {
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -5572,10 +5465,7 @@ impl ListCoverageStatisticsInput {
     pub fn group_by(&self) -> std::option::Option<&crate::model::GroupKey> {
         self.group_by.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5596,13 +5486,9 @@ impl std::fmt::Debug for ListCoverageStatisticsInput {
 pub struct ListCoverageInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
 }
 impl ListCoverageInput {
@@ -5610,15 +5496,11 @@ impl ListCoverageInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -5641,10 +5523,7 @@ pub struct ListAccountPermissionsInput {
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountPermissionsInput {
@@ -5656,10 +5535,7 @@ impl ListAccountPermissionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5943,9 +5819,7 @@ pub struct CreateFilterInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-    /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-    /// allowed.</p>
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of tags for the filter.</p>
     pub tags:
@@ -5964,9 +5838,7 @@ impl CreateFilterInput {
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-    /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-    /// allowed.</p>
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }

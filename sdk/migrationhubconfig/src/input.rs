@@ -21,26 +21,22 @@ pub mod create_home_region_control_input {
             self.home_region = input;
             self
         }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-        /// is always of type <code>ACCOUNT</code>.</p>
+        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
         pub fn target(mut self, input: crate::model::Target) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-        /// is always of type <code>ACCOUNT</code>.</p>
+        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
         }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -198,14 +194,12 @@ pub mod describe_home_region_controls_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>ControlID</code> is a unique identifier string of your
-        /// <code>HomeRegionControl</code> object.</p>
+        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
         pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_id = Some(input.into());
             self
         }
-        /// <p>The <code>ControlID</code> is a unique identifier string of your
-        /// <code>HomeRegionControl</code> object.</p>
+        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control_id = input;
             self
@@ -220,16 +214,12 @@ pub mod describe_home_region_controls_input {
             self.home_region = input;
             self
         }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which
-        /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.</p>
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
         pub fn target(mut self, input: crate::model::Target) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which
-        /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.</p>
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
@@ -244,16 +234,12 @@ pub mod describe_home_region_controls_input {
             self.max_results = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -546,25 +532,19 @@ impl std::fmt::Debug for GetHomeRegionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHomeRegionControlsInput {
-    /// <p>The <code>ControlID</code> is a unique identifier string of your
-    /// <code>HomeRegionControl</code> object.</p>
+    /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub control_id: std::option::Option<std::string::String>,
     /// <p>The name of the home region you'd like to view.</p>
     pub home_region: std::option::Option<std::string::String>,
-    /// <p>The target parameter specifies the identifier to which the home region is applied, which
-    /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-    /// <code>ACCOUNT</code>.</p>
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub target: std::option::Option<crate::model::Target>,
     /// <p>The maximum number of filtering results to display per page. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-    /// To retrieve the next page of results, make the call again using the returned token in
-    /// <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeHomeRegionControlsInput {
-    /// <p>The <code>ControlID</code> is a unique identifier string of your
-    /// <code>HomeRegionControl</code> object.</p>
+    /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub fn control_id(&self) -> std::option::Option<&str> {
         self.control_id.as_deref()
     }
@@ -572,9 +552,7 @@ impl DescribeHomeRegionControlsInput {
     pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
-    /// <p>The target parameter specifies the identifier to which the home region is applied, which
-    /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-    /// <code>ACCOUNT</code>.</p>
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::Target> {
         self.target.as_ref()
     }
@@ -582,9 +560,7 @@ impl DescribeHomeRegionControlsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-    /// To retrieve the next page of results, make the call again using the returned token in
-    /// <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -607,11 +583,9 @@ impl std::fmt::Debug for DescribeHomeRegionControlsInput {
 pub struct CreateHomeRegionControlInput {
     /// <p>The name of the home region of the calling account.</p>
     pub home_region: std::option::Option<std::string::String>,
-    /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-    /// is always of type <code>ACCOUNT</code>.</p>
+    /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub target: std::option::Option<crate::model::Target>,
-    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl CreateHomeRegionControlInput {
@@ -619,13 +593,11 @@ impl CreateHomeRegionControlInput {
     pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
-    /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-    /// is always of type <code>ACCOUNT</code>.</p>
+    /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::Target> {
         self.target.as_ref()
     }
-    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }

@@ -63,16 +63,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>
-    /// The tags of the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The tags of the Elastic Inference Accelerator. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>
-    /// The tags of the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The tags of the Elastic Inference Accelerator. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -102,9 +98,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags of the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags of the Elastic Inference Accelerator. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -115,9 +109,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The tags of the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags of the Elastic Inference Accelerator. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -144,15 +136,11 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorTypesOutput {
-    /// <p>
-    /// The available accelerator types.
-    /// </p>
+    /// <p> The available accelerator types. </p>
     pub accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
 }
 impl DescribeAcceleratorTypesOutput {
-    /// <p>
-    /// The available accelerator types.
-    /// </p>
+    /// <p> The available accelerator types. </p>
     pub fn accelerator_types(&self) -> std::option::Option<&[crate::model::AcceleratorType]> {
         self.accelerator_types.as_deref()
     }
@@ -178,18 +166,14 @@ pub mod describe_accelerator_types_output {
         ///
         /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
         ///
-        /// <p>
-        /// The available accelerator types.
-        /// </p>
+        /// <p> The available accelerator types. </p>
         pub fn accelerator_types(mut self, input: crate::model::AcceleratorType) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
             v.push(input);
             self.accelerator_types = Some(v);
             self
         }
-        /// <p>
-        /// The available accelerator types.
-        /// </p>
+        /// <p> The available accelerator types. </p>
         pub fn set_accelerator_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
@@ -216,28 +200,20 @@ impl DescribeAcceleratorTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorsOutput {
-    /// <p>
-    /// The details of the Elastic Inference Accelerators.
-    /// </p>
+    /// <p> The details of the Elastic Inference Accelerators. </p>
     pub accelerator_set:
         std::option::Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
-    /// <p>
-    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-    /// </p>
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorsOutput {
-    /// <p>
-    /// The details of the Elastic Inference Accelerators.
-    /// </p>
+    /// <p> The details of the Elastic Inference Accelerators. </p>
     pub fn accelerator_set(
         &self,
     ) -> std::option::Option<&[crate::model::ElasticInferenceAccelerator]> {
         self.accelerator_set.as_deref()
     }
-    /// <p>
-    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-    /// </p>
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -265,18 +241,14 @@ pub mod describe_accelerators_output {
         ///
         /// To override the contents of this collection use [`set_accelerator_set`](Self::set_accelerator_set).
         ///
-        /// <p>
-        /// The details of the Elastic Inference Accelerators.
-        /// </p>
+        /// <p> The details of the Elastic Inference Accelerators. </p>
         pub fn accelerator_set(mut self, input: crate::model::ElasticInferenceAccelerator) -> Self {
             let mut v = self.accelerator_set.unwrap_or_default();
             v.push(input);
             self.accelerator_set = Some(v);
             self
         }
-        /// <p>
-        /// The details of the Elastic Inference Accelerators.
-        /// </p>
+        /// <p> The details of the Elastic Inference Accelerators. </p>
         pub fn set_accelerator_set(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
@@ -284,16 +256,12 @@ pub mod describe_accelerators_output {
             self.accelerator_set = input;
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -318,16 +286,12 @@ impl DescribeAcceleratorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorOfferingsOutput {
-    /// <p>
-    /// The list of accelerator type offerings for a specific location.
-    /// </p>
+    /// <p> The list of accelerator type offerings for a specific location. </p>
     pub accelerator_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
 }
 impl DescribeAcceleratorOfferingsOutput {
-    /// <p>
-    /// The list of accelerator type offerings for a specific location.
-    /// </p>
+    /// <p> The list of accelerator type offerings for a specific location. </p>
     pub fn accelerator_type_offerings(
         &self,
     ) -> std::option::Option<&[crate::model::AcceleratorTypeOffering]> {
@@ -358,9 +322,7 @@ pub mod describe_accelerator_offerings_output {
         ///
         /// To override the contents of this collection use [`set_accelerator_type_offerings`](Self::set_accelerator_type_offerings).
         ///
-        /// <p>
-        /// The list of accelerator type offerings for a specific location.
-        /// </p>
+        /// <p> The list of accelerator type offerings for a specific location. </p>
         pub fn accelerator_type_offerings(
             mut self,
             input: crate::model::AcceleratorTypeOffering,
@@ -370,9 +332,7 @@ pub mod describe_accelerator_offerings_output {
             self.accelerator_type_offerings = Some(v);
             self
         }
-        /// <p>
-        /// The list of accelerator type offerings for a specific location.
-        /// </p>
+        /// <p> The list of accelerator type offerings for a specific location. </p>
         pub fn set_accelerator_type_offerings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,

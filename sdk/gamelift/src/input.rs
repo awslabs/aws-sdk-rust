@@ -11,14 +11,12 @@ pub mod accept_match_input {
         pub(crate) acceptance_type: std::option::Option<crate::model::AcceptanceType>,
     }
     impl Builder {
-        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-        /// request will fail.</p>
+        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ticket_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-        /// request will fail.</p>
+        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -27,16 +25,14 @@ pub mod accept_match_input {
         ///
         /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
         ///
-        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-        /// player IDs.</p>
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
         pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.player_ids.unwrap_or_default();
             v.push(input.into());
             self.player_ids = Some(v);
             self
         }
-        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-        /// player IDs.</p>
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
         pub fn set_player_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -204,16 +200,12 @@ pub mod claim_game_server_input {
         pub(crate) game_server_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-        /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-        /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -221,16 +213,12 @@ pub mod claim_game_server_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-        /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-        /// server group.</p>
+        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
         pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_id = Some(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-        /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-        /// server group.</p>
+        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -238,16 +226,12 @@ pub mod claim_game_server_input {
             self.game_server_id = input;
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -441,30 +425,14 @@ pub mod create_alias_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -622,44 +590,32 @@ pub mod create_build_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only
-        /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-        /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-        /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-        /// new build must be in the same Region.</p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only
-        /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-        /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-        /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-        /// new build must be in the same Region.</p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -667,20 +623,12 @@ pub mod create_build_input {
             self.storage_location = input;
             self
         }
-        /// <p>The operating system that the game server binaries are built to run on. This value
-        /// determines the type of fleet resources that you can use for this build. If your game
-        /// build contains multiple executables, they all must run on the same operating system. If
-        /// an operating system is not specified when creating a build, Amazon GameLift uses the
-        /// default value (WINDOWS_2012). This value cannot be changed later.</p>
+        /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.operating_system = Some(input);
             self
         }
-        /// <p>The operating system that the game server binaries are built to run on. This value
-        /// determines the type of fleet resources that you can use for this build. If your game
-        /// build contains multiple executables, they all must run on the same operating system. If
-        /// an operating system is not specified when creating a build, Amazon GameLift uses the
-        /// default value (WINDOWS_2012). This value cannot be changed later.</p>
+        /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -692,30 +640,14 @@ pub mod create_build_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -914,46 +846,32 @@ pub mod create_fleet_input {
             self.description = input;
             self
         }
-        /// <p>The unique identifier for a custom game server build to be deployed on fleet
-        /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-        /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
         pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for a custom game server build to be deployed on fleet
-        /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-        /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
         }
-        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-        /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-        /// prior to creating the fleet. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
         pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.script_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-        /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-        /// prior to creating the fleet. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify a server
-        /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-        /// this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn server_launch_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_launch_path = Some(input.into());
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify a server
-        /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-        /// this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -961,18 +879,12 @@ pub mod create_fleet_input {
             self.server_launch_path = input;
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify server
-        /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-        /// use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn server_launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_launch_parameters = Some(input.into());
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify server
-        /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-        /// use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -984,22 +896,14 @@ pub mod create_fleet_input {
         ///
         /// To override the contents of this collection use [`set_log_paths`](Self::set_log_paths).
         ///
-        /// <p>
-        /// <b>This parameter is no longer used.</b> To specify where
-        /// GameLift should store log files once a server process shuts down, use the GameLift server
-        /// API <code>ProcessReady()</code> and specify one or more directory paths in
-        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+        /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
         pub fn log_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_paths.unwrap_or_default();
             v.push(input.into());
             self.log_paths = Some(v);
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> To specify where
-        /// GameLift should store log files once a server process shuts down, use the GameLift server
-        /// API <code>ProcessReady()</code> and specify one or more directory paths in
-        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+        /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
         pub fn set_log_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1007,18 +911,12 @@ pub mod create_fleet_input {
             self.log_paths = input;
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-        /// type determines the computing resources that will be used to host your game servers,
-        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-        /// of EC2 instance types.</p>
+        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
         pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.ec2_instance_type = Some(input);
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-        /// type determines the computing resources that will be used to host your game servers,
-        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-        /// of EC2 instance types.</p>
+        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -1030,20 +928,14 @@ pub mod create_fleet_input {
         ///
         /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
         ///
-        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-        /// automatically sets TCP and UDP ranges. </p>
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
         pub fn ec2_inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.ec2_inbound_permissions.unwrap_or_default();
             v.push(input);
             self.ec2_inbound_permissions = Some(v);
             self
         }
-        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-        /// automatically sets TCP and UDP ranges. </p>
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
         pub fn set_ec2_inbound_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1051,21 +943,10 @@ pub mod create_fleet_input {
             self.ec2_inbound_permissions = input;
             self
         }
-        /// <p>The status of termination protection for active game sessions on the fleet. By
-        /// default, this property is set to <code>NoProtection</code>. You can also set game
-        /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+        /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> - Game sessions can be terminated
-        /// during active gameplay as a result of a scale-down event. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> - Game sessions in
-        /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+        /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
@@ -1074,21 +955,10 @@ pub mod create_fleet_input {
             self.new_game_session_protection_policy = Some(input);
             self
         }
-        /// <p>The status of termination protection for active game sessions on the fleet. By
-        /// default, this property is set to <code>NoProtection</code>. You can also set game
-        /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+        /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> - Game sessions can be terminated
-        /// during active gameplay as a result of a scale-down event. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> - Game sessions in
-        /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+        /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
@@ -1097,29 +967,15 @@ pub mod create_fleet_input {
             self.new_game_session_protection_policy = input;
             self
         }
-        /// <p>Instructions for how to launch and maintain server processes on instances in the
-        /// fleet. The runtime configuration defines one or more server process configurations, each
-        /// identifying a build executable or Realtime script file and the number of processes of
-        /// that type to run concurrently. </p>
-        /// <note>
-        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-        /// being configured using the older parameters <code>ServerLaunchPath</code> and
-        /// <code>ServerLaunchParameters</code>, which are still supported for backward
-        /// compatibility.</p>
+        /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
         /// </note>
         pub fn runtime_configuration(mut self, input: crate::model::RuntimeConfiguration) -> Self {
             self.runtime_configuration = Some(input);
             self
         }
-        /// <p>Instructions for how to launch and maintain server processes on instances in the
-        /// fleet. The runtime configuration defines one or more server process configurations, each
-        /// identifying a build executable or Realtime script file and the number of processes of
-        /// that type to run concurrently. </p>
-        /// <note>
-        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-        /// being configured using the older parameters <code>ServerLaunchPath</code> and
-        /// <code>ServerLaunchParameters</code>, which are still supported for backward
-        /// compatibility.</p>
+        /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
         /// </note>
         pub fn set_runtime_configuration(
             mut self,
@@ -1128,8 +984,7 @@ pub mod create_fleet_input {
             self.runtime_configuration = input;
             self
         }
-        /// <p>A policy that limits the number of game sessions that an individual player can create
-        /// on instances in this fleet within a specified span of time.</p>
+        /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
         pub fn resource_creation_limit_policy(
             mut self,
             input: crate::model::ResourceCreationLimitPolicy,
@@ -1137,8 +992,7 @@ pub mod create_fleet_input {
             self.resource_creation_limit_policy = Some(input);
             self
         }
-        /// <p>A policy that limits the number of game sessions that an individual player can create
-        /// on instances in this fleet within a specified span of time.</p>
+        /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -1150,20 +1004,14 @@ pub mod create_fleet_input {
         ///
         /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
         ///
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-        /// group name or set a new name to create a new metric group. A fleet can be included in
-        /// only one metric group at a time. </p>
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
         pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_groups.unwrap_or_default();
             v.push(input.into());
             self.metric_groups = Some(v);
             self
         }
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-        /// group name or set a new name to create a new metric group. A fleet can be included in
-        /// only one metric group at a time. </p>
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1171,16 +1019,12 @@ pub mod create_fleet_input {
             self.metric_groups = input;
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-        /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-        /// settings. </p>
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
         pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_aws_account_id = Some(input.into());
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-        /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-        /// settings. </p>
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1188,32 +1032,22 @@ pub mod create_fleet_input {
             self.peer_vpc_aws_account_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
         }
-        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-        /// fleet is created.</p>
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
             self.fleet_type = Some(input);
             self
         }
-        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-        /// fleet is created.</p>
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_fleet_type(
             mut self,
             input: std::option::Option<crate::model::FleetType>,
@@ -1221,24 +1055,12 @@ pub mod create_fleet_input {
             self.fleet_type = input;
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-        /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-        /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-        /// Learn more about using on-box credentials for your game servers at
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
+        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
         pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_role_arn = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-        /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-        /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-        /// Learn more about using on-box credentials for your game servers at
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
+        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1246,15 +1068,8 @@ pub mod create_fleet_input {
             self.instance_role_arn = input;
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-        /// used for encrypting traffic between game clients and the game servers that are running
-        /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-        /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-        /// the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-        /// available in all AWS regions. When working in a region that does not support this
-        /// feature, a fleet creation request with certificate generation fails with a 4xx
-        /// error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn certificate_configuration(
             mut self,
             input: crate::model::CertificateConfiguration,
@@ -1262,15 +1077,8 @@ pub mod create_fleet_input {
             self.certificate_configuration = Some(input);
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-        /// used for encrypting traffic between game clients and the game servers that are running
-        /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-        /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-        /// the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-        /// available in all AWS regions. When working in a region that does not support this
-        /// feature, a fleet creation request with certificate generation fails with a 4xx
-        /// error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn set_certificate_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateConfiguration>,
@@ -1282,22 +1090,14 @@ pub mod create_fleet_input {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-        /// instances in the home Region only, omit this parameter. </p>
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
         pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input);
             self.locations = Some(v);
             self
         }
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-        /// instances in the home Region only, omit this parameter. </p>
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -1309,26 +1109,14 @@ pub mod create_fleet_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1514,18 +1302,14 @@ pub mod create_fleet_locations_input {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input);
             self.locations = Some(v);
             self
         }
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -1693,16 +1477,12 @@ pub mod create_game_server_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-        /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-        /// must be unique per Region per AWS account.</p>
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-        /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-        /// must be unique per Region per AWS account.</p>
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1710,81 +1490,45 @@ pub mod create_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-        /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-        /// group is created, update this value directly in the Auto Scaling group using the AWS
-        /// console or APIs.</p>
+        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.min_size = Some(input);
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-        /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-        /// group is created, update this value directly in the Auto Scaling group using the AWS
-        /// console or APIs.</p>
+        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-        /// group using the AWS console or APIs.</p>
+        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn max_size(mut self, input: i32) -> Self {
             self.max_size = Some(input);
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-        /// group using the AWS console or APIs.</p>
+        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to
-        /// be deployed to all instances in the game server group. You can specify the template
-        /// using either the template name or ID. For help with creating a launch template, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-        /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>. After the Auto Scaling group is created, update this value
-        /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-        /// <note>
-        /// <p>If you specify network interfaces in your launch template, you must explicitly set
-        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-        /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-        /// VPC.</p>
+        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.launch_template = Some(input);
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to
-        /// be deployed to all instances in the game server group. You can specify the template
-        /// using either the template name or ID. For help with creating a launch template, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-        /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>. After the Auto Scaling group is created, update this value
-        /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-        /// <note>
-        /// <p>If you specify network interfaces in your launch template, you must explicitly set
-        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-        /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-        /// VPC.</p>
+        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
         pub fn set_launch_template(
             mut self,
@@ -1797,28 +1541,14 @@ pub mod create_game_server_group_input {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-        /// weighting for each instance type. If no weight value is specified for an instance type,
-        /// it is set to the default value "1". For more information about capacity weighting, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
             v.push(input);
             self.instance_definitions = Some(v);
             self
         }
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-        /// weighting for each instance type. If no weight value is specified for an instance type,
-        /// it is set to the default value "1". For more information about capacity weighting, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -1826,12 +1556,7 @@ pub mod create_game_server_group_input {
             self.instance_definitions = input;
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-        /// optimized for game hosting. The scaling policy uses the metric
-        /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-        /// that can immediately accommodate new games and players. After the Auto Scaling group is
-        /// created, update this value directly in the Auto Scaling group using the AWS console or
-        /// APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn auto_scaling_policy(
             mut self,
             input: crate::model::GameServerGroupAutoScalingPolicy,
@@ -1839,12 +1564,7 @@ pub mod create_game_server_group_input {
             self.auto_scaling_policy = Some(input);
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-        /// optimized for game hosting. The scaling policy uses the metric
-        /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-        /// that can immediately accommodate new games and players. After the Auto Scaling group is
-        /// created, update this value directly in the Auto Scaling group using the AWS console or
-        /// APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_auto_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupAutoScalingPolicy>,
@@ -1852,61 +1572,21 @@ pub mod create_game_server_group_input {
             self.auto_scaling_policy = input;
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn balancing_strategy(mut self, input: crate::model::BalancingStrategy) -> Self {
             self.balancing_strategy = Some(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn set_balancing_strategy(
             mut self,
@@ -1915,12 +1595,7 @@ pub mod create_game_server_group_input {
             self.balancing_strategy = input;
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
             input: crate::model::GameServerProtectionPolicy,
@@ -1928,12 +1603,7 @@ pub mod create_game_server_group_input {
             self.game_server_protection_policy = Some(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -1945,24 +1615,14 @@ pub mod create_game_server_group_input {
         ///
         /// To override the contents of this collection use [`set_vpc_subnets`](Self::set_vpc_subnets).
         ///
-        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-        /// game server group is created, and the corresponding Auto Scaling group will always use
-        /// the property value that is set with this request, even if the Auto Scaling group is
-        /// updated directly.</p>
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
         pub fn vpc_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnets.unwrap_or_default();
             v.push(input.into());
             self.vpc_subnets = Some(v);
             self
         }
-        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-        /// game server group is created, and the corresponding Auto Scaling group will always use
-        /// the property value that is set with this request, even if the Auto Scaling group is
-        /// updated directly.</p>
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
         pub fn set_vpc_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1974,26 +1634,14 @@ pub mod create_game_server_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game server group resource. Tags are
-        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-        /// Resources</a> in the <i>AWS General Reference</i>. Once the
-        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-        /// AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new game server group resource. Tags are
-        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-        /// Resources</a> in the <i>AWS General Reference</i>. Once the
-        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-        /// AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2166,28 +1814,22 @@ pub mod create_game_session_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-        /// request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-        /// request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-        /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-        /// not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-        /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-        /// not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -2216,16 +1858,14 @@ pub mod create_game_session_input {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2233,38 +1873,22 @@ pub mod create_game_session_input {
             self.game_properties = input;
             self
         }
-        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-        /// requesting a new game session on a fleet with a resource creation limit policy. This
-        /// type of policy limits the number of concurrent active game sessions that one player can
-        /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-        /// request against the policy.</p>
+        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-        /// requesting a new game session on a fleet with a resource creation limit policy. This
-        /// type of policy limits the number of concurrent active game sessions that one player can
-        /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-        /// request against the policy.</p>
+        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.creator_id = input;
             self
         }
-        /// <p>
-        /// <i>This parameter is no longer preferred. Please use
-        /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-        /// identifies a request for a new game session. Maximum token length is 48 characters. If
-        /// provided, this string is included in the new game session's ID.</p>
+        /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
         pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_id = Some(input.into());
             self
         }
-        /// <p>
-        /// <i>This parameter is no longer preferred. Please use
-        /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-        /// identifies a request for a new game session. Maximum token length is 48 characters. If
-        /// provided, this string is included in the new game session's ID.</p>
+        /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2272,26 +1896,26 @@ pub mod create_game_session_input {
             self.game_session_id = input;
             self
         }
-        /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-        /// for ensuring that game session requests with the same idempotency token are processed
-        /// only once. Subsequent requests with the same string return the original
-        /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-        /// characters. If provided, this string is included in the new game session's ID.
-        /// A game session ARN has the following format:
-        /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-        /// game session objects are retained for this time period and then deleted.</p>
+        /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesession/
+        /// <fleet id>
+        /// /
+        /// <custom id string or idempotency token></custom>
+        /// </fleet>
+        /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-        /// for ensuring that game session requests with the same idempotency token are processed
-        /// only once. Subsequent requests with the same string return the original
-        /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-        /// characters. If provided, this string is included in the new game session's ID.
-        /// A game session ARN has the following format:
-        /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-        /// game session objects are retained for this time period and then deleted.</p>
+        /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesession/
+        /// <fleet id>
+        /// /
+        /// <custom id string or idempotency token></custom>
+        /// </fleet>
+        /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2299,14 +1923,12 @@ pub mod create_game_session_input {
             self.idempotency_token = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2314,16 +1936,12 @@ pub mod create_game_session_input {
             self.game_session_data = input;
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-        /// set, the new game session is placed in the fleet's home Region. Specify a remote
-        /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-        /// set, the new game session is placed in the fleet's home Region. Specify a remote
-        /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2515,22 +2133,14 @@ pub mod create_game_session_queue_input {
         ///
         /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
         ///
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
         pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
             let mut v = self.player_latency_policies.unwrap_or_default();
             v.push(input);
             self.player_latency_policies = Some(v);
             self
         }
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -2542,16 +2152,14 @@ pub mod create_game_session_queue_input {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
         pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -2559,16 +2167,12 @@ pub mod create_game_session_queue_input {
             self.destinations = input;
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
             self.filter_configuration = Some(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -2576,9 +2180,7 @@ pub mod create_game_session_queue_input {
             self.filter_configuration = input;
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. </p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
         pub fn priority_configuration(
             mut self,
             input: crate::model::PriorityConfiguration,
@@ -2586,9 +2188,7 @@ pub mod create_game_session_queue_input {
             self.priority_configuration = Some(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. </p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -2596,16 +2196,12 @@ pub mod create_game_session_queue_input {
             self.priority_configuration = input;
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_event_data = Some(input.into());
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2613,14 +2209,12 @@ pub mod create_game_session_queue_input {
             self.custom_event_data = input;
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target = Some(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2632,30 +2226,14 @@ pub mod create_game_session_queue_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2831,14 +2409,12 @@ pub mod create_matchmaking_configuration_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-        /// matchmaking request or ticket.</p>
+        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-        /// matchmaking request or ticket.</p>
+        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2857,20 +2433,22 @@ pub mod create_matchmaking_configuration_input {
         ///
         /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
         ///
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.  </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
         pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.game_session_queue_arns.unwrap_or_default();
             v.push(input.into());
             self.game_session_queue_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.  </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2878,60 +2456,42 @@ pub mod create_matchmaking_configuration_input {
             self.game_session_queue_arns = input;
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn request_timeout_seconds(mut self, input: i32) -> Self {
             self.request_timeout_seconds = Some(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.request_timeout_seconds = input;
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required. </p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
         pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
             self.acceptance_timeout_seconds = Some(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required. </p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.acceptance_timeout_seconds = input;
             self
         }
-        /// <p>A flag that determines whether a match that was created with this configuration must
-        /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-        /// With this option enabled, matchmaking tickets use the status
-        /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-        /// waiting for player acceptance. </p>
+        /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn acceptance_required(mut self, input: bool) -> Self {
             self.acceptance_required = Some(input);
             self
         }
-        /// <p>A flag that determines whether a match that was created with this configuration must
-        /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-        /// With this option enabled, matchmaking tickets use the status
-        /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-        /// waiting for player acceptance. </p>
+        /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.acceptance_required = input;
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2939,14 +2499,12 @@ pub mod create_matchmaking_configuration_input {
             self.rule_set_name = input;
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target = Some(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2954,28 +2512,22 @@ pub mod create_matchmaking_configuration_input {
             self.notification_target = input;
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn additional_player_count(mut self, input: i32) -> Self {
             self.additional_player_count = Some(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.additional_player_count = input;
             self
         }
-        /// <p>Information to be added to all events related to this matchmaking configuration.
-        /// </p>
+        /// <p>Information to be added to all events related to this matchmaking configuration. </p>
         pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_event_data = Some(input.into());
             self
         }
-        /// <p>Information to be added to all events related to this matchmaking configuration.
-        /// </p>
+        /// <p>Information to be added to all events related to this matchmaking configuration. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2987,20 +2539,14 @@ pub mod create_matchmaking_configuration_input {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -3008,18 +2554,12 @@ pub mod create_matchmaking_configuration_input {
             self.game_properties = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3027,24 +2567,12 @@ pub mod create_matchmaking_configuration_input {
             self.game_session_data = input;
             self
         }
-        /// <p>The method used to backfill game sessions that are created with this matchmaking
-        /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-        /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-        /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-        /// session has one or more open slots. Learn more about manual and automatic backfill in
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-        /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn backfill_mode(mut self, input: crate::model::BackfillMode) -> Self {
             self.backfill_mode = Some(input);
             self
         }
-        /// <p>The method used to backfill game sessions that are created with this matchmaking
-        /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-        /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-        /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-        /// session has one or more open slots. Learn more about manual and automatic backfill in
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-        /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -3052,41 +2580,19 @@ pub mod create_matchmaking_configuration_input {
             self.backfill_mode = input;
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn flex_match_mode(mut self, input: crate::model::FlexMatchMode) -> Self {
             self.flex_match_mode = Some(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn set_flex_match_mode(
             mut self,
@@ -3099,30 +2605,14 @@ pub mod create_matchmaking_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3293,28 +2783,22 @@ pub mod create_matchmaking_rule_set_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-        /// value. Note that the rule set name is different from the optional <code>name</code>
-        /// field in the rule set body.</p>
+        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-        /// value. Note that the rule set name is different from the optional <code>name</code>
-        /// field in the rule set body.</p>
+        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-        /// allowed in JSON, but most elements support a description field.</p>
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
         pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_body = Some(input.into());
             self
         }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-        /// allowed in JSON, but most elements support a description field.</p>
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
         pub fn set_rule_set_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3326,30 +2810,14 @@ pub mod create_matchmaking_rule_set_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3727,10 +3195,7 @@ pub mod create_player_sessions_input {
         ///
         /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
         ///
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-        /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn player_data_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -3741,10 +3206,7 @@ pub mod create_player_sessions_input {
             self.player_data_map = Some(hash_map);
             self
         }
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-        /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn set_player_data_map(
             mut self,
             input: std::option::Option<
@@ -3906,48 +3368,32 @@ pub mod create_script_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -3955,18 +3401,14 @@ pub mod create_script_input {
             self.storage_location = input;
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-        /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-        /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
@@ -3975,30 +3417,14 @@ pub mod create_script_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4154,14 +3580,12 @@ pub mod create_vpc_peering_authorization_input {
         pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_lift_aws_account_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4169,18 +3593,12 @@ pub mod create_vpc_peering_authorization_input {
             self.game_lift_aws_account_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -4335,28 +3753,22 @@ pub mod create_vpc_peering_connection_input {
         pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-        /// VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-        /// VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-        /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-        /// settings.</p>
+        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_aws_account_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-        /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-        /// settings.</p>
+        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4364,18 +3776,12 @@ pub mod create_vpc_peering_connection_input {
             self.peer_vpc_aws_account_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -4528,14 +3934,12 @@ pub mod delete_alias_input {
         pub(crate) alias_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -4990,14 +4394,12 @@ pub mod delete_fleet_locations_input {
         pub(crate) locations: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to delete locations for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to delete locations for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -5006,16 +4408,14 @@ pub mod delete_fleet_locations_input {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5171,12 +4571,12 @@ pub mod delete_game_server_group_input {
         pub(crate) delete_option: std::option::Option<crate::model::GameServerGroupDeleteOption>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5186,23 +4586,9 @@ pub mod delete_game_server_group_input {
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-        /// EC2 Auto Scaling group only when it has no game servers that are in
-        /// <code>UTILIZED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-        /// active game servers regardless of their utilization status, and the EC2 Auto
-        /// Scaling group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-        /// the EC2 Auto Scaling group as is.</p>
-        /// </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
         pub fn delete_option(mut self, input: crate::model::GameServerGroupDeleteOption) -> Self {
             self.delete_option = Some(input);
@@ -5210,23 +4596,9 @@ pub mod delete_game_server_group_input {
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-        /// EC2 Auto Scaling group only when it has no game servers that are in
-        /// <code>UTILIZED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-        /// active game servers regardless of their utilization status, and the EC2 Auto
-        /// Scaling group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-        /// the EC2 Auto Scaling group as is.</p>
-        /// </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
         pub fn set_delete_option(
             mut self,
@@ -5536,12 +4908,12 @@ pub mod delete_matchmaking_configuration_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5691,14 +5063,12 @@ pub mod delete_matchmaking_rule_set_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-        /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-        /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6168,14 +5538,12 @@ pub mod delete_vpc_peering_authorization_input {
         pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_lift_aws_account_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6183,18 +5551,12 @@ pub mod delete_vpc_peering_authorization_input {
             self.game_lift_aws_account_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -6348,24 +5710,22 @@ pub mod delete_vpc_peering_connection_input {
         pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-        /// connection record. You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-        /// connection record. You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
+        /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
         pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_peering_connection_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
+        /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
         pub fn set_vpc_peering_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6521,14 +5881,12 @@ pub mod deregister_game_server_input {
         pub(crate) game_server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6696,14 +6054,12 @@ pub mod describe_alias_input {
         pub(crate) alias_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-        /// either the alias ID or ARN value. </p>
+        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-        /// either the alias ID or ARN value. </p>
+        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -7005,18 +6361,12 @@ pub mod describe_ec2_instance_limits_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-        /// determines the computing resources of each instance in the fleet, including CPU, memory,
-        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-        /// limits for all instance types.</p>
+        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
         pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.ec2_instance_type = Some(input);
             self
         }
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-        /// determines the computing resources of each instance in the fleet, including CPU, memory,
-        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-        /// limits for all instance types.</p>
+        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -7024,14 +6374,12 @@ pub mod describe_ec2_instance_limits_input {
             self.ec2_instance_type = input;
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -7190,18 +6538,14 @@ pub mod describe_fleet_attributes_input {
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-        /// this parameter. </p>
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
-        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-        /// this parameter. </p>
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7209,26 +6553,22 @@ pub mod describe_fleet_attributes_input {
             self.fleet_ids = input;
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7388,18 +6728,14 @@ pub mod describe_fleet_capacity_input {
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-        /// value. Leave this parameter empty to retrieve capacity information for all
-        /// fleets.</p>
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
-        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-        /// value. Leave this parameter empty to retrieve capacity information for all
-        /// fleets.</p>
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7407,26 +6743,22 @@ pub mod describe_fleet_capacity_input {
             self.fleet_ids = input;
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7583,26 +6915,22 @@ pub mod describe_fleet_events_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7610,16 +6938,12 @@ pub mod describe_fleet_events_input {
             self.start_time = input;
             self
         }
-        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-        /// call returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-        /// call returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7798,14 +7122,12 @@ pub mod describe_fleet_location_attributes_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -7814,16 +7136,14 @@ pub mod describe_fleet_location_attributes_input {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8002,26 +7322,22 @@ pub mod describe_fleet_location_capacity_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to request location capacity for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to request location capacity for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8175,26 +7491,22 @@ pub mod describe_fleet_location_utilization_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to request location utilization for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to request location utilization for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8348,26 +7660,22 @@ pub mod describe_fleet_port_settings_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-        /// format, such as <code>us-west-2</code>.</p>
+        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-        /// format, such as <code>us-west-2</code>.</p>
+        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8526,16 +7834,14 @@ pub mod describe_fleet_utilization_input {
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
-        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8543,26 +7849,22 @@ pub mod describe_fleet_utilization_input {
             self.fleet_ids = input;
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8717,14 +8019,12 @@ pub mod describe_game_server_input {
         pub(crate) game_server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8890,12 +8190,12 @@ pub mod describe_game_server_group_input {
         pub(crate) game_server_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9053,12 +8353,12 @@ pub mod describe_game_server_instances_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9070,18 +8370,14 @@ pub mod describe_game_server_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-        /// instances in the game server group, leave this parameter empty. </p>
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-        /// instances in the game server group, leave this parameter empty. </p>
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9089,30 +8385,22 @@ pub mod describe_game_server_instances_input {
             self.instance_ids = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-        /// </p>
+        /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-        /// </p>
+        /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>
-        /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-        /// </p>
+        /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-        /// </p>
+        /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9272,14 +8560,12 @@ pub mod describe_game_session_details_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -9297,40 +8583,32 @@ pub mod describe_game_session_details_input {
             self.game_session_id = input;
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-        /// the alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-        /// the alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-        /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-        /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>Game session status to filter results on. Possible game session statuses include
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-        /// <code>TERMINATING</code> (the last two are transitory). </p>
+        /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
         pub fn status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_filter = Some(input.into());
             self
         }
-        /// <p>Game session status to filter results on. Possible game session statuses include
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-        /// <code>TERMINATING</code> (the last two are transitory). </p>
+        /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9673,16 +8951,14 @@ pub mod describe_game_session_queues_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
-        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9888,44 +9164,32 @@ pub mod describe_game_sessions_input {
             self.game_session_id = input;
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home
-        /// Region or a remote location. Use the AWS Region code format, such as
-        /// <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home
-        /// Region or a remote location. Use the AWS Region code format, such as
-        /// <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>Game session status to filter results on. You can filter on the following states:
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-        /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-        /// periods of time. </p>
+        /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
         pub fn status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_filter = Some(input.into());
             self
         }
-        /// <p>Game session status to filter results on. You can filter on the following states:
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-        /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-        /// periods of time. </p>
+        /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10109,26 +9373,22 @@ pub mod describe_instances_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-        /// blank to retrieve all instances in the fleet.</p>
+        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-        /// blank to retrieve all instances in the fleet.</p>
+        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10153,14 +9413,12 @@ pub mod describe_instances_input {
             self.next_token = input;
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10483,16 +9741,14 @@ pub mod describe_matchmaking_configurations_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-        /// request all existing configurations, leave this parameter empty.</p>
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-        /// request all existing configurations, leave this parameter empty.</p>
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10500,14 +9756,12 @@ pub mod describe_matchmaking_configurations_input {
             self.names = input;
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-        /// retrieve all matchmaking configurations that use this rule set.</p>
+        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-        /// retrieve all matchmaking configurations that use this rule set.</p>
+        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10691,18 +9945,14 @@ pub mod describe_matchmaking_rule_sets_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-        /// rule set name is different from the optional "name" field in the rule set body.) You can
-        /// use either the rule set name or ARN value. </p>
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
-        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-        /// rule set name is different from the optional "name" field in the rule set body.) You can
-        /// use either the rule set name or ARN value. </p>
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10922,28 +10172,10 @@ pub mod describe_player_sessions_input {
         /// <p>Player session status to filter results on.</p>
         /// <p>Possible player session statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RESERVED</b> -- The player session request has been
-        /// received, but the player has not yet connected to the server process and/or been
-        /// validated. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The player has been validated by the
-        /// server process and is currently connected.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>COMPLETED</b> -- The player connection has been
-        /// dropped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TIMEDOUT</b> -- A player session request was
-        /// received, but the player did not connect and/or was not validated within the
-        /// timeout limit (60 seconds).</p>
-        /// </li>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
         /// </ul>
         pub fn player_session_status_filter(
             mut self,
@@ -10955,28 +10187,10 @@ pub mod describe_player_sessions_input {
         /// <p>Player session status to filter results on.</p>
         /// <p>Possible player session statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RESERVED</b> -- The player session request has been
-        /// received, but the player has not yet connected to the server process and/or been
-        /// validated. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The player has been validated by the
-        /// server process and is currently connected.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>COMPLETED</b> -- The player connection has been
-        /// dropped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TIMEDOUT</b> -- A player session request was
-        /// received, but the player did not connect and/or was not validated within the
-        /// timeout limit (60 seconds).</p>
-        /// </li>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
         /// </ul>
         pub fn set_player_session_status_filter(
             mut self,
@@ -11156,14 +10370,12 @@ pub mod describe_runtime_configuration_input {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -11319,99 +10531,39 @@ pub mod describe_scaling_policies_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-        /// in an <code>ACTIVE</code> status.</p>
+        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The scaling policy is currently in
-        /// force.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATEREQUESTED</b> -- A request to update the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATING</b> -- A change is being made to the
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETEREQUESTED</b> -- A request to delete the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETING</b> -- The scaling policy is being
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETED</b> -- The scaling policy has been
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ERROR</b> -- An error occurred in creating the
-        /// policy. It should be removed and recreated.</p>
-        /// </li>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+        /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
         /// </ul>
         pub fn status_filter(mut self, input: crate::model::ScalingStatusType) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-        /// in an <code>ACTIVE</code> status.</p>
+        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The scaling policy is currently in
-        /// force.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATEREQUESTED</b> -- A request to update the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATING</b> -- A change is being made to the
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETEREQUESTED</b> -- A request to delete the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETING</b> -- The scaling policy is being
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETED</b> -- The scaling policy has been
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ERROR</b> -- An error occurred in creating the
-        /// policy. It should be removed and recreated.</p>
-        /// </li>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+        /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
         /// </ul>
         pub fn set_status_filter(
             mut self,
@@ -11440,16 +10592,12 @@ pub mod describe_scaling_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// CONTENT TODO
-        /// </p>
+        /// <p> CONTENT TODO </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>
-        /// CONTENT TODO
-        /// </p>
+        /// <p> CONTENT TODO </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -11605,14 +10753,12 @@ pub mod describe_script_input {
         pub(crate) script_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
         pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.script_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -12213,32 +11359,22 @@ pub mod get_instance_access_input {
         pub(crate) instance_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-        /// or ARN value. The fleet can be in any of the following statuses:
-        /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-        /// <code>ERROR</code> status may be accessible for a short time before they are
-        /// deleted.</p>
+        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-        /// or ARN value. The fleet can be in any of the following statuses:
-        /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-        /// <code>ERROR</code> status may be accessible for a short time before they are
-        /// deleted.</p>
+        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-        /// status.</p>
+        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-        /// status.</p>
+        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -12391,41 +11527,21 @@ pub mod list_aliases_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-        /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
         /// <p>Possible routing types include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>SIMPLE</b> -- The alias resolves to one specific
-        /// fleet. Use this type when routing to active fleets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TERMINAL</b> -- The alias does not resolve to a
-        /// fleet but instead can be used to display a message to the user. A terminal alias
-        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-        /// </li>
+        /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
         /// </ul>
         pub fn routing_strategy_type(mut self, input: crate::model::RoutingStrategyType) -> Self {
             self.routing_strategy_type = Some(input);
             self
         }
-        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-        /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
         /// <p>Possible routing types include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>SIMPLE</b> -- The alias resolves to one specific
-        /// fleet. Use this type when routing to active fleets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TERMINAL</b> -- The alias does not resolve to a
-        /// fleet but instead can be used to display a message to the user. A terminal alias
-        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-        /// </li>
+        /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
         /// </ul>
         pub fn set_routing_strategy_type(
             mut self,
@@ -12612,53 +11728,23 @@ pub mod list_builds_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-        /// empty.</p>
+        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
         /// <p>Possible build statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>INITIALIZED</b> -- A new build has been defined,
-        /// but no files have been uploaded. You cannot create fleets for builds that are in
-        /// this status. When a build is successfully created, the build status is set to
-        /// this value. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>READY</b> -- The game build has been successfully
-        /// uploaded. You can now create new fleets for this build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FAILED</b> -- The game build upload failed. You
-        /// cannot create new fleets for this build. </p>
-        /// </li>
+        /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+        /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+        /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::BuildStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-        /// empty.</p>
+        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
         /// <p>Possible build statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>INITIALIZED</b> -- A new build has been defined,
-        /// but no files have been uploaded. You cannot create fleets for builds that are in
-        /// this status. When a build is successfully created, the build status is set to
-        /// this value. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>READY</b> -- The game build has been successfully
-        /// uploaded. You can now create new fleets for this build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FAILED</b> -- The game build upload failed. You
-        /// cannot create new fleets for this build. </p>
-        /// </li>
+        /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+        /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+        /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::BuildStatus>) -> Self {
             self.status = input;
@@ -12832,26 +11918,22 @@ pub mod list_fleets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-        /// specified build. Use either the build ID or ARN value.</p>
+        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
         pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-        /// specified build. Use either the build ID or ARN value.</p>
+        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
         }
-        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-        /// specified script. Use either the script ID or ARN value.</p>
+        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
         pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.script_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-        /// specified script. Use either the script ID or ARN value.</p>
+        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -13193,14 +12275,12 @@ pub mod list_game_servers_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier for the game server group to retrieve a list of game servers from.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>An identifier for the game server group to retrieve a list of game servers from.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13208,18 +12288,12 @@ pub mod list_game_servers_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-        /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-        /// left empty, game servers are returned in no particular order.</p>
+        /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-        /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-        /// left empty, game servers are returned in no particular order.</p>
+        /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -13559,22 +12633,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-        /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-        /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -13745,14 +12809,12 @@ pub mod put_scaling_policy_input {
             self.name = input;
             self
         }
-        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-        /// cannot be in any of the following statuses: ERROR or DELETING.</p>
+        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-        /// cannot be in any of the following statuses: ERROR or DELETING.</p>
+        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -13767,26 +12829,11 @@ pub mod put_scaling_policy_input {
             self.scaling_adjustment = input;
             self
         }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ChangeInCapacity</b> -- add (or subtract) the
-        /// scaling adjustment value from the current instance count. Positive values scale
-        /// up while negative values scale down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ExactCapacity</b> -- set the instance count to the
-        /// scaling adjustment value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentChangeInCapacity</b> -- increase or reduce
-        /// the current instance count by the scaling adjustment, read as a percentage.
-        /// Positive values scale up while negative values scale down; for example, a value
-        /// of "-10" scales the fleet down by 10%.</p>
-        /// </li>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
         /// </ul>
         pub fn scaling_adjustment_type(
             mut self,
@@ -13795,26 +12842,11 @@ pub mod put_scaling_policy_input {
             self.scaling_adjustment_type = Some(input);
             self
         }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ChangeInCapacity</b> -- add (or subtract) the
-        /// scaling adjustment value from the current instance count. Positive values scale
-        /// up while negative values scale down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ExactCapacity</b> -- set the instance count to the
-        /// scaling adjustment value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentChangeInCapacity</b> -- increase or reduce
-        /// the current instance count by the scaling adjustment, read as a percentage.
-        /// Positive values scale up while negative values scale down; for example, a value
-        /// of "-10" scales the fleet down by 10%.</p>
-        /// </li>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
         /// </ul>
         pub fn set_scaling_adjustment_type(
             mut self,
@@ -13833,14 +12865,12 @@ pub mod put_scaling_policy_input {
             self.threshold = input;
             self
         }
-        /// <p>Comparison operator to use when measuring the metric against the threshold
-        /// value.</p>
+        /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperatorType) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>Comparison operator to use when measuring the metric against the threshold
-        /// value.</p>
+        /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperatorType>,
@@ -13848,155 +12878,47 @@ pub mod put_scaling_policy_input {
             self.comparison_operator = input;
             self
         }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-        /// scaling event is triggered.</p>
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
         pub fn evaluation_periods(mut self, input: i32) -> Self {
             self.evaluation_periods = Some(input);
             self
         }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-        /// scaling event is triggered.</p>
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.evaluation_periods = input;
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-        /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-        /// with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ActivatingGameSessions</b> -- Game sessions in
-        /// the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveGameSessions</b> -- Game sessions that
-        /// are currently running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveInstances</b> -- Fleet instances that
-        /// are currently running at least one game session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailableGameSessions</b> -- Additional game
-        /// sessions that fleet could host simultaneously, given current capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailablePlayerSessions</b> -- Empty player
-        /// slots in currently active game sessions. This includes game sessions that are
-        /// not currently accepting players. Reserved player slots are not
-        /// included.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CurrentPlayerSessions</b> -- Player slots in
-        /// active game sessions that are being used by a player or are reserved for a
-        /// player. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IdleInstances</b> -- Active instances that are
-        /// currently hosting zero game sessions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentAvailableGameSessions</b> -- Unused
-        /// percentage of the total number of game sessions that a fleet could host
-        /// simultaneously, given current capacity. Use this metric for a target-based
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentIdleInstances</b> -- Percentage of the
-        /// total number of active instances that are hosting zero game sessions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>QueueDepth</b> -- Pending game session
-        /// placement requests, in any queue, where the current fleet is the top-priority
-        /// destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WaitTime</b> -- Current wait time for pending
-        /// game session placement requests, in any queue, where the current fleet is the
-        /// top-priority destination. </p>
-        /// </li>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::MetricName) -> Self {
             self.metric_name = Some(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-        /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-        /// with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ActivatingGameSessions</b> -- Game sessions in
-        /// the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveGameSessions</b> -- Game sessions that
-        /// are currently running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveInstances</b> -- Fleet instances that
-        /// are currently running at least one game session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailableGameSessions</b> -- Additional game
-        /// sessions that fleet could host simultaneously, given current capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailablePlayerSessions</b> -- Empty player
-        /// slots in currently active game sessions. This includes game sessions that are
-        /// not currently accepting players. Reserved player slots are not
-        /// included.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CurrentPlayerSessions</b> -- Player slots in
-        /// active game sessions that are being used by a player or are reserved for a
-        /// player. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IdleInstances</b> -- Active instances that are
-        /// currently hosting zero game sessions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentAvailableGameSessions</b> -- Unused
-        /// percentage of the total number of game sessions that a fleet could host
-        /// simultaneously, given current capacity. Use this metric for a target-based
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentIdleInstances</b> -- Percentage of the
-        /// total number of active instances that are hosting zero game sessions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>QueueDepth</b> -- Pending game session
-        /// placement requests, in any queue, where the current fleet is the top-priority
-        /// destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WaitTime</b> -- Current wait time for pending
-        /// game session placement requests, in any queue, where the current fleet is the
-        /// top-priority destination. </p>
-        /// </li>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -14005,24 +12927,12 @@ pub mod put_scaling_policy_input {
             self.metric_name = input;
             self
         }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-        /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-        /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-        /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-        /// <i>ScalingAdjustmentType</i>, and
-        /// <i>ScalingAdjustment</i>.</p>
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-        /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-        /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-        /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-        /// <i>ScalingAdjustmentType</i>, and
-        /// <i>ScalingAdjustment</i>.</p>
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -14200,14 +13110,12 @@ pub mod register_game_server_input {
         pub(crate) game_server_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14215,14 +13123,12 @@ pub mod register_game_server_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register.  
-        /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
         pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_id = Some(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register.  
-        /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14230,28 +13136,22 @@ pub mod register_game_server_input {
             self.game_server_id = input;
             self
         }
-        /// <p>The unique identifier for the instance where the game server is running. This ID is
-        /// available in the instance metadata. EC2 instance IDs
-        /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+        /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the instance where the game server is running. This ID is
-        /// available in the instance metadata. EC2 instance IDs
-        /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+        /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>Information that is needed to make inbound client connections to the game server. This
-        /// might include the IP address and port, DNS name, and other information.</p>
+        /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
         pub fn connection_info(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_info = Some(input.into());
             self
         }
-        /// <p>Information that is needed to make inbound client connections to the game server. This
-        /// might include the IP address and port, DNS name, and other information.</p>
+        /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
         pub fn set_connection_info(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14259,16 +13159,12 @@ pub mod register_game_server_input {
             self.connection_info = input;
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14581,14 +13477,12 @@ pub mod resolve_alias_input {
         pub(crate) alias_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-        /// use either the alias ID or ARN value.</p>
+        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-        /// use either the alias ID or ARN value.</p>
+        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -14738,12 +13632,12 @@ pub mod resume_game_server_group_input {
             std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14923,172 +13817,76 @@ pub mod search_game_sessions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-        /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-        /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-        /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-        /// but not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-        /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-        /// but not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>String containing the search criteria for the session search. If no filter
-        /// expression is included, the request returns results for all game sessions in the fleet
-        /// that are in <code>ACTIVE</code> status.</p>
-        /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-        /// of the following:</p>
+        /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+        /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session
-        /// attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-        /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-        /// <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Comparator</b> -- Valid comparators are:
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Value</b> -- Value to be searched for. Values
-        /// may be numbers, boolean values (true/false) or strings depending on the operand.
-        /// String values are case sensitive and must be enclosed in single quotes. Special
-        /// characters must be escaped. Boolean and string values can only be used with the
-        /// comparators <code>=</code> and <code><></code>. For example, the following
-        /// filter expression searches on <code>gameSessionName</code>:
-        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-        /// 1'"</code>. </p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+        /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
         /// </ul>
-        /// <p>To chain multiple conditions in a single expression, use the logical keywords
-        /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-        /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-        /// <p>Session search evaluates conditions from left to right using the following
-        /// precedence rules:</p>
+        /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+        /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
         /// <ol>
-        /// <li>
-        /// <p>
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Parentheses</p>
-        /// </li>
-        /// <li>
-        /// <p>NOT</p>
-        /// </li>
-        /// <li>
-        /// <p>AND</p>
-        /// </li>
-        /// <li>
-        /// <p>OR</p>
-        /// </li>
+        /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+        /// <li> <p>Parentheses</p> </li>
+        /// <li> <p>NOT</p> </li>
+        /// <li> <p>AND</p> </li>
+        /// <li> <p>OR</p> </li>
         /// </ol>
-        /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-        /// players that have an open player slot: <code>"maximumSessions>=10 AND
-        /// hasAvailablePlayerSessions=true"</code>. </p>
+        /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>String containing the search criteria for the session search. If no filter
-        /// expression is included, the request returns results for all game sessions in the fleet
-        /// that are in <code>ACTIVE</code> status.</p>
-        /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-        /// of the following:</p>
+        /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+        /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session
-        /// attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-        /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-        /// <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Comparator</b> -- Valid comparators are:
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Value</b> -- Value to be searched for. Values
-        /// may be numbers, boolean values (true/false) or strings depending on the operand.
-        /// String values are case sensitive and must be enclosed in single quotes. Special
-        /// characters must be escaped. Boolean and string values can only be used with the
-        /// comparators <code>=</code> and <code><></code>. For example, the following
-        /// filter expression searches on <code>gameSessionName</code>:
-        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-        /// 1'"</code>. </p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+        /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
         /// </ul>
-        /// <p>To chain multiple conditions in a single expression, use the logical keywords
-        /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-        /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-        /// <p>Session search evaluates conditions from left to right using the following
-        /// precedence rules:</p>
+        /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+        /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
         /// <ol>
-        /// <li>
-        /// <p>
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Parentheses</p>
-        /// </li>
-        /// <li>
-        /// <p>NOT</p>
-        /// </li>
-        /// <li>
-        /// <p>AND</p>
-        /// </li>
-        /// <li>
-        /// <p>OR</p>
-        /// </li>
+        /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+        /// <li> <p>Parentheses</p> </li>
+        /// <li> <p>NOT</p> </li>
+        /// <li> <p>AND</p> </li>
+        /// <li> <p>OR</p> </li>
         /// </ol>
-        /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-        /// players that have an open player slot: <code>"maximumSessions>=10 AND
-        /// hasAvailablePlayerSessions=true"</code>. </p>
+        /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15096,52 +13894,22 @@ pub mod search_game_sessions_input {
             self.filter_expression = input;
             self
         }
-        /// <p>Instructions on how to sort the search results. If no sort expression is included,
-        /// the request returns results in random order. A sort expression consists of the following
-        /// elements:</p>
+        /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session attribute.
-        /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-        /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-        /// (ascending) and <code>DESC</code> (descending).</p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
         /// </ul>
-        /// <p>For example, this sort expression returns the oldest active sessions first:
-        /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-        /// for the sort operand are returned at the end of the list.</p>
+        /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
         pub fn sort_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.sort_expression = Some(input.into());
             self
         }
-        /// <p>Instructions on how to sort the search results. If no sort expression is included,
-        /// the request returns results in random order. A sort expression consists of the following
-        /// elements:</p>
+        /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session attribute.
-        /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-        /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-        /// (ascending) and <code>DESC</code> (descending).</p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
         /// </ul>
-        /// <p>For example, this sort expression returns the oldest active sessions first:
-        /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-        /// for the sort operand are returned at the end of the list.</p>
+        /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
         pub fn set_sort_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15149,14 +13917,12 @@ pub mod search_game_sessions_input {
             self.sort_expression = input;
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-        /// or is set higher than 20. </p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-        /// or is set higher than 20. </p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -15323,12 +14089,12 @@ pub mod start_fleet_actions_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -15352,14 +14118,12 @@ pub mod start_fleet_actions_input {
             self.actions = input;
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-        /// an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-        /// an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -15519,28 +14283,22 @@ pub mod start_game_session_placement_input {
         pub(crate) game_session_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier to assign to the new game session placement. This value is
-        /// developer-defined. The value must be unique across all Regions and cannot be reused
-        /// unless you are resubmitting a canceled or timed-out placement request.</p>
+        /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
         pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.placement_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier to assign to the new game session placement. This value is
-        /// developer-defined. The value must be unique across all Regions and cannot be reused
-        /// unless you are resubmitting a canceled or timed-out placement request.</p>
+        /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
         pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.placement_id = input;
             self
         }
-        /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-        /// or ARN value. </p>
+        /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
         pub fn game_session_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_queue_name = Some(input.into());
             self
         }
-        /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-        /// or ARN value. </p>
+        /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
         pub fn set_game_session_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15552,16 +14310,14 @@ pub mod start_game_session_placement_input {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -15596,16 +14352,14 @@ pub mod start_game_session_placement_input {
         ///
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-        /// it can offer the best possible gameplay experience for the players. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
         pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
             v.push(input);
             self.player_latencies = Some(v);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-        /// it can offer the best possible gameplay experience for the players. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -15635,14 +14389,12 @@ pub mod start_game_session_placement_input {
             self.desired_player_sessions = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15807,32 +14559,22 @@ pub mod start_match_backfill_input {
         pub(crate) players: std::option::Option<std::vec::Vec<crate::model::Player>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ticket_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
         }
-        /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-        /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <a>GameSession</a> object,
-        /// <code>MatchmakerData</code> property.</p>
+        /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_name = Some(input.into());
             self
         }
-        /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-        /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <a>GameSession</a> object,
-        /// <code>MatchmakerData</code> property.</p>
+        /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15840,14 +14582,12 @@ pub mod start_match_backfill_input {
             self.configuration_name = input;
             self
         }
-        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-        /// solution, this parameter is not needed. </p>
+        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
         pub fn game_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_arn = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-        /// solution, this parameter is not needed. </p>
+        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
         pub fn set_game_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15859,22 +14599,10 @@ pub mod start_match_backfill_input {
         ///
         /// To override the contents of this collection use [`set_players`](Self::set_players).
         ///
-        /// <p>Match information on all players that are currently assigned to the game session.
-        /// This information is used by the matchmaker to find new players and add them to the
-        /// existing game.</p>
+        /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li>
-        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-        /// for all players who are currently assigned to the game session. The matchmaker
-        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-        /// Match Data</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-        /// value, in milliseconds, for the Region that the game session is currently in. Do
-        /// not include latency values for any other Region.</p>
-        /// </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
         pub fn players(mut self, input: crate::model::Player) -> Self {
             let mut v = self.players.unwrap_or_default();
@@ -15882,22 +14610,10 @@ pub mod start_match_backfill_input {
             self.players = Some(v);
             self
         }
-        /// <p>Match information on all players that are currently assigned to the game session.
-        /// This information is used by the matchmaker to find new players and add them to the
-        /// existing game.</p>
+        /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li>
-        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-        /// for all players who are currently assigned to the game session. The matchmaker
-        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-        /// Match Data</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-        /// value, in milliseconds, for the Region that the game session is currently in. Do
-        /// not include latency values for any other Region.</p>
-        /// </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
         pub fn set_players(
             mut self,
@@ -16055,30 +14771,22 @@ pub mod start_matchmaking_input {
         pub(crate) players: std::option::Option<std::vec::Vec<crate::model::Player>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ticket_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
         }
-        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-        /// configurations must exist in the same Region as this request. You can use either the
-        /// configuration name or ARN value.</p>
+        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_name = Some(input.into());
             self
         }
-        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-        /// configurations must exist in the same Region as this request. You can use either the
-        /// configuration name or ARN value.</p>
+        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16090,20 +14798,14 @@ pub mod start_matchmaking_input {
         ///
         /// To override the contents of this collection use [`set_players`](Self::set_players).
         ///
-        /// <p>Information on each player to be matched. This information must include a player
-        /// ID, and may contain player attributes and latency data to be used in the matchmaking
-        /// process. After a successful match, <code>Player</code> objects contain the name of the
-        /// team the player is assigned to.</p>
+        /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
         pub fn players(mut self, input: crate::model::Player) -> Self {
             let mut v = self.players.unwrap_or_default();
             v.push(input);
             self.players = Some(v);
             self
         }
-        /// <p>Information on each player to be matched. This information must include a player
-        /// ID, and may contain player attributes and latency data to be used in the matchmaking
-        /// process. After a successful match, <code>Player</code> objects contain the name of the
-        /// team the player is assigned to.</p>
+        /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
         pub fn set_players(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Player>>,
@@ -16259,12 +14961,12 @@ pub mod stop_fleet_actions_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -16288,14 +14990,12 @@ pub mod stop_fleet_actions_input {
             self.actions = input;
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -16759,12 +15459,12 @@ pub mod suspend_game_server_group_input {
             std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16939,22 +15639,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-        /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-        /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -16963,20 +15653,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the specified GameLift resource.
-        /// Tags are developer-defined and structured as key-value pairs.
-        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-        /// for actual tagging limits.</p>
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of one or more tags to assign to the specified GameLift resource.
-        /// Tags are developer-defined and structured as key-value pairs.
-        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-        /// for actual tagging limits.</p>
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -17129,18 +15813,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-        /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-        /// resource ARNs are included in the data object for the resource, which can be retrieved
-        /// by calling a List or Describe operation for the resource type. </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-        /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-        /// resource ARNs are included in the data object for the resource, which can be retrieved
-        /// by calling a List or Describe operation for the resource type. </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -17149,18 +15827,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-        /// identifies which tag to remove. </p>
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-        /// identifies which tag to remove. </p>
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17315,14 +15989,12 @@ pub mod update_alias_input {
         pub(crate) routing_strategy: std::option::Option<crate::model::RoutingStrategy>,
     }
     impl Builder {
-        /// <p>A unique identifier for the alias that you want to update. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
         pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the alias that you want to update. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -17347,14 +16019,12 @@ pub mod update_alias_input {
             self.description = input;
             self
         }
-        /// <p>The routing configuration, including routing type and fleet target, for the
-        /// alias.</p>
+        /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
         pub fn routing_strategy(mut self, input: crate::model::RoutingStrategy) -> Self {
             self.routing_strategy = Some(input);
             self
         }
-        /// <p>The routing configuration, including routing type and fleet target, for the
-        /// alias.</p>
+        /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
         pub fn set_routing_strategy(
             mut self,
             input: std::option::Option<crate::model::RoutingStrategy>,
@@ -17510,12 +16180,12 @@ pub mod update_build_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
+        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
         pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
+        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -17692,14 +16362,12 @@ pub mod update_fleet_attributes_input {
         pub(crate) metric_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -17724,21 +16392,10 @@ pub mod update_fleet_attributes_input {
             self.description = input;
             self
         }
-        /// <p>The game session protection policy to apply to all new instances created in this
-        /// fleet. Instances that already exist are not affected. You can set protection for
-        /// individual instances using <a>UpdateGameSession</a>.</p>
+        /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
@@ -17747,21 +16404,10 @@ pub mod update_fleet_attributes_input {
             self.new_game_session_protection_policy = Some(input);
             self
         }
-        /// <p>The game session protection policy to apply to all new instances created in this
-        /// fleet. Instances that already exist are not affected. You can set protection for
-        /// individual instances using <a>UpdateGameSession</a>.</p>
+        /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
@@ -17770,8 +16416,7 @@ pub mod update_fleet_attributes_input {
             self.new_game_session_protection_policy = input;
             self
         }
-        /// <p>Policy settings that limit the number of game sessions an individual player can create
-        /// over a span of time. </p>
+        /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
         pub fn resource_creation_limit_policy(
             mut self,
             input: crate::model::ResourceCreationLimitPolicy,
@@ -17779,8 +16424,7 @@ pub mod update_fleet_attributes_input {
             self.resource_creation_limit_policy = Some(input);
             self
         }
-        /// <p>Policy settings that limit the number of game sessions an individual player can create
-        /// over a span of time. </p>
+        /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -17792,20 +16436,14 @@ pub mod update_fleet_attributes_input {
         ///
         /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
         ///
-        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-        /// group name, or create a new metric group by providing a new name. A fleet can only be in
-        /// one metric group at a time.</p>
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
         pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_groups.unwrap_or_default();
             v.push(input.into());
             self.metric_groups = Some(v);
             self
         }
-        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-        /// group name, or create a new metric group by providing a new name. A fleet can only be in
-        /// one metric group at a time.</p>
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17968,62 +16606,52 @@ pub mod update_fleet_capacity_input {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-        /// This value must fall between the minimum and maximum size limits.</p>
+        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
         pub fn desired_instances(mut self, input: i32) -> Self {
             self.desired_instances = Some(input);
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-        /// This value must fall between the minimum and maximum size limits.</p>
+        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_instances = input;
             self
         }
-        /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 0.</p>
+        /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.min_size = Some(input);
             self
         }
-        /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 0.</p>
+        /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
         }
-        /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 1.</p>
+        /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
         pub fn max_size(mut self, input: i32) -> Self {
             self.max_size = Some(input);
             self
         }
-        /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 1.</p>
+        /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-        /// AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-        /// AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -18180,14 +16808,12 @@ pub mod update_fleet_port_settings_input {
             std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -18387,14 +17013,12 @@ pub mod update_game_server_input {
         pub(crate) health_check: std::option::Option<crate::model::GameServerHealthCheck>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18415,16 +17039,12 @@ pub mod update_game_server_input {
             self.game_server_id = input;
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18432,8 +17052,7 @@ pub mod update_game_server_input {
             self.game_server_data = input;
             self
         }
-        /// <p>Indicates whether the game server is available or is currently hosting
-        /// gameplay.</p>
+        /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
         pub fn utilization_status(
             mut self,
             input: crate::model::GameServerUtilizationStatus,
@@ -18441,8 +17060,7 @@ pub mod update_game_server_input {
             self.utilization_status = Some(input);
             self
         }
-        /// <p>Indicates whether the game server is available or is currently hosting
-        /// gameplay.</p>
+        /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
         pub fn set_utilization_status(
             mut self,
             input: std::option::Option<crate::model::GameServerUtilizationStatus>,
@@ -18450,14 +17068,12 @@ pub mod update_game_server_input {
             self.utilization_status = input;
             self
         }
-        /// <p>Indicates health status of the game server. A request that includes this parameter
-        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+        /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
         pub fn health_check(mut self, input: crate::model::GameServerHealthCheck) -> Self {
             self.health_check = Some(input);
             self
         }
-        /// <p>Indicates health status of the game server. A request that includes this parameter
-        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+        /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::GameServerHealthCheck>,
@@ -18619,12 +17235,12 @@ pub mod update_game_server_group_input {
         pub(crate) balancing_strategy: std::option::Option<crate::model::BalancingStrategy>,
     }
     impl Builder {
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18632,14 +17248,12 @@ pub mod update_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -18648,30 +17262,14 @@ pub mod update_game_server_group_input {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-        /// specify capacity weighting for each instance type. If no weight value is specified for
-        /// an instance type, it is set to the default value "1". For more information about
-        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
             v.push(input);
             self.instance_definitions = Some(v);
             self
         }
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-        /// specify capacity weighting for each instance type. If no weight value is specified for
-        /// an instance type, it is set to the default value "1". For more information about
-        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -18679,12 +17277,7 @@ pub mod update_game_server_group_input {
             self.instance_definitions = input;
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
             input: crate::model::GameServerProtectionPolicy,
@@ -18692,12 +17285,7 @@ pub mod update_game_server_group_input {
             self.game_server_protection_policy = Some(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -18705,61 +17293,21 @@ pub mod update_game_server_group_input {
             self.game_server_protection_policy = input;
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn balancing_strategy(mut self, input: crate::model::BalancingStrategy) -> Self {
             self.balancing_strategy = Some(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn set_balancing_strategy(
             mut self,
@@ -18974,17 +17522,8 @@ pub mod update_game_session_input {
         }
         /// <p>Game session protection policy to apply to this game session only.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn protection_policy(mut self, input: crate::model::ProtectionPolicy) -> Self {
             self.protection_policy = Some(input);
@@ -18992,17 +17531,8 @@ pub mod update_game_session_input {
         }
         /// <p>Game session protection policy to apply to this game session only.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_protection_policy(
             mut self,
@@ -19192,24 +17722,14 @@ pub mod update_game_session_queue_input {
         ///
         /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
         ///
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-        /// policies.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
         pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
             let mut v = self.player_latency_policies.unwrap_or_default();
             v.push(input);
             self.player_latency_policies = Some(v);
             self
         }
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-        /// policies.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -19221,16 +17741,14 @@ pub mod update_game_session_queue_input {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
         pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -19238,16 +17756,12 @@ pub mod update_game_session_queue_input {
             self.destinations = input;
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
             self.filter_configuration = Some(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -19255,9 +17769,7 @@ pub mod update_game_session_queue_input {
             self.filter_configuration = input;
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
         pub fn priority_configuration(
             mut self,
             input: crate::model::PriorityConfiguration,
@@ -19265,9 +17777,7 @@ pub mod update_game_session_queue_input {
             self.priority_configuration = Some(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -19275,16 +17785,12 @@ pub mod update_game_session_queue_input {
             self.priority_configuration = input;
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_event_data = Some(input.into());
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19292,14 +17798,12 @@ pub mod update_game_session_queue_input {
             self.custom_event_data = input;
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target = Some(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19497,20 +18001,22 @@ pub mod update_matchmaking_configuration_input {
         ///
         /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
         ///
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
         pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.game_session_queue_arns.unwrap_or_default();
             v.push(input.into());
             self.game_session_queue_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19518,58 +18024,42 @@ pub mod update_matchmaking_configuration_input {
             self.game_session_queue_arns = input;
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn request_timeout_seconds(mut self, input: i32) -> Self {
             self.request_timeout_seconds = Some(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.request_timeout_seconds = input;
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required.</p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
         pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
             self.acceptance_timeout_seconds = Some(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required.</p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.acceptance_timeout_seconds = input;
             self
         }
-        /// <p>A flag that indicates whether a match that was created with this configuration must be
-        /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-        /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-        /// when a completed potential match is waiting for player acceptance. </p>
+        /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn acceptance_required(mut self, input: bool) -> Self {
             self.acceptance_required = Some(input);
             self
         }
-        /// <p>A flag that indicates whether a match that was created with this configuration must be
-        /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-        /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-        /// when a completed potential match is waiting for player acceptance. </p>
+        /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.acceptance_required = input;
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19577,14 +18067,12 @@ pub mod update_matchmaking_configuration_input {
             self.rule_set_name = input;
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target = Some(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19592,16 +18080,12 @@ pub mod update_matchmaking_configuration_input {
             self.notification_target = input;
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn additional_player_count(mut self, input: i32) -> Self {
             self.additional_player_count = Some(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.additional_player_count = input;
             self
@@ -19623,20 +18107,14 @@ pub mod update_matchmaking_configuration_input {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -19644,18 +18122,12 @@ pub mod update_matchmaking_configuration_input {
             self.game_properties = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19663,22 +18135,12 @@ pub mod update_matchmaking_configuration_input {
             self.game_session_data = input;
             self
         }
-        /// <p>The method that is used to backfill game sessions created with this matchmaking
-        /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-        /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-        /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-        /// with FlexMatch</a>. Automatic backfill is not available when
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn backfill_mode(mut self, input: crate::model::BackfillMode) -> Self {
             self.backfill_mode = Some(input);
             self
         }
-        /// <p>The method that is used to backfill game sessions created with this matchmaking
-        /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-        /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-        /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-        /// with FlexMatch</a>. Automatic backfill is not available when
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -19686,41 +18148,19 @@ pub mod update_matchmaking_configuration_input {
             self.backfill_mode = input;
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn flex_match_mode(mut self, input: crate::model::FlexMatchMode) -> Self {
             self.flex_match_mode = Some(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn set_flex_match_mode(
             mut self,
@@ -19890,30 +18330,22 @@ pub mod update_runtime_configuration_input {
         pub(crate) runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
-        /// <p>Instructions for launching server processes on each instance in the fleet. Server
-        /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-        /// configuration lists the types of server processes to run on an instance, how to launch
-        /// them, and the number of processes to run concurrently.</p>
+        /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
         pub fn runtime_configuration(mut self, input: crate::model::RuntimeConfiguration) -> Self {
             self.runtime_configuration = Some(input);
             self
         }
-        /// <p>Instructions for launching server processes on each instance in the fleet. Server
-        /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-        /// configuration lists the types of server processes to run on an instance, how to launch
-        /// them, and the number of processes to run concurrently.</p>
+        /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -20103,24 +18535,12 @@ pub mod update_script_input {
             self.version = input;
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -20128,22 +18548,14 @@ pub mod update_script_input {
             self.storage_location = input;
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-        /// a binary object. For example: <code>--zip-file
-        /// fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-        /// a binary object. For example: <code>--zip-file
-        /// fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
@@ -20476,20 +18888,10 @@ pub struct UpdateScriptInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-    /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-    /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-    /// bucket must be in the same Region where you want to create a new script. By default,
-    /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-    /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-    /// version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
-    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-    /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-    /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-    /// a binary object. For example: <code>--zip-file
-    /// fileb://myRealtimeScript.zip</code>.</p>
+    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateScriptInput {
@@ -20505,22 +18907,12 @@ impl UpdateScriptInput {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-    /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-    /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-    /// bucket must be in the same Region where you want to create a new script. By default,
-    /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-    /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-    /// version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
-    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-    /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-    /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-    /// a binary object. For example: <code>--zip-file
-    /// fileb://myRealtimeScript.zip</code>.</p>
+    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -20541,25 +18933,17 @@ impl std::fmt::Debug for UpdateScriptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuntimeConfigurationInput {
-    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>Instructions for launching server processes on each instance in the fleet. Server
-    /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-    /// configuration lists the types of server processes to run on an instance, how to launch
-    /// them, and the number of processes to run concurrently.</p>
+    /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl UpdateRuntimeConfigurationInput {
-    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>Instructions for launching server processes on each instance in the fleet. Server
-    /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-    /// configuration lists the types of server processes to run on an instance, how to launch
-    /// them, and the number of processes to run concurrently.</p>
+    /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
     pub fn runtime_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
@@ -20583,68 +18967,36 @@ pub struct UpdateMatchmakingConfigurationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A descriptive label that is associated with matchmaking configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-    /// GameLift-hosted game sessions for matches that are created with this matchmaking
-    /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-    /// set this parameter.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesessionqueue/
+    /// <queue name></queue>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub game_session_queue_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-    /// before timing out. Requests that fail due to timing out can be resubmitted as
-    /// needed.</p>
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub request_timeout_seconds: std::option::Option<i32>,
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-    /// acceptance is required.</p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
     pub acceptance_timeout_seconds: std::option::Option<i32>,
-    /// <p>A flag that indicates whether a match that was created with this configuration must be
-    /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-    /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-    /// when a completed potential match is waiting for player acceptance. </p>
+    /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub acceptance_required: std::option::Option<bool>,
-    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-    /// value. A matchmaking configuration can only use rule sets that are defined in the same
-    /// Region.</p>
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
-    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Setting up notifications for matchmaking</a> for more information.</p>
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
     pub notification_target: std::option::Option<std::string::String>,
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-    /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-    /// <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub additional_player_count: std::option::Option<i32>,
     /// <p>Information to add to all events related to the matchmaking configuration. </p>
     pub custom_event_data: std::option::Option<std::string::String>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-    /// object that is created for a successful match.  This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-    /// that is created for a successful match.  This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub game_session_data: std::option::Option<std::string::String>,
-    /// <p>The method that is used to backfill game sessions created with this matchmaking
-    /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-    /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-    /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-    /// with FlexMatch</a>. Automatic backfill is not available when
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub backfill_mode: std::option::Option<crate::model::BackfillMode>,
-    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-    /// as a standalone matchmaking solution. </p>
+    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-    /// match information, including players and team assignments, in a
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-    /// MatchmakingSucceeded</a> event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-    /// start a game session for the match. </p>
-    /// </li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub flex_match_mode: std::option::Option<crate::model::FlexMatchMode>,
 }
@@ -20657,45 +19009,35 @@ impl UpdateMatchmakingConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-    /// GameLift-hosted game sessions for matches that are created with this matchmaking
-    /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-    /// set this parameter.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesessionqueue/
+    /// <queue name></queue>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn game_session_queue_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.game_session_queue_arns.as_deref()
     }
-    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-    /// before timing out. Requests that fail due to timing out can be resubmitted as
-    /// needed.</p>
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub fn request_timeout_seconds(&self) -> std::option::Option<i32> {
         self.request_timeout_seconds
     }
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-    /// acceptance is required.</p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
     pub fn acceptance_timeout_seconds(&self) -> std::option::Option<i32> {
         self.acceptance_timeout_seconds
     }
-    /// <p>A flag that indicates whether a match that was created with this configuration must be
-    /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-    /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-    /// when a completed potential match is waiting for player acceptance. </p>
+    /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn acceptance_required(&self) -> std::option::Option<bool> {
         self.acceptance_required
     }
-    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-    /// value. A matchmaking configuration can only use rule sets that are defined in the same
-    /// Region.</p>
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
-    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Setting up notifications for matchmaking</a> for more information.</p>
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
     pub fn notification_target(&self) -> std::option::Option<&str> {
         self.notification_target.as_deref()
     }
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-    /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-    /// <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn additional_player_count(&self) -> std::option::Option<i32> {
         self.additional_player_count
     }
@@ -20703,44 +19045,22 @@ impl UpdateMatchmakingConfigurationInput {
     pub fn custom_event_data(&self) -> std::option::Option<&str> {
         self.custom_event_data.as_deref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-    /// object that is created for a successful match.  This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-    /// that is created for a successful match.  This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>The method that is used to backfill game sessions created with this matchmaking
-    /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-    /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-    /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-    /// with FlexMatch</a>. Automatic backfill is not available when
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn backfill_mode(&self) -> std::option::Option<&crate::model::BackfillMode> {
         self.backfill_mode.as_ref()
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-    /// as a standalone matchmaking solution. </p>
+    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-    /// match information, including players and team assignments, in a
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-    /// MatchmakingSucceeded</a> event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-    /// start a game session for the match. </p>
-    /// </li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn flex_match_mode(&self) -> std::option::Option<&crate::model::FlexMatchMode> {
         self.flex_match_mode.as_ref()
@@ -20778,31 +19098,18 @@ pub struct UpdateGameSessionQueueInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
     pub timeout_in_seconds: std::option::Option<i32>,
-    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-    /// deliver low latency for most players in a game session. These policies ensure that no
-    /// individual player can be placed into a game with unreasonably high latency. Use multiple
-    /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-    /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-    /// policies.</p>
+    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
     pub player_latency_policies:
         std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
-    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-    /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-    /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-    /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
     pub filter_configuration: std::option::Option<crate::model::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-    /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-    /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub priority_configuration: std::option::Option<crate::model::PriorityConfiguration>,
-    /// <p>
-    /// Information to be added to all events that are related to this game session queue.
-    /// </p>
+    /// <p> Information to be added to all events that are related to this game session queue. </p>
     pub custom_event_data: std::option::Option<std::string::String>,
-    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-    /// Setting up notifications for game session placement</a>.</p>
+    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub notification_target: std::option::Option<std::string::String>,
 }
 impl UpdateGameSessionQueueInput {
@@ -20814,46 +19121,33 @@ impl UpdateGameSessionQueueInput {
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-    /// deliver low latency for most players in a game session. These policies ensure that no
-    /// individual player can be placed into a game with unreasonably high latency. Use multiple
-    /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-    /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-    /// policies.</p>
+    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
     pub fn player_latency_policies(
         &self,
     ) -> std::option::Option<&[crate::model::PlayerLatencyPolicy]> {
         self.player_latency_policies.as_deref()
     }
-    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-    /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
     pub fn destinations(
         &self,
     ) -> std::option::Option<&[crate::model::GameSessionQueueDestination]> {
         self.destinations.as_deref()
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-    /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-    /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
     pub fn filter_configuration(&self) -> std::option::Option<&crate::model::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-    /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-    /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub fn priority_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
-    /// <p>
-    /// Information to be added to all events that are related to this game session queue.
-    /// </p>
+    /// <p> Information to be added to all events that are related to this game session queue. </p>
     pub fn custom_event_data(&self) -> std::option::Option<&str> {
         self.custom_event_data.as_deref()
     }
-    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-    /// Setting up notifications for game session placement</a>.</p>
+    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn notification_target(&self) -> std::option::Option<&str> {
         self.notification_target.as_deref()
     }
@@ -20888,17 +19182,8 @@ pub struct UpdateGameSessionInput {
         std::option::Option<crate::model::PlayerSessionCreationPolicy>,
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> -- The game session can be
-    /// terminated during a scale-down event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> -- If the game session is in an
-    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub protection_policy: std::option::Option<crate::model::ProtectionPolicy>,
 }
@@ -20923,17 +19208,8 @@ impl UpdateGameSessionInput {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> -- The game session can be
-    /// terminated during a scale-down event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> -- If the game session is in an
-    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn protection_policy(&self) -> std::option::Option<&crate::model::ProtectionPolicy> {
         self.protection_policy.as_ref()
@@ -20961,115 +19237,47 @@ impl std::fmt::Debug for UpdateGameSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-    /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-    /// definitions must specify at least two different instance types that are supported by
-    /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-    /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-    /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-    /// specify capacity weighting for each instance type. If no weight value is specified for
-    /// an instance type, it is set to the default value "1". For more information about
-    /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-    /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub instance_definitions: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
-    /// <p>A flag that indicates whether instances in the game server group are protected
-    /// from early termination. Unprotected instances that have active game servers running might
-    /// be terminated during a scale-down event, causing players to be dropped from the game.
-    /// Protected instances cannot be terminated while there are active game servers running except
-    /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-    /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub game_server_protection_policy:
         std::option::Option<crate::model::GameServerProtectionPolicy>,
-    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-    /// game server group. Method options include the following:</p>
+    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-    /// Instances are unavailable or not viable for game hosting, the game server group
-    /// provides no hosting capacity until Spot Instances can again be used. Until then,
-    /// no new instances are started, and the existing nonviable Spot Instances are
-    /// terminated (after current gameplay ends) and are not replaced.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-    /// the game server group. If Spot Instances are unavailable, the game server group
-    /// continues to provide hosting capacity by falling back to On-Demand Instances.
-    /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-    /// and are replaced with new On-Demand Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-    /// server group. No Spot Instances are used, even when available, while this
-    /// balancing strategy is in force.</p>
-    /// </li>
+    /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+    /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+    /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
     pub balancing_strategy: std::option::Option<crate::model::BalancingStrategy>,
 }
 impl UpdateGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-    /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-    /// definitions must specify at least two different instance types that are supported by
-    /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-    /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-    /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-    /// specify capacity weighting for each instance type. If no weight value is specified for
-    /// an instance type, it is set to the default value "1". For more information about
-    /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-    /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub fn instance_definitions(&self) -> std::option::Option<&[crate::model::InstanceDefinition]> {
         self.instance_definitions.as_deref()
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected
-    /// from early termination. Unprotected instances that have active game servers running might
-    /// be terminated during a scale-down event, causing players to be dropped from the game.
-    /// Protected instances cannot be terminated while there are active game servers running except
-    /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-    /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn game_server_protection_policy(
         &self,
     ) -> std::option::Option<&crate::model::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
-    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-    /// game server group. Method options include the following:</p>
+    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-    /// Instances are unavailable or not viable for game hosting, the game server group
-    /// provides no hosting capacity until Spot Instances can again be used. Until then,
-    /// no new instances are started, and the existing nonviable Spot Instances are
-    /// terminated (after current gameplay ends) and are not replaced.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-    /// the game server group. If Spot Instances are unavailable, the game server group
-    /// continues to provide hosting capacity by falling back to On-Demand Instances.
-    /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-    /// and are replaced with new On-Demand Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-    /// server group. No Spot Instances are used, even when available, while this
-    /// balancing strategy is in force.</p>
-    /// </li>
+    /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+    /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+    /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
     pub fn balancing_strategy(&self) -> std::option::Option<&crate::model::BalancingStrategy> {
         self.balancing_strategy.as_ref()
@@ -21094,25 +19302,19 @@ impl std::fmt::Debug for UpdateGameServerGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to update.</p>
     pub game_server_id: std::option::Option<std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub game_server_data: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the game server is available or is currently hosting
-    /// gameplay.</p>
+    /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
     pub utilization_status: std::option::Option<crate::model::GameServerUtilizationStatus>,
-    /// <p>Indicates health status of the game server. A request that includes this parameter
-    /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub health_check: std::option::Option<crate::model::GameServerHealthCheck>,
 }
 impl UpdateGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -21120,21 +19322,17 @@ impl UpdateGameServerInput {
     pub fn game_server_id(&self) -> std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub fn game_server_data(&self) -> std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
-    /// <p>Indicates whether the game server is available or is currently hosting
-    /// gameplay.</p>
+    /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
     pub fn utilization_status(
         &self,
     ) -> std::option::Option<&crate::model::GameServerUtilizationStatus> {
         self.utilization_status.as_ref()
     }
-    /// <p>Indicates health status of the game server. A request that includes this parameter
-    /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn health_check(&self) -> std::option::Option<&crate::model::GameServerHealthCheck> {
         self.health_check.as_ref()
     }
@@ -21155,8 +19353,7 @@ impl std::fmt::Debug for UpdateGameServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetPortSettingsInput {
-    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>A collection of port settings to be added to the fleet resource.</p>
     pub inbound_permission_authorizations:
@@ -21166,8 +19363,7 @@ pub struct UpdateFleetPortSettingsInput {
         std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl UpdateFleetPortSettingsInput {
-    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -21204,45 +19400,35 @@ impl std::fmt::Debug for UpdateFleetPortSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetCapacityInput {
-    /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-    /// This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
     pub desired_instances: std::option::Option<i32>,
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-    /// this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
     pub min_size: std::option::Option<i32>,
-    /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-    /// this parameter is not set, the default is 1.</p>
+    /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
     pub max_size: std::option::Option<i32>,
-    /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-    /// AWS Region code such as <code>us-west-2</code>.</p>
+    /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl UpdateFleetCapacityInput {
-    /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-    /// This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
     pub fn desired_instances(&self) -> std::option::Option<i32> {
         self.desired_instances
     }
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-    /// this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
     pub fn min_size(&self) -> std::option::Option<i32> {
         self.min_size
     }
-    /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-    /// this parameter is not set, the default is 1.</p>
+    /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
     pub fn max_size(&self) -> std::option::Option<i32> {
         self.max_size
     }
-    /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-    /// AWS Region code such as <code>us-west-2</code>.</p>
+    /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -21263,43 +19449,26 @@ impl std::fmt::Debug for UpdateFleetCapacityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFleetAttributesInput {
-    /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A human-readable description of a fleet.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The game session protection policy to apply to all new instances created in this
-    /// fleet. Instances that already exist are not affected. You can set protection for
-    /// individual instances using <a>UpdateGameSession</a>.</p>
+    /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> -- The game session can be
-    /// terminated during a scale-down event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> -- If the game session is in an
-    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub new_game_session_protection_policy: std::option::Option<crate::model::ProtectionPolicy>,
-    /// <p>Policy settings that limit the number of game sessions an individual player can create
-    /// over a span of time. </p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub resource_creation_limit_policy:
         std::option::Option<crate::model::ResourceCreationLimitPolicy>,
-    /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-    /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-    /// group name, or create a new metric group by providing a new name. A fleet can only be in
-    /// one metric group at a time.</p>
+    /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     pub metric_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFleetAttributesInput {
-    /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -21311,38 +19480,23 @@ impl UpdateFleetAttributesInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The game session protection policy to apply to all new instances created in this
-    /// fleet. Instances that already exist are not affected. You can set protection for
-    /// individual instances using <a>UpdateGameSession</a>.</p>
+    /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> -- The game session can be
-    /// terminated during a scale-down event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> -- If the game session is in an
-    /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn new_game_session_protection_policy(
         &self,
     ) -> std::option::Option<&crate::model::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
-    /// <p>Policy settings that limit the number of game sessions an individual player can create
-    /// over a span of time. </p>
+    /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn resource_creation_limit_policy(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
-    /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-    /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-    /// group name, or create a new metric group by providing a new name. A fleet can only be in
-    /// one metric group at a time.</p>
+    /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     pub fn metric_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.metric_groups.as_deref()
     }
@@ -21370,7 +19524,7 @@ impl std::fmt::Debug for UpdateFleetAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBuildInput {
-    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
     pub build_id: std::option::Option<std::string::String>,
     /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
     pub name: std::option::Option<std::string::String>,
@@ -21378,7 +19532,7 @@ pub struct UpdateBuildInput {
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateBuildInput {
-    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
     pub fn build_id(&self) -> std::option::Option<&str> {
         self.build_id.as_deref()
     }
@@ -21405,20 +19559,17 @@ impl std::fmt::Debug for UpdateBuildInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasInput {
-    /// <p>A unique identifier for the alias that you want to update. You can use either the
-    /// alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The routing configuration, including routing type and fleet target, for the
-    /// alias.</p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub routing_strategy: std::option::Option<crate::model::RoutingStrategy>,
 }
 impl UpdateAliasInput {
-    /// <p>A unique identifier for the alias that you want to update. You can use either the
-    /// alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -21430,8 +19581,7 @@ impl UpdateAliasInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the
-    /// alias.</p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn routing_strategy(&self) -> std::option::Option<&crate::model::RoutingStrategy> {
         self.routing_strategy.as_ref()
     }
@@ -21451,27 +19601,17 @@ impl std::fmt::Debug for UpdateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-    /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-    /// resource ARNs are included in the data object for the resource, which can be retrieved
-    /// by calling a List or Describe operation for the resource type. </p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-    /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-    /// identifies which tag to remove. </p>
+    /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-    /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-    /// resource ARNs are included in the data object for the resource, which can be retrieved
-    /// by calling a List or Describe operation for the resource type. </p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-    /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-    /// identifies which tag to remove. </p>
+    /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -21489,33 +19629,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name
-    /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-    /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-    /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-    /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of one or more tags to assign to the specified GameLift resource.
-    /// Tags are developer-defined and structured as key-value pairs.
-    /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-    /// for actual tagging limits.</p>
+    /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name
-    /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-    /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-    /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-    /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of one or more tags to assign to the specified GameLift resource.
-    /// Tags are developer-defined and structured as key-value pairs.
-    /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-    /// for actual tagging limits.</p>
+    /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -21533,13 +19657,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>The activity to suspend for this game server group.</p>
     pub suspend_actions: std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
 }
 impl SuspendGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -21603,16 +19727,15 @@ impl std::fmt::Debug for StopGameSessionPlacementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFleetActionsInput {
-    /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>List of actions to suspend on the fleet. </p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
-    /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl StopFleetActionsInput {
-    /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -21620,8 +19743,7 @@ impl StopFleetActionsInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
         self.actions.as_deref()
     }
-    /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -21640,37 +19762,23 @@ impl std::fmt::Debug for StopFleetActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-    /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-    /// results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub ticket_id: std::option::Option<std::string::String>,
-    /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-    /// configurations must exist in the same Region as this request. You can use either the
-    /// configuration name or ARN value.</p>
+    /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     pub configuration_name: std::option::Option<std::string::String>,
-    /// <p>Information on each player to be matched. This information must include a player
-    /// ID, and may contain player attributes and latency data to be used in the matchmaking
-    /// process. After a successful match, <code>Player</code> objects contain the name of the
-    /// team the player is assigned to.</p>
+    /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     pub players: std::option::Option<std::vec::Vec<crate::model::Player>>,
 }
 impl StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-    /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-    /// results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
-    /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-    /// configurations must exist in the same Region as this request. You can use either the
-    /// configuration name or ARN value.</p>
+    /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     pub fn configuration_name(&self) -> std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
-    /// <p>Information on each player to be matched. This information must include a player
-    /// ID, and may contain player attributes and latency data to be used in the matchmaking
-    /// process. After a successful match, <code>Player</code> objects contain the name of the
-    /// team the player is assigned to.</p>
+    /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     pub fn players(&self) -> std::option::Option<&[crate::model::Player]> {
         self.players.as_deref()
     }
@@ -21689,72 +19797,36 @@ impl std::fmt::Debug for StartMatchmakingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMatchBackfillInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-    /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-    /// results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub ticket_id: std::option::Option<std::string::String>,
-    /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-    /// name or ARN value. The ARN of the matchmaker that was used with the original game
-    /// session is listed in the <a>GameSession</a> object,
-    /// <code>MatchmakerData</code> property.</p>
+    /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub configuration_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-    /// solution, this parameter is not needed. </p>
+    /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
     pub game_session_arn: std::option::Option<std::string::String>,
-    /// <p>Match information on all players that are currently assigned to the game session.
-    /// This information is used by the matchmaker to find new players and add them to the
-    /// existing game.</p>
+    /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
     /// <ul>
-    /// <li>
-    /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-    /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-    /// for all players who are currently assigned to the game session. The matchmaker
-    /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-    /// Match Data</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-    /// value, in milliseconds, for the Region that the game session is currently in. Do
-    /// not include latency values for any other Region.</p>
-    /// </li>
+    /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+    /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
     /// </ul>
     pub players: std::option::Option<std::vec::Vec<crate::model::Player>>,
 }
 impl StartMatchBackfillInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-    /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-    /// results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
-    /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-    /// name or ARN value. The ARN of the matchmaker that was used with the original game
-    /// session is listed in the <a>GameSession</a> object,
-    /// <code>MatchmakerData</code> property.</p>
+    /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub fn configuration_name(&self) -> std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
-    /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-    /// solution, this parameter is not needed. </p>
+    /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
     pub fn game_session_arn(&self) -> std::option::Option<&str> {
         self.game_session_arn.as_deref()
     }
-    /// <p>Match information on all players that are currently assigned to the game session.
-    /// This information is used by the matchmaker to find new players and add them to the
-    /// existing game.</p>
+    /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
     /// <ul>
-    /// <li>
-    /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-    /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-    /// for all players who are currently assigned to the game session. The matchmaker
-    /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-    /// Match Data</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-    /// value, in milliseconds, for the Region that the game session is currently in. Do
-    /// not include latency values for any other Region.</p>
-    /// </li>
+    /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+    /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
     /// </ul>
     pub fn players(&self) -> std::option::Option<&[crate::model::Player]> {
         self.players.as_deref()
@@ -21775,44 +19847,34 @@ impl std::fmt::Debug for StartMatchBackfillInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGameSessionPlacementInput {
-    /// <p>A unique identifier to assign to the new game session placement. This value is
-    /// developer-defined. The value must be unique across all Regions and cannot be reused
-    /// unless you are resubmitting a canceled or timed-out placement request.</p>
+    /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
     pub placement_id: std::option::Option<std::string::String>,
-    /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-    /// or ARN value. </p>
+    /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
     pub game_session_queue_name: std::option::Option<std::string::String>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub maximum_player_session_count: std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub game_session_name: std::option::Option<std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-    /// it can offer the best possible gameplay experience for the players. </p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
     pub player_latencies: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
     /// <p>Set of information on each player to create a player session for.</p>
     pub desired_player_sessions:
         std::option::Option<std::vec::Vec<crate::model::DesiredPlayerSession>>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub game_session_data: std::option::Option<std::string::String>,
 }
 impl StartGameSessionPlacementInput {
-    /// <p>A unique identifier to assign to the new game session placement. This value is
-    /// developer-defined. The value must be unique across all Regions and cannot be reused
-    /// unless you are resubmitting a canceled or timed-out placement request.</p>
+    /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
     pub fn placement_id(&self) -> std::option::Option<&str> {
         self.placement_id.as_deref()
     }
-    /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-    /// or ARN value. </p>
+    /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
     pub fn game_session_queue_name(&self) -> std::option::Option<&str> {
         self.game_session_queue_name.as_deref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
@@ -21824,8 +19886,7 @@ impl StartGameSessionPlacementInput {
     pub fn game_session_name(&self) -> std::option::Option<&str> {
         self.game_session_name.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-    /// it can offer the best possible gameplay experience for the players. </p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
     pub fn player_latencies(&self) -> std::option::Option<&[crate::model::PlayerLatency]> {
         self.player_latencies.as_deref()
     }
@@ -21835,8 +19896,7 @@ impl StartGameSessionPlacementInput {
     ) -> std::option::Option<&[crate::model::DesiredPlayerSession]> {
         self.desired_player_sessions.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
@@ -21863,16 +19923,15 @@ impl std::fmt::Debug for StartGameSessionPlacementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFleetActionsInput {
-    /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>List of actions to restart on the fleet.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
-    /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-    /// an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl StartFleetActionsInput {
-    /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -21880,8 +19939,7 @@ impl StartFleetActionsInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
         self.actions.as_deref()
     }
-    /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-    /// an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -21900,215 +19958,87 @@ impl std::fmt::Debug for StartFleetActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchGameSessionsInput {
-    /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-    /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-    /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-    /// but not both.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub alias_id: std::option::Option<std::string::String>,
-    /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-    /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     /// <p> </p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>String containing the search criteria for the session search. If no filter
-    /// expression is included, the request returns results for all game sessions in the fleet
-    /// that are in <code>ACTIVE</code> status.</p>
-    /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-    /// of the following:</p>
+    /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+    /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Operand</b> -- Name of a game session
-    /// attribute. Valid values are <code>gameSessionName</code>,
-    /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-    /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-    /// <code>playerSessionCount</code>,
-    /// <code>hasAvailablePlayerSessions</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Comparator</b> -- Valid comparators are:
-    /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-    /// <code><=</code>, <code>>=</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Value</b> -- Value to be searched for. Values
-    /// may be numbers, boolean values (true/false) or strings depending on the operand.
-    /// String values are case sensitive and must be enclosed in single quotes. Special
-    /// characters must be escaped. Boolean and string values can only be used with the
-    /// comparators <code>=</code> and <code><></code>. For example, the following
-    /// filter expression searches on <code>gameSessionName</code>:
-    /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-    /// 1'"</code>. </p>
-    /// </li>
+    /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+    /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+    /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
     /// </ul>
-    /// <p>To chain multiple conditions in a single expression, use the logical keywords
-    /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-    /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-    /// <p>Session search evaluates conditions from left to right using the following
-    /// precedence rules:</p>
+    /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+    /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
     /// <ol>
-    /// <li>
-    /// <p>
-    /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-    /// <code><=</code>, <code>>=</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Parentheses</p>
-    /// </li>
-    /// <li>
-    /// <p>NOT</p>
-    /// </li>
-    /// <li>
-    /// <p>AND</p>
-    /// </li>
-    /// <li>
-    /// <p>OR</p>
-    /// </li>
+    /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+    /// <li> <p>Parentheses</p> </li>
+    /// <li> <p>NOT</p> </li>
+    /// <li> <p>AND</p> </li>
+    /// <li> <p>OR</p> </li>
     /// </ol>
-    /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-    /// players that have an open player slot: <code>"maximumSessions>=10 AND
-    /// hasAvailablePlayerSessions=true"</code>. </p>
+    /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>Instructions on how to sort the search results. If no sort expression is included,
-    /// the request returns results in random order. A sort expression consists of the following
-    /// elements:</p>
+    /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Operand</b> -- Name of a game session attribute.
-    /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-    /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-    /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-    /// <code>hasAvailablePlayerSessions</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-    /// (ascending) and <code>DESC</code> (descending).</p>
-    /// </li>
+    /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+    /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
-    /// <p>For example, this sort expression returns the oldest active sessions first:
-    /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-    /// for the sort operand are returned at the end of the list.</p>
+    /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
     pub sort_expression: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-    /// or is set higher than 20. </p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
     pub limit: std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchGameSessionsInput {
-    /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-    /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-    /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-    /// but not both.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-    /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     /// <p> </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>String containing the search criteria for the session search. If no filter
-    /// expression is included, the request returns results for all game sessions in the fleet
-    /// that are in <code>ACTIVE</code> status.</p>
-    /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-    /// of the following:</p>
+    /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+    /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Operand</b> -- Name of a game session
-    /// attribute. Valid values are <code>gameSessionName</code>,
-    /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-    /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-    /// <code>playerSessionCount</code>,
-    /// <code>hasAvailablePlayerSessions</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Comparator</b> -- Valid comparators are:
-    /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-    /// <code><=</code>, <code>>=</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Value</b> -- Value to be searched for. Values
-    /// may be numbers, boolean values (true/false) or strings depending on the operand.
-    /// String values are case sensitive and must be enclosed in single quotes. Special
-    /// characters must be escaped. Boolean and string values can only be used with the
-    /// comparators <code>=</code> and <code><></code>. For example, the following
-    /// filter expression searches on <code>gameSessionName</code>:
-    /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-    /// 1'"</code>. </p>
-    /// </li>
+    /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+    /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+    /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
     /// </ul>
-    /// <p>To chain multiple conditions in a single expression, use the logical keywords
-    /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-    /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-    /// <p>Session search evaluates conditions from left to right using the following
-    /// precedence rules:</p>
+    /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+    /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
     /// <ol>
-    /// <li>
-    /// <p>
-    /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-    /// <code><=</code>, <code>>=</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Parentheses</p>
-    /// </li>
-    /// <li>
-    /// <p>NOT</p>
-    /// </li>
-    /// <li>
-    /// <p>AND</p>
-    /// </li>
-    /// <li>
-    /// <p>OR</p>
-    /// </li>
+    /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+    /// <li> <p>Parentheses</p> </li>
+    /// <li> <p>NOT</p> </li>
+    /// <li> <p>AND</p> </li>
+    /// <li> <p>OR</p> </li>
     /// </ol>
-    /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-    /// players that have an open player slot: <code>"maximumSessions>=10 AND
-    /// hasAvailablePlayerSessions=true"</code>. </p>
+    /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
-    /// <p>Instructions on how to sort the search results. If no sort expression is included,
-    /// the request returns results in random order. A sort expression consists of the following
-    /// elements:</p>
+    /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Operand</b> -- Name of a game session attribute.
-    /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-    /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-    /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-    /// <code>hasAvailablePlayerSessions</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-    /// (ascending) and <code>DESC</code> (descending).</p>
-    /// </li>
+    /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+    /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
-    /// <p>For example, this sort expression returns the oldest active sessions first:
-    /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-    /// for the sort operand are returned at the end of the list.</p>
+    /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
     pub fn sort_expression(&self) -> std::option::Option<&str> {
         self.sort_expression.as_deref()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-    /// or is set higher than 20. </p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -22135,13 +20065,13 @@ impl std::fmt::Debug for SearchGameSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>The activity to resume for this game server group.</p>
     pub resume_actions: std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
 }
 impl ResumeGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -22163,13 +20093,11 @@ impl std::fmt::Debug for ResumeGameServerGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveAliasInput {
-    /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-    /// use either the alias ID or ARN value.</p>
+    /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl ResolveAliasInput {
-    /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-    /// use either the alias ID or ARN value.</p>
+    /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -22207,49 +20135,35 @@ impl std::fmt::Debug for RequestUploadCredentialsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>A custom string that uniquely identifies the game server to register.  
-    /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+    /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
     pub game_server_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the instance where the game server is running. This ID is
-    /// available in the instance metadata. EC2 instance IDs
-    /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Information that is needed to make inbound client connections to the game server. This
-    /// might include the IP address and port, DNS name, and other information.</p>
+    /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
     pub connection_info: std::option::Option<std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub game_server_data: std::option::Option<std::string::String>,
 }
 impl RegisterGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>A custom string that uniquely identifies the game server to register.  
-    /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+    /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
     pub fn game_server_id(&self) -> std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
-    /// <p>The unique identifier for the instance where the game server is running. This ID is
-    /// available in the instance metadata. EC2 instance IDs
-    /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Information that is needed to make inbound client connections to the game server. This
-    /// might include the IP address and port, DNS name, and other information.</p>
+    /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
     pub fn connection_info(&self) -> std::option::Option<&str> {
         self.connection_info.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub fn game_server_data(&self) -> std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -22272,116 +20186,39 @@ impl std::fmt::Debug for RegisterGameServerInput {
 pub struct PutScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-    /// cannot be in any of the following statuses: ERROR or DELETING.</p>
+    /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub scaling_adjustment: i32,
-    /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+    /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ChangeInCapacity</b> -- add (or subtract) the
-    /// scaling adjustment value from the current instance count. Positive values scale
-    /// up while negative values scale down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ExactCapacity</b> -- set the instance count to the
-    /// scaling adjustment value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentChangeInCapacity</b> -- increase or reduce
-    /// the current instance count by the scaling adjustment, read as a percentage.
-    /// Positive values scale up while negative values scale down; for example, a value
-    /// of "-10" scales the fleet down by 10%.</p>
-    /// </li>
+    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
     /// </ul>
     pub scaling_adjustment_type: std::option::Option<crate::model::ScalingAdjustmentType>,
     /// <p>Metric value used to trigger a scaling event.</p>
     pub threshold: f64,
-    /// <p>Comparison operator to use when measuring the metric against the threshold
-    /// value.</p>
+    /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperatorType>,
-    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-    /// scaling event is triggered.</p>
+    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: std::option::Option<i32>,
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-    /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-    /// with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ActivatingGameSessions</b> -- Game sessions in
-    /// the process of being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ActiveGameSessions</b> -- Game sessions that
-    /// are currently running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ActiveInstances</b> -- Fleet instances that
-    /// are currently running at least one game session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AvailableGameSessions</b> -- Additional game
-    /// sessions that fleet could host simultaneously, given current capacity.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AvailablePlayerSessions</b> -- Empty player
-    /// slots in currently active game sessions. This includes game sessions that are
-    /// not currently accepting players. Reserved player slots are not
-    /// included.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>CurrentPlayerSessions</b> -- Player slots in
-    /// active game sessions that are being used by a player or are reserved for a
-    /// player. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IdleInstances</b> -- Active instances that are
-    /// currently hosting zero game sessions. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentAvailableGameSessions</b> -- Unused
-    /// percentage of the total number of game sessions that a fleet could host
-    /// simultaneously, given current capacity. Use this metric for a target-based
-    /// scaling policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentIdleInstances</b> -- Percentage of the
-    /// total number of active instances that are hosting zero game sessions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>QueueDepth</b> -- Pending game session
-    /// placement requests, in any queue, where the current fleet is the top-priority
-    /// destination.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WaitTime</b> -- Current wait time for pending
-    /// game session placement requests, in any queue, where the current fleet is the
-    /// top-priority destination. </p>
-    /// </li>
+    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
     /// </ul>
     pub metric_name: std::option::Option<crate::model::MetricName>,
-    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-    /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-    /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-    /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-    /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-    /// <i>ScalingAdjustmentType</i>, and
-    /// <i>ScalingAdjustment</i>.</p>
+    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub target_configuration: std::option::Option<crate::model::TargetConfiguration>,
@@ -22391,8 +20228,7 @@ impl PutScalingPolicyInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-    /// cannot be in any of the following statuses: ERROR or DELETING.</p>
+    /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -22400,26 +20236,11 @@ impl PutScalingPolicyInput {
     pub fn scaling_adjustment(&self) -> i32 {
         self.scaling_adjustment
     }
-    /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+    /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ChangeInCapacity</b> -- add (or subtract) the
-    /// scaling adjustment value from the current instance count. Positive values scale
-    /// up while negative values scale down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ExactCapacity</b> -- set the instance count to the
-    /// scaling adjustment value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentChangeInCapacity</b> -- increase or reduce
-    /// the current instance count by the scaling adjustment, read as a percentage.
-    /// Positive values scale up while negative values scale down; for example, a value
-    /// of "-10" scales the fleet down by 10%.</p>
-    /// </li>
+    /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+    /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+    /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
     /// </ul>
     pub fn scaling_adjustment_type(
         &self,
@@ -22430,95 +20251,34 @@ impl PutScalingPolicyInput {
     pub fn threshold(&self) -> f64 {
         self.threshold
     }
-    /// <p>Comparison operator to use when measuring the metric against the threshold
-    /// value.</p>
+    /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     pub fn comparison_operator(
         &self,
     ) -> std::option::Option<&crate::model::ComparisonOperatorType> {
         self.comparison_operator.as_ref()
     }
-    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-    /// scaling event is triggered.</p>
+    /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub fn evaluation_periods(&self) -> std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-    /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-    /// with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ActivatingGameSessions</b> -- Game sessions in
-    /// the process of being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ActiveGameSessions</b> -- Game sessions that
-    /// are currently running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ActiveInstances</b> -- Fleet instances that
-    /// are currently running at least one game session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AvailableGameSessions</b> -- Additional game
-    /// sessions that fleet could host simultaneously, given current capacity.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AvailablePlayerSessions</b> -- Empty player
-    /// slots in currently active game sessions. This includes game sessions that are
-    /// not currently accepting players. Reserved player slots are not
-    /// included.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>CurrentPlayerSessions</b> -- Player slots in
-    /// active game sessions that are being used by a player or are reserved for a
-    /// player. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IdleInstances</b> -- Active instances that are
-    /// currently hosting zero game sessions. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentAvailableGameSessions</b> -- Unused
-    /// percentage of the total number of game sessions that a fleet could host
-    /// simultaneously, given current capacity. Use this metric for a target-based
-    /// scaling policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>PercentIdleInstances</b> -- Percentage of the
-    /// total number of active instances that are hosting zero game sessions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>QueueDepth</b> -- Pending game session
-    /// placement requests, in any queue, where the current fleet is the top-priority
-    /// destination.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WaitTime</b> -- Current wait time for pending
-    /// game session placement requests, in any queue, where the current fleet is the
-    /// top-priority destination. </p>
-    /// </li>
+    /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+    /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+    /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+    /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+    /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+    /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+    /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+    /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+    /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+    /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+    /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
     /// </ul>
     pub fn metric_name(&self) -> std::option::Option<&crate::model::MetricName> {
         self.metric_name.as_ref()
     }
-    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-    /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-    /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-    /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-    /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-    /// <i>ScalingAdjustmentType</i>, and
-    /// <i>ScalingAdjustment</i>.</p>
+    /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.policy_type.as_ref()
     }
@@ -22548,21 +20308,11 @@ impl std::fmt::Debug for PutScalingPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name
-    /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-    /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-    /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-    /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name
-    /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-    /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-    /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-    /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -22607,13 +20357,9 @@ impl std::fmt::Debug for ListScriptsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServersInput {
-    /// <p>An identifier for the game server group to retrieve a list of game servers from.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-    /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-    /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-    /// left empty, game servers are returned in no particular order.</p>
+    /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -22621,15 +20367,11 @@ pub struct ListGameServersInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGameServersInput {
-    /// <p>An identifier for the game server group to retrieve a list of game servers from.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-    /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-    /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-    /// left empty, game servers are returned in no particular order.</p>
+    /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -22685,11 +20427,9 @@ impl std::fmt::Debug for ListGameServerGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
-    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-    /// specified build. Use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     pub build_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-    /// specified script. Use either the script ID or ARN value.</p>
+    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub script_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -22697,13 +20437,11 @@ pub struct ListFleetsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsInput {
-    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-    /// specified build. Use either the build ID or ARN value.</p>
+    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     pub fn build_id(&self) -> std::option::Option<&str> {
         self.build_id.as_deref()
     }
-    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-    /// specified script. Use either the script ID or ARN value.</p>
+    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn script_id(&self) -> std::option::Option<&str> {
         self.script_id.as_deref()
     }
@@ -22731,27 +20469,12 @@ impl std::fmt::Debug for ListFleetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsInput {
-    /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-    /// empty.</p>
+    /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>INITIALIZED</b> -- A new build has been defined,
-    /// but no files have been uploaded. You cannot create fleets for builds that are in
-    /// this status. When a build is successfully created, the build status is set to
-    /// this value. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>READY</b> -- The game build has been successfully
-    /// uploaded. You can now create new fleets for this build.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FAILED</b> -- The game build upload failed. You
-    /// cannot create new fleets for this build. </p>
-    /// </li>
+    /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+    /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::BuildStatus>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -22760,27 +20483,12 @@ pub struct ListBuildsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsInput {
-    /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-    /// empty.</p>
+    /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>INITIALIZED</b> -- A new build has been defined,
-    /// but no files have been uploaded. You cannot create fleets for builds that are in
-    /// this status. When a build is successfully created, the build status is set to
-    /// this value. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>READY</b> -- The game build has been successfully
-    /// uploaded. You can now create new fleets for this build.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FAILED</b> -- The game build upload failed. You
-    /// cannot create new fleets for this build. </p>
-    /// </li>
+    /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+    /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::BuildStatus> {
         self.status.as_ref()
@@ -22808,21 +20516,11 @@ impl std::fmt::Debug for ListBuildsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
-    /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-    /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+    /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>SIMPLE</b> -- The alias resolves to one specific
-    /// fleet. Use this type when routing to active fleets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TERMINAL</b> -- The alias does not resolve to a
-    /// fleet but instead can be used to display a message to the user. A terminal alias
-    /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-    /// </li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
     /// </ul>
     pub routing_strategy_type: std::option::Option<crate::model::RoutingStrategyType>,
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -22833,21 +20531,11 @@ pub struct ListAliasesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAliasesInput {
-    /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-    /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+    /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>SIMPLE</b> -- The alias resolves to one specific
-    /// fleet. Use this type when routing to active fleets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TERMINAL</b> -- The alias does not resolve to a
-    /// fleet but instead can be used to display a message to the user. A terminal alias
-    /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-    /// </li>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
     /// </ul>
     pub fn routing_strategy_type(&self) -> std::option::Option<&crate::model::RoutingStrategyType> {
         self.routing_strategy_type.as_ref()
@@ -22880,27 +20568,17 @@ impl std::fmt::Debug for ListAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceAccessInput {
-    /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-    /// or ARN value. The fleet can be in any of the following statuses:
-    /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-    /// <code>ERROR</code> status may be accessible for a short time before they are
-    /// deleted.</p>
+    /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-    /// status.</p>
+    /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl GetInstanceAccessInput {
-    /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-    /// or ARN value. The fleet can be in any of the following statuses:
-    /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-    /// <code>ERROR</code> status may be accessible for a short time before they are
-    /// deleted.</p>
+    /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-    /// status.</p>
+    /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -22971,13 +20649,11 @@ impl std::fmt::Debug for DescribeVpcPeeringAuthorizationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScriptInput {
-    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
     pub script_id: std::option::Option<std::string::String>,
 }
 impl DescribeScriptInput {
-    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
     pub fn script_id(&self) -> std::option::Option<&str> {
         self.script_id.as_deref()
     }
@@ -22994,102 +20670,40 @@ impl std::fmt::Debug for DescribeScriptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPoliciesInput {
-    /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-    /// in an <code>ACTIVE</code> status.</p>
+    /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ACTIVE</b> -- The scaling policy is currently in
-    /// force.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>UPDATEREQUESTED</b> -- A request to update the
-    /// scaling policy has been received.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>UPDATING</b> -- A change is being made to the
-    /// scaling policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETEREQUESTED</b> -- A request to delete the
-    /// scaling policy has been received.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETING</b> -- The scaling policy is being
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETED</b> -- The scaling policy has been
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ERROR</b> -- An error occurred in creating the
-    /// policy. It should be removed and recreated.</p>
-    /// </li>
+    /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+    /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+    /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
     /// </ul>
     pub status_filter: std::option::Option<crate::model::ScalingStatusType>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// CONTENT TODO
-    /// </p>
+    /// <p> CONTENT TODO </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPoliciesInput {
-    /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-    /// in an <code>ACTIVE</code> status.</p>
+    /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>ACTIVE</b> -- The scaling policy is currently in
-    /// force.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>UPDATEREQUESTED</b> -- A request to update the
-    /// scaling policy has been received.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>UPDATING</b> -- A change is being made to the
-    /// scaling policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETEREQUESTED</b> -- A request to delete the
-    /// scaling policy has been received.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETING</b> -- The scaling policy is being
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>DELETED</b> -- The scaling policy has been
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ERROR</b> -- An error occurred in creating the
-    /// policy. It should be removed and recreated.</p>
-    /// </li>
+    /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+    /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+    /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+    /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+    /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+    /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
     /// </ul>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ScalingStatusType> {
         self.status_filter.as_ref()
@@ -23102,9 +20716,7 @@ impl DescribeScalingPoliciesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// CONTENT TODO
-    /// </p>
+    /// <p> CONTENT TODO </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -23125,13 +20737,11 @@ impl std::fmt::Debug for DescribeScalingPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeConfigurationInput {
-    /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl DescribeRuntimeConfigurationInput {
-    /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -23157,28 +20767,10 @@ pub struct DescribePlayerSessionsInput {
     /// <p>Player session status to filter results on.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>RESERVED</b> -- The player session request has been
-    /// received, but the player has not yet connected to the server process and/or been
-    /// validated. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ACTIVE</b> -- The player has been validated by the
-    /// server process and is currently connected.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>COMPLETED</b> -- The player connection has been
-    /// dropped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TIMEDOUT</b> -- A player session request was
-    /// received, but the player did not connect and/or was not validated within the
-    /// timeout limit (60 seconds).</p>
-    /// </li>
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
     pub player_session_status_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -23202,28 +20794,10 @@ impl DescribePlayerSessionsInput {
     /// <p>Player session status to filter results on.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>RESERVED</b> -- The player session request has been
-    /// received, but the player has not yet connected to the server process and/or been
-    /// validated. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ACTIVE</b> -- The player has been validated by the
-    /// server process and is currently connected.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>COMPLETED</b> -- The player connection has been
-    /// dropped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TIMEDOUT</b> -- A player session request was
-    /// received, but the player did not connect and/or was not validated within the
-    /// timeout limit (60 seconds).</p>
-    /// </li>
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
     pub fn player_session_status_filter(&self) -> std::option::Option<&str> {
         self.player_session_status_filter.as_deref()
@@ -23257,9 +20831,7 @@ impl std::fmt::Debug for DescribePlayerSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMatchmakingRuleSetsInput {
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-    /// rule set name is different from the optional "name" field in the rule set body.) You can
-    /// use either the rule set name or ARN value. </p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -23267,9 +20839,7 @@ pub struct DescribeMatchmakingRuleSetsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMatchmakingRuleSetsInput {
-    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-    /// rule set name is different from the optional "name" field in the rule set body.) You can
-    /// use either the rule set name or ARN value. </p>
+    /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
@@ -23296,11 +20866,9 @@ impl std::fmt::Debug for DescribeMatchmakingRuleSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMatchmakingConfigurationsInput {
-    /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-    /// request all existing configurations, leave this parameter empty.</p>
+    /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-    /// retrieve all matchmaking configurations that use this rule set.</p>
+    /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
     pub limit: std::option::Option<i32>,
@@ -23308,13 +20876,11 @@ pub struct DescribeMatchmakingConfigurationsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMatchmakingConfigurationsInput {
-    /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-    /// request all existing configurations, leave this parameter empty.</p>
+    /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-    /// retrieve all matchmaking configurations that use this rule set.</p>
+    /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
@@ -23363,28 +20929,23 @@ impl std::fmt::Debug for DescribeMatchmakingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesInput {
-    /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-    /// blank to retrieve all instances in the fleet.</p>
+    /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>. </p>
+    /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesInput {
-    /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-    /// blank to retrieve all instances in the fleet.</p>
+    /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -23396,8 +20957,7 @@ impl DescribeInstancesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>. </p>
+    /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -23422,17 +20982,11 @@ pub struct DescribeGameSessionsInput {
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the game session to retrieve. </p>
     pub game_session_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-    /// alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
     pub alias_id: std::option::Option<std::string::String>,
-    /// <p>A fleet location to get game session details for. You can specify a fleet's home
-    /// Region or a remote location. Use the AWS Region code format, such as
-    /// <code>us-west-2</code>. </p>
+    /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>Game session status to filter results on. You can filter on the following states:
-    /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-    /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-    /// periods of time. </p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub status_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -23448,21 +21002,15 @@ impl DescribeGameSessionsInput {
     pub fn game_session_id(&self) -> std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
-    /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-    /// alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>A fleet location to get game session details for. You can specify a fleet's home
-    /// Region or a remote location. Use the AWS Region code format, such as
-    /// <code>us-west-2</code>. </p>
+    /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>Game session status to filter results on. You can filter on the following states:
-    /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-    /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-    /// periods of time. </p>
+    /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     pub fn status_filter(&self) -> std::option::Option<&str> {
         self.status_filter.as_deref()
     }
@@ -23493,8 +21041,7 @@ impl std::fmt::Debug for DescribeGameSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionQueuesInput {
-    /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-    /// ARN value. To request settings for all queues, leave this parameter empty. </p>
+    /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub limit: std::option::Option<i32>,
@@ -23502,8 +21049,7 @@ pub struct DescribeGameSessionQueuesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionQueuesInput {
-    /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-    /// ARN value. To request settings for all queues, leave this parameter empty. </p>
+    /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
@@ -23551,20 +21097,15 @@ impl std::fmt::Debug for DescribeGameSessionPlacementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameSessionDetailsInput {
-    /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-    /// ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the game session to retrieve. </p>
     pub game_session_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-    /// the alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
     pub alias_id: std::option::Option<std::string::String>,
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-    /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>Game session status to filter results on. Possible game session statuses include
-    /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-    /// <code>TERMINATING</code> (the last two are transitory). </p>
+    /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
     pub status_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -23572,8 +21113,7 @@ pub struct DescribeGameSessionDetailsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionDetailsInput {
-    /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-    /// ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -23581,19 +21121,15 @@ impl DescribeGameSessionDetailsInput {
     pub fn game_session_id(&self) -> std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
-    /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-    /// the alias ID or ARN value.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-    /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>Game session status to filter results on. Possible game session statuses include
-    /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-    /// <code>TERMINATING</code> (the last two are transitory). </p>
+    /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
     pub fn status_filter(&self) -> std::option::Option<&str> {
         self.status_filter.as_deref()
     }
@@ -23624,41 +21160,29 @@ impl std::fmt::Debug for DescribeGameSessionDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInstancesInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-    /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-    /// instances in the game server group, leave this parameter empty. </p>
+    /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-    /// </p>
+    /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
     pub limit: std::option::Option<i32>,
-    /// <p>
-    /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-    /// </p>
+    /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGameServerInstancesInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-    /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-    /// instances in the game server group, leave this parameter empty. </p>
+    /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-    /// </p>
+    /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>
-    /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-    /// </p>
+    /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -23678,11 +21202,11 @@ impl std::fmt::Debug for DescribeGameServerInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -23699,15 +21223,13 @@ impl std::fmt::Debug for DescribeGameServerGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
     pub game_server_id: std::option::Option<std::string::String>,
 }
 impl DescribeGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -23729,29 +21251,23 @@ impl std::fmt::Debug for DescribeGameServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetUtilizationInput {
-    /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-    /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+    /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetUtilizationInput {
-    /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-    /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+    /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.fleet_ids.as_deref()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -23770,21 +21286,17 @@ impl std::fmt::Debug for DescribeFleetUtilizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetPortSettingsInput {
-    /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-    /// format, such as <code>us-west-2</code>.</p>
+    /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeFleetPortSettingsInput {
-    /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-    /// format, such as <code>us-west-2</code>.</p>
+    /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -23802,21 +21314,17 @@ impl std::fmt::Debug for DescribeFleetPortSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationUtilizationInput {
-    /// <p>A unique identifier for the fleet to request location utilization for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeFleetLocationUtilizationInput {
-    /// <p>A unique identifier for the fleet to request location utilization for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -23834,21 +21342,17 @@ impl std::fmt::Debug for DescribeFleetLocationUtilizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationCapacityInput {
-    /// <p>A unique identifier for the fleet to request location capacity for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeFleetLocationCapacityInput {
-    /// <p>A unique identifier for the fleet to request location capacity for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -23866,11 +21370,9 @@ impl std::fmt::Debug for DescribeFleetLocationCapacityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetLocationAttributesInput {
-    /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub locations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
     pub limit: std::option::Option<i32>,
@@ -23878,13 +21380,11 @@ pub struct DescribeFleetLocationAttributesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetLocationAttributesInput {
-    /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-    /// value.</p>
+    /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn locations(&self) -> std::option::Option<&[std::string::String]> {
         self.locations.as_deref()
     }
@@ -23912,15 +21412,11 @@ impl std::fmt::Debug for DescribeFleetLocationAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetEventsInput {
-    /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-    /// returns entries starting from when the fleet was created to the specified end time.
-    /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-    /// call returns entries from the specified start time up to the present. Format is a number
-    /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
@@ -23928,19 +21424,15 @@ pub struct DescribeFleetEventsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetEventsInput {
-    /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-    /// returns entries starting from when the fleet was created to the specified end time.
-    /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-    /// call returns entries from the specified start time up to the present. Format is a number
-    /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -23969,31 +21461,23 @@ impl std::fmt::Debug for DescribeFleetEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetCapacityInput {
-    /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-    /// value. Leave this parameter empty to retrieve capacity information for all
-    /// fleets.</p>
+    /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetCapacityInput {
-    /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-    /// value. Leave this parameter empty to retrieve capacity information for all
-    /// fleets.</p>
+    /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.fleet_ids.as_deref()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24012,31 +21496,23 @@ impl std::fmt::Debug for DescribeFleetCapacityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAttributesInput {
-    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-    /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-    /// this parameter. </p>
+    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAttributesInput {
-    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-    /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-    /// this parameter. </p>
+    /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
     pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.fleet_ids.as_deref()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-    /// IDs.</p>
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24055,25 +21531,17 @@ impl std::fmt::Debug for DescribeFleetAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEc2InstanceLimitsInput {
-    /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-    /// determines the computing resources of each instance in the fleet, including CPU, memory,
-    /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-    /// limits for all instance types.</p>
+    /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub ec2_instance_type: std::option::Option<crate::model::Ec2InstanceType>,
-    /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>.</p>
+    /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeEc2InstanceLimitsInput {
-    /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-    /// determines the computing resources of each instance in the fleet, including CPU, memory,
-    /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-    /// limits for all instance types.</p>
+    /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>.</p>
+    /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -24112,13 +21580,11 @@ impl std::fmt::Debug for DescribeBuildInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAliasInput {
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-    /// either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DescribeAliasInput {
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-    /// either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -24135,15 +21601,13 @@ impl std::fmt::Debug for DescribeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub game_server_id: std::option::Option<std::string::String>,
 }
 impl DeregisterGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -24165,19 +21629,17 @@ impl std::fmt::Debug for DeregisterGameServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-    /// connection record. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
+    /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
     pub vpc_peering_connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-    /// connection record. You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
+    /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
     pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
@@ -24195,25 +21657,17 @@ impl std::fmt::Debug for DeleteVpcPeeringConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcPeeringAuthorizationInput {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-    /// You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub game_lift_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
 }
 impl DeleteVpcPeeringAuthorizationInput {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-    /// You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
         self.game_lift_aws_account_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
@@ -24280,13 +21734,11 @@ impl std::fmt::Debug for DeleteScalingPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMatchmakingRuleSetInput {
-    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-    /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
+    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMatchmakingRuleSetInput {
-    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-    /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
+    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -24303,11 +21755,11 @@ impl std::fmt::Debug for DeleteMatchmakingRuleSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMatchmakingConfigurationInput {
-    /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
+    /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMatchmakingConfigurationInput {
-    /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
+    /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -24345,54 +21797,26 @@ impl std::fmt::Debug for DeleteGameSessionQueueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>The type of delete to perform. Options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-    /// EC2 Auto Scaling group only when it has no game servers that are in
-    /// <code>UTILIZED</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-    /// active game servers regardless of their utilization status, and the EC2 Auto
-    /// Scaling group. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-    /// the EC2 Auto Scaling group as is.</p>
-    /// </li>
+    /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+    /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+    /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
     pub delete_option: std::option::Option<crate::model::GameServerGroupDeleteOption>,
 }
 impl DeleteGameServerGroupInput {
-    /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+    /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The type of delete to perform. Options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-    /// EC2 Auto Scaling group only when it has no game servers that are in
-    /// <code>UTILIZED</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-    /// active game servers regardless of their utilization status, and the EC2 Auto
-    /// Scaling group. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-    /// the EC2 Auto Scaling group as is.</p>
-    /// </li>
+    /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+    /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+    /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
     pub fn delete_option(&self) -> std::option::Option<&crate::model::GameServerGroupDeleteOption> {
         self.delete_option.as_ref()
@@ -24411,21 +21835,17 @@ impl std::fmt::Debug for DeleteGameServerGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetLocationsInput {
-    /// <p>A unique identifier for the fleet to delete locations for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub locations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFleetLocationsInput {
-    /// <p>A unique identifier for the fleet to delete locations for.
-    /// You can use either the fleet ID or ARN value.</p>
+    /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-    /// <code>us-west-2</code>.</p>
+    /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
     pub fn locations(&self) -> std::option::Option<&[std::string::String]> {
         self.locations.as_deref()
     }
@@ -24485,13 +21905,11 @@ impl std::fmt::Debug for DeleteBuildInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
-    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-    /// ID or ARN value.</p>
+    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
-    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-    /// ID or ARN value.</p>
+    /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -24508,35 +21926,23 @@ impl std::fmt::Debug for DeleteAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-    /// VPC to peer with. </p>
+    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-    /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-    /// settings.</p>
+    /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
 }
 impl CreateVpcPeeringConnectionInput {
-    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-    /// VPC to peer with. </p>
+    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-    /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-    /// settings.</p>
+    /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_aws_account_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
@@ -24555,25 +21961,17 @@ impl std::fmt::Debug for CreateVpcPeeringConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringAuthorizationInput {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-    /// You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub game_lift_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
 }
 impl CreateVpcPeeringAuthorizationInput {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-    /// You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
     pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
         self.game_lift_aws_account_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
@@ -24591,73 +21989,37 @@ impl std::fmt::Debug for CreateVpcPeeringAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptInput {
-    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-    /// </p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-    /// </p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-    /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-    /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-    /// bucket must be in the same Region where you want to create a new script. By default,
-    /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-    /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-    /// version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
-    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-    /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-    /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateScriptInput {
-    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-    /// </p>
+    /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-    /// </p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-    /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-    /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-    /// bucket must be in the same Region where you want to create a new script. By default,
-    /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-    /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-    /// version. </p>
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
-    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-    /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-    /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+    /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
-    /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -24682,10 +22044,7 @@ pub struct CreatePlayerSessionsInput {
     pub game_session_id: std::option::Option<std::string::String>,
     /// <p>List of unique identifiers for the players to be added.</p>
     pub player_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-    /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-    /// as needed for use in the game. Any player data strings for player IDs that are not
-    /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub player_data_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -24698,10 +22057,7 @@ impl CreatePlayerSessionsInput {
     pub fn player_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.player_ids.as_deref()
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-    /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-    /// as needed for use in the game. Any player data strings for player IDs that are not
-    /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub fn player_data_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -24758,45 +22114,23 @@ impl std::fmt::Debug for CreatePlayerSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMatchmakingRuleSetInput {
-    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-    /// value. Note that the rule set name is different from the optional <code>name</code>
-    /// field in the rule set body.</p>
+    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-    /// allowed in JSON, but most elements support a description field.</p>
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
     pub rule_set_body: std::option::Option<std::string::String>,
-    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMatchmakingRuleSetInput {
-    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-    /// value. Note that the rule set name is different from the optional <code>name</code>
-    /// field in the rule set body.</p>
+    /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-    /// allowed in JSON, but most elements support a description field.</p>
+    /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
     pub fn rule_set_body(&self) -> std::option::Option<&str> {
         self.rule_set_body.as_deref()
     }
-    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -24815,92 +22149,47 @@ impl std::fmt::Debug for CreateMatchmakingRuleSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMatchmakingConfigurationInput {
-    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-    /// matchmaking request or ticket.</p>
+    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the matchmaking configuration. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-    /// GameLift-hosted game sessions for matches that are created with this matchmaking
-    /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-    /// set this parameter.  </p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesessionqueue/
+    /// <queue name></queue>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
     pub game_session_queue_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-    /// before timing out. Requests that fail due to timing out can be resubmitted as
-    /// needed.</p>
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub request_timeout_seconds: std::option::Option<i32>,
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-    /// acceptance is required. </p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub acceptance_timeout_seconds: std::option::Option<i32>,
-    /// <p>A flag that determines whether a match that was created with this configuration must
-    /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-    /// With this option enabled, matchmaking tickets use the status
-    /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-    /// waiting for player acceptance. </p>
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub acceptance_required: std::option::Option<bool>,
-    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-    /// value. A matchmaking configuration can only use rule sets that are defined in the same
-    /// Region.</p>
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
-    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Setting up notifications for matchmaking</a> for more information.</p>
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
     pub notification_target: std::option::Option<std::string::String>,
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-    /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-    /// <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub additional_player_count: std::option::Option<i32>,
-    /// <p>Information to be added to all events related to this matchmaking configuration.
-    /// </p>
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub custom_event_data: std::option::Option<std::string::String>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-    /// object that is created for a successful match. This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-    /// that is created for a successful match. This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub game_session_data: std::option::Option<std::string::String>,
-    /// <p>The method used to backfill game sessions that are created with this matchmaking
-    /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-    /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-    /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-    /// session has one or more open slots. Learn more about manual and automatic backfill in
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-    /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub backfill_mode: std::option::Option<crate::model::BackfillMode>,
-    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-    /// as a standalone matchmaking solution. </p>
+    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-    /// match information, including players and team assignments, in a
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-    /// MatchmakingSucceeded</a> event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-    /// start a game session for the match. </p>
-    /// </li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub flex_match_mode: std::option::Option<crate::model::FlexMatchMode>,
-    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMatchmakingConfigurationInput {
-    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-    /// matchmaking request or ticket.</p>
+    /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -24908,106 +22197,63 @@ impl CreateMatchmakingConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-    /// GameLift-hosted game sessions for matches that are created with this matchmaking
-    /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-    /// set this parameter.  </p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesessionqueue/
+    /// <queue name></queue>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
     pub fn game_session_queue_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.game_session_queue_arns.as_deref()
     }
-    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-    /// before timing out. Requests that fail due to timing out can be resubmitted as
-    /// needed.</p>
+    /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub fn request_timeout_seconds(&self) -> std::option::Option<i32> {
         self.request_timeout_seconds
     }
-    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-    /// acceptance is required. </p>
+    /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
     pub fn acceptance_timeout_seconds(&self) -> std::option::Option<i32> {
         self.acceptance_timeout_seconds
     }
-    /// <p>A flag that determines whether a match that was created with this configuration must
-    /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-    /// With this option enabled, matchmaking tickets use the status
-    /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-    /// waiting for player acceptance. </p>
+    /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
     pub fn acceptance_required(&self) -> std::option::Option<bool> {
         self.acceptance_required
     }
-    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-    /// value. A matchmaking configuration can only use rule sets that are defined in the same
-    /// Region.</p>
+    /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
-    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Setting up notifications for matchmaking</a> for more information.</p>
+    /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
     pub fn notification_target(&self) -> std::option::Option<&str> {
         self.notification_target.as_deref()
     }
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-    /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-    /// <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn additional_player_count(&self) -> std::option::Option<i32> {
         self.additional_player_count
     }
-    /// <p>Information to be added to all events related to this matchmaking configuration.
-    /// </p>
+    /// <p>Information to be added to all events related to this matchmaking configuration. </p>
     pub fn custom_event_data(&self) -> std::option::Option<&str> {
         self.custom_event_data.as_deref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-    /// object that is created for a successful match. This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-    /// that is created for a successful match. This parameter is not used if
-    /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>The method used to backfill game sessions that are created with this matchmaking
-    /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-    /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-    /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-    /// session has one or more open slots. Learn more about manual and automatic backfill in
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-    /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn backfill_mode(&self) -> std::option::Option<&crate::model::BackfillMode> {
         self.backfill_mode.as_ref()
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-    /// as a standalone matchmaking solution. </p>
+    /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-    /// match information, including players and team assignments, in a
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-    /// MatchmakingSucceeded</a> event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-    /// start a game session for the match. </p>
-    /// </li>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn flex_match_mode(&self) -> std::option::Option<&crate::model::FlexMatchMode> {
         self.flex_match_mode.as_ref()
     }
-    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -25045,40 +22291,20 @@ pub struct CreateGameSessionQueueInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
     pub timeout_in_seconds: std::option::Option<i32>,
-    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-    /// deliver low latency for most players in a game session. These policies ensure that no
-    /// individual player can be placed into a game with unreasonably high latency. Use multiple
-    /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-    /// maximum allowed latency, starting with the lowest value.</p>
+    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
     pub player_latency_policies:
         std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
-    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-    /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-    /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-    /// not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     pub filter_configuration: std::option::Option<crate::model::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-    /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-    /// named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
     pub priority_configuration: std::option::Option<crate::model::PriorityConfiguration>,
-    /// <p>
-    /// Information to be added to all events that are related to this game session queue.
-    /// </p>
+    /// <p> Information to be added to all events that are related to this game session queue. </p>
     pub custom_event_data: std::option::Option<std::string::String>,
-    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-    /// Setting up notifications for game session placement</a>.</p>
+    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub notification_target: std::option::Option<std::string::String>,
-    /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGameSessionQueueInput {
@@ -25090,57 +22316,37 @@ impl CreateGameSessionQueueInput {
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-    /// deliver low latency for most players in a game session. These policies ensure that no
-    /// individual player can be placed into a game with unreasonably high latency. Use multiple
-    /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-    /// maximum allowed latency, starting with the lowest value.</p>
+    /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
     pub fn player_latency_policies(
         &self,
     ) -> std::option::Option<&[crate::model::PlayerLatencyPolicy]> {
         self.player_latency_policies.as_deref()
     }
-    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-    /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+    /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub fn destinations(
         &self,
     ) -> std::option::Option<&[crate::model::GameSessionQueueDestination]> {
         self.destinations.as_deref()
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-    /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-    /// not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     pub fn filter_configuration(&self) -> std::option::Option<&crate::model::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-    /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-    /// named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
     pub fn priority_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
-    /// <p>
-    /// Information to be added to all events that are related to this game session queue.
-    /// </p>
+    /// <p> Information to be added to all events that are related to this game session queue. </p>
     pub fn custom_event_data(&self) -> std::option::Option<&str> {
         self.custom_event_data.as_deref()
     }
-    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-    /// Setting up notifications for game session placement</a>.</p>
+    /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn notification_target(&self) -> std::option::Option<&str> {
         self.notification_target.as_deref()
     }
-    /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -25165,58 +22371,40 @@ impl std::fmt::Debug for CreateGameSessionQueueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameSessionInput {
-    /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-    /// request must reference either a fleet ID or alias ID, but not both.</p>
+    /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-    /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-    /// not both.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub maximum_player_session_count: std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
-    /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-    /// requesting a new game session on a fleet with a resource creation limit policy. This
-    /// type of policy limits the number of concurrent active game sessions that one player can
-    /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-    /// request against the policy.</p>
+    /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
     pub creator_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// <i>This parameter is no longer preferred. Please use
-    /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-    /// identifies a request for a new game session. Maximum token length is 48 characters. If
-    /// provided, this string is included in the new game session's ID.</p>
+    /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub game_session_id: std::option::Option<std::string::String>,
-    /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-    /// for ensuring that game session requests with the same idempotency token are processed
-    /// only once. Subsequent requests with the same string return the original
-    /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-    /// characters. If provided, this string is included in the new game session's ID.
-    /// A game session ARN has the following format:
-    /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-    /// game session objects are retained for this time period and then deleted.</p>
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <custom id string or idempotency token></custom>
+    /// </fleet>
+    /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
     pub game_session_data: std::option::Option<std::string::String>,
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-    /// set, the new game session is placed in the fleet's home Region. Specify a remote
-    /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateGameSessionInput {
-    /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-    /// request must reference either a fleet ID or alias ID, but not both.</p>
+    /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-    /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-    /// not both.</p>
+    /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -25228,46 +22416,34 @@ impl CreateGameSessionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
-    /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-    /// requesting a new game session on a fleet with a resource creation limit policy. This
-    /// type of policy limits the number of concurrent active game sessions that one player can
-    /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-    /// request against the policy.</p>
+    /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
     pub fn creator_id(&self) -> std::option::Option<&str> {
         self.creator_id.as_deref()
     }
-    /// <p>
-    /// <i>This parameter is no longer preferred. Please use
-    /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-    /// identifies a request for a new game session. Maximum token length is 48 characters. If
-    /// provided, this string is included in the new game session's ID.</p>
+    /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub fn game_session_id(&self) -> std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
-    /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-    /// for ensuring that game session requests with the same idempotency token are processed
-    /// only once. Subsequent requests with the same string return the original
-    /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-    /// characters. If provided, this string is included in the new game session's ID.
-    /// A game session ARN has the following format:
-    /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-    /// game session objects are retained for this time period and then deleted.</p>
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <custom id string or idempotency token></custom>
+    /// </fleet>
+    /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-    /// <a>GameSession</a> object with a request to start a new game session.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-    /// set, the new game session is placed in the fleet's home Region. Specify a remote
-    /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -25296,228 +22472,92 @@ impl std::fmt::Debug for CreateGameSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameServerGroupInput {
-    /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-    /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-    /// must be unique per Region per AWS account.</p>
+    /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-    /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-    /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-    /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-    /// group is created, update this value directly in the Auto Scaling group using the AWS
-    /// console or APIs.</p>
+    /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub min_size: std::option::Option<i32>,
-    /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-    /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-    /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-    /// group using the AWS console or APIs.</p>
+    /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub max_size: std::option::Option<i32>,
-    /// <p>The EC2 launch template that contains configuration settings and game server code to
-    /// be deployed to all instances in the game server group. You can specify the template
-    /// using either the template name or ID. For help with creating a launch template, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-    /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-    /// User Guide</i>. After the Auto Scaling group is created, update this value
-    /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-    /// <note>
-    /// <p>If you specify network interfaces in your launch template, you must explicitly set
-    /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-    /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-    /// VPC.</p>
+    /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+    /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
     /// </note>
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
-    /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-    /// definitions must specify at least two different instance types that are supported by
-    /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-    /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-    /// weighting for each instance type. If no weight value is specified for an instance type,
-    /// it is set to the default value "1". For more information about capacity weighting, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-    /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub instance_definitions: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
-    /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-    /// optimized for game hosting. The scaling policy uses the metric
-    /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-    /// that can immediately accommodate new games and players. After the Auto Scaling group is
-    /// created, update this value directly in the Auto Scaling group using the AWS console or
-    /// APIs.</p>
+    /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub auto_scaling_policy: std::option::Option<crate::model::GameServerGroupAutoScalingPolicy>,
-    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-    /// game server group. Method options include the following:</p>
+    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-    /// Instances are unavailable or not viable for game hosting, the game server group
-    /// provides no hosting capacity until Spot Instances can again be used. Until then,
-    /// no new instances are started, and the existing nonviable Spot Instances are
-    /// terminated (after current gameplay ends) and are not replaced.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-    /// the game server group. If Spot Instances are unavailable, the game server group
-    /// continues to provide hosting capacity by falling back to On-Demand Instances.
-    /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-    /// and are replaced with new On-Demand Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-    /// server group. No Spot Instances are used, even when available, while this
-    /// balancing strategy is in force.</p>
-    /// </li>
+    /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+    /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+    /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
     pub balancing_strategy: std::option::Option<crate::model::BalancingStrategy>,
-    /// <p>A flag that indicates whether instances in the game server group are protected
-    /// from early termination. Unprotected instances that have active game servers running might
-    /// be terminated during a scale-down event, causing players to be dropped from the game.
-    /// Protected instances cannot be terminated while there are active game servers running except
-    /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-    /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub game_server_protection_policy:
         std::option::Option<crate::model::GameServerProtectionPolicy>,
-    /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-    /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-    /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-    /// game server group is created, and the corresponding Auto Scaling group will always use
-    /// the property value that is set with this request, even if the Auto Scaling group is
-    /// updated directly.</p>
+    /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
     pub vpc_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of labels to assign to the new game server group resource. Tags are
-    /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-    /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-    /// Resources</a> in the <i>AWS General Reference</i>. Once the
-    /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-    /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-    /// AWS General Reference for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGameServerGroupInput {
-    /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-    /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-    /// must be unique per Region per AWS account.</p>
+    /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-    /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-    /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-    /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-    /// group is created, update this value directly in the Auto Scaling group using the AWS
-    /// console or APIs.</p>
+    /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub fn min_size(&self) -> std::option::Option<i32> {
         self.min_size
     }
-    /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-    /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-    /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-    /// group using the AWS console or APIs.</p>
+    /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub fn max_size(&self) -> std::option::Option<i32> {
         self.max_size
     }
-    /// <p>The EC2 launch template that contains configuration settings and game server code to
-    /// be deployed to all instances in the game server group. You can specify the template
-    /// using either the template name or ID. For help with creating a launch template, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-    /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-    /// User Guide</i>. After the Auto Scaling group is created, update this value
-    /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-    /// <note>
-    /// <p>If you specify network interfaces in your launch template, you must explicitly set
-    /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-    /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-    /// VPC.</p>
+    /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+    /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
     /// </note>
     pub fn launch_template(
         &self,
     ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-    /// definitions must specify at least two different instance types that are supported by
-    /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-    /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-    /// weighting for each instance type. If no weight value is specified for an instance type,
-    /// it is set to the default value "1". For more information about capacity weighting, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-    /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub fn instance_definitions(&self) -> std::option::Option<&[crate::model::InstanceDefinition]> {
         self.instance_definitions.as_deref()
     }
-    /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-    /// optimized for game hosting. The scaling policy uses the metric
-    /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-    /// that can immediately accommodate new games and players. After the Auto Scaling group is
-    /// created, update this value directly in the Auto Scaling group using the AWS console or
-    /// APIs.</p>
+    /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
     pub fn auto_scaling_policy(
         &self,
     ) -> std::option::Option<&crate::model::GameServerGroupAutoScalingPolicy> {
         self.auto_scaling_policy.as_ref()
     }
-    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-    /// game server group. Method options include the following:</p>
+    /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-    /// Instances are unavailable or not viable for game hosting, the game server group
-    /// provides no hosting capacity until Spot Instances can again be used. Until then,
-    /// no new instances are started, and the existing nonviable Spot Instances are
-    /// terminated (after current gameplay ends) and are not replaced.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-    /// the game server group. If Spot Instances are unavailable, the game server group
-    /// continues to provide hosting capacity by falling back to On-Demand Instances.
-    /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-    /// and are replaced with new On-Demand Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-    /// server group. No Spot Instances are used, even when available, while this
-    /// balancing strategy is in force.</p>
-    /// </li>
+    /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+    /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+    /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
     pub fn balancing_strategy(&self) -> std::option::Option<&crate::model::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected
-    /// from early termination. Unprotected instances that have active game servers running might
-    /// be terminated during a scale-down event, causing players to be dropped from the game.
-    /// Protected instances cannot be terminated while there are active game servers running except
-    /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-    /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn game_server_protection_policy(
         &self,
     ) -> std::option::Option<&crate::model::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
-    /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-    /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-    /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-    /// game server group is created, and the corresponding Auto Scaling group will always use
-    /// the property value that is set with this request, even if the Auto Scaling group is
-    /// updated directly.</p>
+    /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
     pub fn vpc_subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_subnets.as_deref()
     }
-    /// <p>A list of labels to assign to the new game server group resource. Tags are
-    /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-    /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-    /// Resources</a> in the <i>AWS General Reference</i>. Once the
-    /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-    /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-    /// AWS General Reference for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -25549,9 +22589,7 @@ impl std::fmt::Debug for CreateGameServerGroupInput {
 pub struct CreateFleetLocationsInput {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-    /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
     pub locations: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
 }
 impl CreateFleetLocationsInput {
@@ -25559,9 +22597,7 @@ impl CreateFleetLocationsInput {
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-    /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-    /// Region code such as <code>us-west-2</code>. </p>
+    /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::LocationConfiguration]> {
         self.locations.as_deref()
     }
@@ -25583,121 +22619,49 @@ pub struct CreateFleetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the fleet.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet
-    /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-    /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
     pub build_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-    /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-    /// prior to creating the fleet. This fleet property cannot be changed later.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
     pub script_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// <b>This parameter is no longer used.</b> Specify a server
-    /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-    /// this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub server_launch_path: std::option::Option<std::string::String>,
-    /// <p>
-    /// <b>This parameter is no longer used.</b> Specify server
-    /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-    /// use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub server_launch_parameters: std::option::Option<std::string::String>,
-    /// <p>
-    /// <b>This parameter is no longer used.</b> To specify where
-    /// GameLift should store log files once a server process shuts down, use the GameLift server
-    /// API <code>ProcessReady()</code> and specify one or more directory paths in
-    /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+    /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
     pub log_paths: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-    /// type determines the computing resources that will be used to host your game servers,
-    /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-    /// of EC2 instance types.</p>
+    /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
     pub ec2_instance_type: std::option::Option<crate::model::Ec2InstanceType>,
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-    /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-    /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-    /// automatically sets TCP and UDP ranges. </p>
+    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
     pub ec2_inbound_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
-    /// <p>The status of termination protection for active game sessions on the fleet. By
-    /// default, this property is set to <code>NoProtection</code>. You can also set game
-    /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+    /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> - Game sessions can be terminated
-    /// during active gameplay as a result of a scale-down event. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> - Game sessions in
-    /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+    /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub new_game_session_protection_policy: std::option::Option<crate::model::ProtectionPolicy>,
-    /// <p>Instructions for how to launch and maintain server processes on instances in the
-    /// fleet. The runtime configuration defines one or more server process configurations, each
-    /// identifying a build executable or Realtime script file and the number of processes of
-    /// that type to run concurrently. </p>
-    /// <note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-    /// being configured using the older parameters <code>ServerLaunchPath</code> and
-    /// <code>ServerLaunchParameters</code>, which are still supported for backward
-    /// compatibility.</p>
+    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
-    /// <p>A policy that limits the number of game sessions that an individual player can create
-    /// on instances in this fleet within a specified span of time.</p>
+    /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
     pub resource_creation_limit_policy:
         std::option::Option<crate::model::ResourceCreationLimitPolicy>,
-    /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-    /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-    /// group name or set a new name to create a new metric group. A fleet can be included in
-    /// only one metric group at a time. </p>
+    /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
     pub metric_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-    /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-    /// settings. </p>
+    /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
     pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-    /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-    /// fleet is created.</p>
+    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
     pub fleet_type: std::option::Option<crate::model::FleetType>,
-    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-    /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-    /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-    /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-    /// Learn more about using on-box credentials for your game servers at
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-    /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
+    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
     pub instance_role_arn: std::option::Option<std::string::String>,
-    /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-    /// used for encrypting traffic between game clients and the game servers that are running
-    /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-    /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-    /// the fleet is created. </p>
-    /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-    /// available in all AWS regions. When working in a region that does not support this
-    /// feature, a fleet creation request with certificate generation fails with a 4xx
-    /// error.</p>
+    /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+    /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
     pub certificate_configuration: std::option::Option<crate::model::CertificateConfiguration>,
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-    /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-    /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-    /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-    /// instances in the home Region only, omit this parameter. </p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
     pub locations: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
-    /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-    /// key-value pairs. Tagging AWS resources are useful for resource management, access
-    /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-    /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-    /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFleetInput {
@@ -25709,162 +22673,90 @@ impl CreateFleetInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet
-    /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-    /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
     pub fn build_id(&self) -> std::option::Option<&str> {
         self.build_id.as_deref()
     }
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-    /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-    /// prior to creating the fleet. This fleet property cannot be changed later.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
     pub fn script_id(&self) -> std::option::Option<&str> {
         self.script_id.as_deref()
     }
-    /// <p>
-    /// <b>This parameter is no longer used.</b> Specify a server
-    /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-    /// this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_path(&self) -> std::option::Option<&str> {
         self.server_launch_path.as_deref()
     }
-    /// <p>
-    /// <b>This parameter is no longer used.</b> Specify server
-    /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-    /// use this parameter instead continue to be valid.</p>
+    /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub fn server_launch_parameters(&self) -> std::option::Option<&str> {
         self.server_launch_parameters.as_deref()
     }
-    /// <p>
-    /// <b>This parameter is no longer used.</b> To specify where
-    /// GameLift should store log files once a server process shuts down, use the GameLift server
-    /// API <code>ProcessReady()</code> and specify one or more directory paths in
-    /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+    /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
     pub fn log_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.log_paths.as_deref()
     }
-    /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-    /// type determines the computing resources that will be used to host your game servers,
-    /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-    /// of EC2 instance types.</p>
+    /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
     pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-    /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-    /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-    /// automatically sets TCP and UDP ranges. </p>
+    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
     pub fn ec2_inbound_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
         self.ec2_inbound_permissions.as_deref()
     }
-    /// <p>The status of termination protection for active game sessions on the fleet. By
-    /// default, this property is set to <code>NoProtection</code>. You can also set game
-    /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+    /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>NoProtection</b> - Game sessions can be terminated
-    /// during active gameplay as a result of a scale-down event. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>FullProtection</b> - Game sessions in
-    /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-    /// event.</p>
-    /// </li>
+    /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+    /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn new_game_session_protection_policy(
         &self,
     ) -> std::option::Option<&crate::model::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
-    /// <p>Instructions for how to launch and maintain server processes on instances in the
-    /// fleet. The runtime configuration defines one or more server process configurations, each
-    /// identifying a build executable or Realtime script file and the number of processes of
-    /// that type to run concurrently. </p>
-    /// <note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-    /// being configured using the older parameters <code>ServerLaunchPath</code> and
-    /// <code>ServerLaunchParameters</code>, which are still supported for backward
-    /// compatibility.</p>
+    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub fn runtime_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
-    /// <p>A policy that limits the number of game sessions that an individual player can create
-    /// on instances in this fleet within a specified span of time.</p>
+    /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
     pub fn resource_creation_limit_policy(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
-    /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-    /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-    /// group name or set a new name to create a new metric group. A fleet can be included in
-    /// only one metric group at a time. </p>
+    /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
     pub fn metric_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.metric_groups.as_deref()
     }
-    /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-    /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-    /// settings. </p>
+    /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
     pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_aws_account_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-    /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-    /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-    /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
-    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-    /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-    /// fleet is created.</p>
+    /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
     pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
         self.fleet_type.as_ref()
     }
-    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-    /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-    /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-    /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-    /// Learn more about using on-box credentials for your game servers at
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-    /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
+    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
     pub fn instance_role_arn(&self) -> std::option::Option<&str> {
         self.instance_role_arn.as_deref()
     }
-    /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-    /// used for encrypting traffic between game clients and the game servers that are running
-    /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-    /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-    /// the fleet is created. </p>
-    /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-    /// available in all AWS regions. When working in a region that does not support this
-    /// feature, a fleet creation request with certificate generation fails with a 4xx
-    /// error.</p>
+    /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+    /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
     pub fn certificate_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-    /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-    /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-    /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-    /// instances in the home Region only, omit this parameter. </p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::LocationConfiguration]> {
         self.locations.as_deref()
     }
-    /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-    /// key-value pairs. Tagging AWS resources are useful for resource management, access
-    /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-    /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-    /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -25906,71 +22798,35 @@ impl std::fmt::Debug for CreateFleetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBuildInput {
-    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-    /// </p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-    /// </p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>Information indicating where your game build files are stored. Use this parameter only
-    /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-    /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-    /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-    /// new build must be in the same Region.</p>
+    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
-    /// <p>The operating system that the game server binaries are built to run on. This value
-    /// determines the type of fleet resources that you can use for this build. If your game
-    /// build contains multiple executables, they all must run on the same operating system. If
-    /// an operating system is not specified when creating a build, Amazon GameLift uses the
-    /// default value (WINDOWS_2012). This value cannot be changed later.</p>
+    /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
-    /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBuildInput {
-    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-    /// </p>
+    /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-    /// </p>
+    /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>Information indicating where your game build files are stored. Use this parameter only
-    /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-    /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-    /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-    /// new build must be in the same Region.</p>
+    /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
-    /// <p>The operating system that the game server binaries are built to run on. This value
-    /// determines the type of fleet resources that you can use for this build. If your game
-    /// build contains multiple executables, they all must run on the same operating system. If
-    /// an operating system is not specified when creating a build, Amazon GameLift uses the
-    /// default value (WINDOWS_2012). This value cannot be changed later.</p>
+    /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
-    /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -25997,15 +22853,7 @@ pub struct CreateAliasInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
     pub routing_strategy: std::option::Option<crate::model::RoutingStrategy>,
-    /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAliasInput {
@@ -26021,15 +22869,7 @@ impl CreateAliasInput {
     pub fn routing_strategy(&self) -> std::option::Option<&crate::model::RoutingStrategy> {
         self.routing_strategy.as_ref()
     }
-    /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-    /// key-value pairs. Tagging
-    /// AWS resources are useful for resource management, access management and cost allocation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>. Once the resource is created, you can
-    /// use <a>TagResource</a>, <a>UntagResource</a>, and
-    /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-    /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-    /// tagging limits.</p>
+    /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -26049,35 +22889,23 @@ impl std::fmt::Debug for CreateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-    /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
     pub game_server_group_name: std::option::Option<std::string::String>,
-    /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-    /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-    /// server group.</p>
+    /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
     pub game_server_id: std::option::Option<std::string::String>,
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub game_server_data: std::option::Option<std::string::String>,
 }
 impl ClaimGameServerInput {
-    /// <p>A unique identifier for the game server group where the game server is running.
-    /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-    /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
+    /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
-    /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-    /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-    /// server group.</p>
+    /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
     pub fn game_server_id(&self) -> std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
-    /// <p>A set of custom game server properties, formatted as a single string value. This data
-    /// is passed to a game client or service when it requests information on game servers using
-    /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
     pub fn game_server_data(&self) -> std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
@@ -26096,23 +22924,19 @@ impl std::fmt::Debug for ClaimGameServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptMatchInput {
-    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-    /// request will fail.</p>
+    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub ticket_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-    /// player IDs.</p>
+    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
     pub player_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Player response to the proposed match.</p>
     pub acceptance_type: std::option::Option<crate::model::AcceptanceType>,
 }
 impl AcceptMatchInput {
-    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-    /// request will fail.</p>
+    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
-    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-    /// player IDs.</p>
+    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
     pub fn player_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.player_ids.as_deref()
     }

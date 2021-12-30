@@ -7,9 +7,7 @@ pub enum Error {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),

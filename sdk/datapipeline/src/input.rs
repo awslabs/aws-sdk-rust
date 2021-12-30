@@ -373,38 +373,22 @@ pub mod create_pipeline_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-        /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-        /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-        /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-        /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-        /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-        /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-        /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-        /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-        /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-        /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-        /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-        /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-        /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-        /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-        /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-        /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unique_id = input;
             self
@@ -423,18 +407,14 @@ pub mod create_pipeline_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -600,18 +580,12 @@ pub mod deactivate_pipeline_input {
             self.pipeline_id = input;
             self
         }
-        /// <p>Indicates whether to cancel any running objects. The default is true,
-        /// which sets the state of any running objects to <code>CANCELED</code>.
-        /// If this value is false, the pipeline is deactivated after all
-        /// running objects finish.</p>
+        /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
         pub fn cancel_active(mut self, input: bool) -> Self {
             self.cancel_active = Some(input);
             self
         }
-        /// <p>Indicates whether to cancel any running objects. The default is true,
-        /// which sets the state of any running objects to <code>CANCELED</code>.
-        /// If this value is false, the pipeline is deactivated after all
-        /// running objects finish.</p>
+        /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
         pub fn set_cancel_active(mut self, input: std::option::Option<bool>) -> Self {
             self.cancel_active = input;
             self
@@ -957,16 +931,12 @@ pub mod describe_objects_input {
             self.evaluate_expressions = input;
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1122,16 +1092,14 @@ pub mod describe_pipelines_input {
         ///
         /// To override the contents of this collection use [`set_pipeline_ids`](Self::set_pipeline_ids).
         ///
-        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
         pub fn pipeline_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pipeline_ids.unwrap_or_default();
             v.push(input.into());
             self.pipeline_ids = Some(v);
             self
         }
-        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
         pub fn set_pipeline_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1472,16 +1440,12 @@ pub mod get_pipeline_definition_input {
             self.pipeline_id = input;
             self
         }
-        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-        /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-        /// that was activated.</p>
+        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-        /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-        /// that was activated.</p>
+        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1633,16 +1597,12 @@ pub mod list_pipelines_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>ListPipelines</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>ListPipelines</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1792,16 +1752,12 @@ pub mod poll_for_task_input {
         pub(crate) instance_identity: std::option::Option<crate::model::InstanceIdentity>,
     }
     impl Builder {
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-        /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.worker_group = Some(input.into());
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-        /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_group = input;
             self
@@ -2210,42 +2166,32 @@ pub mod query_objects_input {
             self.pipeline_id = input;
             self
         }
-        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-        /// The conditions in the query are limited to top-level String fields in the object.
-        /// These filters can be applied to components, instances, and attempts.</p>
+        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
         pub fn query(mut self, input: crate::model::Query) -> Self {
             self.query = Some(input);
             self
         }
-        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-        /// The conditions in the query are limited to top-level String fields in the object.
-        /// These filters can be applied to components, instances, and attempts.</p>
+        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
         pub fn set_query(mut self, input: std::option::Option<crate::model::Query>) -> Self {
             self.query = input;
             self
         }
-        /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-        /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+        /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn sphere(mut self, input: impl Into<std::string::String>) -> Self {
             self.sphere = Some(input.into());
             self
         }
-        /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-        /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+        /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn set_sphere(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sphere = input;
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>QueryObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>QueryObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2582,12 +2528,12 @@ pub mod report_task_progress_input {
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }
     impl Builder {
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2758,16 +2704,12 @@ pub mod report_task_runner_heartbeat_input {
         pub(crate) hostname: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-        /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-        /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
         pub fn taskrunner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.taskrunner_id = Some(input.into());
             self
         }
-        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-        /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-        /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
         pub fn set_taskrunner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2775,16 +2717,12 @@ pub mod report_task_runner_heartbeat_input {
             self.taskrunner_id = input;
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-        /// must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.worker_group = Some(input.into());
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-        /// must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_group = input;
             self
@@ -2979,14 +2917,12 @@ pub mod set_status_input {
             self.object_ids = input;
             self
         }
-        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-        /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-        /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3136,12 +3072,12 @@ pub mod set_task_status_input {
         pub(crate) error_stack_trace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -3159,26 +3095,22 @@ pub mod set_task_status_input {
             self.task_status = input;
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn error_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_id = Some(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn set_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_id = input;
             self
         }
-        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3186,14 +3118,12 @@ pub mod set_task_status_input {
             self.error_message = input;
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn error_stack_trace(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_stack_trace = Some(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_stack_trace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3609,22 +3539,19 @@ impl std::fmt::Debug for ValidatePipelineDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTaskStatusInput {
-    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     pub task_status: std::option::Option<crate::model::TaskStatus>,
-    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     pub error_id: std::option::Option<std::string::String>,
-    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub error_stack_trace: std::option::Option<std::string::String>,
 }
 impl SetTaskStatusInput {
-    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -3632,18 +3559,15 @@ impl SetTaskStatusInput {
     pub fn task_status(&self) -> std::option::Option<&crate::model::TaskStatus> {
         self.task_status.as_ref()
     }
-    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     pub fn error_id(&self) -> std::option::Option<&str> {
         self.error_id.as_deref()
     }
-    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub fn error_stack_trace(&self) -> std::option::Option<&str> {
         self.error_stack_trace.as_deref()
     }
@@ -3668,8 +3592,7 @@ pub struct SetStatusInput {
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
     pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-    /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub status: std::option::Option<std::string::String>,
 }
 impl SetStatusInput {
@@ -3681,8 +3604,7 @@ impl SetStatusInput {
     pub fn object_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.object_ids.as_deref()
     }
-    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-    /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -3701,27 +3623,19 @@ impl std::fmt::Debug for SetStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskRunnerHeartbeatInput {
-    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-    /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-    /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     pub taskrunner_id: std::option::Option<std::string::String>,
-    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-    /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-    /// must be an exact, case-sensitive, match.</p>
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the task runner.</p>
     pub hostname: std::option::Option<std::string::String>,
 }
 impl ReportTaskRunnerHeartbeatInput {
-    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-    /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-    /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     pub fn taskrunner_id(&self) -> std::option::Option<&str> {
         self.taskrunner_id.as_deref()
     }
-    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-    /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-    /// must be an exact, case-sensitive, match.</p>
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn worker_group(&self) -> std::option::Option<&str> {
         self.worker_group.as_deref()
     }
@@ -3744,13 +3658,13 @@ impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportTaskProgressInput {
-    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl ReportTaskProgressInput {
-    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -3802,16 +3716,11 @@ impl std::fmt::Debug for RemoveTagsInput {
 pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: std::option::Option<std::string::String>,
-    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-    /// The conditions in the query are limited to top-level String fields in the object.
-    /// These filters can be applied to components, instances, and attempts.</p>
+    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub query: std::option::Option<crate::model::Query>,
-    /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-    /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub sphere: std::option::Option<std::string::String>,
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>QueryObjects</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub limit: std::option::Option<i32>,
@@ -3821,20 +3730,15 @@ impl QueryObjectsInput {
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
-    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-    /// The conditions in the query are limited to top-level String fields in the object.
-    /// These filters can be applied to components, instances, and attempts.</p>
+    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub fn query(&self) -> std::option::Option<&crate::model::Query> {
         self.query.as_ref()
     }
-    /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-    /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub fn sphere(&self) -> std::option::Option<&str> {
         self.sphere.as_deref()
     }
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>QueryObjects</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3901,9 +3805,7 @@ impl std::fmt::Debug for PutPipelineDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForTaskInput {
-    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-    /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-    /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the calling task runner.</p>
     pub hostname: std::option::Option<std::string::String>,
@@ -3911,9 +3813,7 @@ pub struct PollForTaskInput {
     pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
 impl PollForTaskInput {
-    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-    /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-    /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn worker_group(&self) -> std::option::Option<&str> {
         self.worker_group.as_deref()
     }
@@ -3940,15 +3840,11 @@ impl std::fmt::Debug for PollForTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>ListPipelines</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPipelinesInput {
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>ListPipelines</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3967,9 +3863,7 @@ impl std::fmt::Debug for ListPipelinesInput {
 pub struct GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: std::option::Option<std::string::String>,
-    /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-    /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-    /// that was activated.</p>
+    /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetPipelineDefinitionInput {
@@ -3977,9 +3871,7 @@ impl GetPipelineDefinitionInput {
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
-    /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-    /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-    /// that was activated.</p>
+    /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -4032,13 +3924,11 @@ impl std::fmt::Debug for EvaluateExpressionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePipelinesInput {
-    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-    /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     pub pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribePipelinesInput {
-    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-    /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     pub fn pipeline_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.pipeline_ids.as_deref()
     }
@@ -4061,9 +3951,7 @@ pub struct DescribeObjectsInput {
     pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub evaluate_expressions: bool,
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeObjectsInput {
@@ -4079,9 +3967,7 @@ impl DescribeObjectsInput {
     pub fn evaluate_expressions(&self) -> bool {
         self.evaluate_expressions
     }
-    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-    /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-    /// the marker value from the previous call to retrieve the next set of results.</p>
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -4124,10 +4010,7 @@ impl std::fmt::Debug for DeletePipelineInput {
 pub struct DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to cancel any running objects. The default is true,
-    /// which sets the state of any running objects to <code>CANCELED</code>.
-    /// If this value is false, the pipeline is deactivated after all
-    /// running objects finish.</p>
+    /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub cancel_active: std::option::Option<bool>,
 }
 impl DeactivatePipelineInput {
@@ -4135,10 +4018,7 @@ impl DeactivatePipelineInput {
     pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
-    /// <p>Indicates whether to cancel any running objects. The default is true,
-    /// which sets the state of any running objects to <code>CANCELED</code>.
-    /// If this value is false, the pipeline is deactivated after all
-    /// running objects finish.</p>
+    /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub fn cancel_active(&self) -> std::option::Option<bool> {
         self.cancel_active
     }
@@ -4156,39 +4036,21 @@ impl std::fmt::Debug for DeactivatePipelineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
-    /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-    /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+    /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-    /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-    /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-    /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-    /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-    /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-    /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-    /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+    /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
     pub unique_id: std::option::Option<std::string::String>,
     /// <p>The description for the pipeline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-    /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
-    /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-    /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+    /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-    /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-    /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-    /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-    /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-    /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-    /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-    /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+    /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
     pub fn unique_id(&self) -> std::option::Option<&str> {
         self.unique_id.as_deref()
     }
@@ -4196,9 +4058,7 @@ impl CreatePipelineInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-    /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

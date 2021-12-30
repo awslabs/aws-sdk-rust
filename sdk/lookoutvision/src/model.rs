@@ -766,12 +766,11 @@ impl AsRef<str> for ModelStatus {
     }
 }
 
-/// <p>The prediction results from a call to <a>DetectAnomalies</a>.</p>
+/// <p>The prediction results from a call to <code>DetectAnomalies</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectAnomalyResult {
-    /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-    /// images was supplied from the local computer. No other values are supported.</p>
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub source: std::option::Option<crate::model::ImageSource>,
     /// <p>True if the image contains an anomaly, otherwise false.</p>
     pub is_anomalous: bool,
@@ -779,8 +778,7 @@ pub struct DetectAnomalyResult {
     pub confidence: std::option::Option<f32>,
 }
 impl DetectAnomalyResult {
-    /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-    /// images was supplied from the local computer. No other values are supported.</p>
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ImageSource> {
         self.source.as_ref()
     }
@@ -813,14 +811,12 @@ pub mod detect_anomaly_result {
         pub(crate) confidence: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-        /// images was supplied from the local computer. No other values are supported.</p>
+        /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
         pub fn source(mut self, input: crate::model::ImageSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-        /// images was supplied from the local computer. No other values are supported.</p>
+        /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::ImageSource>) -> Self {
             self.source = input;
             self
@@ -916,7 +912,7 @@ impl ImageSource {
     }
 }
 
-/// <p>Describe an Amazon Lookout for Vision project. For more information, see <a>DescribeProject</a>.</p>
+/// <p>Describe an Amazon Lookout for Vision project. For more information, see <code>DescribeProject</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
@@ -1179,15 +1175,13 @@ pub struct ModelDescription {
     pub performance: std::option::Option<crate::model::ModelPerformance>,
     /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
-    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-    /// that was used to test the trained model and generate the performance scores.</p>
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
     pub evaluation_manifest: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
     pub evaluation_result: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
     pub evaluation_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-    /// during training.</p>
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModelDescription {
@@ -1223,8 +1217,7 @@ impl ModelDescription {
     pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
-    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-    /// that was used to test the trained model and generate the performance scores.</p>
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
     pub fn evaluation_manifest(&self) -> std::option::Option<&crate::model::OutputS3Object> {
         self.evaluation_manifest.as_ref()
     }
@@ -1236,8 +1229,7 @@ impl ModelDescription {
     pub fn evaluation_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_end_timestamp.as_ref()
     }
-    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-    /// during training.</p>
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -1375,14 +1367,12 @@ pub mod model_description {
             self.output_config = input;
             self
         }
-        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-        /// that was used to test the trained model and generate the performance scores.</p>
+        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
         pub fn evaluation_manifest(mut self, input: crate::model::OutputS3Object) -> Self {
             self.evaluation_manifest = Some(input);
             self
         }
-        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-        /// that was used to test the trained model and generate the performance scores.</p>
+        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
         pub fn set_evaluation_manifest(
             mut self,
             input: std::option::Option<crate::model::OutputS3Object>,
@@ -1416,14 +1406,12 @@ pub mod model_description {
             self.evaluation_end_timestamp = input;
             self
         }
-        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-        /// during training.</p>
+        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-        /// during training.</p>
+        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1657,14 +1645,13 @@ impl S3Location {
     }
 }
 
-/// <p>The description for a dataset. For more information, see <a>DescribeDataset</a>.</p>
+/// <p>The description for a dataset. For more information, see <code>DescribeDataset</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetDescription {
     /// <p>The name of the project that contains the dataset.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-    /// The value <code>test</code> represents a test dataset.</p>
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1682,8 +1669,7 @@ impl DatasetDescription {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-    /// The value <code>test</code> represents a test dataset.</p>
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
     pub fn dataset_type(&self) -> std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
@@ -1746,14 +1732,12 @@ pub mod dataset_description {
             self.project_name = input;
             self
         }
-        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-        /// The value <code>test</code> represents a test dataset.</p>
+        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
             self
         }
-        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-        /// The value <code>test</code> represents a test dataset.</p>
+        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_type = input;
             self
@@ -2018,8 +2002,7 @@ impl DatasetSource {
     }
 }
 
-/// <p>Location information about a manifest file. You can use a manifest file to
-/// create a dataset.</p>
+/// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroundTruthManifest {

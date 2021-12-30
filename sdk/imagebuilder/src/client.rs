@@ -465,8 +465,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelImageCreation`.
     ///
-    /// <p>CancelImageCreation cancels the creation of Image. This operation can only be used on
-    /// images in a non-terminal state.</p>
+    /// <p>CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelImageCreation<
         C = aws_smithy_client::erase::DynConnector,
@@ -549,8 +548,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponent`.
     ///
-    /// <p>Creates a new component that can be used to build, validate, test, and assess your
-    /// image.</p>
+    /// <p>Creates a new component that can be used to build, validate, test, and assess your image.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -617,35 +615,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -664,14 +668,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_description(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -693,16 +695,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         ///
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.supported_os_versions(input.into());
             self
         }
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -710,30 +708,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_supported_os_versions(input);
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.uri(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_uri(input);
             self
@@ -874,35 +864,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -1078,8 +1074,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDistributionConfiguration`.
     ///
-    /// <p>Creates a new distribution configuration. Distribution configurations define and configure
-    /// the outputs of your pipeline.</p>
+    /// <p>Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1209,9 +1204,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImage`.
     ///
-    /// <p> Creates a new image. This request will create a new image along with all of the
-    /// configured output resources defined in the distribution configuration. You must specify
-    /// exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
+    /// <p> Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -1268,14 +1261,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,8 +1287,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1305,8 +1295,7 @@ pub mod fluent_builders {
             self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1314,8 +1303,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_configuration_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1323,8 +1311,7 @@ pub mod fluent_builders {
             self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1348,16 +1335,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1401,8 +1384,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImagePipeline`.
     ///
-    /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and
-    /// distribution of images.</p>
+    /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
@@ -1479,14 +1461,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1507,8 +1487,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1516,8 +1495,7 @@ pub mod fluent_builders {
             self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1525,8 +1503,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_infrastructure_configuration_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1534,8 +1511,7 @@ pub mod fluent_builders {
             self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1559,16 +1535,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1635,8 +1607,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImageRecipe`.
     ///
-    /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and
-    /// assessed.</p>
+    /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
@@ -1713,35 +1684,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -1767,22 +1744,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_components(input);
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_image(input.into());
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_parent_image(input);
             self
@@ -1872,8 +1839,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInfrastructureConfiguration`.
     ///
-    /// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the
-    /// environment in which your image will be built and tested.</p>
+    /// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1954,16 +1920,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_types(input.into());
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2021,28 +1983,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_pair(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_pair(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
             self.inner = self.inner.terminate_instance_on_failure(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -2086,8 +2042,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_tags(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn instance_metadata_options(
             mut self,
             input: crate::model::InstanceMetadataOptions,
@@ -2095,8 +2050,7 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_metadata_options(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn set_instance_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -2365,26 +2319,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImage`.
     ///
-    /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images
-    /// that are created during the image build process. You must clean those up separately,
-    /// using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
+    /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
     /// <ul>
-    /// <li>
-    /// <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
-    /// your Linux AMI</a> in the <i>
-    /// <i>Amazon EC2 User Guide</i>
-    /// </i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To deregister an EC2 Windows AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
-    /// your Windows AMI</a> in the <i>
-    /// <i>Amazon EC2 Windows Guide</i>
-    /// </i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
-    /// an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    /// </li>
+    /// <li> <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li>
+    /// <li> <p>To deregister an EC2 Windows AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li>
+    /// <li> <p>To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
@@ -2737,8 +2676,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
         pub fn component_build_version_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -2746,8 +2684,7 @@ pub mod fluent_builders {
             self.inner = self.inner.component_build_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
         pub fn set_component_build_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3034,8 +2971,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3043,8 +2979,7 @@ pub mod fluent_builders {
             self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3474,8 +3409,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3483,8 +3417,7 @@ pub mod fluent_builders {
             self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3562,29 +3495,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -3603,14 +3546,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_description(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3618,14 +3559,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_description(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -3653,30 +3592,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform(input);
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.uri(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_uri(input);
             self
@@ -3727,15 +3658,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComponentBuildVersions`.
     ///
-    /// <p> Returns the list of component build versions for the specified semantic version.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p> Returns the list of component build versions for the specified semantic version.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentBuildVersions<
@@ -3816,14 +3752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3831,15 +3765,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComponents`.
     ///
-    /// <p>Returns the list of component build versions for the specified semantic version.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>Returns the list of component build versions for the specified semantic version.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
@@ -3897,18 +3836,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -3919,36 +3852,12 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -3956,36 +3865,12 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4014,14 +3899,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4102,26 +3985,10 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4129,26 +3996,10 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4264,14 +4115,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4355,31 +4204,11 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4387,31 +4216,11 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4430,14 +4239,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4614,16 +4421,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4631,16 +4430,8 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4659,14 +4450,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4737,36 +4526,12 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4774,36 +4539,12 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4822,14 +4563,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4894,18 +4633,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -4916,21 +4649,9 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4938,21 +4659,9 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4971,14 +4680,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5043,18 +4750,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -5065,31 +4766,11 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -5097,31 +4778,11 @@ pub mod fluent_builders {
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5150,14 +4811,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5259,14 +4918,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5344,9 +5001,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutComponentPolicy`.
     ///
-    /// <p> Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
+    /// <p> Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutComponentPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -5512,9 +5167,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImagePolicy`.
     ///
-    /// <p>Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutImagePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
+    /// <p>Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImagePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImagePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -5594,9 +5247,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImageRecipePolicy`.
     ///
-    /// <p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
+    /// <p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImageRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -5942,8 +5593,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDistributionConfiguration`.
     ///
-    /// <p> Updates a new distribution configuration. Distribution configurations define and
-    /// configure the outputs of your pipeline.</p>
+    /// <p> Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -6056,12 +5706,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateImagePipeline`.
     ///
-    /// <p> Updates an image pipeline. Image pipelines enable you to automate the creation and
-    /// distribution of images.</p>
-    /// <note>
-    /// <p>UpdateImagePipeline does not support selective updates for the pipeline.
-    /// You must specify all of the required properties in the update request, not just
-    /// the properties that have changed.</p>
+    /// <p> Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note>
+    /// <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImagePipeline<
@@ -6142,14 +5788,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6170,8 +5814,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6179,8 +5822,7 @@ pub mod fluent_builders {
             self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6188,8 +5830,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_infrastructure_configuration_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6197,8 +5838,7 @@ pub mod fluent_builders {
             self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6222,16 +5862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -6275,8 +5911,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
     ///
-    /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the
-    /// environment in which your image will be built and tested.</p>
+    /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -6333,8 +5968,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6342,8 +5976,7 @@ pub mod fluent_builders {
             self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6365,16 +5998,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_types(input.into());
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6432,28 +6061,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_pair(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_pair(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
             self.inner = self.inner.terminate_instance_on_failure(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -6507,26 +6130,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_tags(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn instance_metadata_options(
             mut self,
@@ -6535,26 +6142,10 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_metadata_options(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn set_instance_metadata_options(
             mut self,

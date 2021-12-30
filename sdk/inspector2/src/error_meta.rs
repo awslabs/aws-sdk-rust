@@ -13,13 +13,11 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The operation tried to access an invalid resource. Make sure the resource is specified correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of
-    /// the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

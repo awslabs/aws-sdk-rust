@@ -284,9 +284,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAlarmModel`.
     ///
-    /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get
-    /// notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an
-    /// alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -343,14 +341,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alarm_model_name(input.into());
             self
         }
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -385,17 +381,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
         pub fn set_tags(
             mut self,
@@ -404,16 +396,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key(input.into());
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
             self
@@ -582,20 +570,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_model_description(input);
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key(input.into());
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
             self
@@ -627,14 +607,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
             self.inner = self.inner.evaluation_method(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -758,8 +736,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlarmModel`.
     ///
-    /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model
-    /// are also deleted. This action can't be undone.</p>
+    /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This action can't be undone.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -832,8 +809,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDetectorModel`.
     ///
-    /// <p>Deletes a detector model. Any active instances of the detector model are also
-    /// deleted.</p>
+    /// <p>Deletes a detector model. Any active instances of the detector model are also deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -976,8 +952,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlarmModel`.
     ///
-    /// <p>Retrieves information about an alarm model. If you don't specify a value for the
-    /// <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
+    /// <p>Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1063,8 +1038,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDetectorModel`.
     ///
-    /// <p>Describes a detector model. If the <code>version</code> parameter is not specified,
-    /// information about the latest version is returned.</p>
+    /// <p>Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1150,8 +1124,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDetectorModelAnalysis`.
     ///
-    /// <p>Retrieves runtime information about a detector model analysis.</p>
-    /// <note>
+    /// <p>Retrieves runtime information about a detector model analysis.</p> <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1353,8 +1326,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDetectorModelAnalysisResults`.
     ///
-    /// <p>Retrieves one or more analysis results of the detector model.</p>
-    /// <note>
+    /// <p>Retrieves one or more analysis results of the detector model.</p> <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1446,8 +1418,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlarmModels`.
     ///
-    /// <p>Lists the alarm models that you created. The operation returns only the metadata
-    /// associated with each alarm model.</p>
+    /// <p>Lists the alarm models that you created. The operation returns only the metadata associated with each alarm model.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModels<
         C = aws_smithy_client::erase::DynConnector,
@@ -1527,8 +1498,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlarmModelVersions`.
     ///
-    /// <p>Lists all the versions of an alarm model. The operation returns only the metadata
-    /// associated with each alarm model version.</p>
+    /// <p>Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModelVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1621,8 +1591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDetectorModels`.
     ///
-    /// <p>Lists the detector models you have created. Only the metadata associated with each
-    /// detector model is returned.</p>
+    /// <p>Lists the detector models you have created. Only the metadata associated with each detector model is returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModels<
         C = aws_smithy_client::erase::DynConnector,
@@ -1702,8 +1671,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDetectorModelVersions`.
     ///
-    /// <p>Lists all the versions of a detector model. Only the metadata associated with each
-    /// detector model version is returned.</p>
+    /// <p>Lists all the versions of a detector model. Only the metadata associated with each detector model version is returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModelVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1796,9 +1764,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInputRoutings`.
     ///
-    /// <p>
-    /// Lists one or more input routings.
-    /// </p>
+    /// <p> Lists one or more input routings. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputRoutings<
         C = aws_smithy_client::erase::DynConnector,
@@ -1855,16 +1821,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
+        /// <p> The identifer of the routed input. </p>
         pub fn input_identifier(mut self, input: crate::model::InputIdentifier) -> Self {
             self.inner = self.inner.input_identifier(input);
             self
         }
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
+        /// <p> The identifer of the routed input. </p>
         pub fn set_input_identifier(
             mut self,
             input: std::option::Option<crate::model::InputIdentifier>,
@@ -1872,30 +1834,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_identifier(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
+        /// <p> The maximum number of results to be returned per request. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
+        /// <p> The maximum number of results to be returned per request. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2054,10 +2008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets or updates the AWS IoT Events logging options.</p>
-    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one
-    /// minute for the change to take effect. If you change the policy attached to the role you
-    /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
-    /// takes up to five minutes for that change to take effect.</p>
+    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. If you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2130,9 +2081,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDetectorModelAnalysis`.
     ///
-    /// <p>Performs an analysis of your detector model. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a>
-    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDetectorModelAnalysis<
         C = aws_smithy_client::erase::DynConnector,
@@ -2208,8 +2157,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
-    /// manage a resource.</p>
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2383,8 +2331,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAlarmModel`.
     ///
-    /// <p>Updates an alarm model. Any alarms that were created based on the previous version are
-    /// deleted and then created again as new data arrives.</p>
+    /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -2542,8 +2489,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDetectorModel`.
     ///
-    /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are
-    /// deleted and then re-created as new inputs arrive.</p>
+    /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -2652,14 +2598,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
             self.inner = self.inner.evaluation_method(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,

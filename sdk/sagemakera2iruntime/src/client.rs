@@ -130,8 +130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHumanLoop`.
     ///
     /// <p>Deletes the specified human loop for a flow definition.</p>
-    /// <p>If the human loop was deleted, this operation will return a
-    /// <code>ResourceNotFoundException</code>. </p>
+    /// <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
@@ -204,8 +203,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHumanLoop`.
     ///
-    /// <p>Returns information about the specified human loop. If the human loop was deleted, this
-    /// operation will return a <code>ResourceNotFoundException</code> error. </p>
+    /// <p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
@@ -374,14 +372,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_definition_arn(input);
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -399,16 +395,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -486,14 +478,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_human_loop_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
         pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_definition_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,14 +504,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_human_loop_input(input);
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
         pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
             self.inner = self.inner.data_attributes(input);
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
         pub fn set_data_attributes(
             mut self,
             input: std::option::Option<crate::model::HumanLoopDataAttributes>,

@@ -587,7 +587,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateFirewallRuleGroup`.
     ///
-    /// <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC. </p>
+    /// <p>Associates a <code>FirewallRuleGroup</code> with a VPC, to provide DNS filtering for the VPC. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -644,16 +644,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -684,23 +680,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_id(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
-        /// starting from the rule group with the lowest numeric priority setting. </p>
-        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
-        /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You
-        /// can change the priority setting for a rule group association after you create it.</p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
         /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
-        /// starting from the rule group with the lowest numeric priority setting. </p>
-        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
-        /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You
-        /// can change the priority setting for a rule group association after you create it.</p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
         /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
@@ -716,8 +704,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.
-        /// When you create the association, the default setting is <code>DISABLED</code>. </p>
+        /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
         pub fn mutation_protection(
             mut self,
             input: crate::model::MutationProtectionStatus,
@@ -725,8 +712,7 @@ pub mod fluent_builders {
             self.inner = self.inner.mutation_protection(input);
             self
         }
-        /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.
-        /// When you create the association, the default setting is <code>DISABLED</code>. </p>
+        /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
         pub fn set_mutation_protection(
             mut self,
             input: std::option::Option<crate::model::MutationProtectionStatus>,
@@ -754,11 +740,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateResolverEndpointIpAddress`.
     ///
-    /// <p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address,
-    /// submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.</p>
-    /// <p>To remove an IP address from an endpoint, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>.
-    /// </p>
+    /// <p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address, submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.</p>
+    /// <p>To remove an IP address from an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverEndpointIpAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -830,14 +813,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resolver_endpoint_id(input);
             self
         }
-        /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
-        /// Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
+        /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
         pub fn ip_address(mut self, input: crate::model::IpAddressUpdate) -> Self {
             self.inner = self.inner.ip_address(input);
             self
         }
-        /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
-        /// Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
+        /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
         pub fn set_ip_address(
             mut self,
             input: std::option::Option<crate::model::IpAddressUpdate>,
@@ -848,17 +829,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateResolverQueryLogConfig`.
     ///
-    /// <p>Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs
-    /// that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code>
-    /// request for each VPC.</p>
-    ///
-    /// <note>
+    /// <p>Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code> request for each VPC.</p> <note>
     /// <p>The VPCs that you associate with a query logging configuration must be in the same Region as the configuration.</p>
     /// </note>
-    ///
-    /// <p>To remove a VPC from a query logging configuration, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.
-    /// </p>
+    /// <p>To remove a VPC from a query logging configuration, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -931,18 +905,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resolver_query_log_config_id(input);
             self
         }
-        /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p>
-        ///
-        /// <note>
+        /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
         /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
         /// </note>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p>
-        ///
-        /// <note>
+        /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
         /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
         /// </note>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -952,10 +922,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateResolverRule`.
     ///
-    /// <p>Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries
-    /// for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the
-    /// IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>. </p>
+    /// <p>Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1012,14 +979,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+        /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
         pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
-        /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+        /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
         pub fn set_resolver_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1050,7 +1015,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFirewallDomainList`.
     ///
-    /// <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>. </p>
+    /// <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <code>ImportFirewallDomains</code>, or with domain strings, using <code>UpdateFirewallDomains</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallDomainList<
         C = aws_smithy_client::erase::DynConnector,
@@ -1107,16 +1072,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1211,16 +1172,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1254,38 +1211,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_domain_list_id(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-        /// <p>You must specify a unique priority for each rule in a rule group.
-        /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for the rules in a rule group at any time.</p>
+        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-        /// <p>You must specify a unique priority for each rule in a rule group.
-        /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for the rules in a rule group at any time.</p>
+        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.inner = self.inner.action(input);
@@ -1293,59 +1235,30 @@ pub mod fluent_builders {
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
         /// </ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The way that you want DNS Firewall to block the request, used with the rule action
-        /// setting <code>BLOCK</code>. </p>
+        /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
-        /// </li>
+        /// <li> <p> <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p> </li>
+        /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
+        /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
         /// </ul>
         /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
         pub fn block_response(mut self, input: crate::model::BlockResponse) -> Self {
             self.inner = self.inner.block_response(input);
             self
         }
-        /// <p>The way that you want DNS Firewall to block the request, used with the rule action
-        /// setting <code>BLOCK</code>. </p>
+        /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
-        /// </li>
+        /// <li> <p> <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p> </li>
+        /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
+        /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
         /// </ul>
         /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
         pub fn set_block_response(
@@ -1413,8 +1326,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFirewallRuleGroup`.
     ///
-    /// <p>Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group
-    /// by calling <a>CreateFirewallRule</a>. </p>
+    /// <p>Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group by calling <code>CreateFirewallRule</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1471,16 +1383,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string defined by you to identify the request. This allows you to retry failed
-        /// requests without the risk of running the operation twice. This can be any unique string,
-        /// for example, a timestamp. </p>
+        /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string defined by you to identify the request. This allows you to retry failed
-        /// requests without the risk of running the operation twice. This can be any unique string,
-        /// for example, a timestamp. </p>
+        /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1520,14 +1428,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:</p>
     /// <ul>
-    /// <li>
-    /// <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC
-    /// from your network.</p>
-    /// </li>
-    /// <li>
-    /// <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC
-    /// to your network.</p>
-    /// </li>
+    /// <li> <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p> </li>
+    /// <li> <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverEndpoint<
@@ -1585,16 +1487,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1616,18 +1514,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify
-        /// must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints).
-        /// Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port
-        /// that you're using for DNS queries on your network.</p>
+        /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify
-        /// must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints).
-        /// Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port
-        /// that you're using for DNS queries on your network.</p>
+        /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1637,14 +1529,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the applicable value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p>
-        /// </li>
+        /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+        /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
         /// </ul>
         pub fn direction(mut self, input: crate::model::ResolverEndpointDirection) -> Self {
             self.inner = self.inner.direction(input);
@@ -1652,14 +1538,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the applicable value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p>
-        /// </li>
+        /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
+        /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
         /// </ul>
         pub fn set_direction(
             mut self,
@@ -1672,14 +1552,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-        /// DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+        /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
         pub fn ip_addresses(mut self, input: crate::model::IpAddressRequest) -> Self {
             self.inner = self.inner.ip_addresses(input);
             self
         }
-        /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-        /// DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
+        /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpAddressRequest>>,
@@ -1707,15 +1585,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResolverQueryLogConfig`.
     ///
-    /// <p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs.
-    /// Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.</p>
-    ///
-    /// <p>To specify which VPCs you want to log queries for, you use <code>AssociateResolverQueryLogConfig</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>. </p>
-    ///
-    /// <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts
-    /// can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all
-    /// VPCs that are associated with the configuration.</p>
+    /// <p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.</p>
+    /// <p>To specify which VPCs you want to log queries for, you use <code>AssociateResolverQueryLogConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>. </p>
+    /// <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all VPCs that are associated with the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -1782,69 +1654,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group,
-        /// or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
-        ///
+        /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>S3 bucket</b>: </p>
-        /// <p>
-        /// <code>arn:aws:s3:::examplebucket</code>
-        /// </p>
-        /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-        /// <p>
-        /// <code>arn:aws:s3:::examplebucket/development/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CloudWatch Logs log group</b>: </p>
-        /// <p>
-        /// <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Kinesis Data Firehose delivery stream</b>:</p>
-        /// <p>
-        /// <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>S3 bucket</b>: </p> <p> <code>arn:aws:s3:::examplebucket</code> </p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p> <code>arn:aws:s3:::examplebucket/development/</code> </p> </li>
+        /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
+        /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
         /// </ul>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.destination_arn(input.into());
             self
         }
-        /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group,
-        /// or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
-        ///
+        /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>S3 bucket</b>: </p>
-        /// <p>
-        /// <code>arn:aws:s3:::examplebucket</code>
-        /// </p>
-        /// <p>You can optionally append a file prefix to the end of the ARN.</p>
-        /// <p>
-        /// <code>arn:aws:s3:::examplebucket/development/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CloudWatch Logs log group</b>: </p>
-        /// <p>
-        /// <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Kinesis Data Firehose delivery stream</b>:</p>
-        /// <p>
-        /// <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>S3 bucket</b>: </p> <p> <code>arn:aws:s3:::examplebucket</code> </p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p> <code>arn:aws:s3:::examplebucket/development/</code> </p> </li>
+        /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
+        /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
         /// </ul>
         pub fn set_destination_arn(
             mut self,
@@ -1853,16 +1677,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_arn(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1890,8 +1710,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResolverRule`.
     ///
-    /// <p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through,
-    /// one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.</p>
+    /// <p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1948,16 +1767,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed requests to be retried
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
-        /// any unique string, for example, a date/time stamp. </p>
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1976,22 +1791,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
-        /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for
-        /// a subdomain of that domain, specify <code>SYSTEM</code>.</p>
-        /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code>
-        /// for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify
-        /// <code>SYSTEM</code> for <code>RuleType</code>.</p>
+        /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+        /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
         /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
         pub fn rule_type(mut self, input: crate::model::RuleTypeOption) -> Self {
             self.inner = self.inner.rule_type(input);
             self
         }
         /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
-        /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for
-        /// a subdomain of that domain, specify <code>SYSTEM</code>.</p>
-        /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code>
-        /// for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify
-        /// <code>SYSTEM</code> for <code>RuleType</code>.</p>
+        /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+        /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
         /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
         pub fn set_rule_type(
             mut self,
@@ -2000,16 +1809,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_type(input);
             self
         }
-        /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches
-        /// multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains
-        /// the most specific domain name (www.example.com).</p>
+        /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches
-        /// multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains
-        /// the most specific domain name (www.example.com).</p>
+        /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -2019,15 +1824,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
         ///
         /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP addresses with a space.</p>
-        /// <p>
-        /// <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+        /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
         pub fn target_ips(mut self, input: crate::model::TargetAddress) -> Self {
             self.inner = self.inner.target_ips(input);
             self
         }
         /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP addresses with a space.</p>
-        /// <p>
-        /// <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+        /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
         pub fn set_target_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetAddress>>,
@@ -2035,14 +1838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_ips(input);
             self
         }
-        /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify
-        /// in <code>TargetIps</code>.</p>
+        /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
         pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
-        /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify
-        /// in <code>TargetIps</code>.</p>
+        /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
         pub fn set_resolver_endpoint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2213,12 +2014,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_rule_group_id(input);
             self
         }
-        /// <p>The ID of the domain list that's used in the rule.  </p>
+        /// <p>The ID of the domain list that's used in the rule. </p>
         pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
-        /// <p>The ID of the domain list that's used in the rule.  </p>
+        /// <p>The ID of the domain list that's used in the rule. </p>
         pub fn set_firewall_domain_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2302,18 +2103,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResolverEndpoint`.
     ///
-    /// <p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound
-    /// Resolver endpoint:</p>
+    /// <p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound Resolver endpoint:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Inbound</b>: DNS queries from your network are no longer routed
-    /// to the DNS service for the specified VPC.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p>
-    /// </li>
+    /// <li> <p> <b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service for the specified VPC.</p> </li>
+    /// <li> <p> <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverEndpoint<
@@ -2387,17 +2180,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResolverQueryLogConfig`.
     ///
-    /// <p>Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are
-    /// associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and
-    /// the other accounts have associated VPCs with the shared configuration.</p>
-    ///
-    /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. See
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
-    ///
-    /// <p>If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must stop sharing
-    /// the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs
-    /// that they associated with the configuration, but that's not necessary. If you stop sharing the configuration, those VPCs are automatically
-    /// disassociated from the configuration.</p>
+    /// <p>Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and the other accounts have associated VPCs with the shared configuration.</p>
+    /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
+    /// <p>If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must stop sharing the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs that they associated with the configuration, but that's not necessary. If you stop sharing the configuration, those VPCs are automatically disassociated from the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -2473,9 +2258,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResolverRule`.
     ///
-    /// <p>Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you
-    /// associated the Resolver rule with. For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>.</p>
+    /// <p>Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you associated the Resolver rule with. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -2548,7 +2331,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateFirewallRuleGroup`.
     ///
-    /// <p>Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC. </p>
+    /// <p>Disassociates a <code>FirewallRuleGroup</code> from a VPC, to remove DNS filtering from the VPC. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2605,7 +2388,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2613,7 +2396,7 @@ pub mod fluent_builders {
             self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn set_firewall_rule_group_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2624,11 +2407,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateResolverEndpointIpAddress`.
     ///
-    /// <p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address,
-    /// submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.</p>
-    /// <p>To add an IP address to an endpoint, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>.
-    /// </p>
+    /// <p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address, submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.</p>
+    /// <p>To add an IP address to an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResolverEndpointIpAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -2716,20 +2496,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateResolverQueryLogConfig`.
     ///
-    /// <p>Disassociates a VPC from a query logging configuration.</p>
-    ///
-    /// <note>
-    /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs
-    /// from the configuration. If you used Resource Access Manager (RAM) to share a
-    /// query logging configuration with other accounts, VPCs can be disassociated from the
-    /// configuration in the following ways:</p>
+    /// <p>Disassociates a VPC from a query logging configuration.</p> <note>
+    /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be disassociated from the configuration in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>The accounts that you shared the configuration with can disassociate VPCs from the configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can stop sharing the configuration.</p>
-    /// </li>
+    /// <li> <p>The accounts that you shared the configuration with can disassociate VPCs from the configuration.</p> </li>
+    /// <li> <p>You can stop sharing the configuration.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2819,10 +2590,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateResolverRule`.
     ///
-    /// <p>Removes the association between a specified Resolver rule and a specified VPC.</p>
-    /// <important>
-    /// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the
-    /// domain name that you specified in the Resolver rule. </p>
+    /// <p>Removes the association between a specified Resolver rule and a specified VPC.</p> <important>
+    /// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResolverRule<
@@ -2906,8 +2675,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFirewallConfig`.
     ///
-    /// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a
-    /// single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3034,12 +2802,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the domain list.  </p>
+        /// <p>The ID of the domain list. </p>
         pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
-        /// <p>The ID of the domain list.  </p>
+        /// <p>The ID of the domain list. </p>
         pub fn set_firewall_domain_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3180,7 +2948,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3188,7 +2956,7 @@ pub mod fluent_builders {
             self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn set_firewall_rule_group_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3199,8 +2967,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFirewallRuleGroupPolicy`.
     ///
-    /// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the
-    /// specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
+    /// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallRuleGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3270,8 +3037,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverConfig`.
     ///
-    /// <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from
-    /// Amazon Virtual Private Cloud.</p>
+    /// <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3411,8 +3177,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverEndpoint`.
     ///
-    /// <p>Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver endpoint, and the
-    /// current status of the endpoint.</p>
+    /// <p>Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver endpoint, and the current status of the endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -3485,8 +3250,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverQueryLogConfig`.
     ///
-    /// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration
-    /// is logging queries for and the location that logs are sent to. </p>
+    /// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3562,8 +3326,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverQueryLogConfigAssociation`.
     ///
-    /// <p>Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC
-    /// with a query logging configuration, Resolver logs DNS queries that originate in that VPC.</p>
+    /// <p>Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfigAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -3645,8 +3408,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverQueryLogConfigPolicy`.
     ///
-    /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging
-    /// operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>
+    /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfigPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3716,8 +3478,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverRule`.
     ///
-    /// <p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the
-    /// outbound Resolver endpoint that the rule is associated with.</p>
+    /// <p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -3790,8 +3551,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverRuleAssociation`.
     ///
-    /// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>. </p>
+    /// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRuleAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -3867,8 +3627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResolverRulePolicy`.
     ///
-    /// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share
-    /// with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. </p>
+    /// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRulePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3939,20 +3698,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportFirewallDomains`.
     ///
     /// <p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group. </p>
-    /// <p>Each domain specification in your domain list must satisfy the following
-    /// requirements: </p>
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
     /// <ul>
-    /// <li>
-    /// <p>It can optionally start with <code>*</code> (asterisk).</p>
-    /// </li>
-    /// <li>
-    /// <p>With the exception of the optional starting asterisk, it must only contain
-    /// the following characters: <code>A-Z</code>, <code>a-z</code>,
-    /// <code>0-9</code>, <code>-</code> (hyphen).</p>
-    /// </li>
-    /// <li>
-    /// <p>It must be from 1-255 characters in length. </p>
-    /// </li>
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportFirewallDomains<
@@ -4036,18 +3786,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_operation(input);
             self
         }
-        /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service
-        /// (Amazon S3) that contains the list of domains to import.</p>
-        /// <p>The file must be in an S3 bucket that's in the same Region
-        /// as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
+        /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
+        /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
         pub fn domain_file_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_file_url(input.into());
             self
         }
-        /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service
-        /// (Amazon S3) that contains the list of domains to import.</p>
-        /// <p>The file must be in an S3 bucket that's in the same Region
-        /// as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
+        /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
+        /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
         pub fn set_domain_file_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4116,36 +3862,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4153,7 +3889,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFirewallDomainLists`.
     ///
-    /// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <a>ListFirewallDomains</a>. </p>
+    /// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <code>ListFirewallDomains</code>. </p>
     /// <p>A single call to this list operation might return only a partial list of the domain lists. For information, see <code>MaxResults</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallDomainLists<
@@ -4211,36 +3947,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4248,7 +3974,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFirewallDomains`.
     ///
-    /// <p>Retrieves the domains that you have defined for the specified firewall domain list.  </p>
+    /// <p>Retrieves the domains that you have defined for the specified firewall domain list. </p>
     /// <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallDomains<
@@ -4319,36 +4045,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_domain_list_id(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4414,14 +4130,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations
-        /// for. Leave this blank to retrieve associations for any rule group. </p>
+        /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
         pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
-        /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations
-        /// for. Leave this blank to retrieve associations for any rule group. </p>
+        /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
         pub fn set_firewall_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4429,28 +4143,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_rule_group_id(input);
             self
         }
-        /// <p>The unique identifier of the VPC that you want to retrieve the associations
-        /// for. Leave this blank to retrieve associations for any VPC. </p>
+        /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_id(input.into());
             self
         }
-        /// <p>The unique identifier of the VPC that you want to retrieve the associations
-        /// for. Leave this blank to retrieve associations for any VPC. </p>
+        /// <p>The unique identifier of the VPC that you want to retrieve the associations for. Leave this blank to retrieve associations for any VPC. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting
-        /// from the rule group with the lowest numeric priority setting. </p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting
-        /// from the rule group with the lowest numeric priority setting. </p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
@@ -4468,36 +4176,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4505,7 +4203,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFirewallRuleGroups`.
     ///
-    /// <p>Retrieves the minimal high-level information for the rule groups that you have defined.  </p>
+    /// <p>Retrieves the minimal high-level information for the rule groups that you have defined. </p>
     /// <p>A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallRuleGroups<
@@ -4563,36 +4261,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4672,15 +4360,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional additional filter for the rules to retrieve.</p>
-        /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
         /// <p>Optional additional filter for the rules to retrieve.</p>
-        /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
@@ -4688,18 +4374,9 @@ pub mod fluent_builders {
         /// <p>Optional additional filter for the rules to retrieve.</p>
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.inner = self.inner.action(input);
@@ -4708,53 +4385,34 @@ pub mod fluent_builders {
         /// <p>Optional additional filter for the rules to retrieve.</p>
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
         /// </ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Resolver to return for this request. If more
-        /// objects are available, in the response, Resolver provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
-        /// <p>When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next request.</p>
+        /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4762,8 +4420,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResolverConfigs`.
     ///
-    /// <p>Retrieves the Resolver configurations that you have defined.
-    /// Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
+    /// <p>Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverConfigs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4820,34 +4477,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of Resolver configurations that you want to return in the response to
-        /// a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// up to 100 Resolver configurations are returned.</p>
+        /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of Resolver configurations that you want to return in the response to
-        /// a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// up to 100 Resolver configurations are returned.</p>
+        /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use
-        /// <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
-        /// specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use
-        /// <code>NextToken</code> to get the second and subsequent pages of results.</p>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
-        /// specify that value for <code>NextToken</code> in the request.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4912,34 +4561,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return.
-        /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
+        /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return.
-        /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
+        /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
-        /// to get the second and subsequent pages of results.</p>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
-        /// for <code>NextToken</code> in the request.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
-        /// to get the second and subsequent pages of results.</p>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
-        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
-        /// for <code>NextToken</code> in the request.</p>
+        /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5034,30 +4675,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resolver_endpoint_id(input);
             self
         }
-        /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
+        /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
+        /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
-        /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-        /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
-        /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-        /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5122,28 +4757,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
+        /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
+        /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request
-        /// to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request
-        /// to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5152,19 +4783,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -5235,30 +4862,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
+        /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
+        /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigAssociations</code> request, omit this value.</p>
-        /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>,
-        /// you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigAssociations</code> request, omit this value.</p>
-        /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>,
-        /// you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5267,19 +4888,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An optional specification to return a subset of query logging associations.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of query logging associations.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An optional specification to return a subset of query logging associations.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of query logging associations.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -5288,177 +4905,75 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The element that you want Resolver to sort query logging associations by. </p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+        /// <p>The element that you want Resolver to sort query logging associations by. </p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
         /// </note>
-        ///
         /// <p>Valid values include the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreationTime</code>: The ID of the query logging association.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code>
-        /// indicates the cause: </p>
+        /// <li> <p> <code>CreationTime</code>: The ID of the query logging association.</p> </li>
+        /// <li> <p> <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// <p>If <code>Status</code> is a value other than <code>FAILED</code>, <code>ERROR</code> is null.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Id</code>: The ID of the query logging association</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResourceId</code>: The ID of the VPC that is associated with the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
-        ///
+        /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> <p>If <code>Status</code> is a value other than <code>FAILED</code>, <code>ERROR</code> is null.</p> </li>
+        /// <li> <p> <code>Id</code>: The ID of the query logging association</p> </li>
+        /// <li> <p> <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration</p> </li>
+        /// <li> <p> <code>ResourceId</code>: The ID of the VPC that is associated with the query logging configuration</p> </li>
+        /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration
-        /// was successfully created. Resolver is logging queries that originate in the specified VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: Resolver is deleting this query logging association.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.
-        /// Here are two common causes:</p>
+        /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+        /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
+        /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association. Here are two common causes:</p>
         /// <ul>
-        /// <li>
-        /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sort_by(input.into());
             self
         }
-        /// <p>The element that you want Resolver to sort query logging associations by. </p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+        /// <p>The element that you want Resolver to sort query logging associations by. </p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
         /// </note>
-        ///
         /// <p>Valid values include the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreationTime</code>: The ID of the query logging association.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code>
-        /// indicates the cause: </p>
+        /// <li> <p> <code>CreationTime</code>: The ID of the query logging association.</p> </li>
+        /// <li> <p> <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// <p>If <code>Status</code> is a value other than <code>FAILED</code>, <code>ERROR</code> is null.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Id</code>: The ID of the query logging association</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResourceId</code>: The ID of the VPC that is associated with the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
-        ///
+        /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> <p>If <code>Status</code> is a value other than <code>FAILED</code>, <code>ERROR</code> is null.</p> </li>
+        /// <li> <p> <code>Id</code>: The ID of the query logging association</p> </li>
+        /// <li> <p> <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration</p> </li>
+        /// <li> <p> <code>ResourceId</code>: The ID of the VPC that is associated with the query logging configuration</p> </li>
+        /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration
-        /// was successfully created. Resolver is logging queries that originate in the specified VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: Resolver is deleting this query logging association.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.
-        /// Here are two common causes:</p>
+        /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+        /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
+        /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association. Here are two common causes:</p>
         /// <ul>
-        /// <li>
-        /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in,
-        /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in,
-        /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_sort_order(
             mut self,
@@ -5470,8 +4985,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResolverQueryLogConfigs`.
     ///
-    /// <p>Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save
-    /// DNS query logs and specifies the VPCs that you want to log queries for.</p>
+    /// <p>Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs that you want to log queries for.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverQueryLogConfigs<
         C = aws_smithy_client::erase::DynConnector,
@@ -5528,30 +5042,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+        /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+        /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
-        /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>,
-        /// you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
-        /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>,
-        /// you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5560,19 +5068,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An optional specification to return a subset of query logging configurations.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of query logging configurations.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An optional specification to return a subset of query logging configurations.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of query logging configurations.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -5581,187 +5085,75 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The element that you want Resolver to sort query logging configurations by. </p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+        /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
         /// </note>
-        ///
         /// <p>Valid values include the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Arn</code>: The ARN of the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DestinationArn</code>: The location that logs are sent to</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Id</code>: The ID of the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code>: The name of the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
-        /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
-        ///
+        /// <li> <p> <code>Arn</code>: The ARN of the query logging configuration</p> </li>
+        /// <li> <p> <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p> </li>
+        /// <li> <p> <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p> </li>
+        /// <li> <p> <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p> </li>
+        /// <li> <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
+        /// <li> <p> <code>Id</code>: The ID of the configuration</p> </li>
+        /// <li> <p> <code>Name</code>: The name of the configuration</p> </li>
+        /// <li> <p> <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p> </li>
+        /// <li> <p> <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p> </li>
+        /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: Resolver is creating the query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The query logging configuration was successfully created.
-        /// Resolver is logging queries that originate in the specified VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: Resolver is deleting this query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration.
-        /// Here are two common causes:</p>
+        /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+        /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+        /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
         /// <ul>
-        /// <li>
-        /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sort_by(input.into());
             self
         }
-        /// <p>The element that you want Resolver to sort query logging configurations by. </p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
+        /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
         /// </note>
-        ///
         /// <p>Valid values include the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Arn</code>: The ARN of the query logging configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DestinationArn</code>: The location that logs are sent to</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Id</code>: The ID of the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code>: The name of the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
-        /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
-        ///
+        /// <li> <p> <code>Arn</code>: The ARN of the query logging configuration</p> </li>
+        /// <li> <p> <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p> </li>
+        /// <li> <p> <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p> </li>
+        /// <li> <p> <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p> </li>
+        /// <li> <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
+        /// <li> <p> <code>Id</code>: The ID of the configuration</p> </li>
+        /// <li> <p> <code>Name</code>: The name of the configuration</p> </li>
+        /// <li> <p> <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p> </li>
+        /// <li> <p> <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p> </li>
+        /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: Resolver is creating the query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The query logging configuration was successfully created.
-        /// Resolver is logging queries that originate in the specified VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: Resolver is deleting this query logging configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration.
-        /// Here are two common causes:</p>
+        /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+        /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+        /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
         /// <ul>
-        /// <li>
-        /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>Permissions don't allow sending logs to the destination.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+        /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+        /// </ul> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in,
-        /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in,
-        /// <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
+        /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_sort_order(
             mut self,
@@ -5830,28 +5222,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
+        /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
+        /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request
-        /// to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request
-        /// to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5860,19 +5248,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -5941,28 +5325,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
+        /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
+        /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request
-        /// to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request
-        /// to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5971,19 +5351,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p>
-        /// <note>
-        /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter,
-        /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
+        /// <p>An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated with the same Resolver endpoint.</p> <note>
+        /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -6062,28 +5438,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
+        /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request.
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
+        /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request
-        /// to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
-        /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request
-        /// to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6091,9 +5463,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutFirewallRuleGroupPolicy`.
     ///
-    /// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule
-    /// group. You can use the policy to share the rule group using Resource Access Manager
-    /// (RAM). </p>
+    /// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFirewallRuleGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6176,8 +5546,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResolverQueryLogConfigPolicy`.
     ///
-    /// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share,
-    /// and the operations that you want the account to be able to perform on the configuration.</p>
+    /// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResolverQueryLogConfigPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6244,34 +5613,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
-        /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
-        /// of the statement:</p>
+        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:AssociateResolverQueryLogConfig</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:DisassociateResolverQueryLogConfig</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverQueryLogConfigs</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
+        /// <li> <p> <code>route53resolver:DisassociateResolverQueryLogConfig</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigAssociations</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share
-        /// with the account that you specified in <code>Arn</code>. </p>
+        /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
         pub fn resolver_query_log_config_policy(
             mut self,
             input: impl Into<std::string::String>,
@@ -6279,34 +5628,14 @@ pub mod fluent_builders {
             self.inner = self.inner.resolver_query_log_config_policy(input.into());
             self
         }
-        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
-        /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
-        /// of the statement:</p>
+        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:AssociateResolverQueryLogConfig</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:DisassociateResolverQueryLogConfig</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverQueryLogConfigAssociations</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverQueryLogConfigs</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
+        /// <li> <p> <code>route53resolver:DisassociateResolverQueryLogConfig</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigAssociations</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share
-        /// with the account that you specified in <code>Arn</code>. </p>
+        /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
         pub fn set_resolver_query_log_config_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6317,8 +5646,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResolverRulePolicy`.
     ///
-    /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with,
-    /// and the operations that you want the account to be able to perform on the rule.</p>
+    /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResolverRulePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6385,74 +5713,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
-        /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
+        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:GetResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:AssociateResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:DisassociateResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverRules</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverRuleAssociations</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN
-        /// that you specified in <code>Arn</code>.</p>
+        /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
         pub fn resolver_rule_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resolver_rule_policy(input.into());
             self
         }
-        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
-        /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
+        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:GetResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:AssociateResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:DisassociateResolverRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverRules</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>route53resolver:ListResolverRuleAssociations</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>route53resolver:GetResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:AssociateResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:DisassociateResolverRule</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverRules</code> </p> </li>
+        /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN
-        /// that you specified in <code>Arn</code>.</p>
+        /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
         pub fn set_resolver_rule_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6520,77 +5802,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable
-        /// <code>Get</code> or <code>List</code> command: </p>
+        /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable
-        /// <code>Get</code> or <code>List</code> command: </p>
+        /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -6673,77 +5905,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable
-        /// <code>Get</code> or <code>List</code> command: </p>
+        /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable
-        /// <code>Get</code> or <code>List</code> command: </p>
+        /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code> command: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -6769,8 +5951,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFirewallConfig`.
     ///
-    /// <p>Updates the configuration of the firewall behavior provided by DNS Firewall for a single
-    /// VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -6839,14 +6020,8 @@ pub mod fluent_builders {
         }
         /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
         /// <ul>
-        /// <li>
-        /// <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability.
-        /// DNS Firewall blocks queries that it is unable to evaluate properly. </p>
-        /// </li>
-        /// <li>
-        /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it
-        /// is unable to properly evaluate them. </p>
-        /// </li>
+        /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
+        /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
         /// </ul>
         /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
         pub fn firewall_fail_open(mut self, input: crate::model::FirewallFailOpenStatus) -> Self {
@@ -6855,14 +6030,8 @@ pub mod fluent_builders {
         }
         /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
         /// <ul>
-        /// <li>
-        /// <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability.
-        /// DNS Firewall blocks queries that it is unable to evaluate properly. </p>
-        /// </li>
-        /// <li>
-        /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it
-        /// is unable to properly evaluate them. </p>
-        /// </li>
+        /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
+        /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
         /// </ul>
         /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
         pub fn set_firewall_fail_open(
@@ -6947,18 +6116,9 @@ pub mod fluent_builders {
         }
         /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p>
-        /// </li>
+        /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
+        /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
+        /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
         /// </ul>
         pub fn operation(mut self, input: crate::model::FirewallDomainUpdateOperation) -> Self {
             self.inner = self.inner.operation(input);
@@ -6966,18 +6126,9 @@ pub mod fluent_builders {
         }
         /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p>
-        /// </li>
+        /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
+        /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
+        /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
         /// </ul>
         pub fn set_operation(
             mut self,
@@ -6991,40 +6142,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>A list of domains to use in the update operation.</p>
-        /// <p>Each domain specification in your domain list must satisfy the following
-        /// requirements: </p>
+        /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
         /// <ul>
-        /// <li>
-        /// <p>It can optionally start with <code>*</code> (asterisk).</p>
-        /// </li>
-        /// <li>
-        /// <p>With the exception of the optional starting asterisk, it must only contain
-        /// the following characters: <code>A-Z</code>, <code>a-z</code>,
-        /// <code>0-9</code>, <code>-</code> (hyphen).</p>
-        /// </li>
-        /// <li>
-        /// <p>It must be from 1-255 characters in length. </p>
-        /// </li>
+        /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+        /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+        /// <li> <p>It must be from 1-255 characters in length. </p> </li>
         /// </ul>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domains(input.into());
             self
         }
         /// <p>A list of domains to use in the update operation.</p>
-        /// <p>Each domain specification in your domain list must satisfy the following
-        /// requirements: </p>
+        /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
         /// <ul>
-        /// <li>
-        /// <p>It can optionally start with <code>*</code> (asterisk).</p>
-        /// </li>
-        /// <li>
-        /// <p>With the exception of the optional starting asterisk, it must only contain
-        /// the following characters: <code>A-Z</code>, <code>a-z</code>,
-        /// <code>0-9</code>, <code>-</code> (hyphen).</p>
-        /// </li>
-        /// <li>
-        /// <p>It must be from 1-255 characters in length. </p>
-        /// </li>
+        /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+        /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+        /// <li> <p>It must be from 1-255 characters in length. </p> </li>
         /// </ul>
         pub fn set_domains(
             mut self,
@@ -7106,12 +6239,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_rule_group_id(input);
             self
         }
-        /// <p>The ID of the domain list to use in the rule.  </p>
+        /// <p>The ID of the domain list to use in the rule. </p>
         pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
-        /// <p>The ID of the domain list to use in the rule.  </p>
+        /// <p>The ID of the domain list to use in the rule. </p>
         pub fn set_firewall_domain_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7119,38 +6252,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_domain_list_id(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-        /// <p>You must specify a unique priority for each rule in a rule group.
-        /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for the rules in a rule group at any time.</p>
+        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
-        /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-        /// <p>You must specify a unique priority for each rule in a rule group.
-        /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for the rules in a rule group at any time.</p>
+        /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+        /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.inner = self.inner.action(input);
@@ -7158,18 +6276,9 @@ pub mod fluent_builders {
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW</code> - Permit the request to go through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
-        /// </li>
+        /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+        /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+        /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
         /// </ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.inner = self.inner.set_action(input);
@@ -7177,18 +6286,9 @@ pub mod fluent_builders {
         }
         /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
-        /// </li>
+        /// <li> <p> <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p> </li>
+        /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
+        /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
         /// </ul>
         pub fn block_response(mut self, input: crate::model::BlockResponse) -> Self {
             self.inner = self.inner.block_response(input);
@@ -7196,18 +6296,9 @@ pub mod fluent_builders {
         }
         /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
-        /// </li>
+        /// <li> <p> <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p> </li>
+        /// <li> <p> <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p> </li>
+        /// <li> <p> <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p> </li>
         /// </ul>
         pub fn set_block_response(
             mut self,
@@ -7268,7 +6359,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFirewallRuleGroupAssociation`.
     ///
-    /// <p>Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the VPC. </p>
+    /// <p>Changes the association of a <code>FirewallRuleGroup</code> with a VPC. The association enables DNS filtering for the VPC. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallRuleGroupAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -7327,7 +6418,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -7335,7 +6426,7 @@ pub mod fluent_builders {
             self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
-        /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
+        /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
         pub fn set_firewall_rule_group_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7343,22 +6434,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_rule_group_association_id(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
-        /// starting from the rule group with the lowest numeric priority setting. </p>
-        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
-        /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for a rule group association after you create it.</p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The setting that determines the processing order of the rule group among the rule
-        /// groups that you associate with the specified VPC. DNS Firewall filters VPC traffic
-        /// starting from the rule group with the lowest numeric priority setting. </p>
-        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
-        /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You
-        /// can change the priority setting for a rule group association after you create it.</p>
+        /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
+        /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
@@ -7392,8 +6475,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResolverConfig`.
     ///
-    /// <p>Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from
-    /// Amazon Virtual Private Cloud.</p>
+    /// <p>Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -7460,11 +6542,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS
-        /// lookups. This is enabled by default. Disabling this option will also affect EC2-Classic
-        /// instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 guide</i>.</p>
-        /// <note>
+        /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
         /// <p>It can take some time for the status change to be completed.</p>
         /// </note>
         /// <p></p>
@@ -7475,11 +6553,7 @@ pub mod fluent_builders {
             self.inner = self.inner.autodefined_reverse_flag(input);
             self
         }
-        /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS
-        /// lookups. This is enabled by default. Disabling this option will also affect EC2-Classic
-        /// instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 guide</i>.</p>
-        /// <note>
+        /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
         /// <p>It can take some time for the status change to be completed.</p>
         /// </note>
         /// <p></p>
@@ -7560,14 +6634,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
-        /// or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+        /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
         pub fn validation(mut self, input: crate::model::Validation) -> Self {
             self.inner = self.inner.validation(input);
             self
         }
-        /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
-        /// or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+        /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
         pub fn set_validation(
             mut self,
             input: std::option::Option<crate::model::Validation>,
@@ -7578,7 +6650,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
     ///
-    /// <p>Updates the name of an inbound or an outbound Resolver endpoint.  </p>
+    /// <p>Updates the name of an inbound or an outbound Resolver endpoint. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -7661,8 +6733,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResolverRule`.
     ///
-    /// <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional.
-    /// If you don't specify a parameter, it retains its current value.</p>
+    /// <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional. If you don't specify a parameter, it retains its current value.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverRule<
         C = aws_smithy_client::erase::DynConnector,

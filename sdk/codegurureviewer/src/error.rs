@@ -14,8 +14,7 @@ pub struct AssociateRepositoryError {
 pub enum AssociateRepositoryErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -152,14 +151,11 @@ pub struct CreateCodeReviewError {
 pub enum CreateCodeReviewErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -302,9 +298,7 @@ pub enum DescribeCodeReviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -441,9 +435,7 @@ pub enum DescribeRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -731,8 +723,7 @@ pub struct DisassociateRepositoryError {
 pub enum DisassociateRepositoryErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1002,9 +993,7 @@ pub enum ListRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1141,9 +1130,7 @@ pub enum ListRecommendationsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1393,9 +1380,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1512,9 +1497,7 @@ pub enum PutRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1649,9 +1632,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1760,9 +1741,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1923,9 +1902,7 @@ impl ValidationException {
     }
 }
 
-/// <p>
-/// The resource specified in the request was not found.
-/// </p>
+/// <p> The resource specified in the request was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2245,8 +2222,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a service
-/// resource associated with the request. Resolve the conflict before retrying this request. </p>
+/// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

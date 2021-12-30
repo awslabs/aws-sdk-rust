@@ -12,9 +12,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>
-    /// User does not have permissions to perform this action.
-    /// </p>
+    /// <p> User does not have permissions to perform this action. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2502,8 +2500,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The resource does not exist in the customer account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of the provided tags is beyond the limit, or
-    /// the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
+    /// <p>The number of the provided tags is beyond the limit, or the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
@@ -3437,8 +3434,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The number of the provided tags is beyond the limit, or
-/// the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
+/// <p>The number of the provided tags is beyond the limit, or the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -3654,9 +3650,7 @@ impl TagsAlreadyExistException {
     }
 }
 
-/// <p>
-/// User does not have permissions to perform this action.
-/// </p>
+/// <p> User does not have permissions to perform this action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

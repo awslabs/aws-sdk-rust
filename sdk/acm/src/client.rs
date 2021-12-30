@@ -201,22 +201,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTagsToCertificate`.
     ///
-    /// <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use to
-    /// identify and organize your Amazon Web Services resources. Each tag consists of a <code>key</code> and an
-    /// optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name
-    /// (ARN). You specify the tag by using a key-value pair. </p>
-    ///
-    /// <p>You can apply a tag to just one certificate if you want to identify a specific
-    /// characteristic of that certificate, or you can apply the same tag to multiple certificates if
-    /// you want to filter for a common relationship among those certificates. Similarly, you can
-    /// apply the same tag to multiple resources if you want to specify a relationship among those
-    /// resources. For example, you can add the same tag to an ACM certificate and an Elastic Load
-    /// Balancing load balancer to indicate that they are both used by the same website. For more
-    /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-    /// certificates</a>. </p>
-    ///
-    /// <p>To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To
-    /// view all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a> action. </p>
+    /// <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. </p>
+    /// <p>You can apply a tag to just one certificate if you want to identify a specific characteristic of that certificate, or you can apply the same tag to multiple certificates if you want to filter for a common relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to specify a relationship among those resources. For example, you can add the same tag to an ACM certificate and an Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM certificates</a>. </p>
+    /// <p>To remove one or more tags, use the <code>RemoveTagsFromCertificate</code> action. To view all of the tags that have been applied to the certificate, use the <code>ListTagsForCertificate</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -273,25 +260,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
-        /// This must be of the form:</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        ///
+        /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
-        /// This must be of the form:</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        ///
+        /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -320,13 +297,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCertificate`.
     ///
-    /// <p>Deletes a certificate and its associated private key. If this action succeeds, the
-    /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a> action. The certificate will not be available for use by Amazon Web Services
-    /// services integrated with ACM. </p>
-    /// <note>
-    /// <p>You cannot delete an ACM certificate that is being used by another Amazon Web Services service. To
-    /// delete a certificate that is in use, the certificate association must first be
-    /// removed.</p>
+    /// <p>Deletes a certificate and its associated private key. If this action succeeds, the certificate no longer appears in the list that can be displayed by calling the <code>ListCertificates</code> action or be retrieved by calling the <code>GetCertificate</code> action. The certificate will not be available for use by Amazon Web Services services integrated with ACM. </p> <note>
+    /// <p>You cannot delete an ACM certificate that is being used by another Amazon Web Services service. To delete a certificate that is in use, the certificate association must first be removed.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
@@ -384,21 +356,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -467,21 +433,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -493,13 +453,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportCertificate`.
     ///
-    /// <p>Exports a private certificate issued by a private certificate authority (CA) for use
-    /// anywhere. The exported file contains the certificate, the certificate chain, and the encrypted
-    /// private 2048-bit RSA key associated with the public key that is embedded in the certificate.
-    /// For security, you must assign a passphrase for the private key when exporting it. </p>
-    /// <p>For information about exporting and formatting a certificate using the ACM console or
-    /// CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a
-    /// Private Certificate</a>.</p>
+    /// <p>Exports a private certificate issued by a private certificate authority (CA) for use anywhere. The exported file contains the certificate, the certificate chain, and the encrypted private 2048-bit RSA key associated with the public key that is embedded in the certificate. For security, you must assign a passphrase for the private key when exporting it. </p>
+    /// <p>For information about exporting and formatting a certificate using the ACM console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a Private Certificate</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -557,17 +512,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -575,22 +526,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later
-        /// decrypt the private key, you must have the passphrase. You can use the following OpenSSL
-        /// command to decrypt a private key: </p>
-        /// <p>
-        /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
-        /// </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn passphrase(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.passphrase(input);
             self
         }
-        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later
-        /// decrypt the private key, you must have the passphrase. You can use the following OpenSSL
-        /// command to decrypt a private key: </p>
-        /// <p>
-        /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
-        /// </p>
+        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p>
+        /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
         pub fn set_passphrase(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -601,8 +544,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountConfiguration`.
     ///
-    /// <p>Returns the account
-    /// configuration options associated with an Amazon Web Services account.</p>
+    /// <p>Returns the account configuration options associated with an Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -662,10 +604,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCertificate`.
     ///
-    /// <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of
-    /// the certificate of the issuing CA and the intermediate certificates of any other subordinate
-    /// CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
-    /// the certificates and inspect individual fields.</p>
+    /// <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode the certificates and inspect individual fields.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -723,18 +662,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>String that contains a certificate ARN in the following format:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>String that contains a certificate ARN in the following format:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -746,79 +681,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportCertificate`.
     ///
-    /// <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with services that are integrated with
-    /// ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
-    /// services</a> allow only certificate types and keys they support to be associated with
-    /// their resources. Further, their support differs depending on whether the certificate is
-    /// imported into IAM or into ACM. For more information, see the documentation for each
-    /// service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-    /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
-    ///
-    /// <note>
+    /// <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a> allow only certificate types and keys they support to be associated with their resources. Further, their support differs depending on whether the certificate is imported into IAM or into ACM. For more information, see the documentation for each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p> <note>
     /// <p>ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for certificates that you import.</p>
     /// </note>
-    ///
     /// <p>Note the following guidelines when importing third party certificates:</p>
-    ///
-    ///
     /// <ul>
-    /// <li>
-    /// <p>You must enter the private key that matches the certificate you are importing.</p>
-    /// </li>
-    /// <li>
-    /// <p>The private key must be unencrypted. You cannot import a private key that is protected
-    /// by a password or a passphrase.</p>
-    /// </li>
-    /// <li>
-    /// <p>The private key must be no larger than 5 KB (5,120 bytes).</p>
-    /// </li>
-    /// <li>
-    /// <p>If the certificate you are importing is not self-signed, you must enter its
-    /// certificate chain.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a certificate chain is included, the issuer must be the subject of one of the
-    /// certificates in the chain.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate, private key, and certificate chain must be PEM-encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>The current time must be between the <code>Not Before</code> and <code>Not
-    /// After</code> certificate fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>Issuer</code> field must not be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The OCSP authority URL, if present, must not exceed 1000 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>To import a new certificate, omit the <code>CertificateArn</code> argument. Include
-    /// this argument only when you want to replace a previously imported certificate.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you import a certificate by using the CLI, you must specify the certificate, the
-    /// certificate chain, and the private key by their file names preceded by
-    /// <code>fileb://</code>. For example, you can specify a certificate saved in the
-    /// <code>C:\temp</code> folder as <code>fileb://C:\temp\certificate_to_import.pem</code>.
-    /// If you are making an HTTP or HTTPS Query request, include these arguments as BLOBs.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>When you import a certificate by using an SDK, you must specify the certificate, the
-    /// certificate chain, and the private key files in the manner required by the programming
-    /// language you're using. </p>
-    /// </li>
-    /// <li>
-    /// <p>The cryptographic algorithm of an imported certificate must match the algorithm of the
-    /// signing CA. For example, if the signing CA key type is RSA, then the certificate key type
-    /// must also be RSA.</p>
-    /// </li>
+    /// <li> <p>You must enter the private key that matches the certificate you are importing.</p> </li>
+    /// <li> <p>The private key must be unencrypted. You cannot import a private key that is protected by a password or a passphrase.</p> </li>
+    /// <li> <p>The private key must be no larger than 5 KB (5,120 bytes).</p> </li>
+    /// <li> <p>If the certificate you are importing is not self-signed, you must enter its certificate chain.</p> </li>
+    /// <li> <p>If a certificate chain is included, the issuer must be the subject of one of the certificates in the chain.</p> </li>
+    /// <li> <p>The certificate, private key, and certificate chain must be PEM-encoded.</p> </li>
+    /// <li> <p>The current time must be between the <code>Not Before</code> and <code>Not After</code> certificate fields.</p> </li>
+    /// <li> <p>The <code>Issuer</code> field must not be empty.</p> </li>
+    /// <li> <p>The OCSP authority URL, if present, must not exceed 1000 characters.</p> </li>
+    /// <li> <p>To import a new certificate, omit the <code>CertificateArn</code> argument. Include this argument only when you want to replace a previously imported certificate.</p> </li>
+    /// <li> <p>When you import a certificate by using the CLI, you must specify the certificate, the certificate chain, and the private key by their file names preceded by <code>fileb://</code>. For example, you can specify a certificate saved in the <code>C:\temp</code> folder as <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or HTTPS Query request, include these arguments as BLOBs. </p> </li>
+    /// <li> <p>When you import a certificate by using an SDK, you must specify the certificate, the certificate chain, and the private key files in the manner required by the programming language you're using. </p> </li>
+    /// <li> <p>The cryptographic algorithm of an imported certificate must match the algorithm of the signing CA. For example, if the signing CA key type is RSA, then the certificate key type must also be RSA.</p> </li>
     /// </ul>
-    ///
-    /// <p>This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Name (ARN)</a> of the imported certificate.</p>
+    /// <p>This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -875,16 +757,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-        /// (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this
-        /// field. </p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-        /// (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this
-        /// field. </p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -953,10 +831,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCertificates`.
     ///
-    /// <p>Retrieves a list of certificate ARNs and domain names. You can request that only
-    /// certificates that match a specific status be listed. You can also filter by specific
-    /// attributes of the certificate. Default filtering returns only <code>RSA_2048</code>
-    /// certificates. For more information, see <a>Filters</a>.</p>
+    /// <p>Retrieves a list of certificate ARNs and domain names. You can request that only certificates that match a specific status be listed. You can also filter by specific attributes of the certificate. Default filtering returns only <code>RSA_2048</code> certificates. For more information, see <code>Filters</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCertificates<
         C = aws_smithy_client::erase::DynConnector,
@@ -1030,44 +905,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_statuses(input);
             self
         }
-        /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
-        /// structure.</p>
+        /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
         pub fn includes(mut self, input: crate::model::Filters) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
-        /// structure.</p>
+        /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
         pub fn set_includes(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.inner = self.inner.set_includes(input);
             self
         }
-        /// <p>Use this parameter only when paginating results and only in a subsequent request after you
-        /// receive a response with truncated results. Set it to the value of <code>NextToken</code> from
-        /// the response you just received.</p>
+        /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Use this parameter only when paginating results and only in a subsequent request after you
-        /// receive a response with truncated results. Set it to the value of <code>NextToken</code> from
-        /// the response you just received.</p>
+        /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
-        /// value in a subsequent request to retrieve additional items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
-        /// value in a subsequent request to retrieve additional items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -1075,9 +938,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForCertificate`.
     ///
-    /// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's
-    /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate,
-    /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a> action. </p>
+    /// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate, use the <code>AddTagsToCertificate</code> action. To delete a tag, use the <code>RemoveTagsFromCertificate</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1134,21 +995,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags.
-        /// This must have the following form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags.
-        /// This must have the following form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -1160,15 +1015,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAccountConfiguration`.
     ///
-    /// <p>Adds or modifies
-    /// account-level configurations in ACM.
-    /// </p>
-    /// <p>The
-    /// supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies the
-    /// number of days prior to certificate expiration when ACM starts generating
-    /// <code>EventBridge</code> events. ACM sends one event per day per certificate until the
-    /// certificate expires. By default, accounts receive events starting 45 days before certificate
-    /// expiration.</p>
+    /// <p>Adds or modifies account-level configurations in ACM. </p>
+    /// <p>The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1225,14 +1073,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies expiration
-        /// events associated with an account.</p>
+        /// <p>Specifies expiration events associated with an account.</p>
         pub fn expiry_events(mut self, input: crate::model::ExpiryEventsConfiguration) -> Self {
             self.inner = self.inner.expiry_events(input);
             self
         }
-        /// <p>Specifies expiration
-        /// events associated with an account.</p>
+        /// <p>Specifies expiration events associated with an account.</p>
         pub fn set_expiry_events(
             mut self,
             input: std::option::Option<crate::model::ExpiryEventsConfiguration>,
@@ -1240,22 +1086,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expiry_events(input);
             self
         }
-        /// <p>Customer-chosen string
-        /// used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens
-        /// time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with
-        /// the same unexpired idempotency token, ACM treats it as the same request and returns the
-        /// original result. If you change the idempotency token for each call, ACM treats each call as
-        /// a new request.</p>
+        /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>Customer-chosen string
-        /// used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens
-        /// time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with
-        /// the same unexpired idempotency token, ACM treats it as the same request and returns the
-        /// original result. If you change the idempotency token for each call, ACM treats each call as
-        /// a new request.</p>
+        /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1266,13 +1102,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTagsFromCertificate`.
     ///
-    /// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If
-    /// you do not specify the value portion of the tag when calling this function, the tag will be
-    /// removed regardless of value. If you specify a value, the tag is removed only if it is
-    /// associated with the specified value. </p>
-    ///
-    /// <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To
-    /// view all of the tags that have been applied to a specific ACM certificate, use the <a>ListTagsForCertificate</a> action. </p>
+    /// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. </p>
+    /// <p>To add tags to a certificate, use the <code>AddTagsToCertificate</code> action. To view all of the tags that have been applied to a specific ACM certificate, use the <code>ListTagsForCertificate</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1329,25 +1160,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
-        /// to remove. This must be of the form:</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        ///
+        /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
-        /// to remove. This must be of the form:</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        ///
+        /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -1376,11 +1197,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RenewCertificate`.
     ///
-    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can
-    /// be renewed with this operation. In order to renew your ACM PCA certificates with ACM, you must
-    /// first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM
-    /// service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a>
-    /// in the ACM User Guide.</p>
+    /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM PCA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1437,21 +1254,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the
-        /// form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
@@ -1463,20 +1274,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RequestCertificate`.
     ///
-    /// <p>Requests an ACM certificate for use with other Amazon Web Services services. To request an ACM
-    /// certificate, you must specify a fully qualified domain name (FQDN) in the
-    /// <code>DomainName</code> parameter. You can also specify additional FQDNs in the
-    /// <code>SubjectAlternativeNames</code> parameter. </p>
-    /// <p>If you are requesting a private certificate, domain validation is not required. If you are
-    /// requesting a public certificate, each domain name that you specify must be validated to verify
-    /// that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>.
-    /// We recommend that you use DNS validation. ACM issues public certificates after receiving
-    /// approval from the domain owner. </p>
-    ///
-    /// <note>
-    /// <p>ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC 6125 specification of the
-    /// certificate validation process. first checks for a subject alternative name, and, if it
-    /// finds one, ignores the common name (CN)</p>
+    /// <p>Requests an ACM certificate for use with other Amazon Web Services services. To request an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code> parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>
+    /// <p>If you are requesting a private certificate, domain validation is not required. If you are requesting a public certificate, each domain name that you specify must be validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>. We recommend that you use DNS validation. ACM issues public certificates after receiving approval from the domain owner. </p> <note>
+    /// <p>ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC 6125 specification of the certificate validation process. first checks for a subject alternative name, and, if it finds one, ignores the common name (CN)</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestCertificate<
@@ -1534,38 +1334,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with
-        /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
-        /// several sites in the same domain. For example, *.example.com protects www.example.com,
-        /// site.example.com, and images.example.com. </p>
-        ///
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
-        /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with
-        /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
-        /// several sites in the same domain. For example, *.example.com protects www.example.com,
-        /// site.example.com, and images.example.com. </p>
-        ///
-        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
-        /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
+        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>
+        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The method you want to use if you are requesting a public certificate to validate that you
-        /// own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
-        /// email</a>. We recommend that you use DNS validation. </p>
+        /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
         pub fn validation_method(mut self, input: crate::model::ValidationMethod) -> Self {
             self.inner = self.inner.validation_method(input);
             self
         }
-        /// <p>The method you want to use if you are requesting a public certificate to validate that you
-        /// own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
-        /// email</a>. We recommend that you use DNS validation. </p>
+        /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
         pub fn set_validation_method(
             mut self,
             input: std::option::Option<crate::model::ValidationMethod>,
@@ -1577,67 +1363,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
         ///
-        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
-        /// certificate. For example, add the name www.example.net to a certificate for which the
-        /// <code>DomainName</code> field is www.example.com if users can reach your site by using
-        /// either name. The maximum number of domain names that you can add to an ACM certificate is
-        /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
-        /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
-        ///
-        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
-        /// labels separated by periods. No label can be longer than 63 octets. Consider the following
-        /// examples: </p>
-        ///
+        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
-        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the
-        /// total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63
-        /// octets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the
-        /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
-        /// </li>
+        /// <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li>
+        /// <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li>
+        /// <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>
         /// </ul>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subject_alternative_names(input.into());
             self
         }
-        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
-        /// certificate. For example, add the name www.example.net to a certificate for which the
-        /// <code>DomainName</code> field is www.example.com if users can reach your site by using
-        /// either name. The maximum number of domain names that you can add to an ACM certificate is
-        /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
-        /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
-        ///
-        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
-        /// labels separated by periods. No label can be longer than 63 octets. Consider the following
-        /// examples: </p>
-        ///
+        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
-        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the
-        /// total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63
-        /// octets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the
-        /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
-        /// </li>
+        /// <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li>
+        /// <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li>
+        /// <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>
         /// </ul>
         pub fn set_subject_alternative_names(
             mut self,
@@ -1646,22 +1388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subject_alternative_names(input);
             self
         }
-        /// <p>Customer chosen string that can be used to distinguish between calls to
-        /// <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if
-        /// you call <code>RequestCertificate</code> multiple times with the same idempotency token within
-        /// one hour, ACM recognizes that you are requesting only one certificate and will issue only
-        /// one. If you change the idempotency token for each call, ACM recognizes that you are
-        /// requesting multiple certificates.</p>
+        /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>Customer chosen string that can be used to distinguish between calls to
-        /// <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if
-        /// you call <code>RequestCertificate</code> multiple times with the same idempotency token within
-        /// one hour, ACM recognizes that you are requesting only one certificate and will issue only
-        /// one. If you change the idempotency token for each call, ACM recognizes that you are
-        /// requesting multiple certificates.</p>
+        /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1673,8 +1405,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
         ///
-        /// <p>The domain name that you want ACM to use to send you emails so that you can validate
-        /// domain ownership.</p>
+        /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
         pub fn domain_validation_options(
             mut self,
             input: crate::model::DomainValidationOption,
@@ -1682,8 +1413,7 @@ pub mod fluent_builders {
             self.inner = self.inner.domain_validation_options(input);
             self
         }
-        /// <p>The domain name that you want ACM to use to send you emails so that you can validate
-        /// domain ownership.</p>
+        /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
         pub fn set_domain_validation_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidationOption>>,
@@ -1691,18 +1421,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_validation_options(input);
             self
         }
-        /// <p>Currently, you can use this parameter to specify whether to add the certificate to a
-        /// certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS
-        /// certificates that have been mistakenly or maliciously issued. Certificates that have not been
-        /// logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+        /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
         pub fn options(mut self, input: crate::model::CertificateOptions) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Currently, you can use this parameter to specify whether to add the certificate to a
-        /// certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS
-        /// certificates that have been mistakenly or maliciously issued. Certificates that have not been
-        /// logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
+        /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::CertificateOptions>,
@@ -1710,26 +1434,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_options(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used
-        /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
-        /// certificate, ACM will attempt to issue a public certificate. For more information about
-        /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used
-        /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
-        /// certificate, ACM will attempt to issue a public certificate. For more information about
-        /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1757,15 +1469,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResendValidationEmail`.
     ///
-    /// <p>Resends the email that requests domain ownership validation. The domain owner or an
-    /// authorized representative must approve the ACM certificate before it can be issued. The
-    /// certificate can be approved by clicking a link in the mail to navigate to the Amazon
-    /// certificate approval website and then clicking <b>I Approve</b>.
-    /// However, the validation email can be blocked by spam filters. Therefore, if you do not receive
-    /// the original mail, you can request that the mail be resent within 72 hours of requesting the
-    /// ACM certificate. If more than 72 hours have elapsed since your original request or since
-    /// your last attempt to resend validation mail, you must request a new certificate. For more
-    /// information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>
+    /// <p>Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. For more information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResendValidationEmail<
         C = aws_smithy_client::erase::DynConnector,
@@ -1822,26 +1526,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>String that contains the ARN of the requested certificate. The certificate ARN is
-        /// generated and returned by the <a>RequestCertificate</a> action as soon as the
-        /// request is made. By default, using this parameter causes email to be sent to all top-level
-        /// domains you specified in the certificate request. The ARN must be of the form: </p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
+        /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
-        /// <p>String that contains the ARN of the requested certificate. The certificate ARN is
-        /// generated and returned by the <a>RequestCertificate</a> action as soon as the
-        /// request is made. By default, using this parameter causes email to be sent to all top-level
-        /// domains you specified in the certificate request. The ARN must be of the form: </p>
-        ///
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
+        /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1849,67 +1541,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
-        /// validated.</p>
+        /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
-        /// validated.</p>
+        /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The base validation domain that will act as the suffix of the email addresses that are
-        /// used to send the emails. This must be the same as the <code>Domain</code> value or a
-        /// superdomain of the <code>Domain</code> value. For example, if you requested a certificate for
-        /// <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the
-        /// domain registrant, technical contact, and administrative contact in WHOIS and the following
-        /// five addresses:</p>
+        /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
         /// <ul>
-        /// <li>
-        /// <p>admin@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>administrator@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>hostmaster@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>postmaster@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>webmaster@subdomain.example.com</p>
-        /// </li>
+        /// <li> <p>admin@subdomain.example.com</p> </li>
+        /// <li> <p>administrator@subdomain.example.com</p> </li>
+        /// <li> <p>hostmaster@subdomain.example.com</p> </li>
+        /// <li> <p>postmaster@subdomain.example.com</p> </li>
+        /// <li> <p>webmaster@subdomain.example.com</p> </li>
         /// </ul>
         pub fn validation_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.validation_domain(input.into());
             self
         }
-        /// <p>The base validation domain that will act as the suffix of the email addresses that are
-        /// used to send the emails. This must be the same as the <code>Domain</code> value or a
-        /// superdomain of the <code>Domain</code> value. For example, if you requested a certificate for
-        /// <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the
-        /// domain registrant, technical contact, and administrative contact in WHOIS and the following
-        /// five addresses:</p>
+        /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
         /// <ul>
-        /// <li>
-        /// <p>admin@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>administrator@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>hostmaster@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>postmaster@subdomain.example.com</p>
-        /// </li>
-        /// <li>
-        /// <p>webmaster@subdomain.example.com</p>
-        /// </li>
+        /// <li> <p>admin@subdomain.example.com</p> </li>
+        /// <li> <p>administrator@subdomain.example.com</p> </li>
+        /// <li> <p>hostmaster@subdomain.example.com</p> </li>
+        /// <li> <p>postmaster@subdomain.example.com</p> </li>
+        /// <li> <p>webmaster@subdomain.example.com</p> </li>
         /// </ul>
         pub fn set_validation_domain(
             mut self,
@@ -1921,10 +1581,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCertificateOptions`.
     ///
-    /// <p>Updates a certificate. Currently, you can use this function to specify whether to opt in
-    /// to or out of recording your certificate in a certificate transparency log. For more
-    /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of
-    /// Certificate Transparency Logging</a>. </p>
+    /// <p>Updates a certificate. Currently, you can use this function to specify whether to opt in to or out of recording your certificate in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency Logging</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCertificateOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1982,19 +1639,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the requested certificate to update. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>ARN of the requested certificate to update. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2002,18 +1653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>Use to update the options for your certificate. Currently, you can specify whether to add
-        /// your certificate to a transparency log. Certificate transparency makes it possible to detect
-        /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have
-        /// not been logged typically produce an error message in a browser. </p>
+        /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
         pub fn options(mut self, input: crate::model::CertificateOptions) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Use to update the options for your certificate. Currently, you can specify whether to add
-        /// your certificate to a transparency log. Certificate transparency makes it possible to detect
-        /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have
-        /// not been logged typically produce an error message in a browser. </p>
+        /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::CertificateOptions>,

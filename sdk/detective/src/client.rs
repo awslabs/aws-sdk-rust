@@ -199,8 +199,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
-    /// <p>Accepts an invitation for the member account to contribute data to a behavior graph.
-    /// This operation can only be called by an invited member account. </p>
+    /// <p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account. </p>
     /// <p>The request provides the ARN of behavior graph.</p>
     /// <p>The member account status in the graph must be <code>INVITED</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -259,15 +258,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.graph_arn(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
@@ -276,22 +273,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGraph`.
     ///
-    /// <p>Creates a new behavior graph for the calling account, and sets that account as the
-    /// administrator account. This operation is called by the account that is enabling
-    /// Detective.</p>
-    /// <p>Before you try to enable Detective, make sure that your account has been enrolled in
-    /// Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot enable
-    /// Detective. If you do meet the GuardDuty prerequisite, then when you make the request to enable
-    /// Detective, it checks whether your data volume is within the Detective quota. If it exceeds the
-    /// quota, then you cannot enable Detective. </p>
-    /// <p>The operation also enables Detective for the calling account in the currently selected
-    /// Region. It returns the ARN of the new behavior graph.</p>
-    /// <p>
-    /// <code>CreateGraph</code> triggers a process to create the corresponding data tables for
-    /// the new behavior graph.</p>
-    /// <p>An account can only be the administrator account for one behavior graph within a Region.
-    /// If the same account calls <code>CreateGraph</code> with the same administrator account, it
-    /// always returns the same behavior graph ARN. It does not create a new behavior graph.</p>
+    /// <p>Creates a new behavior graph for the calling account, and sets that account as the administrator account. This operation is called by the account that is enabling Detective.</p>
+    /// <p>Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within the Detective quota. If it exceeds the quota, then you cannot enable Detective. </p>
+    /// <p>The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN of the new behavior graph.</p>
+    /// <p> <code>CreateGraph</code> triggers a process to create the corresponding data tables for the new behavior graph.</p>
+    /// <p>An account can only be the administrator account for one behavior graph within a Region. If the same account calls <code>CreateGraph</code> with the same administrator account, it always returns the same behavior graph ARN. It does not create a new behavior graph.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGraph<
         C = aws_smithy_client::erase::DynConnector,
@@ -352,9 +338,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -363,9 +347,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -378,27 +360,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Sends a request to invite the specified AWS accounts to be member accounts in the
-    /// behavior graph. This operation can only be called by the administrator account for a
-    /// behavior graph. </p>
-    /// <p>
-    /// <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
-    /// The administrator can optionally specify to not send invitation emails to the member
-    /// accounts. This would be used when the administrator manages their member accounts
-    /// centrally.</p>
+    /// <p>Sends a request to invite the specified AWS accounts to be member accounts in the behavior graph. This operation can only be called by the administrator account for a behavior graph. </p>
+    /// <p> <code>CreateMembers</code> verifies the accounts and then invites the verified accounts. The administrator can optionally specify to not send invitation emails to the member accounts. This would be used when the administrator manages their member accounts centrally.</p>
     /// <p>The request provides the behavior graph ARN and the list of accounts to invite.</p>
     /// <p>The response separates the requested accounts into two lists:</p>
     /// <ul>
-    /// <li>
-    /// <p>The accounts that <code>CreateMembers</code> was able to start the verification
-    /// for. This list includes member accounts that are being verified, that have passed
-    /// verification and are to be invited, and that have failed verification.</p>
-    /// </li>
-    /// <li>
-    /// <p>The accounts that <code>CreateMembers</code> was unable to process. This list
-    /// includes accounts that were already invited to be member accounts in the behavior
-    /// graph.</p>
-    /// </li>
+    /// <li> <p>The accounts that <code>CreateMembers</code> was able to start the verification for. This list includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification.</p> </li>
+    /// <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
@@ -456,40 +424,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.graph_arn(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.message(input.into());
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
         pub fn disable_email_notification(mut self, input: bool) -> Self {
             self.inner = self.inner.disable_email_notification(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
         pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_disable_email_notification(input);
             self
@@ -498,16 +458,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             self.inner = self.inner.accounts(input);
             self
         }
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -518,11 +474,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGraph`.
     ///
-    /// <p>Disables the specified behavior graph and queues it to be deleted. This operation
-    /// removes the graph from each member account's list of behavior graphs.</p>
-    /// <p>
-    /// <code>DeleteGraph</code> can only be called by the administrator account for a behavior
-    /// graph.</p>
+    /// <p>Disables the specified behavior graph and queues it to be deleted. This operation removes the graph from each member account's list of behavior graphs.</p>
+    /// <p> <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGraph<
         C = aws_smithy_client::erase::DynConnector,
@@ -592,11 +545,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMembers`.
     ///
-    /// <p>Deletes one or more member accounts from the administrator account's behavior graph.
-    /// This operation can only be called by a Detective administrator account. That account cannot use
-    /// <code>DeleteMembers</code> to delete their own account from the behavior graph. To
-    /// disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API
-    /// method.</p>
+    /// <p>Deletes one or more member accounts from the administrator account's behavior graph. This operation can only be called by a Detective administrator account. That account cannot use <code>DeleteMembers</code> to delete their own account from the behavior graph. To disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API method.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -667,14 +616,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -685,8 +632,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateMembership`.
     ///
-    /// <p>Removes the member account from the specified behavior graph. This operation can only be
-    /// called by a member account that has the <code>ENABLED</code> status.</p>
+    /// <p>Removes the member account from the specified behavior graph. This operation can only be called by a member account that has the <code>ENABLED</code> status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembership<
         C = aws_smithy_client::erase::DynConnector,
@@ -744,15 +690,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
@@ -760,8 +704,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMembers`.
     ///
-    /// <p>Returns the membership details for specified member accounts for a behavior
-    /// graph.</p>
+    /// <p>Returns the membership details for specified member accounts for a behavior graph.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -832,18 +775,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -854,10 +793,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGraphs`.
     ///
-    /// <p>Returns the list of behavior graphs that the calling account is an administrator account
-    /// of. This operation can only be called by an administrator account.</p>
-    /// <p>Because an account can currently only be the administrator of one behavior graph within
-    /// a Region, the results always contain a single behavior graph.</p>
+    /// <p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p>
+    /// <p>Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGraphs<
         C = aws_smithy_client::erase::DynConnector,
@@ -914,28 +851,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -943,12 +874,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Retrieves the list of open and accepted behavior graph invitations for the member
-    /// account. This operation can only be called by a member account.</p>
+    /// <p>Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can only be called by a member account.</p>
     /// <p>Open invitations are invitations that the member account has not responded to.</p>
-    /// <p>The results do not include behavior graphs for which the member account declined the
-    /// invitation. The results also do not include behavior graphs that the member account
-    /// resigned from or was removed from.</p>
+    /// <p>The results do not include behavior graphs for which the member account declined the invitation. The results also do not include behavior graphs that the member account resigned from or was removed from.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1005,30 +933,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1036,8 +956,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMembers`.
     ///
-    /// <p>Retrieves the list of member accounts for a behavior graph. Does not return member
-    /// accounts that were removed from the behavior graph.</p>
+    /// <p>Retrieves the list of member accounts for a behavior graph. Does not return member accounts that were removed from the behavior graph.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -1104,28 +1023,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_graph_arn(input);
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1203,8 +1116,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectInvitation`.
     ///
-    /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation
-    /// must be called by a member account that has the <code>INVITED</code> status.</p>
+    /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by a member account that has the <code>INVITED</code> status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1262,15 +1174,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
@@ -1278,18 +1188,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMonitoringMember`.
     ///
-    /// <p>Sends a request to enable data ingest for a member account that has a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>.</p>
+    /// <p>Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
     /// <p>For valid member accounts, the status is updated as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>If Detective enabled the member account, then the new status is
-    /// <code>ENABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If Detective cannot enable the member account, the status remains
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
-    /// </li>
+    /// <li> <p>If Detective enabled the member account, then the new status is <code>ENABLED</code>.</p> </li>
+    /// <li> <p>If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>. </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMember<
@@ -1358,15 +1261,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1445,9 +1346,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1456,9 +1355,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1542,14 +1439,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

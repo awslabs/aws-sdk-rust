@@ -9,18 +9,14 @@ pub mod cancel_rotate_secret_input {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
-        /// Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
-        /// Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -179,97 +175,43 @@ pub mod create_secret_input {
     }
     impl Builder {
         /// <p>Specifies the friendly name of the new secret.</p>
-        /// <p>The secret name must be ASCII letters, digits, or the following characters :
-        /// /_+=.@-</p>
-        /// <note>
-        /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you
-        /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
-        /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
+        /// <p>The secret name must be ASCII letters, digits, or the following characters : /_+=.@-</p> <note>
+        /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters at the end of the ARN.</p>
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>Specifies the friendly name of the new secret.</p>
-        /// <p>The secret name must be ASCII letters, digits, or the following characters :
-        /// /_+=.@-</p>
-        /// <note>
-        /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you
-        /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
-        /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
+        /// <p>The secret name must be ASCII letters, digits, or the following characters : /_+=.@-</p> <note>
+        /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters at the end of the ARN.</p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
-        /// initial version is created as part of the secret, and this parameter specifies a unique
-        /// identifier for the new version. </p>
-        /// <note>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-        /// as the value for this parameter in the request. If you don't use the SDK and instead
-        /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
-        /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
-        /// request.</p>
+        /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an initial version is created as part of the secret, and this parameter specifies a unique identifier for the new version. </p> <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
         /// </note>
-        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-        /// creation of duplicate versions if there are failures and retries during a rotation. We
-        /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness of your versions within the specified secret. </p>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and the version <code>SecretString</code>
-        /// and <code>SecretBinary</code> values are the same as those in the request, then the
-        /// request is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-        /// in the request, then the request fails because you cannot modify an existing version.
-        /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
-        /// initial version is created as part of the secret, and this parameter specifies a unique
-        /// identifier for the new version. </p>
-        /// <note>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-        /// as the value for this parameter in the request. If you don't use the SDK and instead
-        /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
-        /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
-        /// request.</p>
+        /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an initial version is created as part of the secret, and this parameter specifies a unique identifier for the new version. </p> <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
         /// </note>
-        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-        /// creation of duplicate versions if there are failures and retries during a rotation. We
-        /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness of your versions within the specified secret. </p>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and the version <code>SecretString</code>
-        /// and <code>SecretBinary</code> values are the same as those in the request, then the
-        /// request is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-        /// in the request, then the request fails because you cannot modify an existing version.
-        /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
@@ -289,64 +231,34 @@ pub mod create_secret_input {
             self.description = input;
             self
         }
-        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
-        /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
-        /// versions stored in this secret.</p>
-        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
-        /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
-        /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
-        /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
-        /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-        /// <important>
-        /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
-        /// operation using credentials from the same account that owns the secret. If the secret
-        /// resides in a different account, then you must create a custom CMK and specify the ARN in
-        /// this field. </p>
+        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
+        /// <p>You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from the same account that owns the secret. If the secret resides in a different account, then you must create a custom CMK and specify the ARN in this field. </p>
         /// </important>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
-        /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
-        /// versions stored in this secret.</p>
-        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
-        /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
-        /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
-        /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
-        /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-        /// <important>
-        /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
-        /// operation using credentials from the same account that owns the secret. If the secret
-        /// resides in a different account, then you must create a custom CMK and specify the ARN in
-        /// this field. </p>
+        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
+        /// <p>You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from the same account that owns the secret. If the secret resides in a different account, then you must create a custom CMK and specify the ARN in this field. </p>
         /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-        /// binary data in a file and then use the appropriate technique for your tool to pass the
-        /// contents of the file as a parameter.</p>
-        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-        /// both. They cannot both be empty.</p>
-        /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-        /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
         pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-        /// binary data in a file and then use the appropriate technique for your tool to pass the
-        /// contents of the file as a parameter.</p>
-        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-        /// both. They cannot both be empty.</p>
-        /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-        /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
         pub fn set_secret_binary(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -354,32 +266,18 @@ pub mod create_secret_input {
             self.secret_binary = input;
             self
         }
-        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-        /// the secret.</p>
-        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-        /// both. They cannot both be empty.</p>
-        /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
-        /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
-        /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
-        /// to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_string = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-        /// the secret.</p>
-        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-        /// both. They cannot both be empty.</p>
-        /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
-        /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
-        /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
-        /// to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -391,57 +289,23 @@ pub mod create_secret_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
-        /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
-        /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
-        /// <important>
+        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list of tags. To remove tags, you must use <code>UntagResource</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
-        /// from one with key "abc".</p>
-        /// </li>
-        /// <li>
-        /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
-        /// security strategy, then adding or removing a tag can change permissions. If the
-        /// successful completion of this operation would result in you losing your permissions for
-        /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
-        /// error.</p>
-        /// </li>
+        /// <li> <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p> </li>
+        /// <li> <p>If you check tags in IAM policy <code>Condition</code> elements as part of your security strategy, then adding or removing a tag can change permissions. If the successful completion of this operation would result in you losing your permissions for this secret, then this operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
         /// </ul>
         /// </important>
-        /// <p>This parameter requires a JSON text string argument. For information on how to format a
-        /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-        /// <p>
-        /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
-        /// </p>
-        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-        /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+        /// <p>This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+        /// <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>
+        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per secret—50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
-        /// for Amazon Web Services use. You can't edit or delete tag names or values with this
-        /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you use your tagging schema across multiple services and resources,
-        /// remember other services might have restrictions on allowed characters. Generally
-        /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-        /// following special characters: + - = . _ : / @.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per secret—50</p> </li>
+        /// <li> <p>Maximum key length—127 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length—255 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
+        /// <li> <p>If you use your tagging schema across multiple services and resources, remember other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -449,57 +313,23 @@ pub mod create_secret_input {
             self.tags = Some(v);
             self
         }
-        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
-        /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
-        /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
-        /// <important>
+        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list of tags. To remove tags, you must use <code>UntagResource</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
-        /// from one with key "abc".</p>
-        /// </li>
-        /// <li>
-        /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
-        /// security strategy, then adding or removing a tag can change permissions. If the
-        /// successful completion of this operation would result in you losing your permissions for
-        /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
-        /// error.</p>
-        /// </li>
+        /// <li> <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p> </li>
+        /// <li> <p>If you check tags in IAM policy <code>Condition</code> elements as part of your security strategy, then adding or removing a tag can change permissions. If the successful completion of this operation would result in you losing your permissions for this secret, then this operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
         /// </ul>
         /// </important>
-        /// <p>This parameter requires a JSON text string argument. For information on how to format a
-        /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-        /// <p>
-        /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
-        /// </p>
-        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-        /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+        /// <p>This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+        /// <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>
+        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per secret—50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
-        /// for Amazon Web Services use. You can't edit or delete tag names or values with this
-        /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you use your tagging schema across multiple services and resources,
-        /// remember other services might have restrictions on allowed characters. Generally
-        /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-        /// following special characters: + - = . _ : / @.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per secret—50</p> </li>
+        /// <li> <p>Maximum key length—127 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length—255 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
+        /// <li> <p>If you use your tagging schema across multiple services and resources, remember other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -512,16 +342,14 @@ pub mod create_secret_input {
         ///
         /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
         ///
-        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
-        /// the parameter.</p>
+        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in the parameter.</p>
         pub fn add_replica_regions(mut self, input: crate::model::ReplicaRegionType) -> Self {
             let mut v = self.add_replica_regions.unwrap_or_default();
             v.push(input);
             self.add_replica_regions = Some(v);
             self
         }
-        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
-        /// the parameter.</p>
+        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in the parameter.</p>
         pub fn set_add_replica_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
@@ -529,14 +357,12 @@ pub mod create_secret_input {
             self.add_replica_regions = input;
             self
         }
-        /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
-        /// destination region.</p>
+        /// <p>(Optional) If set, the replication overwrites a secret with the same name in the destination region.</p>
         pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
             self.force_overwrite_replica_secret = Some(input);
             self
         }
-        /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
-        /// destination region.</p>
+        /// <p>(Optional) If set, the replication overwrites a secret with the same name in the destination region.</p>
         pub fn set_force_overwrite_replica_secret(
             mut self,
             input: std::option::Option<bool>,
@@ -700,18 +526,14 @@ pub mod delete_resource_policy_input {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -864,79 +686,45 @@ pub mod delete_secret_input {
         pub(crate) force_delete_without_recovery: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
-        /// the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
-        /// the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
-        /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
-        /// parameter in the same API call.</p>
+        /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
         /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
         pub fn recovery_window_in_days(mut self, input: i64) -> Self {
             self.recovery_window_in_days = Some(input);
             self
         }
-        /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
-        /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
-        /// parameter in the same API call.</p>
+        /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
         /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
         pub fn set_recovery_window_in_days(mut self, input: std::option::Option<i64>) -> Self {
             self.recovery_window_in_days = input;
             self
         }
-        /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
-        /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
-        /// API call.</p>
-        /// <p>An asynchronous background process performs the actual deletion, so there can be a short
-        /// delay before the operation completes. If you write code to delete and then immediately
-        /// recreate a secret with the same name, ensure that your code includes appropriate back off and
-        /// retry logic.</p>
-        /// <important>
-        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-        /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
-        /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-        /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
-        /// the secret. You lose the secret permanently.</p>
-        /// </important>
-        /// <important>
-        /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
-        /// operation does not return the error <code>ResourceNotFoundException</code> in order to
-        /// correctly handle retries.</p>
+        /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+        /// <p>An asynchronous background process performs the actual deletion, so there can be a short delay before the operation completes. If you write code to delete and then immediately recreate a secret with the same name, ensure that your code includes appropriate back off and retry logic.</p> <important>
+        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the permanent deletion that Amazon Web Services would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+        /// </important> <important>
+        /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.</p>
         /// </important>
         pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
             self.force_delete_without_recovery = Some(input);
             self
         }
-        /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
-        /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
-        /// API call.</p>
-        /// <p>An asynchronous background process performs the actual deletion, so there can be a short
-        /// delay before the operation completes. If you write code to delete and then immediately
-        /// recreate a secret with the same name, ensure that your code includes appropriate back off and
-        /// retry logic.</p>
-        /// <important>
-        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-        /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
-        /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-        /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
-        /// the secret. You lose the secret permanently.</p>
-        /// </important>
-        /// <important>
-        /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
-        /// operation does not return the error <code>ResourceNotFoundException</code> in order to
-        /// correctly handle retries.</p>
+        /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+        /// <p>An asynchronous background process performs the actual deletion, so there can be a short delay before the operation completes. If you write code to delete and then immediately recreate a secret with the same name, ensure that your code includes appropriate back off and retry logic.</p> <important>
+        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the permanent deletion that Amazon Web Services would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+        /// </important> <important>
+        /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.</p>
         /// </important>
         pub fn set_force_delete_without_recovery(
             mut self,
@@ -1090,18 +878,14 @@ pub mod describe_secret_input {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier of the secret whose details you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier of the secret whose details you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1257,26 +1041,22 @@ pub mod get_random_password_input {
         pub(crate) require_each_included_type: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The desired length of the generated password. The default value if you do not include this
-        /// parameter is 32 characters.</p>
+        /// <p>The desired length of the generated password. The default value if you do not include this parameter is 32 characters.</p>
         pub fn password_length(mut self, input: i64) -> Self {
             self.password_length = Some(input);
             self
         }
-        /// <p>The desired length of the generated password. The default value if you do not include this
-        /// parameter is 32 characters.</p>
+        /// <p>The desired length of the generated password. The default value if you do not include this parameter is 32 characters.</p>
         pub fn set_password_length(mut self, input: std::option::Option<i64>) -> Self {
             self.password_length = input;
             self
         }
-        /// <p>A string that includes characters that should not be included in the generated password.
-        /// The default is that all characters from the included sets can be used.</p>
+        /// <p>A string that includes characters that should not be included in the generated password. The default is that all characters from the included sets can be used.</p>
         pub fn exclude_characters(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclude_characters = Some(input.into());
             self
         }
-        /// <p>A string that includes characters that should not be included in the generated password.
-        /// The default is that all characters from the included sets can be used.</p>
+        /// <p>A string that includes characters that should not be included in the generated password. The default is that all characters from the included sets can be used.</p>
         pub fn set_exclude_characters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1284,92 +1064,66 @@ pub mod get_random_password_input {
             self.exclude_characters = input;
             self
         }
-        /// <p>Specifies that the generated password should not include digits. The default if you do not
-        /// include this switch parameter is that digits can be included.</p>
+        /// <p>Specifies that the generated password should not include digits. The default if you do not include this switch parameter is that digits can be included.</p>
         pub fn exclude_numbers(mut self, input: bool) -> Self {
             self.exclude_numbers = Some(input);
             self
         }
-        /// <p>Specifies that the generated password should not include digits. The default if you do not
-        /// include this switch parameter is that digits can be included.</p>
+        /// <p>Specifies that the generated password should not include digits. The default if you do not include this switch parameter is that digits can be included.</p>
         pub fn set_exclude_numbers(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_numbers = input;
             self
         }
-        /// <p>Specifies that the generated password should not include punctuation characters. The
-        /// default if you do not include this switch parameter is that punctuation characters can be
-        /// included.</p>
-        /// <p>The following are the punctuation characters that <i>can</i> be included in
-        /// the generated password if you don't explicitly exclude them with
-        /// <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
-        /// <p>
-        /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
-        /// ~</code>
-        /// </p>
+        /// <p>Specifies that the generated password should not include punctuation characters. The default if you do not include this switch parameter is that punctuation characters can be included.</p>
+        /// <p>The following are the punctuation characters that <i>can</i> be included in the generated password if you don't explicitly exclude them with <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
+        /// <p> <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
         pub fn exclude_punctuation(mut self, input: bool) -> Self {
             self.exclude_punctuation = Some(input);
             self
         }
-        /// <p>Specifies that the generated password should not include punctuation characters. The
-        /// default if you do not include this switch parameter is that punctuation characters can be
-        /// included.</p>
-        /// <p>The following are the punctuation characters that <i>can</i> be included in
-        /// the generated password if you don't explicitly exclude them with
-        /// <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
-        /// <p>
-        /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
-        /// ~</code>
-        /// </p>
+        /// <p>Specifies that the generated password should not include punctuation characters. The default if you do not include this switch parameter is that punctuation characters can be included.</p>
+        /// <p>The following are the punctuation characters that <i>can</i> be included in the generated password if you don't explicitly exclude them with <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
+        /// <p> <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
         pub fn set_exclude_punctuation(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_punctuation = input;
             self
         }
-        /// <p>Specifies that the generated password should not include uppercase letters. The default if
-        /// you do not include this switch parameter is that uppercase letters can be included.</p>
+        /// <p>Specifies that the generated password should not include uppercase letters. The default if you do not include this switch parameter is that uppercase letters can be included.</p>
         pub fn exclude_uppercase(mut self, input: bool) -> Self {
             self.exclude_uppercase = Some(input);
             self
         }
-        /// <p>Specifies that the generated password should not include uppercase letters. The default if
-        /// you do not include this switch parameter is that uppercase letters can be included.</p>
+        /// <p>Specifies that the generated password should not include uppercase letters. The default if you do not include this switch parameter is that uppercase letters can be included.</p>
         pub fn set_exclude_uppercase(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_uppercase = input;
             self
         }
-        /// <p>Specifies that the generated password should not include lowercase letters. The default if
-        /// you do not include this switch parameter is that lowercase letters can be included.</p>
+        /// <p>Specifies that the generated password should not include lowercase letters. The default if you do not include this switch parameter is that lowercase letters can be included.</p>
         pub fn exclude_lowercase(mut self, input: bool) -> Self {
             self.exclude_lowercase = Some(input);
             self
         }
-        /// <p>Specifies that the generated password should not include lowercase letters. The default if
-        /// you do not include this switch parameter is that lowercase letters can be included.</p>
+        /// <p>Specifies that the generated password should not include lowercase letters. The default if you do not include this switch parameter is that lowercase letters can be included.</p>
         pub fn set_exclude_lowercase(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_lowercase = input;
             self
         }
-        /// <p>Specifies that the generated password can include the space character. The default if you
-        /// do not include this switch parameter is that the space character is not included.</p>
+        /// <p>Specifies that the generated password can include the space character. The default if you do not include this switch parameter is that the space character is not included.</p>
         pub fn include_space(mut self, input: bool) -> Self {
             self.include_space = Some(input);
             self
         }
-        /// <p>Specifies that the generated password can include the space character. The default if you
-        /// do not include this switch parameter is that the space character is not included.</p>
+        /// <p>Specifies that the generated password can include the space character. The default if you do not include this switch parameter is that the space character is not included.</p>
         pub fn set_include_space(mut self, input: std::option::Option<bool>) -> Self {
             self.include_space = input;
             self
         }
-        /// <p>A boolean value that specifies whether the generated password must include at least one of
-        /// every allowed character type. The default value is <code>True</code> and the operation
-        /// requires at least one of every character type.</p>
+        /// <p>A boolean value that specifies whether the generated password must include at least one of every allowed character type. The default value is <code>True</code> and the operation requires at least one of every character type.</p>
         pub fn require_each_included_type(mut self, input: bool) -> Self {
             self.require_each_included_type = Some(input);
             self
         }
-        /// <p>A boolean value that specifies whether the generated password must include at least one of
-        /// every allowed character type. The default value is <code>True</code> and the operation
-        /// requires at least one of every character type.</p>
+        /// <p>A boolean value that specifies whether the generated password must include at least one of every allowed character type. The default value is <code>True</code> and the operation requires at least one of every character type.</p>
         pub fn set_require_each_included_type(mut self, input: std::option::Option<bool>) -> Self {
             self.require_each_included_type = input;
             self
@@ -1525,18 +1279,14 @@ pub mod get_resource_policy_input {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1687,62 +1437,38 @@ pub mod get_secret_value_input {
         pub(crate) version_stage: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
-        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret containing the version that you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
-        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret containing the version that you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
-        /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
-        /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
-        /// <code>VersionId</code> then the default is to perform the operation on the version with the
-        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-        /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
-        /// 32 hexadecimal digits.</p>
+        /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+        /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
-        /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
-        /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
-        /// <code>VersionId</code> then the default is to perform the operation on the version with the
-        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-        /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
-        /// 32 hexadecimal digits.</p>
+        /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+        /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
-        /// the version.</p>
-        /// <p>Staging labels are used to keep track of different versions during the rotation process.
-        /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
-        /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
-        /// <code>VersionId</code>, then the default is to perform the operation on the version with the
-        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+        /// <p>Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
+        /// <p>Staging labels are used to keep track of different versions during the rotation process. If you specify both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
         pub fn version_stage(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_stage = Some(input.into());
             self
         }
-        /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
-        /// the version.</p>
-        /// <p>Staging labels are used to keep track of different versions during the rotation process.
-        /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
-        /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
-        /// <code>VersionId</code>, then the default is to perform the operation on the version with the
-        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+        /// <p>Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
+        /// <p>Staging labels are used to keep track of different versions during the rotation process. If you specify both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
         pub fn set_version_stage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1899,42 +1625,22 @@ pub mod list_secrets_input {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
     }
     impl Builder {
-        /// <p>(Optional) Limits the number of results you want to include in
-        /// the response. If you don't include this parameter, it defaults to a value that's
-        /// specific to the operation. If additional items exist beyond the maximum you specify, the
-        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-        /// even when there are more results available. You should check <code>NextToken</code> after every
-        /// operation to ensure that you receive all of the results.</p>
+        /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>(Optional) Limits the number of results you want to include in
-        /// the response. If you don't include this parameter, it defaults to a value that's
-        /// specific to the operation. If additional items exist beyond the maximum you specify, the
-        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-        /// even when there are more results available. You should check <code>NextToken</code> after every
-        /// operation to ensure that you receive all of the results.</p>
+        /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>(Optional) Use this parameter in a request if you receive a
-        /// <code>NextToken</code> response in a previous request indicating there's more
-        /// output available. In a subsequent call, set it to the value of the previous call
-        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) Use this parameter in a request if you receive a
-        /// <code>NextToken</code> response in a previous request indicating there's more
-        /// output available. In a subsequent call, set it to the value of the previous call
-        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2120,72 +1826,44 @@ pub mod list_secret_version_ids_input {
         pub(crate) include_deprecated: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier for the secret containing the versions you want to list. You can specify
-        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret containing the versions you want to list. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the secret containing the versions you want to list. You can specify
-        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret containing the versions you want to list. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>(Optional) Limits the number of results you want to include in
-        /// the response. If you don't include this parameter, it defaults to a value that's
-        /// specific to the operation. If additional items exist beyond the maximum you specify, the
-        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-        /// even when there are more results available. You should check <code>NextToken</code> after every
-        /// operation to ensure that you receive all of the results.</p>
+        /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>(Optional) Limits the number of results you want to include in
-        /// the response. If you don't include this parameter, it defaults to a value that's
-        /// specific to the operation. If additional items exist beyond the maximum you specify, the
-        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-        /// even when there are more results available. You should check <code>NextToken</code> after every
-        /// operation to ensure that you receive all of the results.</p>
+        /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>(Optional) Use this parameter in a request if you receive a
-        /// <code>NextToken</code> response in a previous request indicating there's more
-        /// output available. In a subsequent call, set it to the value of the previous call
-        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) Use this parameter in a request if you receive a
-        /// <code>NextToken</code> response in a previous request indicating there's more
-        /// output available. In a subsequent call, set it to the value of the previous call
-        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>(Optional) Specifies that you want the results to include versions that do not have any
-        /// staging labels attached to them. Such versions are considered deprecated and are subject to
-        /// deletion by Secrets Manager as needed.</p>
+        /// <p>(Optional) Specifies that you want the results to include versions that do not have any staging labels attached to them. Such versions are considered deprecated and are subject to deletion by Secrets Manager as needed.</p>
         pub fn include_deprecated(mut self, input: bool) -> Self {
             self.include_deprecated = Some(input);
             self
         }
-        /// <p>(Optional) Specifies that you want the results to include versions that do not have any
-        /// staging labels attached to them. Such versions are considered deprecated and are subject to
-        /// deletion by Secrets Manager as needed.</p>
+        /// <p>(Optional) Specifies that you want the results to include versions that do not have any staging labels attached to them. Such versions are considered deprecated and are subject to deletion by Secrets Manager as needed.</p>
         pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deprecated = input;
             self
@@ -2341,36 +2019,24 @@ pub mod put_resource_policy_input {
         pub(crate) block_public_policy: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
-        /// either the ARN or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
-        /// either the ARN or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-        /// resource-based policy. The policy in the string identifies who can access or manage this
-        /// secret and its versions. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-        /// resource-based policy. The policy in the string identifies who can access or manage this
-        /// secret and its versions. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn set_resource_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2378,14 +2044,12 @@ pub mod put_resource_policy_input {
             self.resource_policy = input;
             self
         }
-        /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
-        /// block resource-based policies that allow broad access to the secret.</p>
+        /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based policies that allow broad access to the secret.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.block_public_policy = Some(input);
             self
         }
-        /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
-        /// block resource-based policies that allow broad access to the secret.</p>
+        /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based policies that allow broad access to the secret.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
@@ -2540,86 +2204,40 @@ pub mod put_secret_value_input {
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Specifies the secret to which you want to add a new version. You can specify either the
-        /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
-        /// exist.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret to which you want to add a new version. You can specify either the
-        /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
-        /// exist.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
-        /// <note>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
-        /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-        /// for new versions and include that value in the request. </p>
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>
         /// </note>
-        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-        /// creation of duplicate versions if there are failures and retries during the Lambda rotation
-        /// function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness within the specified secret. </p>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in
-        /// the request then the request is ignored (the operation is idempotent). </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and the version of the
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-        /// in the request then the request fails because you cannot modify an existing secret
-        /// version. You can only create new versions to store new secret values.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+        /// <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request then the request fails because you cannot modify an existing secret version. You can only create new versions to store new secret values.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
-        /// <note>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
-        /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-        /// for new versions and include that value in the request. </p>
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>
         /// </note>
-        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-        /// creation of duplicate versions if there are failures and retries during the Lambda rotation
-        /// function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness within the specified secret. </p>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in
-        /// the request then the request is ignored (the operation is idempotent). </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and the version of the
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-        /// in the request then the request fails because you cannot modify an existing secret
-        /// version. You can only create new versions to store new secret values.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+        /// <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request then the request fails because you cannot modify an existing secret version. You can only create new versions to store new secret values.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
@@ -2629,24 +2247,14 @@ pub mod put_secret_value_input {
             self.client_request_token = input;
             self
         }
-        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-        /// binary data in a file and then use the appropriate technique for your tool to pass the
-        /// contents of the file as a parameter. Either <code>SecretBinary</code> or
-        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
-        ///
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
         /// <p></p>
         pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-        /// binary data in a file and then use the appropriate technique for your tool to pass the
-        /// contents of the file as a parameter. Either <code>SecretBinary</code> or
-        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
-        ///
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
         /// <p></p>
         pub fn set_secret_binary(
@@ -2656,32 +2264,16 @@ pub mod put_secret_value_input {
             self.secret_binary = input;
             self
         }
-        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-        /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
-        /// but not both. They cannot both be empty.</p>
-        ///
-        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-        /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_string = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-        /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
-        /// but not both. They cannot both be empty.</p>
-        ///
-        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-        /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2693,28 +2285,18 @@ pub mod put_secret_value_input {
         ///
         /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
         ///
-        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
-        /// secret. These staging labels are used to track the versions through the rotation process by
-        /// the Lambda rotation function.</p>
-        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
-        /// label that's already associated with a different version of the same secret then that staging
-        /// label is automatically removed from the other version and attached to this version.</p>
-        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
-        /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
+        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the secret. These staging labels are used to track the versions through the rotation process by the Lambda rotation function.</p>
+        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging label that's already associated with a different version of the same secret then that staging label is automatically removed from the other version and attached to this version.</p>
+        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this new version.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(input.into());
             self.version_stages = Some(v);
             self
         }
-        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
-        /// secret. These staging labels are used to track the versions through the rotation process by
-        /// the Lambda rotation function.</p>
-        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
-        /// label that's already associated with a different version of the same secret then that staging
-        /// label is automatically removed from the other version and attached to this version.</p>
-        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
-        /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
+        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the secret. These staging labels are used to track the versions through the rotation process by the Lambda rotation function.</p>
+        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging label that's already associated with a different version of the same secret then that staging label is automatically removed from the other version and attached to this version.</p>
+        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this new version.</p>
         pub fn set_version_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3083,14 +2665,12 @@ pub mod replicate_secret_to_regions_input {
             self.add_replica_regions = input;
             self
         }
-        /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
-        /// destination region.</p>
+        /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the destination region.</p>
         pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
             self.force_overwrite_replica_secret = Some(input);
             self
         }
-        /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
-        /// destination region.</p>
+        /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the destination region.</p>
         pub fn set_force_overwrite_replica_secret(
             mut self,
             input: std::option::Option<bool>,
@@ -3249,18 +2829,14 @@ pub mod restore_secret_input {
         pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
-        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3411,54 +2987,30 @@ pub mod rotate_secret_input {
         pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
-        /// Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
-        /// Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
-        /// ensure idempotency. </p>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
-        /// request to the Secrets Manager service endpoint, then you must generate a
-        /// <code>ClientRequestToken</code> yourself for new versions and include that value in the
-        /// request.</p>
-        /// <p>You only need to specify your own value if you implement your own retry logic and want to
-        /// ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness within the specified secret. </p>
-        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-        /// there are failures and retries during the function's processing. This value becomes the
-        /// <code>VersionId</code> of the new version.</p>
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+        /// <p>You only need to specify your own value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
-        /// ensure idempotency. </p>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
-        /// request to the Secrets Manager service endpoint, then you must generate a
-        /// <code>ClientRequestToken</code> yourself for new versions and include that value in the
-        /// request.</p>
-        /// <p>You only need to specify your own value if you implement your own retry logic and want to
-        /// ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-        /// ensure uniqueness within the specified secret. </p>
-        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-        /// there are failures and retries during the function's processing. This value becomes the
-        /// <code>VersionId</code> of the new version.</p>
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+        /// <p>You only need to specify your own value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3799,18 +3351,14 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
-        /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret that you want to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
-        /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret that you want to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3819,24 +3367,18 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
-        /// and a <code>Value</code>.</p>
+        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>
         /// <p>This parameter to the API requires a JSON text string argument.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
-        /// and a <code>Value</code>.</p>
+        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>
         /// <p>This parameter to the API requires a JSON text string argument.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3989,18 +3531,14 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier for the secret that you want to remove tags from. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret that you want to remove tags from. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the secret that you want to remove tags from. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>The identifier for the secret that you want to remove tags from. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -4009,24 +3547,18 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
-        /// key and its associated value are removed.</p>
+        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
         /// <p>This parameter to the API requires a JSON text string argument.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
-        /// key and its associated value are removed.</p>
+        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
         /// <p>This parameter to the API requires a JSON text string argument.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4183,86 +3715,40 @@ pub mod update_secret_input {
         pub(crate) secret_string: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to modify or to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret that you want to modify or to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
-        /// unique identifier for the new version that helps ensure idempotency. </p>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
-        /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
-        /// versions and include that value in the request.</p>
-        /// <p>You typically only need to interact with this value if you implement your own retry logic
-        /// and want to ensure that a given secret is not created twice. We recommend that you generate a
-        /// <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-        /// value to ensure uniqueness within the specified secret. </p>
-        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-        /// there are failures and retries during the Lambda rotation function's processing.</p>
+        /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a unique identifier for the new version that helps ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+        /// <p>You typically only need to interact with this value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in
-        /// the request then the request is ignored (the operation is idempotent). </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from the
-        /// request then an error occurs because you cannot modify an existing secret value.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an existing secret value.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
-        /// unique identifier for the new version that helps ensure idempotency. </p>
-        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
-        /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
-        /// versions and include that value in the request.</p>
-        /// <p>You typically only need to interact with this value if you implement your own retry logic
-        /// and want to ensure that a given secret is not created twice. We recommend that you generate a
-        /// <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-        /// value to ensure uniqueness within the specified secret. </p>
-        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-        /// there are failures and retries during the Lambda rotation function's processing.</p>
+        /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a unique identifier for the new version that helps ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+        /// <p>You typically only need to interact with this value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in
-        /// the request then the request is ignored (the operation is idempotent). </p>
-        /// </li>
-        /// <li>
-        /// <p>If a version with this value already exists and that version's
-        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from the
-        /// request then an error occurs because you cannot modify an existing secret value.</p>
-        /// </li>
+        /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+        /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an existing secret value.</p> </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
@@ -4282,49 +3768,27 @@ pub mod update_secret_input {
             self.description = input;
             self
         }
-        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
-        /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
-        /// <important>
-        /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
-        /// operation using credentials from the same account that owns the secret. If the secret is in
-        /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
-        /// this field. The user making the call must have permissions to both the secret and the CMK in
-        /// their respective accounts.</p>
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p> <important>
+        /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this operation using credentials from the same account that owns the secret. If the secret is in a different account, then you must create a custom CMK and provide the ARN of that CMK in this field. The user making the call must have permissions to both the secret and the CMK in their respective accounts.</p>
         /// </important>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
-        /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
-        /// <important>
-        /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
-        /// operation using credentials from the same account that owns the secret. If the secret is in
-        /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
-        /// this field. The user making the call must have permissions to both the secret and the CMK in
-        /// their respective accounts.</p>
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p> <important>
+        /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this operation using credentials from the same account that owns the secret. If the secret is in a different account, then you must create a custom CMK and provide the ARN of that CMK in this field. The user making the call must have permissions to both the secret and the CMK in their respective accounts.</p>
         /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
-        /// version of the secret. To use this parameter in the command-line tools, we recommend that you
-        /// store your binary data in a file and then use the appropriate technique for your tool to pass
-        /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
-        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible using the Secrets Manager console.</p>
         pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
-        /// version of the secret. To use this parameter in the command-line tools, we recommend that you
-        /// store your binary data in a file and then use the appropriate technique for your tool to pass
-        /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
-        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible using the Secrets Manager console.</p>
         pub fn set_secret_binary(
             mut self,
@@ -4333,30 +3797,16 @@ pub mod update_secret_input {
             self.secret_binary = input;
             self
         }
-        /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
-        /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
-        /// a value, but not both. They cannot both be empty.</p>
-        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-        /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_string = Some(input.into());
             self
         }
-        /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
-        /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
-        /// a value, but not both. They cannot both be empty.</p>
-        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-        /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text
-        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-        /// in the Amazon Web Services CLI User Guide.</p>
+        /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4518,20 +3968,14 @@ pub mod update_secret_version_stage_input {
         pub(crate) move_to_version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret with the version with the list of staging labels you want to modify. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p>Specifies the secret with the version with the list of staging labels you want to modify. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -4549,20 +3993,12 @@ pub mod update_secret_version_stage_input {
             self.version_stage = input;
             self
         }
-        /// <p>Specifies the secret version ID of the version that the staging label is to be removed
-        /// from. If the staging label you are trying to attach to one version is already attached to a
-        /// different version, then you must include this parameter and specify the version that the label
-        /// is to be removed from. If the label is attached and you either do not specify this parameter,
-        /// or the version ID does not match, then the operation fails.</p>
+        /// <p>Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
         pub fn remove_from_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.remove_from_version_id = Some(input.into());
             self
         }
-        /// <p>Specifies the secret version ID of the version that the staging label is to be removed
-        /// from. If the staging label you are trying to attach to one version is already attached to a
-        /// different version, then you must include this parameter and specify the version that the label
-        /// is to be removed from. If the label is attached and you either do not specify this parameter,
-        /// or the version ID does not match, then the operation fails.</p>
+        /// <p>Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
         pub fn set_remove_from_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4570,18 +4006,14 @@ pub mod update_secret_version_stage_input {
             self.remove_from_version_id = input;
             self
         }
-        /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
-        /// remove a label from a version, then do not specify this parameter.</p>
-        /// <p>If the staging label is already attached to a different version of the secret, then you
-        /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+        /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a version, then do not specify this parameter.</p>
+        /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
         pub fn move_to_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.move_to_version_id = Some(input.into());
             self
         }
-        /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
-        /// remove a label from a version, then do not specify this parameter.</p>
-        /// <p>If the staging label is already attached to a different version of the secret, then you
-        /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+        /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a version, then do not specify this parameter.</p>
+        /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
         pub fn set_move_to_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4740,38 +4172,24 @@ pub mod validate_resource_policy_input {
         pub(crate) resource_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
-        /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p> (Optional) The identifier of the secret with the resource-based policy you want to validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_id = Some(input.into());
             self
         }
-        /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
-        /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.</p>
-        /// <p>For an ARN, we recommend that you specify a complete ARN rather
-        /// than a partial ARN.</p>
+        /// <p> (Optional) The identifier of the secret with the resource-based policy you want to validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-        /// resource-based policy. The policy in the string identifies who can access or manage this
-        /// secret and its versions. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-        /// resource-based policy. The policy in the string identifies who can access or manage this
-        /// secret and its versions. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
         pub fn set_resource_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4921,33 +4339,19 @@ impl ValidateResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateResourcePolicyInput {
-    /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
-    /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p> (Optional) The identifier of the secret with the resource-based policy you want to validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-    /// resource-based policy. The policy in the string identifies who can access or manage this
-    /// secret and its versions. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl ValidateResourcePolicyInput {
-    /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
-    /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p> (Optional) The identifier of the secret with the resource-based policy you want to validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-    /// resource-based policy. The policy in the string identifies who can access or manage this
-    /// secret and its versions. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
     pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
@@ -4965,32 +4369,20 @@ impl std::fmt::Debug for ValidateResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretVersionStageInput {
-    /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
-    /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret with the version with the list of staging labels you want to modify. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>The staging label to add to this version.</p>
     pub version_stage: std::option::Option<std::string::String>,
-    /// <p>Specifies the secret version ID of the version that the staging label is to be removed
-    /// from. If the staging label you are trying to attach to one version is already attached to a
-    /// different version, then you must include this parameter and specify the version that the label
-    /// is to be removed from. If the label is attached and you either do not specify this parameter,
-    /// or the version ID does not match, then the operation fails.</p>
+    /// <p>Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     pub remove_from_version_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
-    /// remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you
-    /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a version, then do not specify this parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub move_to_version_id: std::option::Option<std::string::String>,
 }
 impl UpdateSecretVersionStageInput {
-    /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
-    /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret with the version with the list of staging labels you want to modify. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -4998,18 +4390,12 @@ impl UpdateSecretVersionStageInput {
     pub fn version_stage(&self) -> std::option::Option<&str> {
         self.version_stage.as_deref()
     }
-    /// <p>Specifies the secret version ID of the version that the staging label is to be removed
-    /// from. If the staging label you are trying to attach to one version is already attached to a
-    /// different version, then you must include this parameter and specify the version that the label
-    /// is to be removed from. If the label is attached and you either do not specify this parameter,
-    /// or the version ID does not match, then the operation fails.</p>
+    /// <p>Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     pub fn remove_from_version_id(&self) -> std::option::Option<&str> {
         self.remove_from_version_id.as_deref()
     }
-    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
-    /// remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you
-    /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to remove a label from a version, then do not specify this parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
     pub fn move_to_version_id(&self) -> std::option::Option<&str> {
         self.move_to_version_id.as_deref()
     }
@@ -5029,112 +4415,48 @@ impl std::fmt::Debug for UpdateSecretVersionStageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretInput {
-    /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
-    /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to modify or to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
-    /// unique identifier for the new version that helps ensure idempotency. </p>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
-    /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
-    /// versions and include that value in the request.</p>
-    /// <p>You typically only need to interact with this value if you implement your own retry logic
-    /// and want to ensure that a given secret is not created twice. We recommend that you generate a
-    /// <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-    /// value to ensure uniqueness within the specified secret. </p>
-    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-    /// there are failures and retries during the Lambda rotation function's processing.</p>
+    /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a unique identifier for the new version that helps ensure idempotency. </p>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+    /// <p>You typically only need to interact with this value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in
-    /// the request then the request is ignored (the operation is idempotent). </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from the
-    /// request then an error occurs because you cannot modify an existing secret value.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an existing secret value.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
-    /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-    /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
-    /// <important>
-    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret is in
-    /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
-    /// this field. The user making the call must have permissions to both the secret and the CMK in
-    /// their respective accounts.</p>
+    /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p> <important>
+    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this operation using credentials from the same account that owns the secret. If the secret is in a different account, then you must create a custom CMK and provide the ARN of that CMK in this field. The user making the call must have permissions to both the secret and the CMK in their respective accounts.</p>
     /// </important>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
-    /// version of the secret. To use this parameter in the command-line tools, we recommend that you
-    /// store your binary data in a file and then use the appropriate technique for your tool to pass
-    /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
-    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible using the Secrets Manager console.</p>
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
-    /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
-    /// a value, but not both. They cannot both be empty.</p>
-    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-    /// function knows how to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub secret_string: std::option::Option<std::string::String>,
 }
 impl UpdateSecretInput {
-    /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
-    /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-    /// secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to modify or to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
-    /// unique identifier for the new version that helps ensure idempotency. </p>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
-    /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
-    /// versions and include that value in the request.</p>
-    /// <p>You typically only need to interact with this value if you implement your own retry logic
-    /// and want to ensure that a given secret is not created twice. We recommend that you generate a
-    /// <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-    /// value to ensure uniqueness within the specified secret. </p>
-    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-    /// there are failures and retries during the Lambda rotation function's processing.</p>
+    /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a unique identifier for the new version that helps ensure idempotency. </p>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+    /// <p>You typically only need to interact with this value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in
-    /// the request then the request is ignored (the operation is idempotent). </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from the
-    /// request then an error occurs because you cannot modify an existing secret value.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an existing secret value.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
@@ -5144,38 +4466,20 @@ impl UpdateSecretInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
-    /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-    /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
-    /// <important>
-    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret is in
-    /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
-    /// this field. The user making the call must have permissions to both the secret and the CMK in
-    /// their respective accounts.</p>
+    /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p> <important>
+    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this operation using credentials from the same account that owns the secret. If the secret is in a different account, then you must create a custom CMK and provide the ARN of that CMK in this field. The user making the call must have permissions to both the secret and the CMK in their respective accounts.</p>
     /// </important>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
-    /// version of the secret. To use this parameter in the command-line tools, we recommend that you
-    /// store your binary data in a file and then use the appropriate technique for your tool to pass
-    /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
-    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible using the Secrets Manager console.</p>
     pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
-    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
-    /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
-    /// a value, but not both. They cannot both be empty.</p>
-    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-    /// function knows how to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub fn secret_string(&self) -> std::option::Option<&str> {
         self.secret_string.as_deref()
     }
@@ -5197,33 +4501,23 @@ impl std::fmt::Debug for UpdateSecretInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The identifier for the secret that you want to remove tags from. You can specify either
-    /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret that you want to remove tags from. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
-    /// key and its associated value are removed.</p>
+    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
     /// <p>This parameter to the API requires a JSON text string argument.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The identifier for the secret that you want to remove tags from. You can specify either
-    /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret that you want to remove tags from. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
-    /// key and its associated value are removed.</p>
+    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
     /// <p>This parameter to the API requires a JSON text string argument.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5241,33 +4535,23 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
-    /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret that you want to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
-    /// and a <code>Value</code>.</p>
+    /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>
     /// <p>This parameter to the API requires a JSON text string argument.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
-    /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret that you want to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
-    /// and a <code>Value</code>.</p>
+    /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>
     /// <p>This parameter to the API requires a JSON text string argument.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5306,25 +4590,13 @@ impl std::fmt::Debug for StopReplicationToReplicaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateSecretInput {
-    /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
-    /// Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
-    /// ensure idempotency. </p>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
-    /// request to the Secrets Manager service endpoint, then you must generate a
-    /// <code>ClientRequestToken</code> yourself for new versions and include that value in the
-    /// request.</p>
-    /// <p>You only need to specify your own value if you implement your own retry logic and want to
-    /// ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness within the specified secret. </p>
-    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-    /// there are failures and retries during the function's processing. This value becomes the
-    /// <code>VersionId</code> of the new version.</p>
+    /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency. </p>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+    /// <p>You only need to specify your own value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
@@ -5332,27 +4604,15 @@ pub struct RotateSecretInput {
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
 }
 impl RotateSecretInput {
-    /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
-    /// Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
-    /// ensure idempotency. </p>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
-    /// request to the Secrets Manager service endpoint, then you must generate a
-    /// <code>ClientRequestToken</code> yourself for new versions and include that value in the
-    /// request.</p>
-    /// <p>You only need to specify your own value if you implement your own retry logic and want to
-    /// ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness within the specified secret. </p>
-    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
-    /// there are failures and retries during the function's processing. This value becomes the
-    /// <code>VersionId</code> of the new version.</p>
+    /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency. </p>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+    /// <p>You only need to specify your own value if you implement your own retry logic and want to ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -5380,17 +4640,13 @@ impl std::fmt::Debug for RotateSecretInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSecretInput {
-    /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl RestoreSecretInput {
-    /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -5411,8 +4667,7 @@ pub struct ReplicateSecretToRegionsInput {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>Add Regions to replicate the secret.</p>
     pub add_replica_regions: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
-    /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
-    /// destination region.</p>
+    /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the destination region.</p>
     pub force_overwrite_replica_secret: bool,
 }
 impl ReplicateSecretToRegionsInput {
@@ -5424,8 +4679,7 @@ impl ReplicateSecretToRegionsInput {
     pub fn add_replica_regions(&self) -> std::option::Option<&[crate::model::ReplicaRegionType]> {
         self.add_replica_regions.as_deref()
     }
-    /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
-    /// destination region.</p>
+    /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the destination region.</p>
     pub fn force_overwrite_replica_secret(&self) -> bool {
         self.force_overwrite_replica_secret
     }
@@ -5475,149 +4729,67 @@ impl std::fmt::Debug for RemoveRegionsFromReplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSecretValueInput {
-    /// <p>Specifies the secret to which you want to add a new version. You can specify either the
-    /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
-    /// exist.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
-    /// <note>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
-    /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-    /// for new versions and include that value in the request. </p>
+    /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>
     /// </note>
-    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-    /// creation of duplicate versions if there are failures and retries during the Lambda rotation
-    /// function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness within the specified secret. </p>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in
-    /// the request then the request is ignored (the operation is idempotent). </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and the version of the
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-    /// in the request then the request fails because you cannot modify an existing secret
-    /// version. You can only create new versions to store new secret values.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+    /// <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request then the request fails because you cannot modify an existing secret version. You can only create new versions to store new secret values.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter. Either <code>SecretBinary</code> or
-    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
-    ///
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
     /// <p></p>
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-    /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
-    /// but not both. They cannot both be empty.</p>
-    ///
-    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-    /// function knows how to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub secret_string: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
-    /// secret. These staging labels are used to track the versions through the rotation process by
-    /// the Lambda rotation function.</p>
-    /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
-    /// label that's already associated with a different version of the same secret then that staging
-    /// label is automatically removed from the other version and attached to this version.</p>
-    /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
-    /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
+    /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the secret. These staging labels are used to track the versions through the rotation process by the Lambda rotation function.</p>
+    /// <p>A staging label must be unique to a single version of the secret. If you specify a staging label that's already associated with a different version of the same secret then that staging label is automatically removed from the other version and attached to this version.</p>
+    /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this new version.</p>
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutSecretValueInput {
-    /// <p>Specifies the secret to which you want to add a new version. You can specify either the
-    /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
-    /// exist.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
-    /// <note>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
-    /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
-    /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-    /// for new versions and include that value in the request. </p>
+    /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>
     /// </note>
-    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-    /// creation of duplicate versions if there are failures and retries during the Lambda rotation
-    /// function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness within the specified secret. </p>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in
-    /// the request then the request is ignored (the operation is idempotent). </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and the version of the
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-    /// in the request then the request fails because you cannot modify an existing secret
-    /// version. You can only create new versions to store new secret values.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored (the operation is idempotent). </p> </li>
+    /// <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request then the request fails because you cannot modify an existing secret version. You can only create new versions to store new secret values.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter. Either <code>SecretBinary</code> or
-    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
-    ///
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
     /// <p></p>
     pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
-    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-    /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
-    /// but not both. They cannot both be empty.</p>
-    ///
-    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-    /// function knows how to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the default Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub fn secret_string(&self) -> std::option::Option<&str> {
         self.secret_string.as_deref()
     }
-    /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
-    /// secret. These staging labels are used to track the versions through the rotation process by
-    /// the Lambda rotation function.</p>
-    /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
-    /// label that's already associated with a different version of the same secret then that staging
-    /// label is automatically removed from the other version and attached to this version.</p>
-    /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
-    /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
+    /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the secret. These staging labels are used to track the versions through the rotation process by the Lambda rotation function.</p>
+    /// <p>A staging label must be unique to a single version of the secret. If you specify a staging label that's already associated with a different version of the same secret then that staging label is automatically removed from the other version and attached to this version.</p>
+    /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this new version.</p>
     pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
         self.version_stages.as_deref()
     }
@@ -5638,39 +4810,25 @@ impl std::fmt::Debug for PutSecretValueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
-    /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
-    /// either the ARN or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-    /// resource-based policy. The policy in the string identifies who can access or manage this
-    /// secret and its versions. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
-    /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
-    /// block resource-based policies that allow broad access to the secret.</p>
+    /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based policies that allow broad access to the secret.</p>
     pub block_public_policy: std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {
-    /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
-    /// either the ARN or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
-    /// resource-based policy. The policy in the string identifies who can access or manage this
-    /// secret and its versions. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For information on how to format a JSON parameter for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
     pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
-    /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
-    /// block resource-based policies that allow broad access to the secret.</p>
+    /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based policies that allow broad access to the secret.</p>
     pub fn block_public_policy(&self) -> std::option::Option<bool> {
         self.block_public_policy
     }
@@ -5689,59 +4847,31 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsInput {
-    /// <p>The identifier for the secret containing the versions you want to list. You can specify
-    /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret containing the versions you want to list. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Limits the number of results you want to include in
-    /// the response. If you don't include this parameter, it defaults to a value that's
-    /// specific to the operation. If additional items exist beyond the maximum you specify, the
-    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-    /// even when there are more results available. You should check <code>NextToken</code> after every
-    /// operation to ensure that you receive all of the results.</p>
+    /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>(Optional) Use this parameter in a request if you receive a
-    /// <code>NextToken</code> response in a previous request indicating there's more
-    /// output available. In a subsequent call, set it to the value of the previous call
-    /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies that you want the results to include versions that do not have any
-    /// staging labels attached to them. Such versions are considered deprecated and are subject to
-    /// deletion by Secrets Manager as needed.</p>
+    /// <p>(Optional) Specifies that you want the results to include versions that do not have any staging labels attached to them. Such versions are considered deprecated and are subject to deletion by Secrets Manager as needed.</p>
     pub include_deprecated: std::option::Option<bool>,
 }
 impl ListSecretVersionIdsInput {
-    /// <p>The identifier for the secret containing the versions you want to list. You can specify
-    /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier for the secret containing the versions you want to list. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>(Optional) Limits the number of results you want to include in
-    /// the response. If you don't include this parameter, it defaults to a value that's
-    /// specific to the operation. If additional items exist beyond the maximum you specify, the
-    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-    /// even when there are more results available. You should check <code>NextToken</code> after every
-    /// operation to ensure that you receive all of the results.</p>
+    /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>(Optional) Use this parameter in a request if you receive a
-    /// <code>NextToken</code> response in a previous request indicating there's more
-    /// output available. In a subsequent call, set it to the value of the previous call
-    /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Optional) Specifies that you want the results to include versions that do not have any
-    /// staging labels attached to them. Such versions are considered deprecated and are subject to
-    /// deletion by Secrets Manager as needed.</p>
+    /// <p>(Optional) Specifies that you want the results to include versions that do not have any staging labels attached to them. Such versions are considered deprecated and are subject to deletion by Secrets Manager as needed.</p>
     pub fn include_deprecated(&self) -> std::option::Option<bool> {
         self.include_deprecated
     }
@@ -5761,19 +4891,9 @@ impl std::fmt::Debug for ListSecretVersionIdsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretsInput {
-    /// <p>(Optional) Limits the number of results you want to include in
-    /// the response. If you don't include this parameter, it defaults to a value that's
-    /// specific to the operation. If additional items exist beyond the maximum you specify, the
-    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-    /// even when there are more results available. You should check <code>NextToken</code> after every
-    /// operation to ensure that you receive all of the results.</p>
+    /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>(Optional) Use this parameter in a request if you receive a
-    /// <code>NextToken</code> response in a previous request indicating there's more
-    /// output available. In a subsequent call, set it to the value of the previous call
-    /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Lists the secret request filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5781,21 +4901,11 @@ pub struct ListSecretsInput {
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
 }
 impl ListSecretsInput {
-    /// <p>(Optional) Limits the number of results you want to include in
-    /// the response. If you don't include this parameter, it defaults to a value that's
-    /// specific to the operation. If additional items exist beyond the maximum you specify, the
-    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-    /// even when there are more results available. You should check <code>NextToken</code> after every
-    /// operation to ensure that you receive all of the results.</p>
+    /// <p>(Optional) Limits the number of results you want to include in the response. If you don't include this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Secrets Manager might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>(Optional) Use this parameter in a request if you receive a
-    /// <code>NextToken</code> response in a previous request indicating there's more
-    /// output available. In a subsequent call, set it to the value of the previous call
-    /// <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// <p>(Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request indicating there's more output available. In a subsequent call, set it to the value of the previous call <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5823,53 +4933,29 @@ impl std::fmt::Debug for ListSecretsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecretValueInput {
-    /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
-    /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret containing the version that you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
-    /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
-    /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
-    /// <code>VersionId</code> then the default is to perform the operation on the version with the
-    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-    /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
-    /// 32 hexadecimal digits.</p>
+    /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+    /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
-    /// the version.</p>
-    /// <p>Staging labels are used to keep track of different versions during the rotation process.
-    /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
-    /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
-    /// <code>VersionId</code>, then the default is to perform the operation on the version with the
-    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
+    /// <p>Staging labels are used to keep track of different versions during the rotation process. If you specify both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
     pub version_stage: std::option::Option<std::string::String>,
 }
 impl GetSecretValueInput {
-    /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
-    /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret containing the version that you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
-    /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
-    /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
-    /// <code>VersionId</code> then the default is to perform the operation on the version with the
-    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-    /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
-    /// 32 hexadecimal digits.</p>
+    /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If you specify both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+    /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
-    /// the version.</p>
-    /// <p>Staging labels are used to keep track of different versions during the rotation process.
-    /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
-    /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
-    /// <code>VersionId</code>, then the default is to perform the operation on the version with the
-    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to the version.</p>
+    /// <p>Staging labels are used to keep track of different versions during the rotation process. If you specify both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version . If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to perform the operation on the version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
     pub fn version_stage(&self) -> std::option::Option<&str> {
         self.version_stage.as_deref()
     }
@@ -5888,17 +4974,13 @@ impl std::fmt::Debug for GetSecretValueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
-    /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
-    /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -5915,87 +4997,57 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRandomPasswordInput {
-    /// <p>The desired length of the generated password. The default value if you do not include this
-    /// parameter is 32 characters.</p>
+    /// <p>The desired length of the generated password. The default value if you do not include this parameter is 32 characters.</p>
     pub password_length: std::option::Option<i64>,
-    /// <p>A string that includes characters that should not be included in the generated password.
-    /// The default is that all characters from the included sets can be used.</p>
+    /// <p>A string that includes characters that should not be included in the generated password. The default is that all characters from the included sets can be used.</p>
     pub exclude_characters: std::option::Option<std::string::String>,
-    /// <p>Specifies that the generated password should not include digits. The default if you do not
-    /// include this switch parameter is that digits can be included.</p>
+    /// <p>Specifies that the generated password should not include digits. The default if you do not include this switch parameter is that digits can be included.</p>
     pub exclude_numbers: std::option::Option<bool>,
-    /// <p>Specifies that the generated password should not include punctuation characters. The
-    /// default if you do not include this switch parameter is that punctuation characters can be
-    /// included.</p>
-    /// <p>The following are the punctuation characters that <i>can</i> be included in
-    /// the generated password if you don't explicitly exclude them with
-    /// <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
-    /// <p>
-    /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
-    /// ~</code>
-    /// </p>
+    /// <p>Specifies that the generated password should not include punctuation characters. The default if you do not include this switch parameter is that punctuation characters can be included.</p>
+    /// <p>The following are the punctuation characters that <i>can</i> be included in the generated password if you don't explicitly exclude them with <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
+    /// <p> <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
     pub exclude_punctuation: std::option::Option<bool>,
-    /// <p>Specifies that the generated password should not include uppercase letters. The default if
-    /// you do not include this switch parameter is that uppercase letters can be included.</p>
+    /// <p>Specifies that the generated password should not include uppercase letters. The default if you do not include this switch parameter is that uppercase letters can be included.</p>
     pub exclude_uppercase: std::option::Option<bool>,
-    /// <p>Specifies that the generated password should not include lowercase letters. The default if
-    /// you do not include this switch parameter is that lowercase letters can be included.</p>
+    /// <p>Specifies that the generated password should not include lowercase letters. The default if you do not include this switch parameter is that lowercase letters can be included.</p>
     pub exclude_lowercase: std::option::Option<bool>,
-    /// <p>Specifies that the generated password can include the space character. The default if you
-    /// do not include this switch parameter is that the space character is not included.</p>
+    /// <p>Specifies that the generated password can include the space character. The default if you do not include this switch parameter is that the space character is not included.</p>
     pub include_space: std::option::Option<bool>,
-    /// <p>A boolean value that specifies whether the generated password must include at least one of
-    /// every allowed character type. The default value is <code>True</code> and the operation
-    /// requires at least one of every character type.</p>
+    /// <p>A boolean value that specifies whether the generated password must include at least one of every allowed character type. The default value is <code>True</code> and the operation requires at least one of every character type.</p>
     pub require_each_included_type: std::option::Option<bool>,
 }
 impl GetRandomPasswordInput {
-    /// <p>The desired length of the generated password. The default value if you do not include this
-    /// parameter is 32 characters.</p>
+    /// <p>The desired length of the generated password. The default value if you do not include this parameter is 32 characters.</p>
     pub fn password_length(&self) -> std::option::Option<i64> {
         self.password_length
     }
-    /// <p>A string that includes characters that should not be included in the generated password.
-    /// The default is that all characters from the included sets can be used.</p>
+    /// <p>A string that includes characters that should not be included in the generated password. The default is that all characters from the included sets can be used.</p>
     pub fn exclude_characters(&self) -> std::option::Option<&str> {
         self.exclude_characters.as_deref()
     }
-    /// <p>Specifies that the generated password should not include digits. The default if you do not
-    /// include this switch parameter is that digits can be included.</p>
+    /// <p>Specifies that the generated password should not include digits. The default if you do not include this switch parameter is that digits can be included.</p>
     pub fn exclude_numbers(&self) -> std::option::Option<bool> {
         self.exclude_numbers
     }
-    /// <p>Specifies that the generated password should not include punctuation characters. The
-    /// default if you do not include this switch parameter is that punctuation characters can be
-    /// included.</p>
-    /// <p>The following are the punctuation characters that <i>can</i> be included in
-    /// the generated password if you don't explicitly exclude them with
-    /// <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
-    /// <p>
-    /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
-    /// ~</code>
-    /// </p>
+    /// <p>Specifies that the generated password should not include punctuation characters. The default if you do not include this switch parameter is that punctuation characters can be included.</p>
+    /// <p>The following are the punctuation characters that <i>can</i> be included in the generated password if you don't explicitly exclude them with <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
+    /// <p> <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code> </p>
     pub fn exclude_punctuation(&self) -> std::option::Option<bool> {
         self.exclude_punctuation
     }
-    /// <p>Specifies that the generated password should not include uppercase letters. The default if
-    /// you do not include this switch parameter is that uppercase letters can be included.</p>
+    /// <p>Specifies that the generated password should not include uppercase letters. The default if you do not include this switch parameter is that uppercase letters can be included.</p>
     pub fn exclude_uppercase(&self) -> std::option::Option<bool> {
         self.exclude_uppercase
     }
-    /// <p>Specifies that the generated password should not include lowercase letters. The default if
-    /// you do not include this switch parameter is that lowercase letters can be included.</p>
+    /// <p>Specifies that the generated password should not include lowercase letters. The default if you do not include this switch parameter is that lowercase letters can be included.</p>
     pub fn exclude_lowercase(&self) -> std::option::Option<bool> {
         self.exclude_lowercase
     }
-    /// <p>Specifies that the generated password can include the space character. The default if you
-    /// do not include this switch parameter is that the space character is not included.</p>
+    /// <p>Specifies that the generated password can include the space character. The default if you do not include this switch parameter is that the space character is not included.</p>
     pub fn include_space(&self) -> std::option::Option<bool> {
         self.include_space
     }
-    /// <p>A boolean value that specifies whether the generated password must include at least one of
-    /// every allowed character type. The default value is <code>True</code> and the operation
-    /// requires at least one of every character type.</p>
+    /// <p>A boolean value that specifies whether the generated password must include at least one of every allowed character type. The default value is <code>True</code> and the operation requires at least one of every character type.</p>
     pub fn require_each_included_type(&self) -> std::option::Option<bool> {
         self.require_each_included_type
     }
@@ -6022,17 +5074,13 @@ impl std::fmt::Debug for GetRandomPasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecretInput {
-    /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
-    /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier of the secret whose details you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl DescribeSecretInput {
-    /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
-    /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>The identifier of the secret whose details you want to retrieve. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -6049,70 +5097,36 @@ impl std::fmt::Debug for DescribeSecretInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecretInput {
-    /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
-    /// the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
-    /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
-    /// parameter in the same API call.</p>
+    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
     /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
     pub recovery_window_in_days: std::option::Option<i64>,
-    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
-    /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
-    /// API call.</p>
-    /// <p>An asynchronous background process performs the actual deletion, so there can be a short
-    /// delay before the operation completes. If you write code to delete and then immediately
-    /// recreate a secret with the same name, ensure that your code includes appropriate back off and
-    /// retry logic.</p>
-    /// <important>
-    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-    /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
-    /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-    /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
-    /// the secret. You lose the secret permanently.</p>
-    /// </important>
-    /// <important>
-    /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
-    /// operation does not return the error <code>ResourceNotFoundException</code> in order to
-    /// correctly handle retries.</p>
+    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+    /// <p>An asynchronous background process performs the actual deletion, so there can be a short delay before the operation completes. If you write code to delete and then immediately recreate a secret with the same name, ensure that your code includes appropriate back off and retry logic.</p> <important>
+    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the permanent deletion that Amazon Web Services would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+    /// </important> <important>
+    /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.</p>
     /// </important>
     pub force_delete_without_recovery: std::option::Option<bool>,
 }
 impl DeleteSecretInput {
-    /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
-    /// the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
-    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
-    /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
-    /// parameter in the same API call.</p>
+    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.</p>
     /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
     pub fn recovery_window_in_days(&self) -> std::option::Option<i64> {
         self.recovery_window_in_days
     }
-    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
-    /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
-    /// API call.</p>
-    /// <p>An asynchronous background process performs the actual deletion, so there can be a short
-    /// delay before the operation completes. If you write code to delete and then immediately
-    /// recreate a secret with the same name, ensure that your code includes appropriate back off and
-    /// retry logic.</p>
-    /// <important>
-    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-    /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
-    /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-    /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
-    /// the secret. You lose the secret permanently.</p>
-    /// </important>
-    /// <important>
-    /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
-    /// operation does not return the error <code>ResourceNotFoundException</code> in order to
-    /// correctly handle retries.</p>
+    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+    /// <p>An asynchronous background process performs the actual deletion, so there can be a short delay before the operation completes. If you write code to delete and then immediately recreate a secret with the same name, ensure that your code includes appropriate back off and retry logic.</p> <important>
+    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the permanent deletion that Amazon Web Services would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
+    /// </important> <important>
+    /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.</p>
     /// </important>
     pub fn force_delete_without_recovery(&self) -> std::option::Option<bool> {
         self.force_delete_without_recovery
@@ -6135,17 +5149,13 @@ impl std::fmt::Debug for DeleteSecretInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
-    /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
-    /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
-    /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -6163,190 +5173,78 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecretInput {
     /// <p>Specifies the friendly name of the new secret.</p>
-    /// <p>The secret name must be ASCII letters, digits, or the following characters :
-    /// /_+=.@-</p>
-    /// <note>
-    /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you
-    /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
-    /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
+    /// <p>The secret name must be ASCII letters, digits, or the following characters : /_+=.@-</p> <note>
+    /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters at the end of the ARN.</p>
     /// </note>
     pub name: std::option::Option<std::string::String>,
-    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
-    /// initial version is created as part of the secret, and this parameter specifies a unique
-    /// identifier for the new version. </p>
-    /// <note>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-    /// as the value for this parameter in the request. If you don't use the SDK and instead
-    /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
-    /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
-    /// request.</p>
+    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an initial version is created as part of the secret, and this parameter specifies a unique identifier for the new version. </p> <note>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
     /// </note>
-    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-    /// creation of duplicate versions if there are failures and retries during a rotation. We
-    /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness of your versions within the specified secret. </p>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and the version <code>SecretString</code>
-    /// and <code>SecretBinary</code> values are the same as those in the request, then the
-    /// request is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-    /// in the request, then the request fails because you cannot modify an existing version.
-    /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
-    /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
-    /// versions stored in this secret.</p>
-    /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
-    /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-    /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
-    /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
-    /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
-    /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-    /// <important>
-    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret
-    /// resides in a different account, then you must create a custom CMK and specify the ARN in
-    /// this field. </p>
+    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+    /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
+    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from the same account that owns the secret. If the secret resides in a different account, then you must create a custom CMK and specify the ARN in this field. </p>
     /// </important>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-    /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-    /// the secret.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
-    /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
-    /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
-    /// to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub secret_string: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
-    /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
-    /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
-    /// <important>
+    /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list of tags. To remove tags, you must use <code>UntagResource</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
-    /// from one with key "abc".</p>
-    /// </li>
-    /// <li>
-    /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
-    /// security strategy, then adding or removing a tag can change permissions. If the
-    /// successful completion of this operation would result in you losing your permissions for
-    /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
-    /// error.</p>
-    /// </li>
+    /// <li> <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p> </li>
+    /// <li> <p>If you check tags in IAM policy <code>Condition</code> elements as part of your security strategy, then adding or removing a tag can change permissions. If the successful completion of this operation would result in you losing your permissions for this secret, then this operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
     /// </ul>
     /// </important>
-    /// <p>This parameter requires a JSON text string argument. For information on how to format a
-    /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-    /// <p>
-    /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
-    /// </p>
-    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-    /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+    /// <p>This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+    /// <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>
+    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per secret—50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
-    /// for Amazon Web Services use. You can't edit or delete tag names or values with this
-    /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you use your tagging schema across multiple services and resources,
-    /// remember other services might have restrictions on allowed characters. Generally
-    /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-    /// following special characters: + - = . _ : / @.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per secret—50</p> </li>
+    /// <li> <p>Maximum key length—127 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length—255 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
+    /// <li> <p>If you use your tagging schema across multiple services and resources, remember other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
-    /// the parameter.</p>
+    /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in the parameter.</p>
     pub add_replica_regions: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
-    /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
-    /// destination region.</p>
+    /// <p>(Optional) If set, the replication overwrites a secret with the same name in the destination region.</p>
     pub force_overwrite_replica_secret: bool,
 }
 impl CreateSecretInput {
     /// <p>Specifies the friendly name of the new secret.</p>
-    /// <p>The secret name must be ASCII letters, digits, or the following characters :
-    /// /_+=.@-</p>
-    /// <note>
-    /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you
-    /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
-    /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
+    /// <p>The secret name must be ASCII letters, digits, or the following characters : /_+=.@-</p> <note>
+    /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters at the end of the ARN.</p>
     /// </note>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
-    /// initial version is created as part of the secret, and this parameter specifies a unique
-    /// identifier for the new version. </p>
-    /// <note>
-    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-    /// as the value for this parameter in the request. If you don't use the SDK and instead
-    /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
-    /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
-    /// request.</p>
+    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an initial version is created as part of the secret, and this parameter specifies a unique identifier for the new version. </p> <note>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
     /// </note>
-    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-    /// creation of duplicate versions if there are failures and retries during a rotation. We
-    /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness of your versions within the specified secret. </p>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and the version <code>SecretString</code>
-    /// and <code>SecretBinary</code> values are the same as those in the request, then the
-    /// request is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-    /// in the request, then the request fails because you cannot modify an existing version.
-    /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
-    /// </li>
+    /// <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>
+    /// <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>
+    /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
@@ -6356,111 +5254,53 @@ impl CreateSecretInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
-    /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
-    /// versions stored in this secret.</p>
-    /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
-    /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-    /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
-    /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
-    /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
-    /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-    /// <important>
-    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret
-    /// resides in a different account, then you must create a custom CMK and specify the ARN in
-    /// this field. </p>
+    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+    /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p> <important>
+    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from the same account that owns the secret. If the secret resides in a different account, then you must create a custom CMK and specify the ARN in this field. </p>
     /// </important>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-    /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
     pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
-    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-    /// the secret.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
-    /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
-    /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
-    /// to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text
-    /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
-    /// in the Amazon Web Services CLI User Guide.</p>
+    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     pub fn secret_string(&self) -> std::option::Option<&str> {
         self.secret_string.as_deref()
     }
-    /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
-    /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
-    /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
-    /// <important>
+    /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list of tags. To remove tags, you must use <code>UntagResource</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
-    /// from one with key "abc".</p>
-    /// </li>
-    /// <li>
-    /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
-    /// security strategy, then adding or removing a tag can change permissions. If the
-    /// successful completion of this operation would result in you losing your permissions for
-    /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
-    /// error.</p>
-    /// </li>
+    /// <li> <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p> </li>
+    /// <li> <p>If you check tags in IAM policy <code>Condition</code> elements as part of your security strategy, then adding or removing a tag can change permissions. If the successful completion of this operation would result in you losing your permissions for this secret, then this operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
     /// </ul>
     /// </important>
-    /// <p>This parameter requires a JSON text string argument. For information on how to format a
-    /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-    /// <p>
-    /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
-    /// </p>
-    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-    /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+    /// <p>This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+    /// <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>
+    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per secret—50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
-    /// for Amazon Web Services use. You can't edit or delete tag names or values with this
-    /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you use your tagging schema across multiple services and resources,
-    /// remember other services might have restrictions on allowed characters. Generally
-    /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-    /// following special characters: + - = . _ : / @.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per secret—50</p> </li>
+    /// <li> <p>Maximum key length—127 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length—255 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
+    /// <li> <p>If you use your tagging schema across multiple services and resources, remember other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
-    /// the parameter.</p>
+    /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in the parameter.</p>
     pub fn add_replica_regions(&self) -> std::option::Option<&[crate::model::ReplicaRegionType]> {
         self.add_replica_regions.as_deref()
     }
-    /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
-    /// destination region.</p>
+    /// <p>(Optional) If set, the replication overwrites a secret with the same name in the destination region.</p>
     pub fn force_overwrite_replica_secret(&self) -> bool {
         self.force_overwrite_replica_secret
     }
@@ -6488,17 +5328,13 @@ impl std::fmt::Debug for CreateSecretInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRotateSecretInput {
-    /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
-    /// Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub secret_id: std::option::Option<std::string::String>,
 }
 impl CancelRotateSecretInput {
-    /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
-    /// Resource Name (ARN) or the friendly name of the secret.</p>
-    /// <p>For an ARN, we recommend that you specify a complete ARN rather
-    /// than a partial ARN.</p>
+    /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
     pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }

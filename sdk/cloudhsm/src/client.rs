@@ -234,19 +234,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTagsToResource`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p>
-    /// <p>Each tag consists of a key and a value. Tag keys must be unique to each
-    /// resource.</p>
+    /// <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -333,18 +324,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHapg`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Creates a high-availability partition group. A high-availability partition group is a
-    /// group of partitions that spans multiple physical HSMs.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHapg<
         C = aws_smithy_client::erase::DynConnector,
@@ -414,25 +396,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHsm`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Creates an uninitialized HSM instance.</p>
-    /// <p>There is an upfront fee charged for each HSM instance that you create with the
-    /// <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a
-    /// refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select
-    /// <b>Account and Billing Support</b>.</p>
-    /// <important>
-    /// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the
-    /// status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be
-    /// initialized when the status changes to <code>RUNNING</code>.</p>
+    /// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important>
+    /// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <code>DescribeHsm</code> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsm<
@@ -511,27 +479,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address to assign to the HSM's ENI.</p>
-        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-        /// range of the subnet.</p>
+        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.eni_ip(input.into());
             self
         }
         /// <p>The IP address to assign to the HSM's ENI.</p>
-        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-        /// range of the subnet.</p>
+        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eni_ip(input);
             self
         }
-        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-        /// behalf.</p>
+        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-        /// behalf.</p>
+        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -548,16 +512,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn subscription_type(mut self, input: crate::model::SubscriptionType) -> Self {
             self.inner = self.inner.subscription_type(input);
@@ -565,16 +521,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn set_subscription_type(
             mut self,
@@ -583,26 +531,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscription_type(input);
             self
         }
-        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-        /// same token will be ignored.</p>
+        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-        /// same token will be ignored.</p>
+        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-        /// syslog monitoring server.</p>
+        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.syslog_ip(input.into());
             self
         }
-        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-        /// syslog monitoring server.</p>
+        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_syslog_ip(input);
             self
@@ -610,16 +554,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLunaClient`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Creates an HSM client.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLunaClient<
@@ -687,14 +623,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_label(input);
             self
         }
-        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-        /// by this client.</p>
+        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate(input.into());
             self
         }
-        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-        /// by this client.</p>
+        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_certificate(input);
             self
@@ -702,16 +636,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHapg`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Deletes a high-availability partition group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHapg<
@@ -782,18 +708,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHsm`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Deletes an HSM. After completion, this operation cannot be undone and your key material
-    /// cannot be recovered.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsm<
         C = aws_smithy_client::erase::DynConnector,
@@ -863,16 +780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLunaClient`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Deletes a client.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLunaClient<
@@ -943,16 +852,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHapg`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Retrieves information about a high-availability partition group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHapg<
@@ -1023,18 +924,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHsm`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
-    /// number.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHsm<
         C = aws_smithy_client::erase::DynConnector,
@@ -1091,26 +983,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-        /// parameter must be specified.</p>
+        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
         pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hsm_arn(input.into());
             self
         }
-        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-        /// parameter must be specified.</p>
+        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hsm_arn(input);
             self
         }
-        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-        /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
         pub fn hsm_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hsm_serial_number(input.into());
             self
         }
-        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-        /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
         pub fn set_hsm_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1121,16 +1009,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLunaClient`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Retrieves information about an HSM client.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLunaClient<
@@ -1214,18 +1094,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfig`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Gets the configuration files necessary to connect to all high availability partition
-    /// groups the client is associated with.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -1309,14 +1180,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hapg_list`](Self::set_hapg_list).
         ///
-        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-        /// with the client.</p>
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
         pub fn hapg_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hapg_list(input.into());
             self
         }
-        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-        /// with the client.</p>
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
         pub fn set_hapg_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1327,16 +1196,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAvailableZones`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableZones<
@@ -1397,21 +1258,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHapgs`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Lists the high-availability partition groups for the account.</p>
-    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member.
-    /// If more results are available, the <code>NextToken</code> member of the response contains a
-    /// token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of
-    /// items.</p>
+    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of items.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHapgs<
         C = aws_smithy_client::erase::DynConnector,
@@ -1468,14 +1318,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1483,22 +1331,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHsms`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Retrieves the identifiers of all of the HSMs provisioned for the current
-    /// customer.</p>
-    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member.
-    /// If more results are available, the <code>NextToken</code> member of the response contains a
-    /// token that you pass in the next call to <code>ListHsms</code> to retrieve the next set of
-    /// items.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p>
+    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHsms</code> to retrieve the next set of items.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHsms<
         C = aws_smithy_client::erase::DynConnector,
@@ -1555,14 +1391,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1570,21 +1404,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLunaClients`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Lists all of the clients.</p>
-    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member.
-    /// If more results are available, the <code>NextToken</code> member of the response contains a
-    /// token that you pass in the next call to <code>ListLunaClients</code> to retrieve the next set
-    /// of items.</p>
+    /// <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLunaClients<
         C = aws_smithy_client::erase::DynConnector,
@@ -1641,14 +1464,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-        /// Pass null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-        /// Pass null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1656,16 +1477,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
@@ -1736,16 +1549,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyHapg`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Modifies an existing high-availability partition group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyHapg<
@@ -1827,14 +1632,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
         ///
-        /// <p>The list of partition serial numbers to make members of the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
         pub fn partition_serial_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.partition_serial_list(input.into());
             self
         }
-        /// <p>The list of partition serial numbers to make members of the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
         pub fn set_partition_serial_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1845,22 +1648,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyHsm`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
-    /// <p>Modifies an HSM.</p>
-    /// <important>
-    /// <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS
-    /// CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure
-    /// that your AWS CloudHSM service is configured for high availability, and consider executing this
-    /// operation during a maintenance window.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
+    /// <p>Modifies an HSM.</p> <important>
+    /// <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyHsm<
@@ -1928,30 +1719,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_arn(input);
             self
         }
-        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-        /// Availability Zone as the current subnet.</p>
+        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-        /// Availability Zone as the current subnet.</p>
+        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The new IP address for the elastic network interface (ENI) attached to the
-        /// HSM.</p>
-        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-        /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+        /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.eni_ip(input.into());
             self
         }
-        /// <p>The new IP address for the elastic network interface (ENI) attached to the
-        /// HSM.</p>
-        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-        /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+        /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eni_ip(input);
             self
@@ -1976,14 +1761,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_external_id(input);
             self
         }
-        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-        /// one syslog monitoring server.</p>
+        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.syslog_ip(input.into());
             self
         }
-        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-        /// one syslog monitoring server.</p>
+        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_syslog_ip(input);
             self
@@ -1991,19 +1774,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyLunaClient`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Modifies the certificate used by the client.</p>
-    /// <p>This action can potentially start a workflow to install the new certificate on the
-    /// client's HSMs.</p>
+    /// <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLunaClient<
         C = aws_smithy_client::erase::DynConnector,
@@ -2083,19 +1857,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTagsFromResource`.
     ///
-    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
-    /// more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
-    /// Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS
-    /// CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-    /// <p>
-    /// <b>For information about the current version of AWS
-    /// CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the
-    /// <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>,
-    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-    /// Reference</a>.</p>
+    /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
+    /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
     /// <p>Removes one or more tags from the specified AWS CloudHSM resource.</p>
-    /// <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the
-    /// value for an existing tag, use <a>AddTagsToResource</a>.</p>
+    /// <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2167,15 +1932,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>The tag key or keys to remove.</p>
-        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-        /// existing tag, use <a>AddTagsToResource</a>.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>The tag key or keys to remove.</p>
-        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-        /// existing tag, use <a>AddTagsToResource</a>.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -250,9 +250,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelOrder`.
     ///
-    /// <p>
-    /// Cancels an order for an Outpost.
-    /// </p>
+    /// <p> Cancels an order for an Outpost. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelOrder<
         C = aws_smithy_client::erase::DynConnector,
@@ -309,16 +307,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.order_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_order_id(input);
             self
@@ -383,16 +377,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_identifier(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -583,9 +573,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn supported_hardware_type(
             mut self,
             input: crate::model::SupportedHardwareType,
@@ -593,9 +581,7 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_hardware_type(input);
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn set_supported_hardware_type(
             mut self,
             input: std::option::Option<crate::model::SupportedHardwareType>,
@@ -606,9 +592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSite`.
     ///
-    /// <p>
-    /// Creates a site for an Outpost.
-    /// </p>
+    /// <p> Creates a site for an Outpost. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSite<
         C = aws_smithy_client::erase::DynConnector,
@@ -685,16 +669,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notes(input.into());
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_notes(input);
             self
@@ -703,9 +683,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -714,9 +692,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -726,18 +702,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn operating_address(mut self, input: crate::model::Address) -> Self {
             self.inner = self.inner.operating_address(input);
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn set_operating_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -745,18 +715,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_operating_address(input);
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
             self.inner = self.inner.shipping_address(input);
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn set_shipping_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -764,11 +728,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shipping_address(input);
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn rack_physical_properties(
             mut self,
             input: crate::model::RackPhysicalProperties,
@@ -776,11 +736,7 @@ pub mod fluent_builders {
             self.inner = self.inner.rack_physical_properties(input);
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn set_rack_physical_properties(
             mut self,
             input: std::option::Option<crate::model::RackPhysicalProperties>,
@@ -848,16 +804,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1135,16 +1087,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1209,16 +1157,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_outpost_id(input);
             self
@@ -1246,9 +1190,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSite`.
     ///
-    /// <p>
-    /// Gets information about the specified Outpost site.
-    /// </p>
+    /// <p> Gets information about the specified Outpost site. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSite<
         C = aws_smithy_client::erase::DynConnector,
@@ -1318,9 +1260,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSiteAddress`.
     ///
-    /// <p>
-    /// Gets the site address.
-    /// </p>
+    /// <p> Gets the site address. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSiteAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -1403,11 +1343,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCatalogItems`.
     ///
-    /// <p>Use to create a list of every item in the catalog. Add filters to your request to return a
-    /// more specific list of results. Use filters to match an item class, storage
-    /// option, or EC2 family. </p>
-    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and
-    /// the request returns only results that match all of the specified filters.</p>
+    /// <p>Use to create a list of every item in the catalog. Add filters to your request to return a more specific list of results. Use filters to match an item class, storage option, or EC2 family. </p>
+    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCatalogItems<
         C = aws_smithy_client::erase::DynConnector,
@@ -1488,22 +1425,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
         ///
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn item_class_filter(mut self, input: crate::model::CatalogItemClass) -> Self {
             self.inner = self.inner.item_class_filter(input);
             self
         }
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_item_class_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
@@ -1515,12 +1444,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
         ///
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn supported_storage_filter(
             mut self,
             input: crate::model::SupportedStorageEnum,
@@ -1528,12 +1453,8 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_storage_filter(input);
             self
         }
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_supported_storage_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
@@ -1545,22 +1466,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
         ///
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn ec2_family_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ec2_family_filter(input.into());
             self
         }
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_ec2_family_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1571,8 +1484,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrders`.
     ///
-    /// <p>Create a list of the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to
-    /// return a more specific list of results. </p>
+    /// <p>Create a list of the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to return a more specific list of results. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrders<
         C = aws_smithy_client::erase::DynConnector,
@@ -1629,16 +1541,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_identifier_filter(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1669,12 +1577,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOutposts`.
     ///
-    /// <p>Create a list of the Outposts for your Amazon Web Services account. Add filters to your request to return
-    /// a more specific list of results. Use filters to match an Outpost lifecycle status,
-    /// Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
-    ///
-    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
-    /// results that match all of the specified filters.</p>
+    /// <p>Create a list of the Outposts for your Amazon Web Services account. Add filters to your request to return a more specific list of results. Use filters to match an Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
+    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutposts<
         C = aws_smithy_client::erase::DynConnector,
@@ -1755,22 +1659,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
         ///
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn life_cycle_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.life_cycle_status_filter(input.into());
             self
         }
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_life_cycle_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1783,19 +1679,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
         ///
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_filter(input.into());
             self
         }
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1807,13 +1697,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
         ///
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_id_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -1821,13 +1706,8 @@ pub mod fluent_builders {
             self.inner = self.inner.availability_zone_id_filter(input.into());
             self
         }
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2168,9 +2048,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSite`.
     ///
-    /// <p>
-    /// Updates the site.
-    /// </p>
+    /// <p> Updates the site. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite<
         C = aws_smithy_client::erase::DynConnector,
@@ -2257,16 +2135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notes(input.into());
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_notes(input);
             self
@@ -2274,18 +2148,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSiteAddress`.
     ///
-    /// <p>
-    /// Updates the site address.
-    /// </p>
-    /// <p>
-    /// To update a site address
-    /// with an order <code>IN_PROGRESS</code>, you must wait for the order
-    /// to complete or cancel the order.
-    /// </p>
-    /// <p>You
-    /// can update the operating address before you place an order at the
-    /// site, or after all Outposts that belong to the site have been deactivated.
-    /// </p>
+    /// <p> Updates the site address. </p>
+    /// <p> To update a site address with an order <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order. </p>
+    /// <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSiteAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -2352,16 +2217,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_site_id(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.inner = self.inner.address_type(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -2369,16 +2230,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_address_type(input);
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.inner = self.inner.address(input);
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.inner = self.inner.set_address(input);
             self
@@ -2386,12 +2243,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSiteRackPhysicalProperties`.
     ///
-    /// <p>Update the physical and logistical details for a rack at a site. For more information
-    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-    /// </p>
-    /// <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for
-    /// the order to complete or cancel the order.</p>
+    /// <p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
+    /// <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSiteRackPhysicalProperties<
         C = aws_smithy_client::erase::DynConnector,
@@ -2458,14 +2311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_site_id(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn power_draw_kva(mut self, input: crate::model::PowerDrawKva) -> Self {
             self.inner = self.inner.power_draw_kva(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn set_power_draw_kva(
             mut self,
             input: std::option::Option<crate::model::PowerDrawKva>,
@@ -2475,12 +2326,8 @@ pub mod fluent_builders {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn power_phase(mut self, input: crate::model::PowerPhase) -> Self {
             self.inner = self.inner.power_phase(input);
@@ -2488,12 +2335,8 @@ pub mod fluent_builders {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn set_power_phase(
             mut self,
@@ -2502,77 +2345,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_phase(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn power_connector(mut self, input: crate::model::PowerConnector) -> Self {
             self.inner = self.inner.power_connector(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_power_connector(
             mut self,
@@ -2594,14 +2395,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_power_feed_drop(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
             self.inner = self.inner.uplink_gbps(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn set_uplink_gbps(
             mut self,
             input: std::option::Option<crate::model::UplinkGbps>,
@@ -2609,39 +2408,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_uplink_gbps(input);
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn uplink_count(mut self, input: crate::model::UplinkCount) -> Self {
             self.inner = self.inner.uplink_count(input);
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn set_uplink_count(
             mut self,
@@ -2650,14 +2431,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_uplink_count(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
             self.inner = self.inner.fiber_optic_cable_type(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn set_fiber_optic_cable_type(
             mut self,
             input: std::option::Option<crate::model::FiberOpticCableType>,
@@ -2665,129 +2444,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fiber_optic_cable_type(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
             self.inner = self.inner.optical_standard(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn set_optical_standard(
             mut self,
@@ -2796,8 +2487,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_optical_standard(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
             input: crate::model::MaximumSupportedWeightLbs,
@@ -2805,8 +2495,7 @@ pub mod fluent_builders {
             self.inner = self.inner.maximum_supported_weight_lbs(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn set_maximum_supported_weight_lbs(
             mut self,
             input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,

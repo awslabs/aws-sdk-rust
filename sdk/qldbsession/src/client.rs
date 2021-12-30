@@ -101,25 +101,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `SendCommand`.
     ///
-    /// <p>Sends a command to an Amazon QLDB ledger.</p>
-    /// <note>
-    /// <p>Instead of interacting directly with this API, we recommend using the QLDB driver
-    /// or the QLDB shell to execute data transactions on a ledger.</p>
+    /// <p>Sends a command to an Amazon QLDB ledger.</p> <note>
+    /// <p>Instead of interacting directly with this API, we recommend using the QLDB driver or the QLDB shell to execute data transactions on a ledger.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are working with an AWS SDK, use the QLDB driver. The driver provides
-    /// a high-level abstraction layer above this <i>QLDB Session</i> data
-    /// plane and manages <code>SendCommand</code> API calls for you. For information and
-    /// a list of supported programming languages, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started
-    /// with the driver</a> in the <i>Amazon QLDB Developer
-    /// Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you are working with the AWS Command Line Interface (AWS CLI), use the
-    /// QLDB shell. The shell is a command line interface that uses the QLDB driver to
-    /// interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the
-    /// QLDB shell</a>.</p>
-    /// </li>
+    /// <li> <p>If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level abstraction layer above this <i>QLDB Session</i> data plane and manages <code>SendCommand</code> API calls for you. For information and a list of supported programming languages, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// <li> <p>If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line interface that uses the QLDB driver to interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the QLDB shell</a>.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -178,20 +164,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_token(input.into());
             self
         }
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -199,14 +179,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_token(input);
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
         pub fn start_session(mut self, input: crate::model::StartSessionRequest) -> Self {
             self.inner = self.inner.start_session(input);
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
         pub fn set_start_session(
             mut self,
             input: std::option::Option<crate::model::StartSessionRequest>,

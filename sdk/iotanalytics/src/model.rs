@@ -13,13 +13,11 @@ pub struct PipelineActivity {
     pub add_attributes: std::option::Option<crate::model::AddAttributesActivity>,
     /// <p>Removes attributes from a message.</p>
     pub remove_attributes: std::option::Option<crate::model::RemoveAttributesActivity>,
-    /// <p>Used to create a new message using only the specified attributes from the original
-    /// message. </p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub select_attributes: std::option::Option<crate::model::SelectAttributesActivity>,
     /// <p>Filters a message based on its attributes.</p>
     pub filter: std::option::Option<crate::model::FilterActivity>,
-    /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
-    /// message.</p>
+    /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
     pub math: std::option::Option<crate::model::MathActivity>,
     /// <p>Adds data from the IoT device registry to your message.</p>
     pub device_registry_enrich: std::option::Option<crate::model::DeviceRegistryEnrichActivity>,
@@ -49,8 +47,7 @@ impl PipelineActivity {
     ) -> std::option::Option<&crate::model::RemoveAttributesActivity> {
         self.remove_attributes.as_ref()
     }
-    /// <p>Used to create a new message using only the specified attributes from the original
-    /// message. </p>
+    /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn select_attributes(
         &self,
     ) -> std::option::Option<&crate::model::SelectAttributesActivity> {
@@ -60,8 +57,7 @@ impl PipelineActivity {
     pub fn filter(&self) -> std::option::Option<&crate::model::FilterActivity> {
         self.filter.as_ref()
     }
-    /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
-    /// message.</p>
+    /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
     pub fn math(&self) -> std::option::Option<&crate::model::MathActivity> {
         self.math.as_ref()
     }
@@ -179,14 +175,12 @@ pub mod pipeline_activity {
             self.remove_attributes = input;
             self
         }
-        /// <p>Used to create a new message using only the specified attributes from the original
-        /// message. </p>
+        /// <p>Used to create a new message using only the specified attributes from the original message. </p>
         pub fn select_attributes(mut self, input: crate::model::SelectAttributesActivity) -> Self {
             self.select_attributes = Some(input);
             self
         }
-        /// <p>Used to create a new message using only the specified attributes from the original
-        /// message. </p>
+        /// <p>Used to create a new message using only the specified attributes from the original message. </p>
         pub fn set_select_attributes(
             mut self,
             input: std::option::Option<crate::model::SelectAttributesActivity>,
@@ -207,14 +201,12 @@ pub mod pipeline_activity {
             self.filter = input;
             self
         }
-        /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
-        /// message.</p>
+        /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
         pub fn math(mut self, input: crate::model::MathActivity) -> Self {
             self.math = Some(input);
             self
         }
-        /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
-        /// message.</p>
+        /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
         pub fn set_math(mut self, input: std::option::Option<crate::model::MathActivity>) -> Self {
             self.math = input;
             self
@@ -275,8 +267,7 @@ impl PipelineActivity {
     }
 }
 
-/// <p>An activity that adds information from the IoT Device Shadow service to a
-/// message.</p>
+/// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceShadowEnrichActivity {
@@ -544,8 +535,7 @@ pub struct MathActivity {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute that contains the result of the math operation.</p>
     pub attribute: std::option::Option<std::string::String>,
-    /// <p>An expression that uses one or more existing attributes and must return an integer
-    /// value.</p>
+    /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     pub math: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
@@ -559,8 +549,7 @@ impl MathActivity {
     pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
-    /// <p>An expression that uses one or more existing attributes and must return an integer
-    /// value.</p>
+    /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     pub fn math(&self) -> std::option::Option<&str> {
         self.math.as_deref()
     }
@@ -611,14 +600,12 @@ pub mod math_activity {
             self.attribute = input;
             self
         }
-        /// <p>An expression that uses one or more existing attributes and must return an integer
-        /// value.</p>
+        /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
         pub fn math(mut self, input: impl Into<std::string::String>) -> Self {
             self.math = Some(input.into());
             self
         }
-        /// <p>An expression that uses one or more existing attributes and must return an integer
-        /// value.</p>
+        /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
         pub fn set_math(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.math = input;
             self
@@ -657,8 +644,7 @@ impl MathActivity {
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
-    /// Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
     pub filter: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
@@ -668,8 +654,7 @@ impl FilterActivity {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
-    /// Messages that satisfy the condition are passed to the next activity. </p>
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
     pub fn filter(&self) -> std::option::Option<&str> {
         self.filter.as_deref()
     }
@@ -708,14 +693,12 @@ pub mod filter_activity {
             self.name = input;
             self
         }
-        /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
-        /// Messages that satisfy the condition are passed to the next activity. </p>
+        /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
         pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter = Some(input.into());
             self
         }
-        /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
-        /// Messages that satisfy the condition are passed to the next activity. </p>
+        /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
@@ -747,8 +730,7 @@ impl FilterActivity {
     }
 }
 
-/// <p>Used to create a new message using only the specified attributes from the original
-/// message.</p>
+/// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectAttributesActivity {
@@ -956,11 +938,8 @@ impl RemoveAttributesActivity {
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
-    /// a new attribute.</p>
-    /// <note>
-    /// <p>The existing attributes remain in the message, so if you want to remove the originals,
-    /// use <code>RemoveAttributeActivity</code>.</p>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
+    /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -972,11 +951,8 @@ impl AddAttributesActivity {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
-    /// a new attribute.</p>
-    /// <note>
-    /// <p>The existing attributes remain in the message, so if you want to remove the originals,
-    /// use <code>RemoveAttributeActivity</code>.</p>
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
+    /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
     pub fn attributes(
         &self,
@@ -1025,11 +1001,8 @@ pub mod add_attributes_activity {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
-        /// a new attribute.</p>
-        /// <note>
-        /// <p>The existing attributes remain in the message, so if you want to remove the originals,
-        /// use <code>RemoveAttributeActivity</code>.</p>
+        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
+        /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
         /// </note>
         pub fn attributes(
             mut self,
@@ -1041,11 +1014,8 @@ pub mod add_attributes_activity {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
-        /// a new attribute.</p>
-        /// <note>
-        /// <p>The existing attributes remain in the message, so if you want to remove the originals,
-        /// use <code>RemoveAttributeActivity</code>.</p>
+        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
+        /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
         /// </note>
         pub fn set_attributes(
             mut self,
@@ -1168,8 +1138,7 @@ pub struct LambdaActivity {
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub lambda_name: std::option::Option<std::string::String>,
     /// <p>The number of messages passed to the Lambda function for processing.</p>
-    /// <p>The Lambda function must be able to process all of these messages within five minutes,
-    /// which is the maximum timeout duration for Lambda functions.</p>
+    /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub batch_size: std::option::Option<i32>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
@@ -1184,8 +1153,7 @@ impl LambdaActivity {
         self.lambda_name.as_deref()
     }
     /// <p>The number of messages passed to the Lambda function for processing.</p>
-    /// <p>The Lambda function must be able to process all of these messages within five minutes,
-    /// which is the maximum timeout duration for Lambda functions.</p>
+    /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
@@ -1237,15 +1205,13 @@ pub mod lambda_activity {
             self
         }
         /// <p>The number of messages passed to the Lambda function for processing.</p>
-        /// <p>The Lambda function must be able to process all of these messages within five minutes,
-        /// which is the maximum timeout duration for Lambda functions.</p>
+        /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
         /// <p>The number of messages passed to the Lambda function for processing.</p>
-        /// <p>The Lambda function must be able to process all of these messages within five minutes,
-        /// which is the maximum timeout duration for Lambda functions.</p>
+        /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
@@ -1370,7 +1336,7 @@ impl ChannelActivity {
     }
 }
 
-/// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+/// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
 /// <p>The default file format is JSON. You can specify only one format.</p>
 /// <p>You can't change the file format after you create the data store.</p>
 #[non_exhaustive]
@@ -1515,14 +1481,12 @@ impl ParquetConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
-    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
-    /// types.</p>
+    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
 }
 impl SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
-    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
-    /// types.</p>
+    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
     pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
         self.columns.as_deref()
     }
@@ -1548,8 +1512,7 @@ pub mod schema_definition {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>Specifies one or more columns that store your data.</p>
-        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
-        /// types.</p>
+        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
         pub fn columns(mut self, input: crate::model::Column) -> Self {
             let mut v = self.columns.unwrap_or_default();
             v.push(input);
@@ -1557,8 +1520,7 @@ pub mod schema_definition {
             self
         }
         /// <p>Specifies one or more columns that store your data.</p>
-        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
-        /// types.</p>
+        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
         pub fn set_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1587,8 +1549,7 @@ impl SchemaDefinition {
 pub struct Column {
     /// <p>The name of the column.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-    /// in the <i>Glue Developer Guide</i>.</p>
+    /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Column {
@@ -1596,8 +1557,7 @@ impl Column {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-    /// in the <i>Glue Developer Guide</i>.</p>
+    /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -1630,14 +1590,12 @@ pub mod column {
             self.name = input;
             self
         }
-        /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-        /// in the <i>Glue Developer Guide</i>.</p>
+        /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-        /// in the <i>Glue Developer Guide</i>.</p>
+        /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1692,11 +1650,11 @@ impl JsonConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DatastoreStorage {
-    /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
+    /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     CustomerManagedS3(crate::model::CustomerManagedDatastoreS3Storage),
-    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     IotSiteWiseMultiLayerStorage(crate::model::DatastoreIotSiteWiseMultiLayerStorage),
-    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     ServiceManagedS3(crate::model::ServiceManagedDatastoreS3Storage),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1760,7 +1718,7 @@ impl DatastoreStorage {
     }
 }
 
-/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreIotSiteWiseMultiLayerStorage {
@@ -1827,7 +1785,7 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
     }
 }
 
-/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
@@ -1900,7 +1858,7 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     }
 }
 
-/// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
+/// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedDatastoreS3Storage {
@@ -1992,7 +1950,7 @@ impl CustomerManagedDatastoreS3Storage {
     }
 }
 
-/// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
+/// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedDatastoreS3Storage {}
@@ -2028,8 +1986,7 @@ impl ServiceManagedDatastoreS3Storage {
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
     pub unlimited: bool,
-    /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
-    /// false.</p>
+    /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub number_of_days: std::option::Option<i32>,
 }
 impl RetentionPeriod {
@@ -2037,8 +1994,7 @@ impl RetentionPeriod {
     pub fn unlimited(&self) -> bool {
         self.unlimited
     }
-    /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
-    /// false.</p>
+    /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub fn number_of_days(&self) -> std::option::Option<i32> {
         self.number_of_days
     }
@@ -2071,14 +2027,12 @@ pub mod retention_period {
             self.unlimited = input;
             self
         }
-        /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
-        /// false.</p>
+        /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
         pub fn number_of_days(mut self, input: i32) -> Self {
             self.number_of_days = Some(input);
             self
         }
-        /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
-        /// false.</p>
+        /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
         pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_days = input;
             self
@@ -2099,8 +2053,7 @@ impl RetentionPeriod {
     }
 }
 
-/// <p>A structure that contains the name and configuration information of a late data
-/// rule.</p>
+/// <p>A structure that contains the name and configuration information of a late data rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LateDataRule {
@@ -2249,32 +2202,18 @@ impl LateDataRuleConfiguration {
     }
 }
 
-/// <p>A structure that contains the configuration information of a delta time session
-/// window.</p>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">
-/// <code>DeltaTime</code>
-/// </a> specifies a time interval. You can use
-/// <code>DeltaTime</code> to create dataset contents with data that has arrived in the data
-/// store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating
-/// a SQL dataset with a delta window (CLI)</a> in the
-/// <i>IoT Analytics User Guide</i>.</p>
+/// <p>A structure that contains the configuration information of a delta time session window.</p>
+/// <p> <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaTimeSessionWindowConfiguration {
-    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
-    /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
-    /// notifications to Amazon CloudWatch Events at one time.</p>
-    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
-    /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
+    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
     pub timeout_in_minutes: std::option::Option<i32>,
 }
 impl DeltaTimeSessionWindowConfiguration {
-    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
-    /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
-    /// notifications to Amazon CloudWatch Events at one time.</p>
-    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
-    /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
+    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
     pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.timeout_in_minutes
     }
@@ -2295,20 +2234,14 @@ pub mod delta_time_session_window_configuration {
         pub(crate) timeout_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
-        /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
-        /// notifications to Amazon CloudWatch Events at one time.</p>
-        /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
-        /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
+        /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
             self.timeout_in_minutes = Some(input);
             self
         }
-        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
-        /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
-        /// notifications to Amazon CloudWatch Events at one time.</p>
-        /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
-        /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
+        /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_minutes = input;
             self
@@ -2334,8 +2267,7 @@ impl DeltaTimeSessionWindowConfiguration {
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub unlimited: bool,
-    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
-    /// be <code>false</code>.</p>
+    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub max_versions: std::option::Option<i32>,
 }
 impl VersioningConfiguration {
@@ -2343,8 +2275,7 @@ impl VersioningConfiguration {
     pub fn unlimited(&self) -> bool {
         self.unlimited
     }
-    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
-    /// be <code>false</code>.</p>
+    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn max_versions(&self) -> std::option::Option<i32> {
         self.max_versions
     }
@@ -2377,14 +2308,12 @@ pub mod versioning_configuration {
             self.unlimited = input;
             self
         }
-        /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
-        /// be <code>false</code>.</p>
+        /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
         pub fn max_versions(mut self, input: i32) -> Self {
             self.max_versions = Some(input);
             self
         }
-        /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
-        /// be <code>false</code>.</p>
+        /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
         pub fn set_max_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.max_versions = input;
             self
@@ -2405,8 +2334,7 @@ impl VersioningConfiguration {
     }
 }
 
-/// <p>When dataset contents are created, they are delivered to destination specified
-/// here.</p>
+/// <p>When dataset contents are created, they are delivered to destination specified here.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentDeliveryRule {
@@ -2592,38 +2520,20 @@ impl DatasetContentDeliveryDestination {
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
-    /// unique identifier. Each object has exactly one key.</p>
+    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
-    /// query run.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
-    /// dataset content.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
-    /// content.</p>
-    /// </li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file:
-    /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
-    /// get duplicate keys. For example, you might have two dataset contents with the same
-    /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
-    /// dataset content overwrites the other. </p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
-    /// and load (ETL) service.</p>
+    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
     pub glue_configuration: std::option::Option<crate::model::GlueConfiguration>,
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfiguration {
@@ -2631,42 +2541,24 @@ impl S3DestinationConfiguration {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
-    /// unique identifier. Each object has exactly one key.</p>
+    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
-    /// query run.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
-    /// dataset content.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
-    /// content.</p>
-    /// </li>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
     /// </ul>
-    /// <p>The following example creates a unique key for a CSV file:
-    /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
-    /// get duplicate keys. For example, you might have two dataset contents with the same
-    /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
-    /// dataset content overwrites the other. </p>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
-    /// and load (ETL) service.</p>
+    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
     pub fn glue_configuration(&self) -> std::option::Option<&crate::model::GlueConfiguration> {
         self.glue_configuration.as_ref()
     }
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2703,74 +2595,40 @@ pub mod s3_destination_configuration {
             self.bucket = input;
             self
         }
-        /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
-        /// unique identifier. Each object has exactly one key.</p>
+        /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
         /// <p>You can create a unique key with the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
-        /// query run.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
-        /// dataset content.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
-        /// content.</p>
-        /// </li>
+        /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+        /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+        /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
         /// </ul>
-        /// <p>The following example creates a unique key for a CSV file:
-        /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
-        /// get duplicate keys. For example, you might have two dataset contents with the same
-        /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
-        /// dataset content overwrites the other. </p>
+        /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+        /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
         /// </note>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
-        /// unique identifier. Each object has exactly one key.</p>
+        /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
         /// <p>You can create a unique key with the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
-        /// query run.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
-        /// dataset content.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
-        /// content.</p>
-        /// </li>
+        /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+        /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+        /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
         /// </ul>
-        /// <p>The following example creates a unique key for a CSV file:
-        /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
-        /// get duplicate keys. For example, you might have two dataset contents with the same
-        /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
-        /// dataset content overwrites the other. </p>
+        /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+        /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
         /// </note>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
-        /// and load (ETL) service.</p>
+        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
         pub fn glue_configuration(mut self, input: crate::model::GlueConfiguration) -> Self {
             self.glue_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
-        /// and load (ETL) service.</p>
+        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
         pub fn set_glue_configuration(
             mut self,
             input: std::option::Option<crate::model::GlueConfiguration>,
@@ -2778,14 +2636,12 @@ pub mod s3_destination_configuration {
             self.glue_configuration = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2808,28 +2664,21 @@ impl S3DestinationConfiguration {
     }
 }
 
-/// <p>Configuration information for coordination with Glue, a fully managed extract, transform
-/// and load (ETL) service.</p>
+/// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueConfiguration {
-    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
-    /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
-    /// sources and targets.</p>
+    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
-    /// Glue Data Catalog database contains metadata tables.</p>
+    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
 impl GlueConfiguration {
-    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
-    /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
-    /// sources and targets.</p>
+    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
-    /// Glue Data Catalog database contains metadata tables.</p>
+    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -2852,28 +2701,22 @@ pub mod glue_configuration {
         pub(crate) database_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
-        /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
-        /// sources and targets.</p>
+        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
-        /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
-        /// sources and targets.</p>
+        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
-        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
-        /// Glue Data Catalog database contains metadata tables.</p>
+        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
-        /// Glue Data Catalog database contains metadata tables.</p>
+        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2903,8 +2746,7 @@ impl GlueConfiguration {
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     pub input_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
-    /// input.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotEventsDestinationConfiguration {
@@ -2912,8 +2754,7 @@ impl IotEventsDestinationConfiguration {
     pub fn input_name(&self) -> std::option::Option<&str> {
         self.input_name.as_deref()
     }
-    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
-    /// input.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2946,14 +2787,12 @@ pub mod iot_events_destination_configuration {
             self.input_name = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
-        /// input.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
-        /// input.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2974,15 +2813,13 @@ impl IotEventsDestinationConfiguration {
     }
 }
 
-/// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically
-/// updated.</p>
+/// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
     pub schedule: std::option::Option<crate::model::Schedule>,
-    /// <p>The dataset whose content creation triggers the creation of this dataset's
-    /// contents.</p>
+    /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub dataset: std::option::Option<crate::model::TriggeringDataset>,
 }
 impl DatasetTrigger {
@@ -2990,8 +2827,7 @@ impl DatasetTrigger {
     pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
         self.schedule.as_ref()
     }
-    /// <p>The dataset whose content creation triggers the creation of this dataset's
-    /// contents.</p>
+    /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub fn dataset(&self) -> std::option::Option<&crate::model::TriggeringDataset> {
         self.dataset.as_ref()
     }
@@ -3024,14 +2860,12 @@ pub mod dataset_trigger {
             self.schedule = input;
             self
         }
-        /// <p>The dataset whose content creation triggers the creation of this dataset's
-        /// contents.</p>
+        /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
         pub fn dataset(mut self, input: crate::model::TriggeringDataset) -> Self {
             self.dataset = Some(input);
             self
         }
-        /// <p>The dataset whose content creation triggers the creation of this dataset's
-        /// contents.</p>
+        /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
         pub fn set_dataset(
             mut self,
             input: std::option::Option<crate::model::TriggeringDataset>,
@@ -3055,18 +2889,15 @@ impl DatasetTrigger {
     }
 }
 
-/// <p>Information about the dataset whose content generation triggers the new dataset content
-/// generation.</p>
+/// <p>Information about the dataset whose content generation triggers the new dataset content generation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggeringDataset {
-    /// <p>The name of the dataset whose content generation triggers the new dataset content
-    /// generation.</p>
+    /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl TriggeringDataset {
-    /// <p>The name of the dataset whose content generation triggers the new dataset content
-    /// generation.</p>
+    /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3087,14 +2918,12 @@ pub mod triggering_dataset {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dataset whose content generation triggers the new dataset content
-        /// generation.</p>
+        /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the dataset whose content generation triggers the new dataset content
-        /// generation.</p>
+        /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3116,15 +2945,11 @@ impl TriggeringDataset {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schedule {
-    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-    /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-    /// Guide</i>.</p>
+    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
 }
 impl Schedule {
-    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-    /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-    /// Guide</i>.</p>
+    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
@@ -3145,16 +2970,12 @@ pub mod schedule {
         pub(crate) expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-        /// Guide</i>.</p>
+        /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
-        /// Guide</i>.</p>
+        /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -3174,19 +2995,15 @@ impl Schedule {
     }
 }
 
-/// <p>A <code>DatasetAction</code> object that specifies how dataset contents are automatically
-/// created.</p>
+/// <p>A <code>DatasetAction</code> object that specifies how dataset contents are automatically created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetAction {
     /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
     pub action_name: std::option::Option<std::string::String>,
-    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-    /// create dataset contents.</p>
+    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
     pub query_action: std::option::Option<crate::model::SqlQueryDatasetAction>,
-    /// <p>Information that allows the system to run a containerized application to create the
-    /// dataset contents. The application must be in a Docker container along with any required
-    /// support libraries.</p>
+    /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
     pub container_action: std::option::Option<crate::model::ContainerDatasetAction>,
 }
 impl DatasetAction {
@@ -3194,14 +3011,11 @@ impl DatasetAction {
     pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
-    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-    /// create dataset contents.</p>
+    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
     pub fn query_action(&self) -> std::option::Option<&crate::model::SqlQueryDatasetAction> {
         self.query_action.as_ref()
     }
-    /// <p>Information that allows the system to run a containerized application to create the
-    /// dataset contents. The application must be in a Docker container along with any required
-    /// support libraries.</p>
+    /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
     pub fn container_action(&self) -> std::option::Option<&crate::model::ContainerDatasetAction> {
         self.container_action.as_ref()
     }
@@ -3236,14 +3050,12 @@ pub mod dataset_action {
             self.action_name = input;
             self
         }
-        /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-        /// create dataset contents.</p>
+        /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
         pub fn query_action(mut self, input: crate::model::SqlQueryDatasetAction) -> Self {
             self.query_action = Some(input);
             self
         }
-        /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-        /// create dataset contents.</p>
+        /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
         pub fn set_query_action(
             mut self,
             input: std::option::Option<crate::model::SqlQueryDatasetAction>,
@@ -3251,16 +3063,12 @@ pub mod dataset_action {
             self.query_action = input;
             self
         }
-        /// <p>Information that allows the system to run a containerized application to create the
-        /// dataset contents. The application must be in a Docker container along with any required
-        /// support libraries.</p>
+        /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
         pub fn container_action(mut self, input: crate::model::ContainerDatasetAction) -> Self {
             self.container_action = Some(input);
             self
         }
-        /// <p>Information that allows the system to run a containerized application to create the
-        /// dataset contents. The application must be in a Docker container along with any required
-        /// support libraries.</p>
+        /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
         pub fn set_container_action(
             mut self,
             input: std::option::Option<crate::model::ContainerDatasetAction>,
@@ -3285,35 +3093,25 @@ impl DatasetAction {
     }
 }
 
-/// <p>Information required to run the <code>containerAction</code> to produce dataset
-/// contents.</p>
+/// <p>Information required to run the <code>containerAction</code> to produce dataset contents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDatasetAction {
-    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
-    /// application and required support libraries and is used to generate dataset contents.</p>
+    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     pub image: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that gives permission to the system to access required resources to
-    /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
-    /// dataset contents that are the input to the containerized application.</p>
+    /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
     pub resource_configuration: std::option::Option<crate::model::ResourceConfiguration>,
-    /// <p>The values of variables used in the context of the execution of the containerized
-    /// application (basically, parameters passed to the application). Each variable must have a name
-    /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
-    /// or <code>outputFileUriValue</code>.</p>
+    /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
 }
 impl ContainerDatasetAction {
-    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
-    /// application and required support libraries and is used to generate dataset contents.</p>
+    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
-    /// <p>The ARN of the role that gives permission to the system to access required resources to
-    /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
-    /// dataset contents that are the input to the containerized application.</p>
+    /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
@@ -3323,10 +3121,7 @@ impl ContainerDatasetAction {
     ) -> std::option::Option<&crate::model::ResourceConfiguration> {
         self.resource_configuration.as_ref()
     }
-    /// <p>The values of variables used in the context of the execution of the containerized
-    /// application (basically, parameters passed to the application). Each variable must have a name
-    /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
-    /// or <code>outputFileUriValue</code>.</p>
+    /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
     pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
         self.variables.as_deref()
     }
@@ -3353,28 +3148,22 @@ pub mod container_dataset_action {
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
     }
     impl Builder {
-        /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
-        /// application and required support libraries and is used to generate dataset contents.</p>
+        /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
         }
-        /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
-        /// application and required support libraries and is used to generate dataset contents.</p>
+        /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
         }
-        /// <p>The ARN of the role that gives permission to the system to access required resources to
-        /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
-        /// dataset contents that are the input to the containerized application.</p>
+        /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that gives permission to the system to access required resources to
-        /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
-        /// dataset contents that are the input to the containerized application.</p>
+        /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3402,20 +3191,14 @@ pub mod container_dataset_action {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>The values of variables used in the context of the execution of the containerized
-        /// application (basically, parameters passed to the application). Each variable must have a name
-        /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
-        /// or <code>outputFileUriValue</code>.</p>
+        /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
         pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
             v.push(input);
             self.variables = Some(v);
             self
         }
-        /// <p>The values of variables used in the context of the execution of the containerized
-        /// application (basically, parameters passed to the application). Each variable must have a name
-        /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
-        /// or <code>outputFileUriValue</code>.</p>
+        /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -3441,9 +3224,7 @@ impl ContainerDatasetAction {
     }
 }
 
-/// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each
-/// variable must have a name and a value given by one of <code>stringValue</code>,
-/// <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
+/// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variable {
@@ -3593,13 +3374,11 @@ impl Variable {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputFileUriValue {
-    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
-    /// S3 bucket.</p>
+    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     pub file_name: std::option::Option<std::string::String>,
 }
 impl OutputFileUriValue {
-    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
-    /// S3 bucket.</p>
+    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
     }
@@ -3620,14 +3399,12 @@ pub mod output_file_uri_value {
         pub(crate) file_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
-        /// S3 bucket.</p>
+        /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
         pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_name = Some(input.into());
             self
         }
-        /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
-        /// S3 bucket.</p>
+        /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
             self
@@ -3651,13 +3428,11 @@ impl OutputFileUriValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentVersionValue {
-    /// <p>The name of the dataset whose latest contents are used as input to the notebook or
-    /// application.</p>
+    /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DatasetContentVersionValue {
-    /// <p>The name of the dataset whose latest contents are used as input to the notebook or
-    /// application.</p>
+    /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -3678,14 +3453,12 @@ pub mod dataset_content_version_value {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dataset whose latest contents are used as input to the notebook or
-        /// application.</p>
+        /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// <p>The name of the dataset whose latest contents are used as input to the notebook or
-        /// application.</p>
+        /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -3709,23 +3482,17 @@ impl DatasetContentVersionValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConfiguration {
-    /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
-    /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
-    /// memory=32 GiB).</p>
+    /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
-    /// <p>The size, in GB, of the persistent storage available to the resource instance used to
-    /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub volume_size_in_gb: i32,
 }
 impl ResourceConfiguration {
-    /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
-    /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
-    /// memory=32 GiB).</p>
+    /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
-    /// <p>The size, in GB, of the persistent storage available to the resource instance used to
-    /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub fn volume_size_in_gb(&self) -> i32 {
         self.volume_size_in_gb
     }
@@ -3748,16 +3515,12 @@ pub mod resource_configuration {
         pub(crate) volume_size_in_gb: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
-        /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
-        /// memory=32 GiB).</p>
+        /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
             self.compute_type = Some(input);
             self
         }
-        /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
-        /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
-        /// memory=32 GiB).</p>
+        /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
         pub fn set_compute_type(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -3765,14 +3528,12 @@ pub mod resource_configuration {
             self.compute_type = input;
             self
         }
-        /// <p>The size, in GB, of the persistent storage available to the resource instance used to
-        /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
+        /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
             self.volume_size_in_gb = Some(input);
             self
         }
-        /// <p>The size, in GB, of the persistent storage available to the resource instance used to
-        /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
+        /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size_in_gb = input;
             self
@@ -3930,18 +3691,15 @@ impl SqlQueryDatasetAction {
     }
 }
 
-/// <p>Information that is used to filter message data, to segregate it according to the
-/// timeframe in which it arrives.</p>
+/// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryFilter {
-    /// <p>Used to limit data to that which has arrived since the last execution of the
-    /// action.</p>
+    /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub delta_time: std::option::Option<crate::model::DeltaTime>,
 }
 impl QueryFilter {
-    /// <p>Used to limit data to that which has arrived since the last execution of the
-    /// action.</p>
+    /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub fn delta_time(&self) -> std::option::Option<&crate::model::DeltaTime> {
         self.delta_time.as_ref()
     }
@@ -3962,14 +3720,12 @@ pub mod query_filter {
         pub(crate) delta_time: std::option::Option<crate::model::DeltaTime>,
     }
     impl Builder {
-        /// <p>Used to limit data to that which has arrived since the last execution of the
-        /// action.</p>
+        /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
         pub fn delta_time(mut self, input: crate::model::DeltaTime) -> Self {
             self.delta_time = Some(input);
             self
         }
-        /// <p>Used to limit data to that which has arrived since the last execution of the
-        /// action.</p>
+        /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
         pub fn set_delta_time(
             mut self,
             input: std::option::Option<crate::model::DeltaTime>,
@@ -3992,38 +3748,21 @@ impl QueryFilter {
     }
 }
 
-/// <p>Used to limit data to that which has arrived since the last execution of the
-/// action.</p>
+/// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaTime {
-    /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
-    /// dataset contents using message data from a specified timeframe, some message data might still
-    /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
-    /// field to make allowances for the in flight time of your message data, so that data not
-    /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
-    /// message data would be excluded from processing during the next timeframe too, because its
-    /// timestamp places it within the previous timeframe.</p>
+    /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub offset_seconds: std::option::Option<i32>,
-    /// <p>An expression by which the time of the message data might be determined. This can be the
-    /// name of a timestamp field or a SQL expression that is used to derive the time the message data
-    /// was generated.</p>
+    /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub time_expression: std::option::Option<std::string::String>,
 }
 impl DeltaTime {
-    /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
-    /// dataset contents using message data from a specified timeframe, some message data might still
-    /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
-    /// field to make allowances for the in flight time of your message data, so that data not
-    /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
-    /// message data would be excluded from processing during the next timeframe too, because its
-    /// timestamp places it within the previous timeframe.</p>
+    /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub fn offset_seconds(&self) -> std::option::Option<i32> {
         self.offset_seconds
     }
-    /// <p>An expression by which the time of the message data might be determined. This can be the
-    /// name of a timestamp field or a SQL expression that is used to derive the time the message data
-    /// was generated.</p>
+    /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub fn time_expression(&self) -> std::option::Option<&str> {
         self.time_expression.as_deref()
     }
@@ -4046,38 +3785,22 @@ pub mod delta_time {
         pub(crate) time_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
-        /// dataset contents using message data from a specified timeframe, some message data might still
-        /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
-        /// field to make allowances for the in flight time of your message data, so that data not
-        /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
-        /// message data would be excluded from processing during the next timeframe too, because its
-        /// timestamp places it within the previous timeframe.</p>
+        /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
         pub fn offset_seconds(mut self, input: i32) -> Self {
             self.offset_seconds = Some(input);
             self
         }
-        /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
-        /// dataset contents using message data from a specified timeframe, some message data might still
-        /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
-        /// field to make allowances for the in flight time of your message data, so that data not
-        /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
-        /// message data would be excluded from processing during the next timeframe too, because its
-        /// timestamp places it within the previous timeframe.</p>
+        /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
         pub fn set_offset_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.offset_seconds = input;
             self
         }
-        /// <p>An expression by which the time of the message data might be determined. This can be the
-        /// name of a timestamp field or a SQL expression that is used to derive the time the message data
-        /// was generated.</p>
+        /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
         pub fn time_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.time_expression = Some(input.into());
             self
         }
-        /// <p>An expression by which the time of the message data might be determined. This can be the
-        /// name of a timestamp field or a SQL expression that is used to derive the time the message data
-        /// was generated.</p>
+        /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
         pub fn set_time_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4101,31 +3824,23 @@ impl DeltaTime {
     }
 }
 
-/// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>,
-/// <code>customerManagedS3</code> storage. If not specified, the default is
-/// <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
+/// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStorage {
-    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
-    /// of S3 storage after the data store is created.</p>
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     pub service_managed_s3: std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
-    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
-    /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
-    /// of S3 storage after the data store is created.</p>
+    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     pub customer_managed_s3: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
 }
 impl ChannelStorage {
-    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
-    /// of S3 storage after the data store is created.</p>
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn service_managed_s3(
         &self,
     ) -> std::option::Option<&crate::model::ServiceManagedChannelS3Storage> {
         self.service_managed_s3.as_ref()
     }
-    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
-    /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
-    /// of S3 storage after the data store is created.</p>
+    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn customer_managed_s3(
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedChannelS3Storage> {
@@ -4152,8 +3867,7 @@ pub mod channel_storage {
             std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
     }
     impl Builder {
-        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
-        /// of S3 storage after the data store is created.</p>
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
         pub fn service_managed_s3(
             mut self,
             input: crate::model::ServiceManagedChannelS3Storage,
@@ -4161,8 +3875,7 @@ pub mod channel_storage {
             self.service_managed_s3 = Some(input);
             self
         }
-        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
-        /// of S3 storage after the data store is created.</p>
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
         pub fn set_service_managed_s3(
             mut self,
             input: std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
@@ -4170,9 +3883,7 @@ pub mod channel_storage {
             self.service_managed_s3 = input;
             self
         }
-        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
-        /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
-        /// of S3 storage after the data store is created.</p>
+        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
         pub fn customer_managed_s3(
             mut self,
             input: crate::model::CustomerManagedChannelS3Storage,
@@ -4180,9 +3891,7 @@ pub mod channel_storage {
             self.customer_managed_s3 = Some(input);
             self
         }
-        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
-        /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
-        /// of S3 storage after the data store is created.</p>
+        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
         pub fn set_customer_managed_s3(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
@@ -4206,20 +3915,15 @@ impl ChannelStorage {
     }
 }
 
-/// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is
-/// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
-/// of S3 storage after the data store is created.</p>
+/// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-    /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-    /// has exactly one key. The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedChannelS3Storage {
@@ -4227,14 +3931,11 @@ impl CustomerManagedChannelS3Storage {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-    /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-    /// has exactly one key. The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -4269,28 +3970,22 @@ pub mod customer_managed_channel_s3_storage {
             self.bucket = input;
             self
         }
-        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-        /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-        /// has exactly one key. The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_prefix = Some(input.into());
             self
         }
-        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-        /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-        /// has exactly one key. The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4312,8 +4007,7 @@ impl CustomerManagedChannelS3Storage {
     }
 }
 
-/// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
-/// of S3 storage after the data store is created.</p>
+/// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedChannelS3Storage {}
@@ -4420,21 +4114,15 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessages {
-    /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
-    /// channel messages.</p>
+    /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
-    /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
-    /// </p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ChannelMessages {
-    /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
-    /// channel messages.</p>
+    /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
-    /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
-    /// </p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
     pub fn s3_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_paths.as_deref()
     }
@@ -4459,24 +4147,18 @@ pub mod channel_messages {
         ///
         /// To override the contents of this collection use [`set_s3_paths`](Self::set_s3_paths).
         ///
-        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
-        /// channel messages.</p>
+        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
         /// <p>You must use the full path for the key.</p>
-        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
-        /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
-        /// </p>
+        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
         pub fn s3_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_paths.unwrap_or_default();
             v.push(input.into());
             self.s3_paths = Some(v);
             self
         }
-        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
-        /// channel messages.</p>
+        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
         /// <p>You must use the full path for the key.</p>
-        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
-        /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
-        /// </p>
+        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
         pub fn set_s3_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5218,8 +4900,7 @@ impl DatastorePartitions {
     }
 }
 
-/// <p> A single dimension to partition a data store. The dimension must be an
-/// <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
+/// <p> A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastorePartition {
@@ -5304,8 +4985,7 @@ impl DatastorePartition {
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
-    /// since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub timestamp_format: std::option::Option<std::string::String>,
 }
 impl TimestampPartition {
@@ -5313,8 +4993,7 @@ impl TimestampPartition {
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
-    /// since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
@@ -5350,14 +5029,12 @@ pub mod timestamp_partition {
             self.attribute_name = input;
             self
         }
-        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
-        /// since epoch (January 1, 1970 at midnight UTC time). </p>
+        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_format = Some(input.into());
             self
         }
-        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
-        /// since epoch (January 1, 1970 at midnight UTC time). </p>
+        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5956,9 +5633,7 @@ pub struct DatasetSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
-    /// interval or when another dataset is populated. The list of triggers can be empty or contain up
-    /// to five <code>DataSetTrigger</code> objects</p>
+    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
@@ -5980,9 +5655,7 @@ impl DatasetSummary {
     pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
-    /// interval or when another dataset is populated. The list of triggers can be empty or contain up
-    /// to five <code>DataSetTrigger</code> objects</p>
+    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
     pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
         self.triggers.as_deref()
     }
@@ -6070,18 +5743,14 @@ pub mod dataset_summary {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
-        /// interval or when another dataset is populated. The list of triggers can be empty or contain up
-        /// to five <code>DataSetTrigger</code> objects</p>
+        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
         pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
             v.push(input);
             self.triggers = Some(v);
             self
         }
-        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
-        /// interval or when another dataset is populated. The list of triggers can be empty or contain up
-        /// to five <code>DataSetTrigger</code> objects</p>
+        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -6464,15 +6133,13 @@ impl DatasetContentSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentStatus {
-    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
-    /// FAILED.</p>
+    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     pub state: std::option::Option<crate::model::DatasetContentState>,
     /// <p>The reason the dataset contents are in this state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl DatasetContentStatus {
-    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
-    /// FAILED.</p>
+    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::DatasetContentState> {
         self.state.as_ref()
     }
@@ -6499,14 +6166,12 @@ pub mod dataset_content_status {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
-        /// FAILED.</p>
+        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
         pub fn state(mut self, input: crate::model::DatasetContentState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
-        /// FAILED.</p>
+        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DatasetContentState>,
@@ -6929,12 +6594,9 @@ impl ChannelStorageSummary {
 pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-    /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
-    /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedChannelS3StorageSummary {
@@ -6942,14 +6604,11 @@ impl CustomerManagedChannelS3StorageSummary {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-    /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
-    /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must end with a forward slash (/).</p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
-    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-    /// resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -6984,28 +6643,22 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.bucket = input;
             self
         }
-        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-        /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
-        /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_prefix = Some(input.into());
             self
         }
-        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
-        /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
-        /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
-        /// resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -7450,22 +7103,27 @@ pub struct Datastore {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of a data store:</p>
     /// <dl>
-    /// <dt>CREATING</dt>
+    /// <dt>
+    /// CREATING
+    /// </dt>
     /// <dd>
     /// <p>The data store is being created.</p>
     /// </dd>
-    /// <dt>ACTIVE</dt>
+    /// <dt>
+    /// ACTIVE
+    /// </dt>
     /// <dd>
     /// <p>The data store has been created and can be used.</p>
     /// </dd>
-    /// <dt>DELETING</dt>
+    /// <dt>
+    /// DELETING
+    /// </dt>
     /// <dd>
     /// <p>The data store is being deleted.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::DatastoreStatus>,
-    /// <p>How long, in days, message data is kept for the data store. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the data store was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7475,7 +7133,7 @@ pub struct Datastore {
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
@@ -7497,15 +7155,21 @@ impl Datastore {
     }
     /// <p>The status of a data store:</p>
     /// <dl>
-    /// <dt>CREATING</dt>
+    /// <dt>
+    /// CREATING
+    /// </dt>
     /// <dd>
     /// <p>The data store is being created.</p>
     /// </dd>
-    /// <dt>ACTIVE</dt>
+    /// <dt>
+    /// ACTIVE
+    /// </dt>
     /// <dd>
     /// <p>The data store has been created and can be used.</p>
     /// </dd>
-    /// <dt>DELETING</dt>
+    /// <dt>
+    /// DELETING
+    /// </dt>
     /// <dd>
     /// <p>The data store is being deleted.</p>
     /// </dd>
@@ -7513,8 +7177,7 @@ impl Datastore {
     pub fn status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
         self.status.as_ref()
     }
-    /// <p>How long, in days, message data is kept for the data store. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -7532,7 +7195,7 @@ impl Datastore {
     pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn file_format_configuration(
@@ -7615,15 +7278,21 @@ pub mod datastore {
         }
         /// <p>The status of a data store:</p>
         /// <dl>
-        /// <dt>CREATING</dt>
+        /// <dt>
+        /// CREATING
+        /// </dt>
         /// <dd>
         /// <p>The data store is being created.</p>
         /// </dd>
-        /// <dt>ACTIVE</dt>
+        /// <dt>
+        /// ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>The data store has been created and can be used.</p>
         /// </dd>
-        /// <dt>DELETING</dt>
+        /// <dt>
+        /// DELETING
+        /// </dt>
         /// <dd>
         /// <p>The data store is being deleted.</p>
         /// </dd>
@@ -7634,15 +7303,21 @@ pub mod datastore {
         }
         /// <p>The status of a data store:</p>
         /// <dl>
-        /// <dt>CREATING</dt>
+        /// <dt>
+        /// CREATING
+        /// </dt>
         /// <dd>
         /// <p>The data store is being created.</p>
         /// </dd>
-        /// <dt>ACTIVE</dt>
+        /// <dt>
+        /// ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>The data store has been created and can be used.</p>
         /// </dd>
-        /// <dt>DELETING</dt>
+        /// <dt>
+        /// DELETING
+        /// </dt>
         /// <dd>
         /// <p>The data store is being deleted.</p>
         /// </dd>
@@ -7654,14 +7329,12 @@ pub mod datastore {
             self.status = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -7712,7 +7385,7 @@ pub mod datastore {
             self.last_message_arrival_time = input;
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -7722,7 +7395,7 @@ pub mod datastore {
             self.file_format_configuration = Some(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -7777,14 +7450,11 @@ pub struct Dataset {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
-    /// contents.</p>
+    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
-    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
-    /// updated.</p>
+    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
-    /// <p>When dataset contents are created they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
     /// <p>The status of the dataset.</p>
@@ -7795,12 +7465,7 @@ pub struct Dataset {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
@@ -7814,18 +7479,15 @@ impl Dataset {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
-    /// contents.</p>
+    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
         self.actions.as_deref()
     }
-    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
-    /// updated.</p>
+    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
     pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
         self.triggers.as_deref()
     }
-    /// <p>When dataset contents are created they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
     pub fn content_delivery_rules(
         &self,
     ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
@@ -7847,12 +7509,7 @@ impl Dataset {
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn versioning_configuration(
         &self,
     ) -> std::option::Option<&crate::model::VersioningConfiguration> {
@@ -7925,16 +7582,14 @@ pub mod dataset {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
-        /// contents.</p>
+        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
         pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
-        /// contents.</p>
+        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
@@ -7946,16 +7601,14 @@ pub mod dataset {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
-        /// updated.</p>
+        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
         pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
             v.push(input);
             self.triggers = Some(v);
             self
         }
-        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
-        /// updated.</p>
+        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -7967,8 +7620,7 @@ pub mod dataset {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
             input: crate::model::DatasetContentDeliveryRule,
@@ -7978,8 +7630,7 @@ pub mod dataset {
             self.content_delivery_rules = Some(v);
             self
         }
-        /// <p>When dataset contents are created they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -8039,12 +7690,7 @@ pub mod dataset {
             self.retention_period = input;
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -8052,12 +7698,7 @@ pub mod dataset {
             self.versioning_configuration = Some(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -8164,17 +7805,13 @@ impl ChannelStatistics {
     }
 }
 
-/// <p>A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages
-/// before publishing the data to a pipeline.</p>
+/// <p>A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>The name of the channel.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>The ARN of the channel.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -8196,10 +7833,7 @@ impl Channel {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
         self.storage.as_ref()
     }
@@ -8270,18 +7904,12 @@ pub mod channel {
             self.name = input;
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.storage = Some(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -8394,8 +8022,7 @@ impl Channel {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageErrorEntry {
-    /// <p>The ID of the message that caused the error. See the value corresponding to the
-    /// <code>messageId</code> key in the message object.</p>
+    /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The code associated with the error.</p>
     pub error_code: std::option::Option<std::string::String>,
@@ -8403,8 +8030,7 @@ pub struct BatchPutMessageErrorEntry {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutMessageErrorEntry {
-    /// <p>The ID of the message that caused the error. See the value corresponding to the
-    /// <code>messageId</code> key in the message object.</p>
+    /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -8437,14 +8063,12 @@ pub mod batch_put_message_error_entry {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the message that caused the error. See the value corresponding to the
-        /// <code>messageId</code> key in the message object.</p>
+        /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The ID of the message that caused the error. See the value corresponding to the
-        /// <code>messageId</code> key in the message object.</p>
+        /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -8493,23 +8117,17 @@ impl BatchPutMessageErrorEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
-    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
-    /// within each batch sent.</p>
+    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     pub message_id: std::option::Option<std::string::String>,
-    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
-    /// representing binary data, in which case you must decode it by means of a pipeline
-    /// activity.</p>
+    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Message {
-    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
-    /// within each batch sent.</p>
+    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
-    /// representing binary data, in which case you must decode it by means of a pipeline
-    /// activity.</p>
+    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
@@ -8532,28 +8150,22 @@ pub mod message {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
-        /// within each batch sent.</p>
+        /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
-        /// within each batch sent.</p>
+        /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
         }
-        /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
-        /// representing binary data, in which case you must decode it by means of a pipeline
-        /// activity.</p>
+        /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
-        /// representing binary data, in which case you must decode it by means of a pipeline
-        /// activity.</p>
+        /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self

@@ -14,16 +14,14 @@ pub mod batch_get_record_input {
         ///
         /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
         ///
-        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-        /// that have been requested to be retrieved in batch.</p>
+        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
         pub fn identifiers(mut self, input: crate::model::BatchGetRecordIdentifier) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
             v.push(input);
             self.identifiers = Some(v);
             self
         }
-        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-        /// that have been requested to be retrieved in batch.</p>
+        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
         pub fn set_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
@@ -185,8 +183,7 @@ pub mod delete_record_input {
             self.feature_group_name = input;
             self
         }
-        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-        /// string format. </p>
+        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
         pub fn record_identifier_value_as_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -194,8 +191,7 @@ pub mod delete_record_input {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
-        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-        /// string format. </p>
+        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -203,14 +199,12 @@ pub mod delete_record_input {
             self.record_identifier_value_as_string = input;
             self
         }
-        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-        /// used to query data at a certain point in time.</p>
+        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_time = Some(input.into());
             self
         }
-        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-        /// used to query data at a certain point in time.</p>
+        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_time = input;
             self
@@ -394,8 +388,7 @@ pub mod get_record_input {
             self.feature_group_name = input;
             self
         }
-        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-        /// the record in the <code>FeatureGroup</code>. </p>
+        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
         pub fn record_identifier_value_as_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -403,8 +396,7 @@ pub mod get_record_input {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
-        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-        /// the record in the <code>FeatureGroup</code>. </p>
+        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -416,16 +408,14 @@ pub mod get_record_input {
         ///
         /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
         ///
-        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-        /// the Features are returned.</p>
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
         pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.feature_names.unwrap_or_default();
             v.push(input.into());
             self.feature_names = Some(v);
             self
         }
-        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-        /// the Features are returned.</p>
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
         pub fn set_feature_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -613,18 +603,11 @@ pub mod put_record_input {
         ///
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-        /// to update few of the feature values, do the following:</p>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Update the record returned from <code>GetRecord</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>PutRecord</code> to update feature values.</p>
-        /// </li>
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
         /// </ul>
         pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             let mut v = self.record.unwrap_or_default();
@@ -632,18 +615,11 @@ pub mod put_record_input {
             self.record = Some(v);
             self
         }
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-        /// to update few of the feature values, do the following:</p>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Update the record returned from <code>GetRecord</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>PutRecord</code> to update feature values.</p>
-        /// </li>
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
         /// </ul>
         pub fn set_record(
             mut self,
@@ -804,18 +780,11 @@ impl PutRecordInput {
 pub struct PutRecordInput {
     /// <p>The name of the feature group that you want to insert the record into.</p>
     pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-    /// to update few of the feature values, do the following:</p>
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-    /// </li>
-    /// <li>
-    /// <p>Update the record returned from <code>GetRecord</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>PutRecord</code> to update feature values.</p>
-    /// </li>
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
 }
@@ -824,18 +793,11 @@ impl PutRecordInput {
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-    /// to update few of the feature values, do the following:</p>
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-    /// </li>
-    /// <li>
-    /// <p>Update the record returned from <code>GetRecord</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>Use <code>PutRecord</code> to update feature values.</p>
-    /// </li>
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
     pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
         self.record.as_deref()
@@ -856,11 +818,9 @@ impl std::fmt::Debug for PutRecordInput {
 pub struct GetRecordInput {
     /// <p>The name of the feature group in which you want to put the records.</p>
     pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-    /// the record in the <code>FeatureGroup</code>. </p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
-    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-    /// the Features are returned.</p>
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
     pub feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRecordInput {
@@ -868,13 +828,11 @@ impl GetRecordInput {
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-    /// the record in the <code>FeatureGroup</code>. </p>
+    /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
     pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
-    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-    /// the Features are returned.</p>
+    /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
     pub fn feature_names(&self) -> std::option::Option<&[std::string::String]> {
         self.feature_names.as_deref()
     }
@@ -898,11 +856,9 @@ impl std::fmt::Debug for GetRecordInput {
 pub struct DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
     pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-    /// string format. </p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub record_identifier_value_as_string: std::option::Option<std::string::String>,
-    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-    /// used to query data at a certain point in time.</p>
+    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub event_time: std::option::Option<std::string::String>,
 }
 impl DeleteRecordInput {
@@ -910,13 +866,11 @@ impl DeleteRecordInput {
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-    /// string format. </p>
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
-    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-    /// used to query data at a certain point in time.</p>
+    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn event_time(&self) -> std::option::Option<&str> {
         self.event_time.as_deref()
     }
@@ -938,13 +892,11 @@ impl std::fmt::Debug for DeleteRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetRecordInput {
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-    /// that have been requested to be retrieved in batch.</p>
+    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     pub identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInput {
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-    /// that have been requested to be retrieved in batch.</p>
+    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     pub fn identifiers(&self) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
     }

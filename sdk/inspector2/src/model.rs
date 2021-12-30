@@ -135,21 +135,17 @@ impl AsRef<str> for ValidationExceptionReason {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoEnable {
-    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub ec2: std::option::Option<bool>,
-    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub ecr: std::option::Option<bool>,
 }
 impl AutoEnable {
-    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ec2(&self) -> std::option::Option<bool> {
         self.ec2
     }
-    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ecr(&self) -> std::option::Option<bool> {
         self.ecr
     }
@@ -172,26 +168,22 @@ pub mod auto_enable {
         pub(crate) ecr: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn ec2(mut self, input: bool) -> Self {
             self.ec2 = Some(input);
             self
         }
-        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn set_ec2(mut self, input: std::option::Option<bool>) -> Self {
             self.ec2 = input;
             self
         }
-        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn ecr(mut self, input: bool) -> Self {
             self.ecr = Some(input);
             self
         }
-        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn set_ecr(mut self, input: std::option::Option<bool>) -> Self {
             self.ecr = input;
             self
@@ -5501,28 +5493,21 @@ impl AsRef<str> for SortField {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AggregationResponse {
-    /// <p>An object that contains details about an aggregation response based on Amazon Web Services account
-    /// IDs.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon Web Services account IDs.</p>
     AccountAggregation(crate::model::AccountAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon Machine
-    /// Images (AMIs).</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon Machine Images (AMIs).</p>
     AmiAggregation(crate::model::AmiAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon ECR container
-    /// images.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon ECR container images.</p>
     AwsEcrContainerAggregation(crate::model::AwsEcrContainerAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon EC2
-    /// instances.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::model::Ec2InstanceAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on finding types.</p>
     FindingTypeAggregation(crate::model::FindingTypeAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on container image
-    /// layers.</p>
+    /// <p>An object that contains details about an aggregation response based on container image layers.</p>
     ImageLayerAggregation(crate::model::ImageLayerAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on operating system
-    /// package type.</p>
+    /// <p>An object that contains details about an aggregation response based on operating system package type.</p>
     PackageAggregation(crate::model::PackageAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon ECR
-    /// repositories.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon ECR repositories.</p>
     RepositoryAggregation(crate::model::RepositoryAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on finding title.</p>
     TitleAggregation(crate::model::TitleAggregationResponse),
@@ -6986,25 +6971,19 @@ impl AsRef<str> for AggregationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AggregationRequest {
-    /// <p>An object that contains details about an aggregation request based on Amazon Web Services account
-    /// IDs.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon Web Services account IDs.</p>
     AccountAggregation(crate::model::AccountAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon Machine
-    /// Images (AMIs).</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon Machine Images (AMIs).</p>
     AmiAggregation(crate::model::AmiAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon ECR container
-    /// images.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon ECR container images.</p>
     AwsEcrContainerAggregation(crate::model::AwsEcrContainerAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon EC2
-    /// instances.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::model::Ec2InstanceAggregation),
     /// <p>An object that contains details about an aggregation request based on finding types.</p>
     FindingTypeAggregation(crate::model::FindingTypeAggregation),
-    /// <p>An object that contains details about an aggregation request based on container image
-    /// layers.</p>
+    /// <p>An object that contains details about an aggregation request based on container image layers.</p>
     ImageLayerAggregation(crate::model::ImageLayerAggregation),
-    /// <p>An object that contains details about an aggregation request based on operating system
-    /// package type.</p>
+    /// <p>An object that contains details about an aggregation request based on operating system package type.</p>
     PackageAggregation(crate::model::PackageAggregation),
     /// <p>An object that contains details about an aggregation request based on Amazon ECR repositories.</p>
     RepositoryAggregation(crate::model::RepositoryAggregation),
@@ -8233,9 +8212,7 @@ impl AsRef<str> for AggregationFindingType {
 pub struct Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
     pub amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-    /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-    /// <code>ALPINE_LINUX_3_8</code>.</p>
+    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
     pub operating_systems: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -8251,9 +8228,7 @@ impl Ec2InstanceAggregation {
     pub fn amis(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.amis.as_deref()
     }
-    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-    /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-    /// <code>ALPINE_LINUX_3_8</code>.</p>
+    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
     pub fn operating_systems(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.operating_systems.as_deref()
     }
@@ -8324,18 +8299,14 @@ pub mod ec2_instance_aggregation {
         ///
         /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
         ///
-        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-        /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-        /// <code>ALPINE_LINUX_3_8</code>.</p>
+        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
         pub fn operating_systems(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
             v.push(input);
             self.operating_systems = Some(v);
             self
         }
-        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-        /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-        /// <code>ALPINE_LINUX_3_8</code>.</p>
+        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
         pub fn set_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -8935,8 +8906,7 @@ impl AsRef<str> for AmiSortBy {
     }
 }
 
-/// <p>An object that contains details about an aggregation response based on
-/// Amazon Web Services accounts.</p>
+/// <p>An object that contains details about an aggregation response based on Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAggregation {

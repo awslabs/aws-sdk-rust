@@ -55,25 +55,17 @@ impl UpdateSiteRackPhysicalPropertiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteAddressOutput {
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// Information about an address.
-    /// </p>
+    /// <p> Information about an address. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressOutput {
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// Information about an address.
-    /// </p>
+    /// <p> Information about an address. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -96,16 +88,12 @@ pub mod update_site_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.address_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -113,16 +101,12 @@ pub mod update_site_address_output {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// Information about an address.
-        /// </p>
+        /// <p> Information about an address. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// Information about an address.
-        /// </p>
+        /// <p> Information about an address. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -496,17 +480,13 @@ impl ListOutpostsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersOutput {
-    /// <p>
-    /// Information about the orders.
-    /// </p>
+    /// <p> Information about the orders. </p>
     pub orders: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrdersOutput {
-    /// <p>
-    /// Information about the orders.
-    /// </p>
+    /// <p> Information about the orders. </p>
     pub fn orders(&self) -> std::option::Option<&[crate::model::OrderSummary]> {
         self.orders.as_deref()
     }
@@ -537,18 +517,14 @@ pub mod list_orders_output {
         ///
         /// To override the contents of this collection use [`set_orders`](Self::set_orders).
         ///
-        /// <p>
-        /// Information about the orders.
-        /// </p>
+        /// <p> Information about the orders. </p>
         pub fn orders(mut self, input: crate::model::OrderSummary) -> Self {
             let mut v = self.orders.unwrap_or_default();
             v.push(input);
             self.orders = Some(v);
             self
         }
-        /// <p>
-        /// Information about the orders.
-        /// </p>
+        /// <p> Information about the orders. </p>
         pub fn set_orders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
@@ -672,9 +648,7 @@ pub struct GetSiteAddressOutput {
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address you receive. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// Information about the address.
-    /// </p>
+    /// <p> Information about the address. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl GetSiteAddressOutput {
@@ -686,9 +660,7 @@ impl GetSiteAddressOutput {
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// Information about the address.
-    /// </p>
+    /// <p> Information about the address. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -736,16 +708,12 @@ pub mod get_site_address_output {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// Information about the address.
-        /// </p>
+        /// <p> Information about the address. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// Information about the address.
-        /// </p>
+        /// <p> Information about the address. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -827,9 +795,7 @@ pub struct GetOutpostInstanceTypesOutput {
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeItem>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
@@ -843,9 +809,7 @@ impl GetOutpostInstanceTypesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -906,16 +870,12 @@ pub mod get_outpost_instance_types_output {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self

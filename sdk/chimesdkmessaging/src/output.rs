@@ -650,8 +650,7 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
@@ -661,8 +660,7 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
     ) -> std::option::Option<&[crate::model::ChannelModeratedByAppInstanceUserSummary]> {
         self.channels.as_deref()
     }
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -711,14 +709,12 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -834,8 +830,7 @@ impl ListChannelsAssociatedWithChannelFlowOutput {
 pub struct ListChannelsOutput {
     /// <p>The information about each channel.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -843,8 +838,7 @@ impl ListChannelsOutput {
     pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
         self.channels.as_deref()
     }
-    /// <p>The token returned from previous API requests until the number of channels is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -886,14 +880,12 @@ pub mod list_channels_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -920,8 +912,7 @@ impl ListChannelsOutput {
 pub struct ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about and names of each moderator.</p>
     pub channel_moderators:
@@ -932,8 +923,7 @@ impl ListChannelModeratorsOutput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -975,14 +965,12 @@ pub mod list_channel_moderators_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1228,8 +1216,7 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The information for the requested channel memberships.</p>
     pub channel_memberships:
         std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsOutput {
@@ -1243,8 +1230,7 @@ impl ListChannelMembershipsOutput {
     ) -> std::option::Option<&[crate::model::ChannelMembershipSummary]> {
         self.channel_memberships.as_deref()
     }
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1302,14 +1288,12 @@ pub mod list_channel_memberships_output {
             self.channel_memberships = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2615,8 +2599,7 @@ impl CreateChannelFlowOutput {
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-    /// response.</p>
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelBanOutput {
@@ -2624,8 +2607,7 @@ impl CreateChannelBanOutput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-    /// response.</p>
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
         self.member.as_ref()
     }
@@ -2658,14 +2640,12 @@ pub mod create_channel_ban_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-        /// response.</p>
+        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
         pub fn member(mut self, input: crate::model::Identity) -> Self {
             self.member = Some(input);
             self
         }
-        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-        /// response.</p>
+        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
         pub fn set_member(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
             self.member = input;
             self
@@ -2819,8 +2799,7 @@ impl ChannelFlowCallbackOutput {
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
     pub batch_channel_memberships: std::option::Option<crate::model::BatchChannelMemberships>,
-    /// <p>If the action fails for one or more of the memberships in the request, a list of the
-    /// memberships is returned, along with error codes and error messages.</p>
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
 }
 impl BatchCreateChannelMembershipOutput {
@@ -2830,8 +2809,7 @@ impl BatchCreateChannelMembershipOutput {
     ) -> std::option::Option<&crate::model::BatchChannelMemberships> {
         self.batch_channel_memberships.as_ref()
     }
-    /// <p>If the action fails for one or more of the memberships in the request, a list of the
-    /// memberships is returned, along with error codes and error messages.</p>
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&[crate::model::BatchCreateChannelMembershipError]> {
@@ -2878,16 +2856,14 @@ pub mod batch_create_channel_membership_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>If the action fails for one or more of the memberships in the request, a list of the
-        /// memberships is returned, along with error codes and error messages.</p>
+        /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
         pub fn errors(mut self, input: crate::model::BatchCreateChannelMembershipError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>If the action fails for one or more of the memberships in the request, a list of the
-        /// memberships is returned, along with error codes and error messages.</p>
+        /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<

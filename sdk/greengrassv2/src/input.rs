@@ -584,15 +584,13 @@ pub mod create_component_version_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-        /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+        /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
         pub fn inline_recipe(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inline_recipe = Some(input);
             self
         }
-        /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-        /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+        /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
         pub fn set_inline_recipe(
             mut self,
@@ -620,9 +618,7 @@ pub mod create_component_version_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -633,9 +629,7 @@ pub mod create_component_version_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -645,20 +639,12 @@ pub mod create_component_version_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -852,8 +838,7 @@ pub mod create_deployment_input {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
@@ -864,8 +849,7 @@ pub mod create_deployment_input {
             self.components = Some(hash_map);
             self
         }
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -878,8 +862,7 @@ pub mod create_deployment_input {
             self.components = input;
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn iot_job_configuration(
             mut self,
             input: crate::model::DeploymentIoTJobConfiguration,
@@ -887,8 +870,7 @@ pub mod create_deployment_input {
             self.iot_job_configuration = Some(input);
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn set_iot_job_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
@@ -896,14 +878,12 @@ pub mod create_deployment_input {
             self.iot_job_configuration = input;
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn deployment_policies(mut self, input: crate::model::DeploymentPolicies) -> Self {
             self.deployment_policies = Some(input);
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn set_deployment_policies(
             mut self,
             input: std::option::Option<crate::model::DeploymentPolicies>,
@@ -915,9 +895,7 @@ pub mod create_deployment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -928,9 +906,7 @@ pub mod create_deployment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -940,20 +916,12 @@ pub mod create_deployment_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1758,21 +1726,13 @@ pub mod get_component_version_artifact_input {
             self
         }
         /// <p>The name of the artifact.</p>
-        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-        /// download the component recipe, which includes the URI of the artifact. The artifact name is
-        /// the section of the URI after the scheme. For example, in the artifact URI
-        /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-        /// <code>SomeArtifact.zip</code>.</p>
+        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
         pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.artifact_name = Some(input.into());
             self
         }
         /// <p>The name of the artifact.</p>
-        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-        /// download the component recipe, which includes the URI of the artifact. The artifact name is
-        /// the section of the URI after the scheme. For example, in the artifact URI
-        /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-        /// <code>SomeArtifact.zip</code>.</p>
+        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
         pub fn set_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2466,15 +2426,13 @@ pub mod list_components_input {
     }
     impl Builder {
         /// <p>The scope of the components to list.</p>
-        /// <p>Default: <code>PRIVATE</code>
-        /// </p>
+        /// <p>Default: <code>PRIVATE</code> </p>
         pub fn scope(mut self, input: crate::model::ComponentVisibilityScope) -> Self {
             self.scope = Some(input);
             self
         }
         /// <p>The scope of the components to list.</p>
-        /// <p>Default: <code>PRIVATE</code>
-        /// </p>
+        /// <p>Default: <code>PRIVATE</code> </p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<crate::model::ComponentVisibilityScope>,
@@ -2848,14 +2806,12 @@ pub mod list_core_devices_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-        /// list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_group_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-        /// list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
         pub fn set_thing_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2863,35 +2819,19 @@ pub mod list_core_devices_input {
             self.thing_group_arn = input;
             self
         }
-        /// <p>The core device status by which to filter. If you specify this parameter, the list
-        /// includes only core devices that have this status. Choose one of the following options:</p>
+        /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::CoreDeviceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The core device status by which to filter. If you specify this parameter, the list
-        /// includes only core devices that have this status. Choose one of the following options:</p>
+        /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -3089,36 +3029,20 @@ pub mod list_deployments_input {
         }
         /// <p>The filter for the list of deployments. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+        /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
         /// </ul>
-        /// <p>Default: <code>LATEST_ONLY</code>
-        /// </p>
+        /// <p>Default: <code>LATEST_ONLY</code> </p>
         pub fn history_filter(mut self, input: crate::model::DeploymentHistoryFilter) -> Self {
             self.history_filter = Some(input);
             self
         }
         /// <p>The filter for the list of deployments. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+        /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
         /// </ul>
-        /// <p>Default: <code>LATEST_ONLY</code>
-        /// </p>
+        /// <p>Default: <code>LATEST_ONLY</code> </p>
         pub fn set_history_filter(
             mut self,
             input: std::option::Option<crate::model::DeploymentHistoryFilter>,
@@ -4046,9 +3970,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4059,9 +3981,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4436,9 +4356,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4447,9 +4365,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4593,18 +4509,10 @@ pub struct ListDeploymentsInput {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> – The list includes all deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-    /// deployment.</p>
-    /// </li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code>
-    /// </p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub history_filter: std::option::Option<crate::model::DeploymentHistoryFilter>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -4618,18 +4526,10 @@ impl ListDeploymentsInput {
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> – The list includes all deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-    /// deployment.</p>
-    /// </li>
+    /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+    /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
-    /// <p>Default: <code>LATEST_ONLY</code>
-    /// </p>
+    /// <p>Default: <code>LATEST_ONLY</code> </p>
     pub fn history_filter(&self) -> std::option::Option<&crate::model::DeploymentHistoryFilter> {
         self.history_filter.as_ref()
     }
@@ -4657,21 +4557,12 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDevicesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-    /// list includes only core devices that are members of this thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
     pub thing_group_arn: std::option::Option<std::string::String>,
-    /// <p>The core device status by which to filter. If you specify this parameter, the list
-    /// includes only core devices that have this status. Choose one of the following options:</p>
+    /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -4680,23 +4571,14 @@ pub struct ListCoreDevicesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDevicesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-    /// list includes only core devices that are members of this thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
     pub fn thing_group_arn(&self) -> std::option::Option<&str> {
         self.thing_group_arn.as_deref()
     }
-    /// <p>The core device status by which to filter. If you specify this parameter, the list
-    /// includes only core devices that have this status. Choose one of the following options:</p>
+    /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::CoreDeviceStatus> {
         self.status.as_ref()
@@ -4761,8 +4643,7 @@ impl std::fmt::Debug for ListComponentVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code>
-    /// </p>
+    /// <p>Default: <code>PRIVATE</code> </p>
     pub scope: std::option::Option<crate::model::ComponentVisibilityScope>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -4771,8 +4652,7 @@ pub struct ListComponentsInput {
 }
 impl ListComponentsInput {
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code>
-    /// </p>
+    /// <p>Default: <code>PRIVATE</code> </p>
     pub fn scope(&self) -> std::option::Option<&crate::model::ComponentVisibilityScope> {
         self.scope.as_ref()
     }
@@ -4879,11 +4759,7 @@ pub struct GetComponentVersionArtifactInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the artifact.</p>
-    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-    /// download the component recipe, which includes the URI of the artifact. The artifact name is
-    /// the section of the URI after the scheme. For example, in the artifact URI
-    /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-    /// <code>SomeArtifact.zip</code>.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub artifact_name: std::option::Option<std::string::String>,
 }
 impl GetComponentVersionArtifactInput {
@@ -4892,11 +4768,7 @@ impl GetComponentVersionArtifactInput {
         self.arn.as_deref()
     }
     /// <p>The name of the artifact.</p>
-    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-    /// download the component recipe, which includes the URI of the artifact. The artifact name is
-    /// the section of the URI after the scheme. For example, in the artifact URI
-    /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-    /// <code>SomeArtifact.zip</code>.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub fn artifact_name(&self) -> std::option::Option<&str> {
         self.artifact_name.as_deref()
     }
@@ -5009,30 +4881,21 @@ pub struct CreateDeploymentInput {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
     pub deployment_name: std::option::Option<std::string::String>,
-    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-    /// and each key's value is the version and configuration to deploy for that component.</p>
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub components: std::option::Option<
         std::collections::HashMap<
             std::string::String,
             crate::model::ComponentDeploymentSpecification,
         >,
     >,
-    /// <p>The job configuration for the deployment configuration. The job configuration specifies
-    /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub iot_job_configuration: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
-    /// <p>The deployment policies for the deployment. These policies define how the deployment
-    /// updates components and handles failure.</p>
+    /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-    /// idempotent requests for up to 8 hours.</p>
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -5044,8 +4907,7 @@ impl CreateDeploymentInput {
     pub fn deployment_name(&self) -> std::option::Option<&str> {
         self.deployment_name.as_deref()
     }
-    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-    /// and each key's value is the version and configuration to deploy for that component.</p>
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn components(
         &self,
     ) -> std::option::Option<
@@ -5056,32 +4918,24 @@ impl CreateDeploymentInput {
     > {
         self.components.as_ref()
     }
-    /// <p>The job configuration for the deployment configuration. The job configuration specifies
-    /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub fn iot_job_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentIoTJobConfiguration> {
         self.iot_job_configuration.as_ref()
     }
-    /// <p>The deployment policies for the deployment. These policies define how the deployment
-    /// updates components and handles failure.</p>
+    /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn deployment_policies(&self) -> std::option::Option<&crate::model::DeploymentPolicies> {
         self.deployment_policies.as_ref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-    /// idempotent requests for up to 8 hours.</p>
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5104,28 +4958,20 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentVersionInput {
-    /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-    /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+    /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub inline_recipe: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub lambda_function: std::option::Option<crate::model::LambdaFunctionRecipeSource>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-    /// idempotent requests for up to 8 hours.</p>
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateComponentVersionInput {
-    /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-    /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+    /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub fn inline_recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.inline_recipe.as_ref()
@@ -5137,20 +4983,14 @@ impl CreateComponentVersionInput {
     ) -> std::option::Option<&crate::model::LambdaFunctionRecipeSource> {
         self.lambda_function.as_ref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-    /// idempotent requests for up to 8 hours.</p>
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

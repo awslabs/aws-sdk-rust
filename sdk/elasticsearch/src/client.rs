@@ -502,8 +502,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank">
-    /// Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
+    /// <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -742,8 +741,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateElasticsearchDomain`.
     ///
-    /// <p>Creates a new Elasticsearch domain. For more information,
-    /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+    /// <p>Creates a new Elasticsearch domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -810,14 +808,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elasticsearch_version(input.into());
             self
         }
-        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -942,8 +938,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -952,8 +947,7 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -1110,12 +1104,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn source_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.inner = self.inner.source_domain_info(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -1123,12 +1117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_domain_info(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn destination_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.inner = self.inner.destination_domain_info(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -1924,14 +1918,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeElasticsearchInstanceTypeLimits`.
     ///
-    /// <p>
-    /// Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion.
-    /// When modifying existing Domain, specify the
-    /// <code>
-    /// <a>DomainName</a>
-    /// </code>
-    /// to know what Limits are supported for modifying.
-    /// </p>
+    /// <p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <code>DomainName</code> </code> to know what Limits are supported for modifying. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticsearchInstanceTypeLimits<
         C = aws_smithy_client::erase::DynConnector,
@@ -1990,50 +1977,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// DomainName represents the name of the Domain that we are trying to
-        /// modify. This should be present only if we are
-        /// querying for Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for existing domain.
-        /// </p>
+        /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>
-        /// DomainName represents the name of the Domain that we are trying to
-        /// modify. This should be present only if we are
-        /// querying for Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for existing domain.
-        /// </p>
+        /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// The instance type for an Elasticsearch cluster for which Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
         pub fn instance_type(mut self, input: crate::model::EsPartitionInstanceType) -> Self {
             self.inner = self.inner.instance_type(input);
             self
         }
-        /// <p>
-        /// The instance type for an Elasticsearch cluster for which Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::EsPartitionInstanceType>,
@@ -2041,24 +2000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>
-        /// Version of Elasticsearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elasticsearch_version(input.into());
             self
         }
-        /// <p>
-        /// Version of Elasticsearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2132,9 +2079,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>source-domain-info.domain-name</li>
@@ -2142,14 +2087,12 @@ pub mod fluent_builders {
         /// <li>source-domain-info.region</li>
         /// <li>destination-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>source-domain-info.domain-name</li>
@@ -2157,7 +2100,7 @@ pub mod fluent_builders {
         /// <li>source-domain-info.region</li>
         /// <li>destination-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2242,9 +2185,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>destination-domain-info.domain-name</li>
@@ -2252,14 +2193,12 @@ pub mod fluent_builders {
         /// <li>destination-domain-info.region</li>
         /// <li>source-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>destination-domain-info.domain-name</li>
@@ -2267,7 +2206,7 @@ pub mod fluent_builders {
         /// <li>destination-domain-info.region</li>
         /// <li>source-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2475,14 +2414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2575,14 +2512,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2670,14 +2605,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCompatibleElasticsearchVersions`.
     ///
-    /// <p>
-    /// Returns a list of upgrade compatible Elastisearch versions.
-    /// You can optionally pass a
-    /// <code>
-    /// <a>DomainName</a>
-    /// </code>
-    /// to get all upgrade compatible Elasticsearch versions for that specific domain.
-    /// </p>
+    /// <p> Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <code>DomainName</code> </code> to get all upgrade compatible Elasticsearch versions for that specific domain. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleElasticsearchVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2906,32 +2834,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3229,16 +3147,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Version of Elasticsearch for which list of supported elasticsearch
-        /// instance types are needed.
-        /// </p>
+        /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elasticsearch_version(input.into());
             self
         }
-        /// <p>Version of Elasticsearch for which list of supported elasticsearch
-        /// instance types are needed.
-        /// </p>
+        /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3246,46 +3160,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_elasticsearch_version(input);
             self
         }
-        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-        /// querying for list of available Elasticsearch instance types when modifying existing domain.
-        /// </p>
+        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-        /// querying for list of available Elasticsearch instance types when modifying existing domain.
-        /// </p>
+        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 30 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 30 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.
-        /// </p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.
-        /// </p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3350,34 +3250,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 10 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 10 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4017,8 +3905,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -4027,8 +3914,7 @@ pub mod fluent_builders {
             self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -4151,20 +4037,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_tune_options(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// This will not actually perform the Update.
-        /// </p>
+        /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// This will not actually perform the Update.
-        /// </p>
+        /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -4361,18 +4239,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_version(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-        /// This will not actually perform the Upgrade.
-        /// </p>
+        /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
         pub fn perform_check_only(mut self, input: bool) -> Self {
             self.inner = self.inner.perform_check_only(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-        /// This will not actually perform the Upgrade.
-        /// </p>
+        /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_check_only(input);
             self

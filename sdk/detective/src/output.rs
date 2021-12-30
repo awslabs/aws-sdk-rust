@@ -123,14 +123,12 @@ impl RejectInvitationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag
-    /// values.</p>
+    /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag
-    /// values.</p>
+    /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -160,8 +158,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag
-        /// values.</p>
+        /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -172,8 +169,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag
-        /// values.</p>
+        /// <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -201,24 +197,18 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
     /// <p>The list of member accounts in the behavior graph.</p>
-    /// <p>The results include member accounts that did not pass verification and member accounts
-    /// that have not yet accepted the invitation to the behavior graph. The results do not include
-    /// member accounts that were removed from the behavior graph.</p>
+    /// <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     pub member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
-    /// <p>If there are more member accounts remaining in the results, then this is the pagination
-    /// token to use to request the next page of member accounts.</p>
+    /// <p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
     /// <p>The list of member accounts in the behavior graph.</p>
-    /// <p>The results include member accounts that did not pass verification and member accounts
-    /// that have not yet accepted the invitation to the behavior graph. The results do not include
-    /// member accounts that were removed from the behavior graph.</p>
+    /// <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     pub fn member_details(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
         self.member_details.as_deref()
     }
-    /// <p>If there are more member accounts remaining in the results, then this is the pagination
-    /// token to use to request the next page of member accounts.</p>
+    /// <p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -246,9 +236,7 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_member_details`](Self::set_member_details).
         ///
         /// <p>The list of member accounts in the behavior graph.</p>
-        /// <p>The results include member accounts that did not pass verification and member accounts
-        /// that have not yet accepted the invitation to the behavior graph. The results do not include
-        /// member accounts that were removed from the behavior graph.</p>
+        /// <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
         pub fn member_details(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.member_details.unwrap_or_default();
             v.push(input);
@@ -256,9 +244,7 @@ pub mod list_members_output {
             self
         }
         /// <p>The list of member accounts in the behavior graph.</p>
-        /// <p>The results include member accounts that did not pass verification and member accounts
-        /// that have not yet accepted the invitation to the behavior graph. The results do not include
-        /// member accounts that were removed from the behavior graph.</p>
+        /// <p>The results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
         pub fn set_member_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
@@ -266,14 +252,12 @@ pub mod list_members_output {
             self.member_details = input;
             self
         }
-        /// <p>If there are more member accounts remaining in the results, then this is the pagination
-        /// token to use to request the next page of member accounts.</p>
+        /// <p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more member accounts remaining in the results, then this is the pagination
-        /// token to use to request the next page of member accounts.</p>
+        /// <p>If there are more member accounts remaining in the results, then this is the pagination token to use to request the next page of member accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -298,21 +282,17 @@ impl ListMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
-    /// <p>The list of behavior graphs for which the member account has open or accepted
-    /// invitations.</p>
+    /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
     pub invitations: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
-    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-    /// token to use to request the next page of behavior graphs.</p>
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
-    /// <p>The list of behavior graphs for which the member account has open or accepted
-    /// invitations.</p>
+    /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
     pub fn invitations(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
         self.invitations.as_deref()
     }
-    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-    /// token to use to request the next page of behavior graphs.</p>
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -339,16 +319,14 @@ pub mod list_invitations_output {
         ///
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
-        /// <p>The list of behavior graphs for which the member account has open or accepted
-        /// invitations.</p>
+        /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
         pub fn invitations(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.invitations.unwrap_or_default();
             v.push(input);
             self.invitations = Some(v);
             self
         }
-        /// <p>The list of behavior graphs for which the member account has open or accepted
-        /// invitations.</p>
+        /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
         pub fn set_invitations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
@@ -356,14 +334,12 @@ pub mod list_invitations_output {
             self.invitations = input;
             self
         }
-        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-        /// token to use to request the next page of behavior graphs.</p>
+        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-        /// token to use to request the next page of behavior graphs.</p>
+        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -390,8 +366,7 @@ impl ListInvitationsOutput {
 pub struct ListGraphsOutput {
     /// <p>A list of behavior graphs that the account is an administrator account for.</p>
     pub graph_list: std::option::Option<std::vec::Vec<crate::model::Graph>>,
-    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-    /// token to use to request the next page of behavior graphs.</p>
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGraphsOutput {
@@ -399,8 +374,7 @@ impl ListGraphsOutput {
     pub fn graph_list(&self) -> std::option::Option<&[crate::model::Graph]> {
         self.graph_list.as_deref()
     }
-    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-    /// token to use to request the next page of behavior graphs.</p>
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -442,14 +416,12 @@ pub mod list_graphs_output {
             self.graph_list = input;
             self
         }
-        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-        /// token to use to request the next page of behavior graphs.</p>
+        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination
-        /// token to use to request the next page of behavior graphs.</p>
+        /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -476,8 +448,7 @@ impl ListGraphsOutput {
 pub struct GetMembersOutput {
     /// <p>The member account details that Detective is returning in response to the request.</p>
     pub member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
-    /// <p>The requested member accounts for which Detective was unable to return member
-    /// details.</p>
+    /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
@@ -486,8 +457,7 @@ impl GetMembersOutput {
     pub fn member_details(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
         self.member_details.as_deref()
     }
-    /// <p>The requested member accounts for which Detective was unable to return member
-    /// details.</p>
+    /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
@@ -535,8 +505,7 @@ pub mod get_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The requested member accounts for which Detective was unable to return member
-        /// details.</p>
+        /// <p>The requested member accounts for which Detective was unable to return member details.</p>
         /// <p>For each account, provides the reason why the request could not be processed.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
@@ -544,8 +513,7 @@ pub mod get_members_output {
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The requested member accounts for which Detective was unable to return member
-        /// details.</p>
+        /// <p>The requested member accounts for which Detective was unable to return member details.</p>
         /// <p>For each account, provides the reason why the request could not be processed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
@@ -604,23 +572,17 @@ impl DisassociateMembershipOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
-    /// <p>The list of AWS account identifiers for the member accounts that Detective successfully
-    /// deleted from the behavior graph.</p>
+    /// <p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
-    /// For each member account, provides the reason that the deletion could not be
-    /// processed.</p>
+    /// <p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteMembersOutput {
-    /// <p>The list of AWS account identifiers for the member accounts that Detective successfully
-    /// deleted from the behavior graph.</p>
+    /// <p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
-    /// For each member account, provides the reason that the deletion could not be
-    /// processed.</p>
+    /// <p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -648,16 +610,14 @@ pub mod delete_members_output {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member accounts that Detective successfully
-        /// deleted from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account identifiers for the member accounts that Detective successfully
-        /// deleted from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member accounts that Detective successfully deleted from the behavior graph.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -669,18 +629,14 @@ pub mod delete_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
-        /// For each member account, provides the reason that the deletion could not be
-        /// processed.</p>
+        /// <p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
-        /// For each member account, provides the reason that the deletion could not be
-        /// processed.</p>
+        /// <p>The list of member accounts that Detective was not able to delete from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -738,25 +694,17 @@ impl DeleteGraphOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
-    /// <p>The set of member account invitation requests that Detective was able to process. This
-    /// includes accounts that are being verified, that failed verification, and that passed
-    /// verification and are being sent an invitation.</p>
+    /// <p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
-    /// <p>The list of accounts for which Detective was unable to process the invitation request. For
-    /// each account, the list provides the reason why the request could not be processed. The list
-    /// includes accounts that are already member accounts in the behavior graph.</p>
+    /// <p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateMembersOutput {
-    /// <p>The set of member account invitation requests that Detective was able to process. This
-    /// includes accounts that are being verified, that failed verification, and that passed
-    /// verification and are being sent an invitation.</p>
+    /// <p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>
     pub fn members(&self) -> std::option::Option<&[crate::model::MemberDetail]> {
         self.members.as_deref()
     }
-    /// <p>The list of accounts for which Detective was unable to process the invitation request. For
-    /// each account, the list provides the reason why the request could not be processed. The list
-    /// includes accounts that are already member accounts in the behavior graph.</p>
+    /// <p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -784,18 +732,14 @@ pub mod create_members_output {
         ///
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
-        /// <p>The set of member account invitation requests that Detective was able to process. This
-        /// includes accounts that are being verified, that failed verification, and that passed
-        /// verification and are being sent an invitation.</p>
+        /// <p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>
         pub fn members(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.members.unwrap_or_default();
             v.push(input);
             self.members = Some(v);
             self
         }
-        /// <p>The set of member account invitation requests that Detective was able to process. This
-        /// includes accounts that are being verified, that failed verification, and that passed
-        /// verification and are being sent an invitation.</p>
+        /// <p>The set of member account invitation requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
@@ -807,18 +751,14 @@ pub mod create_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>The list of accounts for which Detective was unable to process the invitation request. For
-        /// each account, the list provides the reason why the request could not be processed. The list
-        /// includes accounts that are already member accounts in the behavior graph.</p>
+        /// <p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
             v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>The list of accounts for which Detective was unable to process the invitation request. For
-        /// each account, the list provides the reason why the request could not be processed. The list
-        /// includes accounts that are already member accounts in the behavior graph.</p>
+        /// <p>The list of accounts for which Detective was unable to process the invitation request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,

@@ -14,8 +14,7 @@ pub struct BuildSuggestersError {
 pub enum BuildSuggestersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -132,8 +131,7 @@ pub struct CreateDomainError {
 pub enum CreateDomainErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because a resource limit has already been met.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -258,8 +256,7 @@ pub struct DefineAnalysisSchemeError {
 pub enum DefineAnalysisSchemeErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -404,8 +401,7 @@ pub struct DefineExpressionError {
 pub enum DefineExpressionErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -547,8 +543,7 @@ pub struct DefineIndexFieldError {
 pub enum DefineIndexFieldErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -690,8 +685,7 @@ pub struct DefineSuggesterError {
 pub enum DefineSuggesterErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -830,8 +824,7 @@ pub struct DeleteAnalysisSchemeError {
 pub enum DeleteAnalysisSchemeErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -965,8 +958,7 @@ pub struct DeleteDomainError {
 pub enum DeleteDomainErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1064,8 +1056,7 @@ pub struct DeleteExpressionError {
 pub enum DeleteExpressionErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1196,8 +1187,7 @@ pub struct DeleteIndexFieldError {
 pub enum DeleteIndexFieldErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1328,8 +1318,7 @@ pub struct DeleteSuggesterError {
 pub enum DeleteSuggesterErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1457,8 +1446,7 @@ pub struct DescribeAnalysisSchemesError {
 pub enum DescribeAnalysisSchemesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1575,8 +1563,7 @@ pub enum DescribeAvailabilityOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1730,8 +1717,7 @@ pub enum DescribeDomainEndpointOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because a resource limit has already been met.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1877,8 +1863,7 @@ pub struct DescribeDomainsError {
 pub enum DescribeDomainsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1976,8 +1961,7 @@ pub struct DescribeExpressionsError {
 pub enum DescribeExpressionsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2089,8 +2073,7 @@ pub struct DescribeIndexFieldsError {
 pub enum DescribeIndexFieldsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2202,8 +2185,7 @@ pub struct DescribeScalingParametersError {
 pub enum DescribeScalingParametersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2318,8 +2300,7 @@ pub struct DescribeServiceAccessPoliciesError {
 pub enum DescribeServiceAccessPoliciesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2441,8 +2422,7 @@ pub struct DescribeSuggestersError {
 pub enum DescribeSuggestersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2554,8 +2534,7 @@ pub struct IndexDocumentsError {
 pub enum IndexDocumentsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2764,8 +2743,7 @@ pub enum UpdateAvailabilityOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -2924,8 +2902,7 @@ pub enum UpdateDomainEndpointOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3088,8 +3065,7 @@ pub struct UpdateScalingParametersError {
 pub enum UpdateScalingParametersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3237,8 +3213,7 @@ pub struct UpdateServiceAccessPoliciesError {
 pub enum UpdateServiceAccessPoliciesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3713,8 +3688,7 @@ impl InvalidTypeException {
     }
 }
 
-/// <p>An internal error occurred while processing the request. If this problem persists,
-/// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+/// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {

@@ -115,9 +115,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateToken`.
     ///
-    /// <p>Creates and returns an access token for the authorized client. The access token issued
-    /// will be used to fetch short-term credentials for the assigned roles in the AWS
-    /// account.</p>
+    /// <p>Creates and returns an access token for the authorized client. The access token issued will be used to fetch short-term credentials for the assigned roles in the AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
@@ -174,22 +172,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
         }
-        /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_secret(input.into());
             self
         }
-        /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -207,16 +205,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grant_type(input);
             self
         }
-        /// <p>Used only when calling this API for the device code grant type. This short-term code is
-        /// used to identify this authentication attempt. This should come from an in-memory reference to
-        /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+        /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
         pub fn device_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.device_code(input.into());
             self
         }
-        /// <p>Used only when calling this API for the device code grant type. This short-term code is
-        /// used to identify this authentication attempt. This should come from an in-memory reference to
-        /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+        /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
         pub fn set_device_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_device_code(input);
             self
@@ -248,14 +242,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_scope`](Self::set_scope).
         ///
-        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-        /// restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.scope(input.into());
             self
         }
-        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-        /// restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -263,14 +255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>The location of the application that will receive the authorization code. Users authorize
-        /// the service to send the request to this location.</p>
+        /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
         pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.redirect_uri(input.into());
             self
         }
-        /// <p>The location of the application that will receive the authorization code. Users authorize
-        /// the service to send the request to this location.</p>
+        /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
         pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_redirect_uri(input);
             self
@@ -278,8 +268,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterClient`.
     ///
-    /// <p>Registers a client with AWS SSO. This allows clients to initiate device authorization.
-    /// The output should be persisted for reuse through many authentication requests.</p>
+    /// <p>Registers a client with AWS SSO. This allows clients to initiate device authorization. The output should be persisted for reuse through many authentication requests.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterClient<
         C = aws_smithy_client::erase::DynConnector,
@@ -360,14 +349,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
-        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-        /// to restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn scopes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.scopes(input.into());
             self
         }
-        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-        /// to restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -435,28 +422,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-        /// should come from the persisted result of the <a>RegisterClient</a> API
-        /// operation.</p>
+        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-        /// should come from the persisted result of the <a>RegisterClient</a> API
-        /// operation.</p>
+        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
         }
-        /// <p>A secret string that is generated for the client. This value should come from the
-        /// persisted result of the <a>RegisterClient</a> API operation.</p>
+        /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_secret(input.into());
             self
         }
-        /// <p>A secret string that is generated for the client. This value should come from the
-        /// persisted result of the <a>RegisterClient</a> API operation.</p>
+        /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -464,14 +445,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_secret(input);
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-        /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_url(input.into());
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-        /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_url(input);
             self

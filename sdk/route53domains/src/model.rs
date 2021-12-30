@@ -3,11 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BillingRecord {
-    /// <p>The name of the domain that the billing record applies to. If the domain name contains characters
-    /// other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The operation that you were charged for.</p>
     pub operation: std::option::Option<crate::model::OperationType>,
@@ -20,11 +16,7 @@ pub struct BillingRecord {
     pub price: f64,
 }
 impl BillingRecord {
-    /// <p>The name of the domain that the billing record applies to. If the domain name contains characters
-    /// other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
-    /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -70,20 +62,12 @@ pub mod billing_record {
         pub(crate) price: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The name of the domain that the billing record applies to. If the domain name contains characters
-        /// other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
-        /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that the billing record applies to. If the domain name contains characters
-        /// other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
-        /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -389,9 +373,7 @@ pub struct Nameserver {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
-    /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
-    /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
     pub glue_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -401,9 +383,7 @@ impl Nameserver {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
-    /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
-    /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
     pub fn glue_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.glue_ips.as_deref()
@@ -443,9 +423,7 @@ pub mod nameserver {
         ///
         /// To override the contents of this collection use [`set_glue_ips`](Self::set_glue_ips).
         ///
-        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
-        /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
-        /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
         /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
         pub fn glue_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.glue_ips.unwrap_or_default();
@@ -453,9 +431,7 @@ pub mod nameserver {
             self.glue_ips = Some(v);
             self
         }
-        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
-        /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
-        /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
         /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
         pub fn set_glue_ips(
             mut self,
@@ -490,21 +466,9 @@ pub struct ContactDetail {
     pub last_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for
-    /// <code>OrganizationName</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for
-    /// <code>Contact Type</code>. For the privacy protection settings for your TLD, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
-    /// Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
-    /// for the value of <code>ES_LEGAL_FORM</code>.</p>
-    /// </li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of <code>ES_LEGAL_FORM</code>.</p> </li>
     /// </ul>
     pub contact_type: std::option::Option<crate::model::ContactType>,
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
@@ -522,14 +486,12 @@ pub struct ContactDetail {
     /// <p>The zip or postal code of the contact's address.</p>
     pub zip_code: std::option::Option<std::string::String>,
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country  dialing code].[number including any area code>]".
-    /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>Email address of the contact.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-    /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fax: std::option::Option<std::string::String>,
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
     pub extra_params: std::option::Option<std::vec::Vec<crate::model::ExtraParam>>,
@@ -545,21 +507,9 @@ impl ContactDetail {
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for
-    /// <code>OrganizationName</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For some TLDs, the privacy protection available depends on the value that you specify for
-    /// <code>Contact Type</code>. For the privacy protection settings for your TLD, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
-    /// Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
-    /// for the value of <code>ES_LEGAL_FORM</code>.</p>
-    /// </li>
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+    /// <li> <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of <code>ES_LEGAL_FORM</code>.</p> </li>
     /// </ul>
     pub fn contact_type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.contact_type.as_ref()
@@ -593,8 +543,7 @@ impl ContactDetail {
         self.zip_code.as_deref()
     }
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country  dialing code].[number including any area code>]".
-    /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -603,8 +552,7 @@ impl ContactDetail {
         self.email.as_deref()
     }
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-    /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fn fax(&self) -> std::option::Option<&str> {
         self.fax.as_deref()
     }
@@ -677,21 +625,9 @@ pub mod contact_detail {
         }
         /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for
-        /// <code>OrganizationName</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For some TLDs, the privacy protection available depends on the value that you specify for
-        /// <code>Contact Type</code>. For the privacy protection settings for your TLD, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
-        /// Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
-        /// for the value of <code>ES_LEGAL_FORM</code>.</p>
-        /// </li>
+        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+        /// <li> <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of <code>ES_LEGAL_FORM</code>.</p> </li>
         /// </ul>
         pub fn contact_type(mut self, input: crate::model::ContactType) -> Self {
             self.contact_type = Some(input);
@@ -699,21 +635,9 @@ pub mod contact_detail {
         }
         /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for
-        /// <code>OrganizationName</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For some TLDs, the privacy protection available depends on the value that you specify for
-        /// <code>Contact Type</code>. For the privacy protection settings for your TLD, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
-        /// Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
-        /// for the value of <code>ES_LEGAL_FORM</code>.</p>
-        /// </li>
+        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
+        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
+        /// <li> <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code> for the value of <code>ES_LEGAL_FORM</code>.</p> </li>
         /// </ul>
         pub fn set_contact_type(
             mut self,
@@ -805,15 +729,13 @@ pub mod contact_detail {
             self
         }
         /// <p>The phone number of the contact.</p>
-        /// <p>Constraints: Phone number must be specified in the format "+[country  dialing code].[number including any area code>]".
-        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
         /// <p>The phone number of the contact.</p>
-        /// <p>Constraints: Phone number must be specified in the format "+[country  dialing code].[number including any area code>]".
-        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -829,15 +751,13 @@ pub mod contact_detail {
             self
         }
         /// <p>Fax number of the contact.</p>
-        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn fax(mut self, input: impl Into<std::string::String>) -> Self {
             self.fax = Some(input.into());
             self
         }
         /// <p>Fax number of the contact.</p>
-        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_fax(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fax = input;
             self
@@ -893,1542 +813,500 @@ impl ContactDetail {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtraParam {
-    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
-    /// additional parameters and the names of the parameters that they require:</p>
-    ///
+    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
-    /// <dt>.com.au and .net.au</dt>
+    /// <dt>
+    /// .com.au and .net.au
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AU_ID_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AU_ID_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
+    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ABN</code> (Australian business number)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACN</code> (Australian company number)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TM</code> (Trademark number)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
+    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
+    /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.ca</dt>
+    /// <dt>
+    /// .ca
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BRAND_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CA_BUSINESS_ENTITY_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
+    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BANK</code> (Bank)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMERCIAL_COMPANY</code> (Commercial company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPANY</code> (Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATION</code> (Cooperation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATIVE</code> (Cooperative)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPRIX</code> (Cooprix)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CORP</code> (Corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREDIT_UNION</code> (Credit union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOMIA</code> (Federation of mutual insurance associations)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INC</code> (Incorporated)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTD</code> (Limited)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTEE</code> (Limitée)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLC</code> (Limited liability corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLP</code> (Limited liability partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTE</code> (Lte.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MBA</code> (Mutual benefit association)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MIC</code> (Mutual insurance company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NFP</code> (Not-for-profit corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SA</code> (S.A.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_COMPANY</code> (Savings company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_UNION</code> (Savings union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SARL</code> (Société à responsabilité limitée)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUST</code> (Trust)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ULC</code> (Unlimited liability corporation)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CA_LEGAL_TYPE</code>
-    /// </p>
-    /// <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
+    /// <li> <p> <code>BANK</code> (Bank)</p> </li>
+    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
+    /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
+    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
+    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
+    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
+    /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
+    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
+    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
+    /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
+    /// <li> <p> <code>LTD</code> (Limited)</p> </li>
+    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
+    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
+    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
+    /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
+    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
+    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
+    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
+    /// <li> <p> <code>SA</code> (S.A.)</p> </li>
+    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
+    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
+    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
+    /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
+    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CCT</code> (Canadian citizen)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RES</code> (Permanent resident of Canada)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
+    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
+    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
+    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
+    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
+    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ASS</code> (Canadian unincorporated association)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CCO</code> (Canadian corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EDU</code> (Canadian educational institution)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOV</code> (Government or government entity in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HOP</code> (Canadian Hospital)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAM</code> (Canadian Library, Archive, or Museum)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MAJ</code> (Her/His Majesty the Queen/King)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OMK</code> (Official mark registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLT</code> (Canadian Political Party)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PRT</code> (Partnership Registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TDM</code> (Trademark registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRD</code> (Canadian Trade Union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRS</code> (Trust established in Canada)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
+    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
+    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
+    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
+    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
+    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
+    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
+    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
+    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
+    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
+    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
+    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
+    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
+    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
+    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.es</dt>
+    /// <dt>
+    /// .es
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ES_IDENTIFICATION</code>
-    /// </p>
-    /// <p>Specify the applicable value:</p>
+    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>For contacts inside Spain:</b> Enter your passport ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>For contacts outside of Spain:</b> Enter the VAT identification number
-    /// for the company.</p>
-    /// <note>
+    /// <li> <p> <b>For contacts inside Spain:</b> Enter your passport ID.</p> </li>
+    /// <li> <p> <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.</p> <note>
     /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ES_IDENTIFICATION_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DNI_AND_NIF</code> (For Spanish contacts)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NIE</code> (For foreigners with legal residence)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code> (For contacts outside of Spain)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ES_LEGAL_FORM</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
+    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
+    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CENTRAL_GOVERNMENT_BODY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CIVIL_SOCIETY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMUNITY_OF_OWNERS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMUNITY_PROPERTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONSULATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ECONOMIC_INTEREST_GROUP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMBASSY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENTITY_MANAGING_NATURAL_AREAS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FARM_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOUNDATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GENERAL_AND_LIMITED_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GENERAL_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INDIVIDUAL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL_AUTHORITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MUTUAL_INSURANCE_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NATIONAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ORDER_OR_RELIGIOUS_INSTITUTION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHERS (Only for contacts outside of Spain)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>POLITICAL_PARTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PROFESSIONAL_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_LAW_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REGIONAL_GOVERNMENT_BODY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REGIONAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_BANK</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPANISH_OFFICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_FEDERATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRADE_UNION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WORKER_OWNED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WORKER_OWNED_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
+    /// <li> <p> <code>ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
+    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
+    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
+    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
+    /// <li> <p> <code>CONSULATE</code> </p> </li>
+    /// <li> <p> <code>COOPERATIVE</code> </p> </li>
+    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
+    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
+    /// <li> <p> <code>EMBASSY</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
+    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>FOUNDATION</code> </p> </li>
+    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
+    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
+    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
+    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
+    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
+    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
+    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
+    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
+    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
+    /// <li> <p> <code>TRADE_UNION</code> </p> </li>
+    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.fi</dt>
+    /// <dt>
+    /// .fi
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_BUSINESS_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_ID_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_NATIONALITY</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
+    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
+    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FINNISH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FINNISH</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_ORGANIZATION_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>FINNISH</code> </p> </li>
+    /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CORPORATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOVERNMENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTITUTION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>POLITICAL_PARTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_COMMUNITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOWNSHIP</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>COMPANY</code> </p> </li>
+    /// <li> <p> <code>CORPORATION</code> </p> </li>
+    /// <li> <p> <code>GOVERNMENT</code> </p> </li>
+    /// <li> <p> <code>INSTITUTION</code> </p> </li>
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
+    /// <li> <p> <code>TOWNSHIP</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.fr</dt>
+    /// <dt>
+    /// .fr
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_CITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_COUNTRY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born.
-    /// If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information,
-    /// including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-    /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BRAND_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.it</dt>
+    /// <dt>
+    /// .it
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IT_NATIONALITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IT_PIN</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IT_REGISTRANT_ENTITY_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
+    /// <li> <p> <code>IT_PIN</code> </p> </li>
+    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FOREIGNERS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_PROFIT_ORGANIZATIONS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER_SUBJECTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_ORGANIZATIONS</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>FOREIGNERS</code> </p> </li>
+    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
+    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
+    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
+    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.ru</dt>
+    /// <dt>
+    /// .ru
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RU_PASSPORT_DATA</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.se</dt>
+    /// <dt>
+    /// .se
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_COUNTRY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SE_ID_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.sg</dt>
+    /// <dt>
+    /// .sg
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SG_ID_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.co.uk, .me.uk, and .org.uk</dt>
+    /// <dt>
+    /// .co.uk, .me.uk, and .org.uk
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UK_CONTACT_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CRC</code> (UK Corporation by Royal Charter)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FCORP</code> (Non-UK Corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND</code> (Non-UK Individual, representing self)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOV</code> (UK Government Body)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IND</code> (UK Individual (representing self))</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IP</code> (UK Industrial/Provident Registered Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLP</code> (UK Limited Liability Partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTD</code> (UK Limited Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code> (UK Entity that does not fit into any other category)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLC</code> (UK Public Limited Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PTNR</code> (UK Partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RCHAR</code> (UK Registered Charity)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SCH</code> (UK School)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STAT</code> (UK Statutory Body)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STRA</code> (UK Sole Trader)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UK_COMPANY_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
+    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
+    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
+    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
+    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
+    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
+    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
+    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
+    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
+    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
+    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
+    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
+    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
+    /// <li> <p> <code>SCH</code> (UK School)</p> </li>
+    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
+    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
-    ///
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     pub name: std::option::Option<crate::model::ExtraParamName>,
     /// <p>The value that corresponds with the name of an extra parameter.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ExtraParam {
-    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
-    /// additional parameters and the names of the parameters that they require:</p>
-    ///
+    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
-    /// <dt>.com.au and .net.au</dt>
+    /// <dt>
+    /// .com.au and .net.au
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AU_ID_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AU_ID_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
+    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ABN</code> (Australian business number)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACN</code> (Australian company number)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TM</code> (Trademark number)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
+    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
+    /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.ca</dt>
+    /// <dt>
+    /// .ca
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BRAND_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CA_BUSINESS_ENTITY_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
+    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BANK</code> (Bank)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMERCIAL_COMPANY</code> (Commercial company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPANY</code> (Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATION</code> (Cooperation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATIVE</code> (Cooperative)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPRIX</code> (Cooprix)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CORP</code> (Corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREDIT_UNION</code> (Credit union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOMIA</code> (Federation of mutual insurance associations)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INC</code> (Incorporated)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTD</code> (Limited)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTEE</code> (Limitée)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLC</code> (Limited liability corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLP</code> (Limited liability partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTE</code> (Lte.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MBA</code> (Mutual benefit association)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MIC</code> (Mutual insurance company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NFP</code> (Not-for-profit corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SA</code> (S.A.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_COMPANY</code> (Savings company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_UNION</code> (Savings union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SARL</code> (Société à responsabilité limitée)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUST</code> (Trust)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ULC</code> (Unlimited liability corporation)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CA_LEGAL_TYPE</code>
-    /// </p>
-    /// <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
+    /// <li> <p> <code>BANK</code> (Bank)</p> </li>
+    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
+    /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
+    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
+    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
+    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
+    /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
+    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
+    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
+    /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
+    /// <li> <p> <code>LTD</code> (Limited)</p> </li>
+    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
+    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
+    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
+    /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
+    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
+    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
+    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
+    /// <li> <p> <code>SA</code> (S.A.)</p> </li>
+    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
+    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
+    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
+    /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
+    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CCT</code> (Canadian citizen)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RES</code> (Permanent resident of Canada)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
+    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
+    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
+    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
+    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
+    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ASS</code> (Canadian unincorporated association)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CCO</code> (Canadian corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EDU</code> (Canadian educational institution)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOV</code> (Government or government entity in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HOP</code> (Canadian Hospital)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAM</code> (Canadian Library, Archive, or Museum)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MAJ</code> (Her/His Majesty the Queen/King)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OMK</code> (Official mark registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLT</code> (Canadian Political Party)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PRT</code> (Partnership Registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TDM</code> (Trademark registered in Canada)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRD</code> (Canadian Trade Union)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRS</code> (Trust established in Canada)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
+    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
+    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
+    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
+    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
+    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
+    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
+    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
+    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
+    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
+    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
+    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
+    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
+    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
+    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.es</dt>
+    /// <dt>
+    /// .es
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ES_IDENTIFICATION</code>
-    /// </p>
-    /// <p>Specify the applicable value:</p>
+    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>For contacts inside Spain:</b> Enter your passport ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>For contacts outside of Spain:</b> Enter the VAT identification number
-    /// for the company.</p>
-    /// <note>
+    /// <li> <p> <b>For contacts inside Spain:</b> Enter your passport ID.</p> </li>
+    /// <li> <p> <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.</p> <note>
     /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ES_IDENTIFICATION_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DNI_AND_NIF</code> (For Spanish contacts)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NIE</code> (For foreigners with legal residence)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code> (For contacts outside of Spain)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ES_LEGAL_FORM</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
+    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
+    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CENTRAL_GOVERNMENT_BODY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CIVIL_SOCIETY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMUNITY_OF_OWNERS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMMUNITY_PROPERTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONSULATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COOPERATIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ECONOMIC_INTEREST_GROUP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMBASSY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENTITY_MANAGING_NATURAL_AREAS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FARM_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOUNDATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GENERAL_AND_LIMITED_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GENERAL_PARTNERSHIP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INDIVIDUAL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL_AUTHORITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MUTUAL_INSURANCE_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NATIONAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ORDER_OR_RELIGIOUS_INSTITUTION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHERS (Only for contacts outside of Spain)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>POLITICAL_PARTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PROFESSIONAL_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_LAW_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REGIONAL_GOVERNMENT_BODY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REGIONAL_PUBLIC_ENTITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SAVINGS_BANK</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPANISH_OFFICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_ASSOCIATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_FEDERATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPORTS_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRADE_UNION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WORKER_OWNED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WORKER_OWNED_LIMITED_COMPANY</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
+    /// <li> <p> <code>ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
+    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
+    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
+    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
+    /// <li> <p> <code>CONSULATE</code> </p> </li>
+    /// <li> <p> <code>COOPERATIVE</code> </p> </li>
+    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
+    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
+    /// <li> <p> <code>EMBASSY</code> </p> </li>
+    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
+    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>FOUNDATION</code> </p> </li>
+    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
+    /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
+    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
+    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
+    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
+    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
+    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
+    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
+    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
+    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
+    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
+    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
+    /// <li> <p> <code>TRADE_UNION</code> </p> </li>
+    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
+    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.fi</dt>
+    /// <dt>
+    /// .fi
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_BUSINESS_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_ID_NUMBER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_NATIONALITY</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
+    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
+    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FINNISH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FINNISH</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FI_ORGANIZATION_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>FINNISH</code> </p> </li>
+    /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPANY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CORPORATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOVERNMENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTITUTION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>POLITICAL_PARTY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_COMMUNITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOWNSHIP</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>COMPANY</code> </p> </li>
+    /// <li> <p> <code>CORPORATION</code> </p> </li>
+    /// <li> <p> <code>GOVERNMENT</code> </p> </li>
+    /// <li> <p> <code>INSTITUTION</code> </p> </li>
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
+    /// <li> <p> <code>TOWNSHIP</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.fr</dt>
+    /// <dt>
+    /// .fr
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_CITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_COUNTRY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born.
-    /// If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information,
-    /// including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-    /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BRAND_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.it</dt>
+    /// <dt>
+    /// .it
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IT_NATIONALITY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IT_PIN</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IT_REGISTRANT_ENTITY_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
+    /// <li> <p> <code>IT_PIN</code> </p> </li>
+    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FOREIGNERS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_PROFIT_ORGANIZATIONS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER_SUBJECTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUBLIC_ORGANIZATIONS</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>FOREIGNERS</code> </p> </li>
+    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
+    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
+    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
+    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
+    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.ru</dt>
+    /// <dt>
+    /// .ru
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RU_PASSPORT_DATA</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.se</dt>
+    /// <dt>
+    /// .se
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BIRTH_COUNTRY</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SE_ID_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.sg</dt>
+    /// <dt>
+    /// .sg
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SG_ID_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
-    /// <dt>.co.uk, .me.uk, and .org.uk</dt>
+    /// <dt>
+    /// .co.uk, .me.uk, and .org.uk
+    /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UK_CONTACT_TYPE</code>
-    /// </p>
-    /// <p>Valid values include the following:</p>
+    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CRC</code> (UK Corporation by Royal Charter)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FCORP</code> (Non-UK Corporation)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND</code> (Non-UK Individual, representing self)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GOV</code> (UK Government Body)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IND</code> (UK Individual (representing self))</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IP</code> (UK Industrial/Provident Registered Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LLP</code> (UK Limited Liability Partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LTD</code> (UK Limited Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code> (UK Entity that does not fit into any other category)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLC</code> (UK Public Limited Company)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PTNR</code> (UK Partnership)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RCHAR</code> (UK Registered Charity)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SCH</code> (UK School)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STAT</code> (UK Statutory Body)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STRA</code> (UK Sole Trader)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UK_COMPANY_NUMBER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
+    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
+    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
+    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
+    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
+    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
+    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
+    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
+    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
+    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
+    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
+    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
+    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
+    /// <li> <p> <code>SCH</code> (UK School)</p> </li>
+    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
+    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
     /// </ul>
     /// </dd>
     /// </dl>
-    ///
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::ExtraParamName> {
         self.name.as_ref()
@@ -2456,1541 +1334,499 @@ pub mod extra_param {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
-        /// additional parameters and the names of the parameters that they require:</p>
-        ///
+        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
         /// <dl>
-        /// <dt>.com.au and .net.au</dt>
+        /// <dt>
+        /// .com.au and .net.au
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AU_ID_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AU_ID_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
+        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ABN</code> (Australian business number)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACN</code> (Australian company number)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TM</code> (Trademark number)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
+        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
+        /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.ca</dt>
+        /// <dt>
+        /// .ca
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BRAND_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CA_BUSINESS_ENTITY_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
+        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BANK</code> (Bank)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMERCIAL_COMPANY</code> (Commercial company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPANY</code> (Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATION</code> (Cooperation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATIVE</code> (Cooperative)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPRIX</code> (Cooprix)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CORP</code> (Corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREDIT_UNION</code> (Credit union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOMIA</code> (Federation of mutual insurance associations)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INC</code> (Incorporated)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTD</code> (Limited)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTEE</code> (Limitée)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLC</code> (Limited liability corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLP</code> (Limited liability partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTE</code> (Lte.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MBA</code> (Mutual benefit association)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MIC</code> (Mutual insurance company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NFP</code> (Not-for-profit corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SA</code> (S.A.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_COMPANY</code> (Savings company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_UNION</code> (Savings union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SARL</code> (Société à responsabilité limitée)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUST</code> (Trust)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ULC</code> (Unlimited liability corporation)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CA_LEGAL_TYPE</code>
-        /// </p>
-        /// <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
+        /// <li> <p> <code>BANK</code> (Bank)</p> </li>
+        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
+        /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
+        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
+        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
+        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
+        /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
+        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
+        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
+        /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
+        /// <li> <p> <code>LTD</code> (Limited)</p> </li>
+        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
+        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
+        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
+        /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
+        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
+        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
+        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
+        /// <li> <p> <code>SA</code> (S.A.)</p> </li>
+        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
+        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
+        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
+        /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
+        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CCT</code> (Canadian citizen)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RES</code> (Permanent resident of Canada)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
+        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
+        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
+        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
+        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
+        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASS</code> (Canadian unincorporated association)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CCO</code> (Canadian corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EDU</code> (Canadian educational institution)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOV</code> (Government or government entity in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HOP</code> (Canadian Hospital)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAM</code> (Canadian Library, Archive, or Museum)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MAJ</code> (Her/His Majesty the Queen/King)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OMK</code> (Official mark registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLT</code> (Canadian Political Party)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PRT</code> (Partnership Registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TDM</code> (Trademark registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRD</code> (Canadian Trade Union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRS</code> (Trust established in Canada)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// </li>
+        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
+        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
+        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
+        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
+        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
+        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
+        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
+        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
+        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
+        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
+        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
+        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
+        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
+        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.es</dt>
+        /// <dt>
+        /// .es
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ES_IDENTIFICATION</code>
-        /// </p>
-        /// <p>Specify the applicable value:</p>
+        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify the applicable value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>For contacts inside Spain:</b> Enter your passport ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>For contacts outside of Spain:</b> Enter the VAT identification number
-        /// for the company.</p>
-        /// <note>
+        /// <li> <p> <b>For contacts inside Spain:</b> Enter your passport ID.</p> </li>
+        /// <li> <p> <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.</p> <note>
         /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.</p>
-        /// </note>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ES_IDENTIFICATION_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// </note> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DNI_AND_NIF</code> (For Spanish contacts)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NIE</code> (For foreigners with legal residence)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code> (For contacts outside of Spain)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ES_LEGAL_FORM</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
+        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
+        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CENTRAL_GOVERNMENT_BODY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CIVIL_SOCIETY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMUNITY_OF_OWNERS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMUNITY_PROPERTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONSULATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ECONOMIC_INTEREST_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMBASSY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENTITY_MANAGING_NATURAL_AREAS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FARM_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOUNDATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GENERAL_AND_LIMITED_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GENERAL_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INDIVIDUAL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL_AUTHORITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MUTUAL_INSURANCE_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NATIONAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORDER_OR_RELIGIOUS_INSTITUTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHERS (Only for contacts outside of Spain)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>POLITICAL_PARTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PROFESSIONAL_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_LAW_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGIONAL_GOVERNMENT_BODY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGIONAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_BANK</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPANISH_OFFICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_FEDERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRADE_UNION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WORKER_OWNED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WORKER_OWNED_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        ///
-        /// </li>
+        /// <li> <p> <code>ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
+        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
+        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
+        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
+        /// <li> <p> <code>CONSULATE</code> </p> </li>
+        /// <li> <p> <code>COOPERATIVE</code> </p> </li>
+        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
+        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
+        /// <li> <p> <code>EMBASSY</code> </p> </li>
+        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
+        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>FOUNDATION</code> </p> </li>
+        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
+        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
+        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
+        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
+        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
+        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
+        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
+        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
+        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
+        /// <li> <p> <code>TRADE_UNION</code> </p> </li>
+        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.fi</dt>
+        /// <dt>
+        /// .fi
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_BUSINESS_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_ID_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_NATIONALITY</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
+        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
+        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FINNISH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FINNISH</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_ORGANIZATION_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>FINNISH</code> </p> </li>
+        /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CORPORATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOVERNMENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTITUTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>POLITICAL_PARTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_COMMUNITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOWNSHIP</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>COMPANY</code> </p> </li>
+        /// <li> <p> <code>CORPORATION</code> </p> </li>
+        /// <li> <p> <code>GOVERNMENT</code> </p> </li>
+        /// <li> <p> <code>INSTITUTION</code> </p> </li>
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
+        /// <li> <p> <code>TOWNSHIP</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.fr</dt>
+        /// <dt>
+        /// .fr
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_CITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_COUNTRY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born.
-        /// If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information,
-        /// including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-        /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BRAND_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.it</dt>
+        /// <dt>
+        /// .it
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IT_NATIONALITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IT_PIN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IT_REGISTRANT_ENTITY_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
+        /// <li> <p> <code>IT_PIN</code> </p> </li>
+        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FOREIGNERS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_PROFIT_ORGANIZATIONS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER_SUBJECTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_ORGANIZATIONS</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>FOREIGNERS</code> </p> </li>
+        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
+        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
+        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
+        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.ru</dt>
+        /// <dt>
+        /// .ru
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RU_PASSPORT_DATA</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.se</dt>
+        /// <dt>
+        /// .se
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_COUNTRY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SE_ID_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.sg</dt>
+        /// <dt>
+        /// .sg
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SG_ID_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.co.uk, .me.uk, and .org.uk</dt>
+        /// <dt>
+        /// .co.uk, .me.uk, and .org.uk
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UK_CONTACT_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CRC</code> (UK Corporation by Royal Charter)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FCORP</code> (Non-UK Corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND</code> (Non-UK Individual, representing self)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOV</code> (UK Government Body)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IND</code> (UK Individual (representing self))</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IP</code> (UK Industrial/Provident Registered Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLP</code> (UK Limited Liability Partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTD</code> (UK Limited Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code> (UK Entity that does not fit into any other category)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLC</code> (UK Public Limited Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PTNR</code> (UK Partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RCHAR</code> (UK Registered Charity)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCH</code> (UK School)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STAT</code> (UK Statutory Body)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STRA</code> (UK Sole Trader)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UK_COMPANY_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
+        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
+        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
+        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
+        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
+        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
+        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
+        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
+        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
+        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
+        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
+        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
+        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
+        /// <li> <p> <code>SCH</code> (UK School)</p> </li>
+        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
+        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
         /// </dl>
-        ///
         /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
         pub fn name(mut self, input: crate::model::ExtraParamName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
-        /// additional parameters and the names of the parameters that they require:</p>
-        ///
+        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
         /// <dl>
-        /// <dt>.com.au and .net.au</dt>
+        /// <dt>
+        /// .com.au and .net.au
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AU_ID_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AU_ID_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
+        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ABN</code> (Australian business number)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACN</code> (Australian company number)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TM</code> (Trademark number)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
+        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
+        /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.ca</dt>
+        /// <dt>
+        /// .ca
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BRAND_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CA_BUSINESS_ENTITY_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
+        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BANK</code> (Bank)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMERCIAL_COMPANY</code> (Commercial company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPANY</code> (Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATION</code> (Cooperation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATIVE</code> (Cooperative)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPRIX</code> (Cooprix)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CORP</code> (Corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREDIT_UNION</code> (Credit union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOMIA</code> (Federation of mutual insurance associations)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INC</code> (Incorporated)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTD</code> (Limited)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTEE</code> (Limitée)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLC</code> (Limited liability corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLP</code> (Limited liability partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTE</code> (Lte.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MBA</code> (Mutual benefit association)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MIC</code> (Mutual insurance company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NFP</code> (Not-for-profit corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SA</code> (S.A.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_COMPANY</code> (Savings company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_UNION</code> (Savings union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SARL</code> (Société à responsabilité limitée)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUST</code> (Trust)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ULC</code> (Unlimited liability corporation)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CA_LEGAL_TYPE</code>
-        /// </p>
-        /// <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
+        /// <li> <p> <code>BANK</code> (Bank)</p> </li>
+        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
+        /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
+        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
+        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
+        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
+        /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
+        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
+        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
+        /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
+        /// <li> <p> <code>LTD</code> (Limited)</p> </li>
+        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
+        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
+        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
+        /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
+        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
+        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
+        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
+        /// <li> <p> <code>SA</code> (S.A.)</p> </li>
+        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
+        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
+        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
+        /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
+        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CCT</code> (Canadian citizen)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RES</code> (Permanent resident of Canada)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
+        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
+        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
+        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
+        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
+        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASS</code> (Canadian unincorporated association)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CCO</code> (Canadian corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EDU</code> (Canadian educational institution)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOV</code> (Government or government entity in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HOP</code> (Canadian Hospital)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAM</code> (Canadian Library, Archive, or Museum)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MAJ</code> (Her/His Majesty the Queen/King)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OMK</code> (Official mark registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLT</code> (Canadian Political Party)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PRT</code> (Partnership Registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TDM</code> (Trademark registered in Canada)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRD</code> (Canadian Trade Union)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRS</code> (Trust established in Canada)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// </li>
+        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
+        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
+        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
+        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
+        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
+        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
+        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
+        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
+        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
+        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
+        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
+        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
+        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
+        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.es</dt>
+        /// <dt>
+        /// .es
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ES_IDENTIFICATION</code>
-        /// </p>
-        /// <p>Specify the applicable value:</p>
+        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify the applicable value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>For contacts inside Spain:</b> Enter your passport ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>For contacts outside of Spain:</b> Enter the VAT identification number
-        /// for the company.</p>
-        /// <note>
+        /// <li> <p> <b>For contacts inside Spain:</b> Enter your passport ID.</p> </li>
+        /// <li> <p> <b>For contacts outside of Spain:</b> Enter the VAT identification number for the company.</p> <note>
         /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.</p>
-        /// </note>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ES_IDENTIFICATION_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// </note> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DNI_AND_NIF</code> (For Spanish contacts)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NIE</code> (For foreigners with legal residence)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code> (For contacts outside of Spain)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ES_LEGAL_FORM</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
+        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
+        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CENTRAL_GOVERNMENT_BODY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CIVIL_SOCIETY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMUNITY_OF_OWNERS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMMUNITY_PROPERTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONSULATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COOPERATIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ECONOMIC_INTEREST_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMBASSY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENTITY_MANAGING_NATURAL_AREAS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FARM_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOUNDATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GENERAL_AND_LIMITED_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GENERAL_PARTNERSHIP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INDIVIDUAL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL_AUTHORITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MUTUAL_INSURANCE_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NATIONAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORDER_OR_RELIGIOUS_INSTITUTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHERS (Only for contacts outside of Spain)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>POLITICAL_PARTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PROFESSIONAL_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_LAW_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGIONAL_GOVERNMENT_BODY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGIONAL_PUBLIC_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_BANK</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPANISH_OFFICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_ASSOCIATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_FEDERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPORTS_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRADE_UNION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WORKER_OWNED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WORKER_OWNED_LIMITED_COMPANY</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        ///
-        /// </li>
+        /// <li> <p> <code>ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
+        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
+        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
+        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
+        /// <li> <p> <code>CONSULATE</code> </p> </li>
+        /// <li> <p> <code>COOPERATIVE</code> </p> </li>
+        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
+        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
+        /// <li> <p> <code>EMBASSY</code> </p> </li>
+        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
+        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>FOUNDATION</code> </p> </li>
+        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
+        /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
+        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
+        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
+        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
+        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
+        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
+        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
+        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
+        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
+        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
+        /// <li> <p> <code>TRADE_UNION</code> </p> </li>
+        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
+        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.fi</dt>
+        /// <dt>
+        /// .fi
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_BUSINESS_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_ID_NUMBER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_NATIONALITY</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
+        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
+        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FINNISH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FINNISH</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FI_ORGANIZATION_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>FINNISH</code> </p> </li>
+        /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPANY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CORPORATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOVERNMENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTITUTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>POLITICAL_PARTY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_COMMUNITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOWNSHIP</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>COMPANY</code> </p> </li>
+        /// <li> <p> <code>CORPORATION</code> </p> </li>
+        /// <li> <p> <code>GOVERNMENT</code> </p> </li>
+        /// <li> <p> <code>INSTITUTION</code> </p> </li>
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
+        /// <li> <p> <code>TOWNSHIP</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.fr</dt>
+        /// <dt>
+        /// .fr
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_CITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_COUNTRY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born.
-        /// If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information,
-        /// including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-        /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BRAND_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.it</dt>
+        /// <dt>
+        /// .it
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IT_NATIONALITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IT_PIN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IT_REGISTRANT_ENTITY_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
+        /// <li> <p> <code>IT_PIN</code> </p> </li>
+        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FOREIGNERS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_PROFIT_ORGANIZATIONS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER_SUBJECTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUBLIC_ORGANIZATIONS</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>FOREIGNERS</code> </p> </li>
+        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
+        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
+        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
+        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
+        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.ru</dt>
+        /// <dt>
+        /// .ru
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RU_PASSPORT_DATA</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
+        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.se</dt>
+        /// <dt>
+        /// .se
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BIRTH_COUNTRY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SE_ID_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
+        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.sg</dt>
+        /// <dt>
+        /// .sg
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SG_ID_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>.co.uk, .me.uk, and .org.uk</dt>
+        /// <dt>
+        /// .co.uk, .me.uk, and .org.uk
+        /// </dt>
         /// <dd>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UK_CONTACT_TYPE</code>
-        /// </p>
-        /// <p>Valid values include the following:</p>
+        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CRC</code> (UK Corporation by Royal Charter)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FCORP</code> (Non-UK Corporation)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND</code> (Non-UK Individual, representing self)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GOV</code> (UK Government Body)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IND</code> (UK Individual (representing self))</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IP</code> (UK Industrial/Provident Registered Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LLP</code> (UK Limited Liability Partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LTD</code> (UK Limited Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code> (UK Entity that does not fit into any other category)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLC</code> (UK Public Limited Company)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PTNR</code> (UK Partnership)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RCHAR</code> (UK Registered Charity)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCH</code> (UK School)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STAT</code> (UK Statutory Body)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STRA</code> (UK Sole Trader)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UK_COMPANY_NUMBER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
+        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
+        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
+        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
+        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
+        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
+        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
+        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
+        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
+        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
+        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
+        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
+        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
+        /// <li> <p> <code>SCH</code> (UK School)</p> </li>
+        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
+        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
         /// </ul>
         /// </dd>
         /// </dl>
-        ///
         /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
         pub fn set_name(
             mut self,
@@ -5576,48 +3412,62 @@ impl DomainSummary {
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Whether the domain name is available for registering.</p>
-    /// <note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
     /// <dl>
-    /// <dt>AVAILABLE</dt>
+    /// <dt>
+    /// AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name is available.</p>
     /// </dd>
-    /// <dt>AVAILABLE_RESERVED</dt>
+    /// <dt>
+    /// AVAILABLE_RESERVED
+    /// </dt>
     /// <dd>
     /// <p>The domain name is reserved under specific conditions.</p>
     /// </dd>
-    /// <dt>AVAILABLE_PREORDER</dt>
+    /// <dt>
+    /// AVAILABLE_PREORDER
+    /// </dt>
     /// <dd>
     /// <p>The domain name is available and can be preordered.</p>
     /// </dd>
-    /// <dt>DONT_KNOW</dt>
+    /// <dt>
+    /// DONT_KNOW
+    /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
-    /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
-    /// Try again later.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
     /// </dd>
-    /// <dt>PENDING</dt>
+    /// <dt>
+    /// PENDING
+    /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
-    /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
-    /// <dt>RESERVED</dt>
+    /// <dt>
+    /// RESERVED
+    /// </dt>
     /// <dd>
     /// <p>The domain name has been reserved for another person or organization.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE</dt>
+    /// <dt>
+    /// UNAVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name is not available.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE_PREMIUM</dt>
+    /// <dt>
+    /// UNAVAILABLE_PREMIUM
+    /// </dt>
     /// <dd>
     /// <p>The domain name is not available.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE_RESTRICTED</dt>
+    /// <dt>
+    /// UNAVAILABLE_RESTRICTED
+    /// </dt>
     /// <dd>
     /// <p>The domain name is forbidden.</p>
     /// </dd>
@@ -5629,48 +3479,62 @@ impl DomainSuggestion {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Whether the domain name is available for registering.</p>
-    /// <note>
+    /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
     /// <dl>
-    /// <dt>AVAILABLE</dt>
+    /// <dt>
+    /// AVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name is available.</p>
     /// </dd>
-    /// <dt>AVAILABLE_RESERVED</dt>
+    /// <dt>
+    /// AVAILABLE_RESERVED
+    /// </dt>
     /// <dd>
     /// <p>The domain name is reserved under specific conditions.</p>
     /// </dd>
-    /// <dt>AVAILABLE_PREORDER</dt>
+    /// <dt>
+    /// AVAILABLE_PREORDER
+    /// </dt>
     /// <dd>
     /// <p>The domain name is available and can be preordered.</p>
     /// </dd>
-    /// <dt>DONT_KNOW</dt>
+    /// <dt>
+    /// DONT_KNOW
+    /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
-    /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
-    /// Try again later.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
     /// </dd>
-    /// <dt>PENDING</dt>
+    /// <dt>
+    /// PENDING
+    /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
-    /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
-    /// <dt>RESERVED</dt>
+    /// <dt>
+    /// RESERVED
+    /// </dt>
     /// <dd>
     /// <p>The domain name has been reserved for another person or organization.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE</dt>
+    /// <dt>
+    /// UNAVAILABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name is not available.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE_PREMIUM</dt>
+    /// <dt>
+    /// UNAVAILABLE_PREMIUM
+    /// </dt>
     /// <dd>
     /// <p>The domain name is not available.</p>
     /// </dd>
-    /// <dt>UNAVAILABLE_RESTRICTED</dt>
+    /// <dt>
+    /// UNAVAILABLE_RESTRICTED
+    /// </dt>
     /// <dd>
     /// <p>The domain name is forbidden.</p>
     /// </dd>
@@ -5707,48 +3571,62 @@ pub mod domain_suggestion {
             self.domain_name = input;
             self
         }
-        /// <p>Whether the domain name is available for registering.</p>
-        /// <note>
+        /// <p>Whether the domain name is available for registering.</p> <note>
         /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
         /// </note>
         /// <p>Valid values:</p>
         /// <dl>
-        /// <dt>AVAILABLE</dt>
+        /// <dt>
+        /// AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name is available.</p>
         /// </dd>
-        /// <dt>AVAILABLE_RESERVED</dt>
+        /// <dt>
+        /// AVAILABLE_RESERVED
+        /// </dt>
         /// <dd>
         /// <p>The domain name is reserved under specific conditions.</p>
         /// </dd>
-        /// <dt>AVAILABLE_PREORDER</dt>
+        /// <dt>
+        /// AVAILABLE_PREORDER
+        /// </dt>
         /// <dd>
         /// <p>The domain name is available and can be preordered.</p>
         /// </dd>
-        /// <dt>DONT_KNOW</dt>
+        /// <dt>
+        /// DONT_KNOW
+        /// </dt>
         /// <dd>
-        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
-        /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
-        /// Try again later.</p>
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
         /// </dd>
-        /// <dt>PENDING</dt>
+        /// <dt>
+        /// PENDING
+        /// </dt>
         /// <dd>
-        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
-        /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
         /// </dd>
-        /// <dt>RESERVED</dt>
+        /// <dt>
+        /// RESERVED
+        /// </dt>
         /// <dd>
         /// <p>The domain name has been reserved for another person or organization.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE</dt>
+        /// <dt>
+        /// UNAVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name is not available.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE_PREMIUM</dt>
+        /// <dt>
+        /// UNAVAILABLE_PREMIUM
+        /// </dt>
         /// <dd>
         /// <p>The domain name is not available.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE_RESTRICTED</dt>
+        /// <dt>
+        /// UNAVAILABLE_RESTRICTED
+        /// </dt>
         /// <dd>
         /// <p>The domain name is forbidden.</p>
         /// </dd>
@@ -5757,48 +3635,62 @@ pub mod domain_suggestion {
             self.availability = Some(input.into());
             self
         }
-        /// <p>Whether the domain name is available for registering.</p>
-        /// <note>
+        /// <p>Whether the domain name is available for registering.</p> <note>
         /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
         /// </note>
         /// <p>Valid values:</p>
         /// <dl>
-        /// <dt>AVAILABLE</dt>
+        /// <dt>
+        /// AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name is available.</p>
         /// </dd>
-        /// <dt>AVAILABLE_RESERVED</dt>
+        /// <dt>
+        /// AVAILABLE_RESERVED
+        /// </dt>
         /// <dd>
         /// <p>The domain name is reserved under specific conditions.</p>
         /// </dd>
-        /// <dt>AVAILABLE_PREORDER</dt>
+        /// <dt>
+        /// AVAILABLE_PREORDER
+        /// </dt>
         /// <dd>
         /// <p>The domain name is available and can be preordered.</p>
         /// </dd>
-        /// <dt>DONT_KNOW</dt>
+        /// <dt>
+        /// DONT_KNOW
+        /// </dt>
         /// <dd>
-        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
-        /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
-        /// Try again later.</p>
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
         /// </dd>
-        /// <dt>PENDING</dt>
+        /// <dt>
+        /// PENDING
+        /// </dt>
         /// <dd>
-        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
-        /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
         /// </dd>
-        /// <dt>RESERVED</dt>
+        /// <dt>
+        /// RESERVED
+        /// </dt>
         /// <dd>
         /// <p>The domain name has been reserved for another person or organization.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE</dt>
+        /// <dt>
+        /// UNAVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name is not available.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE_PREMIUM</dt>
+        /// <dt>
+        /// UNAVAILABLE_PREMIUM
+        /// </dt>
         /// <dd>
         /// <p>The domain name is not available.</p>
         /// </dd>
-        /// <dt>UNAVAILABLE_RESTRICTED</dt>
+        /// <dt>
+        /// UNAVAILABLE_RESTRICTED
+        /// </dt>
         /// <dd>
         /// <p>The domain name is forbidden.</p>
         /// </dd>
@@ -5886,22 +3778,26 @@ impl AsRef<str> for ReachabilityStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p>
-    /// <note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
     /// </note>
-    ///
     /// <p>Valid values:</p>
     /// <dl>
-    /// <dt>TRANSFERABLE</dt>
+    /// <dt>
+    /// TRANSFERABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name can be transferred to Route 53.</p>
     /// </dd>
-    /// <dt>UNTRANSFERRABLE</dt>
+    /// <dt>
+    /// UNTRANSFERRABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name can't be transferred to Route 53.</p>
     /// </dd>
-    /// <dt>DONT_KNOW</dt>
+    /// <dt>
+    /// DONT_KNOW
+    /// </dt>
     /// <dd>
     /// <p>Reserved for future use.</p>
     /// </dd>
@@ -5909,22 +3805,26 @@ pub struct DomainTransferability {
     pub transferable: std::option::Option<crate::model::Transferable>,
 }
 impl DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p>
-    /// <note>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
     /// </note>
-    ///
     /// <p>Valid values:</p>
     /// <dl>
-    /// <dt>TRANSFERABLE</dt>
+    /// <dt>
+    /// TRANSFERABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name can be transferred to Route 53.</p>
     /// </dd>
-    /// <dt>UNTRANSFERRABLE</dt>
+    /// <dt>
+    /// UNTRANSFERRABLE
+    /// </dt>
     /// <dd>
     /// <p>The domain name can't be transferred to Route 53.</p>
     /// </dd>
-    /// <dt>DONT_KNOW</dt>
+    /// <dt>
+    /// DONT_KNOW
+    /// </dt>
     /// <dd>
     /// <p>Reserved for future use.</p>
     /// </dd>
@@ -5949,22 +3849,26 @@ pub mod domain_transferability {
         pub(crate) transferable: std::option::Option<crate::model::Transferable>,
     }
     impl Builder {
-        /// <p>Whether the domain name can be transferred to Route 53.</p>
-        /// <note>
+        /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
         /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
         /// </note>
-        ///
         /// <p>Valid values:</p>
         /// <dl>
-        /// <dt>TRANSFERABLE</dt>
+        /// <dt>
+        /// TRANSFERABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name can be transferred to Route 53.</p>
         /// </dd>
-        /// <dt>UNTRANSFERRABLE</dt>
+        /// <dt>
+        /// UNTRANSFERRABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name can't be transferred to Route 53.</p>
         /// </dd>
-        /// <dt>DONT_KNOW</dt>
+        /// <dt>
+        /// DONT_KNOW
+        /// </dt>
         /// <dd>
         /// <p>Reserved for future use.</p>
         /// </dd>
@@ -5973,22 +3877,26 @@ pub mod domain_transferability {
             self.transferable = Some(input);
             self
         }
-        /// <p>Whether the domain name can be transferred to Route 53.</p>
-        /// <note>
+        /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
         /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
         /// </note>
-        ///
         /// <p>Valid values:</p>
         /// <dl>
-        /// <dt>TRANSFERABLE</dt>
+        /// <dt>
+        /// TRANSFERABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name can be transferred to Route 53.</p>
         /// </dd>
-        /// <dt>UNTRANSFERRABLE</dt>
+        /// <dt>
+        /// UNTRANSFERRABLE
+        /// </dt>
         /// <dd>
         /// <p>The domain name can't be transferred to Route 53.</p>
         /// </dd>
-        /// <dt>DONT_KNOW</dt>
+        /// <dt>
+        /// DONT_KNOW
+        /// </dt>
         /// <dd>
         /// <p>Reserved for future use.</p>
         /// </dd>

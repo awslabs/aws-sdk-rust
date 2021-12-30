@@ -521,27 +521,13 @@ impl PackageSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunResults {
-    /// <p>
-    /// Specifies the deployment mechanism through which the update shall be applied on the domain.
-    /// Possible responses are
-    /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
-    /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
-    /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
-    /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
-    /// </p>
+    /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
     pub deployment_type: std::option::Option<std::string::String>,
     /// <p>Contains an optional message associated with the DryRunResults.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl DryRunResults {
-    /// <p>
-    /// Specifies the deployment mechanism through which the update shall be applied on the domain.
-    /// Possible responses are
-    /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
-    /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
-    /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
-    /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
-    /// </p>
+    /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
     pub fn deployment_type(&self) -> std::option::Option<&str> {
         self.deployment_type.as_deref()
     }
@@ -568,26 +554,12 @@ pub mod dry_run_results {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// Possible responses are
-        /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
-        /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
-        /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
-        /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
-        /// </p>
+        /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
         pub fn deployment_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_type = Some(input.into());
             self
         }
-        /// <p>
-        /// Specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// Possible responses are
-        /// <code>Blue/Green</code> (The update will require a blue/green deployment.)
-        /// <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.)
-        /// <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.)
-        /// <code>None</code> (The configuration change matches the current configuration and will not result in any update.)
-        /// </p>
+        /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -646,7 +618,7 @@ pub struct ElasticsearchDomainConfig {
     /// <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptionsStatus>,
-    /// <p>Specifies the <code>AdvancedOptions</code> for the domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
+    /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
     pub advanced_options: std::option::Option<crate::model::AdvancedOptionsStatus>,
     /// <p>Log publishing options for the given domain.</p>
     pub log_publishing_options: std::option::Option<crate::model::LogPublishingOptionsStatus>,
@@ -702,7 +674,7 @@ impl ElasticsearchDomainConfig {
     ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptionsStatus> {
         self.node_to_node_encryption_options.as_ref()
     }
-    /// <p>Specifies the <code>AdvancedOptions</code> for the domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
+    /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
     pub fn advanced_options(&self) -> std::option::Option<&crate::model::AdvancedOptionsStatus> {
         self.advanced_options.as_ref()
     }
@@ -916,12 +888,12 @@ pub mod elasticsearch_domain_config {
             self.node_to_node_encryption_options = input;
             self
         }
-        /// <p>Specifies the <code>AdvancedOptions</code> for the domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
+        /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
         pub fn advanced_options(mut self, input: crate::model::AdvancedOptionsStatus) -> Self {
             self.advanced_options = Some(input);
             self
         }
-        /// <p>Specifies the <code>AdvancedOptions</code> for the domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
+        /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedOptionsStatus>,
@@ -2473,13 +2445,12 @@ impl DomainEndpointOptionsStatus {
 pub struct DomainEndpointOptions {
     /// <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.</p>
     pub enforce_https: std::option::Option<bool>,
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain.
-    /// <br></br> It can be one of the following values:
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub tls_security_policy: std::option::Option<crate::model::TlsSecurityPolicy>,
     /// <p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>
     pub custom_endpoint_enabled: std::option::Option<bool>,
@@ -2493,13 +2464,12 @@ impl DomainEndpointOptions {
     pub fn enforce_https(&self) -> std::option::Option<bool> {
         self.enforce_https
     }
-    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain.
-    /// <br></br> It can be one of the following values:
+    /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
     }
@@ -2553,24 +2523,22 @@ pub mod domain_endpoint_options {
             self.enforce_https = input;
             self
         }
-        /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain.
-        /// <br></br> It can be one of the following values:
+        /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
         /// <ul>
         /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
         /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn tls_security_policy(mut self, input: crate::model::TlsSecurityPolicy) -> Self {
             self.tls_security_policy = Some(input);
             self
         }
-        /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain.
-        /// <br></br> It can be one of the following values:
+        /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
         /// <ul>
         /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
         /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_tls_security_policy(
             mut self,
             input: std::option::Option<crate::model::TlsSecurityPolicy>,
@@ -2790,13 +2758,12 @@ impl LogPublishingOptionsStatus {
     }
 }
 
-/// <p>Log Publishing option that is set for given domain.
-/// <br></br>Attributes and their details:
+/// <p>Log Publishing option that is set for given domain. <br><br>Attributes and their details: </p>
 /// <ul>
 /// <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>
 /// <li>Enabled: Whether the log publishing for given log type is enabled or not</li>
 /// </ul>
-/// </p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPublishingOption {
@@ -2955,8 +2922,7 @@ impl AsRef<str> for LogType {
 
 /// <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p>
 /// <ul>
-/// <li>Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-/// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li>
+/// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li>
 /// <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li>
 /// </ul>
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p>
@@ -3894,15 +3860,13 @@ impl SnapshotOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPoliciesStatus {
-    /// <p>The access policy configured for the Elasticsearch domain.  Access policies may be resource-based, IP-based, or IAM-based.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">
-    /// Configuring Access Policies</a>for more information.</p>
+    /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
     pub options: std::option::Option<std::string::String>,
     /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AccessPoliciesStatus {
-    /// <p>The access policy configured for the Elasticsearch domain.  Access policies may be resource-based, IP-based, or IAM-based.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">
-    /// Configuring Access Policies</a>for more information.</p>
+    /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
     pub fn options(&self) -> std::option::Option<&str> {
         self.options.as_deref()
     }
@@ -3929,14 +3893,12 @@ pub mod access_policies_status {
         pub(crate) status: std::option::Option<crate::model::OptionStatus>,
     }
     impl Builder {
-        /// <p>The access policy configured for the Elasticsearch domain.  Access policies may be resource-based, IP-based, or IAM-based.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">
-        /// Configuring Access Policies</a>for more information.</p>
+        /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
         pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
             self.options = Some(input.into());
             self
         }
-        /// <p>The access policy configured for the Elasticsearch domain.  Access policies may be resource-based, IP-based, or IAM-based.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">
-        /// Configuring Access Policies</a>for more information.</p>
+        /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
         pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.options = input;
             self
@@ -4306,9 +4268,9 @@ pub struct ElasticsearchClusterConfig {
     pub instance_type: std::option::Option<crate::model::EsPartitionInstanceType>,
     /// <p>The number of instances in the specified domain cluster.</p>
     pub instance_count: std::option::Option<i32>,
-    /// <p>A boolean value to indicate whether a dedicated master node is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
+    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
     pub dedicated_master_enabled: std::option::Option<bool>,
-    /// <p>A boolean value to indicate whether zone awareness is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
+    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
     pub zone_awareness_enabled: std::option::Option<bool>,
     /// <p>Specifies the zone awareness configuration for a domain when zone awareness is enabled.</p>
     pub zone_awareness_config: std::option::Option<crate::model::ZoneAwarenessConfig>,
@@ -4334,11 +4296,11 @@ impl ElasticsearchClusterConfig {
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>A boolean value to indicate whether a dedicated master node is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
+    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
     pub fn dedicated_master_enabled(&self) -> std::option::Option<bool> {
         self.dedicated_master_enabled
     }
-    /// <p>A boolean value to indicate whether zone awareness is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
+    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
     pub fn zone_awareness_enabled(&self) -> std::option::Option<bool> {
         self.zone_awareness_enabled
     }
@@ -4433,22 +4395,22 @@ pub mod elasticsearch_cluster_config {
             self.instance_count = input;
             self
         }
-        /// <p>A boolean value to indicate whether a dedicated master node is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
+        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
         pub fn dedicated_master_enabled(mut self, input: bool) -> Self {
             self.dedicated_master_enabled = Some(input);
             self
         }
-        /// <p>A boolean value to indicate whether a dedicated master node is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
+        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank">About Dedicated Master Nodes</a> for more information.</p>
         pub fn set_dedicated_master_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dedicated_master_enabled = input;
             self
         }
-        /// <p>A boolean value to indicate whether zone awareness is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
+        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
         pub fn zone_awareness_enabled(mut self, input: bool) -> Self {
             self.zone_awareness_enabled = Some(input);
             self
         }
-        /// <p>A boolean value to indicate whether zone awareness is enabled.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
+        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness" target="_blank">About Zone Awareness</a> for more information.</p>
         pub fn set_zone_awareness_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.zone_awareness_enabled = input;
             self
@@ -5666,7 +5628,7 @@ pub struct ServiceSoftwareOptions {
     pub description: std::option::Option<std::string::String>,
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
     pub automated_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.  </p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub optional_deployment: std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {
@@ -5698,7 +5660,7 @@ impl ServiceSoftwareOptions {
     pub fn automated_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.automated_update_date.as_ref()
     }
-    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.  </p>
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(&self) -> std::option::Option<bool> {
         self.optional_deployment
     }
@@ -5812,12 +5774,12 @@ pub mod service_software_options {
             self.automated_update_date = input;
             self
         }
-        /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.  </p>
+        /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
         pub fn optional_deployment(mut self, input: bool) -> Self {
             self.optional_deployment = Some(input);
             self
         }
-        /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>.  </p>
+        /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
         pub fn set_optional_deployment(mut self, input: std::option::Option<bool>) -> Self {
             self.optional_deployment = input;
             self
@@ -5921,22 +5883,22 @@ impl AsRef<str> for DeploymentStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InboundCrossClusterSearchConnection {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub source_domain_info: std::option::Option<crate::model::DomainInformation>,
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub destination_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the connection id for the inbound cross-cluster search connection.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+    /// <p>Specifies the <code><code>InboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
     pub connection_status:
         std::option::Option<crate::model::InboundCrossClusterSearchConnectionStatus>,
 }
 impl InboundCrossClusterSearchConnection {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn source_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.source_domain_info.as_ref()
     }
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.destination_domain_info.as_ref()
     }
@@ -5944,7 +5906,7 @@ impl InboundCrossClusterSearchConnection {
     pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
         self.cross_cluster_search_connection_id.as_deref()
     }
-    /// <p>Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+    /// <p>Specifies the <code><code>InboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
     pub fn connection_status(
         &self,
     ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnectionStatus> {
@@ -5977,12 +5939,12 @@ pub mod inbound_cross_cluster_search_connection {
             std::option::Option<crate::model::InboundCrossClusterSearchConnectionStatus>,
     }
     impl Builder {
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn source_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.source_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -5990,12 +5952,12 @@ pub mod inbound_cross_cluster_search_connection {
             self.source_domain_info = input;
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn destination_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.destination_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -6019,7 +5981,7 @@ pub mod inbound_cross_cluster_search_connection {
             self.cross_cluster_search_connection_id = input;
             self
         }
-        /// <p>Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+        /// <p>Specifies the <code><code>InboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
         pub fn connection_status(
             mut self,
             input: crate::model::InboundCrossClusterSearchConnectionStatus,
@@ -6027,7 +5989,7 @@ pub mod inbound_cross_cluster_search_connection {
             self.connection_status = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+        /// <p>Specifies the <code><code>InboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::InboundCrossClusterSearchConnectionStatus>,
@@ -6346,19 +6308,17 @@ impl DomainInformation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>Specifies the <code>TagKey</code>, the name of the tag.  Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
+    /// <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key.  Tag values can be null and do not have to be unique in a tag set.  For example, you can have a key value
-    /// pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
+    /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>Specifies the <code>TagKey</code>, the name of the tag.  Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
+    /// <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key.  Tag values can be null and do not have to be unique in a tag set.  For example, you can have a key value
-    /// pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
+    /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -6381,24 +6341,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the <code>TagKey</code>, the name of the tag.  Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
+        /// <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Specifies the <code>TagKey</code>, the name of the tag.  Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
+        /// <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key.  Tag values can be null and do not have to be unique in a tag set.  For example, you can have a key value
-        /// pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
+        /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key.  Tag values can be null and do not have to be unique in a tag set.  For example, you can have a key value
-        /// pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
+        /// <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -6982,23 +6940,16 @@ pub struct UpgradeHistory {
     pub upgrade_name: std::option::Option<std::string::String>,
     /// <p>UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The overall status of the update. The status can take one of the following values:
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_status: std::option::Option<crate::model::UpgradeStatus>,
-    /// <p>
-    /// A list of
-    /// <code>
-    /// <a>UpgradeStepItem</a>
-    /// </code>
-    /// s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.
-    /// </p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub steps_list: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
 }
 impl UpgradeHistory {
@@ -7010,25 +6961,18 @@ impl UpgradeHistory {
     pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>
-    /// The overall status of the update. The status can take one of the following values:
+    /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
         self.upgrade_status.as_ref()
     }
-    /// <p>
-    /// A list of
-    /// <code>
-    /// <a>UpgradeStepItem</a>
-    /// </code>
-    /// s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.
-    /// </p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
     pub fn steps_list(&self) -> std::option::Option<&[crate::model::UpgradeStepItem]> {
         self.steps_list.as_deref()
     }
@@ -7078,28 +7022,26 @@ pub mod upgrade_history {
             self.start_timestamp = input;
             self
         }
-        /// <p>
-        /// The overall status of the update. The status can take one of the following values:
+        /// <p> The overall status of the update. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_status(mut self, input: crate::model::UpgradeStatus) -> Self {
             self.upgrade_status = Some(input);
             self
         }
-        /// <p>
-        /// The overall status of the update. The status can take one of the following values:
+        /// <p> The overall status of the update. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -7111,26 +7053,14 @@ pub mod upgrade_history {
         ///
         /// To override the contents of this collection use [`set_steps_list`](Self::set_steps_list).
         ///
-        /// <p>
-        /// A list of
-        /// <code>
-        /// <a>UpgradeStepItem</a>
-        /// </code>
-        /// s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.
-        /// </p>
+        /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
         pub fn steps_list(mut self, input: crate::model::UpgradeStepItem) -> Self {
             let mut v = self.steps_list.unwrap_or_default();
             v.push(input);
             self.steps_list = Some(v);
             self
         }
-        /// <p>
-        /// A list of
-        /// <code>
-        /// <a>UpgradeStepItem</a>
-        /// </code>
-        /// s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.
-        /// </p>
+        /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
         pub fn set_steps_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
@@ -7160,24 +7090,22 @@ impl UpgradeHistory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeStepItem {
-    /// <p>
-    /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
     /// <li>Upgrade</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
-    /// <p>
-    /// The status of a particular step during an upgrade. The status can take one of the following values:
+    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
     pub issues: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7185,26 +7113,24 @@ pub struct UpgradeStepItem {
     pub progress_percent: std::option::Option<f64>,
 }
 impl UpgradeStepItem {
-    /// <p>
-    /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
     /// <li>Upgrade</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
-    /// <p>
-    /// The status of a particular step during an upgrade. The status can take one of the following values:
+    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
         self.upgrade_step_status.as_ref()
     }
@@ -7239,26 +7165,24 @@ pub mod upgrade_step_item {
         pub(crate) progress_percent: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>
-        /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+        /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
         /// <ul>
         /// <li>PreUpgradeCheck</li>
         /// <li>Snapshot</li>
         /// <li>Upgrade</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_step(mut self, input: crate::model::UpgradeStep) -> Self {
             self.upgrade_step = Some(input);
             self
         }
-        /// <p>
-        /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+        /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
         /// <ul>
         /// <li>PreUpgradeCheck</li>
         /// <li>Snapshot</li>
         /// <li>Upgrade</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_step(
             mut self,
             input: std::option::Option<crate::model::UpgradeStep>,
@@ -7266,28 +7190,26 @@ pub mod upgrade_step_item {
             self.upgrade_step = input;
             self
         }
-        /// <p>
-        /// The status of a particular step during an upgrade. The status can take one of the following values:
+        /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_step_status(mut self, input: crate::model::UpgradeStatus) -> Self {
             self.upgrade_step_status = Some(input);
             self
         }
-        /// <p>
-        /// The status of a particular step during an upgrade. The status can take one of the following values:
+        /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_step_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -7443,24 +7365,13 @@ impl PackageVersionHistory {
     }
 }
 
-/// <p>
-/// A map from an
-/// <code>
-/// <a>ElasticsearchVersion</a>
-/// </code>
-/// to a list of compatible
-/// <code>
-/// <a>ElasticsearchVersion</a>
-/// </code>
-/// s to which the domain can be upgraded.
-/// </p>
+/// <p> A map from an <code> <code>ElasticsearchVersion</code> </code> to a list of compatible <code> <code>ElasticsearchVersion</code> </code> s to which the domain can be upgraded. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version of Elasticsearch on which a domain is.</p>
     pub source_version: std::option::Option<std::string::String>,
-    /// <p>List of supported elastic search versions.
-    /// </p>
+    /// <p>List of supported elastic search versions. </p>
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompatibleVersionsMap {
@@ -7468,8 +7379,7 @@ impl CompatibleVersionsMap {
     pub fn source_version(&self) -> std::option::Option<&str> {
         self.source_version.as_deref()
     }
-    /// <p>List of supported elastic search versions.
-    /// </p>
+    /// <p>List of supported elastic search versions. </p>
     pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.target_versions.as_deref()
     }
@@ -7509,16 +7419,14 @@ pub mod compatible_versions_map {
         ///
         /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
         ///
-        /// <p>List of supported elastic search versions.
-        /// </p>
+        /// <p>List of supported elastic search versions. </p>
         pub fn target_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_versions.unwrap_or_default();
             v.push(input.into());
             self.target_versions = Some(v);
             self
         }
-        /// <p>List of supported elastic search versions.
-        /// </p>
+        /// <p>List of supported elastic search versions. </p>
         pub fn set_target_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8407,24 +8315,24 @@ impl AsRef<str> for DescribePackagesFilterName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundCrossClusterSearchConnection {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub source_domain_info: std::option::Option<crate::model::DomainInformation>,
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub destination_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the connection id for the outbound cross-cluster search connection.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies the connection alias for the outbound cross-cluster search connection.</p>
     pub connection_alias: std::option::Option<std::string::String>,
-    /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
     pub connection_status:
         std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
 }
 impl OutboundCrossClusterSearchConnection {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn source_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.source_domain_info.as_ref()
     }
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.destination_domain_info.as_ref()
     }
@@ -8436,7 +8344,7 @@ impl OutboundCrossClusterSearchConnection {
     pub fn connection_alias(&self) -> std::option::Option<&str> {
         self.connection_alias.as_deref()
     }
-    /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+    /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
     pub fn connection_status(
         &self,
     ) -> std::option::Option<&crate::model::OutboundCrossClusterSearchConnectionStatus> {
@@ -8471,12 +8379,12 @@ pub mod outbound_cross_cluster_search_connection {
             std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
     }
     impl Builder {
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn source_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.source_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -8484,12 +8392,12 @@ pub mod outbound_cross_cluster_search_connection {
             self.source_domain_info = input;
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn destination_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.destination_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -8526,7 +8434,7 @@ pub mod outbound_cross_cluster_search_connection {
             self.connection_alias = input;
             self
         }
-        /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+        /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
         pub fn connection_status(
             mut self,
             input: crate::model::OutboundCrossClusterSearchConnectionStatus,
@@ -8534,7 +8442,7 @@ pub mod outbound_cross_cluster_search_connection {
             self.connection_status = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>
+        /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the outbound connection.</p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
@@ -8778,34 +8686,21 @@ impl AsRef<str> for OutboundCrossClusterSearchConnectionStatusCode {
     }
 }
 
-/// <p>
-/// A filter used to limit results when describing inbound or outbound cross-cluster search connections.
-/// Multiple values can be specified per filter.
-/// A cross-cluster search connection must match at least one of the specified values for it to be
-/// returned from an operation.
-/// </p>
+/// <p> A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>
-    /// Specifies the name of the filter.
-    /// </p>
+    /// <p> Specifies the name of the filter. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Contains one or more values for the filter.
-    /// </p>
+    /// <p> Contains one or more values for the filter. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
-    /// <p>
-    /// Specifies the name of the filter.
-    /// </p>
+    /// <p> Specifies the name of the filter. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// Contains one or more values for the filter.
-    /// </p>
+    /// <p> Contains one or more values for the filter. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -8828,16 +8723,12 @@ pub mod filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Specifies the name of the filter.
-        /// </p>
+        /// <p> Specifies the name of the filter. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// Specifies the name of the filter.
-        /// </p>
+        /// <p> Specifies the name of the filter. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8846,18 +8737,14 @@ pub mod filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>
-        /// Contains one or more values for the filter.
-        /// </p>
+        /// <p> Contains one or more values for the filter. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>
-        /// Contains one or more values for the filter.
-        /// </p>
+        /// <p> Contains one or more values for the filter. </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8881,59 +8768,27 @@ impl Filter {
     }
 }
 
-/// <p>
-/// Limits for given InstanceType and for each of it's role.
-/// <br></br>
-/// Limits contains following
-/// <code>
-/// <a>StorageTypes,</a>
-/// </code>
-/// <code>
-/// <a>InstanceLimits</a>
-/// </code>
-/// and
-/// <code>
-/// <a>AdditionalLimits</a>
-/// </code>
-/// </p>
+/// <p> Limits for given InstanceType and for each of it's role. <br><br> Limits contains following <code> <code>StorageTypes,</code> </code> <code> <code>InstanceLimits</code> </code> and <code> <code>AdditionalLimits</code> </code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limits {
-    /// <p>StorageType represents the list of storage related types and attributes
-    /// that are available for given InstanceType.
-    /// </p>
+    /// <p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>
     pub storage_types: std::option::Option<std::vec::Vec<crate::model::StorageType>>,
-    /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
-    /// </p>
+    /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
     pub instance_limits: std::option::Option<crate::model::InstanceLimits>,
-    /// <p>
-    /// List of additional limits that are specific to a given InstanceType and for each of it's
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
     pub additional_limits: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
 }
 impl Limits {
-    /// <p>StorageType represents the list of storage related types and attributes
-    /// that are available for given InstanceType.
-    /// </p>
+    /// <p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>
     pub fn storage_types(&self) -> std::option::Option<&[crate::model::StorageType]> {
         self.storage_types.as_deref()
     }
-    /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
-    /// </p>
+    /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
     pub fn instance_limits(&self) -> std::option::Option<&crate::model::InstanceLimits> {
         self.instance_limits.as_ref()
     }
-    /// <p>
-    /// List of additional limits that are specific to a given InstanceType and for each of it's
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
     pub fn additional_limits(&self) -> std::option::Option<&[crate::model::AdditionalLimit]> {
         self.additional_limits.as_deref()
     }
@@ -8963,18 +8818,14 @@ pub mod limits {
         ///
         /// To override the contents of this collection use [`set_storage_types`](Self::set_storage_types).
         ///
-        /// <p>StorageType represents the list of storage related types and attributes
-        /// that are available for given InstanceType.
-        /// </p>
+        /// <p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>
         pub fn storage_types(mut self, input: crate::model::StorageType) -> Self {
             let mut v = self.storage_types.unwrap_or_default();
             v.push(input);
             self.storage_types = Some(v);
             self
         }
-        /// <p>StorageType represents the list of storage related types and attributes
-        /// that are available for given InstanceType.
-        /// </p>
+        /// <p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>
         pub fn set_storage_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageType>>,
@@ -8982,14 +8833,12 @@ pub mod limits {
             self.storage_types = input;
             self
         }
-        /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
-        /// </p>
+        /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
         pub fn instance_limits(mut self, input: crate::model::InstanceLimits) -> Self {
             self.instance_limits = Some(input);
             self
         }
-        /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
-        /// </p>
+        /// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
         pub fn set_instance_limits(
             mut self,
             input: std::option::Option<crate::model::InstanceLimits>,
@@ -9001,26 +8850,14 @@ pub mod limits {
         ///
         /// To override the contents of this collection use [`set_additional_limits`](Self::set_additional_limits).
         ///
-        /// <p>
-        /// List of additional limits that are specific to a given InstanceType and for each of it's
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
         pub fn additional_limits(mut self, input: crate::model::AdditionalLimit) -> Self {
             let mut v = self.additional_limits.unwrap_or_default();
             v.push(input);
             self.additional_limits = Some(v);
             self
         }
-        /// <p>
-        /// List of additional limits that are specific to a given InstanceType and for each of it's
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
         pub fn set_additional_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
@@ -9045,89 +8882,31 @@ impl Limits {
     }
 }
 
-/// <p>
-/// List of limits that are specific to a given InstanceType and for each of it's
-/// <code>
-/// <a>InstanceRole</a>
-/// </code>
-/// .
-/// </p>
+/// <p> List of limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalLimit {
-    /// <p>
-    /// Name of Additional Limit is specific to a given InstanceType and for each of it's
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// etc.
-    /// <br></br>
-    /// Attributes and their details:
-    /// <br></br>
+    /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
-    /// <li>MaximumNumberOfDataNodesSupported</li>
-    /// This attribute will be present in Master node only to specify how
-    /// much data nodes upto which given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// can support as master node.
-    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-    /// This attribute will be present in Data node only to specify how much
-    /// data nodes of given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// upto which you don't need any master nodes to govern them.
+    /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub limit_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Value for given
-    /// <code>
-    /// <a>AdditionalLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdditionalLimit {
-    /// <p>
-    /// Name of Additional Limit is specific to a given InstanceType and for each of it's
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// etc.
-    /// <br></br>
-    /// Attributes and their details:
-    /// <br></br>
+    /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
-    /// <li>MaximumNumberOfDataNodesSupported</li>
-    /// This attribute will be present in Master node only to specify how
-    /// much data nodes upto which given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// can support as master node.
-    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-    /// This attribute will be present in Data node only to specify how much
-    /// data nodes of given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// upto which you don't need any master nodes to govern them.
+    /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn limit_name(&self) -> std::option::Option<&str> {
         self.limit_name.as_deref()
     }
-    /// <p>
-    /// Value for given
-    /// <code>
-    /// <a>AdditionalLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
     }
@@ -9150,62 +8929,22 @@ pub mod additional_limit {
         pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Name of Additional Limit is specific to a given InstanceType and for each of it's
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// etc.
-        /// <br></br>
-        /// Attributes and their details:
-        /// <br></br>
+        /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
         /// <ul>
-        /// <li>MaximumNumberOfDataNodesSupported</li>
-        /// This attribute will be present in Master node only to specify how
-        /// much data nodes upto which given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// can support as master node.
-        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-        /// This attribute will be present in Data node only to specify how much
-        /// data nodes of given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// upto which you don't need any master nodes to govern them.
+        /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.limit_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Name of Additional Limit is specific to a given InstanceType and for each of it's
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// etc.
-        /// <br></br>
-        /// Attributes and their details:
-        /// <br></br>
+        /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
         /// <ul>
-        /// <li>MaximumNumberOfDataNodesSupported</li>
-        /// This attribute will be present in Master node only to specify how
-        /// much data nodes upto which given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// can support as master node.
-        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-        /// This attribute will be present in Data node only to specify how much
-        /// data nodes of given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// upto which you don't need any master nodes to govern them.
+        /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.limit_name = input;
             self
@@ -9214,26 +8953,14 @@ pub mod additional_limit {
         ///
         /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
         ///
-        /// <p>
-        /// Value for given
-        /// <code>
-        /// <a>AdditionalLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
         pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.limit_values.unwrap_or_default();
             v.push(input.into());
             self.limit_values = Some(v);
             self
         }
-        /// <p>
-        /// Value for given
-        /// <code>
-        /// <a>AdditionalLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
         pub fn set_limit_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9257,22 +8984,15 @@ impl AdditionalLimit {
     }
 }
 
-/// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
-/// </p>
+/// <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimits {
-    /// <p>
-    /// InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for
-    /// given InstanceType.
-    /// </p>
+    /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
     pub instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
 }
 impl InstanceLimits {
-    /// <p>
-    /// InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for
-    /// given InstanceType.
-    /// </p>
+    /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
     pub fn instance_count_limits(&self) -> std::option::Option<&crate::model::InstanceCountLimits> {
         self.instance_count_limits.as_ref()
     }
@@ -9293,18 +9013,12 @@ pub mod instance_limits {
         pub(crate) instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
     }
     impl Builder {
-        /// <p>
-        /// InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for
-        /// given InstanceType.
-        /// </p>
+        /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
         pub fn instance_count_limits(mut self, input: crate::model::InstanceCountLimits) -> Self {
             self.instance_count_limits = Some(input);
             self
         }
-        /// <p>
-        /// InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for
-        /// given InstanceType.
-        /// </p>
+        /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
         pub fn set_instance_count_limits(
             mut self,
             input: std::option::Option<crate::model::InstanceCountLimits>,
@@ -9327,32 +9041,21 @@ impl InstanceLimits {
     }
 }
 
-/// <p>
-/// InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for
-/// given InstanceType.
-/// </p>
+/// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceCountLimits {
-    /// <p>
-    /// Minimum number of Instances that can be instantiated for given InstanceType.
-    /// </p>
+    /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
     pub minimum_instance_count: i32,
-    /// <p>
-    /// Maximum number of Instances that can be instantiated for given InstanceType.
-    /// </p>
+    /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
     pub maximum_instance_count: i32,
 }
 impl InstanceCountLimits {
-    /// <p>
-    /// Minimum number of Instances that can be instantiated for given InstanceType.
-    /// </p>
+    /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
     pub fn minimum_instance_count(&self) -> i32 {
         self.minimum_instance_count
     }
-    /// <p>
-    /// Maximum number of Instances that can be instantiated for given InstanceType.
-    /// </p>
+    /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
     pub fn maximum_instance_count(&self) -> i32 {
         self.maximum_instance_count
     }
@@ -9375,30 +9078,22 @@ pub mod instance_count_limits {
         pub(crate) maximum_instance_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// Minimum number of Instances that can be instantiated for given InstanceType.
-        /// </p>
+        /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
         pub fn minimum_instance_count(mut self, input: i32) -> Self {
             self.minimum_instance_count = Some(input);
             self
         }
-        /// <p>
-        /// Minimum number of Instances that can be instantiated for given InstanceType.
-        /// </p>
+        /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
         pub fn set_minimum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_instance_count = input;
             self
         }
-        /// <p>
-        /// Maximum number of Instances that can be instantiated for given InstanceType.
-        /// </p>
+        /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
         pub fn maximum_instance_count(mut self, input: i32) -> Self {
             self.maximum_instance_count = Some(input);
             self
         }
-        /// <p>
-        /// Maximum number of Instances that can be instantiated for given InstanceType.
-        /// </p>
+        /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
         pub fn set_maximum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_instance_count = input;
             self
@@ -9419,67 +9114,49 @@ impl InstanceCountLimits {
     }
 }
 
-/// <p>StorageTypes represents the list of storage related types and their attributes
-/// that are available for given InstanceType.
-/// </p>
+/// <p>StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageType {
-    /// <p>
-    /// Type of the storage.
-    /// List of available storage options:
+    /// <p> Type of the storage. List of available storage options: </p>
     /// <ol>
     /// <li>instance</li> Inbuilt storage available for the given Instance
     /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub storage_type_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// SubType of the given storage type.
-    /// List of available sub-storage options:
-    /// For "instance" storageType we wont have any storageSubType,
-    /// in case of "ebs" storageType we will have following valid storageSubTypes
+    /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
     /// <li>io1</li>
-    /// </ol>
-    /// Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options.
-    /// </p>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
+    /// <p></p>
     pub storage_sub_type_name: std::option::Option<std::string::String>,
-    /// <p>List of limits that are applicable for given storage type.
-    /// </p>
+    /// <p>List of limits that are applicable for given storage type. </p>
     pub storage_type_limits: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
 }
 impl StorageType {
-    /// <p>
-    /// Type of the storage.
-    /// List of available storage options:
+    /// <p> Type of the storage. List of available storage options: </p>
     /// <ol>
     /// <li>instance</li> Inbuilt storage available for the given Instance
     /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub fn storage_type_name(&self) -> std::option::Option<&str> {
         self.storage_type_name.as_deref()
     }
-    /// <p>
-    /// SubType of the given storage type.
-    /// List of available sub-storage options:
-    /// For "instance" storageType we wont have any storageSubType,
-    /// in case of "ebs" storageType we will have following valid storageSubTypes
+    /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
     /// <li>io1</li>
-    /// </ol>
-    /// Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options.
-    /// </p>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
+    /// <p></p>
     pub fn storage_sub_type_name(&self) -> std::option::Option<&str> {
         self.storage_sub_type_name.as_deref()
     }
-    /// <p>List of limits that are applicable for given storage type.
-    /// </p>
+    /// <p>List of limits that are applicable for given storage type. </p>
     pub fn storage_type_limits(&self) -> std::option::Option<&[crate::model::StorageTypeLimit]> {
         self.storage_type_limits.as_deref()
     }
@@ -9505,26 +9182,22 @@ pub mod storage_type {
             std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
     }
     impl Builder {
-        /// <p>
-        /// Type of the storage.
-        /// List of available storage options:
+        /// <p> Type of the storage. List of available storage options: </p>
         /// <ol>
         /// <li>instance</li> Inbuilt storage available for the given Instance
         /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn storage_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Type of the storage.
-        /// List of available storage options:
+        /// <p> Type of the storage. List of available storage options: </p>
         /// <ol>
         /// <li>instance</li> Inbuilt storage available for the given Instance
         /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn set_storage_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9532,34 +9205,24 @@ pub mod storage_type {
             self.storage_type_name = input;
             self
         }
-        /// <p>
-        /// SubType of the given storage type.
-        /// List of available sub-storage options:
-        /// For "instance" storageType we wont have any storageSubType,
-        /// in case of "ebs" storageType we will have following valid storageSubTypes
+        /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
         /// <li>io1</li>
-        /// </ol>
-        /// Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options.
-        /// </p>
+        /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
+        /// <p></p>
         pub fn storage_sub_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_sub_type_name = Some(input.into());
             self
         }
-        /// <p>
-        /// SubType of the given storage type.
-        /// List of available sub-storage options:
-        /// For "instance" storageType we wont have any storageSubType,
-        /// in case of "ebs" storageType we will have following valid storageSubTypes
+        /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
         /// <li>io1</li>
-        /// </ol>
-        /// Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options.
-        /// </p>
+        /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
+        /// <p></p>
         pub fn set_storage_sub_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9571,16 +9234,14 @@ pub mod storage_type {
         ///
         /// To override the contents of this collection use [`set_storage_type_limits`](Self::set_storage_type_limits).
         ///
-        /// <p>List of limits that are applicable for given storage type.
-        /// </p>
+        /// <p>List of limits that are applicable for given storage type. </p>
         pub fn storage_type_limits(mut self, input: crate::model::StorageTypeLimit) -> Self {
             let mut v = self.storage_type_limits.unwrap_or_default();
             v.push(input);
             self.storage_type_limits = Some(v);
             self
         }
-        /// <p>List of limits that are applicable for given storage type.
-        /// </p>
+        /// <p>List of limits that are applicable for given storage type. </p>
         pub fn set_storage_type_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
@@ -9605,68 +9266,35 @@ impl StorageType {
     }
 }
 
-/// <p>Limits that are applicable for given storage type.
-/// </p>
+/// <p>Limits that are applicable for given storage type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeLimit {
-    /// <p>
-    /// Name of storage limits that are applicable for given storage type.
-    /// If
-    /// <code>
-    /// <a>StorageType</a>
-    /// </code>
-    /// is ebs, following storage options are applicable
+    /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
     /// <ol>
-    /// <li>MinimumVolumeSize</li>
-    /// Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li>
-    /// Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li>
-    /// Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li>
-    /// Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub limit_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Values for the
-    /// <code>
-    /// <a>StorageTypeLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageTypeLimit {
-    /// <p>
-    /// Name of storage limits that are applicable for given storage type.
-    /// If
-    /// <code>
-    /// <a>StorageType</a>
-    /// </code>
-    /// is ebs, following storage options are applicable
+    /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
     /// <ol>
-    /// <li>MinimumVolumeSize</li>
-    /// Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li>
-    /// Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li>
-    /// Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li>
-    /// Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub fn limit_name(&self) -> std::option::Option<&str> {
         self.limit_name.as_deref()
     }
-    /// <p>
-    /// Values for the
-    /// <code>
-    /// <a>StorageTypeLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
     }
@@ -9689,46 +9317,26 @@ pub mod storage_type_limit {
         pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Name of storage limits that are applicable for given storage type.
-        /// If
-        /// <code>
-        /// <a>StorageType</a>
-        /// </code>
-        /// is ebs, following storage options are applicable
+        /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
         /// <ol>
-        /// <li>MinimumVolumeSize</li>
-        /// Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MaximumVolumeSize</li>
-        /// Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MaximumIops</li>
-        /// Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MinimumIops</li>
-        /// Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.limit_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Name of storage limits that are applicable for given storage type.
-        /// If
-        /// <code>
-        /// <a>StorageType</a>
-        /// </code>
-        /// is ebs, following storage options are applicable
+        /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
         /// <ol>
-        /// <li>MinimumVolumeSize</li>
-        /// Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MaximumVolumeSize</li>
-        /// Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MaximumIops</li>
-        /// Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-        /// <li>MinimumIops</li>
-        /// Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
+        /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.limit_name = input;
             self
@@ -9737,26 +9345,14 @@ pub mod storage_type_limit {
         ///
         /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
         ///
-        /// <p>
-        /// Values for the
-        /// <code>
-        /// <a>StorageTypeLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
         pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.limit_values.unwrap_or_default();
             v.push(input.into());
             self.limit_values = Some(v);
             self
         }
-        /// <p>
-        /// Values for the
-        /// <code>
-        /// <a>StorageTypeLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
         pub fn set_limit_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9788,7 +9384,7 @@ pub struct ElasticsearchDomainStatus {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon resource name (ARN) of an Elasticsearch domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>
     pub created: std::option::Option<bool>,
@@ -9807,7 +9403,7 @@ pub struct ElasticsearchDomainStatus {
     pub elasticsearch_version: std::option::Option<std::string::String>,
     /// <p>The type and number of instances in the domain cluster.</p>
     pub elasticsearch_cluster_config: std::option::Option<crate::model::ElasticsearchClusterConfig>,
-    /// <p>The <code>EBSOptions</code> for the specified domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
+    /// <p>The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
     pub ebs_options: std::option::Option<crate::model::EbsOptions>,
     /// <p> IAM access policy as a JSON-formatted string.</p>
     pub access_policies: std::option::Option<std::string::String>,
@@ -9847,7 +9443,7 @@ impl ElasticsearchDomainStatus {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The Amazon resource name (ARN) of an Elasticsearch domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -9888,7 +9484,7 @@ impl ElasticsearchDomainStatus {
     ) -> std::option::Option<&crate::model::ElasticsearchClusterConfig> {
         self.elasticsearch_cluster_config.as_ref()
     }
-    /// <p>The <code>EBSOptions</code> for the specified domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
+    /// <p>The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
     pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
         self.ebs_options.as_ref()
     }
@@ -10061,12 +9657,12 @@ pub mod elasticsearch_domain_status {
             self.domain_name = input;
             self
         }
-        /// <p>The Amazon resource name (ARN) of an Elasticsearch domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+        /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon resource name (ARN) of an Elasticsearch domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+        /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10175,12 +9771,12 @@ pub mod elasticsearch_domain_status {
             self.elasticsearch_cluster_config = input;
             self
         }
-        /// <p>The <code>EBSOptions</code> for the specified domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
+        /// <p>The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
         pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
             self.ebs_options = Some(input);
             self
         }
-        /// <p>The <code>EBSOptions</code> for the specified domain.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
+        /// <p>The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,

@@ -12,14 +12,12 @@ pub mod create_scaling_plan_input {
             std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
     }
     impl Builder {
-        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
-        /// slashes.</p>
+        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
         pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.scaling_plan_name = Some(input.into());
             self
         }
-        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
-        /// slashes.</p>
+        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27,15 +25,13 @@ pub mod create_scaling_plan_input {
             self.scaling_plan_name = input;
             self
         }
-        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
-        /// source.</p>
+        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn application_source(mut self, input: crate::model::ApplicationSource) -> Self {
             self.application_source = Some(input);
             self
         }
-        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
-        /// source.</p>
+        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn set_application_source(
             mut self,
@@ -225,14 +221,12 @@ pub mod delete_scaling_plan_input {
             self.scaling_plan_name = input;
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -398,26 +392,22 @@ pub mod describe_scaling_plan_resources_input {
             self.scaling_plan_name = input;
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
         }
-        /// <p>The maximum number of scalable resources to return. The value must be between
-        /// 1 and 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of scalable resources to return. The value must be between
-        /// 1 and 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -591,16 +581,14 @@ pub mod describe_scaling_plans_input {
         ///
         /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
         ///
-        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
-        /// cannot specify scaling plan names.</p>
+        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
         pub fn scaling_plan_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scaling_plan_names.unwrap_or_default();
             v.push(input.into());
             self.scaling_plan_names = Some(v);
             self
         }
-        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
-        /// cannot specify scaling plan names.</p>
+        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
         pub fn set_scaling_plan_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -608,21 +596,15 @@ pub mod describe_scaling_plans_input {
             self.scaling_plan_names = input;
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
-        /// <note>
-        /// <p>If you specify a scaling plan version, you must also specify a scaling plan
-        /// name.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+        /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
         /// </note>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
-        /// <note>
-        /// <p>If you specify a scaling plan version, you must also specify a scaling plan
-        /// name.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+        /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
         /// </note>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
@@ -632,16 +614,14 @@ pub mod describe_scaling_plans_input {
         ///
         /// To override the contents of this collection use [`set_application_sources`](Self::set_application_sources).
         ///
-        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
-        /// cannot specify application sources.</p>
+        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
         pub fn application_sources(mut self, input: crate::model::ApplicationSource) -> Self {
             let mut v = self.application_sources.unwrap_or_default();
             v.push(input);
             self.application_sources = Some(v);
             self
         }
-        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
-        /// cannot specify application sources.</p>
+        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
         pub fn set_application_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationSource>>,
@@ -649,14 +629,12 @@ pub mod describe_scaling_plans_input {
             self.application_sources = input;
             self
         }
-        /// <p>The maximum number of scalable resources to return. This value can be between
-        /// 1 and 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of scalable resources to return. This value can be between
-        /// 1 and 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -841,26 +819,22 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.scaling_plan_name = input;
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. Currently, the only valid value is
-        /// <code>1</code>.</p>
+        /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
         }
-        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
-        /// </p>
+        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
         pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
             self.service_namespace = Some(input);
             self
         }
-        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
-        /// </p>
+        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -868,28 +842,22 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.service_namespace = input;
             self
         }
-        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
-        /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
-        /// <code>autoScalingGroup/my-asg</code>. </p>
+        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
-        /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
-        /// <code>autoScalingGroup/my-asg</code>. </p>
+        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The scalable dimension for the resource. The only valid value is
-        /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+        /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
             self.scalable_dimension = Some(input);
             self
         }
-        /// <p>The scalable dimension for the resource. The only valid value is
-        /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+        /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -899,26 +867,10 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         }
         /// <p>The type of forecast data to get.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LoadForecast</code>: The load metric forecast. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CapacityForecast</code>: The capacity forecast. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
-        /// scaling action. This data is calculated as the larger of two values: the capacity
-        /// forecast or the minimum capacity in the scaling instruction.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
-        /// scaling action. The calculation used is determined by the predictive scaling maximum
-        /// capacity behavior setting in the scaling instruction.</p>
-        /// </li>
+        /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
+        /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
+        /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
+        /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
         /// </ul>
         pub fn forecast_data_type(mut self, input: crate::model::ForecastDataType) -> Self {
             self.forecast_data_type = Some(input);
@@ -926,26 +878,10 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         }
         /// <p>The type of forecast data to get.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LoadForecast</code>: The load metric forecast. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CapacityForecast</code>: The capacity forecast. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
-        /// scaling action. This data is calculated as the larger of two values: the capacity
-        /// forecast or the minimum capacity in the scaling instruction.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
-        /// scaling action. The calculation used is determined by the predictive scaling maximum
-        /// capacity behavior setting in the scaling instruction.</p>
-        /// </li>
+        /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
+        /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
+        /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
+        /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
         /// </ul>
         pub fn set_forecast_data_type(
             mut self,
@@ -954,14 +890,12 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.forecast_data_type = input;
             self
         }
-        /// <p>The inclusive start time of the time range for the forecast data to get. The date and
-        /// time can be at most 56 days before the current date and time. </p>
+        /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The inclusive start time of the time range for the forecast data to get. The date and
-        /// time can be at most 56 days before the current date and time. </p>
+        /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -969,20 +903,14 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.start_time = input;
             self
         }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
-        /// duration between the start and end time is seven days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the
-        /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
-        /// periods of two days in advance.</p>
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
-        /// duration between the start and end time is seven days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the
-        /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
-        /// periods of two days in advance.</p>
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1161,14 +1089,12 @@ pub mod update_scaling_plan_input {
             self.scaling_plan_name = input;
             self
         }
-        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
-        /// Currently, you cannot have multiple scaling plan versions.</p>
+        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
-        /// Currently, you cannot have multiple scaling plan versions.</p>
+        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -1353,8 +1279,7 @@ impl UpdateScalingPlanInput {
 pub struct UpdateScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
-    /// Currently, you cannot have multiple scaling plan versions.</p>
+    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub scaling_plan_version: std::option::Option<i64>,
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
@@ -1368,8 +1293,7 @@ impl UpdateScalingPlanInput {
     pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
-    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
-    /// Currently, you cannot have multiple scaling plan versions.</p>
+    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
@@ -1401,51 +1325,26 @@ impl std::fmt::Debug for UpdateScalingPlanInput {
 pub struct GetScalingPlanResourceForecastDataInput {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub scaling_plan_version: std::option::Option<i64>,
-    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
-    /// </p>
+    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
     pub service_namespace: std::option::Option<crate::model::ServiceNamespace>,
-    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
-    /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
-    /// <code>autoScalingGroup/my-asg</code>. </p>
+    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The scalable dimension for the resource. The only valid value is
-    /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LoadForecast</code>: The load metric forecast. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CapacityForecast</code>: The capacity forecast. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
-    /// scaling action. This data is calculated as the larger of two values: the capacity
-    /// forecast or the minimum capacity in the scaling instruction.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
-    /// scaling action. The calculation used is determined by the predictive scaling maximum
-    /// capacity behavior setting in the scaling instruction.</p>
-    /// </li>
+    /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
+    /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
+    /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
+    /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
     pub forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
-    /// <p>The inclusive start time of the time range for the forecast data to get. The date and
-    /// time can be at most 56 days before the current date and time. </p>
+    /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
-    /// duration between the start and end time is seven days. </p>
-    /// <p>Although this parameter can accept a date and time that is more than two days in the
-    /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
-    /// periods of two days in advance.</p>
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetScalingPlanResourceForecastDataInput {
@@ -1453,63 +1352,38 @@ impl GetScalingPlanResourceForecastDataInput {
     pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
-    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
-    /// </p>
+    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
     pub fn service_namespace(&self) -> std::option::Option<&crate::model::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
-    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
-    /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
-    /// <code>autoScalingGroup/my-asg</code>. </p>
+    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The scalable dimension for the resource. The only valid value is
-    /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
     pub fn scalable_dimension(&self) -> std::option::Option<&crate::model::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LoadForecast</code>: The load metric forecast. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CapacityForecast</code>: The capacity forecast. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
-    /// scaling action. This data is calculated as the larger of two values: the capacity
-    /// forecast or the minimum capacity in the scaling instruction.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
-    /// scaling action. The calculation used is determined by the predictive scaling maximum
-    /// capacity behavior setting in the scaling instruction.</p>
-    /// </li>
+    /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
+    /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
+    /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
+    /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
     pub fn forecast_data_type(&self) -> std::option::Option<&crate::model::ForecastDataType> {
         self.forecast_data_type.as_ref()
     }
-    /// <p>The inclusive start time of the time range for the forecast data to get. The date and
-    /// time can be at most 56 days before the current date and time. </p>
+    /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
-    /// duration between the start and end time is seven days. </p>
-    /// <p>Although this parameter can accept a date and time that is more than two days in the
-    /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
-    /// periods of two days in advance.</p>
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -1533,47 +1407,35 @@ impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlansInput {
-    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
-    /// cannot specify scaling plan names.</p>
+    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
     pub scaling_plan_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
-    /// <note>
-    /// <p>If you specify a scaling plan version, you must also specify a scaling plan
-    /// name.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub scaling_plan_version: std::option::Option<i64>,
-    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
-    /// cannot specify application sources.</p>
+    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
     pub application_sources: std::option::Option<std::vec::Vec<crate::model::ApplicationSource>>,
-    /// <p>The maximum number of scalable resources to return. This value can be between
-    /// 1 and 50. The default value is 50.</p>
+    /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlansInput {
-    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
-    /// cannot specify scaling plan names.</p>
+    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
     pub fn scaling_plan_names(&self) -> std::option::Option<&[std::string::String]> {
         self.scaling_plan_names.as_deref()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
-    /// <note>
-    /// <p>If you specify a scaling plan version, you must also specify a scaling plan
-    /// name.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
-    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
-    /// cannot specify application sources.</p>
+    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
     pub fn application_sources(&self) -> std::option::Option<&[crate::model::ApplicationSource]> {
         self.application_sources.as_deref()
     }
-    /// <p>The maximum number of scalable resources to return. This value can be between
-    /// 1 and 50. The default value is 50.</p>
+    /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -1600,11 +1462,9 @@ impl std::fmt::Debug for DescribeScalingPlansInput {
 pub struct DescribeScalingPlanResourcesInput {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub scaling_plan_version: std::option::Option<i64>,
-    /// <p>The maximum number of scalable resources to return. The value must be between
-    /// 1 and 50. The default value is 50.</p>
+    /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -1614,13 +1474,11 @@ impl DescribeScalingPlanResourcesInput {
     pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
-    /// <p>The maximum number of scalable resources to return. The value must be between
-    /// 1 and 50. The default value is 50.</p>
+    /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -1646,8 +1504,7 @@ impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
 pub struct DeleteScalingPlanInput {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub scaling_plan_version: std::option::Option<i64>,
 }
 impl DeleteScalingPlanInput {
@@ -1655,8 +1512,7 @@ impl DeleteScalingPlanInput {
     pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is
-    /// <code>1</code>.</p>
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
@@ -1674,11 +1530,9 @@ impl std::fmt::Debug for DeleteScalingPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScalingPlanInput {
-    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
-    /// slashes.</p>
+    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
     pub scaling_plan_name: std::option::Option<std::string::String>,
-    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
-    /// source.</p>
+    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub application_source: std::option::Option<crate::model::ApplicationSource>,
     /// <p>The scaling instructions.</p>
@@ -1686,13 +1540,11 @@ pub struct CreateScalingPlanInput {
     pub scaling_instructions: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
 }
 impl CreateScalingPlanInput {
-    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
-    /// slashes.</p>
+    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
     pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
-    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
-    /// source.</p>
+    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub fn application_source(&self) -> std::option::Option<&crate::model::ApplicationSource> {
         self.application_source.as_ref()

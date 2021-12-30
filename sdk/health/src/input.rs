@@ -11,42 +11,26 @@ pub mod describe_affected_accounts_for_organization_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier for the event. The event ARN has the
-        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>
-        /// format.</p>
+        /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
         /// <p>For example, an event ARN might look like the following:</p>
-        /// <p>
-        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-        /// </p>
+        /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
         pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_arn = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the event. The event ARN has the
-        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>
-        /// format.</p>
+        /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
         /// <p>For example, an event ARN might look like the following:</p>
-        /// <p>
-        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-        /// </p>
+        /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -236,18 +220,12 @@ pub mod describe_affected_entities_input {
             self.locale = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -420,8 +398,7 @@ pub mod describe_affected_entities_for_organization_input {
         ///
         /// To override the contents of this collection use [`set_organization_entity_filters`](Self::set_organization_entity_filters).
         ///
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn organization_entity_filters(
             mut self,
             input: crate::model::EventAccountFilter,
@@ -431,8 +408,7 @@ pub mod describe_affected_entities_for_organization_input {
             self.organization_entity_filters = Some(v);
             self
         }
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn set_organization_entity_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
@@ -450,18 +426,12 @@ pub mod describe_affected_entities_for_organization_input {
             self.locale = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -630,16 +600,14 @@ pub mod describe_entity_aggregates_input {
         ///
         /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
         ///
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_arns.unwrap_or_default();
             v.push(input.into());
             self.event_arns = Some(v);
             self
         }
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -830,18 +798,12 @@ pub mod describe_event_aggregates_input {
             self.max_results = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1001,16 +963,14 @@ pub mod describe_event_details_input {
         ///
         /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
         ///
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_arns.unwrap_or_default();
             v.push(input.into());
             self.event_arns = Some(v);
             self
         }
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1181,8 +1141,7 @@ pub mod describe_event_details_for_organization_input {
         ///
         /// To override the contents of this collection use [`set_organization_event_detail_filters`](Self::set_organization_event_detail_filters).
         ///
-        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn organization_event_detail_filters(
             mut self,
             input: crate::model::EventAccountFilter,
@@ -1192,8 +1151,7 @@ pub mod describe_event_details_for_organization_input {
             self.organization_event_detail_filters = Some(v);
             self
         }
-        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn set_organization_event_detail_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
@@ -1372,18 +1330,12 @@ pub mod describe_events_input {
             self.filter = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1571,18 +1523,12 @@ pub mod describe_events_for_organization_input {
             self.filter = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1783,18 +1729,12 @@ pub mod describe_event_types_input {
             self.locale = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2395,10 +2335,7 @@ pub struct DescribeEventTypesInput {
     pub filter: std::option::Option<crate::model::EventTypeFilter>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
@@ -2412,10 +2349,7 @@ impl DescribeEventTypesInput {
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2441,10 +2375,7 @@ impl std::fmt::Debug for DescribeEventTypesInput {
 pub struct DescribeEventsForOrganizationInput {
     /// <p>Values to narrow the results returned.</p>
     pub filter: std::option::Option<crate::model::OrganizationEventFilter>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
@@ -2456,10 +2387,7 @@ impl DescribeEventsForOrganizationInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::OrganizationEventFilter> {
         self.filter.as_ref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2489,10 +2417,7 @@ impl std::fmt::Debug for DescribeEventsForOrganizationInput {
 pub struct DescribeEventsInput {
     /// <p>Values to narrow the results returned.</p>
     pub filter: std::option::Option<crate::model::EventFilter>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
@@ -2504,10 +2429,7 @@ impl DescribeEventsInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::EventFilter> {
         self.filter.as_ref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2535,16 +2457,14 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsForOrganizationInput {
-    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-    /// <code>eventArn</code>.</p>
+    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     pub organization_event_detail_filters:
         std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsForOrganizationInput {
-    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-    /// <code>eventArn</code>.</p>
+    /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     pub fn organization_event_detail_filters(
         &self,
     ) -> std::option::Option<&[crate::model::EventAccountFilter]> {
@@ -2571,15 +2491,13 @@ impl std::fmt::Debug for DescribeEventDetailsForOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsInput {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-    /// </p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsInput {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-    /// </p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.event_arns.as_deref()
     }
@@ -2607,10 +2525,7 @@ pub struct DescribeEventAggregatesInput {
     pub aggregate_field: std::option::Option<crate::model::EventAggregateField>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventAggregatesInput {
@@ -2626,10 +2541,7 @@ impl DescribeEventAggregatesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2649,13 +2561,11 @@ impl std::fmt::Debug for DescribeEventAggregatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityAggregatesInput {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-    /// </p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEntityAggregatesInput {
-    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-    /// </p>
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.event_arns.as_deref()
     }
@@ -2672,23 +2582,18 @@ impl std::fmt::Debug for DescribeEntityAggregatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesForOrganizationInput {
-    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-    /// <code>eventArn</code>.</p>
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     pub organization_entity_filters:
         std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
-    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-    /// <code>eventArn</code>.</p>
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     pub fn organization_entity_filters(
         &self,
     ) -> std::option::Option<&[crate::model::EventAccountFilter]> {
@@ -2698,10 +2603,7 @@ impl DescribeAffectedEntitiesForOrganizationInput {
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2732,10 +2634,7 @@ pub struct DescribeAffectedEntitiesInput {
     pub filter: std::option::Option<crate::model::EntityFilter>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: std::option::Option<std::string::String>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
@@ -2749,10 +2648,7 @@ impl DescribeAffectedEntitiesInput {
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2776,39 +2672,23 @@ impl std::fmt::Debug for DescribeAffectedEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedAccountsForOrganizationInput {
-    /// <p>The unique identifier for the event. The event ARN has the
-    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-    /// </code>
-    /// format.</p>
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
-    /// <p>
-    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-    /// </p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub event_arn: std::option::Option<std::string::String>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAffectedAccountsForOrganizationInput {
-    /// <p>The unique identifier for the event. The event ARN has the
-    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-    /// </code>
-    /// format.</p>
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
-    /// <p>
-    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-    /// </p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn event_arn(&self) -> std::option::Option<&str> {
         self.event_arn.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

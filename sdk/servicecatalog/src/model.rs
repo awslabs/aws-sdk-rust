@@ -537,18 +537,9 @@ pub struct ProvisioningArtifactDetail {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-    /// </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
@@ -573,18 +564,9 @@ impl ProvisioningArtifactDetail {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-    /// </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
         self.r#type.as_ref()
@@ -662,18 +644,9 @@ pub mod provisioning_artifact_detail {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-        /// </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ProvisioningArtifactType) -> Self {
             self.r#type = Some(input);
@@ -681,18 +654,9 @@ pub mod provisioning_artifact_detail {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-        /// </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -1014,28 +978,11 @@ pub struct RecordDetail {
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATED</code> - The request was created but the operation has not started.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-    /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
-    /// Investigate using the error messages returned.</p>
-    /// </li>
+    /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
@@ -1046,21 +993,9 @@ pub struct RecordDetail {
     pub provisioned_product_type: std::option::Option<std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISION_PRODUCT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PROVISIONED_PRODUCT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
     pub record_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
@@ -1089,28 +1024,11 @@ impl RecordDetail {
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATED</code> - The request was created but the operation has not started.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-    /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
-    /// Investigate using the error messages returned.</p>
-    /// </li>
+    /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::RecordStatus> {
         self.status.as_ref()
@@ -1129,21 +1047,9 @@ impl RecordDetail {
     }
     /// <p>The record type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISION_PRODUCT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_PROVISIONED_PRODUCT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
+    /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
     pub fn record_type(&self) -> std::option::Option<&str> {
         self.record_type.as_deref()
@@ -1244,28 +1150,11 @@ pub mod record_detail {
         }
         /// <p>The status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code> - The request was created but the operation has not started.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-        /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
-        /// Investigate using the error messages returned.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::RecordStatus) -> Self {
             self.status = Some(input);
@@ -1273,28 +1162,11 @@ pub mod record_detail {
         }
         /// <p>The status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code> - The request was created but the operation has not started.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-        /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
-        /// Investigate using the error messages returned.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1344,21 +1216,9 @@ pub mod record_detail {
         }
         /// <p>The record type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISION_PRODUCT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PROVISIONED_PRODUCT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
+        /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
         /// </ul>
         pub fn record_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_type = Some(input.into());
@@ -1366,21 +1226,9 @@ pub mod record_detail {
         }
         /// <p>The record type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISION_PRODUCT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_PROVISIONED_PRODUCT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+        /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
+        /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
         /// </ul>
         pub fn set_record_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.record_type = input;
@@ -1657,8 +1505,7 @@ impl RecordError {
     }
 }
 
-/// <p>Information about a tag. A tag is a key-value pair. Tags are propagated
-/// to the resources created when provisioning a product.</p>
+/// <p>Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -1769,15 +1616,21 @@ pub struct UpdateProvisioningPreferences {
     /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <dl>
-    /// <dt>CREATE</dt>
+    /// <dt>
+    /// CREATE
+    /// </dt>
     /// <dd>
     /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
     /// </dd>
-    /// <dt>UPDATE</dt>
+    /// <dt>
+    /// UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
     /// </dd>
-    /// <dt>DELETE</dt>
+    /// <dt>
+    /// DELETE
+    /// </dt>
     /// <dd>
     /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
     /// </dd>
@@ -1831,15 +1684,21 @@ impl UpdateProvisioningPreferences {
     /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <dl>
-    /// <dt>CREATE</dt>
+    /// <dt>
+    /// CREATE
+    /// </dt>
     /// <dd>
     /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
     /// </dd>
-    /// <dt>UPDATE</dt>
+    /// <dt>
+    /// UPDATE
+    /// </dt>
     /// <dd>
     /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
     /// </dd>
-    /// <dt>DELETE</dt>
+    /// <dt>
+    /// DELETE
+    /// </dt>
     /// <dd>
     /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
     /// </dd>
@@ -2022,15 +1881,21 @@ pub mod update_provisioning_preferences {
         /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <dl>
-        /// <dt>CREATE</dt>
+        /// <dt>
+        /// CREATE
+        /// </dt>
         /// <dd>
         /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
         /// </dd>
-        /// <dt>UPDATE</dt>
+        /// <dt>
+        /// UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
         /// </dd>
-        /// <dt>DELETE</dt>
+        /// <dt>
+        /// DELETE
+        /// </dt>
         /// <dd>
         /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
         /// </dd>
@@ -2045,15 +1910,21 @@ pub mod update_provisioning_preferences {
         /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <dl>
-        /// <dt>CREATE</dt>
+        /// <dt>
+        /// CREATE
+        /// </dt>
         /// <dd>
         /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
         /// </dd>
-        /// <dt>UPDATE</dt>
+        /// <dt>
+        /// UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
         /// </dd>
-        /// <dt>DELETE</dt>
+        /// <dt>
+        /// DELETE
+        /// </dt>
         /// <dd>
         /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
         /// </dd>
@@ -2245,18 +2116,9 @@ pub struct ProductViewDetail {
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The product is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - An action failed.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The ARN of the product.</p>
@@ -2271,18 +2133,9 @@ impl ProductViewDetail {
     }
     /// <p>The status of the product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The product is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - An action failed.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
@@ -2333,18 +2186,9 @@ pub mod product_view_detail {
         }
         /// <p>The status of the product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The product is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - An action failed.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
@@ -2352,18 +2196,9 @@ pub mod product_view_detail {
         }
         /// <p>The status of the product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The product is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - An action failed.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
+        /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
+        /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
@@ -2420,23 +2255,15 @@ pub struct ProductViewSummary {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The name of the product.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the product. Contact the product administrator for the significance of
-    /// this value.</p>
+    /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>Short description of the product.</p>
     pub short_description: std::option::Option<std::string::String>,
-    /// <p>The product type. Contact the product administrator for the significance of this
-    /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
-    /// Marketplace.</p>
+    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
     pub r#type: std::option::Option<crate::model::ProductType>,
-    /// <p>The distributor of the product. Contact the product administrator for the
-    /// significance of this value.</p>
+    /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     pub distributor: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the product has a default path.
-    /// If the product does not have a default path, call <a>ListLaunchPaths</a>
-    /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
-    /// required, and the output of <a>ProductViewSummary</a> can be used directly with
-    /// <a>DescribeProvisioningParameters</a>.</p>
+    /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub has_default_path: bool,
     /// <p>The email contact information to obtain support for this Product.</p>
     pub support_email: std::option::Option<std::string::String>,
@@ -2458,8 +2285,7 @@ impl ProductViewSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The owner of the product. Contact the product administrator for the significance of
-    /// this value.</p>
+    /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -2467,22 +2293,15 @@ impl ProductViewSummary {
     pub fn short_description(&self) -> std::option::Option<&str> {
         self.short_description.as_deref()
     }
-    /// <p>The product type. Contact the product administrator for the significance of this
-    /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
-    /// Marketplace.</p>
+    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProductType> {
         self.r#type.as_ref()
     }
-    /// <p>The distributor of the product. Contact the product administrator for the
-    /// significance of this value.</p>
+    /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     pub fn distributor(&self) -> std::option::Option<&str> {
         self.distributor.as_deref()
     }
-    /// <p>Indicates whether the product has a default path.
-    /// If the product does not have a default path, call <a>ListLaunchPaths</a>
-    /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
-    /// required, and the output of <a>ProductViewSummary</a> can be used directly with
-    /// <a>DescribeProvisioningParameters</a>.</p>
+    /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub fn has_default_path(&self) -> bool {
         self.has_default_path
     }
@@ -2565,14 +2384,12 @@ pub mod product_view_summary {
             self.name = input;
             self
         }
-        /// <p>The owner of the product. Contact the product administrator for the significance of
-        /// this value.</p>
+        /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the product. Contact the product administrator for the significance of
-        /// this value.</p>
+        /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -2590,46 +2407,32 @@ pub mod product_view_summary {
             self.short_description = input;
             self
         }
-        /// <p>The product type. Contact the product administrator for the significance of this
-        /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
-        /// Marketplace.</p>
+        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
         pub fn r#type(mut self, input: crate::model::ProductType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The product type. Contact the product administrator for the significance of this
-        /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
-        /// Marketplace.</p>
+        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ProductType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The distributor of the product. Contact the product administrator for the
-        /// significance of this value.</p>
+        /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
         pub fn distributor(mut self, input: impl Into<std::string::String>) -> Self {
             self.distributor = Some(input.into());
             self
         }
-        /// <p>The distributor of the product. Contact the product administrator for the
-        /// significance of this value.</p>
+        /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
         pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.distributor = input;
             self
         }
-        /// <p>Indicates whether the product has a default path.
-        /// If the product does not have a default path, call <a>ListLaunchPaths</a>
-        /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
-        /// required, and the output of <a>ProductViewSummary</a> can be used directly with
-        /// <a>DescribeProvisioningParameters</a>.</p>
+        /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
         pub fn has_default_path(mut self, input: bool) -> Self {
             self.has_default_path = Some(input);
             self
         }
-        /// <p>Indicates whether the product has a default path.
-        /// If the product does not have a default path, call <a>ListLaunchPaths</a>
-        /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
-        /// required, and the output of <a>ProductViewSummary</a> can be used directly with
-        /// <a>DescribeProvisioningParameters</a>.</p>
+        /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
         pub fn set_has_default_path(mut self, input: std::option::Option<bool>) -> Self {
             self.has_default_path = input;
             self
@@ -3121,24 +2924,10 @@ pub struct ConstraintDetail {
     pub constraint_id: std::option::Option<std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>STACKSET</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
@@ -3157,24 +2946,10 @@ impl ConstraintDetail {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>STACKSET</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -3237,24 +3012,10 @@ pub mod constraint_detail {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>STACKSET</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p>STACKSET</p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -3262,24 +3023,10 @@ pub mod constraint_detail {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>STACKSET</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p>STACKSET</p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -3359,89 +3106,35 @@ pub struct ProvisionedProductAttribute {
     pub id: std::option::Option<std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-    /// recent operation succeeded and completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-    /// completed the requested operation but is not exactly what was requested. For example, a
-    /// request to update to a new version failed and the stack rolled back to the current version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub last_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub last_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
@@ -3480,32 +3173,11 @@ impl ProvisionedProductAttribute {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-    /// recent operation succeeded and completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-    /// completed the requested operation but is not exactly what was requested. For example, a
-    /// request to update to a new version failed and the stack rolled back to the current version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductStatus> {
         self.status.as_ref()
@@ -3518,8 +3190,7 @@ impl ProvisionedProductAttribute {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -3529,52 +3200,20 @@ impl ProvisionedProductAttribute {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_provisioning_record_id.as_deref()
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_successful_provisioning_record_id.as_deref()
@@ -3715,32 +3354,11 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The current status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-        /// recent operation succeeded and completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-        /// completed the requested operation but is not exactly what was requested. For example, a
-        /// request to update to a new version failed and the stack rolled back to the current version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+        /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+        /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+        /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+        /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ProvisionedProductStatus) -> Self {
             self.status = Some(input);
@@ -3748,32 +3366,11 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The current status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-        /// recent operation succeeded and completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-        /// completed the requested operation but is not exactly what was requested. For example, a
-        /// request to update to a new version failed and the stack rolled back to the current version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+        /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+        /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+        /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+        /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -3808,14 +3405,12 @@ pub mod provisioned_product_attribute {
             self.created_time = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3838,26 +3433,10 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn last_provisioning_record_id(
             mut self,
@@ -3868,26 +3447,10 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn set_last_provisioning_record_id(
             mut self,
@@ -3898,26 +3461,10 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn last_successful_provisioning_record_id(
             mut self,
@@ -3928,26 +3475,10 @@ pub mod provisioned_product_attribute {
         }
         /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn set_last_successful_provisioning_record_id(
             mut self,
@@ -4272,18 +3803,9 @@ impl AsRef<str> for ProvisionedProductViewFilterBy {
 pub struct AccessLevelFilter {
     /// <p>The access level.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Account</code> - Filter results based on the account.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>User</code> - Filter results based on the specified user.</p>
-    /// </li>
+    /// <li> <p> <code>Account</code> - Filter results based on the account.</p> </li>
+    /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
+    /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
     pub key: std::option::Option<crate::model::AccessLevelFilterKey>,
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
@@ -4292,18 +3814,9 @@ pub struct AccessLevelFilter {
 impl AccessLevelFilter {
     /// <p>The access level.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Account</code> - Filter results based on the account.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>User</code> - Filter results based on the specified user.</p>
-    /// </li>
+    /// <li> <p> <code>Account</code> - Filter results based on the account.</p> </li>
+    /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
+    /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&crate::model::AccessLevelFilterKey> {
         self.key.as_ref()
@@ -4333,18 +3846,9 @@ pub mod access_level_filter {
     impl Builder {
         /// <p>The access level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Account</code> - Filter results based on the account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>User</code> - Filter results based on the specified user.</p>
-        /// </li>
+        /// <li> <p> <code>Account</code> - Filter results based on the account.</p> </li>
+        /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
+        /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
         /// </ul>
         pub fn key(mut self, input: crate::model::AccessLevelFilterKey) -> Self {
             self.key = Some(input);
@@ -4352,18 +3856,9 @@ pub mod access_level_filter {
         }
         /// <p>The access level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Account</code> - Filter results based on the account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>User</code> - Filter results based on the specified user.</p>
-        /// </li>
+        /// <li> <p> <code>Account</code> - Filter results based on the account.</p> </li>
+        /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
+        /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
         /// </ul>
         pub fn set_key(
             mut self,
@@ -4630,8 +4125,7 @@ impl AsRef<str> for ProductViewFilterBy {
     }
 }
 
-/// <p>A single product view aggregation value/count pair, containing metadata about each
-/// product to which the calling user has access.</p>
+/// <p>A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductViewAggregationValue {
@@ -4718,89 +4212,35 @@ pub struct ProvisionedProductDetail {
     pub id: std::option::Option<std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-    /// recent operation succeeded and completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-    /// completed the requested operation but is not exactly what was requested. For example, a
-    /// request to update to a new version failed and the stack rolled back to the current version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub last_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub last_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -4829,32 +4269,11 @@ impl ProvisionedProductDetail {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-    /// recent operation succeeded and completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-    /// completed the requested operation but is not exactly what was requested. For example, a
-    /// request to update to a new version failed and the stack rolled back to the current version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-    /// </li>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductStatus> {
         self.status.as_ref()
@@ -4867,8 +4286,7 @@ impl ProvisionedProductDetail {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-    /// the same response is returned for each repeated request.</p>
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -4878,52 +4296,20 @@ impl ProvisionedProductDetail {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_provisioning_record_id.as_deref()
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// ProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// UpdateProvisionedProduct
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// ExecuteProvisionedProductPlan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// TerminateProvisionedProduct
-    /// </p>
-    /// </li>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_successful_provisioning_record_id.as_deref()
@@ -5031,32 +4417,11 @@ pub mod provisioned_product_detail {
         }
         /// <p>The current status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-        /// recent operation succeeded and completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-        /// completed the requested operation but is not exactly what was requested. For example, a
-        /// request to update to a new version failed and the stack rolled back to the current version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+        /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+        /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+        /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+        /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ProvisionedProductStatus) -> Self {
             self.status = Some(input);
@@ -5064,32 +4429,11 @@ pub mod provisioned_product_detail {
         }
         /// <p>The current status of the provisioned product.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
-        /// recent operation succeeded and completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
-        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
-        /// completed the requested operation but is not exactly what was requested. For example, a
-        /// request to update to a new version failed and the stack rolled back to the current version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
-        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
-        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
-        /// </li>
+        /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+        /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+        /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+        /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+        /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -5124,14 +4468,12 @@ pub mod provisioned_product_detail {
             self.created_time = input;
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5154,26 +4496,10 @@ pub mod provisioned_product_detail {
         }
         /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn last_provisioning_record_id(
             mut self,
@@ -5184,26 +4510,10 @@ pub mod provisioned_product_detail {
         }
         /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn set_last_provisioning_record_id(
             mut self,
@@ -5214,26 +4524,10 @@ pub mod provisioned_product_detail {
         }
         /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn last_successful_provisioning_record_id(
             mut self,
@@ -5244,26 +4538,10 @@ pub mod provisioned_product_detail {
         }
         /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// ProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// UpdateProvisionedProduct
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// ExecuteProvisionedProductPlan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// TerminateProvisionedProduct
-        /// </p>
-        /// </li>
+        /// <li> <p> ProvisionedProduct </p> </li>
+        /// <li> <p> UpdateProvisionedProduct </p> </li>
+        /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+        /// <li> <p> TerminateProvisionedProduct </p> </li>
         /// </ul>
         pub fn set_last_successful_provisioning_record_id(
             mut self,
@@ -5395,16 +4673,11 @@ impl AsRef<str> for PortfolioShareType {
     }
 }
 
-/// <p>The user-defined preferences that will be applied when updating a provisioned
-/// product. Not all preferences are applicable to all provisioned product type</p>
+/// <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type</p>
 /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
 /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-/// <p>The AWS accounts specified should be within the list of accounts in the
-/// <code>STACKSET</code> constraint. To get the list of accounts in the
-/// <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
-/// operation.</p>
-/// <p>If no values are specified, the default value is all accounts from the
-/// <code>STACKSET</code> constraint.</p>
+/// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+/// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningPreferences {
@@ -5846,20 +5119,9 @@ pub struct StackInstance {
     pub region: std::option::Option<std::string::String>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
-    /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
-    /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceStatus>,
 }
@@ -5874,20 +5136,9 @@ impl StackInstance {
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
-    /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
-    /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn stack_instance_status(&self) -> std::option::Option<&crate::model::StackInstanceStatus> {
         self.stack_instance_status.as_ref()
@@ -5935,20 +5186,9 @@ pub mod stack_instance {
         }
         /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
-        /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
-        /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn stack_instance_status(mut self, input: crate::model::StackInstanceStatus) -> Self {
             self.stack_instance_status = Some(input);
@@ -5956,20 +5196,9 @@ pub mod stack_instance {
         }
         /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
-        /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
-        /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn set_stack_instance_status(
             mut self,
@@ -6193,14 +5422,8 @@ impl ResourceDetail {
 pub struct ListRecordHistorySearchFilter {
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>product</code> - Filter results based on the specified product identifier.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
-    /// </li>
+    /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
+    /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
     /// </ul>
     pub key: std::option::Option<std::string::String>,
     /// <p>The filter value.</p>
@@ -6209,14 +5432,8 @@ pub struct ListRecordHistorySearchFilter {
 impl ListRecordHistorySearchFilter {
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>product</code> - Filter results based on the specified product identifier.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
-    /// </li>
+    /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
+    /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -6246,14 +5463,8 @@ pub mod list_record_history_search_filter {
     impl Builder {
         /// <p>The filter key.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>product</code> - Filter results based on the specified product identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
-        /// </li>
+        /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
+        /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
@@ -6261,14 +5472,8 @@ pub mod list_record_history_search_filter {
         }
         /// <p>The filter key.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>product</code> - Filter results based on the specified product identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
-        /// </li>
+        /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
+        /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -6995,24 +6200,10 @@ impl LaunchPathSummary {
 pub struct ConstraintSummary {
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>STACKSET</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The description of the constraint.</p>
@@ -7021,24 +6212,10 @@ pub struct ConstraintSummary {
 impl ConstraintSummary {
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAUNCH</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFICATION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>STACKSET</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TEMPLATE</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LAUNCH</code> </p> </li>
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+    /// <li> <p>STACKSET</p> </li>
+    /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -7068,24 +6245,10 @@ pub mod constraint_summary {
     impl Builder {
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>STACKSET</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p>STACKSET</p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -7093,24 +6256,10 @@ pub mod constraint_summary {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>STACKSET</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p>STACKSET</p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -7196,8 +6345,7 @@ impl BudgetDetail {
     }
 }
 
-/// <p>The output for the product created as the result of a request. For example, the output for
-/// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+/// <p>The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordOutput {
@@ -7787,8 +6935,7 @@ pub struct ProvisioningArtifactParameter {
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The parameter type.</p>
     pub parameter_type: std::option::Option<std::string::String>,
-    /// <p>If this value is true, the value for this parameter is obfuscated from view when the
-    /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
+    /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
     pub is_no_echo: bool,
     /// <p>The description of the parameter.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7808,8 +6955,7 @@ impl ProvisioningArtifactParameter {
     pub fn parameter_type(&self) -> std::option::Option<&str> {
         self.parameter_type.as_deref()
     }
-    /// <p>If this value is true, the value for this parameter is obfuscated from view when the
-    /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
+    /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
     pub fn is_no_echo(&self) -> bool {
         self.is_no_echo
     }
@@ -7889,14 +7035,12 @@ pub mod provisioning_artifact_parameter {
             self.parameter_type = input;
             self
         }
-        /// <p>If this value is true, the value for this parameter is obfuscated from view when the
-        /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
+        /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
         pub fn is_no_echo(mut self, input: bool) -> Self {
             self.is_no_echo = Some(input);
             self
         }
-        /// <p>If this value is true, the value for this parameter is obfuscated from view when the
-        /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
+        /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
         pub fn set_is_no_echo(mut self, input: std::option::Option<bool>) -> Self {
             self.is_no_echo = input;
             self
@@ -7953,16 +7097,9 @@ pub struct ParameterConstraints {
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    ///
-    /// <p>
-    /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
-    /// </p>
-    ///
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    ///
-    /// <p>
-    /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
-    /// </p>
+    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
     pub constraint_description: std::option::Option<std::string::String>,
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
     pub max_length: std::option::Option<std::string::String>,
@@ -7983,16 +7120,9 @@ impl ParameterConstraints {
         self.allowed_pattern.as_deref()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    ///
-    /// <p>
-    /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
-    /// </p>
-    ///
+    /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-    ///
-    /// <p>
-    /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
-    /// </p>
+    /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
     pub fn constraint_description(&self) -> std::option::Option<&str> {
         self.constraint_description.as_deref()
     }
@@ -8074,31 +7204,17 @@ pub mod parameter_constraints {
             self
         }
         /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-        ///
-        /// <p>
-        /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
-        /// </p>
-        ///
+        /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
         /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-        ///
-        /// <p>
-        /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
-        /// </p>
+        /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
         pub fn constraint_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.constraint_description = Some(input.into());
             self
         }
         /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-        ///
-        /// <p>
-        /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
-        /// </p>
-        ///
+        /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
         /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
-        ///
-        /// <p>
-        /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
-        /// </p>
+        /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
         pub fn set_constraint_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8179,8 +7295,7 @@ pub struct ResourceChange {
     pub physical_resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
-    /// is deleted and replaced with a new one.</p>
+    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
     pub replacement: std::option::Option<crate::model::Replacement>,
     /// <p>The change scope.</p>
     pub scope: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
@@ -8204,8 +7319,7 @@ impl ResourceChange {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
-    /// is deleted and replaced with a new one.</p>
+    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
     pub fn replacement(&self) -> std::option::Option<&crate::model::Replacement> {
         self.replacement.as_ref()
     }
@@ -8298,14 +7412,12 @@ pub mod resource_change {
             self.resource_type = input;
             self
         }
-        /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
-        /// is deleted and replaced with a new one.</p>
+        /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
         pub fn replacement(mut self, input: crate::model::Replacement) -> Self {
             self.replacement = Some(input);
             self
         }
-        /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
-        /// is deleted and replaced with a new one.</p>
+        /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
         pub fn set_replacement(
             mut self,
             input: std::option::Option<crate::model::Replacement>,
@@ -8378,8 +7490,7 @@ impl ResourceChange {
 pub struct ResourceChangeDetail {
     /// <p>Information about the resource attribute to be modified.</p>
     pub target: std::option::Option<crate::model::ResourceTargetDefinition>,
-    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
-    /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     pub evaluation: std::option::Option<crate::model::EvaluationType>,
     /// <p>The ID of the entity that caused the change.</p>
     pub causing_entity: std::option::Option<std::string::String>,
@@ -8389,8 +7500,7 @@ impl ResourceChangeDetail {
     pub fn target(&self) -> std::option::Option<&crate::model::ResourceTargetDefinition> {
         self.target.as_ref()
     }
-    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
-    /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     pub fn evaluation(&self) -> std::option::Option<&crate::model::EvaluationType> {
         self.evaluation.as_ref()
     }
@@ -8432,14 +7542,12 @@ pub mod resource_change_detail {
             self.target = input;
             self
         }
-        /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
-        /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+        /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
         pub fn evaluation(mut self, input: crate::model::EvaluationType) -> Self {
             self.evaluation = Some(input);
             self
         }
-        /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
-        /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+        /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
         pub fn set_evaluation(
             mut self,
             input: std::option::Option<crate::model::EvaluationType>,
@@ -8538,11 +7646,9 @@ impl AsRef<str> for EvaluationType {
 pub struct ResourceTargetDefinition {
     /// <p>The attribute to be changed.</p>
     pub attribute: std::option::Option<crate::model::ResourceAttribute>,
-    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
-    /// Otherwise, the value is null.</p>
+    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
-    /// causes the resource to be re-created.</p>
+    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     pub requires_recreation: std::option::Option<crate::model::RequiresRecreation>,
 }
 impl ResourceTargetDefinition {
@@ -8550,13 +7656,11 @@ impl ResourceTargetDefinition {
     pub fn attribute(&self) -> std::option::Option<&crate::model::ResourceAttribute> {
         self.attribute.as_ref()
     }
-    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
-    /// Otherwise, the value is null.</p>
+    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
-    /// causes the resource to be re-created.</p>
+    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     pub fn requires_recreation(&self) -> std::option::Option<&crate::model::RequiresRecreation> {
         self.requires_recreation.as_ref()
     }
@@ -8594,26 +7698,22 @@ pub mod resource_target_definition {
             self.attribute = input;
             self
         }
-        /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
-        /// Otherwise, the value is null.</p>
+        /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
-        /// Otherwise, the value is null.</p>
+        /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
-        /// causes the resource to be re-created.</p>
+        /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
         pub fn requires_recreation(mut self, input: crate::model::RequiresRecreation) -> Self {
             self.requires_recreation = Some(input);
             self
         }
-        /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
-        /// causes the resource to be re-created.</p>
+        /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
         pub fn set_requires_recreation(
             mut self,
             input: std::option::Option<crate::model::RequiresRecreation>,
@@ -8899,9 +7999,7 @@ impl AsRef<str> for ChangeAction {
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: std::option::Option<std::string::String>,
@@ -8921,11 +8019,9 @@ pub struct ProvisionedProductPlanDetails {
     pub status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
     /// <p>The time when the plan was last updated.</p>
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub provisioning_parameters:
         std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
@@ -8938,9 +8034,7 @@ impl ProvisionedProductPlanDetails {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The path identifier of the product. This value is optional if the product
-    /// has a default path, and required if the product has more than one path.
-    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
@@ -8980,13 +8074,11 @@ impl ProvisionedProductPlanDetails {
     pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
-    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-    /// events.</p>
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.notification_arns.as_deref()
     }
-    /// <p>Parameters specified by the administrator that are required for provisioning the
-    /// product.</p>
+    /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::UpdateProvisioningParameter]> {
@@ -9059,16 +8151,12 @@ pub mod provisioned_product_plan_details {
             self.created_time = input;
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.path_id = Some(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -9185,16 +8273,14 @@ pub mod provisioned_product_plan_details {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9206,8 +8292,7 @@ pub mod provisioned_product_plan_details {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: crate::model::UpdateProvisioningParameter,
@@ -9217,8 +8302,7 @@ pub mod provisioned_product_plan_details {
             self.provisioning_parameters = Some(v);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -9843,9 +8927,7 @@ impl ShareError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortfolioShareDetail {
-    /// <p>The identifier of the recipient entity that received the portfolio share.
-    /// The recipient entities can be one of the following:
-    /// </p>
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
     /// <p>1. An external account.</p>
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
@@ -9859,9 +8941,7 @@ pub struct PortfolioShareDetail {
     pub share_tag_options: bool,
 }
 impl PortfolioShareDetail {
-    /// <p>The identifier of the recipient entity that received the portfolio share.
-    /// The recipient entities can be one of the following:
-    /// </p>
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
     /// <p>1. An external account.</p>
     /// <p>2. An organziation member account.</p>
     /// <p>3. An organzational unit (OU).</p>
@@ -9904,9 +8984,7 @@ pub mod portfolio_share_detail {
         pub(crate) share_tag_options: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier of the recipient entity that received the portfolio share.
-        /// The recipient entities can be one of the following:
-        /// </p>
+        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
         /// <p>1. An external account.</p>
         /// <p>2. An organziation member account.</p>
         /// <p>3. An organzational unit (OU).</p>
@@ -9915,9 +8993,7 @@ pub mod portfolio_share_detail {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the recipient entity that received the portfolio share.
-        /// The recipient entities can be one of the following:
-        /// </p>
+        /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p>
         /// <p>1. An external account.</p>
         /// <p>2. An organziation member account.</p>
         /// <p>3. An organzational unit (OU).</p>
@@ -10112,33 +9188,17 @@ pub struct ProvisioningArtifactProperties {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specify the template source with one of the following options, but not both.
-    /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
-    /// <p>
-    /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
-    /// </p>
-    /// <p>
-    /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
-    /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
-    /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
-    /// </p>
+    /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+    /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     pub info:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-    /// </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
@@ -10153,17 +9213,10 @@ impl ProvisioningArtifactProperties {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specify the template source with one of the following options, but not both.
-    /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
-    /// <p>
-    /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
-    /// </p>
-    /// <p>
-    /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
-    /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
-    /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
-    /// </p>
+    /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+    /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     pub fn info(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10172,18 +9225,9 @@ impl ProvisioningArtifactProperties {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-    /// </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
         self.r#type.as_ref()
@@ -10246,17 +9290,10 @@ pub mod provisioning_artifact_properties {
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
-        /// <p>Specify the template source with one of the following options, but not both.
-        /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
         /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
-        /// <p>
-        /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
-        /// </p>
-        /// <p>
-        /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
-        /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
-        /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
-        /// </p>
+        /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+        /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn info(
             mut self,
             k: impl Into<std::string::String>,
@@ -10267,17 +9304,10 @@ pub mod provisioning_artifact_properties {
             self.info = Some(hash_map);
             self
         }
-        /// <p>Specify the template source with one of the following options, but not both.
-        /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
         /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
-        /// <p>
-        /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
-        /// </p>
-        /// <p>
-        /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
-        /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
-        /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
-        /// </p>
+        /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+        /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn set_info(
             mut self,
             input: std::option::Option<
@@ -10289,18 +9319,9 @@ pub mod provisioning_artifact_properties {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-        /// </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ProvisioningArtifactType) -> Self {
             self.r#type = Some(input);
@@ -10308,18 +9329,9 @@ pub mod provisioning_artifact_properties {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-        /// </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,

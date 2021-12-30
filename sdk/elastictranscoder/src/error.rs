@@ -18,11 +18,9 @@ pub enum CancelJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -153,11 +151,9 @@ pub enum CreateJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -288,11 +284,9 @@ pub enum CreatePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -435,8 +429,7 @@ pub enum CreatePresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -564,11 +557,9 @@ pub enum DeletePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -711,8 +702,7 @@ pub enum DeletePresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -843,8 +833,7 @@ pub enum ListJobsByPipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -981,8 +970,7 @@ pub enum ListJobsByStatusErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1359,8 +1347,7 @@ pub enum ReadJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1485,8 +1472,7 @@ pub enum ReadPipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1617,8 +1603,7 @@ pub enum ReadPresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1746,8 +1731,7 @@ pub enum TestRoleErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1872,11 +1856,9 @@ pub enum UpdatePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -2019,11 +2001,9 @@ pub enum UpdatePipelineNotificationsErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -2175,11 +2155,9 @@ pub enum UpdatePipelineStatusErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -2370,8 +2348,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The requested resource does not exist or is not available. For example, the pipeline
-/// to which you're trying to add a job doesn't exist or is still being created.</p>
+/// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2435,8 +2412,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The resource you are attempting to change is in use. For example, you are attempting
-/// to delete a pipeline that is currently in use.</p>
+/// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -2692,8 +2668,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Too many operations for a given AWS account. For example, the number of pipelines
-/// exceeds the maximum allowed.</p>
+/// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

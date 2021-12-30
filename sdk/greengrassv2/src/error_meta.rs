@@ -5,25 +5,19 @@
 pub enum Error {
     /// <p>You don't have permission to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>IoT Greengrass can't process your request right now. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The request is already in progress. This exception occurs when you use a client token for
-    /// multiple requests while IoT Greengrass is still processing an earlier request that uses the same client
-    /// token.</p>
+    /// <p>The request is already in progress. This exception occurs when you use a client token for multiple requests while IoT Greengrass is still processing an earlier request that uses the same client token.</p>
     RequestAlreadyInProgressException(crate::error::RequestAlreadyInProgressException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeds a service quota. For example, you might have the maximum number of
-    /// components that you can create.</p>
+    /// <p>Your request exceeds a service quota. For example, you might have the maximum number of components that you can create.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the
-    /// amount of times that you can retrieve device or deployment status per second.</p>
+    /// <p>Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that you can retrieve device or deployment status per second.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

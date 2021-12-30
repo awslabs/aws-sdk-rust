@@ -441,8 +441,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -451,8 +450,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

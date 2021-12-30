@@ -12,10 +12,7 @@ pub struct AddPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddPermissionErrorKind {
-    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code>
-    /// returns this error if the maximum number of inflight messages is reached and
-    /// <code>AddPermission</code> returns this error if the maximum number of permissions
-    /// for the queue is reached.</p>
+    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::error::OverLimit),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -341,11 +338,9 @@ pub struct CreateQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateQueueErrorKind {
-    /// <p>You must wait 60 seconds after deleting a queue before you can create another queue
-    /// with the same name.</p>
+    /// <p>You must wait 60 seconds after deleting a queue before you can create another queue with the same name.</p>
     QueueDeletedRecently(crate::error::QueueDeletedRecently),
-    /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request
-    /// includes attributes whose values differ from those of the existing queue.</p>
+    /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose values differ from those of the existing queue.</p>
     QueueNameExists(crate::error::QueueNameExists),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1288,10 +1283,7 @@ pub struct ReceiveMessageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReceiveMessageErrorKind {
-    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code>
-    /// returns this error if the maximum number of inflight messages is reached and
-    /// <code>AddPermission</code> returns this error if the maximum number of permissions
-    /// for the queue is reached.</p>
+    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::error::OverLimit),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2462,10 +2454,7 @@ impl InvalidMessageContents {
     }
 }
 
-/// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code>
-/// returns this error if the maximum number of inflight messages is reached and
-/// <code>AddPermission</code> returns this error if the maximum number of permissions
-/// for the queue is reached.</p>
+/// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverLimit {
@@ -2785,8 +2774,7 @@ impl InvalidIdFormat {
     }
 }
 
-/// <p>A queue with this name already exists. Amazon SQS returns this error only if the request
-/// includes attributes whose values differ from those of the existing queue.</p>
+/// <p>A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose values differ from those of the existing queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueNameExists {
@@ -2850,8 +2838,7 @@ impl QueueNameExists {
     }
 }
 
-/// <p>You must wait 60 seconds after deleting a queue before you can create another queue
-/// with the same name.</p>
+/// <p>You must wait 60 seconds after deleting a queue before you can create another queue with the same name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueDeletedRecently {

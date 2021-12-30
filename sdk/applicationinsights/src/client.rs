@@ -361,46 +361,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -412,18 +398,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -660,16 +640,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
             self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
@@ -750,8 +726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
-    /// <p>Ungroups a custom component. When you ungroup custom components, all applicable
-    /// monitors that are set up for the component are removed and the instances revert to their standalone status.</p>
+    /// <p>Ungroups a custom component. When you ungroup custom components, all applicable monitors that are set up for the component are removed and the instances revert to their standalone status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -1263,16 +1238,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_name(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
@@ -1646,14 +1617,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1741,14 +1710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1766,19 +1733,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConfigurationHistory`.
     ///
-    /// <p>
-    /// Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are:
-    /// </p>
+    /// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p>
     /// <ul>
-    /// <li>
-    /// <p>INFO: creating a new alarm or updating an alarm threshold.</p>
-    /// </li>
-    /// <li>
-    /// <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p>
-    /// </li>
+    /// <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
+    /// <li> <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p> </li>
+    /// <li> <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationHistory<
@@ -1888,40 +1847,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_status(input);
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2012,14 +1953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern_set_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2107,14 +2046,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2202,14 +2139,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2217,14 +2152,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2232,14 +2165,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2270,12 +2201,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified
-    /// application. A <i>tag</i> is a label that you optionally define and associate
-    /// with an application. Each tag consists of a required <i>tag key</i> and an
-    /// optional associated <i>tag value</i>. A tag key is a general label that
-    /// acts as a category for more specific tag values. A tag value acts as a descriptor within
-    /// a tag key.</p>
+    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified application. A <i>tag</i> is a label that you optionally define and associate with an application. Each tag consists of a required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2332,14 +2258,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2347,14 +2271,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add one or more tags (keys and values) to a specified application. A
-    /// <i>tag</i> is a label that you optionally define and associate with an
-    /// application. Tags can help you categorize and manage application in different ways, such as
-    /// by purpose, owner, environment, or other criteria. </p>
-    /// <p>Each tag consists of a required <i>tag key</i> and an
-    /// associated <i>tag value</i>, both of which you define. A tag key is a
-    /// general label that acts as a category for more specific tag values. A tag value acts as
-    /// a descriptor within a tag key.</p>
+    /// <p>Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage application in different ways, such as by purpose, owner, environment, or other criteria. </p>
+    /// <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2425,18 +2343,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2518,20 +2430,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2612,44 +2518,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2657,14 +2551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_item_sns_topic_arn(input);
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
         pub fn remove_sns_topic(mut self, input: bool) -> Self {
             self.inner = self.inner.remove_sns_topic(input);
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
         pub fn set_remove_sns_topic(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remove_sns_topic(input);
             self
@@ -2682,8 +2574,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateComponent`.
     ///
-    /// <p>Updates the custom component name and/or the list of resources that make up the
-    /// component.</p>
+    /// <p>Updates the custom component name and/or the list of resources that make up the component.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2799,9 +2690,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateComponentConfiguration`.
     ///
-    /// <p>Updates the monitoring configurations for the component. The configuration input parameter
-    /// is an escaped JSON of the configuration and should match the schema of what is returned
-    /// by <code>DescribeComponentConfigurationRecommendation</code>. </p>
+    /// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -2894,30 +2783,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
         pub fn component_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_configuration(input.into());
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
         pub fn set_component_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3041,16 +2922,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
             self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self

@@ -123,13 +123,11 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <p>The action that starts at the beginning of an incident. The response plan defines the
-/// action.</p>
+/// <p>The action that starts at the beginning of an incident. The response plan defines the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Action {
-    /// <p>The Systems Manager automation document to start as the runbook at the beginning of
-    /// the incident.</p>
+    /// <p>The Systems Manager automation document to start as the runbook at the beginning of the incident.</p>
     SsmAutomation(crate::model::SsmAutomation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -162,8 +160,7 @@ impl Action {
     }
 }
 
-/// <p>Details about the Systems Manager automation document that will be used as a runbook
-/// during an incident.</p>
+/// <p>Details about the Systems Manager automation document that will be used as a runbook during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmAutomation {
@@ -380,16 +377,11 @@ impl AsRef<str> for SsmTargetAccount {
     }
 }
 
-/// <p>The Chatbot chat channel used for collaboration during an
-/// incident.</p>
+/// <p>The Chatbot chat channel used for collaboration during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ChatChannel {
-    /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel
-    /// of updates to an incident. You can also make updates to the incident through the chat
-    /// channel
-    /// by
-    /// using the Amazon SNS topics. </p>
+    /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. </p>
     ChatbotSns(std::vec::Vec<std::string::String>),
     /// <p>Used to remove the chat channel from an incident record or response plan.</p>
     Empty(crate::model::EmptyChatChannel),
@@ -509,11 +501,9 @@ impl NotificationTargetItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum UpdateReplicationSetAction {
-    /// <p>Details about the Amazon Web Services Region that you're adding to the replication
-    /// set.</p>
+    /// <p>Details about the Amazon Web Services Region that you're adding to the replication set.</p>
     AddRegionAction(crate::model::AddRegionAction),
-    /// <p>Details about the Amazon Web Services Region that you're deleting to the replication
-    /// set.</p>
+    /// <p>Details about the Amazon Web Services Region that you're deleting to the replication set.</p>
     DeleteRegionAction(crate::model::DeleteRegionAction),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -562,18 +552,15 @@ impl UpdateReplicationSetAction {
     }
 }
 
-/// <p>Defines the information about the Amazon Web Services Region you're deleting from your
-/// replication set.</p>
+/// <p>Defines the information about the Amazon Web Services Region you're deleting from your replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegionAction {
-    /// <p>The name of the Amazon Web Services Region you're deleting from the replication
-    /// set.</p>
+    /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     pub region_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegionAction {
-    /// <p>The name of the Amazon Web Services Region you're deleting from the replication
-    /// set.</p>
+    /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
@@ -594,14 +581,12 @@ pub mod delete_region_action {
         pub(crate) region_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon Web Services Region you're deleting from the replication
-        /// set.</p>
+        /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services Region you're deleting from the replication
-        /// set.</p>
+        /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region_name = input;
             self
@@ -621,8 +606,7 @@ impl DeleteRegionAction {
     }
 }
 
-/// <p>Defines the Amazon Web Services Region and KMS key to add to the
-/// replication set. </p>
+/// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRegionAction {
@@ -757,36 +741,12 @@ pub struct ItemIdentifier {
     pub value: std::option::Option<crate::model::ItemValue>,
     /// <p>The type of related item. Incident Manager supports the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ANALYSIS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCIDENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>METRIC</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ATTACHMENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ANALYSIS</code> </p> </li>
+    /// <li> <p> <code>INCIDENT</code> </p> </li>
+    /// <li> <p> <code>METRIC</code> </p> </li>
+    /// <li> <p> <code>PARENT</code> </p> </li>
+    /// <li> <p> <code>ATTACHMENT</code> </p> </li>
+    /// <li> <p> <code>OTHER</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ItemType>,
 }
@@ -797,36 +757,12 @@ impl ItemIdentifier {
     }
     /// <p>The type of related item. Incident Manager supports the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ANALYSIS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCIDENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>METRIC</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ATTACHMENT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OTHER</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ANALYSIS</code> </p> </li>
+    /// <li> <p> <code>INCIDENT</code> </p> </li>
+    /// <li> <p> <code>METRIC</code> </p> </li>
+    /// <li> <p> <code>PARENT</code> </p> </li>
+    /// <li> <p> <code>ATTACHMENT</code> </p> </li>
+    /// <li> <p> <code>OTHER</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
@@ -862,36 +798,12 @@ pub mod item_identifier {
         }
         /// <p>The type of related item. Incident Manager supports the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ANALYSIS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCIDENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>METRIC</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ATTACHMENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ANALYSIS</code> </p> </li>
+        /// <li> <p> <code>INCIDENT</code> </p> </li>
+        /// <li> <p> <code>METRIC</code> </p> </li>
+        /// <li> <p> <code>PARENT</code> </p> </li>
+        /// <li> <p> <code>ATTACHMENT</code> </p> </li>
+        /// <li> <p> <code>OTHER</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
@@ -899,36 +811,12 @@ pub mod item_identifier {
         }
         /// <p>The type of related item. Incident Manager supports the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ANALYSIS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCIDENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>METRIC</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ATTACHMENT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OTHER</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ANALYSIS</code> </p> </li>
+        /// <li> <p> <code>INCIDENT</code> </p> </li>
+        /// <li> <p> <code>METRIC</code> </p> </li>
+        /// <li> <p> <code>PARENT</code> </p> </li>
+        /// <li> <p> <code>ATTACHMENT</code> </p> </li>
+        /// <li> <p> <code>OTHER</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
@@ -1032,8 +920,7 @@ impl AsRef<str> for ItemType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ItemValue {
-    /// <p>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon
-    /// resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon resource.</p>
     Arn(std::string::String),
     /// <p>The metric definition, if the related item is a metric in Amazon CloudWatch.</p>
     MetricDefinition(std::string::String),
@@ -1230,9 +1117,7 @@ impl AsRef<str> for IncidentRecordStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerDetails {
-    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
-    /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
-    /// package-name style reverse domain-name strings. </p>
+    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub trigger_arn: std::option::Option<std::string::String>,
@@ -1242,9 +1127,7 @@ pub struct TriggerDetails {
     pub raw_data: std::option::Option<std::string::String>,
 }
 impl TriggerDetails {
-    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
-    /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
-    /// package-name style reverse domain-name strings. </p>
+    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -1283,16 +1166,12 @@ pub mod trigger_details {
         pub(crate) raw_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
-        /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
-        /// package-name style reverse domain-name strings. </p>
+        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
-        /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
-        /// package-name style reverse domain-name strings. </p>
+        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1669,10 +1548,7 @@ impl Filter {
     }
 }
 
-/// <p>A conditional statement with which to compare a value, after a timestamp, before a
-/// timestamp, or equal to a string or integer. If multiple conditions are specified, the
-/// conditionals become an <code>AND</code>ed statement. If multiple values are specified for a
-/// conditional, the values are <code>OR</code>d.</p>
+/// <p>A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Condition {
@@ -1889,8 +1765,7 @@ impl ResponsePlanSummary {
 pub struct IncidentRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The title of the incident. This value is either provided by the response plan or
-    /// overwritten on creation.</p>
+    /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p>The current status of the incident.</p>
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -1908,8 +1783,7 @@ impl IncidentRecordSummary {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The title of the incident. This value is either provided by the response plan or
-    /// overwritten on creation.</p>
+    /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -1974,14 +1848,12 @@ pub mod incident_record_summary {
             self.arn = input;
             self
         }
-        /// <p>The title of the incident. This value is either provided by the response plan or
-        /// overwritten on creation.</p>
+        /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>The title of the incident. This value is either provided by the response plan or
-        /// overwritten on creation.</p>
+        /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -2079,9 +1951,7 @@ pub struct IncidentRecordSource {
     pub invoked_by: std::option::Option<std::string::String>,
     /// <p>The resource that caused the incident to be created.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The service that started the incident. This can be manually created from Incident Manager,
-    /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
-    /// event.</p>
+    /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
     pub source: std::option::Option<std::string::String>,
 }
 impl IncidentRecordSource {
@@ -2097,9 +1967,7 @@ impl IncidentRecordSource {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The service that started the incident. This can be manually created from Incident Manager,
-    /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
-    /// event.</p>
+    /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -2156,16 +2024,12 @@ pub mod incident_record_source {
             self.resource_arn = input;
             self
         }
-        /// <p>The service that started the incident. This can be manually created from Incident Manager,
-        /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
-        /// event.</p>
+        /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The service that started the incident. This can be manually created from Incident Manager,
-        /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
-        /// event.</p>
+        /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -2200,8 +2064,7 @@ pub struct TimelineEvent {
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the timeline event was last updated.</p>
     pub event_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
-    /// Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
     pub event_data: std::option::Option<std::string::String>,
@@ -2223,8 +2086,7 @@ impl TimelineEvent {
     pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
-    /// Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
@@ -2308,14 +2170,12 @@ pub mod timeline_event {
             self.event_updated_time = input;
             self
         }
-        /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
-        /// Event</code> type.</p>
+        /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_type = Some(input.into());
             self
         }
-        /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
-        /// Event</code> type.</p>
+        /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
@@ -2358,13 +2218,11 @@ pub struct IncidentTemplate {
     pub title: std::option::Option<std::string::String>,
     /// <p>The impact of the incident on your customers and applications. </p>
     pub impact: std::option::Option<i32>,
-    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-    /// currently happening, and context.</p>
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
     pub dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -2377,8 +2235,7 @@ impl IncidentTemplate {
     pub fn impact(&self) -> std::option::Option<i32> {
         self.impact
     }
-    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-    /// currently happening, and context.</p>
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
@@ -2386,8 +2243,7 @@ impl IncidentTemplate {
     pub fn dedupe_string(&self) -> std::option::Option<&str> {
         self.dedupe_string.as_deref()
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn notification_targets(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
@@ -2439,14 +2295,12 @@ pub mod incident_template {
             self.impact = input;
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-        /// currently happening, and context.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.summary = Some(input.into());
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-        /// currently happening, and context.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.summary = input;
             self
@@ -2468,16 +2322,14 @@ pub mod incident_template {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
             v.push(input);
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -2602,8 +2454,7 @@ impl ResourcePolicy {
     }
 }
 
-/// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to
-/// and the KMS key used to encrypt the data. </p>
+/// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationSet {
@@ -2613,12 +2464,9 @@ pub struct ReplicationSet {
     pub region_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
     >,
-    /// <p>The status of the replication set. If the replication set is still pending, you can't
-    /// use Incident Manager functionality.</p>
+    /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     pub status: std::option::Option<crate::model::ReplicationSetStatus>,
-    /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-    /// protection is enabled, you can't delete the last Amazon Web Services Region in the
-    /// replication set. </p>
+    /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
     pub deletion_protected: std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2642,14 +2490,11 @@ impl ReplicationSet {
     > {
         self.region_map.as_ref()
     }
-    /// <p>The status of the replication set. If the replication set is still pending, you can't
-    /// use Incident Manager functionality.</p>
+    /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReplicationSetStatus> {
         self.status.as_ref()
     }
-    /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-    /// protection is enabled, you can't delete the last Amazon Web Services Region in the
-    /// replication set. </p>
+    /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
     pub fn deletion_protected(&self) -> std::option::Option<bool> {
         self.deletion_protected
     }
@@ -2737,14 +2582,12 @@ pub mod replication_set {
             self.region_map = input;
             self
         }
-        /// <p>The status of the replication set. If the replication set is still pending, you can't
-        /// use Incident Manager functionality.</p>
+        /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
         pub fn status(mut self, input: crate::model::ReplicationSetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the replication set. If the replication set is still pending, you can't
-        /// use Incident Manager functionality.</p>
+        /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReplicationSetStatus>,
@@ -2752,16 +2595,12 @@ pub mod replication_set {
             self.status = input;
             self
         }
-        /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-        /// protection is enabled, you can't delete the last Amazon Web Services Region in the
-        /// replication set. </p>
+        /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
         pub fn deletion_protected(mut self, input: bool) -> Self {
             self.deletion_protected = Some(input);
             self
         }
-        /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-        /// protection is enabled, you can't delete the last Amazon Web Services Region in the
-        /// replication set. </p>
+        /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
         pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protected = input;
             self
@@ -3098,8 +2937,7 @@ pub struct IncidentRecord {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The title of the incident.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-    /// currently happening, and context of the incident.</p>
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The current status of the incident.</p>
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -3122,8 +2960,7 @@ pub struct IncidentRecord {
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -3136,8 +2973,7 @@ impl IncidentRecord {
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-    /// currently happening, and context of the incident.</p>
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
@@ -3185,8 +3021,7 @@ impl IncidentRecord {
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn notification_targets(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
@@ -3257,14 +3092,12 @@ pub mod incident_record {
             self.title = input;
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-        /// currently happening, and context of the incident.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.summary = Some(input.into());
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
-        /// currently happening, and context of the incident.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.summary = input;
             self
@@ -3406,16 +3239,14 @@ pub mod incident_record {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
             v.push(input);
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -3451,8 +3282,7 @@ impl IncidentRecord {
     }
 }
 
-/// <p>The Systems Manager automation document process to start as the runbook at the
-/// beginning of the incident.</p>
+/// <p>The Systems Manager automation document process to start as the runbook at the beginning of the incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AutomationExecution {
@@ -3489,8 +3319,7 @@ impl AutomationExecution {
     }
 }
 
-/// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the
-/// data.</p>
+/// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionMapInputValue {

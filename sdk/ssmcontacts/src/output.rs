@@ -579,8 +579,7 @@ impl ListPageReceiptsOutput {
 pub struct ListEngagementsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of each engagement that occurred during the specified time range of an
-    /// incident.</p>
+    /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
     pub engagements: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
 }
 impl ListEngagementsOutput {
@@ -588,8 +587,7 @@ impl ListEngagementsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of each engagement that occurred during the specified time range of an
-    /// incident.</p>
+    /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
     pub fn engagements(&self) -> std::option::Option<&[crate::model::Engagement]> {
         self.engagements.as_deref()
     }
@@ -626,16 +624,14 @@ pub mod list_engagements_output {
         ///
         /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
         ///
-        /// <p>A list of each engagement that occurred during the specified time range of an
-        /// incident.</p>
+        /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
         pub fn engagements(mut self, input: crate::model::Engagement) -> Self {
             let mut v = self.engagements.unwrap_or_default();
             v.push(input);
             self.engagements = Some(v);
             self
         }
-        /// <p>A list of each engagement that occurred during the specified time range of an
-        /// incident.</p>
+        /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
@@ -907,8 +903,7 @@ pub struct GetContactChannelOutput {
     pub contact_channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the contact channel</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
-    /// <code>EMAIL</code>.</p>
+    /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
@@ -928,8 +923,7 @@ impl GetContactChannelOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
-    /// <code>EMAIL</code>.</p>
+    /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
@@ -1001,14 +995,12 @@ pub mod get_contact_channel_output {
             self.name = input;
             self
         }
-        /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
-        /// <code>EMAIL</code>.</p>
+        /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
-        /// <code>EMAIL</code>.</p>
+        /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
@@ -1065,15 +1057,13 @@ impl GetContactChannelOutput {
 pub struct GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
     pub contact_arn: std::option::Option<std::string::String>,
-    /// <p>The alias of the contact or escalation plan. The alias is unique and
-    /// identifiable.</p>
+    /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
     pub r#type: std::option::Option<crate::model::ContactType>,
-    /// <p>Details about the specific timing or stages and targets of the escalation plan or
-    /// engagement plan.</p>
+    /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub plan: std::option::Option<crate::model::Plan>,
 }
 impl GetContactOutput {
@@ -1081,8 +1071,7 @@ impl GetContactOutput {
     pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
-    /// <p>The alias of the contact or escalation plan. The alias is unique and
-    /// identifiable.</p>
+    /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -1094,8 +1083,7 @@ impl GetContactOutput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
-    /// <p>Details about the specific timing or stages and targets of the escalation plan or
-    /// engagement plan.</p>
+    /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
         self.plan.as_ref()
     }
@@ -1134,14 +1122,12 @@ pub mod get_contact_output {
             self.contact_arn = input;
             self
         }
-        /// <p>The alias of the contact or escalation plan. The alias is unique and
-        /// identifiable.</p>
+        /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The alias of the contact or escalation plan. The alias is unique and
-        /// identifiable.</p>
+        /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -1166,14 +1152,12 @@ pub mod get_contact_output {
             self.r#type = input;
             self
         }
-        /// <p>Details about the specific timing or stages and targets of the escalation plan or
-        /// engagement plan.</p>
+        /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.plan = Some(input);
             self
         }
-        /// <p>Details about the specific timing or stages and targets of the escalation plan or
-        /// engagement plan.</p>
+        /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.plan = input;
             self
@@ -1209,17 +1193,13 @@ pub struct DescribePageOutput {
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
     pub sender: std::option::Option<std::string::String>,
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: std::option::Option<std::string::String>,
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that engaged the contact channel.</p>
     pub incident_id: std::option::Option<std::string::String>,
@@ -1247,23 +1227,19 @@ impl DescribePageOutput {
     pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
@@ -1365,38 +1341,32 @@ pub mod describe_page_output {
             self.sender = input;
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_subject = Some(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1404,14 +1374,12 @@ pub mod describe_page_output {
             self.public_subject = input;
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_content = Some(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1504,17 +1472,13 @@ pub struct DescribeEngagementOutput {
     pub engagement_arn: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
     pub sender: std::option::Option<std::string::String>,
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: std::option::Option<std::string::String>,
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident in which the engagement occurred.</p>
     pub incident_id: std::option::Option<std::string::String>,
@@ -1536,23 +1500,19 @@ impl DescribeEngagementOutput {
     pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
@@ -1636,38 +1596,32 @@ pub mod describe_engagement_output {
             self.sender = input;
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_subject = Some(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1675,14 +1629,12 @@ pub mod describe_engagement_output {
             self.public_subject = input;
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_content = Some(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,

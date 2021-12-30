@@ -597,9 +597,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchDetectDominantLanguage`.
     ///
-    /// <p>Determines the dominant language of the input text for a batch of documents. For a list
-    /// of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>.
-    /// </p>
+    /// <p>Determines the dominant language of the input text for a batch of documents. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectDominantLanguage<
         C = aws_smithy_client::erase::DynConnector,
@@ -660,16 +658,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document should contain at least 20 characters and must contain fewer than
-        /// 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document should contain at least 20 characters and must contain fewer than
-        /// 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -680,9 +674,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDetectEntities`.
     ///
-    /// <p>Inspects the text of a batch of documents for named entities and returns information
-    /// about them. For more information about named entities, see <a>how-entities</a>
-    /// </p>
+    /// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <code>how-entities</code> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -743,16 +735,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -760,14 +748,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text_list(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -839,16 +825,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -856,14 +838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text_list(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -874,9 +854,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDetectSentiment`.
     ///
-    /// <p>Inspects a batch of documents and returns an inference of the prevailing sentiment,
-    /// <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>,
-    /// in each one.</p>
+    /// <p>Inspects a batch of documents and returns an inference of the prevailing sentiment, <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>, in each one.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectSentiment<
         C = aws_smithy_client::erase::DynConnector,
@@ -937,16 +915,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -954,14 +928,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text_list(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -972,8 +944,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDetectSyntax`.
     ///
-    /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words
-    /// in the document and returns information about them. For more information, see <a>how-syntax</a>.</p>
+    /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <code>how-syntax</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectSyntax<
         C = aws_smithy_client::erase::DynConnector,
@@ -1034,16 +1005,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text_list(input.into());
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1051,16 +1018,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text_list(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::SyntaxLanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -1071,8 +1034,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ClassifyDocument`.
     ///
-    /// <p>Creates a new document classification request to analyze a single document in real-time,
-    /// using a previously created and trained custom model and an endpoint.</p>
+    /// <p>Creates a new document classification request to analyze a single document in real-time, using a previously created and trained custom model and an endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClassifyDocument<
         C = aws_smithy_client::erase::DynConnector,
@@ -1152,9 +1114,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ContainsPiiEntities`.
     ///
-    /// <p>Analyzes input text for the presence of personally identifiable information (PII) and
-    /// returns the labels of identified PII entity types such as name, address, bank account number,
-    /// or phone number.</p>
+    /// <p>Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of identified PII entity types such as name, address, bank account number, or phone number.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ContainsPiiEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -1211,14 +1171,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time,
-        /// returning personally identifiable information (PII) entity labels.</p>
+        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time,
-        /// returning personally identifiable information (PII) entity labels.</p>
+        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -1239,10 +1197,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDocumentClassifier`.
     ///
-    /// <p>Creates a new document classifier that you can use to categorize documents. To create a
-    /// classifier, you provide a set of training documents that labeled with the categories that you
-    /// want to use. After the classifier is trained you can use it to categorize a set of labeled
-    /// documents into the categories. For more information, see <a>how-document-classification</a>.</p>
+    /// <p>Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use. After the classifier is trained you can use it to categorize a set of labeled documents into the categories. For more information, see <code>how-document-classification</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
@@ -1312,28 +1267,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_classifier_name(input);
             self
         }
-        /// <p>The version name given to the newly created classifier.
-        /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>The version name given to the newly created classifier.
-        /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1345,18 +1294,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1380,8 +1323,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Enables the addition of output results configuration parameters for custom classifier
-        /// jobs.</p>
+        /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
         pub fn output_data_config(
             mut self,
             input: crate::model::DocumentClassifierOutputDataConfig,
@@ -1389,8 +1331,7 @@ pub mod fluent_builders {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Enables the addition of output results configuration parameters for custom classifier
-        /// jobs.</p>
+        /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierOutputDataConfig>,
@@ -1398,14 +1339,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1413,16 +1352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1430,37 +1365,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -1469,16 +1386,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1486,20 +1399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-        /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-        /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-        /// labels for an individual document are separated by a delimiter. The default delimiter between
-        /// labels is a pipe (|).</p>
+        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
         pub fn mode(mut self, input: crate::model::DocumentClassifierMode) -> Self {
             self.inner = self.inner.mode(input);
             self
         }
-        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-        /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-        /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-        /// labels for an individual document are separated by a delimiter. The default delimiter between
-        /// labels is a pipe (|).</p>
+        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierMode>,
@@ -1507,35 +1412,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
@@ -1547,9 +1436,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Creates a model-specific endpoint for synchronous inference for a previously trained
-    /// custom model
-    /// </p>
+    /// <p>Creates a model-specific endpoint for synchronous inference for a previously trained custom model </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -1606,14 +1493,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-        /// all subsequent requests to this resource. </p>
+        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_name(input.into());
             self
         }
-        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-        /// all subsequent requests to this resource. </p>
+        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1621,42 +1506,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-        /// attached.</p>
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-        /// attached.</p>
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model_arn(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_inference_units(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_inference_units(input);
             self
         }
-        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-        /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-        /// </p>
+        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-        /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-        /// </p>
+        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1668,16 +1543,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-        /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-        /// endpoint to indicate its use by the sales department. </p>
+        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-        /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-        /// endpoint to indicate its use by the sales department. </p>
+        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1685,16 +1556,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-        /// managed key (ModelKmsKeyId).</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-        /// managed key (ModelKmsKeyId).</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1705,9 +1572,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEntityRecognizer`.
     ///
-    /// <p>Creates an entity recognizer using submitted files. After your
-    /// <code>CreateEntityRecognizer</code> request is submitted, you can check job status using the
-    /// API. </p>
+    /// <p>Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is submitted, you can check job status using the API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
@@ -1764,16 +1629,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-        /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-        /// must be unique in the account/region.</p>
+        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
         pub fn recognizer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recognizer_name(input.into());
             self
         }
-        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-        /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-        /// must be unique in the account/region.</p>
+        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
         pub fn set_recognizer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1781,28 +1642,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recognizer_name(input);
             self
         }
-        /// <p>The version name given to the newly created recognizer.
-        /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+        /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>The version name given to the newly created recognizer.
-        /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+        /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1814,18 +1669,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-        /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-        /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1833,8 +1682,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-        /// data must be located in the same region as the entity recognizer being created. </p>
+        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
         pub fn input_data_config(
             mut self,
             input: crate::model::EntityRecognizerInputDataConfig,
@@ -1842,8 +1690,7 @@ pub mod fluent_builders {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-        /// data must be located in the same region as the entity recognizer being created. </p>
+        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
@@ -1851,14 +1698,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1866,16 +1711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-        /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-        /// All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-        /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-        /// All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1883,37 +1724,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -1922,18 +1745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom entity recognizer. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom entity recognizer. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1941,35 +1758,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
@@ -1982,12 +1783,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDocumentClassifier`.
     ///
     /// <p>Deletes a previously created document classifier</p>
-    /// <p>Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
-    /// If an active inference job is using the model, a <code>ResourceInUseException</code> will be
-    /// returned.</p>
-    /// <p>This is an asynchronous action that puts the classifier into a DELETING state, and it is
-    /// then removed by a background job. Once removed, the classifier disappears from your account
-    /// and is no longer available for use. </p>
+    /// <p>Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference job is using the model, a <code>ResourceInUseException</code> will be returned.</p>
+    /// <p>This is an asynchronous action that puts the classifier into a DELETING state, and it is then removed by a background job. Once removed, the classifier disappears from your account and is no longer available for use. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
@@ -2060,8 +1857,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
-    /// must be deleted in order for the model to be deleted.</p>
+    /// <p>Deletes a model-specific endpoint for a previously-trained custom model. All endpoints must be deleted in order for the model to be deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -2132,12 +1928,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEntityRecognizer`.
     ///
     /// <p>Deletes an entity recognizer.</p>
-    /// <p>Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
-    /// If an active inference job is using the model, a <code>ResourceInUseException</code> will be
-    /// returned.</p>
-    /// <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is
-    /// then removed by a background job. Once removed, the recognizer disappears from your account
-    /// and is no longer available for use. </p>
+    /// <p>Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference job is using the model, a <code>ResourceInUseException</code> will be returned.</p>
+    /// <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a background job. Once removed, the recognizer disappears from your account and is no longer available for use. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
@@ -2210,8 +2002,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDocumentClassificationJob`.
     ///
-    /// <p>Gets the properties associated with a document classification job. Use this operation to
-    /// get the status of a classification job.</p>
+    /// <p>Gets the properties associated with a document classification job. Use this operation to get the status of a classification job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2268,14 +2059,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2340,14 +2129,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_classifier_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2358,8 +2145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDominantLanguageDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a dominant language detection job. Use this operation
-    /// to get the status of a detection job.</p>
+    /// <p>Gets the properties associated with a dominant language detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2418,14 +2204,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2433,8 +2217,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEndpoint`.
     ///
-    /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the
-    /// status of an endpoint.</p>
+    /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -2504,8 +2287,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEntitiesDetectionJob`.
     ///
-    /// <p>Gets the properties associated with an entities detection job. Use this operation to get
-    /// the status of a detection job.</p>
+    /// <p>Gets the properties associated with an entities detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2562,14 +2344,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2577,8 +2357,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEntityRecognizer`.
     ///
-    /// <p>Provides details about an entity recognizer including status, S3 buckets containing
-    /// training data, recognizer metadata, metrics, and so on.</p>
+    /// <p>Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer metadata, metrics, and so on.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
@@ -2721,8 +2500,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeKeyPhrasesDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a key phrases detection job. Use this operation to get
-    /// the status of a detection job.</p>
+    /// <p>Gets the properties associated with a key phrases detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2779,14 +2557,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2794,8 +2570,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePiiEntitiesDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a PII entities detection job. For example, you can use
-    /// this operation to get the job status.</p>
+    /// <p>Gets the properties associated with a PII entities detection job. For example, you can use this operation to get the job status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePiiEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2852,14 +2627,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2867,8 +2640,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSentimentDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a sentiment detection job. Use this operation to get
-    /// the status of a detection job.</p>
+    /// <p>Gets the properties associated with a sentiment detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2925,14 +2697,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2940,8 +2710,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTopicsDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a topic detection job. Use this operation to get
-    /// the status of a detection job.</p>
+    /// <p>Gets the properties associated with a topic detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTopicsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3011,8 +2780,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectDominantLanguage`.
     ///
-    /// <p>Determines the dominant language of the input text. For a list of languages that Amazon
-    /// Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
+    /// <p>Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectDominantLanguage<
         C = aws_smithy_client::erase::DynConnector,
@@ -3069,14 +2837,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-        /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-        /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -3084,8 +2850,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectEntities`.
     ///
-    /// <p>Inspects text for named entities, and returns information about them. For more
-    /// information, about named entities, see <a>how-entities</a>. </p>
+    /// <p>Inspects text for named entities, and returns information about them. For more information, about named entities, see <code>how-entities</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -3142,32 +2907,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-        /// Comprehend uses the language of your custom model, and it ignores any language code that you
-        /// specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-        /// Comprehend uses the language of your custom model, and it ignores any language code that you
-        /// specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3175,20 +2932,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-        /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-        /// model instead of the default model that is used by Amazon Comprehend.</p>
-        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-        /// it ignores any language code that you provide in your request.</p>
+        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-        /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-        /// model instead of the default model that is used by Amazon Comprehend.</p>
-        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-        /// it ignores any language code that you provide in your request.</p>
+        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
             self
@@ -3253,26 +3004,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3283,8 +3030,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectPiiEntities`.
     ///
-    /// <p>Inspects the input text for entities that contain personally identifiable information
-    /// (PII) and returns information about them.</p>
+    /// <p>Inspects the input text for entities that contain personally identifiable information (PII) and returns information about them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectPiiEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -3341,14 +3087,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -3369,8 +3113,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectSentiment`.
     ///
-    /// <p>Inspects text and returns an inference of the prevailing sentiment
-    /// (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>). </p>
+    /// <p>Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectSentiment<
         C = aws_smithy_client::erase::DynConnector,
@@ -3427,26 +3170,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3457,8 +3196,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectSyntax`.
     ///
-    /// <p>Inspects text for syntax and the part of speech of words in the document. For more
-    /// information, <a>how-syntax</a>.</p>
+    /// <p>Inspects text for syntax and the part of speech of words in the document. For more information, <code>how-syntax</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectSyntax<
         C = aws_smithy_client::erase::DynConnector,
@@ -3515,28 +3253,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-        /// characters.</p>
+        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-        /// characters.</p>
+        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt").</p>
+        /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
         pub fn language_code(mut self, input: crate::model::SyntaxLanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt").</p>
+        /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -3604,14 +3336,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DocumentClassificationJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DocumentClassificationJobFilter>,
@@ -3699,14 +3429,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DocumentClassifierFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierFilter>,
@@ -3874,14 +3602,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DominantLanguageDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DominantLanguageDetectionJobFilter>,
@@ -3969,16 +3695,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-        /// status, or the date and time that they were created. You can only set one filter at a time.
-        /// </p>
+        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
         pub fn filter(mut self, input: crate::model::EndpointFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-        /// status, or the date and time that they were created. You can only set one filter at a time.
-        /// </p>
+        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EndpointFilter>,
@@ -4066,14 +3788,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EntitiesDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EntitiesDetectionJobFilter>,
@@ -4104,12 +3824,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEntityRecognizers`.
     ///
-    /// <p>Gets a list of the properties of all entity recognizers that you created, including
-    /// recognizers currently in training. Allows you to filter the list of recognizers based on
-    /// criteria such as status and submission time. This call returns up to 500 entity recognizers in
-    /// the list, with a default number of 100 recognizers in the list.</p>
-    /// <p>The results of this list are not in any particular order. Please get the list and sort
-    /// locally if needed.</p>
+    /// <p>Gets a list of the properties of all entity recognizers that you created, including recognizers currently in training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.</p>
+    /// <p>The results of this list are not in any particular order. Please get the list and sort locally if needed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntityRecognizers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4166,16 +3882,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-        /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-        /// at a time.</p>
+        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EntityRecognizerFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-        /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-        /// at a time.</p>
+        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerFilter>,
@@ -4343,14 +4055,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EventsDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EventsDetectionJobFilter>,
@@ -4438,14 +4148,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::KeyPhrasesDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::KeyPhrasesDetectionJobFilter>,
@@ -4533,14 +4241,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::PiiEntitiesDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionJobFilter>,
@@ -4628,14 +4334,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::SentimentDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::SentimentDetectionJobFilter>,
@@ -4723,14 +4427,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4795,14 +4497,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-        /// date and time that they were submitted. You can set only one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::TopicsDetectionJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-        /// date and time that they were submitted. You can set only one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::TopicsDetectionJobFilter>,
@@ -4833,8 +4533,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDocumentClassificationJob`.
     ///
-    /// <p>Starts an asynchronous document classification job. Use the  operation to track the progress of the
-    /// job.</p>
+    /// <p>Starts an asynchronous document classification job. Use the operation to track the progress of the job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDocumentClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -4901,14 +4600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_classifier_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4942,14 +4639,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4957,14 +4652,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4972,37 +4665,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -5011,18 +4686,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your document classification job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your document classification job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5034,16 +4703,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5054,9 +4719,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDominantLanguageDetectionJob`.
     ///
-    /// <p>Starts an asynchronous dominant language detection job for a collection of documents. Use
-    /// the  operation to track the status
-    /// of a job.</p>
+    /// <p>Starts an asynchronous dominant language detection job for a collection of documents. Use the operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -5139,14 +4802,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5164,14 +4825,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5179,37 +4838,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -5218,16 +4859,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your dominant language detection job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your dominant language detection job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5239,16 +4876,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-        /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-        /// the key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-        /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-        /// the key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5259,11 +4892,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartEntitiesDetectionJob`.
     ///
-    /// <p>Starts an asynchronous entity detection job for a collection of documents. Use the  operation to track the status of a job.</p>
-    /// <p>This API can be used for either standard entity detection or custom entity recognition. In
-    /// order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
-    /// must be used in order to provide access to the recognizer being used to detect the custom
-    /// entity.</p>
+    /// <p>Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status of a job.</p>
+    /// <p>This API can be used for either standard entity detection or custom entity recognition. In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access to the recognizer being used to detect the custom entity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -5346,14 +4976,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5371,16 +4999,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-        /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-        /// custom entity recognition job.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
         pub fn entity_recognizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_recognizer_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-        /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-        /// custom entity recognition job.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5388,18 +5012,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_recognizer_arn(input);
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language. You can
-        /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-        /// used, this parameter is ignored and the language used for training the model is used
-        /// instead.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language. You can
-        /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-        /// used, this parameter is ignored and the language used for training the model is used
-        /// instead.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5407,14 +5025,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5422,37 +5038,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -5461,16 +5059,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5482,16 +5076,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5585,14 +5175,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5623,14 +5211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5659,16 +5245,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5679,9 +5261,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartKeyPhrasesDetectionJob`.
     ///
-    /// <p>Starts an asynchronous key phrase detection job for a collection of documents. Use the
-    /// operation to track the status of a
-    /// job.</p>
+    /// <p>Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -5764,14 +5344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5789,14 +5367,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5804,14 +5380,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5819,37 +5393,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -5858,18 +5414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your key phrases detection job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your key phrases detection job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5881,16 +5431,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5984,14 +5530,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-        /// which PII entities are redacted.</p>
+        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
         pub fn mode(mut self, input: crate::model::PiiEntitiesDetectionMode) -> Self {
             self.inner = self.inner.mode(input);
             self
         }
-        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-        /// which PII entities are redacted.</p>
+        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionMode>,
@@ -6000,17 +5544,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides configuration parameters for PII entity redaction.</p>
-        /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-        /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-        /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+        /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
         pub fn redaction_config(mut self, input: crate::model::RedactionConfig) -> Self {
             self.inner = self.inner.redaction_config(input);
             self
         }
         /// <p>Provides configuration parameters for PII entity redaction.</p>
-        /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-        /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-        /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+        /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
         pub fn set_redaction_config(
             mut self,
             input: std::option::Option<crate::model::RedactionConfig>,
@@ -6018,14 +5558,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_redaction_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6056,14 +5594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6075,16 +5611,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6095,9 +5627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSentimentDetectionJob`.
     ///
-    /// <p>Starts an asynchronous sentiment detection job for a collection of documents. use the
-    /// operation to track the status of a
-    /// job.</p>
+    /// <p>Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6180,14 +5710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6205,14 +5733,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6220,14 +5746,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6235,37 +5759,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -6274,16 +5780,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -6295,16 +5797,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6315,8 +5813,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTopicsDetectionJob`.
     ///
-    /// <p>Starts an asynchronous topic detection job. Use the
-    /// <code>DescribeTopicDetectionJob</code> operation to track the status of a job.</p>
+    /// <p>Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code> operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTopicsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6386,16 +5883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Specifies where to send the output files. The output is a compressed archive with two
-        /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-        /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+        /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Specifies where to send the output files. The output is a compressed archive with two
-        /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-        /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+        /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -6403,14 +5896,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6438,14 +5929,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_number_of_topics(input);
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6453,37 +5942,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.volume_kms_key_id(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -6492,16 +5963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_kms_key_id(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -6513,16 +5980,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6534,15 +5997,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDominantLanguageDetectionJob`.
     ///
     /// <p>Stops a dominant language detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put
-    /// into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it
-    /// is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the
-    /// <code>STOPPED</code> state.</p>
-    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-    /// <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400
-    /// Internal Request Exception. </p>
-    /// <p>When a job is stopped, any documents already processed are written to the output
-    /// location.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
+    /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6613,15 +6070,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopEntitiesDetectionJob`.
     ///
     /// <p>Stops an entities detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put
-    /// into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it
-    /// is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the
-    /// <code>STOPPED</code> state.</p>
-    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-    /// <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400
-    /// Internal Request Exception. </p>
-    /// <p>When a job is stopped, any documents already processed are written to the output
-    /// location.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
+    /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6762,15 +6213,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopKeyPhrasesDetectionJob`.
     ///
     /// <p>Stops a key phrases detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put
-    /// into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it
-    /// is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the
-    /// <code>STOPPED</code> state.</p>
-    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-    /// <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400
-    /// Internal Request Exception. </p>
-    /// <p>When a job is stopped, any documents already processed are written to the output
-    /// location.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
+    /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6911,15 +6356,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopSentimentDetectionJob`.
     ///
     /// <p>Stops a sentiment detection job in progress.</p>
-    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put
-    /// into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it
-    /// is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the
-    /// <code>STOPPED</code> state.</p>
-    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-    /// <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400
-    /// Internal Request Exception. </p>
-    /// <p>When a job is stopped, any documents already processed are written to the output
-    /// location.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
+    /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6990,11 +6429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTrainingDocumentClassifier`.
     ///
     /// <p>Stops a document classifier training job while in progress.</p>
-    /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and
-    /// put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be
-    /// stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and
-    /// put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with
-    /// an empty HTTP body. </p>
+    /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
@@ -7051,14 +6486,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_classifier_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7070,11 +6503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTrainingEntityRecognizer`.
     ///
     /// <p>Stops an entity recognizer training job while in progress.</p>
-    /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and
-    /// put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be
-    /// stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and
-    /// putted into the <code>STOPPED</code> state and the service sends back an HTTP 200 response
-    /// with an empty HTTP body.</p>
+    /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
@@ -7131,14 +6560,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
         pub fn entity_recognizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_recognizer_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7149,10 +6576,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value pair
-    /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-    /// </p>
+    /// <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -7209,14 +6633,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-        /// to associate the tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-        /// to associate the tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7225,14 +6647,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-        /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-        /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7300,14 +6720,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-        /// want to remove the tags. </p>
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-        /// want to remove the tags. </p>
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7316,18 +6734,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-        /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-        /// </p>
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-        /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-        /// </p>
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7418,16 +6830,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_desired_model_arn(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_inference_units(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_inference_units(input);
             self

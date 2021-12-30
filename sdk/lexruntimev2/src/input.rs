@@ -22,14 +22,12 @@ pub mod delete_session_input {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -263,14 +261,12 @@ pub mod get_session_input {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -510,14 +506,12 @@ pub mod put_session_input {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier of the bot that receives the session
-        /// data.</p>
+        /// <p>The alias identifier of the bot that receives the session data.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier of the bot that receives the session
-        /// data.</p>
+        /// <p>The alias identifier of the bot that receives the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -546,16 +540,14 @@ pub mod put_session_input {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>A list of messages to send to the user. Messages are sent in the
-        /// order that they are defined in the list.</p>
+        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>A list of messages to send to the user. Messages are sent in the
-        /// order that they are defined in the list.</p>
+        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -563,18 +555,12 @@ pub mod put_session_input {
             self.messages = input;
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
         pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
             self.session_state = Some(input);
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<crate::model::SessionState>,
@@ -586,11 +572,8 @@ pub mod put_session_input {
         ///
         /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
         ///
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn request_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -601,11 +584,8 @@ pub mod put_session_input {
             self.request_attributes = Some(hash_map);
             self
         }
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<
@@ -615,25 +595,17 @@ pub mod put_session_input {
             self.request_attributes = input;
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech depending on the value of this parameter. </p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
         /// </ul>
         pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.response_content_type = Some(input.into());
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech depending on the value of this parameter. </p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
         /// </ul>
         pub fn set_response_content_type(
             mut self,
@@ -897,14 +869,12 @@ pub mod recognize_text_input {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier in use for the bot that processes the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that processes the request.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that processes the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that processes the request.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -919,14 +889,12 @@ pub mod recognize_text_input {
             self.locale_id = input;
             self
         }
-        /// <p>The identifier of the user session that is having the
-        /// conversation.</p>
+        /// <p>The identifier of the user session that is having the conversation.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user session that is having the
-        /// conversation.</p>
+        /// <p>The identifier of the user session that is having the conversation.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -958,11 +926,8 @@ pub mod recognize_text_input {
         ///
         /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
         ///
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn request_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -973,11 +938,8 @@ pub mod recognize_text_input {
             self.request_attributes = Some(hash_map);
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<
@@ -1209,14 +1171,12 @@ pub mod recognize_utterance_input {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier in use for the bot that should receive the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that should receive the request.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that should receive the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that should receive the request.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -1241,22 +1201,14 @@ pub mod recognize_utterance_input {
             self.session_id = input;
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip
-        /// and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_state = Some(input.into());
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip
-        /// and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1264,24 +1216,16 @@ pub mod recognize_utterance_input {
             self.session_state = input;
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes for prefix
-        /// <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using
-        /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_attributes = Some(input.into());
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes for prefix
-        /// <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using
-        /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1289,81 +1233,43 @@ pub mod recognize_utterance_input {
             self.request_attributes = input;
             self
         }
-        /// <p>Indicates the format for audio input or that the content is text.
-        /// The header must start with one of the following prefixes:</p>
+        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte
-        /// order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn request_content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_content_type = Some(input.into());
             self
         }
-        /// <p>Indicates the format for audio input or that the content is text.
-        /// The header must start with one of the following prefixes:</p>
+        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte
-        /// order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_request_content_type(
             mut self,
@@ -1372,91 +1278,37 @@ pub mod recognize_utterance_input {
             self.request_content_type = input;
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech based on the <code>responseContentType</code> value.</p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-        /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-        /// using the configuration that you specified in the
-        /// <code>requestContentType</code> parameter. For example, if you
-        /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-        /// speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-        /// format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm (16 KHz)</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm (16 KHz)</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.response_content_type = Some(input.into());
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech based on the <code>responseContentType</code> value.</p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-        /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-        /// using the configuration that you specified in the
-        /// <code>requestContentType</code> parameter. For example, if you
-        /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-        /// speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-        /// format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm (16 KHz)</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm (16 KHz)</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_response_content_type(
             mut self,
@@ -1465,14 +1317,12 @@ pub mod recognize_utterance_input {
             self.response_content_type = input;
             self
         }
-        /// <p>User input in PCM or Opus audio format or text format as described
-        /// in the <code>requestContentType</code> parameter.</p>
+        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
         pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.input_stream = Some(input);
             self
         }
-        /// <p>User input in PCM or Opus audio format or text format as described
-        /// in the <code>requestContentType</code> parameter.</p>
+        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
         pub fn set_input_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1758,109 +1608,53 @@ impl RecognizeUtteranceInput {
 pub struct RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier in use for the bot that should receive the
-    /// request.</p>
+    /// <p>The alias identifier in use for the bot that should receive the request.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session in use.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>Sets the state of the session with the user. You can use this to set
-    /// the current intent, attributes, context, and dialog action. Use the
-    /// dialog action to determine the next step that Amazon Lex V2 should use in the
-    /// conversation with the user.</p>
-    /// <p>The <code>sessionState</code> field must be compressed using gzip
-    /// and then base64 encoded before sending to Amazon Lex V2.</p>
+    /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+    /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     pub session_state: std::option::Option<std::string::String>,
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2 </p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes for prefix
-    /// <code>x-amz-lex:</code>.</p>
-    /// <p>The <code>requestAttributes</code> field must be compressed using
-    /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+    /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     pub request_attributes: std::option::Option<std::string::String>,
-    /// <p>Indicates the format for audio input or that the content is text.
-    /// The header must start with one of the following prefixes:</p>
+    /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li>
-    /// <p>PCM format, audio data must be in little-endian byte
-    /// order.</p>
+    /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/l16; rate=16000; channels=1</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-    /// channel-count=1; is-big-endian=false</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Opus format</p>
+    /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+    /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+    /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Opus format</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Text format</p>
+    /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Text format</p>
     /// <ul>
-    /// <li>
-    /// <p>text/plain; charset=utf-8</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>text/plain; charset=utf-8</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub request_content_type: std::option::Option<std::string::String>,
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-    /// speech based on the <code>responseContentType</code> value.</p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-    /// returns text in the response.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-    /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-    /// using the configuration that you specified in the
-    /// <code>requestContentType</code> parameter. For example, if you
-    /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-    /// speech in the MPEG format.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-    /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-    /// format.</p>
-    /// </li>
-    /// <li>
-    /// <p>The following are the accepted values:</p>
+    /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+    /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+    /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+    /// <li> <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/mpeg</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/ogg</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/pcm (16 KHz)</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/* (defaults to mpeg)</p>
-    /// </li>
-    /// <li>
-    /// <p>text/plain; charset=utf-8</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>audio/mpeg</p> </li>
+    /// <li> <p>audio/ogg</p> </li>
+    /// <li> <p>audio/pcm (16 KHz)</p> </li>
+    /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+    /// <li> <p>text/plain; charset=utf-8</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub response_content_type: std::option::Option<std::string::String>,
-    /// <p>User input in PCM or Opus audio format or text format as described
-    /// in the <code>requestContentType</code> parameter.</p>
+    /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
     pub input_stream: aws_smithy_http::byte_stream::ByteStream,
 }
 impl RecognizeUtteranceInput {
@@ -1868,8 +1662,7 @@ impl RecognizeUtteranceInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier in use for the bot that should receive the
-    /// request.</p>
+    /// <p>The alias identifier in use for the bot that should receive the request.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -1881,110 +1674,55 @@ impl RecognizeUtteranceInput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>Sets the state of the session with the user. You can use this to set
-    /// the current intent, attributes, context, and dialog action. Use the
-    /// dialog action to determine the next step that Amazon Lex V2 should use in the
-    /// conversation with the user.</p>
-    /// <p>The <code>sessionState</code> field must be compressed using gzip
-    /// and then base64 encoded before sending to Amazon Lex V2.</p>
+    /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+    /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     pub fn session_state(&self) -> std::option::Option<&str> {
         self.session_state.as_deref()
     }
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2 </p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes for prefix
-    /// <code>x-amz-lex:</code>.</p>
-    /// <p>The <code>requestAttributes</code> field must be compressed using
-    /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+    /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     pub fn request_attributes(&self) -> std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
-    /// <p>Indicates the format for audio input or that the content is text.
-    /// The header must start with one of the following prefixes:</p>
+    /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li>
-    /// <p>PCM format, audio data must be in little-endian byte
-    /// order.</p>
+    /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/l16; rate=16000; channels=1</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-    /// channel-count=1; is-big-endian=false</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Opus format</p>
+    /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+    /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+    /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Opus format</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Text format</p>
+    /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Text format</p>
     /// <ul>
-    /// <li>
-    /// <p>text/plain; charset=utf-8</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>text/plain; charset=utf-8</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn request_content_type(&self) -> std::option::Option<&str> {
         self.request_content_type.as_deref()
     }
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-    /// speech based on the <code>responseContentType</code> value.</p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-    /// returns text in the response.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-    /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-    /// using the configuration that you specified in the
-    /// <code>requestContentType</code> parameter. For example, if you
-    /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-    /// speech in the MPEG format.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-    /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-    /// format.</p>
-    /// </li>
-    /// <li>
-    /// <p>The following are the accepted values:</p>
+    /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+    /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+    /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+    /// <li> <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li>
-    /// <p>audio/mpeg</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/ogg</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/pcm (16 KHz)</p>
-    /// </li>
-    /// <li>
-    /// <p>audio/* (defaults to mpeg)</p>
-    /// </li>
-    /// <li>
-    /// <p>text/plain; charset=utf-8</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>audio/mpeg</p> </li>
+    /// <li> <p>audio/ogg</p> </li>
+    /// <li> <p>audio/pcm (16 KHz)</p> </li>
+    /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+    /// <li> <p>text/plain; charset=utf-8</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn response_content_type(&self) -> std::option::Option<&str> {
         self.response_content_type.as_deref()
     }
-    /// <p>User input in PCM or Opus audio format or text format as described
-    /// in the <code>requestContentType</code> parameter.</p>
+    /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
     pub fn input_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.input_stream
     }
@@ -2011,23 +1749,18 @@ impl std::fmt::Debug for RecognizeUtteranceInput {
 pub struct RecognizeTextInput {
     /// <p>The identifier of the bot that processes the request.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier in use for the bot that processes the
-    /// request.</p>
+    /// <p>The alias identifier in use for the bot that processes the request.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user session that is having the
-    /// conversation.</p>
+    /// <p>The identifier of the user session that is having the conversation.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
     pub text: std::option::Option<std::string::String>,
     /// <p>The current state of the dialog between the user and the bot.</p>
     pub session_state: std::option::Option<crate::model::SessionState>,
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2 </p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes with the prefix
-    /// <code>x-amz-lex:</code>.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2036,8 +1769,7 @@ impl RecognizeTextInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier in use for the bot that processes the
-    /// request.</p>
+    /// <p>The alias identifier in use for the bot that processes the request.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -2045,8 +1777,7 @@ impl RecognizeTextInput {
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The identifier of the user session that is having the
-    /// conversation.</p>
+    /// <p>The identifier of the user session that is having the conversation.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -2058,11 +1789,8 @@ impl RecognizeTextInput {
     pub fn session_state(&self) -> std::option::Option<&crate::model::SessionState> {
         self.session_state.as_ref()
     }
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2 </p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes with the prefix
-    /// <code>x-amz-lex:</code>.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2090,35 +1818,23 @@ impl std::fmt::Debug for RecognizeTextInput {
 pub struct PutSessionInput {
     /// <p>The identifier of the bot that receives the session data.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier of the bot that receives the session
-    /// data.</p>
+    /// <p>The alias identifier of the bot that receives the session data.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the session that receives the session data.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>A list of messages to send to the user. Messages are sent in the
-    /// order that they are defined in the list.</p>
+    /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
-    /// <p>Sets the state of the session with the user. You can use this to set
-    /// the current intent, attributes, context, and dialog action. Use the
-    /// dialog action to determine the next step that Amazon Lex V2 should use in the
-    /// conversation with the user.</p>
+    /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub session_state: std::option::Option<crate::model::SessionState>,
-    /// <p>Request-specific information passed between Amazon Lex V2 and the client
-    /// application.</p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes with the prefix
-    /// <code>x-amz-lex:</code>.</p>
+    /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub request_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-    /// speech depending on the value of this parameter. </p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-    /// returns text in the response.</p>
-    /// </li>
+    /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
     pub response_content_type: std::option::Option<std::string::String>,
 }
@@ -2127,8 +1843,7 @@ impl PutSessionInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier of the bot that receives the session
-    /// data.</p>
+    /// <p>The alias identifier of the bot that receives the session data.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -2140,36 +1855,25 @@ impl PutSessionInput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A list of messages to send to the user. Messages are sent in the
-    /// order that they are defined in the list.</p>
+    /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }
-    /// <p>Sets the state of the session with the user. You can use this to set
-    /// the current intent, attributes, context, and dialog action. Use the
-    /// dialog action to determine the next step that Amazon Lex V2 should use in the
-    /// conversation with the user.</p>
+    /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub fn session_state(&self) -> std::option::Option<&crate::model::SessionState> {
         self.session_state.as_ref()
     }
-    /// <p>Request-specific information passed between Amazon Lex V2 and the client
-    /// application.</p>
-    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-    /// attributes. Don't create any request attributes with the prefix
-    /// <code>x-amz-lex:</code>.</p>
+    /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.request_attributes.as_ref()
     }
-    /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-    /// speech depending on the value of this parameter. </p>
+    /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
-    /// <li>
-    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-    /// returns text in the response.</p>
-    /// </li>
+    /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
     pub fn response_content_type(&self) -> std::option::Option<&str> {
         self.response_content_type.as_deref()
@@ -2196,8 +1900,7 @@ impl std::fmt::Debug for PutSessionInput {
 pub struct GetSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier in use for the bot that contains the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
     pub locale_id: std::option::Option<std::string::String>,
@@ -2209,8 +1912,7 @@ impl GetSessionInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier in use for the bot that contains the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -2240,8 +1942,7 @@ impl std::fmt::Debug for GetSessionInput {
 pub struct DeleteSessionInput {
     /// <p>The identifier of the bot that contains the session data.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier in use for the bot that contains the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session is in use.</p>
     pub locale_id: std::option::Option<std::string::String>,
@@ -2253,8 +1954,7 @@ impl DeleteSessionInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier in use for the bot that contains the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }

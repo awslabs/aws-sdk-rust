@@ -49,14 +49,12 @@ pub mod create_identity_pool_input {
             self.allow_unauthenticated_identities = input;
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn allow_classic_flow(mut self, input: bool) -> Self {
             self.allow_classic_flow = Some(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
@@ -86,24 +84,14 @@ pub mod create_identity_pool_input {
             self.supported_login_providers = input;
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-        /// placeholder that allows your backend and the Cognito service to communicate about the
-        /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-        /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-        /// (<code>-</code>).</p>
-        /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-        /// in setting this parameter.</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+        /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.developer_provider_name = Some(input.into());
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-        /// placeholder that allows your backend and the Cognito service to communicate about the
-        /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-        /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-        /// (<code>-</code>).</p>
-        /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-        /// in setting this parameter.</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+        /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -159,16 +147,14 @@ pub mod create_identity_pool_input {
         ///
         /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -180,9 +166,7 @@ pub mod create_identity_pool_input {
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
-        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-        /// pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -193,9 +177,7 @@ pub mod create_identity_pool_input {
             self.identity_pool_tags = Some(hash_map);
             self
         }
-        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-        /// pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -1010,15 +992,9 @@ pub mod get_credentials_for_identity_input {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// name-value pair will follow the syntax "provider_name":
-        /// "provider_user_identifier".</p>
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-        /// identity.</p>
-        /// <p>The Logins parameter is required when using identities associated with external
-        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-        /// Guide.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1029,15 +1005,9 @@ pub mod get_credentials_for_identity_input {
             self.logins = Some(hash_map);
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// name-value pair will follow the syntax "provider_name":
-        /// "provider_user_identifier".</p>
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-        /// identity.</p>
-        /// <p>The Logins parameter is required when using identities associated with external
-        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-        /// Guide.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1047,18 +1017,12 @@ pub mod get_credentials_for_identity_input {
             self.logins = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-        /// received in the token from the identity provider. For example, a SAML-based identity
-        /// provider. This parameter is optional for identity providers that do not support role
-        /// customization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
         pub fn custom_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-        /// received in the token from the identity provider. For example, a SAML-based identity
-        /// provider. This parameter is optional for identity providers that do not support role
-        /// customization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
         pub fn set_custom_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1247,35 +1211,18 @@ pub mod get_id_input {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Facebook: <code>graph.facebook.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito user pool:
-        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Google: <code>accounts.google.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon: <code>www.amazon.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Twitter: <code>api.twitter.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Digits: <code>www.digits.com</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+        /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+        /// <region>
+        /// .amazonaws.com/
+        /// <your_user_pool_id></your_user_pool_id>
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
         pub fn logins(
             mut self,
@@ -1287,35 +1234,18 @@ pub mod get_id_input {
             self.logins = Some(hash_map);
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Facebook: <code>graph.facebook.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito user pool:
-        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Google: <code>accounts.google.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon: <code>www.amazon.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Twitter: <code>api.twitter.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Digits: <code>www.digits.com</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+        /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+        /// <region>
+        /// .amazonaws.com/
+        /// <your_user_pool_id></your_user_pool_id>
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
         pub fn set_logins(
             mut self,
@@ -1644,10 +1574,7 @@ pub mod get_open_id_token_input {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1658,10 +1585,7 @@ pub mod get_open_id_token_input {
             self.logins = Some(hash_map);
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1852,14 +1776,7 @@ pub mod get_open_id_token_for_developer_identity_input {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-        /// name-value pair represents a user from a public provider or developer provider. If the user
-        /// is from a developer provider, the name-value pair will follow the syntax
-        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-        /// provider is the "domain" by which Cognito will refer to your users; you provided this
-        /// domain while creating/updating the identity pool. The developer user identifier is an
-        /// identifier from your backend that uniquely identifies a user. When you create an identity
-        /// pool, you can specify the supported logins.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1870,14 +1787,7 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.logins = Some(hash_map);
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-        /// name-value pair represents a user from a public provider or developer provider. If the user
-        /// is from a developer provider, the name-value pair will follow the syntax
-        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-        /// provider is the "domain" by which Cognito will refer to your users; you provided this
-        /// domain while creating/updating the identity pool. The developer user identifier is an
-        /// identifier from your backend that uniquely identifies a user. When you create an identity
-        /// pool, you can specify the supported logins.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1912,28 +1822,14 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.principal_tags = input;
             self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-        /// time for the token so that you can cache it. If you don't provide an expiration time, the
-        /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-        /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-        /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-        /// are significant security implications: an attacker could use a leaked token to access your
-        /// AWS resources for the token's duration.</p>
-        /// <note>
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
         /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
         pub fn token_duration(mut self, input: i64) -> Self {
             self.token_duration = Some(input);
             self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-        /// time for the token so that you can cache it. If you don't provide an expiration time, the
-        /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-        /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-        /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-        /// are significant security implications: an attacker could use a leaked token to access your
-        /// AWS resources for the token's duration.</p>
-        /// <note>
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
         /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
         pub fn set_token_duration(mut self, input: std::option::Option<i64>) -> Self {
@@ -2301,14 +2197,12 @@ pub mod list_identities_input {
             self.next_token = input;
             self
         }
-        /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-        /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+        /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn hide_disabled(mut self, input: bool) -> Self {
             self.hide_disabled = Some(input);
             self
         }
-        /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-        /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+        /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn set_hide_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.hide_disabled = input;
             self
@@ -2626,14 +2520,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2811,16 +2703,12 @@ pub mod lookup_developer_identity_input {
             self.identity_id = input;
             self
         }
-        /// <p>A unique ID used by your backend authentication process to identify a user.
-        /// Typically, a developer identity provider would issue many developer user identifiers, in
-        /// keeping with the number of users.</p>
+        /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
         pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.developer_user_identifier = Some(input.into());
             self
         }
-        /// <p>A unique ID used by your backend authentication process to identify a user.
-        /// Typically, a developer identity provider would issue many developer user identifiers, in
-        /// keeping with the number of users.</p>
+        /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
         pub fn set_developer_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2838,22 +2726,12 @@ pub mod lookup_developer_identity_input {
             self.max_results = input;
             self
         }
-        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-        /// null. After that the service will return <code>NextToken</code> values as needed. For
-        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-        /// 20 matches in the database. The service will return a pagination token as a part of the
-        /// response. This token can be used to call the API again and get results starting from the
-        /// 11th match.</p>
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-        /// null. After that the service will return <code>NextToken</code> values as needed. For
-        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-        /// 20 matches in the database. The service will return a pagination token as a part of the
-        /// response. This token can be used to call the API again and get results starting from the
-        /// 11th match.</p>
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3012,14 +2890,12 @@ pub mod merge_developer_identities_input {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>User identifier for the source user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn source_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_user_identifier = Some(input.into());
             self
         }
-        /// <p>User identifier for the source user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_source_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3027,8 +2903,7 @@ pub mod merge_developer_identities_input {
             self.source_user_identifier = input;
             self
         }
-        /// <p>User identifier for the destination user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn destination_user_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -3036,8 +2911,7 @@ pub mod merge_developer_identities_input {
             self.destination_user_identifier = Some(input.into());
             self
         }
-        /// <p>User identifier for the destination user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_destination_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3045,20 +2919,12 @@ pub mod merge_developer_identities_input {
             self.destination_user_identifier = input;
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-        /// name that you provide while creating an identity pool. This name acts as a placeholder that
-        /// allows your backend and the Cognito service to communicate about the developer provider.
-        /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-        /// underscore (_), and dash (-).</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.developer_provider_name = Some(input.into());
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-        /// name that you provide while creating an identity pool. This name acts as a placeholder that
-        /// allows your backend and the Cognito service to communicate about the developer provider.
-        /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-        /// underscore (_), and dash (-).</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3252,8 +3118,7 @@ pub mod set_identity_pool_roles_input {
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
-        /// <p>The map of roles associated with this pool. For a given role, the key will be either
-        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn roles(
             mut self,
             k: impl Into<std::string::String>,
@@ -3264,8 +3129,7 @@ pub mod set_identity_pool_roles_input {
             self.roles = Some(hash_map);
             self
         }
-        /// <p>The map of roles associated with this pool. For a given role, the key will be either
-        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<
@@ -3279,10 +3143,7 @@ pub mod set_identity_pool_roles_input {
         ///
         /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
         ///
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-        /// for example, "graph.facebook.com" or
-        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn role_mappings(
             mut self,
@@ -3294,10 +3155,7 @@ pub mod set_identity_pool_roles_input {
             self.role_mappings = Some(hash_map);
             self
         }
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-        /// for example, "graph.facebook.com" or
-        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn set_role_mappings(
             mut self,
@@ -4073,8 +3931,7 @@ pub mod unlink_identity_input {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider
-        /// tokens.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -4085,8 +3942,7 @@ pub mod unlink_identity_input {
             self.logins = Some(hash_map);
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider
-        /// tokens.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -4490,14 +4346,12 @@ pub mod update_identity_pool_input {
             self.allow_unauthenticated_identities = input;
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn allow_classic_flow(mut self, input: bool) -> Self {
             self.allow_classic_flow = Some(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
@@ -4588,16 +4442,14 @@ pub mod update_identity_pool_input {
         ///
         /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4609,9 +4461,7 @@ pub mod update_identity_pool_input {
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
-        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4622,9 +4472,7 @@ pub mod update_identity_pool_input {
             self.identity_pool_tags = Some(hash_map);
             self
         }
-        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -4790,8 +4638,7 @@ pub struct UpdateIdentityPoolInput {
     pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
     pub allow_unauthenticated_identities: bool,
-    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     pub supported_login_providers:
@@ -4803,12 +4650,9 @@ pub struct UpdateIdentityPoolInput {
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
     pub cognito_identity_providers:
         std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
-    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-    /// pool.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-    /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4825,8 +4669,7 @@ impl UpdateIdentityPoolInput {
     pub fn allow_unauthenticated_identities(&self) -> bool {
         self.allow_unauthenticated_identities
     }
-    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn allow_classic_flow(&self) -> std::option::Option<bool> {
         self.allow_classic_flow
     }
@@ -4851,14 +4694,11 @@ impl UpdateIdentityPoolInput {
     ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
         self.cognito_identity_providers.as_deref()
     }
-    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-    /// pool.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.saml_provider_ar_ns.as_deref()
     }
-    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-    /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn identity_pool_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4926,8 +4766,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider
-    /// tokens.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
@@ -4938,8 +4777,7 @@ impl UnlinkIdentityInput {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider
-    /// tokens.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     pub fn logins(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5087,14 +4925,10 @@ impl std::fmt::Debug for SetPrincipalTagAttributeMapInput {
 pub struct SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// <p>The map of roles associated with this pool. For a given role, the key will be either
-    /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+    /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     pub roles:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-    /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-    /// for example, "graph.facebook.com" or
-    /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub role_mappings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
@@ -5105,18 +4939,14 @@ impl SetIdentityPoolRolesInput {
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// <p>The map of roles associated with this pool. For a given role, the key will be either
-    /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+    /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     pub fn roles(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.roles.as_ref()
     }
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-    /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-    /// for example, "graph.facebook.com" or
-    /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn role_mappings(
         &self,
@@ -5140,37 +4970,25 @@ impl std::fmt::Debug for SetIdentityPoolRolesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeDeveloperIdentitiesInput {
-    /// <p>User identifier for the source user. The value should be a
-    /// <code>DeveloperUserIdentifier</code>.</p>
+    /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     pub source_user_identifier: std::option::Option<std::string::String>,
-    /// <p>User identifier for the destination user. The value should be a
-    /// <code>DeveloperUserIdentifier</code>.</p>
+    /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     pub destination_user_identifier: std::option::Option<std::string::String>,
-    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-    /// name that you provide while creating an identity pool. This name acts as a placeholder that
-    /// allows your backend and the Cognito service to communicate about the developer provider.
-    /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-    /// underscore (_), and dash (-).</p>
+    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl MergeDeveloperIdentitiesInput {
-    /// <p>User identifier for the source user. The value should be a
-    /// <code>DeveloperUserIdentifier</code>.</p>
+    /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     pub fn source_user_identifier(&self) -> std::option::Option<&str> {
         self.source_user_identifier.as_deref()
     }
-    /// <p>User identifier for the destination user. The value should be a
-    /// <code>DeveloperUserIdentifier</code>.</p>
+    /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     pub fn destination_user_identifier(&self) -> std::option::Option<&str> {
         self.destination_user_identifier.as_deref()
     }
-    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-    /// name that you provide while creating an identity pool. This name acts as a placeholder that
-    /// allows your backend and the Cognito service to communicate about the developer provider.
-    /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-    /// underscore (_), and dash (-).</p>
+    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
     pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
@@ -5201,18 +5019,11 @@ pub struct LookupDeveloperIdentityInput {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A unique ID used by your backend authentication process to identify a user.
-    /// Typically, a developer identity provider would issue many developer user identifiers, in
-    /// keeping with the number of users.</p>
+    /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
     pub developer_user_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of identities to return.</p>
     pub max_results: i32,
-    /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-    /// null. After that the service will return <code>NextToken</code> values as needed. For
-    /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-    /// 20 matches in the database. The service will return a pagination token as a part of the
-    /// response. This token can be used to call the API again and get results starting from the
-    /// 11th match.</p>
+    /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupDeveloperIdentityInput {
@@ -5224,9 +5035,7 @@ impl LookupDeveloperIdentityInput {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A unique ID used by your backend authentication process to identify a user.
-    /// Typically, a developer identity provider would issue many developer user identifiers, in
-    /// keeping with the number of users.</p>
+    /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
     pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
         self.developer_user_identifier.as_deref()
     }
@@ -5234,12 +5043,7 @@ impl LookupDeveloperIdentityInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-    /// null. After that the service will return <code>NextToken</code> values as needed. For
-    /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-    /// 20 matches in the database. The service will return a pagination token as a part of the
-    /// response. This token can be used to call the API again and get results starting from the
-    /// 11th match.</p>
+    /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5260,13 +5064,11 @@ impl std::fmt::Debug for LookupDeveloperIdentityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5317,8 +5119,7 @@ pub struct ListIdentitiesInput {
     pub max_results: i32,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-    /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+    /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub hide_disabled: bool,
 }
 impl ListIdentitiesInput {
@@ -5334,8 +5135,7 @@ impl ListIdentitiesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-    /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+    /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub fn hide_disabled(&self) -> bool {
         self.hide_disabled
     }
@@ -5387,27 +5187,13 @@ pub struct GetOpenIdTokenForDeveloperIdentityInput {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-    /// name-value pair represents a user from a public provider or developer provider. If the user
-    /// is from a developer provider, the name-value pair will follow the syntax
-    /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-    /// provider is the "domain" by which Cognito will refer to your users; you provided this
-    /// domain while creating/updating the identity pool. The developer user identifier is an
-    /// identifier from your backend that uniquely identifies a user. When you create an identity
-    /// pool, you can specify the supported logins.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-    /// time for the token so that you can cache it. If you don't provide an expiration time, the
-    /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-    /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-    /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-    /// are significant security implications: an attacker could use a leaked token to access your
-    /// AWS resources for the token's duration.</p>
-    /// <note>
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
     /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
     pub token_duration: std::option::Option<i64>,
@@ -5421,14 +5207,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-    /// name-value pair represents a user from a public provider or developer provider. If the user
-    /// is from a developer provider, the name-value pair will follow the syntax
-    /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-    /// provider is the "domain" by which Cognito will refer to your users; you provided this
-    /// domain while creating/updating the identity pool. The developer user identifier is an
-    /// identifier from your backend that uniquely identifies a user. When you create an identity
-    /// pool, you can specify the supported logins.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
     pub fn logins(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5442,14 +5221,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
     {
         self.principal_tags.as_ref()
     }
-    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-    /// time for the token so that you can cache it. If you don't provide an expiration time, the
-    /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-    /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-    /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-    /// are significant security implications: an attacker could use a leaked token to access your
-    /// AWS resources for the token's duration.</p>
-    /// <note>
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
     /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
     pub fn token_duration(&self) -> std::option::Option<i64> {
@@ -5474,10 +5246,7 @@ impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
 pub struct GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-    /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-    /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-    /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5486,10 +5255,7 @@ impl GetOpenIdTokenInput {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-    /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-    /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-    /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
     pub fn logins(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5535,35 +5301,18 @@ pub struct GetIdInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-    /// available provider names for <code>Logins</code> are as follows:</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Facebook: <code>graph.facebook.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito user pool:
-    /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-    /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Google: <code>accounts.google.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon: <code>www.amazon.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Twitter: <code>api.twitter.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Digits: <code>www.digits.com</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <region>
+    /// .amazonaws.com/
+    /// <your_user_pool_id></your_user_pool_id>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5577,35 +5326,18 @@ impl GetIdInput {
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-    /// available provider names for <code>Logins</code> are as follows:</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Facebook: <code>graph.facebook.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito user pool:
-    /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-    /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Google: <code>accounts.google.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon: <code>www.amazon.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Twitter: <code>api.twitter.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Digits: <code>www.digits.com</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <region>
+    /// .amazonaws.com/
+    /// <your_user_pool_id></your_user_pool_id>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
     pub fn logins(
         &self,
@@ -5630,21 +5362,12 @@ impl std::fmt::Debug for GetIdInput {
 pub struct GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-    /// name-value pair will follow the syntax "provider_name":
-    /// "provider_user_identifier".</p>
-    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-    /// identity.</p>
-    /// <p>The Logins parameter is required when using identities associated with external
-    /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-    /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-    /// Guide.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+    /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-    /// received in the token from the identity provider. For example, a SAML-based identity
-    /// provider. This parameter is optional for identity providers that do not support role
-    /// customization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
     pub custom_role_arn: std::option::Option<std::string::String>,
 }
 impl GetCredentialsForIdentityInput {
@@ -5652,25 +5375,16 @@ impl GetCredentialsForIdentityInput {
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-    /// name-value pair will follow the syntax "provider_name":
-    /// "provider_user_identifier".</p>
-    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-    /// identity.</p>
-    /// <p>The Logins parameter is required when using identities associated with external
-    /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-    /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-    /// Guide.</p>
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+    /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
     pub fn logins(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.logins.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-    /// received in the token from the identity provider. For example, a SAML-based identity
-    /// provider. This parameter is optional for identity providers that do not support role
-    /// customization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
     pub fn custom_role_arn(&self) -> std::option::Option<&str> {
         self.custom_role_arn.as_deref()
     }
@@ -5777,31 +5491,22 @@ pub struct CreateIdentityPoolInput {
     pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
     pub allow_unauthenticated_identities: bool,
-    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
     pub supported_login_providers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-    /// placeholder that allows your backend and the Cognito service to communicate about the
-    /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-    /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-    /// (<code>-</code>).</p>
-    /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-    /// in setting this parameter.</p>
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+    /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
     pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
     pub cognito_identity_providers:
         std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
-    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-    /// pool.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-    /// pools to categorize and manage them in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5814,8 +5519,7 @@ impl CreateIdentityPoolInput {
     pub fn allow_unauthenticated_identities(&self) -> bool {
         self.allow_unauthenticated_identities
     }
-    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn allow_classic_flow(&self) -> std::option::Option<bool> {
         self.allow_classic_flow
     }
@@ -5826,13 +5530,8 @@ impl CreateIdentityPoolInput {
     {
         self.supported_login_providers.as_ref()
     }
-    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-    /// placeholder that allows your backend and the Cognito service to communicate about the
-    /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-    /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-    /// (<code>-</code>).</p>
-    /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-    /// in setting this parameter.</p>
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+    /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
     pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
@@ -5846,14 +5545,11 @@ impl CreateIdentityPoolInput {
     ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
         self.cognito_identity_providers.as_deref()
     }
-    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-    /// pool.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.saml_provider_ar_ns.as_deref()
     }
-    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-    /// pools to categorize and manage them in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn identity_pool_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

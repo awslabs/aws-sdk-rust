@@ -12,8 +12,7 @@ pub struct AddInstanceFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddInstanceFleetErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -117,8 +116,7 @@ pub struct AddInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddInstanceGroupsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -211,8 +209,7 @@ pub struct AddJobFlowStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddJobFlowStepsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -302,8 +299,7 @@ pub struct AddTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -401,8 +397,7 @@ pub struct CancelStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelStepsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -500,8 +495,7 @@ pub struct CreateSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -605,8 +599,7 @@ pub struct CreateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -710,8 +703,7 @@ pub struct CreateStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -815,8 +807,7 @@ pub struct DeleteSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -920,8 +911,7 @@ pub struct DeleteStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1025,8 +1015,7 @@ pub struct DeleteStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1130,8 +1119,7 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1235,8 +1223,7 @@ pub struct DescribeJobFlowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobFlowsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1329,8 +1316,7 @@ pub struct DescribeNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNotebookExecutionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1434,8 +1420,7 @@ pub struct DescribeReleaseLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReleaseLabelErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1539,8 +1524,7 @@ pub struct DescribeSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1651,8 +1635,7 @@ pub struct DescribeStepError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStepErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1756,8 +1739,7 @@ pub struct DescribeStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1943,8 +1925,7 @@ pub struct GetBlockPublicAccessConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBlockPublicAccessConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2141,8 +2122,7 @@ pub struct GetStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2246,8 +2226,7 @@ pub struct ListBootstrapActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBootstrapActionsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2351,8 +2330,7 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2456,8 +2434,7 @@ pub struct ListInstanceFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceFleetsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2561,8 +2538,7 @@ pub struct ListInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceGroupsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2666,8 +2642,7 @@ pub struct ListInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstancesErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2771,8 +2746,7 @@ pub struct ListNotebookExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotebookExecutionsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2876,8 +2850,7 @@ pub struct ListReleaseLabelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReleaseLabelsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2981,8 +2954,7 @@ pub struct ListSecurityConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSecurityConfigurationsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3086,8 +3058,7 @@ pub struct ListStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStepsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3185,8 +3156,7 @@ pub struct ListStudiosError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudiosErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3284,8 +3254,7 @@ pub struct ListStudioSessionMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioSessionMappingsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3389,8 +3358,7 @@ pub struct ModifyClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3491,8 +3459,7 @@ pub struct ModifyInstanceFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceFleetErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3596,8 +3563,7 @@ pub struct ModifyInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceGroupsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3854,8 +3820,7 @@ pub struct PutBlockPublicAccessConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBlockPublicAccessConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4298,8 +4263,7 @@ pub struct RemoveTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4397,8 +4361,7 @@ pub struct RunJobFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunJobFlowErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4488,8 +4451,7 @@ pub struct SetTerminationProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetTerminationProtectionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4582,8 +4544,7 @@ pub struct SetVisibleToAllUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetVisibleToAllUsersErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4676,8 +4637,7 @@ pub struct StartNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartNotebookExecutionErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4781,8 +4741,7 @@ pub struct StopNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopNotebookExecutionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4886,8 +4845,7 @@ pub struct TerminateJobFlowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateJobFlowsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4980,8 +4938,7 @@ pub struct UpdateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5085,8 +5042,7 @@ pub struct UpdateStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5262,8 +5218,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>Indicates that an error occurred while processing the request and that the request was
-/// not completed.</p>
+/// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -5327,8 +5282,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>This exception occurs when there is an internal failure in the Amazon EMR
-/// service.</p>
+/// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

@@ -257,22 +257,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.author(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author(input);
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -294,12 +300,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.labels(input.into());
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -307,70 +317,84 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labels(input);
             self
         }
-        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn license_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_body(input.into());
             self
         }
-        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn set_license_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_body(input);
             self
         }
-        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_url(input);
             self
         }
-        /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application that you want to publish.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application that you want to publish.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readme_body(input.into());
             self
         }
-        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn set_readme_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_body(input);
             self
         }
-        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readme_url(input.into());
             self
         }
-        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_url(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -378,12 +402,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -417,14 +443,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spdx_license_id(input);
             self
         }
-        /// <p>The local raw packaged AWS SAM template file of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>The local raw packaged AWS SAM template file of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -432,12 +458,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_url(input.into());
             self
         }
-        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_url(input);
             self
@@ -528,12 +556,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -654,56 +684,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.capabilities(input.into());
             self
         }
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -711,14 +707,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capabilities(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_set_name(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -726,26 +720,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_set_name(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -754,14 +744,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -790,14 +778,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_types(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -805,8 +791,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_types(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn rollback_configuration(
             mut self,
             input: crate::model::RollbackConfiguration,
@@ -814,8 +799,7 @@ pub mod fluent_builders {
             self.inner = self.inner.rollback_configuration(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -823,16 +807,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rollback_configuration(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -840,14 +822,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stack_name(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_name(input);
             self
@@ -856,14 +836,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -871,12 +849,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_id(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_id(input);
             self
@@ -954,16 +934,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1276,12 +1254,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_id(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_id(input);
             self
@@ -1568,10 +1548,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutApplicationPolicy`.
     ///
-    /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see
-    /// <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    /// Permissions</a>
-    /// .</p>
+    /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a> .</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutApplicationPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1661,7 +1638,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnshareApplication`.
     ///
-    /// <p>Unshares an application from an AWS Organization.</p><p>This operation can be called only from the organization's master account.</p>
+    /// <p>Unshares an application from an AWS Organization.</p>
+    /// <p>This operation can be called only from the organization's master account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnshareApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -1817,22 +1795,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.author(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author(input);
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1854,12 +1838,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.labels(input.into());
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1867,22 +1855,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labels(input);
             self
         }
-        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readme_body(input.into());
             self
         }
-        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_body(input);
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readme_url(input.into());
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_url(input);
             self

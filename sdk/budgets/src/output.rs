@@ -67,13 +67,9 @@ pub struct UpdateBudgetActionOutput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The previous action resource information.
-    /// </p>
+    /// <p> The previous action resource information. </p>
     pub old_action: std::option::Option<crate::model::Action>,
-    /// <p>
-    /// The updated action resource information.
-    /// </p>
+    /// <p> The updated action resource information. </p>
     pub new_action: std::option::Option<crate::model::Action>,
 }
 impl UpdateBudgetActionOutput {
@@ -85,15 +81,11 @@ impl UpdateBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// The previous action resource information.
-    /// </p>
+    /// <p> The previous action resource information. </p>
     pub fn old_action(&self) -> std::option::Option<&crate::model::Action> {
         self.old_action.as_ref()
     }
-    /// <p>
-    /// The updated action resource information.
-    /// </p>
+    /// <p> The updated action resource information. </p>
     pub fn new_action(&self) -> std::option::Option<&crate::model::Action> {
         self.new_action.as_ref()
     }
@@ -140,30 +132,22 @@ pub mod update_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// The previous action resource information.
-        /// </p>
+        /// <p> The previous action resource information. </p>
         pub fn old_action(mut self, input: crate::model::Action) -> Self {
             self.old_action = Some(input);
             self
         }
-        /// <p>
-        /// The previous action resource information.
-        /// </p>
+        /// <p> The previous action resource information. </p>
         pub fn set_old_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.old_action = input;
             self
         }
-        /// <p>
-        /// The updated action resource information.
-        /// </p>
+        /// <p> The updated action resource information. </p>
         pub fn new_action(mut self, input: crate::model::Action) -> Self {
             self.new_action = Some(input);
             self
         }
-        /// <p>
-        /// The updated action resource information.
-        /// </p>
+        /// <p> The updated action resource information. </p>
         pub fn set_new_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.new_action = input;
             self
@@ -224,13 +208,9 @@ pub struct ExecuteBudgetActionOutput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionOutput {
@@ -242,15 +222,11 @@ impl ExecuteBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
         self.execution_type.as_ref()
     }
@@ -297,30 +273,22 @@ pub mod execute_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
             self.execution_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -685,17 +653,13 @@ impl DescribeBudgetPerformanceHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetOutput {
-    /// <p>
-    /// A list of the budget action resources information.
-    /// </p>
+    /// <p> A list of the budget action resources information. </p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForBudgetOutput {
-    /// <p>
-    /// A list of the budget action resources information.
-    /// </p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
     }
@@ -726,18 +690,14 @@ pub mod describe_budget_actions_for_budget_output {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>
-        /// A list of the budget action resources information.
-        /// </p>
+        /// <p> A list of the budget action resources information. </p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>
-        /// A list of the budget action resources information.
-        /// </p>
+        /// <p> A list of the budget action resources information. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -775,17 +735,13 @@ impl DescribeBudgetActionsForBudgetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountOutput {
-    /// <p>
-    /// A list of the budget action resources information.
-    /// </p>
+    /// <p> A list of the budget action resources information. </p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForAccountOutput {
-    /// <p>
-    /// A list of the budget action resources information.
-    /// </p>
+    /// <p> A list of the budget action resources information. </p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
     }
@@ -816,18 +772,14 @@ pub mod describe_budget_actions_for_account_output {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>
-        /// A list of the budget action resources information.
-        /// </p>
+        /// <p> A list of the budget action resources information. </p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>
-        /// A list of the budget action resources information.
-        /// </p>
+        /// <p> A list of the budget action resources information. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -865,17 +817,13 @@ impl DescribeBudgetActionsForAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesOutput {
-    /// <p>
-    /// The historical record of the budget action resource.
-    /// </p>
+    /// <p> The historical record of the budget action resource. </p>
     pub action_histories: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionHistoriesOutput {
-    /// <p>
-    /// The historical record of the budget action resource.
-    /// </p>
+    /// <p> The historical record of the budget action resource. </p>
     pub fn action_histories(&self) -> std::option::Option<&[crate::model::ActionHistory]> {
         self.action_histories.as_deref()
     }
@@ -907,18 +855,14 @@ pub mod describe_budget_action_histories_output {
         ///
         /// To override the contents of this collection use [`set_action_histories`](Self::set_action_histories).
         ///
-        /// <p>
-        /// The historical record of the budget action resource.
-        /// </p>
+        /// <p> The historical record of the budget action resource. </p>
         pub fn action_histories(mut self, input: crate::model::ActionHistory) -> Self {
             let mut v = self.action_histories.unwrap_or_default();
             v.push(input);
             self.action_histories = Some(v);
             self
         }
-        /// <p>
-        /// The historical record of the budget action resource.
-        /// </p>
+        /// <p> The historical record of the budget action resource. </p>
         pub fn set_action_histories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
@@ -960,9 +904,7 @@ pub struct DescribeBudgetActionOutput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A budget action resource.
-    /// </p>
+    /// <p> A budget action resource. </p>
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DescribeBudgetActionOutput {
@@ -974,9 +916,7 @@ impl DescribeBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A budget action resource.
-    /// </p>
+    /// <p> A budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
     }
@@ -1021,16 +961,12 @@ pub mod describe_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A budget action resource.
-        /// </p>
+        /// <p> A budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>
-        /// A budget action resource.
-        /// </p>
+        /// <p> A budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -1174,9 +1110,7 @@ pub struct DeleteBudgetActionOutput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A budget action resource.
-    /// </p>
+    /// <p> A budget action resource. </p>
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DeleteBudgetActionOutput {
@@ -1188,9 +1122,7 @@ impl DeleteBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A budget action resource.
-    /// </p>
+    /// <p> A budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
     }
@@ -1235,16 +1167,12 @@ pub mod delete_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A budget action resource.
-        /// </p>
+        /// <p> A budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>
-        /// A budget action resource.
-        /// </p>
+        /// <p> A budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -1364,9 +1292,7 @@ pub struct CreateBudgetActionOutput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
 }
 impl CreateBudgetActionOutput {
@@ -1378,9 +1304,7 @@ impl CreateBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -1425,16 +1349,12 @@ pub mod create_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self

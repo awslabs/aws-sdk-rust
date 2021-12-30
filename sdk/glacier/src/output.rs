@@ -54,9 +54,7 @@ impl UploadMultipartPartOutput {
 }
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
-/// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For
-/// conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in
-/// Amazon S3 Glacier</a>.</p>
+/// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadArchiveOutput {
@@ -328,8 +326,7 @@ impl PurchaseProvisionedCapacityOutput {
 pub struct ListVaultsOutput {
     /// <p>List of vaults.</p>
     pub vault_list: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
-    /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
-    /// another List Vaults request to obtain more vaults in the list.</p>
+    /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListVaultsOutput {
@@ -337,8 +334,7 @@ impl ListVaultsOutput {
     pub fn vault_list(&self) -> std::option::Option<&[crate::model::DescribeVaultOutput]> {
         self.vault_list.as_deref()
     }
-    /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
-    /// another List Vaults request to obtain more vaults in the list.</p>
+    /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -381,14 +377,12 @@ pub mod list_vaults_output {
             self.vault_list = input;
             self
         }
-        /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
-        /// another List Vaults request to obtain more vaults in the list.</p>
+        /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The vault ARN at which to continue pagination of the results. You use the marker in
-        /// another List Vaults request to obtain more vaults in the list.</p>
+        /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -558,24 +552,17 @@ impl ListProvisionedCapacityOutput {
 pub struct ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
     pub multipart_upload_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
-    /// initiated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     pub vault_arn: std::option::Option<std::string::String>,
-    /// <p>The description of the archive that was specified in the Initiate Multipart Upload
-    /// request.</p>
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     pub archive_description: std::option::Option<std::string::String>,
-    /// <p>The part size in bytes. This is the same value that you specified in the Initiate
-    /// Multipart Upload request.</p>
+    /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     pub creation_date: std::option::Option<std::string::String>,
-    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
-    /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
-    /// pair.</p>
+    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::PartListElement>>,
-    /// <p>An opaque string that represents where to continue pagination of the results. You use
-    /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
-    /// more parts, this value is <code>null</code>.</p>
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPartsOutput {
@@ -583,18 +570,15 @@ impl ListPartsOutput {
     pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
         self.multipart_upload_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
-    /// initiated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     pub fn vault_arn(&self) -> std::option::Option<&str> {
         self.vault_arn.as_deref()
     }
-    /// <p>The description of the archive that was specified in the Initiate Multipart Upload
-    /// request.</p>
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     pub fn archive_description(&self) -> std::option::Option<&str> {
         self.archive_description.as_deref()
     }
-    /// <p>The part size in bytes. This is the same value that you specified in the Initiate
-    /// Multipart Upload request.</p>
+    /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     pub fn part_size_in_bytes(&self) -> i64 {
         self.part_size_in_bytes
     }
@@ -602,15 +586,11 @@ impl ListPartsOutput {
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
-    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
-    /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
-    /// pair.</p>
+    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::PartListElement]> {
         self.parts.as_deref()
     }
-    /// <p>An opaque string that represents where to continue pagination of the results. You use
-    /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
-    /// more parts, this value is <code>null</code>.</p>
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -656,26 +636,22 @@ pub mod list_parts_output {
             self.multipart_upload_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
-        /// initiated.</p>
+        /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.vault_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
-        /// initiated.</p>
+        /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vault_arn = input;
             self
         }
-        /// <p>The description of the archive that was specified in the Initiate Multipart Upload
-        /// request.</p>
+        /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.archive_description = Some(input.into());
             self
         }
-        /// <p>The description of the archive that was specified in the Initiate Multipart Upload
-        /// request.</p>
+        /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
         pub fn set_archive_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -683,14 +659,12 @@ pub mod list_parts_output {
             self.archive_description = input;
             self
         }
-        /// <p>The part size in bytes. This is the same value that you specified in the Initiate
-        /// Multipart Upload request.</p>
+        /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
         pub fn part_size_in_bytes(mut self, input: i64) -> Self {
             self.part_size_in_bytes = Some(input);
             self
         }
-        /// <p>The part size in bytes. This is the same value that you specified in the Initiate
-        /// Multipart Upload request.</p>
+        /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
         pub fn set_part_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.part_size_in_bytes = input;
             self
@@ -712,18 +686,14 @@ pub mod list_parts_output {
         ///
         /// To override the contents of this collection use [`set_parts`](Self::set_parts).
         ///
-        /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
-        /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
-        /// pair.</p>
+        /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
         pub fn parts(mut self, input: crate::model::PartListElement) -> Self {
             let mut v = self.parts.unwrap_or_default();
             v.push(input);
             self.parts = Some(v);
             self
         }
-        /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
-        /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
-        /// pair.</p>
+        /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
         pub fn set_parts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartListElement>>,
@@ -731,16 +701,12 @@ pub mod list_parts_output {
             self.parts = input;
             self
         }
-        /// <p>An opaque string that represents where to continue pagination of the results. You use
-        /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
-        /// more parts, this value is <code>null</code>.</p>
+        /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An opaque string that represents where to continue pagination of the results. You use
-        /// the marker in a new List Parts request to obtain more jobs in the list. If there are no
-        /// more parts, this value is <code>null</code>.</p>
+        /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -772,9 +738,7 @@ impl ListPartsOutput {
 pub struct ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
     pub uploads_list: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
-    /// <p>An opaque string that represents where to continue pagination of the results. You use
-    /// the marker in a new List Multipart Uploads request to obtain more uploads in the list. If
-    /// there are no more uploads, this value is <code>null</code>.</p>
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListMultipartUploadsOutput {
@@ -782,9 +746,7 @@ impl ListMultipartUploadsOutput {
     pub fn uploads_list(&self) -> std::option::Option<&[crate::model::UploadListElement]> {
         self.uploads_list.as_deref()
     }
-    /// <p>An opaque string that represents where to continue pagination of the results. You use
-    /// the marker in a new List Multipart Uploads request to obtain more uploads in the list. If
-    /// there are no more uploads, this value is <code>null</code>.</p>
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -827,16 +789,12 @@ pub mod list_multipart_uploads_output {
             self.uploads_list = input;
             self
         }
-        /// <p>An opaque string that represents where to continue pagination of the results. You use
-        /// the marker in a new List Multipart Uploads request to obtain more uploads in the list. If
-        /// there are no more uploads, this value is <code>null</code>.</p>
+        /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An opaque string that represents where to continue pagination of the results. You use
-        /// the marker in a new List Multipart Uploads request to obtain more uploads in the list. If
-        /// there are no more uploads, this value is <code>null</code>.</p>
+        /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -861,27 +819,17 @@ impl ListMultipartUploadsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
-    /// <p>A list of job objects. Each job object contains metadata describing the
-    /// job.</p>
+    /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     pub job_list: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
-    /// <p>  
-    /// An opaque string used for pagination that specifies the job at which the listing of jobs should begin.
-    /// You get the <code>marker</code> value from a previous List Jobs response.
-    /// You only need to include the marker if you are continuing the pagination of the results started in a
-    /// previous List Jobs request. </p>
+    /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
-    /// <p>A list of job objects. Each job object contains metadata describing the
-    /// job.</p>
+    /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     pub fn job_list(&self) -> std::option::Option<&[crate::model::GlacierJobDescription]> {
         self.job_list.as_deref()
     }
-    /// <p>  
-    /// An opaque string used for pagination that specifies the job at which the listing of jobs should begin.
-    /// You get the <code>marker</code> value from a previous List Jobs response.
-    /// You only need to include the marker if you are continuing the pagination of the results started in a
-    /// previous List Jobs request. </p>
+    /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -909,16 +857,14 @@ pub mod list_jobs_output {
         ///
         /// To override the contents of this collection use [`set_job_list`](Self::set_job_list).
         ///
-        /// <p>A list of job objects. Each job object contains metadata describing the
-        /// job.</p>
+        /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
         pub fn job_list(mut self, input: crate::model::GlacierJobDescription) -> Self {
             let mut v = self.job_list.unwrap_or_default();
             v.push(input);
             self.job_list = Some(v);
             self
         }
-        /// <p>A list of job objects. Each job object contains metadata describing the
-        /// job.</p>
+        /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
         pub fn set_job_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
@@ -926,20 +872,12 @@ pub mod list_jobs_output {
             self.job_list = input;
             self
         }
-        /// <p>  
-        /// An opaque string used for pagination that specifies the job at which the listing of jobs should begin.
-        /// You get the <code>marker</code> value from a previous List Jobs response.
-        /// You only need to include the marker if you are continuing the pagination of the results started in a
-        /// previous List Jobs request. </p>
+        /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>  
-        /// An opaque string used for pagination that specifies the job at which the listing of jobs should begin.
-        /// You get the <code>marker</code> value from a previous List Jobs response.
-        /// You only need to include the marker if you are continuing the pagination of the results started in a
-        /// previous List Jobs request. </p>
+        /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1020,8 +958,7 @@ impl InitiateVaultLockOutput {
 pub struct InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The ID of the multipart upload. This value is also included as part of the
-    /// location.</p>
+    /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl InitiateMultipartUploadOutput {
@@ -1029,8 +966,7 @@ impl InitiateMultipartUploadOutput {
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The ID of the multipart upload. This value is also included as part of the
-    /// location.</p>
+    /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -1063,14 +999,12 @@ pub mod initiate_multipart_upload_output {
             self.location = input;
             self
         }
-        /// <p>The ID of the multipart upload. This value is also included as part of the
-        /// location.</p>
+        /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The ID of the multipart upload. This value is also included as part of the
-        /// location.</p>
+        /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -1253,37 +1187,29 @@ impl GetVaultNotificationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultLockOutput {
-    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
-    /// character.</p>
+    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The state of the vault lock. <code>InProgress</code> or
-    /// <code>Locked</code>.</p>
+    /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>The UTC date and time at which the lock ID expires. This value can be
-    /// <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+    /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     pub expiration_date: std::option::Option<std::string::String>,
-    /// <p>The UTC date and time at which the vault lock was put into the
-    /// <code>InProgress</code> state.</p>
+    /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     pub creation_date: std::option::Option<std::string::String>,
 }
 impl GetVaultLockOutput {
-    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
-    /// character.</p>
+    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The state of the vault lock. <code>InProgress</code> or
-    /// <code>Locked</code>.</p>
+    /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>The UTC date and time at which the lock ID expires. This value can be
-    /// <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+    /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     pub fn expiration_date(&self) -> std::option::Option<&str> {
         self.expiration_date.as_deref()
     }
-    /// <p>The UTC date and time at which the vault lock was put into the
-    /// <code>InProgress</code> state.</p>
+    /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
@@ -1310,38 +1236,32 @@ pub mod get_vault_lock_output {
         pub(crate) creation_date: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
-        /// character.</p>
+        /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
-        /// character.</p>
+        /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>The state of the vault lock. <code>InProgress</code> or
-        /// <code>Locked</code>.</p>
+        /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the vault lock. <code>InProgress</code> or
-        /// <code>Locked</code>.</p>
+        /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The UTC date and time at which the lock ID expires. This value can be
-        /// <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+        /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
         pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration_date = Some(input.into());
             self
         }
-        /// <p>The UTC date and time at which the lock ID expires. This value can be
-        /// <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+        /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,14 +1269,12 @@ pub mod get_vault_lock_output {
             self.expiration_date = input;
             self
         }
-        /// <p>The UTC date and time at which the vault lock was put into the
-        /// <code>InProgress</code> state.</p>
+        /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.creation_date = Some(input.into());
             self
         }
-        /// <p>The UTC date and time at which the vault lock was put into the
-        /// <code>InProgress</code> state.</p>
+        /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,41 +1362,20 @@ impl GetVaultAccessPolicyOutput {
 pub struct GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The checksum of the data in the response. This header is returned only when
-    /// retrieving the output for an archive retrieval job. Furthermore, this header appears only
-    /// under the following conditions:</p>
+    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You get the entire range of the archive.</p>
-    /// </li>
-    /// <li>
-    /// <p>You request a range to return of the archive that starts and ends on a multiple
-    /// of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return
-    /// that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as
-    /// a response header.</p>
-    /// </li>
-    /// <li>
-    /// <p>You request a range of the archive to return that starts on a multiple of 1 MB
-    /// and goes to the end of the archive. For example, if you have a 3.1 MB archive and you
-    /// specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then
-    /// the x-amz-sha256-tree-hash is returned as a response header.</p>
-    /// </li>
+    /// <li> <p>You get the entire range of the archive.</p> </li>
+    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
     pub checksum: std::option::Option<std::string::String>,
-    /// <p>The HTTP response code for a job output request. The value depends on whether a range
-    /// was specified in the request.</p>
+    /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
     pub status: i32,
-    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
-    /// the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes
-    /// 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
     pub content_range: std::option::Option<std::string::String>,
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
     pub accept_ranges: std::option::Option<std::string::String>,
-    /// <p>The Content-Type depends on whether the job output is an archive or a vault
-    /// inventory. For archive data, the Content-Type is application/octet-stream. For vault
-    /// inventory, if you requested CSV format when you initiated the job, the Content-Type is
-    /// text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type
-    /// is application/json.</p>
+    /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of an archive.</p>
     pub archive_description: std::option::Option<std::string::String>,
@@ -1488,37 +1385,20 @@ impl GetJobOutputOutput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>The checksum of the data in the response. This header is returned only when
-    /// retrieving the output for an archive retrieval job. Furthermore, this header appears only
-    /// under the following conditions:</p>
+    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You get the entire range of the archive.</p>
-    /// </li>
-    /// <li>
-    /// <p>You request a range to return of the archive that starts and ends on a multiple
-    /// of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return
-    /// that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as
-    /// a response header.</p>
-    /// </li>
-    /// <li>
-    /// <p>You request a range of the archive to return that starts on a multiple of 1 MB
-    /// and goes to the end of the archive. For example, if you have a 3.1 MB archive and you
-    /// specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then
-    /// the x-amz-sha256-tree-hash is returned as a response header.</p>
-    /// </li>
+    /// <li> <p>You get the entire range of the archive.</p> </li>
+    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
     pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
-    /// <p>The HTTP response code for a job output request. The value depends on whether a range
-    /// was specified in the request.</p>
+    /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
-    /// the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes
-    /// 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+    /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
     pub fn content_range(&self) -> std::option::Option<&str> {
         self.content_range.as_deref()
     }
@@ -1526,11 +1406,7 @@ impl GetJobOutputOutput {
     pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
-    /// <p>The Content-Type depends on whether the job output is an archive or a vault
-    /// inventory. For archive data, the Content-Type is application/octet-stream. For vault
-    /// inventory, if you requested CSV format when you initiated the job, the Content-Type is
-    /// text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type
-    /// is application/json.</p>
+    /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -1580,76 +1456,42 @@ pub mod get_job_output_output {
             self.body = input;
             self
         }
-        /// <p>The checksum of the data in the response. This header is returned only when
-        /// retrieving the output for an archive retrieval job. Furthermore, this header appears only
-        /// under the following conditions:</p>
+        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>You get the entire range of the archive.</p>
-        /// </li>
-        /// <li>
-        /// <p>You request a range to return of the archive that starts and ends on a multiple
-        /// of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return
-        /// that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as
-        /// a response header.</p>
-        /// </li>
-        /// <li>
-        /// <p>You request a range of the archive to return that starts on a multiple of 1 MB
-        /// and goes to the end of the archive. For example, if you have a 3.1 MB archive and you
-        /// specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then
-        /// the x-amz-sha256-tree-hash is returned as a response header.</p>
-        /// </li>
+        /// <li> <p>You get the entire range of the archive.</p> </li>
+        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
         /// </ul>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.checksum = Some(input.into());
             self
         }
-        /// <p>The checksum of the data in the response. This header is returned only when
-        /// retrieving the output for an archive retrieval job. Furthermore, this header appears only
-        /// under the following conditions:</p>
+        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>You get the entire range of the archive.</p>
-        /// </li>
-        /// <li>
-        /// <p>You request a range to return of the archive that starts and ends on a multiple
-        /// of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return
-        /// that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as
-        /// a response header.</p>
-        /// </li>
-        /// <li>
-        /// <p>You request a range of the archive to return that starts on a multiple of 1 MB
-        /// and goes to the end of the archive. For example, if you have a 3.1 MB archive and you
-        /// specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then
-        /// the x-amz-sha256-tree-hash is returned as a response header.</p>
-        /// </li>
+        /// <li> <p>You get the entire range of the archive.</p> </li>
+        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
         /// </ul>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
         }
-        /// <p>The HTTP response code for a job output request. The value depends on whether a range
-        /// was specified in the request.</p>
+        /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The HTTP response code for a job output request. The value depends on whether a range
-        /// was specified in the request.</p>
+        /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
-        /// the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes
-        /// 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+        /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
         pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_range = Some(input.into());
             self
         }
-        /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
-        /// the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes
-        /// 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+        /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
         pub fn set_content_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1670,20 +1512,12 @@ pub mod get_job_output_output {
             self.accept_ranges = input;
             self
         }
-        /// <p>The Content-Type depends on whether the job output is an archive or a vault
-        /// inventory. For archive data, the Content-Type is application/octet-stream. For vault
-        /// inventory, if you requested CSV format when you initiated the job, the Content-Type is
-        /// text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type
-        /// is application/json.</p>
+        /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The Content-Type depends on whether the job output is an archive or a vault
-        /// inventory. For archive data, the Content-Type is application/octet-stream. For vault
-        /// inventory, if you requested CSV format when you initiated the job, the Content-Type is
-        /// text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type
-        /// is application/json.</p>
+        /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1722,8 +1556,7 @@ impl GetJobOutputOutput {
     }
 }
 
-/// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code>
-/// request.</p>
+/// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataRetrievalPolicyOutput {
@@ -1788,21 +1621,13 @@ pub struct DescribeVaultOutput {
     pub vault_arn: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
-    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
-    /// should be a string in the ISO 8601 date format, for example
-    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub creation_date: std::option::Option<std::string::String>,
-    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
-    /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
-    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub last_inventory_date: std::option::Option<std::string::String>,
-    /// <p>The number of archives in the vault as of the last inventory date. This field will
-    /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
-    /// just created the vault.</p>
+    /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub number_of_archives: i64,
-    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
-    /// This field will return null if an inventory has not yet run on the vault, for example if
-    /// you just created the vault.</p>
+    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub size_in_bytes: i64,
 }
 impl DescribeVaultOutput {
@@ -1814,27 +1639,19 @@ impl DescribeVaultOutput {
     pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
-    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
-    /// should be a string in the ISO 8601 date format, for example
-    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
-    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
-    /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
-    /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn last_inventory_date(&self) -> std::option::Option<&str> {
         self.last_inventory_date.as_deref()
     }
-    /// <p>The number of archives in the vault as of the last inventory date. This field will
-    /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
-    /// just created the vault.</p>
+    /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn number_of_archives(&self) -> i64 {
         self.number_of_archives
     }
-    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
-    /// This field will return null if an inventory has not yet run on the vault, for example if
-    /// you just created the vault.</p>
+    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn size_in_bytes(&self) -> i64 {
         self.size_in_bytes
     }
@@ -1885,16 +1702,12 @@ pub mod describe_vault_output {
             self.vault_name = input;
             self
         }
-        /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
-        /// should be a string in the ISO 8601 date format, for example
-        /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+        /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.creation_date = Some(input.into());
             self
         }
-        /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value
-        /// should be a string in the ISO 8601 date format, for example
-        /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+        /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1902,16 +1715,12 @@ pub mod describe_vault_output {
             self.creation_date = input;
             self
         }
-        /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
-        /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
-        /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+        /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn last_inventory_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_inventory_date = Some(input.into());
             self
         }
-        /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
-        /// vault inventory.  This value should be a string in the ISO 8601 date format, for example
-        /// <code>2012-03-20T17:03:43.221Z</code>.</p>
+        /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn set_last_inventory_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1919,30 +1728,22 @@ pub mod describe_vault_output {
             self.last_inventory_date = input;
             self
         }
-        /// <p>The number of archives in the vault as of the last inventory date. This field will
-        /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
-        /// just created the vault.</p>
+        /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn number_of_archives(mut self, input: i64) -> Self {
             self.number_of_archives = Some(input);
             self
         }
-        /// <p>The number of archives in the vault as of the last inventory date. This field will
-        /// return <code>null</code> if an inventory has not yet run on the vault, for example if you
-        /// just created the vault.</p>
+        /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_number_of_archives(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_archives = input;
             self
         }
-        /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
-        /// This field will return null if an inventory has not yet run on the vault, for example if
-        /// you just created the vault.</p>
+        /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
             self.size_in_bytes = Some(input);
             self
         }
-        /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date.
-        /// This field will return null if an inventory has not yet run on the vault, for example if
-        /// you just created the vault.</p>
+        /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
@@ -1975,82 +1776,48 @@ pub struct DescribeJobOutput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job description provided when initiating the job.</p>
     pub job_description: std::option::Option<std::string::String>,
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
-    /// <code>InventoryRetrieval</code>, or
-    /// <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
     pub action: std::option::Option<crate::model::ActionCode>,
-    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
-    /// field is null.</p>
+    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
     pub archive_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
-    /// requested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
     pub vault_arn: std::option::Option<std::string::String>,
-    /// <p>The UTC date when the job was created. This value is a string representation of ISO
-    /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
     pub creation_date: std::option::Option<std::string::String>,
-    /// <p>The job status. When a job is completed, you get the job's output using Get Job
-    /// Output (GET output).</p>
+    /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
     pub completed: bool,
-    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
-    /// <code>Failed</code>, and indicates the status of the job.</p>
+    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
     pub status_code: std::option::Option<crate::model::StatusCode>,
     /// <p>A friendly message that describes the job status.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
-    /// requested for download. For an inventory retrieval or select job, this value is
-    /// null.</p>
+    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
     pub archive_size_in_bytes: std::option::Option<i64>,
-    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
-    /// requested for download. For an archive retrieval or select job, this value is
-    /// null.</p>
+    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
     pub inventory_size_in_bytes: std::option::Option<i64>,
     /// <p>An Amazon SNS topic that receives notification.</p>
     pub sns_topic: std::option::Option<std::string::String>,
-    /// <p>The UTC time that the job request completed. While the job is in progress, the
-    /// value is null.</p>
+    /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
     pub completion_date: std::option::Option<std::string::String>,
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
-    /// this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
-    /// aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the
-    /// ArchiveSHA256TreeHash value.</p>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Archive retrieval jobs that specify a range that is not tree-hash
-    /// aligned</p>
-    /// </li>
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Archival jobs that specify a range that is equal to the whole archive, when
-    /// the job status is <code>InProgress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Inventory jobs</p>
-    /// </li>
-    /// <li>
-    /// <p>Select jobs</p>
-    /// </li>
+    /// <li> <p>Inventory jobs</p> </li>
+    /// <li> <p>Select jobs</p> </li>
     /// </ul>
     pub sha256_tree_hash: std::option::Option<std::string::String>,
-    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-    /// retrieval or select jobs, this field is null.</p>
+    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
     pub archive_sha256_tree_hash: std::option::Option<std::string::String>,
-    /// <p>The retrieved byte range for archive retrieval jobs in the form
-    /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
-    /// was specified in the archive retrieval, then the whole archive is retrieved. In this
-    /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
-    /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
-    /// field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
     pub retrieval_byte_range: std::option::Option<std::string::String>,
-    /// <p>The tier to use for a select or an archive retrieval. Valid values are
-    /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
-    /// <code>Standard</code> is the default.</p>
+    /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
     pub tier: std::option::Option<std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
     pub inventory_retrieval_parameters:
@@ -2071,34 +1838,27 @@ impl DescribeJobOutput {
     pub fn job_description(&self) -> std::option::Option<&str> {
         self.job_description.as_deref()
     }
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
-    /// <code>InventoryRetrieval</code>, or
-    /// <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::ActionCode> {
         self.action.as_ref()
     }
-    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
-    /// field is null.</p>
+    /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
     pub fn archive_id(&self) -> std::option::Option<&str> {
         self.archive_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
-    /// requested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
     pub fn vault_arn(&self) -> std::option::Option<&str> {
         self.vault_arn.as_deref()
     }
-    /// <p>The UTC date when the job was created. This value is a string representation of ISO
-    /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
     pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
-    /// <p>The job status. When a job is completed, you get the job's output using Get Job
-    /// Output (GET output).</p>
+    /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
     pub fn completed(&self) -> bool {
         self.completed
     }
-    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
-    /// <code>Failed</code>, and indicates the status of the job.</p>
+    /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
     pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
         self.status_code.as_ref()
     }
@@ -2106,15 +1866,11 @@ impl DescribeJobOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
-    /// requested for download. For an inventory retrieval or select job, this value is
-    /// null.</p>
+    /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
     pub fn archive_size_in_bytes(&self) -> std::option::Option<i64> {
         self.archive_size_in_bytes
     }
-    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
-    /// requested for download. For an archive retrieval or select job, this value is
-    /// null.</p>
+    /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
     pub fn inventory_size_in_bytes(&self) -> std::option::Option<i64> {
         self.inventory_size_in_bytes
     }
@@ -2122,59 +1878,36 @@ impl DescribeJobOutput {
     pub fn sns_topic(&self) -> std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
-    /// <p>The UTC time that the job request completed. While the job is in progress, the
-    /// value is null.</p>
+    /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
     pub fn completion_date(&self) -> std::option::Option<&str> {
         self.completion_date.as_deref()
     }
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
-    /// this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
-    /// aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the
-    /// ArchiveSHA256TreeHash value.</p>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Archive retrieval jobs that specify a range that is not tree-hash
-    /// aligned</p>
-    /// </li>
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Archival jobs that specify a range that is equal to the whole archive, when
-    /// the job status is <code>InProgress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Inventory jobs</p>
-    /// </li>
-    /// <li>
-    /// <p>Select jobs</p>
-    /// </li>
+    /// <li> <p>Inventory jobs</p> </li>
+    /// <li> <p>Select jobs</p> </li>
     /// </ul>
     pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
         self.sha256_tree_hash.as_deref()
     }
-    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-    /// retrieval or select jobs, this field is null.</p>
+    /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
     pub fn archive_sha256_tree_hash(&self) -> std::option::Option<&str> {
         self.archive_sha256_tree_hash.as_deref()
     }
-    /// <p>The retrieved byte range for archive retrieval jobs in the form
-    /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
-    /// was specified in the archive retrieval, then the whole archive is retrieved. In this
-    /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
-    /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
-    /// field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
     pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
         self.retrieval_byte_range.as_deref()
     }
-    /// <p>The tier to use for a select or an archive retrieval. Valid values are
-    /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
-    /// <code>Standard</code> is the default.</p>
+    /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
     pub fn tier(&self) -> std::option::Option<&str> {
         self.tier.as_deref()
     }
@@ -2280,52 +2013,42 @@ pub mod describe_job_output {
             self.job_description = input;
             self
         }
-        /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
-        /// <code>InventoryRetrieval</code>, or
-        /// <code>Select</code>. </p>
+        /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn action(mut self, input: crate::model::ActionCode) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The job type. This value is either <code>ArchiveRetrieval</code>,
-        /// <code>InventoryRetrieval</code>, or
-        /// <code>Select</code>. </p>
+        /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::ActionCode>) -> Self {
             self.action = input;
             self
         }
-        /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
-        /// field is null.</p>
+        /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.archive_id = Some(input.into());
             self
         }
-        /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this
-        /// field is null.</p>
+        /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.archive_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
-        /// requested.</p>
+        /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.vault_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was
-        /// requested.</p>
+        /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vault_arn = input;
             self
         }
-        /// <p>The UTC date when the job was created. This value is a string representation of ISO
-        /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+        /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.creation_date = Some(input.into());
             self
         }
-        /// <p>The UTC date when the job was created. This value is a string representation of ISO
-        /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+        /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2333,26 +2056,22 @@ pub mod describe_job_output {
             self.creation_date = input;
             self
         }
-        /// <p>The job status. When a job is completed, you get the job's output using Get Job
-        /// Output (GET output).</p>
+        /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn completed(mut self, input: bool) -> Self {
             self.completed = Some(input);
             self
         }
-        /// <p>The job status. When a job is completed, you get the job's output using Get Job
-        /// Output (GET output).</p>
+        /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn set_completed(mut self, input: std::option::Option<bool>) -> Self {
             self.completed = input;
             self
         }
-        /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
-        /// <code>Failed</code>, and indicates the status of the job.</p>
+        /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
         pub fn status_code(mut self, input: crate::model::StatusCode) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
-        /// <code>Failed</code>, and indicates the status of the job.</p>
+        /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StatusCode>,
@@ -2373,30 +2092,22 @@ pub mod describe_job_output {
             self.status_message = input;
             self
         }
-        /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
-        /// requested for download. For an inventory retrieval or select job, this value is
-        /// null.</p>
+        /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn archive_size_in_bytes(mut self, input: i64) -> Self {
             self.archive_size_in_bytes = Some(input);
             self
         }
-        /// <p>For an archive retrieval job, this value is the size in bytes of the archive being
-        /// requested for download. For an inventory retrieval or select job, this value is
-        /// null.</p>
+        /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn set_archive_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.archive_size_in_bytes = input;
             self
         }
-        /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
-        /// requested for download. For an archive retrieval or select job, this value is
-        /// null.</p>
+        /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn inventory_size_in_bytes(mut self, input: i64) -> Self {
             self.inventory_size_in_bytes = Some(input);
             self
         }
-        /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory
-        /// requested for download. For an archive retrieval or select job, this value is
-        /// null.</p>
+        /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn set_inventory_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.inventory_size_in_bytes = input;
             self
@@ -2411,14 +2122,12 @@ pub mod describe_job_output {
             self.sns_topic = input;
             self
         }
-        /// <p>The UTC time that the job request completed. While the job is in progress, the
-        /// value is null.</p>
+        /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
         pub fn completion_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.completion_date = Some(input.into());
             self
         }
-        /// <p>The UTC time that the job request completed. While the job is in progress, the
-        /// value is null.</p>
+        /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
         pub fn set_completion_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2426,65 +2135,37 @@ pub mod describe_job_output {
             self.completion_date = input;
             self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
-        /// this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
-        /// aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the
-        /// ArchiveSHA256TreeHash value.</p>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
         /// <p>This field is null for the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Archive retrieval jobs that specify a range that is not tree-hash
-        /// aligned</p>
-        /// </li>
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Archival jobs that specify a range that is equal to the whole archive, when
-        /// the job status is <code>InProgress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Inventory jobs</p>
-        /// </li>
-        /// <li>
-        /// <p>Select jobs</p>
-        /// </li>
+        /// <li> <p>Inventory jobs</p> </li>
+        /// <li> <p>Select jobs</p> </li>
         /// </ul>
         pub fn sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.sha256_tree_hash = Some(input.into());
             self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise,
-        /// this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash
-        /// aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the
-        /// ArchiveSHA256TreeHash value.</p>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
         /// <p>This field is null for the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Archive retrieval jobs that specify a range that is not tree-hash
-        /// aligned</p>
-        /// </li>
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Archival jobs that specify a range that is equal to the whole archive, when
-        /// the job status is <code>InProgress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Inventory jobs</p>
-        /// </li>
-        /// <li>
-        /// <p>Select jobs</p>
-        /// </li>
+        /// <li> <p>Inventory jobs</p> </li>
+        /// <li> <p>Select jobs</p> </li>
         /// </ul>
         pub fn set_sha256_tree_hash(
             mut self,
@@ -2493,14 +2174,12 @@ pub mod describe_job_output {
             self.sha256_tree_hash = input;
             self
         }
-        /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-        /// retrieval or select jobs, this field is null.</p>
+        /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
         pub fn archive_sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.archive_sha256_tree_hash = Some(input.into());
             self
         }
-        /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory
-        /// retrieval or select jobs, this field is null.</p>
+        /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
         pub fn set_archive_sha256_tree_hash(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2508,22 +2187,12 @@ pub mod describe_job_output {
             self.archive_sha256_tree_hash = input;
             self
         }
-        /// <p>The retrieved byte range for archive retrieval jobs in the form
-        /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
-        /// was specified in the archive retrieval, then the whole archive is retrieved. In this
-        /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
-        /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
-        /// field is null. </p>
+        /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
         pub fn retrieval_byte_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_byte_range = Some(input.into());
             self
         }
-        /// <p>The retrieved byte range for archive retrieval jobs in the form
-        /// <i>StartByteValue</i>-<i>EndByteValue</i>. If no range
-        /// was specified in the archive retrieval, then the whole archive is retrieved. In this
-        /// case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i>
-        /// equals the size of the archive minus 1. For inventory retrieval or select jobs, this
-        /// field is null. </p>
+        /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
         pub fn set_retrieval_byte_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2531,16 +2200,12 @@ pub mod describe_job_output {
             self.retrieval_byte_range = input;
             self
         }
-        /// <p>The tier to use for a select or an archive retrieval. Valid values are
-        /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
-        /// <code>Standard</code> is the default.</p>
+        /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
             self.tier = Some(input.into());
             self
         }
-        /// <p>The tier to use for a select or an archive retrieval. Valid values are
-        /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
-        /// <code>Standard</code> is the default.</p>
+        /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tier = input;
             self
@@ -2840,9 +2505,7 @@ impl CompleteVaultLockOutput {
 }
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
-/// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For
-/// conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in
-/// Amazon S3 Glacier</a>.</p>
+/// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMultipartUploadOutput {

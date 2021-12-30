@@ -14,14 +14,11 @@ pub struct AcceptAdministratorInvitationError {
 pub enum AcceptAdministratorInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -161,14 +158,11 @@ pub struct AcceptInvitationError {
 pub enum AcceptInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -298,14 +292,11 @@ pub struct BatchDisableStandardsError {
 pub enum BatchDisableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -427,14 +418,11 @@ pub struct BatchEnableStandardsError {
 pub enum BatchEnableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -556,14 +544,11 @@ pub struct BatchImportFindingsError {
 pub enum BatchImportFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -685,14 +670,11 @@ pub struct BatchUpdateFindingsError {
 pub enum BatchUpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -814,14 +796,11 @@ pub struct CreateActionTargetError {
 pub enum CreateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -956,14 +935,11 @@ pub enum CreateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1094,14 +1070,11 @@ pub struct CreateInsightError {
 pub enum CreateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -1228,14 +1201,11 @@ pub struct CreateMembersError {
 pub enum CreateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -1362,11 +1332,9 @@ pub struct DeclineInvitationsError {
 pub enum DeclineInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1490,11 +1458,9 @@ pub struct DeleteActionTargetError {
 pub enum DeleteActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1620,14 +1586,11 @@ pub enum DeleteFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1769,14 +1732,11 @@ pub struct DeleteInsightError {
 pub enum DeleteInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1903,14 +1863,11 @@ pub struct DeleteInvitationsError {
 pub enum DeleteInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2040,14 +1997,11 @@ pub struct DeleteMembersError {
 pub enum DeleteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2174,11 +2128,9 @@ pub struct DescribeActionTargetsError {
 pub enum DescribeActionTargetsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2302,14 +2254,11 @@ pub struct DescribeHubError {
 pub enum DescribeHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2430,14 +2379,11 @@ pub struct DescribeOrganizationConfigurationError {
 pub enum DescribeOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2574,14 +2520,11 @@ pub struct DescribeProductsError {
 pub enum DescribeProductsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2700,11 +2643,9 @@ pub struct DescribeStandardsError {
 pub enum DescribeStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2814,11 +2755,9 @@ pub struct DescribeStandardsControlsError {
 pub enum DescribeStandardsControlsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2942,14 +2881,11 @@ pub struct DisableImportFindingsForProductError {
 pub enum DisableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3099,14 +3035,11 @@ pub struct DisableOrganizationAdminAccountError {
 pub enum DisableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3241,11 +3174,9 @@ pub struct DisableSecurityHubError {
 pub enum DisableSecurityHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3369,14 +3300,11 @@ pub struct DisassociateFromAdministratorAccountError {
 pub enum DisassociateFromAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3534,14 +3462,11 @@ pub struct DisassociateFromMasterAccountError {
 pub enum DisassociateFromMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3681,14 +3606,11 @@ pub struct DisassociateMembersError {
 pub enum DisassociateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3821,14 +3743,11 @@ pub struct EnableImportFindingsForProductError {
 pub enum EnableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -3972,14 +3891,11 @@ pub struct EnableOrganizationAdminAccountError {
 pub enum EnableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4110,11 +4026,9 @@ pub enum EnableSecurityHubErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -4244,14 +4158,11 @@ pub struct GetAdministratorAccountError {
 pub enum GetAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4384,14 +4295,11 @@ pub struct GetEnabledStandardsError {
 pub enum GetEnabledStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4515,14 +4423,11 @@ pub enum GetFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4664,14 +4569,11 @@ pub struct GetFindingsError {
 pub enum GetFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4781,14 +4683,11 @@ pub struct GetInsightResultsError {
 pub enum GetInsightResultsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4918,14 +4817,11 @@ pub struct GetInsightsError {
 pub enum GetInsightsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5046,14 +4942,11 @@ pub struct GetInvitationsCountError {
 pub enum GetInvitationsCountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5175,14 +5068,11 @@ pub struct GetMasterAccountError {
 pub enum GetMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5312,14 +5202,11 @@ pub struct GetMembersError {
 pub enum GetMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5440,14 +5327,11 @@ pub struct InviteMembersError {
 pub enum InviteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5574,11 +5458,9 @@ pub struct ListEnabledProductsForImportError {
 pub enum ListEnabledProductsForImportErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5693,14 +5575,11 @@ pub enum ListFindingAggregatorsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5831,14 +5710,11 @@ pub struct ListInvitationsError {
 pub enum ListInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5957,14 +5833,11 @@ pub struct ListMembersError {
 pub enum ListMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6074,14 +5947,11 @@ pub struct ListOrganizationAdminAccountsError {
 pub enum ListOrganizationAdminAccountsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6206,8 +6076,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6322,8 +6191,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6432,8 +6300,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6542,11 +6409,9 @@ pub struct UpdateActionTargetError {
 pub enum UpdateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6672,14 +6537,11 @@ pub enum UpdateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6821,14 +6683,11 @@ pub struct UpdateFindingsError {
 pub enum UpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6958,14 +6817,11 @@ pub struct UpdateInsightError {
 pub enum UpdateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7092,14 +6948,11 @@ pub struct UpdateOrganizationConfigurationError {
 pub enum UpdateOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7234,14 +7087,11 @@ pub struct UpdateSecurityHubConfigurationError {
 pub enum UpdateSecurityHubConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7385,11 +7235,9 @@ pub struct UpdateStandardsControlError {
 pub enum UpdateStandardsControlErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7583,8 +7431,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-/// input parameter.</p>
+/// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -7669,8 +7516,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-/// for the account, or the account does not have permission to perform this action.</p>
+/// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAccessException {
@@ -7840,8 +7686,7 @@ impl InternalException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-/// account or throttling limits. The error code describes the limit exceeded.</p>
+/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

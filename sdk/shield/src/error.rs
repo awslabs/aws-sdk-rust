@@ -24,8 +24,7 @@ pub enum AssociateDRTLogBucketErrorKind {
     LimitsExceededException(crate::error::LimitsExceededException),
     /// <p>The ARN of the role that you specifed does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -195,8 +194,7 @@ pub enum AssociateDRTRoleErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -344,8 +342,7 @@ pub enum AssociateHealthCheckErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -491,8 +488,7 @@ pub enum AssociateProactiveEngagementDetailsErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -658,8 +654,7 @@ pub enum CreateProtectionErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -825,8 +820,7 @@ pub enum CreateProtectionGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1074,8 +1068,7 @@ pub struct DeleteProtectionError {
 pub enum DeleteProtectionErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1190,8 +1183,7 @@ pub struct DeleteProtectionGroupError {
 pub enum DeleteProtectionGroupErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2164,8 +2156,7 @@ pub enum DisableApplicationLayerAutomaticResponseErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2327,8 +2318,7 @@ pub enum DisableProactiveEngagementErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2467,8 +2457,7 @@ pub enum DisassociateDRTLogBucketErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The ARN of the role that you specifed does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2616,8 +2605,7 @@ pub enum DisassociateDRTRoleErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2745,8 +2733,7 @@ pub enum DisassociateHealthCheckErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2885,8 +2872,7 @@ pub enum EnableApplicationLayerAutomaticResponseErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3061,8 +3047,7 @@ pub enum EnableProactiveEngagementErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4126,8 +4111,7 @@ pub enum UpdateApplicationLayerAutomaticResponseErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4287,8 +4271,7 @@ pub enum UpdateEmergencyContactSettingsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4431,8 +4414,7 @@ pub enum UpdateProtectionGroupErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4560,8 +4542,7 @@ pub enum UpdateSubscriptionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are attempting to change <code>AutoRenew</code> prior to that period.</p>
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4767,8 +4748,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Exception that indicates that the resource state has been modified by another
-/// client. Retrieve the resource and then retry your request.</p>
+/// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptimisticLockException {

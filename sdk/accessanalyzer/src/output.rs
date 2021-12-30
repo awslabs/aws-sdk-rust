@@ -167,13 +167,11 @@ impl DeleteAnalyzerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzerOutput {
-    /// <p>An <code>AnalyzerSummary</code> object that contains information about the
-    /// analyzer.</p>
+    /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     pub analyzer: std::option::Option<crate::model::AnalyzerSummary>,
 }
 impl GetAnalyzerOutput {
-    /// <p>An <code>AnalyzerSummary</code> object that contains information about the
-    /// analyzer.</p>
+    /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     pub fn analyzer(&self) -> std::option::Option<&crate::model::AnalyzerSummary> {
         self.analyzer.as_ref()
     }
@@ -194,14 +192,12 @@ pub mod get_analyzer_output {
         pub(crate) analyzer: std::option::Option<crate::model::AnalyzerSummary>,
     }
     impl Builder {
-        /// <p>An <code>AnalyzerSummary</code> object that contains information about the
-        /// analyzer.</p>
+        /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
         pub fn analyzer(mut self, input: crate::model::AnalyzerSummary) -> Self {
             self.analyzer = Some(input);
             self
         }
-        /// <p>An <code>AnalyzerSummary</code> object that contains information about the
-        /// analyzer.</p>
+        /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
         pub fn set_analyzer(
             mut self,
             input: std::option::Option<crate::model::AnalyzerSummary>,
@@ -458,15 +454,13 @@ impl GetArchiveRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyOutput {
-    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
-    /// checks.</p>
+    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ValidatePolicyOutput {
-    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
-    /// checks.</p>
+    /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
     pub fn findings(&self) -> std::option::Option<&[crate::model::ValidatePolicyFinding]> {
         self.findings.as_deref()
     }
@@ -498,16 +492,14 @@ pub mod validate_policy_output {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
-        /// checks.</p>
+        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
         pub fn findings(mut self, input: crate::model::ValidatePolicyFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input);
             self.findings = Some(v);
             self
         }
-        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
-        /// checks.</p>
+        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
@@ -665,17 +657,11 @@ impl StartResourceScanOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPolicyGenerationOutput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPolicyGenerationOutput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -696,18 +682,12 @@ pub mod start_policy_generation_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -804,15 +784,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyGenerationsOutput {
-    /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
-    /// policy.</p>
+    /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     pub policy_generations: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPolicyGenerationsOutput {
-    /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
-    /// policy.</p>
+    /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     pub fn policy_generations(&self) -> std::option::Option<&[crate::model::PolicyGeneration]> {
         self.policy_generations.as_deref()
     }
@@ -844,16 +822,14 @@ pub mod list_policy_generations_output {
         ///
         /// To override the contents of this collection use [`set_policy_generations`](Self::set_policy_generations).
         ///
-        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
-        /// policy.</p>
+        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
         pub fn policy_generations(mut self, input: crate::model::PolicyGeneration) -> Self {
             let mut v = self.policy_generations.unwrap_or_default();
             v.push(input);
             self.policy_generations = Some(v);
             self
         }
-        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
-        /// policy.</p>
+        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
         pub fn set_policy_generations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
@@ -891,15 +867,13 @@ impl ListPolicyGenerationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
-    /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
-    /// if any.</p>
+    /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
-    /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
-    /// if any.</p>
+    /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     pub fn findings(&self) -> std::option::Option<&[crate::model::FindingSummary]> {
         self.findings.as_deref()
     }
@@ -930,16 +904,14 @@ pub mod list_findings_output {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
-        /// if any.</p>
+        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
         pub fn findings(mut self, input: crate::model::FindingSummary) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input);
             self.findings = Some(v);
             self
         }
-        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
-        /// if any.</p>
+        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
@@ -1228,21 +1200,17 @@ impl ListAccessPreviewFindingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedPolicyOutput {
-    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
-    /// policy.</p>
+    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
-    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
-    /// associated details.</p>
+    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub generated_policy_result: std::option::Option<crate::model::GeneratedPolicyResult>,
 }
 impl GetGeneratedPolicyOutput {
-    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
-    /// policy.</p>
+    /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
         self.job_details.as_ref()
     }
-    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
-    /// associated details.</p>
+    /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub fn generated_policy_result(
         &self,
     ) -> std::option::Option<&crate::model::GeneratedPolicyResult> {
@@ -1268,14 +1236,12 @@ pub mod get_generated_policy_output {
             std::option::Option<crate::model::GeneratedPolicyResult>,
     }
     impl Builder {
-        /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
-        /// policy.</p>
+        /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
         pub fn job_details(mut self, input: crate::model::JobDetails) -> Self {
             self.job_details = Some(input);
             self
         }
-        /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
-        /// policy.</p>
+        /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -1283,8 +1249,7 @@ pub mod get_generated_policy_output {
             self.job_details = input;
             self
         }
-        /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
-        /// associated details.</p>
+        /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
         pub fn generated_policy_result(
             mut self,
             input: crate::model::GeneratedPolicyResult,
@@ -1292,8 +1257,7 @@ pub mod get_generated_policy_output {
             self.generated_policy_result = Some(input);
             self
         }
-        /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
-        /// associated details.</p>
+        /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
         pub fn set_generated_policy_result(
             mut self,
             input: std::option::Option<crate::model::GeneratedPolicyResult>,
@@ -1375,13 +1339,11 @@ impl GetFindingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzedResourceOutput {
-    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
-    /// found when it analyzed the resource.</p>
+    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     pub resource: std::option::Option<crate::model::AnalyzedResource>,
 }
 impl GetAnalyzedResourceOutput {
-    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
-    /// found when it analyzed the resource.</p>
+    /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     pub fn resource(&self) -> std::option::Option<&crate::model::AnalyzedResource> {
         self.resource.as_ref()
     }
@@ -1402,14 +1364,12 @@ pub mod get_analyzed_resource_output {
         pub(crate) resource: std::option::Option<crate::model::AnalyzedResource>,
     }
     impl Builder {
-        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
-        /// found when it analyzed the resource.</p>
+        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
         pub fn resource(mut self, input: crate::model::AnalyzedResource) -> Self {
             self.resource = Some(input);
             self
         }
-        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
-        /// found when it analyzed the resource.</p>
+        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
         pub fn set_resource(
             mut self,
             input: std::option::Option<crate::model::AnalyzedResource>,

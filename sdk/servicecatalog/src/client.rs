@@ -856,18 +856,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -875,18 +866,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -907,44 +889,22 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.inner = self.inner.portfolio_share_type(input);
             self
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -1094,18 +1054,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1113,18 +1064,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1232,18 +1174,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1251,18 +1184,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1395,18 +1319,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1414,18 +1329,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1593,18 +1499,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1612,18 +1509,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1703,18 +1591,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1722,18 +1601,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1746,10 +1616,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyProduct`.
     ///
     /// <p>Copies the specified source product to the specified target product or a new product.</p>
-    /// <p>You can copy a product to the same account or another account.
-    /// You can copy a product to the same region or another region.</p>
-    /// <p>This operation is performed asynchronously. To track the progress of the
-    /// operation, use <a>DescribeCopyProductStatus</a>.</p>
+    /// <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p>
+    /// <p>This operation is performed asynchronously. To track the progress of the operation, use <code>DescribeCopyProductStatus</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -1808,18 +1676,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -1827,18 +1686,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1890,8 +1740,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_provisioning_artifact_identifiers`](Self::set_source_provisioning_artifact_identifiers).
         ///
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
             input: std::collections::HashMap<
@@ -1902,8 +1751,7 @@ pub mod fluent_builders {
             self.inner = self.inner.source_provisioning_artifact_identifiers(input);
             self
         }
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn set_source_provisioning_artifact_identifiers(
             mut self,
             input: std::option::Option<
@@ -1924,14 +1772,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_copy_options`](Self::set_copy_options).
         ///
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
         pub fn copy_options(mut self, input: crate::model::CopyOption) -> Self {
             self.inner = self.inner.copy_options(input);
             self
         }
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
         pub fn set_copy_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
@@ -1939,14 +1785,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_options(input);
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2017,18 +1861,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -2036,18 +1871,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2078,54 +1904,51 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2134,54 +1957,51 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2190,31 +2010,11 @@ pub mod fluent_builders {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
@@ -2222,31 +2022,11 @@ pub mod fluent_builders {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
@@ -2262,14 +2042,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2340,18 +2118,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -2359,18 +2128,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2429,14 +2189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2447,13 +2205,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePortfolioShare`.
     ///
-    /// <p>Shares the specified portfolio with the specified account or organization node.
-    /// Shares to an organization node can only be created by the management account of an
-    /// organization or by a delegated administrator. You can share portfolios to an organization,
-    /// an organizational unit, or a specific account.</p>
+    /// <p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.</p>
     /// <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>
-    /// <p>
-    /// <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
+    /// <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
     /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
     /// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2514,18 +2268,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -2533,18 +2278,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2573,22 +2309,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
             self.inner = self.inner.organization_node(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2611,11 +2337,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a product.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    ///
-    /// <p>The user or role that performs this operation must have the
-    /// <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is
-    /// required when using the <code>ImportFromPhysicalId</code> template source in the
-    /// information data section.</p>
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -2674,18 +2396,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -2693,18 +2406,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2780,15 +2484,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.support_url(input.into());
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_support_url(input);
             self
@@ -2839,14 +2541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2857,13 +2557,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProvisionedProductPlan`.
     ///
-    /// <p>Creates a plan. A plan includes the list of resources to be  
-    /// created (when provisioning a new product) or modified (when updating a provisioned product)
-    /// when the plan is executed.</p>
-    /// <p>You can create one plan per provisioned product. To create a plan for an existing
-    /// provisioned product, the product status must be AVAILBLE or TAINTED.</p>
-    /// <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
-    /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>
+    /// <p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p>
+    /// <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p>
+    /// <p>To view the resource changes in the change set, use <code>DescribeProvisionedProductPlan</code>. To create or modify the provisioned product, use <code>ExecuteProvisionedProductPlan</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -2922,18 +2618,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -2941,18 +2628,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2988,14 +2666,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3003,16 +2679,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_arns(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
@@ -3027,14 +2699,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_id(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3059,8 +2729,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: crate::model::UpdateProvisioningParameter,
@@ -3068,8 +2737,7 @@ pub mod fluent_builders {
             self.inner = self.inner.provisioning_parameters(input);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -3077,14 +2745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3116,10 +2782,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a provisioning artifact (also known as a version) for the specified product.</p>
     /// <p>You cannot create a provisioning artifact for a product that was shared with you.</p>
-    ///
-    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-    /// IAM policy permission. This policy permission is required when using the
-    /// <code>ImportFromPhysicalId</code> template source in the information data section.</p>
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
@@ -3178,18 +2841,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -3197,18 +2851,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3240,14 +2885,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3344,22 +2987,29 @@ pub mod fluent_builders {
         ///
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -3375,22 +3025,29 @@ pub mod fluent_builders {
         }
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -3420,18 +3077,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -3439,18 +3087,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3459,14 +3098,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3617,18 +3254,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -3636,18 +3264,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3670,8 +3289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortfolio`.
     ///
     /// <p>Deletes the specified portfolio.</p>
-    /// <p>You cannot delete a portfolio if it was shared with you or if it has associated
-    /// products, users, constraints, or shared accounts.</p>
+    /// <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolio<
@@ -3731,18 +3349,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -3750,18 +3359,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3783,9 +3383,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePortfolioShare`.
     ///
-    /// <p>Stops sharing the specified portfolio with the specified account or organization
-    /// node. Shares to an organization node can only be deleted by the management account of an
-    /// organization or by a delegated administrator.</p>
+    /// <p>Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the management account of an organization or by a delegated administrator.</p>
     /// <p>Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolioShare<
@@ -3845,18 +3443,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -3864,18 +3453,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3981,18 +3561,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4000,18 +3571,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4092,18 +3654,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4111,18 +3664,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4141,14 +3685,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_plan_id(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
@@ -4157,9 +3699,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProvisioningArtifact`.
     ///
     /// <p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p>
-    /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you.
-    /// You cannot delete the last provisioning artifact for a product, because a product must have at
-    /// least one provisioning artifact.</p>
+    /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
@@ -4218,18 +3758,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4237,18 +3768,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4352,18 +3874,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4371,18 +3884,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4524,18 +4028,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4543,18 +4038,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4635,18 +4121,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4654,18 +4131,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4674,12 +4142,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
         pub fn copy_product_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.copy_product_token(input.into());
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
         pub fn set_copy_product_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4750,18 +4218,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -4769,18 +4228,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4803,9 +4253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePortfolioShares`.
     ///
     /// <p>Returns a summary of each of the portfolio shares that were created for the specified portfolio.</p>
-    /// <p>You can use this API to determine which accounts or organizational nodes this
-    /// portfolio have been shared, whether the recipient entity has imported the share, and
-    /// whether TagOptions are included with the share.</p>
+    /// <p>You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether the recipient entity has imported the share, and whether TagOptions are included with the share.</p>
     /// <p>The <code>PortfolioId</code> and <code>Type</code> parameters are both required.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShares<
@@ -4917,8 +4365,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePortfolioShareStatus`.
     ///
-    /// <p>Gets the status of the specified portfolio share operation. This API can only be called
-    /// by the management account in the organization or by a delegated admin.</p>
+    /// <p>Gets the status of the specified portfolio share operation. This API can only be called by the management account in the organization or by a delegated admin.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShareStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -5050,18 +4497,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5069,18 +4507,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5171,18 +4600,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5190,18 +4610,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5230,22 +4641,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
         pub fn source_portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_portfolio_id(input.into());
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
         pub fn set_source_portfolio_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5315,18 +4718,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5334,18 +4728,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5426,18 +4811,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5445,18 +4821,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5551,18 +4918,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5570,18 +4928,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5682,18 +5031,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5701,18 +5041,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5780,14 +5111,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProvisioningParameters`.
     ///
-    /// <p>Gets information about the configuration required to provision the specified product using
-    /// the specified provisioning artifact.</p>
-    /// <p>If the output contains a TagOption key with an empty list of values, there is a
-    /// TagOption conflict for that key. The end user cannot take action to fix the conflict, and
-    /// launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>,
-    /// do not include conflicted TagOption keys as tags, or this causes the error
-    /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
-    /// Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
+    /// <p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p>
+    /// <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <code>ProvisionProduct</code>, do not include conflicted TagOption keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningParameters<
         C = aws_smithy_client::erase::DynConnector,
@@ -5846,18 +5171,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -5865,18 +5181,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5931,16 +5238,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
@@ -5959,13 +5262,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecord`.
     ///
     /// <p>Gets information about the specified request operation.</p>
-    /// <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
-    /// <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
-    /// </p>
-    /// <note>
-    /// <p>If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new owner
-    /// will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to
-    /// use <a>ListRecordHistory</a> to see the product's history from when he was the owner.</p>
+    /// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>). </p> <note>
+    /// <p>If a provisioned product was transferred to a new owner using <code>UpdateProvisionedProductProperties</code>, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use <code>ListRecordHistory</code> to see the product's history from when he was the owner.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecord<
@@ -6025,18 +5323,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6044,18 +5333,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6064,14 +5344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -6168,18 +5446,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6187,18 +5456,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6297,18 +5557,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6316,18 +5567,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6409,11 +5651,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAWSOrganizationsAccess`.
     ///
-    /// <p>Disable portfolio sharing through AWS Organizations feature. This feature will not
-    /// delete your current shares but it will prevent you from creating new shares throughout your
-    /// organization. Current shares will not be in sync with your organization structure if it
-    /// changes after calling this API. This API can only be called by the management  account in
-    /// the organization.</p>
+    /// <p>Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the management account in the organization.</p>
     /// <p>This API can't be invoked if there are active delegated administrators in the organization.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6555,8 +5793,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociatePrincipalFromPortfolio`.
     ///
-    /// <p>Disassociates a previously associated principal ARN from a specified
-    /// portfolio.</p>
+    /// <p>Disassociates a previously associated principal ARN from a specified portfolio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePrincipalFromPortfolio<
         C = aws_smithy_client::erase::DynConnector,
@@ -6617,18 +5854,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6636,18 +5864,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6742,18 +5961,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6761,18 +5971,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6892,18 +6093,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -6911,18 +6103,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7017,10 +6200,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAWSOrganizationsAccess`.
     ///
-    /// <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service
-    /// Catalog to receive updates on your organization in order to sync your shares with the
-    /// current structure. This API can only be called by the management  account in the
-    /// organization.</p>
+    /// <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization.</p>
     /// <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7141,18 +6321,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -7160,18 +6331,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7190,14 +6352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_plan_id(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7308,18 +6468,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -7327,18 +6478,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7351,9 +6493,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -7362,9 +6502,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -7377,8 +6515,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAWSOrganizationsAccessStatus`.
     ///
-    /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be
-    /// called by the management account in the organization or by a delegated admin.</p>
+    /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management account in the organization or by a delegated admin.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSOrganizationsAccessStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -7497,18 +6634,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -7516,18 +6644,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7602,20 +6721,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
     ///
-    /// <p>Requests the import of a resource as a Service Catalog provisioned product that is
-    /// associated to a Service Catalog product and provisioning artifact. Once imported, all
-    /// supported Service Catalog governance actions are supported on the provisioned
-    /// product.</p>
-    /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and
-    /// non-root nested stacks are not supported.</p>
-    /// <p>The CloudFormation stack must have one of the following statuses to be imported:
-    /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
-    /// <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
-    /// <p>Import of the resource requires that the CloudFormation stack template matches the
-    /// associated Service Catalog product provisioning artifact. </p>
-    ///
-    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-    /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
+    /// <p>Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are supported on the provisioned product.</p>
+    /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+    /// <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
+    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p>
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAsProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -7674,18 +6784,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -7693,18 +6794,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7736,14 +6828,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_id(input);
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7751,26 +6841,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_name(input);
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
         pub fn physical_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.physical_id(input.into());
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
         pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_physical_id(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7840,18 +6926,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -7859,18 +6936,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7901,19 +6969,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.inner = self.inner.portfolio_share_type(input);
@@ -7921,19 +6979,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
         pub fn set_portfolio_share_type(
             mut self,
@@ -8004,18 +7052,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8023,18 +7062,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8135,18 +7165,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8154,18 +7175,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8217,9 +7229,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLaunchPaths`.
     ///
-    /// <p>Lists the paths to the specified product. A path is how the user
-    /// has access to a specified product, and is necessary when provisioning a product. A path
-    /// also determines the constraints put on the product.</p>
+    /// <p>Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunchPaths<
         C = aws_smithy_client::erase::DynConnector,
@@ -8278,18 +7288,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8297,18 +7298,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8350,9 +7342,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrganizationPortfolioAccess`.
     ///
-    /// <p>Lists the organization nodes that have access to the specified portfolio. This API can
-    /// only be called by the management account in the organization or by a delegated
-    /// admin.</p>
+    /// <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin.</p>
     /// <p>If a delegated admin is de-registered, they can no longer perform this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationPortfolioAccess<
@@ -8412,18 +7402,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8431,18 +7412,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8463,18 +7435,9 @@ pub mod fluent_builders {
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
         pub fn organization_node_type(mut self, input: crate::model::OrganizationNodeType) -> Self {
             self.inner = self.inner.organization_node_type(input);
@@ -8482,18 +7445,9 @@ pub mod fluent_builders {
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
         pub fn set_organization_node_type(
             mut self,
@@ -8585,18 +7539,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8604,18 +7549,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8729,18 +7665,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8748,18 +7675,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8850,18 +7768,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -8869,18 +7778,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8981,18 +7881,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9000,18 +7891,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9112,18 +7994,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9131,18 +8004,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9259,18 +8123,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9278,18 +8133,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9405,18 +8251,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9424,18 +8261,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9506,18 +8334,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9525,18 +8344,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9666,16 +8476,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -9683,16 +8485,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -9783,18 +8577,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9802,18 +8587,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9949,18 +8725,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -9968,18 +8735,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10052,18 +8810,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -10071,18 +8820,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10221,14 +8961,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ProvisionProduct`.
     ///
     /// <p>Provisions the specified product.</p>
-    /// <p>A provisioned product is a resourced instance of a product.
-    /// For example, provisioning a product based on a CloudFormation template launches a
-    /// CloudFormation stack and its underlying resources.
-    /// You can check the status of this request using <a>DescribeRecord</a>.</p>
-    /// <p>If the request contains a tag key with an empty list of values, there is a
-    /// tag conflict for that key. Do not include conflicted keys as tags, or this causes
-    /// the error "Parameter validation failed: Missing required parameter in
-    /// Tags[<i>N</i>]:<i>Value</i>".</p>
+    /// <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>.</p>
+    /// <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -10287,18 +9021,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -10306,18 +9031,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10372,16 +9088,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
@@ -10396,14 +9108,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_path_name(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10415,8 +9125,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: crate::model::ProvisioningParameter,
@@ -10424,8 +9133,7 @@ pub mod fluent_builders {
             self.inner = self.inner.provisioning_parameters(input);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
@@ -10470,14 +9178,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10560,18 +9266,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -10579,18 +9276,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10611,44 +9299,22 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
             self.inner = self.inner.portfolio_share_type(input);
             self
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -10660,7 +9326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ScanProvisionedProducts`.
     ///
     /// <p>Lists the provisioned products that are available (not terminated).</p>
-    /// <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>
+    /// <p>To use additional filtering, see <code>SearchProvisionedProducts</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ScanProvisionedProducts<
         C = aws_smithy_client::erase::DynConnector,
@@ -10719,18 +9385,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -10738,18 +9395,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10853,18 +9501,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -10872,18 +9511,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10896,8 +9526,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn filters(
             mut self,
             k: crate::model::ProductViewFilterBy,
@@ -10906,8 +9535,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filters(k, v);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -11028,18 +9656,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -11047,18 +9666,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11081,8 +9691,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn filters(
             mut self,
             k: crate::model::ProductViewFilterBy,
@@ -11091,8 +9700,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filters(k, v);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -11226,18 +9834,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -11245,18 +9844,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11283,14 +9873,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn filters(
             mut self,
             k: crate::model::ProvisionedProductViewFilterBy,
@@ -11300,14 +9884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -11320,14 +9898,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sort_by(input.into());
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
@@ -11370,7 +9946,7 @@ pub mod fluent_builders {
     ///
     /// <p>Terminates the specified provisioned product.</p>
     /// <p>This operation does not delete any records associated with the provisioned product.</p>
-    /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
+    /// <p>You can check the status of this request using <code>DescribeRecord</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -11427,14 +10003,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11442,14 +10016,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_name(input);
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11457,18 +10029,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_id(input);
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
         pub fn terminate_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.terminate_token(input.into());
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
         pub fn set_terminate_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11476,32 +10042,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_token(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -11509,18 +10064,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11529,18 +10075,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
         pub fn retain_physical_resources(mut self, input: bool) -> Self {
             self.inner = self.inner.retain_physical_resources(input);
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
         pub fn set_retain_physical_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retain_physical_resources(input);
             self
@@ -11607,18 +10147,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -11626,18 +10157,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11668,54 +10190,51 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11724,54 +10243,51 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -11841,18 +10357,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -11860,18 +10367,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11961,13 +10459,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortfolioShare`.
     ///
     /// <p>Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an existing portfolio share. </p>
-    ///
     /// <p>The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>
-    ///
     /// <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p>
-    ///
     /// <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>
-    ///
     /// <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolioShare<
@@ -12027,18 +10521,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -12046,18 +10531,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12171,18 +10647,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -12190,18 +10657,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12334,10 +10792,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProvisionedProduct`.
     ///
     /// <p>Requests updates to the configuration of the specified provisioned product.</p>
-    /// <p>If there are tags associated with the object, they cannot be updated or added.
-    /// Depending on the specific updates requested, this operation can update with no
-    /// interruption, with some interruption, or replace the provisioned product entirely.</p>
-    /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
+    /// <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p>
+    /// <p>You can check the status of this request using <code>DescribeRecord</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
@@ -12396,18 +10852,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -12415,18 +10862,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12435,14 +10873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12509,14 +10945,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
@@ -12658,18 +11092,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -12677,18 +11102,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12715,24 +11131,10 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
         ///
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
             k: crate::model::PropertyKey,
@@ -12742,24 +11144,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,
             input: std::option::Option<
@@ -12845,18 +11233,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -12864,18 +11243,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12941,18 +11311,14 @@ pub mod fluent_builders {
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn guidance(mut self, input: crate::model::ProvisioningArtifactGuidance) -> Self {
             self.inner = self.inner.guidance(input);
             self
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -13078,18 +11444,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept_language(input.into());
@@ -13097,18 +11454,9 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,

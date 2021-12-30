@@ -14,11 +14,9 @@ pub struct AssociateMemberAccountError {
 pub enum AssociateMemberAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -133,11 +131,9 @@ pub enum AssociateS3ResourcesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -259,8 +255,7 @@ pub struct DisassociateMemberAccountError {
 pub enum DisassociateMemberAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -366,8 +361,7 @@ pub enum DisassociateS3ResourcesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -480,8 +474,7 @@ pub struct ListMemberAccountsError {
 pub enum ListMemberAccountsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -587,8 +580,7 @@ pub enum ListS3ResourcesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -700,8 +692,7 @@ pub enum UpdateS3ResourcesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -796,8 +787,7 @@ impl std::error::Error for UpdateS3ResourcesError {
     }
 }
 
-/// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-/// input parameter. </p>
+/// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -1074,8 +1064,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current
-/// AWS account limits. The error code describes the limit exceeded. </p>
+/// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

@@ -11,17 +11,13 @@ pub mod add_tags_input {
     }
     impl Builder {
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -198,22 +194,11 @@ pub mod create_trail_input {
     impl Builder {
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -221,22 +206,11 @@ pub mod create_trail_input {
         }
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
@@ -255,14 +229,12 @@ pub mod create_trail_input {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -296,44 +268,31 @@ pub mod create_trail_input {
             self.include_global_service_events = input;
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
         pub fn is_multi_region_trail(mut self, input: bool) -> Self {
             self.is_multi_region_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_log_file_validation = input;
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -341,8 +300,7 @@ pub mod create_trail_input {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -363,64 +321,38 @@ pub mod create_trail_input {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self
@@ -598,18 +530,12 @@ pub mod delete_trail_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -761,21 +687,12 @@ pub mod describe_trails_input {
         /// To override the contents of this collection use [`set_trail_name_list`](Self::set_trail_name_list).
         ///
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
         pub fn trail_name_list(mut self, input: impl Into<std::string::String>) -> Self {
@@ -785,21 +702,12 @@ pub mod describe_trails_input {
             self
         }
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
         pub fn set_trail_name_list(
@@ -809,16 +717,12 @@ pub mod describe_trails_input {
             self.trail_name_list = input;
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
         pub fn include_shadow_trails(mut self, input: bool) -> Self {
             self.include_shadow_trails = Some(input);
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
         pub fn set_include_shadow_trails(mut self, input: std::option::Option<bool>) -> Self {
             self.include_shadow_trails = input;
             self
@@ -968,58 +872,30 @@ pub mod get_event_selectors_input {
         pub(crate) trail_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -1168,58 +1044,30 @@ pub mod get_insight_selectors_input {
         pub(crate) trail_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -1515,20 +1363,14 @@ pub mod get_trail_status_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1677,14 +1519,12 @@ pub mod list_public_keys_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1692,14 +1532,12 @@ pub mod list_public_keys_input {
             self.start_time = input;
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1868,22 +1706,16 @@ pub mod list_tags_input {
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
         ///
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_id_list.unwrap_or_default();
             v.push(input.into());
             self.resource_id_list = Some(v);
             self
         }
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2041,18 +1873,12 @@ pub mod list_trails_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2251,14 +2077,12 @@ pub mod lookup_events_input {
             self.end_time = input;
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
         pub fn event_category(mut self, input: crate::model::EventCategory) -> Self {
             self.event_category = Some(input);
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
         pub fn set_event_category(
             mut self,
             input: std::option::Option<crate::model::EventCategory>,
@@ -2276,14 +2100,12 @@ pub mod lookup_events_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2439,58 +2261,30 @@ pub mod put_event_selectors_input {
             std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -2499,18 +2293,14 @@ pub mod put_event_selectors_input {
         ///
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
         pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
             v.push(input);
             self.event_selectors = Some(v);
             self
         }
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
         pub fn set_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -2522,15 +2312,7 @@ pub mod put_event_selectors_input {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn advanced_event_selectors(
             mut self,
             input: crate::model::AdvancedEventSelector,
@@ -2540,15 +2322,7 @@ pub mod put_event_selectors_input {
             self.advanced_event_selectors = Some(v);
             self
         }
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -2880,17 +2654,13 @@ pub mod remove_tags_input {
     }
     impl Builder {
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3058,20 +2828,14 @@ pub mod start_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3217,20 +2981,14 @@ pub mod stop_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3386,58 +3144,30 @@ pub mod update_trail_input {
         pub(crate) is_organization_trail: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3455,14 +3185,12 @@ pub mod update_trail_input {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3496,41 +3224,25 @@ pub mod update_trail_input {
             self.include_global_service_events = input;
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
         pub fn is_multi_region_trail(mut self, input: bool) -> Self {
             self.is_multi_region_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_log_file_validation = input;
@@ -3565,68 +3277,38 @@ pub mod update_trail_input {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self
@@ -3779,111 +3461,59 @@ impl UpdateTrailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrailInput {
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
-    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-    /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-    /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-    /// using trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-    /// deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
     pub is_organization_trail: std::option::Option<bool>,
 }
 impl UpdateTrailInput {
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3891,8 +3521,7 @@ impl UpdateTrailInput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -3904,20 +3533,12 @@ impl UpdateTrailInput {
     pub fn include_global_service_events(&self) -> std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-    /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-    /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-    /// using trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
     pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
         self.is_multi_region_trail
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
         self.enable_log_file_validation
@@ -3930,34 +3551,19 @@ impl UpdateTrailInput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-    /// deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -3993,19 +3599,13 @@ impl std::fmt::Debug for UpdateTrailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-    /// API calls. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl StopLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-    /// API calls. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4022,19 +3622,13 @@ impl std::fmt::Debug for StopLoggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-    /// The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl StartLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-    /// The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4052,18 +3646,14 @@ impl std::fmt::Debug for StartLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a list of tags to be removed.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsInput {
     /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -4113,90 +3703,42 @@ impl std::fmt::Debug for PutInsightSelectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-    /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-    /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
-    /// <p>
-    /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-    /// advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-    /// </p>
+    /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
 impl PutEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-    /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-    /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
         self.event_selectors.as_deref()
     }
-    /// <p>
-    /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-    /// advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-    /// </p>
+    /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
@@ -4223,13 +3765,11 @@ pub struct LookupEventsInput {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-    /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub event_category: std::option::Option<crate::model::EventCategory>,
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupEventsInput {
@@ -4245,8 +3785,7 @@ impl LookupEventsInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-    /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn event_category(&self) -> std::option::Option<&crate::model::EventCategory> {
         self.event_category.as_ref()
     }
@@ -4254,8 +3793,7 @@ impl LookupEventsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4277,17 +3815,11 @@ impl std::fmt::Debug for LookupEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-    /// in with the same parameters that were specified in the the original call. For example, if the original
-    /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-    /// include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-    /// in with the same parameters that were specified in the the original call. For example, if the original
-    /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-    /// include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4304,21 +3836,15 @@ impl std::fmt::Debug for ListTrailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-    /// a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-    /// a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_id_list.as_deref()
     }
@@ -4340,23 +3866,19 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysInput {
-    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-    /// If not specified, the current time is used, and the current public key is returned.</p>
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-    /// specified, the current time is used.</p>
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublicKeysInput {
-    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-    /// If not specified, the current time is used, and the current public key is returned.</p>
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-    /// specified, the current time is used.</p>
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4379,19 +3901,13 @@ impl std::fmt::Debug for ListPublicKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailStatusInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetTrailStatusInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4429,57 +3945,29 @@ impl std::fmt::Debug for GetTrailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
 impl GetInsightSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
@@ -4496,57 +3984,29 @@ impl std::fmt::Debug for GetInsightSelectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
 impl GetEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
@@ -4564,54 +4024,32 @@ impl std::fmt::Debug for GetEventSelectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
-    ///
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
     /// <ul>
-    /// <li>
-    /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-    /// information for all trails in the current region is returned.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+    /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub trail_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-    /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-    /// and region replication trails will not be returned. The default is true.</p>
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
     pub include_shadow_trails: std::option::Option<bool>,
 }
 impl DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
-    ///
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
     /// <ul>
-    /// <li>
-    /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-    /// information for all trails in the current region is returned.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+    /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub fn trail_name_list(&self) -> std::option::Option<&[std::string::String]> {
         self.trail_name_list.as_deref()
     }
-    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-    /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-    /// and region replication trails will not be returned. The default is true.</p>
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
     pub fn include_shadow_trails(&self) -> std::option::Option<bool> {
         self.include_shadow_trails
     }
@@ -4629,17 +4067,11 @@ impl std::fmt::Debug for DescribeTrailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrailInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-    /// trail ARN.
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTrailInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-    /// trail ARN.
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4658,74 +4090,42 @@ impl std::fmt::Debug for DeleteTrailInput {
 pub struct CreateTrailInput {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-    /// creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
-    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
     pub is_organization_trail: std::option::Option<bool>,
     /// <p>A list of tags.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4733,22 +4133,11 @@ pub struct CreateTrailInput {
 impl CreateTrailInput {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -4757,8 +4146,7 @@ impl CreateTrailInput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -4770,24 +4158,17 @@ impl CreateTrailInput {
     pub fn include_global_service_events(&self) -> std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-    /// creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
     pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
         self.is_multi_region_trail
     }
-    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
         self.enable_log_file_validation
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
@@ -4795,32 +4176,19 @@ impl CreateTrailInput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -4862,18 +4230,14 @@ impl std::fmt::Debug for CreateTrailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
     /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }

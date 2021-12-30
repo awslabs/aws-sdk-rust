@@ -61,20 +61,12 @@ pub struct UpdateDomainOutput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -93,24 +85,16 @@ impl UpdateDomainOutput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -182,16 +166,12 @@ pub mod update_domain_output {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -199,14 +179,12 @@ pub mod update_domain_output {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -214,24 +192,14 @@ pub mod update_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,
@@ -466,18 +434,11 @@ pub struct PutProfileObjectTypeOutput {
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
     pub expiration_days: std::option::Option<i32>,
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
-    /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
-    /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
@@ -512,22 +473,15 @@ impl PutProfileObjectTypeOutput {
     pub fn expiration_days(&self) -> std::option::Option<i32> {
         self.expiration_days
     }
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
-    /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
-    /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
     pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -656,14 +610,12 @@ pub mod put_profile_object_type_output {
             self.expiration_days = input;
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -671,27 +623,17 @@ pub mod put_profile_object_type_output {
             self.encryption_key = input;
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.allow_profile_creation = Some(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
-        /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
-        /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -699,9 +641,7 @@ pub mod put_profile_object_type_output {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
-        /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
-        /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1800,14 +1740,9 @@ pub struct GetProfileObjectTypeTemplateOutput {
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The source of the object template.</p>
     pub source_object: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-    /// up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
@@ -1831,16 +1766,11 @@ impl GetProfileObjectTypeTemplateOutput {
     pub fn source_object(&self) -> std::option::Option<&str> {
         self.source_object.as_deref()
     }
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-    /// up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -1932,26 +1862,17 @@ pub mod get_profile_object_type_template_output {
             self.source_object = input;
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.allow_profile_creation = Some(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-        /// up.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -1959,8 +1880,7 @@ pub mod get_profile_object_type_template_output {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-        /// up.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2054,17 +1974,11 @@ pub struct GetProfileObjectTypeOutput {
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
     pub expiration_days: std::option::Option<i32>,
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-    /// up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
@@ -2099,21 +2013,15 @@ impl GetProfileObjectTypeOutput {
     pub fn expiration_days(&self) -> std::option::Option<i32> {
         self.expiration_days
     }
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-    /// up.</p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -2242,14 +2150,12 @@ pub mod get_profile_object_type_output {
             self.expiration_days = input;
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2257,26 +2163,17 @@ pub mod get_profile_object_type_output {
             self.encryption_key = input;
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.allow_profile_creation = Some(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-        /// up.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -2284,8 +2181,7 @@ pub mod get_profile_object_type_output {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-        /// up.</p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2735,39 +2631,13 @@ pub struct GetIdentityResolutionJobOutput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-    /// identify profiles that belong to the same matching group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-    /// indicating the source of the problem.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
@@ -2798,39 +2668,13 @@ impl GetIdentityResolutionJobOutput {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-    /// identify profiles that belong to the same matching group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-    /// indicating the source of the problem.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::IdentityResolutionJobStatus> {
         self.status.as_ref()
@@ -2926,39 +2770,13 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>The status of the Identity Resolution Job.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-        /// identify profiles that belong to the same matching group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-        /// indicating the source of the problem.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::IdentityResolutionJobStatus) -> Self {
             self.status = Some(input);
@@ -2966,39 +2784,13 @@ pub mod get_identity_resolution_job_output {
         }
         /// <p>The status of the Identity Resolution Job.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-        /// identify profiles that belong to the same matching group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-        /// indicating the source of the problem.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -3138,22 +2930,14 @@ pub struct GetDomainOutput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>Usage-specific statistics about the domain.</p>
     pub stats: std::option::Option<crate::model::DomainStats>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3172,14 +2956,11 @@ impl GetDomainOutput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
@@ -3187,13 +2968,8 @@ impl GetDomainOutput {
     pub fn stats(&self) -> std::option::Option<&crate::model::DomainStats> {
         self.stats.as_ref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -3267,16 +3043,12 @@ pub mod get_domain_output {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3284,14 +3056,12 @@ pub mod get_domain_output {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3309,24 +3079,14 @@ pub mod get_domain_output {
             self.stats = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,
@@ -3414,8 +3174,7 @@ impl GetDomainOutput {
 pub struct GetAutoMergingPreviewOutput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The number of match groups in the domain that have been reviewed in this preview dry
-    /// run.</p>
+    /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub number_of_matches_in_sample: i64,
     /// <p>The number of profiles found in this preview dry run.</p>
     pub number_of_profiles_in_sample: i64,
@@ -3427,8 +3186,7 @@ impl GetAutoMergingPreviewOutput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The number of match groups in the domain that have been reviewed in this preview dry
-    /// run.</p>
+    /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub fn number_of_matches_in_sample(&self) -> i64 {
         self.number_of_matches_in_sample
     }
@@ -3482,14 +3240,12 @@ pub mod get_auto_merging_preview_output {
             self.domain_name = input;
             self
         }
-        /// <p>The number of match groups in the domain that have been reviewed in this preview dry
-        /// run.</p>
+        /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
         pub fn number_of_matches_in_sample(mut self, input: i64) -> Self {
             self.number_of_matches_in_sample = Some(input);
             self
         }
-        /// <p>The number of match groups in the domain that have been reviewed in this preview dry
-        /// run.</p>
+        /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
         pub fn set_number_of_matches_in_sample(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_matches_in_sample = input;
             self
@@ -3923,20 +3679,12 @@ pub struct CreateDomainOutput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3955,24 +3703,16 @@ impl CreateDomainOutput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -4044,16 +3784,12 @@ pub mod create_domain_output {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4061,14 +3797,12 @@ pub mod create_domain_output {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4076,24 +3810,14 @@ pub mod create_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,

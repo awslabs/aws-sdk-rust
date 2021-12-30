@@ -1318,17 +1318,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachCertificateToDistribution`.
     ///
-    /// <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN)
-    /// distribution.</p>
-    /// <p>After the certificate is attached, your distribution accepts HTTPS traffic for all of the
-    /// domains that are associated with the certificate.</p>
-    /// <p>Use the <code>CreateCertificate</code> action to create a certificate that you can attach
-    /// to your distribution.</p>
-    /// <important>
-    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to
-    /// Lightsail distributions. Lightsail distributions are global resources that can reference
-    /// an origin in any AWS Region, and distribute its content globally. However, all
-    /// distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are associated with the certificate.</p>
+    /// <p>Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.</p> <important>
+    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachCertificateToDistribution<
@@ -1387,15 +1380,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution that the certificate will be attached to.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution that the certificate will be attached to.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1404,32 +1395,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the certificate to attach to a distribution.</p>
-        /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a
-        /// distribution.</p>
-        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
-        /// can specify.</p>
-        /// <note>
-        /// <p>This is the name of the certificate resource type and is used only to reference the
-        /// certificate in other API actions. It can be different than the domain name of the
-        /// certificate. For example, your certificate name might be
-        /// <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be
-        /// <code>example.com</code>.</p>
+        /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
+        /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
         /// </note>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The name of the certificate to attach to a distribution.</p>
-        /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a
-        /// distribution.</p>
-        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
-        /// can specify.</p>
-        /// <note>
-        /// <p>This is the name of the certificate resource type and is used only to reference the
-        /// certificate in other API actions. It can be different than the domain name of the
-        /// certificate. For example, your certificate name might be
-        /// <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be
-        /// <code>example.com</code>.</p>
+        /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
+        /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
         /// </note>
         pub fn set_certificate_name(
             mut self,
@@ -1441,11 +1418,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachDisk`.
     ///
-    /// <p>Attaches a block storage disk to a running or stopped Lightsail instance and exposes it
-    /// to the instance with the specified disk name.</p>
-    /// <p>The <code>attach disk</code> operation supports tag-based access control via resource tags
-    /// applied to the resource identified by <code>disk name</code>. For more information, see the
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the specified disk name.</p>
+    /// <p>The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachDisk<
         C = aws_smithy_client::erase::DynConnector,
@@ -1539,11 +1513,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachInstancesToLoadBalancer`.
     ///
     /// <p>Attaches one or more Lightsail instances to a load balancer.</p>
-    /// <p>After some time, the instances are attached to the load balancer and the health check
-    /// status is available.</p>
-    /// <p>The <code>attach instances to load balancer</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
+    /// <p>After some time, the instances are attached to the load balancer and the health check status is available.</p>
+    /// <p>The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachInstancesToLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
@@ -1617,24 +1588,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
-        /// <p>An array of strings representing the instance name(s) you want to attach to your load
-        /// balancer.</p>
-        /// <p>An instance must be <code>running</code> before you can attach it to your load
-        /// balancer.</p>
-        /// <p>There are no additional limits on the number of instances you can attach to your load
-        /// balancer, aside from the limit of Lightsail instances you can create in your account
-        /// (20).</p>
+        /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+        /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+        /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_names(input.into());
             self
         }
-        /// <p>An array of strings representing the instance name(s) you want to attach to your load
-        /// balancer.</p>
-        /// <p>An instance must be <code>running</code> before you can attach it to your load
-        /// balancer.</p>
-        /// <p>There are no additional limits on the number of instances you can attach to your load
-        /// balancer, aside from the limit of Lightsail instances you can create in your account
-        /// (20).</p>
+        /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+        /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
+        /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1645,15 +1608,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachLoadBalancerTlsCertificate`.
     ///
-    /// <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is just
-    /// an updated, more secure version of Secure Socket Layer (SSL).</p>
-    /// <p>Once you create and validate your certificate, you can attach it to your load balancer.
-    /// You can also use this API to rotate the certificates on your account. Use the
-    /// <code>AttachLoadBalancerTlsCertificate</code> action with the non-attached certificate, and
-    /// it will replace the existing one and become the attached certificate.</p>
-    /// <p>The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+    /// <p>Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> action with the non-attached certificate, and it will replace the existing one and become the attached certificate.</p>
+    /// <p>The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1710,14 +1667,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the load balancer to which you want to associate the SSL/TLS
-        /// certificate.</p>
+        /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
         pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.load_balancer_name(input.into());
             self
         }
-        /// <p>The name of the load balancer to which you want to associate the SSL/TLS
-        /// certificate.</p>
+        /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1828,9 +1783,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CloseInstancePublicPorts`.
     ///
     /// <p>Closes ports for a specific Amazon Lightsail instance.</p>
-    /// <p>The <code>CloseInstancePublicPorts</code> action supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>CloseInstancePublicPorts</code> action supports tag-based access control via resource tags applied to the resource identified by <code>instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloseInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
@@ -1913,17 +1866,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CopySnapshot`.
     ///
-    /// <p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an
-    /// automatic snapshot of an instance or disk as a manual snapshot. This operation can also be
-    /// used to copy a manual or automatic snapshot of an instance or a disk from one AWS Region to
-    /// another in Amazon Lightsail.</p>
-    /// <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
-    /// region</code>, <code>source snapshot name</code>, and <code>target snapshot name</code>
-    /// parameters.</p>
-    /// <p>When copying an <i>automatic snapshot</i>, be sure to define the
-    /// <code>source region</code>, <code>source resource name</code>, <code>target snapshot
-    /// name</code>, and either the <code>restore date</code> or the <code>use latest restorable
-    /// auto snapshot</code> parameters.</p>
+    /// <p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
+    /// <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>, <code>source snapshot name</code>, and <code>target snapshot name</code> parameters.</p>
+    /// <p>When copying an <i>automatic snapshot</i>, be sure to define the <code>source region</code>, <code>source resource name</code>, <code>target snapshot name</code>, and either the <code>restore date</code> or the <code>use latest restorable auto snapshot</code> parameters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -1983,10 +1928,7 @@ pub mod fluent_builders {
         /// <p>The name of the source manual snapshot to copy.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>Define this parameter only when copying a manual snapshot as another manual
-        /// snapshot.</p>
-        /// </li>
+        /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
         /// </ul>
         pub fn source_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_snapshot_name(input.into());
@@ -1995,10 +1937,7 @@ pub mod fluent_builders {
         /// <p>The name of the source manual snapshot to copy.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>Define this parameter only when copying a manual snapshot as another manual
-        /// snapshot.</p>
-        /// </li>
+        /// <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>
         /// </ul>
         pub fn set_source_snapshot_name(
             mut self,
@@ -2007,27 +1946,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_snapshot_name(input);
             self
         }
-        /// <p>The name of the source instance or disk from which the source automatic snapshot was
-        /// created.</p>
+        /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn source_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_resource_name(input.into());
             self
         }
-        /// <p>The name of the source instance or disk from which the source automatic snapshot was
-        /// created.</p>
+        /// <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_source_resource_name(
             mut self,
@@ -2036,79 +1967,43 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_resource_name(input);
             self
         }
-        /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
-        /// operation to identify the dates of the available automatic snapshots.</p>
+        /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.restore_date(input.into());
             self
         }
-        /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
-        /// operation to identify the dates of the available automatic snapshots.</p>
+        /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_restore_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_restore_date(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the
-        /// specified source instance or disk.</p>
+        /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
             self.inner = self.inner.use_latest_restorable_auto_snapshot(input);
             self
         }
-        /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the
-        /// specified source instance or disk.</p>
+        /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_use_latest_restorable_auto_snapshot(
             mut self,
@@ -2147,11 +2042,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBucket`.
     ///
     /// <p>Creates an Amazon Lightsail bucket.</p>
-    ///
-    /// <p>A bucket is a cloud storage resource available in the Lightsail object storage service.
-    /// Use buckets to store objects such as data and its descriptive metadata. For more information
-    /// about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-    /// Guide</i>.</p>
+    /// <p>A bucket is a cloud storage resource available in the Lightsail object storage service. Use buckets to store objects such as data and its descriptive metadata. For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBucket<
         C = aws_smithy_client::erase::DynConnector,
@@ -2209,45 +2100,29 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the bucket.</p>
-        ///
-        /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name for the bucket.</p>
-        ///
-        /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
-        ///
-        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
-        /// bucket.</p>
-        ///
-        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-        /// specify.</p>
-        ///
-        /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle after the bucket
-        /// is created.</p>
+        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
+        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
-        ///
-        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
-        /// bucket.</p>
-        ///
-        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-        /// specify.</p>
-        ///
-        /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle after the bucket
-        /// is created.</p>
+        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
+        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -2257,15 +2132,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        ///
-        /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
+        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        ///
-        /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
+        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2273,20 +2146,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to enable versioning of objects in the
-        /// bucket.</p>
-        ///
-        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
-        /// <i>Amazon Lightsail Developer Guide</i>.</p>
+        /// <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
+        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn enable_object_versioning(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_object_versioning(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to enable versioning of objects in the
-        /// bucket.</p>
-        ///
-        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
-        /// <i>Amazon Lightsail Developer Guide</i>.</p>
+        /// <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
+        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn set_enable_object_versioning(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_object_versioning(input);
             self
@@ -2294,19 +2161,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBucketAccessKey`.
     ///
-    /// <p>Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of
-    /// an access key ID and corresponding secret access key.</p>
-    ///
-    /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You
-    /// can have a maximum of two access keys per bucket. Use the <a>GetBucketAccessKeys</a> action to get a list of current access keys for a specific bucket. For more information
-    /// about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
-    /// <i>Amazon Lightsail Developer Guide</i>.</p>
-    ///
-    /// <important>
-    /// <p>The <code>secretAccessKey</code> value is returned only in response to the
-    /// <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you
-    /// first create an access key; you cannot get the secret access key later. If you lose the
-    /// secret access key, you must create a new access key.</p>
+    /// <p>Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of an access key ID and corresponding secret access key.</p>
+    /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <code>GetBucketAccessKeys</code> action to get a list of current access keys for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important>
+    /// <p>The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBucketAccessKey<
@@ -2377,17 +2234,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCertificate`.
     ///
-    /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN)
-    /// distribution and a container service.</p>
-    /// <p>After the certificate is valid, use the <code>AttachCertificateToDistribution</code>
-    /// action to use the certificate and its domains with your distribution. Or use the
-    /// <code>UpdateContainerService</code> action to use the certificate and its domains with your
-    /// container service.</p>
-    /// <important>
-    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to
-    /// Lightsail distributions. Lightsail distributions are global resources that can reference
-    /// an origin in any AWS Region, and distribute its content globally. However, all
-    /// distributions are located in the <code>us-east-1</code> Region.</p>
+    /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN) distribution and a container service.</p>
+    /// <p>After the certificate is valid, use the <code>AttachCertificateToDistribution</code> action to use the certificate and its domains with your distribution. Or use the <code>UpdateContainerService</code> action to use the certificate and its domains with your container service.</p> <important>
+    /// <p>Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions. Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCertificate<
@@ -2472,19 +2321,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
         ///
-        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
-        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
-        /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain
-        /// name).</p>
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+        /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
         /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subject_alternative_names(input.into());
             self
         }
-        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
-        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
-        /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain
-        /// name).</p>
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+        /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
         /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
         pub fn set_subject_alternative_names(
             mut self,
@@ -2515,13 +2360,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCloudFormationStack`.
     ///
-    /// <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported
-    /// Amazon Lightsail snapshot. This operation results in a CloudFormation stack record that can be
-    /// used to track the AWS CloudFormation stack created. Use the <code>get cloud formation stack
-    /// records</code> operation to get a list of the CloudFormation stacks created.</p>
-    /// <important>
-    /// <p>Wait until after your new Amazon EC2 instance is created before running the <code>create
-    /// cloud formation stack</code> operation again with the same export snapshot record.</p>
+    /// <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of the CloudFormation stacks created.</p> <important>
+    /// <p>Wait until after your new Amazon EC2 instance is created before running the <code>create cloud formation stack</code> operation again with the same export snapshot record.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFormationStack<
@@ -2583,16 +2423,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
-        /// pass one instance entry at a time in this array. You will get an invalid parameter error if
-        /// you pass more than one instance entry in this array.</p>
+        /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
         pub fn instances(mut self, input: crate::model::InstanceEntry) -> Self {
             self.inner = self.inner.instances(input);
             self
         }
-        /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
-        /// pass one instance entry at a time in this array. You will get an invalid parameter error if
-        /// you pass more than one instance entry in this array.</p>
+        /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceEntry>>,
@@ -2604,10 +2440,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactMethod`.
     ///
     /// <p>Creates an email or SMS text message contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources.
-    /// You can add one email address and one mobile phone number contact method in each AWS Region.
-    /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
-    /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactMethod<
         C = aws_smithy_client::erase::DynConnector,
@@ -2664,63 +2497,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
+        /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
         /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (<code>us-west-2</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+        /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+        /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS
-        /// Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer
-        /// Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn protocol(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
+        /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
         /// <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (<code>us-east-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (<code>us-west-2</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Europe (Ireland) (<code>eu-west-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+        /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+        /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
         /// </ul>
-        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS
-        /// Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer
-        /// Guide</i>.</p>
+        /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
         pub fn set_protocol(
             mut self,
@@ -2729,24 +2532,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>The destination of the contact method, such as an email address or a mobile phone
-        /// number.</p>
-        /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the
-        /// phone number structure used for international telecommunication. Phone numbers that follow
-        /// this format can have a maximum of 15 digits, and they are prefixed with the plus character (+)
-        /// and the country code. For example, a U.S. phone number in E.164 format would be specified as
-        /// +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
+        /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
+        /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
         pub fn contact_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_endpoint(input.into());
             self
         }
-        /// <p>The destination of the contact method, such as an email address or a mobile phone
-        /// number.</p>
-        /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the
-        /// phone number structure used for international telecommunication. Phone numbers that follow
-        /// this format can have a maximum of 15 digits, and they are prefixed with the plus character (+)
-        /// and the country code. For example, a U.S. phone number in E.164 format would be specified as
-        /// +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
+        /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
+        /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
         pub fn set_contact_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2758,10 +2551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContainerService`.
     ///
     /// <p>Creates an Amazon Lightsail container service.</p>
-    ///
-    /// <p>A Lightsail container service is a compute resource to which you can deploy containers.
-    /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container services in Amazon Lightsail</a> in the <i>Lightsail Dev
-    /// Guide</i>.</p>
+    /// <p>A Lightsail container service is a compute resource to which you can deploy containers. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerService<
         C = aws_smithy_client::erase::DynConnector,
@@ -2819,91 +2609,59 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the container service.</p>
-        ///
-        /// <p>The name that you specify for your container service will make up part of its default
-        /// domain. The default domain of a container service is typically
-        /// <code>https://<ServiceName>.<RandomGUID>.<AWSRegion>.cs.amazonlightsail.com</code>.
-        /// If the name of your container service is <code>container-service-1</code>, and it's located in
-        /// the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container
-        /// service will be like the following example:
-        /// <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
-        /// </p>
-        ///
+        /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+        /// <servicename>
+        /// .
+        /// <randomguid>
+        /// .
+        /// <awsregion>
+        /// .cs.amazonlightsail.com
+        /// </awsregion>
+        /// </randomguid>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Must be unique within each AWS Region in your Lightsail account.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must contain 1 to 63 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p>
-        /// </li>
+        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+        /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+        /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
         /// </ul>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name for the container service.</p>
-        ///
-        /// <p>The name that you specify for your container service will make up part of its default
-        /// domain. The default domain of a container service is typically
-        /// <code>https://<ServiceName>.<RandomGUID>.<AWSRegion>.cs.amazonlightsail.com</code>.
-        /// If the name of your container service is <code>container-service-1</code>, and it's located in
-        /// the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container
-        /// service will be like the following example:
-        /// <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
-        /// </p>
-        ///
+        /// <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://
+        /// <servicename>
+        /// .
+        /// <randomguid>
+        /// .
+        /// <awsregion>
+        /// .cs.amazonlightsail.com
+        /// </awsregion>
+        /// </randomguid>
+        /// </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>
         /// <p>The following are the requirements for container service names:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Must be unique within each AWS Region in your Lightsail account.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must contain 1 to 63 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p>
-        /// </li>
+        /// <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>
+        /// <li> <p>Must contain 1 to 63 characters.</p> </li>
+        /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
+        /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
         /// </ul>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
         }
         /// <p>The power specification for the container service.</p>
-        ///
-        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
-        /// container service. The <code>power</code> and <code>scale</code> of a container service makes
-        /// up its configured capacity. To determine the monthly price of your container service, multiply
-        /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
-        /// the service.</p>
-        ///
-        /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that
-        /// you can specify using this parameter, and their base monthly cost.</p>
+        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+        /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
         pub fn power(mut self, input: crate::model::ContainerServicePowerName) -> Self {
             self.inner = self.inner.power(input);
             self
         }
         /// <p>The power specification for the container service.</p>
-        ///
-        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
-        /// container service. The <code>power</code> and <code>scale</code> of a container service makes
-        /// up its configured capacity. To determine the monthly price of your container service, multiply
-        /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
-        /// the service.</p>
-        ///
-        /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that
-        /// you can specify using this parameter, and their base monthly cost.</p>
+        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+        /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
         pub fn set_power(
             mut self,
             input: std::option::Option<crate::model::ContainerServicePowerName>,
@@ -2912,23 +2670,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The scale specification for the container service.</p>
-        ///
-        /// <p>The scale specifies the allocated compute nodes of the container service. The
-        /// <code>power</code> and <code>scale</code> of a container service makes up its configured
-        /// capacity. To determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
-        /// service.</p>
+        /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
         pub fn scale(mut self, input: i32) -> Self {
             self.inner = self.inner.scale(input);
             self
         }
         /// <p>The scale specification for the container service.</p>
-        ///
-        /// <p>The scale specifies the allocated compute nodes of the container service. The
-        /// <code>power</code> and <code>scale</code> of a container service makes up its configured
-        /// capacity. To determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
-        /// service.</p>
+        /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_scale(input);
             self
@@ -2958,24 +2706,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_public_domain_names`](Self::set_public_domain_names).
         ///
-        /// <p>The public domain names to use with the container service, such as
-        /// <code>example.com</code> and <code>www.example.com</code>.</p>
-        ///
-        /// <p>You can specify up to four public domain names for a container service. The domain names
-        /// that you specify are used when you create a deployment with a container configured as the
-        /// public endpoint of your container service.</p>
-        ///
-        /// <p>If you don't specify public domain names, then you can use the default domain of the
-        /// container service.</p>
-        ///
-        /// <important>
-        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
-        /// certificate for the public domain names you want to use with your container service.</p>
+        /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+        /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+        /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
         /// </important>
-        ///
-        /// <p>You can specify public domain names using a string to array map as shown in the example
-        /// later on this page.</p>
+        /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -2984,24 +2720,12 @@ pub mod fluent_builders {
             self.inner = self.inner.public_domain_names(k.into(), v);
             self
         }
-        /// <p>The public domain names to use with the container service, such as
-        /// <code>example.com</code> and <code>www.example.com</code>.</p>
-        ///
-        /// <p>You can specify up to four public domain names for a container service. The domain names
-        /// that you specify are used when you create a deployment with a container configured as the
-        /// public endpoint of your container service.</p>
-        ///
-        /// <p>If you don't specify public domain names, then you can use the default domain of the
-        /// container service.</p>
-        ///
-        /// <important>
-        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
-        /// certificate for the public domain names you want to use with your container service.</p>
+        /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+        /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+        /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
         /// </important>
-        ///
-        /// <p>You can specify public domain names using a string to array map as shown in the example
-        /// later on this page.</p>
+        /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
         pub fn set_public_domain_names(
             mut self,
             input: std::option::Option<
@@ -3012,12 +2736,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes a deployment for the container service.</p>
-        ///
-        /// <p>A deployment specifies the containers that will be launched on the container service and
-        /// their settings, such as the ports to open, the environment variables to apply, and the launch
-        /// command to run. It also specifies the container that will serve as the public endpoint of the
-        /// deployment and its settings, such as the HTTP or HTTPS port to use, and the health check
-        /// configuration.</p>
+        /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
         pub fn deployment(
             mut self,
             input: crate::model::ContainerServiceDeploymentRequest,
@@ -3026,12 +2745,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes a deployment for the container service.</p>
-        ///
-        /// <p>A deployment specifies the containers that will be launched on the container service and
-        /// their settings, such as the ports to open, the environment variables to apply, and the launch
-        /// command to run. It also specifies the container that will serve as the public endpoint of the
-        /// deployment and its settings, such as the HTTP or HTTPS port to use, and the health check
-        /// configuration.</p>
+        /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
         pub fn set_deployment(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceDeploymentRequest>,
@@ -3043,16 +2757,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContainerServiceDeployment`.
     ///
     /// <p>Creates a deployment for your Amazon Lightsail container service.</p>
-    ///
-    /// <p>A deployment specifies the containers that will be launched on the container service and
-    /// their settings, such as the ports to open, the environment variables to apply, and the launch
-    /// command to run. It also specifies the container that will serve as the public endpoint of the
-    /// deployment and its settings, such as the HTTP or HTTPS port to use, and the health check
-    /// configuration.</p>
-    ///
-    /// <p>You can deploy containers to your container service using container images from a public
-    /// registry like Docker Hub, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the
-    /// <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
+    /// <p>You can deploy containers to your container service using container images from a public registry like Docker Hub, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerServiceDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -3123,8 +2829,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
-        /// <p>An object that describes the settings of the containers that will be launched on the
-        /// container service.</p>
+        /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
@@ -3133,8 +2838,7 @@ pub mod fluent_builders {
             self.inner = self.inner.containers(k.into(), v);
             self
         }
-        /// <p>An object that describes the settings of the containers that will be launched on the
-        /// container service.</p>
+        /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<
@@ -3144,14 +2848,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_containers(input);
             self
         }
-        /// <p>An object that describes the settings of the public endpoint for the container
-        /// service.</p>
+        /// <p>An object that describes the settings of the public endpoint for the container service.</p>
         pub fn public_endpoint(mut self, input: crate::model::EndpointRequest) -> Self {
             self.inner = self.inner.public_endpoint(input);
             self
         }
-        /// <p>An object that describes the settings of the public endpoint for the container
-        /// service.</p>
+        /// <p>An object that describes the settings of the public endpoint for the container service.</p>
         pub fn set_public_endpoint(
             mut self,
             input: std::option::Option<crate::model::EndpointRequest>,
@@ -3162,28 +2864,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContainerServiceRegistryLogin`.
     ///
-    /// <p>Creates a temporary set of log in credentials that you can use to log in to the Docker
-    /// process on your local machine. After you're logged in, you can use the native Docker commands
-    /// to push your local container images to the container image registry of your Amazon Lightsail
-    /// account so that you can use them with your Lightsail container service. The log in
-    /// credentials expire 12 hours after they are created, at which point you will need to create a
-    /// new set of log in credentials.</p>
-    ///
-    /// <note>
-    /// <p>You can only push container images to the container service registry of your Lightsail
-    /// account. You cannot pull container images or perform any other container image management
-    /// actions on the container service registry.</p>
+    /// <p>Creates a temporary set of log in credentials that you can use to log in to the Docker process on your local machine. After you're logged in, you can use the native Docker commands to push your local container images to the container image registry of your Amazon Lightsail account so that you can use them with your Lightsail container service. The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials.</p> <note>
+    /// <p>You can only push container images to the container service registry of your Lightsail account. You cannot pull container images or perform any other container image management actions on the container service registry.</p>
     /// </note>
-    ///
-    /// <p>After you push your container images to the container image registry of your Lightsail
-    /// account, use the <code>RegisterContainerImage</code> action to register the pushed images to a
-    /// specific Lightsail container service.</p>
-    ///
-    /// <note>
-    /// <p>This action is not required if you install and use the Lightsail Control
-    /// (lightsailctl) plugin to push container images to your Lightsail container service. For
-    /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
-    /// in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// <p>After you push your container images to the container image registry of your Lightsail account, use the <code>RegisterContainerImage</code> action to register the pushed images to a specific Lightsail container service.</p> <note>
+    /// <p>This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container images to your Lightsail container service. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerServiceRegistryLogin<
@@ -3246,10 +2931,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDisk`.
     ///
-    /// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the
-    /// same Availability Zone (e.g., <code>us-east-2a</code>).</p>
-    /// <p>The <code>create disk</code> operation supports tag-based access control via request tags.
-    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>
+    /// <p>The <code>create disk</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDisk<
         C = aws_smithy_client::erase::DynConnector,
@@ -3316,20 +2999,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disk_name(input);
             self
         }
-        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
-        /// Use the same Availability Zone as the Lightsail instance to which you want to attach the
-        /// disk.</p>
-        /// <p>Use the <code>get regions</code> operation to list the Availability Zones where
-        /// Lightsail is currently available.</p>
+        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+        /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
-        /// Use the same Availability Zone as the Lightsail instance to which you want to attach the
-        /// disk.</p>
-        /// <p>Use the <code>get regions</code> operation to list the Availability Zones where
-        /// Lightsail is currently available.</p>
+        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+        /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3386,12 +3063,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDiskFromSnapshot`.
     ///
-    /// <p>Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting
-    /// disk can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g.,
-    /// <code>us-east-2a</code>).</p>
-    /// <p>The <code>create disk from snapshot</code> operation supports tag-based access control via
-    /// request tags and resource tags applied to the resource identified by <code>disk snapshot
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting disk can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>
+    /// <p>The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by <code>disk snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiskFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -3458,29 +3131,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disk_name(input);
             self
         }
-        /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the
-        /// new storage disk.</p>
+        /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>source disk name</code>
-        /// parameter. The <code>disk snapshot name</code> and <code>source disk name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
         /// </ul>
         pub fn disk_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.disk_snapshot_name(input.into());
             self
         }
-        /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the
-        /// new storage disk.</p>
+        /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>source disk name</code>
-        /// parameter. The <code>disk snapshot name</code> and <code>source disk name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
         /// </ul>
         pub fn set_disk_snapshot_name(
             mut self,
@@ -3489,20 +3152,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disk_snapshot_name(input);
             self
         }
-        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
-        /// Choose the same Availability Zone as the Lightsail instance where you want to create the
-        /// disk.</p>
-        /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently
-        /// available.</p>
+        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+        /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
-        /// Choose the same Availability Zone as the Lightsail instance where you want to create the
-        /// disk.</p>
-        /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently
-        /// available.</p>
+        /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+        /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3559,15 +3216,8 @@ pub mod fluent_builders {
         /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code>
-        /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn source_disk_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_disk_name(input.into());
@@ -3576,15 +3226,8 @@ pub mod fluent_builders {
         /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code>
-        /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_source_disk_name(
             mut self,
@@ -3593,45 +3236,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_disk_name(input);
             self
         }
-        /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto
-        /// snapshots</code> operation to identify the dates of the available automatic
-        /// snapshots.</p>
+        /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.restore_date(input.into());
             self
         }
-        /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto
-        /// snapshots</code> operation to identify the dates of the available automatic
-        /// snapshots.</p>
+        /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_restore_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_restore_date(input);
@@ -3640,15 +3261,8 @@ pub mod fluent_builders {
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
             self.inner = self.inner.use_latest_restorable_auto_snapshot(input);
@@ -3657,15 +3271,8 @@ pub mod fluent_builders {
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_use_latest_restorable_auto_snapshot(
             mut self,
@@ -3677,26 +3284,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDiskSnapshot`.
     ///
-    /// <p>Creates a snapshot of a block storage disk. You can use snapshots for backups, to make
-    /// copies of disks, and to save data before shutting down a Lightsail instance.</p>
-    /// <p>You can take a snapshot of an attached disk that is in use; however, snapshots only
-    /// capture data that has been written to your disk at the time the snapshot command is issued.
-    /// This may exclude any data that has been cached by any applications or the operating system. If
-    /// you can pause any file systems on the disk long enough to take a snapshot, your snapshot
-    /// should be complete. Nevertheless, if you cannot pause all file writes to the disk, you should
-    /// unmount the disk from within the Lightsail instance, issue the create disk snapshot command,
-    /// and then remount the disk to ensure a consistent and complete snapshot. You may remount and
-    /// use your disk while the snapshot status is pending.</p>
-    /// <p>You can also use this operation to create a snapshot of an instance's system volume. You
-    /// might want to do this, for example, to recover data from the system volume of a botched
-    /// instance or to create a backup of the system volume like you would for a block storage disk.
-    /// To create a snapshot of a system volume, just define the <code>instance name</code> parameter
-    /// when issuing the snapshot command, and a snapshot of the defined instance's system volume will
-    /// be created. After the snapshot is available, you can create a block storage disk from the
-    /// snapshot and attach it to a running instance to access the data on the disk.</p>
-    ///
-    /// <p>The <code>create disk snapshot</code> operation supports tag-based access control via
-    /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a snapshot of a block storage disk. You can use snapshots for backups, to make copies of disks, and to save data before shutting down a Lightsail instance.</p>
+    /// <p>You can take a snapshot of an attached disk that is in use; however, snapshots only capture data that has been written to your disk at the time the snapshot command is issued. This may exclude any data that has been cached by any applications or the operating system. If you can pause any file systems on the disk long enough to take a snapshot, your snapshot should be complete. Nevertheless, if you cannot pause all file writes to the disk, you should unmount the disk from within the Lightsail instance, issue the create disk snapshot command, and then remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the snapshot status is pending.</p>
+    /// <p>You can also use this operation to create a snapshot of an instance's system volume. You might want to do this, for example, to recover data from the system volume of a botched instance or to create a backup of the system volume like you would for a block storage disk. To create a snapshot of a system volume, just define the <code>instance name</code> parameter when issuing the snapshot command, and a snapshot of the defined instance's system volume will be created. After the snapshot is available, you can create a block storage disk from the snapshot and attach it to a running instance to access the data on the disk.</p>
+    /// <p>The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiskSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -3753,34 +3344,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
-        /// <note>
-        /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter.
-        /// The <code>disk name</code> and <code>instance name</code> parameters are mutually
-        /// exclusive.</p>
+        /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+        /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
         /// </note>
         pub fn disk_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.disk_name(input.into());
             self
         }
-        /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
-        /// <note>
-        /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter.
-        /// The <code>disk name</code> and <code>instance name</code> parameters are mutually
-        /// exclusive.</p>
+        /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+        /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
         /// </note>
         pub fn set_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_disk_name(input);
             self
         }
-        /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on
-        /// the source disk.</p>
+        /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
         pub fn disk_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.disk_snapshot_name(input.into());
             self
         }
-        /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on
-        /// the source disk.</p>
+        /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
         pub fn set_disk_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3788,23 +3371,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disk_snapshot_name(input);
             self
         }
-        /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
-        /// When this is defined, a snapshot of the instance's system volume is created.</p>
-        /// <note>
-        /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The
-        /// <code>instance name</code> and <code>disk name</code> parameters are mutually
-        /// exclusive.</p>
+        /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+        /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
         /// </note>
         pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_name(input.into());
             self
         }
-        /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
-        /// When this is defined, a snapshot of the instance's system volume is created.</p>
-        /// <note>
-        /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The
-        /// <code>instance name</code> and <code>disk name</code> parameters are mutually
-        /// exclusive.</p>
+        /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+        /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
         /// </note>
         pub fn set_instance_name(
             mut self,
@@ -3836,9 +3411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDistribution`.
     ///
     /// <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
-    /// <p>A distribution is a globally distributed network of caching servers that improve the
-    /// performance of your website or web application hosted on a Lightsail instance. For more
-    /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
+    /// <p>A distribution is a globally distributed network of caching servers that improve the performance of your website or web application hosted on a Lightsail instance. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistribution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3908,15 +3481,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_name(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
-        /// instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.inner = self.inner.origin(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
-        /// instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.inner = self.inner.set_origin(input);
@@ -3966,38 +3537,28 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bundle ID to use for the distribution.</p>
-        /// <p>A distribution bundle describes the specifications of your distribution, such as the
-        /// monthly cost and monthly network transfer quota.</p>
-        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
-        /// IDs that you can specify.</p>
+        /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
+        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The bundle ID to use for the distribution.</p>
-        /// <p>A distribution bundle describes the specifications of your distribution, such as the
-        /// monthly cost and monthly network transfer quota.</p>
-        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
-        /// IDs that you can specify.</p>
+        /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
+        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
         }
         /// <p>The IP address type for the distribution.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type for the distribution.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn set_ip_address_type(
             mut self,
@@ -4029,8 +3590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
     /// <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
-    /// <p>The <code>create domain</code> operation supports tag-based access control via request
-    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>create domain</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -4087,23 +3647,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
-        /// <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name
-        /// using Amazon Route 53 or another domain name registrar. If you have already registered your
-        /// domain, you can enter its name in this parameter to manage the DNS records for that domain
-        /// using Lightsail.</p>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
+        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
         /// </note>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
-        /// <note>
-        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name
-        /// using Amazon Route 53 or another domain name registrar. If you have already registered your
-        /// domain, you can enter its name in this parameter to manage the DNS records for that domain
-        /// using Lightsail.</p>
+        /// <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>
+        /// <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>
         /// </note>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
@@ -4131,15 +3683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomainEntry`.
     ///
-    /// <p>Creates one of the following domain name system (DNS) records in a domain DNS zone:
-    /// Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority
-    /// (SOA), service locator (SRV), or text (TXT).</p>
-    ///
-    ///
-    ///
-    /// <p>The <code>create domain entry</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>domain name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates one of the following domain name system (DNS) records in a domain DNS zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+    /// <p>The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
@@ -4196,14 +3741,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain
-        /// entry.</p>
+        /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain
-        /// entry.</p>
+        /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -4225,8 +3768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInstances`.
     ///
     /// <p>Creates one or more Amazon Lightsail instances.</p>
-    /// <p>The <code>create instances</code> operation supports tag-based access control via request
-    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>create instances</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -4287,18 +3829,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
-        /// <p>The names to use for your new Lightsail instances. Separate multiple values using
-        /// quotation marks and commas, for example:
-        /// <code>["MyFirstInstance","MySecondInstance"]</code>
-        /// </p>
+        /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_names(input.into());
             self
         }
-        /// <p>The names to use for your new Lightsail instances. Separate multiple values using
-        /// quotation marks and commas, for example:
-        /// <code>["MyFirstInstance","MySecondInstance"]</code>
-        /// </p>
+        /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4306,20 +3842,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_names(input);
             self
         }
-        /// <p>The Availability Zone in which to create your instance. Use the following format:
-        /// <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using
-        /// the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-        /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
-        /// parameter to your request.</p>
+        /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone in which to create your instance. Use the following format:
-        /// <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using
-        /// the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-        /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
-        /// parameter to your request.</p>
+        /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4327,19 +3855,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>(Deprecated) The name for your custom image.</p>
-        /// <note>
-        /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
-        /// deprecated.</p>
+        /// <p>(Deprecated) The name for your custom image.</p> <note>
+        /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
         pub fn custom_image_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_image_name(input.into());
             self
         }
-        /// <p>(Deprecated) The name for your custom image.</p>
-        /// <note>
-        /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
-        /// deprecated.</p>
+        /// <p>(Deprecated) The name for your custom image.</p> <note>
+        /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
         pub fn set_custom_image_name(
             mut self,
@@ -4348,65 +3872,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_image_name(input);
             self
         }
-        /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-        /// <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list
-        /// of available images (or <i>blueprints</i>).</p>
-        /// <note>
-        /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to
-        /// support customers with existing instances and are not necessarily available to create new
-        /// instances. Blueprints are marked inactive when they become outdated due to operating system
-        /// updates or new application releases.</p>
+        /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
+        /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
         /// </note>
         pub fn blueprint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.blueprint_id(input.into());
             self
         }
-        /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-        /// <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list
-        /// of available images (or <i>blueprints</i>).</p>
-        /// <note>
-        /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to
-        /// support customers with existing instances and are not necessarily available to create new
-        /// instances. Blueprints are marked inactive when they become outdated due to operating system
-        /// updates or new application releases.</p>
+        /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
+        /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
         /// </note>
         pub fn set_blueprint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_blueprint_id(input);
             self
         }
-        /// <p>The bundle of specification information for your virtual private server (or
-        /// <i>instance</i>), including the pricing plan (e.g.,
-        /// <code>micro_1_0</code>).</p>
+        /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
-        /// <p>The bundle of specification information for your virtual private server (or
-        /// <i>instance</i>), including the pricing plan (e.g.,
-        /// <code>micro_1_0</code>).</p>
+        /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
         }
-        /// <p>A launch script you can create that configures a server with additional user data. For
-        /// example, you might want to run <code>apt-get -y update</code>.</p>
-        /// <note>
-        /// <p>Depending on the machine image you choose, the command to get software on your instance
-        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
-        /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+        /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
+        /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(input.into());
             self
         }
-        /// <p>A launch script you can create that configures a server with additional user data. For
-        /// example, you might want to run <code>apt-get -y update</code>.</p>
-        /// <note>
-        /// <p>Depending on the machine image you choose, the command to get software on your instance
-        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
-        /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+        /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
+        /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_data(input);
@@ -4462,20 +3960,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address type for the instance.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type for the instance.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn set_ip_address_type(
             mut self,
@@ -4487,11 +3979,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstancesFromSnapshot`.
     ///
-    /// <p>Creates one or more new instances from a manual or automatic snapshot of an
-    /// instance.</p>
-    /// <p>The <code>create instances from snapshot</code> operation supports tag-based access
-    /// control via request tags and resource tags applied to the resource identified by
-    /// <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates one or more new instances from a manual or automatic snapshot of an instance.</p>
+    /// <p>The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstancesFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -4591,20 +4080,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attached_disk_mapping(input);
             self
         }
-        /// <p>The Availability Zone where you want to create your instances. Use the following
-        /// formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones
-        /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-        /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
-        /// parameter to your request.</p>
+        /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone where you want to create your instances. Use the following
-        /// formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones
-        /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-        /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
-        /// parameter to your request.</p>
+        /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4612,29 +4093,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get
-        /// instance snapshots operation to return information about your existing snapshots.</p>
+        /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>source instance name</code>
-        /// parameter. The <code>instance snapshot name</code> and <code>source instance name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
         /// </ul>
         pub fn instance_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_snapshot_name(input.into());
             self
         }
-        /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get
-        /// instance snapshots operation to return information about your existing snapshots.</p>
+        /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>
         /// <p>Constraint:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>source instance name</code>
-        /// parameter. The <code>instance snapshot name</code> and <code>source instance name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>
         /// </ul>
         pub fn set_instance_snapshot_name(
             mut self,
@@ -4643,39 +4114,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_snapshot_name(input);
             self
         }
-        /// <p>The bundle of specification information for your virtual private server (or
-        /// <i>instance</i>), including the pricing plan (e.g.,
-        /// <code>micro_1_0</code>).</p>
+        /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
-        /// <p>The bundle of specification information for your virtual private server (or
-        /// <i>instance</i>), including the pricing plan (e.g.,
-        /// <code>micro_1_0</code>).</p>
+        /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
         }
-        /// <p>You can create a launch script that configures a server with additional user data. For
-        /// example, <code>apt-get -y update</code>.</p>
-        /// <note>
-        /// <p>Depending on the machine image you choose, the command to get software on your instance
-        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
-        /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+        /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>
+        /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(input.into());
             self
         }
-        /// <p>You can create a launch script that configures a server with additional user data. For
-        /// example, <code>apt-get -y update</code>.</p>
-        /// <note>
-        /// <p>Depending on the machine image you choose, the command to get software on your instance
-        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
-        /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+        /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>
+        /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_data(input);
@@ -4731,20 +4188,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address type for the instance.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type for the instance.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn set_ip_address_type(
             mut self,
@@ -4753,37 +4204,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_address_type(input);
             self
         }
-        /// <p>The name of the source instance from which the source automatic snapshot was
-        /// created.</p>
+        /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code>
-        /// parameter. The <code>source instance name</code> and <code>instance snapshot name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn source_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_instance_name(input.into());
             self
         }
-        /// <p>The name of the source instance from which the source automatic snapshot was
-        /// created.</p>
+        /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code>
-        /// parameter. The <code>source instance name</code> and <code>instance snapshot name</code>
-        /// parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_source_instance_name(
             mut self,
@@ -4792,45 +4227,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_instance_name(input);
             self
         }
-        /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto
-        /// snapshots</code> operation to identify the dates of the available automatic
-        /// snapshots.</p>
+        /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.restore_date(input.into());
             self
         }
-        /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto
-        /// snapshots</code> operation to identify the dates of the available automatic
-        /// snapshots.</p>
+        /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be specified in <code>YYYY-MM-DD</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_restore_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_restore_date(input);
@@ -4839,15 +4252,8 @@ pub mod fluent_builders {
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
             self.inner = self.inner.use_latest_restorable_auto_snapshot(input);
@@ -4856,15 +4262,8 @@ pub mod fluent_builders {
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter cannot be defined together with the <code>restore date</code>
-        /// parameter. The <code>use latest restorable auto snapshot</code> and <code>restore
-        /// date</code> parameters are mutually exclusive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-        /// </li>
+        /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
+        /// <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
         /// </ul>
         pub fn set_use_latest_restorable_auto_snapshot(
             mut self,
@@ -4876,10 +4275,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceSnapshot`.
     ///
-    /// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
-    /// You can use a snapshot to create a new instance that is based on that snapshot.</p>
-    /// <p>The <code>create instance snapshot</code> operation supports tag-based access control via
-    /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p>
+    /// <p>The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -4985,8 +4382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateKeyPair`.
     ///
     /// <p>Creates an SSH key pair.</p>
-    /// <p>The <code>create key pair</code> operation supports tag-based access control via request
-    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>create key pair</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyPair<
         C = aws_smithy_client::erase::DynConnector,
@@ -5078,14 +4474,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLoadBalancer`.
     ///
-    /// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance
-    /// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5
-    /// load balancers per AWS Region in your account.</p>
-    /// <p>When you create a load balancer, you can specify a unique name and port settings. To
-    /// change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
-    /// operation.</p>
-    /// <p>The <code>create load balancer</code> operation supports tag-based access control via
-    /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region in your account.</p>
+    /// <p>When you create a load balancer, you can specify a unique name and port settings. To change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.</p>
+    /// <p>The <code>create load balancer</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
@@ -5165,20 +4556,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_port(input);
             self
         }
-        /// <p>The path you provided to perform the load balancer health check. If you didn't specify a
-        /// health check path, Lightsail uses the root path of your website (e.g.,
-        /// <code>"/"</code>).</p>
-        /// <p>You may want to specify a custom health check path other than the root of your application
-        /// if your home page loads slowly or has a lot of media or scripting on it.</p>
+        /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+        /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_path(input.into());
             self
         }
-        /// <p>The path you provided to perform the load balancer health check. If you didn't specify a
-        /// health check path, Lightsail uses the root path of your website (e.g.,
-        /// <code>"/"</code>).</p>
-        /// <p>You may want to specify a custom health check path other than the root of your application
-        /// if your home page loads slowly or has a lot of media or scripting on it.</p>
+        /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+        /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5187,15 +4572,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SSL/TLS certificate.</p>
-        /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is
-        /// required (and vice-versa).</p>
+        /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The name of the SSL/TLS certificate.</p>
-        /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is
-        /// required (and vice-versa).</p>
+        /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5203,18 +4586,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_name(input);
             self
         }
-        /// <p>The domain name with which your certificate is associated (e.g.,
-        /// <code>example.com</code>).</p>
-        /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is
-        /// required (and vice-versa).</p>
+        /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+        /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
         pub fn certificate_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_domain_name(input.into());
             self
         }
-        /// <p>The domain name with which your certificate is associated (e.g.,
-        /// <code>example.com</code>).</p>
-        /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is
-        /// required (and vice-versa).</p>
+        /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+        /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
         pub fn set_certificate_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5226,9 +4605,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
         ///
-        /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate
-        /// (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
-        /// <code>blog.example.com</code>).</p>
+        /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
         pub fn certificate_alternative_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5236,9 +4613,7 @@ pub mod fluent_builders {
             self.inner = self.inner.certificate_alternative_names(input.into());
             self
         }
-        /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate
-        /// (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
-        /// <code>blog.example.com</code>).</p>
+        /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
         pub fn set_certificate_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5266,20 +4641,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address type for the load balancer.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type for the load balancer.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
-        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         /// <p>The default value is <code>dualstack</code>.</p>
         pub fn set_ip_address_type(
             mut self,
@@ -5293,9 +4662,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
     /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
-    /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -5366,19 +4733,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSL/TLS certificate name.</p>
-        /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load
-        /// balancer can have up to 2 certificates associated with it at one time. There is also an
-        /// overall limit to the number of certificates that can be issue in a 365-day period. For more
-        /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+        /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The SSL/TLS certificate name.</p>
-        /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load
-        /// balancer can have up to 2 certificates associated with it at one time. There is also an
-        /// overall limit to the number of certificates that can be issue in a 365-day period. For more
-        /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+        /// <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5403,10 +4764,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
         ///
-        /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS
-        /// certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9
-        /// alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g.,
-        /// <code>*.example.com</code>).</p>
+        /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
         pub fn certificate_alternative_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5414,10 +4772,7 @@ pub mod fluent_builders {
             self.inner = self.inner.certificate_alternative_names(input.into());
             self
         }
-        /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS
-        /// certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9
-        /// alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g.,
-        /// <code>*.example.com</code>).</p>
+        /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
         pub fn set_certificate_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5448,8 +4803,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRelationalDatabase`.
     ///
     /// <p>Creates a new database in Amazon Lightsail.</p>
-    /// <p>The <code>create relational database</code> operation supports tag-based access control
-    /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>create relational database</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -5509,12 +4863,8 @@ pub mod fluent_builders {
         /// <p>The name to use for your new Lightsail database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn relational_database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.relational_database_name(input.into());
@@ -5523,12 +4873,8 @@ pub mod fluent_builders {
         /// <p>The name to use for your new Lightsail database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn set_relational_database_name(
             mut self,
@@ -5537,20 +4883,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_name(input);
             self
         }
-        /// <p>The Availability Zone in which to create your new database. Use the
-        /// <code>us-east-2a</code> case-sensitive format.</p>
-        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
-        /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
-        /// your request.</p>
+        /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
+        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone in which to create your new database. Use the
-        /// <code>us-east-2a</code> case-sensitive format.</p>
-        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
-        /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
-        /// your request.</p>
+        /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
+        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5558,10 +4898,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of
-        /// a database.</p>
-        /// <p>You can get a list of database blueprints IDs by using the <code>get relational database
-        /// blueprints</code> operation.</p>
+        /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
+        /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
         pub fn relational_database_blueprint_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -5569,10 +4907,8 @@ pub mod fluent_builders {
             self.inner = self.inner.relational_database_blueprint_id(input.into());
             self
         }
-        /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of
-        /// a database.</p>
-        /// <p>You can get a list of database blueprints IDs by using the <code>get relational database
-        /// blueprints</code> operation.</p>
+        /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
+        /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
         pub fn set_relational_database_blueprint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5580,10 +4916,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_blueprint_id(input);
             self
         }
-        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
-        /// your database.</p>
-        /// <p>You can get a list of database bundle IDs by using the <code>get relational database
-        /// bundles</code> operation.</p>
+        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
+        /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
         pub fn relational_database_bundle_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -5591,10 +4925,8 @@ pub mod fluent_builders {
             self.inner = self.inner.relational_database_bundle_id(input.into());
             self
         }
-        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
-        /// your database.</p>
-        /// <p>You can get a list of database bundle IDs by using the <code>get relational database
-        /// bundles</code> operation.</p>
+        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
+        /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
         pub fn set_relational_database_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5603,96 +4935,42 @@ pub mod fluent_builders {
             self
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
-        /// <p>The name of the database to create when the Lightsail database resource is created. If
-        /// this parameter isn't specified, no database is created in the database resource.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, no database is created in the database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1 to 64 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
-        /// (0- 9).</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a word reserved by the specified database engine.</p>
-        /// <p>For more information about reserved words in MySQL, see the Keywords and Reserved
-        /// Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
-        /// </li>
+        /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
+        /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
+        /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in MySQL, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
-        /// <p>The name of the database to create when the Lightsail database resource is created. If
-        /// this parameter isn't specified, a database named <code>postgres</code> is created in the
-        /// database resource.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1 to 63 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
-        /// (0- 9).</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a word reserved by the specified database engine.</p>
-        /// <p>For more information about reserved words in PostgreSQL, see the SQL Key Words
-        /// articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL
-        /// 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
-        /// 12</a>.</p>
-        /// </li>
+        /// <li> <p>Must contain 1 to 63 letters or numbers.</p> </li>
+        /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
+        /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
         /// </ul>
         pub fn master_database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_database_name(input.into());
             self
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
-        /// <p>The name of the database to create when the Lightsail database resource is created. If
-        /// this parameter isn't specified, no database is created in the database resource.</p>
+        /// <p> <b>MySQL</b> </p>
+        /// <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, no database is created in the database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1 to 64 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
-        /// (0- 9).</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a word reserved by the specified database engine.</p>
-        /// <p>For more information about reserved words in MySQL, see the Keywords and Reserved
-        /// Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
-        /// </li>
+        /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
+        /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
+        /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in MySQL, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
-        /// <p>The name of the database to create when the Lightsail database resource is created. If
-        /// this parameter isn't specified, a database named <code>postgres</code> is created in the
-        /// database resource.</p>
+        /// <p> <b>PostgreSQL</b> </p>
+        /// <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1 to 63 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits
-        /// (0- 9).</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a word reserved by the specified database engine.</p>
-        /// <p>For more information about reserved words in PostgreSQL, see the SQL Key Words
-        /// articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL
-        /// 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
-        /// 12</a>.</p>
-        /// </li>
+        /// <li> <p>Must contain 1 to 63 letters or numbers.</p> </li>
+        /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
+        /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
         /// </ul>
         pub fn set_master_database_name(
             mut self,
@@ -5702,96 +4980,42 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the master user.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
+        /// <p> <b>MySQL</b> </p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Required for MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
-        /// Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
-        /// </li>
+        /// <li> <p>Required for MySQL.</p> </li>
+        /// <li> <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Required for PostgreSQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
-        /// Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL
-        /// 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL
-        /// 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
-        /// 12</a>.</p>
-        /// </li>
+        /// <li> <p>Required for PostgreSQL.</p> </li>
+        /// <li> <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
         /// </ul>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The name for the master user.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
+        /// <p> <b>MySQL</b> </p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Required for MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
-        /// Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p>
-        /// </li>
+        /// <li> <p>Required for MySQL.</p> </li>
+        /// <li> <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Required for PostgreSQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and
-        /// Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL
-        /// 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL
-        /// 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
-        /// 12</a>.</p>
-        /// </li>
+        /// <li> <p>Required for PostgreSQL.</p> </li>
+        /// <li> <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
         /// </ul>
         pub fn set_master_username(
             mut self,
@@ -5800,29 +5024,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_master_username(input);
             self
         }
-        /// <p>The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@". It cannot contain spaces.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
+        /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>
+        /// <p> <b>MySQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
-        /// <p>The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@". It cannot contain spaces.</p>
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
+        /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>
+        /// <p> <b>MySQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn set_master_user_password(
             mut self,
@@ -5831,53 +5045,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_master_user_password(input);
             self
         }
-        /// <p>The daily time range during which automated backups are created for your new database if
-        /// automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region. For more information about the preferred backup window time blocks for each
-        /// region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
-        /// <p>Example: <code>16:00-16:30</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must not conflict with the preferred maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
+        /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
         /// </ul>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
-        /// <p>The daily time range during which automated backups are created for your new database if
-        /// automated backups are enabled.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region. For more information about the preferred backup window time blocks for each
-        /// region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
+        /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
-        /// <p>Example: <code>16:00-16:30</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must not conflict with the preferred maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
+        /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
         /// </ul>
         pub fn set_preferred_backup_window(
             mut self,
@@ -5886,28 +5074,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_backup_window(input);
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur on your new
-        /// database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region, occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur on your new database.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
+        /// <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
         /// </ul>
         pub fn preferred_maintenance_window(
             mut self,
@@ -5916,28 +5091,15 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur on your new
-        /// database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region, occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur on your new database.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
+        /// <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
         /// </ul>
         pub fn set_preferred_maintenance_window(
             mut self,
@@ -5946,18 +5108,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
-        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
@@ -5985,12 +5141,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRelationalDatabaseFromSnapshot`.
     ///
     /// <p>Creates a new database from an existing database snapshot in Amazon Lightsail.</p>
-    /// <p>You can create a new database from a snapshot in if something goes wrong with your
-    /// original database, or to change it to a different plan, such as a high availability or
-    /// standard plan.</p>
-    /// <p>The <code>create relational database from snapshot</code> operation supports tag-based
-    /// access control via request tags and resource tags applied to the resource identified by
-    /// relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>You can create a new database from a snapshot in if something goes wrong with your original database, or to change it to a different plan, such as a high availability or standard plan.</p>
+    /// <p>The <code>create relational database from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabaseFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -6052,12 +5204,8 @@ pub mod fluent_builders {
         /// <p>The name to use for your new Lightsail database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn relational_database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.relational_database_name(input.into());
@@ -6066,12 +5214,8 @@ pub mod fluent_builders {
         /// <p>The name to use for your new Lightsail database resource.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn set_relational_database_name(
             mut self,
@@ -6080,20 +5224,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_name(input);
             self
         }
-        /// <p>The Availability Zone in which to create your new database. Use the
-        /// <code>us-east-2a</code> case-sensitive format.</p>
-        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
-        /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
-        /// your request.</p>
+        /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
+        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone in which to create your new database. Use the
-        /// <code>us-east-2a</code> case-sensitive format.</p>
-        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
-        /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
-        /// your request.</p>
+        /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
+        /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6101,18 +5239,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
-        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
@@ -6133,12 +5265,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_snapshot_name(input);
             self
         }
-        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
-        /// your database.</p>
-        /// <p>You can get a list of database bundle IDs by using the <code>get relational database
-        /// bundles</code> operation.</p>
-        /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller
-        /// than the bundle of the source database.</p>
+        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
+        /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
+        /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
         pub fn relational_database_bundle_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -6146,12 +5275,9 @@ pub mod fluent_builders {
             self.inner = self.inner.relational_database_bundle_id(input.into());
             self
         }
-        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
-        /// your database.</p>
-        /// <p>You can get a list of database bundle IDs by using the <code>get relational database
-        /// bundles</code> operation.</p>
-        /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller
-        /// than the bundle of the source database.</p>
+        /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
+        /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
+        /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
         pub fn set_relational_database_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6178,21 +5304,10 @@ pub mod fluent_builders {
         /// <p>The date and time to restore your database from.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be before the latest restorable time for the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is
-        /// <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the restore time.</p>
-        /// </li>
+        /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
+        /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
         /// </ul>
         pub fn restore_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.restore_time(input);
@@ -6201,21 +5316,10 @@ pub mod fluent_builders {
         /// <p>The date and time to restore your database from.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be before the latest restorable time for the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is
-        /// <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the restore time.</p>
-        /// </li>
+        /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
+        /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
         /// </ul>
         pub fn set_restore_time(
             mut self,
@@ -6224,22 +5328,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_restore_time(input);
             self
         }
-        /// <p>Specifies whether your database is restored from the latest backup time. A value of
-        /// <code>true</code> restores from the latest backup time. </p>
-        /// <p>Default: <code>false</code>
-        /// </p>
-        /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is
-        /// provided.</p>
+        /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
+        /// <p>Default: <code>false</code> </p>
+        /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
         pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
             self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
-        /// <p>Specifies whether your database is restored from the latest backup time. A value of
-        /// <code>true</code> restores from the latest backup time. </p>
-        /// <p>Default: <code>false</code>
-        /// </p>
-        /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is
-        /// provided.</p>
+        /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
+        /// <p>Default: <code>false</code> </p>
+        /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
         pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_use_latest_restorable_time(input);
             self
@@ -6266,10 +5364,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRelationalDatabaseSnapshot`.
     ///
-    /// <p>Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups,
-    /// to make copies of a database, and to save data before deleting a database.</p>
-    /// <p>The <code>create relational database snapshot</code> operation supports tag-based access
-    /// control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a database, and to save data before deleting a database.</p>
+    /// <p>The <code>create relational database snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabaseSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -6342,12 +5438,8 @@ pub mod fluent_builders {
         /// <p>The name for your new database snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn relational_database_snapshot_name(
             mut self,
@@ -6359,12 +5451,8 @@ pub mod fluent_builders {
         /// <p>The name for your new database snapshot.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn set_relational_database_snapshot_name(
             mut self,
@@ -6396,10 +5484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlarm`.
     ///
     /// <p>Deletes an alarm.</p>
-    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric
-    /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
-    /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
-    /// in Amazon Lightsail</a>.</p>
+    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -6526,14 +5611,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the source instance or disk from which to delete the automatic
-        /// snapshot.</p>
+        /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input.into());
             self
         }
-        /// <p>The name of the source instance or disk from which to delete the automatic
-        /// snapshot.</p>
+        /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6541,16 +5624,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_name(input);
             self
         }
-        /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
-        /// <code>get auto snapshots</code> operation to get the available automatic snapshots for a
-        /// resource.</p>
+        /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
         pub fn date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.date(input.into());
             self
         }
-        /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
-        /// <code>get auto snapshots</code> operation to get the available automatic snapshots for a
-        /// resource.</p>
+        /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
         pub fn set_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_date(input);
             self
@@ -6558,11 +5637,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBucket`.
     ///
-    /// <p>Deletes a Amazon Lightsail bucket.</p>
-    ///
-    /// <note>
-    /// <p>When you delete your bucket, the bucket name is released and can be reused for a new
-    /// bucket in your account or another AWS account.</p>
+    /// <p>Deletes a Amazon Lightsail bucket.</p> <note>
+    /// <p>When you delete your bucket, the bucket name is released and can be reused for a new bucket in your account or another AWS account.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBucket<
@@ -6621,68 +5697,40 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket to delete.</p>
-        ///
-        /// <p>Use the <a>GetBuckets</a> action to get a list of bucket names that you can
-        /// specify.</p>
+        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the bucket to delete.</p>
-        ///
-        /// <p>Use the <a>GetBuckets</a> action to get a list of bucket names that you can
-        /// specify.</p>
+        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
         }
         /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
-        ///
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>The bucket is the origin of a distribution.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has instances that were granted access to it using the <a>SetResourceAccessForBucket</a> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has objects.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has access keys.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <important>
-        /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as
-        /// instances, distributions, or software that use the issued access keys.</p>
+        /// <li> <p>The bucket is the origin of a distribution.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has objects.</p> </li>
+        /// <li> <p>The bucket has access keys.</p> </li>
+        /// </ul> <important>
+        /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
         /// </important>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
         /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
-        ///
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
-        /// <li>
-        /// <p>The bucket is the origin of a distribution.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has instances that were granted access to it using the <a>SetResourceAccessForBucket</a> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has objects.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket has access keys.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <important>
-        /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as
-        /// instances, distributions, or software that use the issued access keys.</p>
+        /// <li> <p>The bucket is the origin of a distribution.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has objects.</p> </li>
+        /// <li> <p>The bucket has access keys.</p> </li>
+        /// </ul> <important>
+        /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
         /// </important>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
@@ -6692,11 +5740,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBucketAccessKey`.
     ///
     /// <p>Deletes an access key for the specified Amazon Lightsail bucket.</p>
-    ///
     /// <p>We recommend that you delete an access key if the secret access key is compromised.</p>
-    ///
-    /// <p>For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
-    /// <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// <p>For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBucketAccessKey<
         C = aws_smithy_client::erase::DynConnector,
@@ -6764,17 +5809,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        ///
-        /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
-        /// you can specify.</p>
+        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_key_id(input.into());
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        ///
-        /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
-        /// you can specify.</p>
+        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6785,11 +5826,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCertificate`.
     ///
-    /// <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN)
-    /// distribution.</p>
-    /// <p>Certificates that are currently attached to a distribution cannot be deleted. Use the
-    /// <code>DetachCertificateFromDistribution</code> action to detach a certificate from a
-    /// distribution.</p>
+    /// <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>Certificates that are currently attached to a distribution cannot be deleted. Use the <code>DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -6847,15 +5885,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the certificate to delete.</p>
-        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The name of the certificate to delete.</p>
-        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6867,10 +5903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactMethod`.
     ///
     /// <p>Deletes a contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources.
-    /// You can add one email address and one mobile phone number contact method in each AWS Region.
-    /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
-    /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactMethod<
         C = aws_smithy_client::erase::DynConnector,
@@ -6927,23 +5960,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
-        /// <note>
-        /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added
-        /// both, you must run separate <code>DeleteContactMethod</code> actions to delete each
-        /// protocol.</p>
+        /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
+        /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
         /// </note>
         pub fn protocol(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
-        /// <note>
-        /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added
-        /// both, you must run separate <code>DeleteContactMethod</code> actions to delete each
-        /// protocol.</p>
+        /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
+        /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
         /// </note>
         pub fn set_protocol(
             mut self,
@@ -6955,8 +5980,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContainerImage`.
     ///
-    /// <p>Deletes a container image that is registered to your Amazon Lightsail container
-    /// service.</p>
+    /// <p>Deletes a container image that is registered to your Amazon Lightsail container service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -7024,32 +6048,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the container image to delete from the container service.</p>
-        ///
-        /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images
-        /// that are registered to a container service.</p>
-        ///
-        /// <note>
-        /// <p>Container images sourced from your Lightsail container service, that are registered
-        /// and stored on your service, start with a colon (<code>:</code>). For example,
-        /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a
-        /// public registry like Docker Hub don't start with a colon. For example,
-        /// <code>nginx:latest</code> or <code>nginx</code>.</p>
+        /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
+        /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
         /// </note>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image(input.into());
             self
         }
         /// <p>The name of the container image to delete from the container service.</p>
-        ///
-        /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images
-        /// that are registered to a container service.</p>
-        ///
-        /// <note>
-        /// <p>Container images sourced from your Lightsail container service, that are registered
-        /// and stored on your service, start with a colon (<code>:</code>). For example,
-        /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a
-        /// public registry like Docker Hub don't start with a colon. For example,
-        /// <code>nginx:latest</code> or <code>nginx</code>.</p>
+        /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
+        /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
         /// </note>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image(input);
@@ -7128,14 +6136,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDisk`.
     ///
-    /// <p>Deletes the specified block storage disk. The disk must be in the <code>available</code>
-    /// state (not attached to a Lightsail instance).</p>
-    /// <note>
+    /// <p>Deletes the specified block storage disk. The disk must be in the <code>available</code> state (not attached to a Lightsail instance).</p> <note>
     /// <p>The disk may remain in the <code>deleting</code> state for several minutes.</p>
     /// </note>
-    /// <p>The <code>delete disk</code> operation supports tag-based access control via resource tags
-    /// applied to the resource identified by <code>disk name</code>. For more information, see the
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDisk<
         C = aws_smithy_client::erase::DynConnector,
@@ -7216,14 +6220,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDiskSnapshot`.
     ///
     /// <p>Deletes the specified disk snapshot.</p>
-    /// <p>When you make periodic snapshots of a disk, the snapshots are incremental, and only the
-    /// blocks on the device that have changed since your last snapshot are saved in the new snapshot.
-    /// When you delete a snapshot, only the data not needed for any other snapshot is removed. So
-    /// regardless of which prior snapshots have been deleted, all active snapshots will have access
-    /// to all the information needed to restore the disk.</p>
-    /// <p>The <code>delete disk snapshot</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>disk snapshot name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>When you make periodic snapshots of a disk, the snapshots are incremental, and only the blocks on the device that have changed since your last snapshot are saved in the new snapshot. When you delete a snapshot, only the data not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all active snapshots will have access to all the information needed to restore the disk.</p>
+    /// <p>The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>disk snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDiskSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -7280,14 +6278,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the disk snapshot you want to delete (e.g.,
-        /// <code>my-disk-snapshot</code>).</p>
+        /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
         pub fn disk_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.disk_snapshot_name(input.into());
             self
         }
-        /// <p>The name of the disk snapshot you want to delete (e.g.,
-        /// <code>my-disk-snapshot</code>).</p>
+        /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
         pub fn set_disk_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7356,15 +6352,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution to delete.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution to delete.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7376,9 +6370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
     /// <p>Deletes the specified domain recordset and all of its domain records.</p>
-    /// <p>The <code>delete domain</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>domain name</code>. For more information, see
-    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -7449,9 +6441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomainEntry`.
     ///
     /// <p>Deletes a specific domain entry.</p>
-    /// <p>The <code>delete domain entry</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>domain name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
@@ -7535,9 +6525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInstance`.
     ///
     /// <p>Deletes an Amazon Lightsail instance.</p>
-    /// <p>The <code>delete instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>instance name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -7620,11 +6608,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInstanceSnapshot`.
     ///
-    /// <p>Deletes a specific snapshot of a virtual private server (or
-    /// <i>instance</i>).</p>
-    /// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>instance snapshot name</code>. For
-    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Deletes a specific snapshot of a virtual private server (or <i>instance</i>).</p>
+    /// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -7698,11 +6683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteKeyPair`.
     ///
     /// <p>Deletes a specific SSH key pair.</p>
-    ///
-    ///
-    /// <p>The <code>delete key pair</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>key pair name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>key pair name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyPair<
         C = aws_smithy_client::erase::DynConnector,
@@ -7775,14 +6756,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteKnownHostKeys`.
     ///
-    /// <p>Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or
-    /// RDP clients to authenticate an instance. This operation enables the Lightsail browser-based
-    /// SSH or RDP clients to connect to the instance after a host key mismatch.</p>
-    /// <important>
-    /// <p>Perform this operation only if you were expecting the host key or certificate mismatch
-    /// or if you are familiar with the new host key or certificate on the instance. For more
-    /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP
-    /// client</a>.</p>
+    /// <p>Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the instance after a host key mismatch.</p> <important>
+    /// <p>Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar with the new host key or certificate on the instance. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKnownHostKeys<
@@ -7856,12 +6831,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLoadBalancer`.
     ///
-    /// <p>Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the
-    /// load balancer is deleted, you will need to create a new load balancer, create a new
-    /// certificate, and verify domain ownership again.</p>
-    /// <p>The <code>delete load balancer</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>load balancer name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted, you will need to create a new load balancer, create a new certificate, and verify domain ownership again.</p>
+    /// <p>The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
@@ -7935,9 +6906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoadBalancerTlsCertificate`.
     ///
     /// <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
-    /// <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
@@ -8021,17 +6990,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
-        /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and
-        /// the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate
-        /// is in use by an instance attached to the load balancer.</p>
+        /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
         /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
-        /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and
-        /// the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate
-        /// is in use by an instance attached to the load balancer.</p>
+        /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -8040,9 +7005,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRelationalDatabase`.
     ///
     /// <p>Deletes a database in Amazon Lightsail.</p>
-    /// <p>The <code>delete relational database</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -8112,42 +7075,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_name(input);
             self
         }
-        /// <p>Determines whether a final database snapshot is created before your database is deleted.
-        /// If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is
-        /// specified, a database snapshot is created before your database is deleted.</p>
-        /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the
-        /// <code>skip final snapshot</code> parameter is <code>false</code>.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
+        /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn skip_final_snapshot(mut self, input: bool) -> Self {
             self.inner = self.inner.skip_final_snapshot(input);
             self
         }
-        /// <p>Determines whether a final database snapshot is created before your database is deleted.
-        /// If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is
-        /// specified, a database snapshot is created before your database is deleted.</p>
-        /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the
-        /// <code>skip final snapshot</code> parameter is <code>false</code>.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
+        /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_final_snapshot(input);
             self
         }
-        /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is
-        /// <code>false</code>, which is the default value for that parameter.</p>
-        /// <note>
-        /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code>
-        /// parameter to <code>true</code> results in an error.</p>
+        /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+        /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
         /// </note>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn final_relational_database_snapshot_name(
             mut self,
@@ -8158,20 +7106,13 @@ pub mod fluent_builders {
                 .final_relational_database_snapshot_name(input.into());
             self
         }
-        /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is
-        /// <code>false</code>, which is the default value for that parameter.</p>
-        /// <note>
-        /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code>
-        /// parameter to <code>true</code> results in an error.</p>
+        /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+        /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
         /// </note>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first and last character must be a letter or number.</p>
-        /// </li>
+        /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+        /// <li> <p>The first and last character must be a letter or number.</p> </li>
         /// </ul>
         pub fn set_final_relational_database_snapshot_name(
             mut self,
@@ -8186,9 +7127,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRelationalDatabaseSnapshot`.
     ///
     /// <p>Deletes a database snapshot in Amazon Lightsail.</p>
-    /// <p>The <code>delete relational database snapshot</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by relationalDatabaseName. For
-    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>delete relational database snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRelationalDatabaseSnapshot<
         C = aws_smithy_client::erase::DynConnector,
@@ -8264,10 +7203,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachCertificateFromDistribution`.
     ///
-    /// <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN)
-    /// distribution.</p>
-    /// <p>After the certificate is detached, your distribution stops accepting traffic for all of
-    /// the domains that are associated with the certificate.</p>
+    /// <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>After the certificate is detached, your distribution stops accepting traffic for all of the domains that are associated with the certificate.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachCertificateFromDistribution<
         C = aws_smithy_client::erase::DynConnector,
@@ -8325,15 +7262,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution from which to detach the certificate.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution from which to detach the certificate.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8344,12 +7279,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachDisk`.
     ///
-    /// <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount
-    /// any file systems on the device within your operating system before stopping the instance and
-    /// detaching the disk.</p>
-    /// <p>The <code>detach disk</code> operation supports tag-based access control via resource tags
-    /// applied to the resource identified by <code>disk name</code>. For more information, see the
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the device within your operating system before stopping the instance and detaching the disk.</p>
+    /// <p>The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachDisk<
         C = aws_smithy_client::erase::DynConnector,
@@ -8406,14 +7337,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of the disk you want to detach from your instance (e.g.,
-        /// <code>my-disk</code>).</p>
+        /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
         pub fn disk_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.disk_name(input.into());
             self
         }
-        /// <p>The unique name of the disk you want to detach from your instance (e.g.,
-        /// <code>my-disk</code>).</p>
+        /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
         pub fn set_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_disk_name(input);
             self
@@ -8422,11 +7351,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachInstancesFromLoadBalancer`.
     ///
     /// <p>Detaches the specified instances from a Lightsail load balancer.</p>
-    /// <p>This operation waits until the instances are no longer needed before they are detached
-    /// from the load balancer.</p>
-    /// <p>The <code>detach instances from load balancer</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>This operation waits until the instances are no longer needed before they are detached from the load balancer.</p>
+    /// <p>The <code>detach instances from load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachInstancesFromLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
@@ -8500,14 +7426,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
-        /// <p>An array of strings containing the names of the instances you want to detach from the load
-        /// balancer.</p>
+        /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_names(input.into());
             self
         }
-        /// <p>An array of strings containing the names of the instances you want to detach from the load
-        /// balancer.</p>
+        /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8737,8 +7661,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAddOn`.
     ///
-    /// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see
-    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAddOn<
         C = aws_smithy_client::erase::DynConnector,
@@ -8824,20 +7747,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportSnapshot`.
     ///
-    /// <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
-    /// This operation results in an export snapshot record that can be used with the <code>create
-    /// cloud formation stack</code> operation to create new Amazon EC2 instances.</p>
-    /// <p>Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the
-    /// instance system disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots appear in
-    /// Amazon EC2 as Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services Region in Amazon EC2 as the
-    /// source Lightsail snapshot.</p>
+    /// <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot record that can be used with the <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.</p>
+    /// <p>Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots appear in Amazon EC2 as Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services Region in Amazon EC2 as the source Lightsail snapshot.</p>
     /// <p></p>
-    /// <p>The <code>export snapshot</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>source snapshot name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Use the <code>get instance snapshots</code> or <code>get disk snapshots</code>
-    /// operations to get a list of snapshots that you can export to Amazon EC2.</p>
+    /// <p>The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>source snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p> <note>
+    /// <p>Use the <code>get instance snapshots</code> or <code>get disk snapshots</code> operations to get a list of snapshots that you can export to Amazon EC2.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportSnapshot<
@@ -8969,17 +7883,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -8987,13 +7897,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAlarms`.
     ///
-    /// <p>Returns information about the configured alarms. Specify an alarm name in your request to
-    /// return information about a specific alarm, or specify a monitored resource name to return
-    /// information about all alarms for a specific resource.</p>
-    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric
-    /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
-    /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
-    /// in Amazon Lightsail</a>.</p>
+    /// <p>Returns information about the configured alarms. Specify an alarm name in your request to return information about a specific alarm, or specify a monitored resource name to return information about all alarms for a specific resource.</p>
+    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlarms<
         C = aws_smithy_client::erase::DynConnector,
@@ -9063,31 +7968,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
         }
         /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
-        /// <p>Specify a monitored resource name to return information about all alarms for a specific
-        /// resource.</p>
+        /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
         pub fn monitored_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitored_resource_name(input.into());
             self
         }
         /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
-        /// <p>Specify a monitored resource name to return information about all alarms for a specific
-        /// resource.</p>
+        /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
         pub fn set_monitored_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9098,8 +7997,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAutoSnapshots`.
     ///
-    /// <p>Returns the available automatic snapshots for an instance or disk. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Returns the available automatic snapshots for an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoSnapshots<
         C = aws_smithy_client::erase::DynConnector,
@@ -9156,14 +8054,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the source instance or disk from which to get automatic snapshot
-        /// information.</p>
+        /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input.into());
             self
         }
-        /// <p>The name of the source instance or disk from which to get automatic snapshot
-        /// information.</p>
+        /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9174,15 +8070,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBlueprints`.
     ///
-    /// <p>Returns the list of available instance images, or <i>blueprints</i>. You can
-    /// use a blueprint to create a new instance already running a specific operating system, as well
-    /// as a preinstalled app or development stack. The software each instance is running depends on
-    /// the blueprint image you choose.</p>
-    /// <note>
-    /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to
-    /// support customers with existing instances and are not necessarily available to create new
-    /// instances. Blueprints are marked inactive when they become outdated due to operating system
-    /// updates or new application releases.</p>
+    /// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p> <note>
+    /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprints<
@@ -9251,17 +8140,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -9269,12 +8154,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBucketAccessKeys`.
     ///
-    /// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p>
-    ///
-    /// <important>
-    /// <p>This action does not return the secret access key value of an access key. You can get a
-    /// secret access key only when you create it from the response of the <a>CreateBucketAccessKey</a> action. If you lose the secret access key, you must
-    /// create a new access key.</p>
+    /// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p> <important>
+    /// <p>This action does not return the secret access key value of an access key. You can get a secret access key only when you create it from the response of the <code>CreateBucketAccessKey</code> action. If you lose the secret access key, you must create a new access key.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketAccessKeys<
@@ -9346,12 +8227,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketBundles`.
     ///
     /// <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
-    ///
-    /// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a
-    /// bucket.</p>
-    ///
-    /// <p>Use the <a>UpdateBucketBundle</a> action to update the bundle for a
-    /// bucket.</p>
+    /// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.</p>
+    /// <p>Use the <code>UpdateBucketBundle</code> action to update the bundle for a bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketBundles<
         C = aws_smithy_client::erase::DynConnector,
@@ -9408,14 +8285,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
-        /// response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.inner = self.inner.include_inactive(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
-        /// response.</p>
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_inactive(input);
             self
@@ -9424,10 +8299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketMetricData`.
     ///
     /// <p>Returns the data points of a specific metric for an Amazon Lightsail bucket.</p>
-    ///
-    /// <p>Metrics report the utilization of a bucket. View and collect metric data regularly to
-    /// monitor the number of objects stored in a bucket (including object versions) and the storage
-    /// space used by those objects.</p>
+    /// <p>Metrics report the utilization of a bucket. View and collect metric data regularly to monitor the number of objects stored in a bucket (including object versions) and the storage space used by those objects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -9495,74 +8367,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        ///
-        /// <p>Valid bucket metric names are listed below, along with the most useful statistics to
-        /// include in your request, and the published unit value.</p>
-        ///
-        /// <note>
+        /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
         /// <p>These bucket metrics are reported once per day.</p>
         /// </note>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BucketSizeBytes</code>
-        /// </b> - The amount of data in
-        /// bytes stored in a bucket. This value is calculated by summing the size of all objects in
-        /// the bucket (including object versions), including the size of all parts for all incomplete
-        /// multipart uploads to the bucket.</p>
-        /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-        /// <p>Unit: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NumberOfObjects</code>
-        /// </b> - The total number of
-        /// objects stored in a bucket. This value is calculated by counting all objects in the bucket
-        /// (including object versions) and the total number of parts for all incomplete multipart
-        /// uploads to the bucket.</p>
-        /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::BucketMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        ///
-        /// <p>Valid bucket metric names are listed below, along with the most useful statistics to
-        /// include in your request, and the published unit value.</p>
-        ///
-        /// <note>
+        /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>
         /// <p>These bucket metrics are reported once per day.</p>
         /// </note>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BucketSizeBytes</code>
-        /// </b> - The amount of data in
-        /// bytes stored in a bucket. This value is calculated by summing the size of all objects in
-        /// the bucket (including object versions), including the size of all parts for all incomplete
-        /// multipart uploads to the bucket.</p>
-        /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
-        /// <p>Unit: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NumberOfObjects</code>
-        /// </b> - The total number of
-        /// objects stored in a bucket. This value is calculated by counting all objects in the bucket
-        /// (including object versions) and the total number of parts for all incomplete multipart
-        /// uploads to the bucket.</p>
-        /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -9597,19 +8419,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <note>
-        /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period
-        /// of 86400 seconds, which is the number of seconds in a day.</p>
+        /// <p>The granularity, in seconds, of the returned data points.</p> <note>
+        /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
         /// </note>
         pub fn period(mut self, input: i32) -> Self {
             self.inner = self.inner.period(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <note>
-        /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period
-        /// of 86400 seconds, which is the number of seconds in a day.</p>
+        /// <p>The granularity, in seconds, of the returned data points.</p> <note>
+        /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
         /// </note>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
@@ -9620,76 +8438,26 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
         ///
         /// <p>The statistic for the metric.</p>
-        ///
         /// <p>The following statistics are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - The sum of all values submitted for the matching metric. You can
-        /// use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
-        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
-        /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
-        /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
-        ///
         /// <p>The following statistics are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - The sum of all values submitted for the matching metric. You can
-        /// use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
-        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
-        /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
-        /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -9699,15 +8467,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unit for the metric data request.</p>
-        /// <p>Valid units depend on the metric data being requested. For the valid units with each
-        /// available metric, see the <code>metricName</code> parameter.</p>
+        /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
             self.inner = self.inner.unit(input);
             self
         }
         /// <p>The unit for the metric data request.</p>
-        /// <p>Valid units depend on the metric data being requested. For the valid units with each
-        /// available metric, see the <code>metricName</code> parameter.</p>
+        /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -9716,9 +8482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBuckets`.
     ///
     /// <p>Returns information about one or more Amazon Lightsail buckets.</p>
-    ///
-    /// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-    /// Guide</i>..</p>
+    /// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuckets<
         C = aws_smithy_client::erase::DynConnector,
@@ -9776,47 +8540,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the
-        /// request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the bucket for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the
-        /// request is made.</p>
+        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
-        /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
-        /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
-        /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
         pub fn include_connected_resources(mut self, input: bool) -> Self {
             self.inner = self.inner.include_connected_resources(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
-        /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
         pub fn set_include_connected_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_connected_resources(input);
             self
@@ -9824,8 +8576,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBundles`.
     ///
-    /// <p>Returns the list of bundles that are available for purchase. A bundle describes the specs
-    /// for your virtual private server (or <i>instance</i>).</p>
+    /// <p>Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual private server (or <i>instance</i>).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBundles<
         C = aws_smithy_client::erase::DynConnector,
@@ -9882,30 +8633,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your
-        /// request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
         pub fn include_inactive(mut self, input: bool) -> Self {
             self.inner = self.inner.include_inactive(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include inactive bundle results in your
-        /// request.</p>
+        /// <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
         pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_inactive(input);
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -9913,11 +8658,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCertificates`.
     ///
-    /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p>
-    /// <note>
-    /// <p>To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from
-    /// your request. The response will include only the certificate Amazon Resource Name (ARN),
-    /// certificate name, domain name, and tags.</p>
+    /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p> <note>
+    /// <p>To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCertificates<
@@ -9980,19 +8722,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
         ///
         /// <p>The status of the certificates for which to return information.</p>
-        /// <p>For example, specify <code>ISSUED</code> to return only certificates with an
-        /// <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
-        /// request is made, regardless of their current status.</p>
+        /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
         pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
             self.inner = self.inner.certificate_statuses(input);
             self
         }
         /// <p>The status of the certificates for which to return information.</p>
-        /// <p>For example, specify <code>ISSUED</code> to return only certificates with an
-        /// <code>ISSUED</code> status.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
-        /// request is made, regardless of their current status.</p>
+        /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
+        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
         pub fn set_certificate_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -10000,32 +8738,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_statuses(input);
             self
         }
-        /// <p>Indicates whether to include detailed information about the certificates in the
-        /// response.</p>
-        /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names
-        /// (ARNs), domain names, and tags.</p>
+        /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
+        /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
         pub fn include_certificate_details(mut self, input: bool) -> Self {
             self.inner = self.inner.include_certificate_details(input);
             self
         }
-        /// <p>Indicates whether to include detailed information about the certificates in the
-        /// response.</p>
-        /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names
-        /// (ARNs), domain names, and tags.</p>
+        /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
+        /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
         pub fn set_include_certificate_details(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_certificate_details(input);
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
-        /// request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
         pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
-        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
-        /// request is made.</p>
+        /// <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10036,10 +8768,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCloudFormationStackRecords`.
     ///
-    /// <p>Returns the CloudFormation stack record created as a result of the <code>create cloud
-    /// formation stack</code> operation.</p>
-    /// <p>An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail
-    /// snapshot.</p>
+    /// <p>Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p>
+    /// <p>An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail snapshot.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFormationStackRecords<
         C = aws_smithy_client::erase::DynConnector,
@@ -10097,17 +8827,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -10115,12 +8841,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContactMethods`.
     ///
-    /// <p>Returns information about the configured contact methods. Specify a protocol in your
-    /// request to return information about a specific contact method.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources.
-    /// You can add one email address and one mobile phone number contact method in each AWS Region.
-    /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
-    /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>Returns information about the configured contact methods. Specify a protocol in your request to return information about a specific contact method.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactMethods<
         C = aws_smithy_client::erase::DynConnector,
@@ -10181,18 +8903,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code>
-        /// (text messaging).</p>
-        /// <p>Specify a protocol in your request to return information about a specific contact method
-        /// protocol.</p>
+        /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
+        /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
         pub fn protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.protocols(input);
             self
         }
-        /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code>
-        /// (text messaging).</p>
-        /// <p>Specify a protocol in your request to return information about a specific contact method
-        /// protocol.</p>
+        /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
+        /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -10203,8 +8921,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerAPIMetadata`.
     ///
-    /// <p>Returns information about Amazon Lightsail containers, such as the current version of the
-    /// Lightsail Control (lightsailctl) plugin.</p>
+    /// <p>Returns information about Amazon Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerAPIMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -10264,13 +8981,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerImages`.
     ///
-    /// <p>Returns the container images that are registered to your Amazon Lightsail container
-    /// service.</p>
-    ///
-    /// <note>
-    /// <p>If you created a deployment on your Lightsail container service that uses container
-    /// images from a public registry like Docker Hub, those images are not returned as part of this
-    /// action. Those images are not registered to your Lightsail container service.</p>
+    /// <p>Returns the container images that are registered to your Amazon Lightsail container service.</p> <note>
+    /// <p>If you created a deployment on your Lightsail container service that uses container images from a public registry like Docker Hub, those images are not returned as part of this action. Those images are not registered to your Lightsail container service.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerImages<
@@ -10342,15 +9054,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerLog`.
     ///
     /// <p>Returns the log events of a container of your Amazon Lightsail container service.</p>
-    ///
-    /// <p>If your container service has more than one node (i.e., a scale greater than 1), then the
-    /// log events that are returned for the specified container are merged from all nodes on your
-    /// container service.</p>
-    ///
-    /// <note>
-    /// <p>Container logs are retained for a certain amount of time. For more information, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
-    /// endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>If your container service has more than one node (i.e., a scale greater than 1), then the log events that are returned for the specified container are merged from all nodes on your container service.</p> <note>
+    /// <p>Container logs are retained for a certain amount of time. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerLog<
@@ -10418,14 +9123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The name of the container that is either running or previously ran on the container
-        /// service for which to return a log.</p>
+        /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
         pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_name(input.into());
             self
         }
-        /// <p>The name of the container that is either running or previously ran on the container
-        /// service for which to return a log.</p>
+        /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10434,42 +9137,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start of the time interval for which to get log data.</p>
-        ///
         /// <p>Constraints:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        ///
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
-        ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time interval for which to get log data.</p>
-        ///
         /// <p>Constraints:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        ///
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
-        ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn set_start_time(
             mut self,
@@ -10479,42 +9162,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time interval for which to get log data.</p>
-        ///
         /// <p>Constraints:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        ///
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
         /// </ul>
-        ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time interval for which to get log data.</p>
-        ///
         /// <p>Constraints:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        ///
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
         /// </ul>
-        ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn set_end_time(
             mut self,
@@ -10524,60 +9187,26 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pattern to use to filter the returned log events to a specific term.</p>
-        ///
         /// <p>The following are a few examples of filter patterns that you can specify:</p>
         /// <ul>
-        /// <li>
-        /// <p>To return all log events, specify a filter pattern of <code>""</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To exclude log events that contain the <code>ERROR</code> term, and return all other
-        /// log events, specify a filter pattern of <code>"-ERROR"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain the <code>ERROR</code> term, specify a filter
-        /// pattern of <code>"ERROR"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain both the <code>ERROR</code> and
-        /// <code>Exception</code> terms, specify a filter pattern of <code>"ERROR
-        /// Exception"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain the <code>ERROR</code>
-        /// <i>or</i> the <code>Exception</code> term, specify a filter pattern of
-        /// <code>"?ERROR ?Exception"</code>.</p>
-        /// </li>
+        /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
+        /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
+        /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
+        /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
+        /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
         /// </ul>
         pub fn filter_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_pattern(input.into());
             self
         }
         /// <p>The pattern to use to filter the returned log events to a specific term.</p>
-        ///
         /// <p>The following are a few examples of filter patterns that you can specify:</p>
         /// <ul>
-        /// <li>
-        /// <p>To return all log events, specify a filter pattern of <code>""</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To exclude log events that contain the <code>ERROR</code> term, and return all other
-        /// log events, specify a filter pattern of <code>"-ERROR"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain the <code>ERROR</code> term, specify a filter
-        /// pattern of <code>"ERROR"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain both the <code>ERROR</code> and
-        /// <code>Exception</code> terms, specify a filter pattern of <code>"ERROR
-        /// Exception"</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To return log events that contain the <code>ERROR</code>
-        /// <i>or</i> the <code>Exception</code> term, specify a filter pattern of
-        /// <code>"?ERROR ?Exception"</code>.</p>
-        /// </li>
+        /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
+        /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
+        /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
+        /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
+        /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
         /// </ul>
         pub fn set_filter_pattern(
             mut self,
@@ -10587,19 +9216,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
-        /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
-        /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -10608,17 +9231,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerServiceDeployments`.
     ///
     /// <p>Returns the deployments for your Amazon Lightsail container service</p>
-    ///
-    /// <p>A deployment specifies the settings, such as the ports and launch command, of containers
-    /// that are deployed to your container service.</p>
-    ///
-    /// <p>The deployments are ordered by version in ascending order. The newest version is listed at
-    /// the top of the response.</p>
-    ///
-    /// <note>
-    /// <p>A set number of deployments are kept before the oldest one is replaced with the newest
-    /// one. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
-    /// endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
+    /// <p>The deployments are ordered by version in ascending order. The newest version is listed at the top of the response.</p> <note>
+    /// <p>A set number of deployments are kept before the oldest one is replaced with the newest one. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServiceDeployments<
@@ -10689,11 +9304,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerServiceMetricData`.
     ///
-    /// <p>Returns the data points of a specific metric of your Amazon Lightsail container
-    /// service.</p>
-    ///
-    /// <p>Metrics report the utilization of your resources. Monitor and collect metric data
-    /// regularly to maintain the reliability, availability, and performance of your resources.</p>
+    /// <p>Returns the data points of a specific metric of your Amazon Lightsail container service.</p>
+    /// <p>Metrics report the utilization of your resources. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServiceMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -10761,58 +9373,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        ///
-        /// <p>Valid container service metric names are listed below, along with the most useful
-        /// statistics to include in your request, and the published unit value.</p>
-        ///
+        /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CPUUtilization</code> - The average percentage of compute units that are
-        /// currently in use across all nodes of the container service. This metric identifies the
-        /// processing power required to run containers on each node of the container service.</p>
-        /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MemoryUtilization</code> - The average percentage of available memory that is
-        /// currently in use across all nodes of the container service. This metric identifies the
-        /// memory required to run containers on each node of the container service.</p>
-        /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Percent</code>.</p>
-        /// </li>
+        /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::ContainerServiceMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        ///
-        /// <p>Valid container service metric names are listed below, along with the most useful
-        /// statistics to include in your request, and the published unit value.</p>
-        ///
+        /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CPUUtilization</code> - The average percentage of compute units that are
-        /// currently in use across all nodes of the container service. This metric identifies the
-        /// processing power required to run containers on each node of the container service.</p>
-        /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MemoryUtilization</code> - The average percentage of available memory that is
-        /// currently in use across all nodes of the container service. This metric identifies the
-        /// memory required to run containers on each node of the container service.</p>
-        /// <p>Statistics: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>Unit: The published unit is <code>Percent</code>.</p>
-        /// </li>
+        /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -10848,17 +9422,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        ///
-        /// <p>All container service metric data is available in 5-minute (300 seconds)
-        /// granularity.</p>
+        /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.inner = self.inner.period(input);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        ///
-        /// <p>All container service metric data is available in 5-minute (300 seconds)
-        /// granularity.</p>
+        /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
             self
@@ -10868,76 +9438,26 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
         ///
         /// <p>The statistic for the metric.</p>
-        ///
         /// <p>The following statistics are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
-        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
-        /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
-        /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
-        ///
         /// <p>The following statistics are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
-        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
-        /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
-        /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -10949,11 +9469,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerServicePowers`.
     ///
-    /// <p>Returns the list of powers that can be specified for your Amazon Lightsail container
-    /// services.</p>
-    ///
-    /// <p>The power specifies the amount of memory, the number of vCPUs, and the base price of the
-    /// container service.</p>
+    /// <p>Returns the list of powers that can be specified for your Amazon Lightsail container services.</p>
+    /// <p>The power specifies the amount of memory, the number of vCPUs, and the base price of the container service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServicePowers<
         C = aws_smithy_client::erase::DynConnector,
@@ -11071,17 +9588,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your container services in the AWS Region
-        /// where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the container service for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your container services in the AWS Region
-        /// where the request is made.</p>
+        /// <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -11217,17 +9730,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are
-        /// paginated, the response will return a next page token that you can specify as the page token
-        /// in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are
-        /// paginated, the response will return a next page token that you can specify as the page token
-        /// in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -11308,8 +9817,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDiskSnapshots`.
     ///
-    /// <p>Returns information about all block storage disk snapshots in your AWS account and
-    /// region.</p>
+    /// <p>Returns information about all block storage disk snapshots in your AWS account and region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiskSnapshots<
         C = aws_smithy_client::erase::DynConnector,
@@ -11367,17 +9875,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -11385,10 +9889,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDistributionBundles`.
     ///
-    /// <p>Returns the bundles that can be applied to your Amazon Lightsail content delivery network
-    /// (CDN) distributions.</p>
-    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of
-    /// your dsitribution.</p>
+    /// <p>Returns the bundles that can be applied to your Amazon Lightsail content delivery network (CDN) distributions.</p>
+    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionBundles<
         C = aws_smithy_client::erase::DynConnector,
@@ -11448,8 +9950,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDistributionLatestCacheReset`.
     ///
-    /// <p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail
-    /// content delivery network (CDN) distribution.</p>
+    /// <p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network (CDN) distribution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionLatestCacheReset<
         C = aws_smithy_client::erase::DynConnector,
@@ -11506,22 +10007,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the distribution for which to return the timestamp of the last cache
-        /// reset.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
-        /// <p>When omitted, the response includes the latest cache reset timestamp of all your
-        /// distributions.</p>
+        /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+        /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
-        /// <p>The name of the distribution for which to return the timestamp of the last cache
-        /// reset.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
-        /// <p>When omitted, the response includes the latest cache reset timestamp of all your
-        /// distributions.</p>
+        /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+        /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11532,11 +10027,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDistributionMetricData`.
     ///
-    /// <p>Returns the data points of a specific metric for an Amazon Lightsail content delivery
-    /// network (CDN) distribution.</p>
-    /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
-    /// Monitor and collect metric data regularly to maintain the reliability, availability, and
-    /// performance of your resources.</p>
+    /// <p>Returns the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -11594,15 +10086,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to get metric data.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution for which to get metric data.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11611,164 +10101,28 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid distribution metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid distribution metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Requests</code>
-        /// </b> - The total number of viewer
-        /// requests received by your Lightsail distribution, for all HTTP methods, and for both
-        /// HTTP and HTTPS requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BytesDownloaded</code>
-        /// </b> - The number of bytes
-        /// downloaded by viewers for GET, HEAD, and OPTIONS requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BytesUploaded </code>
-        /// </b> - The number of bytes
-        /// uploaded to your origin by your Lightsail distribution, using POST and PUT
-        /// requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>TotalErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status code was 4xx or 5xx.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>4xxErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status cod was 4xx. In these cases, the
-        /// client or client viewer may have made an error. For example, a status code of 404 (Not
-        /// Found) means that the client requested an object that could not be found.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>5xxErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status code was 5xx. In these cases, the
-        /// origin server did not satisfy the requests. For example, a status code of 503 (Service
-        /// Unavailable) means that the origin server is currently unavailable.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>Requests</code> </b> - The total number of viewer requests received by your Lightsail distribution, for all HTTP methods, and for both HTTP and HTTPS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>BytesDownloaded</code> </b> - The number of bytes downloaded by viewers for GET, HEAD, and OPTIONS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>BytesUploaded </code> </b> - The number of bytes uploaded to your origin by your Lightsail distribution, using POST and PUT requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>TotalErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 4xx or 5xx.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>4xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status cod was 4xx. In these cases, the client or client viewer may have made an error. For example, a status code of 404 (Not Found) means that the client requested an object that could not be found.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::DistributionMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid distribution metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid distribution metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Requests</code>
-        /// </b> - The total number of viewer
-        /// requests received by your Lightsail distribution, for all HTTP methods, and for both
-        /// HTTP and HTTPS requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BytesDownloaded</code>
-        /// </b> - The number of bytes
-        /// downloaded by viewers for GET, HEAD, and OPTIONS requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BytesUploaded </code>
-        /// </b> - The number of bytes
-        /// uploaded to your origin by your Lightsail distribution, using POST and PUT
-        /// requests.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>None</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>TotalErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status code was 4xx or 5xx.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>4xxErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status cod was 4xx. In these cases, the
-        /// client or client viewer may have made an error. For example, a status code of 404 (Not
-        /// Found) means that the client requested an object that could not be found.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>5xxErrorRate</code>
-        /// </b> - The percentage of all
-        /// viewer requests for which the response's HTTP status code was 5xx. In these cases, the
-        /// origin server did not satisfy the requests. For example, a status code of 503 (Service
-        /// Unavailable) means that the origin server is currently unavailable.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>Requests</code> </b> - The total number of viewer requests received by your Lightsail distribution, for all HTTP methods, and for both HTTP and HTTPS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>BytesDownloaded</code> </b> - The number of bytes downloaded by viewers for GET, HEAD, and OPTIONS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>BytesUploaded </code> </b> - The number of bytes uploaded to your origin by your Lightsail distribution, using POST and PUT requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>
+        /// <li> <p> <b> <code>TotalErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 4xx or 5xx.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>4xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status cod was 4xx. In these cases, the client or client viewer may have made an error. For example, a status code of 404 (Not Found) means that the client requested an object that could not be found.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -11780,14 +10134,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval for which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11797,14 +10145,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval for which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn set_start_time(
@@ -11817,14 +10159,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval for which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11834,14 +10170,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval for which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
         pub fn set_end_time(
@@ -11862,15 +10192,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unit for the metric data request.</p>
-        /// <p>Valid units depend on the metric data being requested. For the valid units with each
-        /// available metric, see the <code>metricName</code> parameter.</p>
+        /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
             self.inner = self.inner.unit(input);
             self
         }
         /// <p>The unit for the metric data request.</p>
-        /// <p>Valid units depend on the metric data being requested. For the valid units with each
-        /// available metric, see the <code>metricName</code> parameter.</p>
+        /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -11882,33 +10210,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
@@ -11917,33 +10223,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -11955,8 +10239,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDistributions`.
     ///
-    /// <p>Returns information about one or more of your Amazon Lightsail content delivery network
-    /// (CDN) distributions.</p>
+    /// <p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributions<
         C = aws_smithy_client::erase::DynConnector,
@@ -12014,17 +10297,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where
-        /// the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution for which to return information.</p>
-        ///
-        /// <p>When omitted, the response includes all of your distributions in the AWS Region where
-        /// the request is made.</p>
+        /// <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12033,17 +10312,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -12179,17 +10454,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -12197,10 +10468,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExportSnapshotRecords`.
     ///
-    /// <p>Returns all export snapshot records created as a result of the <code>export
-    /// snapshot</code> operation.</p>
-    /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related
-    /// resources with the <a>CreateCloudFormationStack</a> action.</p>
+    /// <p>Returns all export snapshot records created as a result of the <code>export snapshot</code> operation.</p>
+    /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the <code>CreateCloudFormationStack</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportSnapshotRecords<
         C = aws_smithy_client::erase::DynConnector,
@@ -12258,17 +10527,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -12276,8 +10541,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstance`.
     ///
-    /// <p>Returns information about a specific Amazon Lightsail instance, which is a virtual private
-    /// server.</p>
+    /// <p>Returns information about a specific Amazon Lightsail instance, which is a virtual private server.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -12350,11 +10614,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstanceAccessDetails`.
     ///
-    /// <p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or
-    /// <i>instance</i>.</p>
-    /// <p>The <code>get instance access details</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by <code>instance name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.</p>
+    /// <p>The <code>get instance access details</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceAccessDetails<
         C = aws_smithy_client::erase::DynConnector,
@@ -12440,11 +10701,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstanceMetricData`.
     ///
-    /// <p>Returns the data points for the specified Amazon Lightsail instance metric, given an
-    /// instance name.</p>
-    /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
-    /// Monitor and collect metric data regularly to maintain the reliability, availability, and
-    /// performance of your resources.</p>
+    /// <p>Returns the data points for the specified Amazon Lightsail instance metric, given an instance name.</p>
+    /// <p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -12515,252 +10773,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid instance metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BurstCapacityPercentage</code>
-        /// </b> - The percentage
-        /// of CPU performance available for your instance to burst above its baseline. Your instance
-        /// continuously accrues and consumes burst capacity. Burst capacity stops accruing when your
-        /// instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BurstCapacityTime</code>
-        /// </b> - The available amount
-        /// of time for your instance to burst at 100% CPU utilization. Your instance continuously
-        /// accrues and consumes burst capacity. Burst capacity time stops accruing when your
-        /// instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p>
-        /// <p>Burst capacity time is consumed at the full rate only when your instance operates at
-        /// 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the
-        /// burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50%
-        /// rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity
-        /// minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CPUUtilization</code>
-        /// </b> - The percentage of
-        /// allocated compute units that are currently in use on the instance. This metric identifies
-        /// the processing power to run the applications on the instance. Tools in your operating
-        /// system can show a lower percentage than Lightsail when the instance is not allocated a
-        /// full processor core.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkIn</code>
-        /// </b> - The number of bytes received
-        /// on all network interfaces by the instance. This metric identifies the volume of incoming
-        /// network traffic to the instance. The number reported is the number of bytes received
-        /// during the period. Because this metric is reported in 5-minute intervals, divide the
-        /// reported number by 300 to find Bytes/second.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkOut</code>
-        /// </b> - The number of bytes sent
-        /// out on all network interfaces by the instance. This metric identifies the volume of
-        /// outgoing network traffic from the instance. The number reported is the number of bytes
-        /// sent during the period. Because this metric is reported in 5-minute intervals, divide the
-        /// reported number by 300 to find Bytes/second.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed</code>
-        /// </b> - Reports whether the
-        /// instance passed or failed both the instance status check and the system status check. This
-        /// metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute
-        /// (60 seconds) granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed_Instance</code>
-        /// </b> - Reports
-        /// whether the instance passed or failed the instance status check. This metric can be either
-        /// 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed_System</code>
-        /// </b> - Reports
-        /// whether the instance passed or failed the system status check. This metric can be either 0
-        /// (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance available for your instance to burst above its baseline. Your instance continuously accrues and consumes burst capacity. Burst capacity stops accruing when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance to burst at 100% CPU utilization. Your instance continuously accrues and consumes burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity time is consumed at the full rate only when your instance operates at 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>
+        /// <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the instance. This metric identifies the processing power to run the applications on the instance. Tools in your operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor core.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This metric identifies the volume of incoming network traffic to the instance. The number reported is the number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::InstanceMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid instance metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BurstCapacityPercentage</code>
-        /// </b> - The percentage
-        /// of CPU performance available for your instance to burst above its baseline. Your instance
-        /// continuously accrues and consumes burst capacity. Burst capacity stops accruing when your
-        /// instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BurstCapacityTime</code>
-        /// </b> - The available amount
-        /// of time for your instance to burst at 100% CPU utilization. Your instance continuously
-        /// accrues and consumes burst capacity. Burst capacity time stops accruing when your
-        /// instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p>
-        /// <p>Burst capacity time is consumed at the full rate only when your instance operates at
-        /// 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the
-        /// burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50%
-        /// rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity
-        /// minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CPUUtilization</code>
-        /// </b> - The percentage of
-        /// allocated compute units that are currently in use on the instance. This metric identifies
-        /// the processing power to run the applications on the instance. Tools in your operating
-        /// system can show a lower percentage than Lightsail when the instance is not allocated a
-        /// full processor core.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkIn</code>
-        /// </b> - The number of bytes received
-        /// on all network interfaces by the instance. This metric identifies the volume of incoming
-        /// network traffic to the instance. The number reported is the number of bytes received
-        /// during the period. Because this metric is reported in 5-minute intervals, divide the
-        /// reported number by 300 to find Bytes/second.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkOut</code>
-        /// </b> - The number of bytes sent
-        /// out on all network interfaces by the instance. This metric identifies the volume of
-        /// outgoing network traffic from the instance. The number reported is the number of bytes
-        /// sent during the period. Because this metric is reported in 5-minute intervals, divide the
-        /// reported number by 300 to find Bytes/second.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed</code>
-        /// </b> - Reports whether the
-        /// instance passed or failed both the instance status check and the system status check. This
-        /// metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute
-        /// (60 seconds) granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed_Instance</code>
-        /// </b> - Reports
-        /// whether the instance passed or failed the instance status check. This metric can be either
-        /// 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>StatusCheckFailed_System</code>
-        /// </b> - Reports
-        /// whether the instance passed or failed the system status check. This metric can be either 0
-        /// (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance available for your instance to burst above its baseline. Your instance continuously accrues and consumes burst capacity. Burst capacity stops accruing when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance to burst at 100% CPU utilization. Your instance continuously accrues and consumes burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity time is consumed at the full rate only when your instance operates at 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>
+        /// <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the instance. This metric identifies the processing power to run the applications on the instance. Tools in your operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor core.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This metric identifies the volume of incoming network traffic to the instance. The number reported is the number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -12770,19 +10808,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-        /// <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60
-        /// seconds) granularity. All other instance metric data is available in 5-minute (300 seconds)
-        /// granularity.</p>
+        /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.inner = self.inner.period(input);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-        /// <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60
-        /// seconds) granularity. All other instance metric data is available in 5-minute (300 seconds)
-        /// granularity.</p>
+        /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
             self
@@ -12813,16 +10845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units to specify with each available metric, see the
-        /// <code>metricName</code> parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units to specify with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
             self.inner = self.inner.unit(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units to specify with each available metric, see the
-        /// <code>metricName</code> parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units to specify with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -12834,33 +10862,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
@@ -12869,33 +10875,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -12907,8 +10891,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstancePortStates`.
     ///
-    /// <p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses
-    /// allowed to connect to the instance through the ports, and the protocol.</p>
+    /// <p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstancePortStates<
         C = aws_smithy_client::erase::DynConnector,
@@ -12981,8 +10964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstances`.
     ///
-    /// <p>Returns information about all Amazon Lightsail virtual private servers, or
-    /// <i>instances</i>.</p>
+    /// <p>Returns information about all Amazon Lightsail virtual private servers, or <i>instances</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -13040,17 +11022,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -13189,17 +11167,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -13411,17 +11385,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -13503,9 +11473,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoadBalancerMetricData`.
     ///
     /// <p>Returns information about health metrics for your Lightsail load balancer.</p>
-    /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
-    /// Monitor and collect metric data regularly to maintain the reliability, availability, and
-    /// performance of your resources.</p>
+    /// <p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancerMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -13576,346 +11544,40 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid load balancer metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid load balancer metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ClientTLSNegotiationErrorCount</code>
-        /// </b> - The
-        /// number of TLS connections initiated by the client that did not establish a session with
-        /// the load balancer due to a TLS error generated by the load balancer. Possible causes
-        /// include a mismatch of ciphers or protocols.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HealthyHostCount</code>
-        /// </b> - The number of target
-        /// instances that are considered healthy.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
-        /// <code>Minimum</code>, and <code>Maximum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_2XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 2XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_3XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 3XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_4XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 4XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_5XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 5XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_LB_4XX_Count</code>
-        /// </b> - The number of
-        /// HTTP 4XX client error codes that originated from the load balancer. Client errors are
-        /// generated when requests are malformed or incomplete. These requests were not received by
-        /// the target instance. This count does not include response codes generated by the target
-        /// instances.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_LB_5XX_Count</code>
-        /// </b> - The number of
-        /// HTTP 5XX server error codes that originated from the load balancer. This does not include
-        /// any response codes generated by the target instance. This metric is reported if there are
-        /// no healthy instances attached to the load balancer, or if the request rate exceeds the
-        /// capacity of the instances (spillover) or the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>InstanceResponseTime</code>
-        /// </b> - The time elapsed,
-        /// in seconds, after the request leaves the load balancer until a response from the target
-        /// instance is received.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RejectedConnectionCount</code>
-        /// </b> - The number of
-        /// connections that were rejected because the load balancer had reached its maximum number of
-        /// connections.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RequestCount</code>
-        /// </b> - The number of requests
-        /// processed over IPv4. This count includes only the requests with a response generated by a
-        /// target instance of the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>UnhealthyHostCount</code>
-        /// </b> - The number of
-        /// target instances that are considered unhealthy.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
-        /// <code>Minimum</code>, and <code>Maximum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ClientTLSNegotiationErrorCount</code> </b> - The number of TLS connections initiated by the client that did not establish a session with the load balancer due to a TLS error generated by the load balancer. Possible causes include a mismatch of ciphers or protocols.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HealthyHostCount</code> </b> - The number of target instances that are considered healthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_2XX_Count</code> </b> - The number of HTTP 2XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_3XX_Count</code> </b> - The number of HTTP 3XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_4XX_Count</code> </b> - The number of HTTP 4XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_5XX_Count</code> </b> - The number of HTTP 5XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_LB_4XX_Count</code> </b> - The number of HTTP 4XX client error codes that originated from the load balancer. Client errors are generated when requests are malformed or incomplete. These requests were not received by the target instance. This count does not include response codes generated by the target instances.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_LB_5XX_Count</code> </b> - The number of HTTP 5XX server error codes that originated from the load balancer. This does not include any response codes generated by the target instance. This metric is reported if there are no healthy instances attached to the load balancer, or if the request rate exceeds the capacity of the instances (spillover) or the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>InstanceResponseTime</code> </b> - The time elapsed, in seconds, after the request leaves the load balancer until a response from the target instance is received.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>
+        /// <li> <p> <b> <code>RejectedConnectionCount</code> </b> - The number of connections that were rejected because the load balancer had reached its maximum number of connections.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>RequestCount</code> </b> - The number of requests processed over IPv4. This count includes only the requests with a response generated by a target instance of the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>UnhealthyHostCount</code> </b> - The number of target instances that are considered unhealthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::LoadBalancerMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid load balancer metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value.</p>
+        /// <p>Valid load balancer metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ClientTLSNegotiationErrorCount</code>
-        /// </b> - The
-        /// number of TLS connections initiated by the client that did not establish a session with
-        /// the load balancer due to a TLS error generated by the load balancer. Possible causes
-        /// include a mismatch of ciphers or protocols.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HealthyHostCount</code>
-        /// </b> - The number of target
-        /// instances that are considered healthy.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
-        /// <code>Minimum</code>, and <code>Maximum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_2XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 2XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_3XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 3XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_4XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 4XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_Instance_5XX_Count</code>
-        /// </b> - The number
-        /// of HTTP 5XX response codes generated by the target instances. This does not include any
-        /// response codes generated by the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_LB_4XX_Count</code>
-        /// </b> - The number of
-        /// HTTP 4XX client error codes that originated from the load balancer. Client errors are
-        /// generated when requests are malformed or incomplete. These requests were not received by
-        /// the target instance. This count does not include response codes generated by the target
-        /// instances.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>HTTPCode_LB_5XX_Count</code>
-        /// </b> - The number of
-        /// HTTP 5XX server error codes that originated from the load balancer. This does not include
-        /// any response codes generated by the target instance. This metric is reported if there are
-        /// no healthy instances attached to the load balancer, or if the request rate exceeds the
-        /// capacity of the instances (spillover) or the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>InstanceResponseTime</code>
-        /// </b> - The time elapsed,
-        /// in seconds, after the request leaves the load balancer until a response from the target
-        /// instance is received.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Seconds</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RejectedConnectionCount</code>
-        /// </b> - The number of
-        /// connections that were rejected because the load balancer had reached its maximum number of
-        /// connections.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RequestCount</code>
-        /// </b> - The number of requests
-        /// processed over IPv4. This count includes only the requests with a response generated by a
-        /// target instance of the load balancer.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that
-        /// <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return
-        /// <code>1</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>UnhealthyHostCount</code>
-        /// </b> - The number of
-        /// target instances that are considered unhealthy.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic are <code>Average</code>,
-        /// <code>Minimum</code>, and <code>Maximum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ClientTLSNegotiationErrorCount</code> </b> - The number of TLS connections initiated by the client that did not establish a session with the load balancer due to a TLS error generated by the load balancer. Possible causes include a mismatch of ciphers or protocols.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HealthyHostCount</code> </b> - The number of target instances that are considered healthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_2XX_Count</code> </b> - The number of HTTP 2XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_3XX_Count</code> </b> - The number of HTTP 3XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_4XX_Count</code> </b> - The number of HTTP 4XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_Instance_5XX_Count</code> </b> - The number of HTTP 5XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_LB_4XX_Count</code> </b> - The number of HTTP 4XX client error codes that originated from the load balancer. Client errors are generated when requests are malformed or incomplete. These requests were not received by the target instance. This count does not include response codes generated by the target instances.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>HTTPCode_LB_5XX_Count</code> </b> - The number of HTTP 5XX server error codes that originated from the load balancer. This does not include any response codes generated by the target instance. This metric is reported if there are no healthy instances attached to the load balancer, or if the request rate exceeds the capacity of the instances (spillover) or the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>InstanceResponseTime</code> </b> - The time elapsed, in seconds, after the request leaves the load balancer until a response from the target instance is received.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>
+        /// <li> <p> <b> <code>RejectedConnectionCount</code> </b> - The number of connections that were rejected because the load balancer had reached its maximum number of connections.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>RequestCount</code> </b> - The number of requests processed over IPv4. This count includes only the requests with a response generated by a target instance of the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>UnhealthyHostCount</code> </b> - The number of target instances that are considered unhealthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -13960,16 +11622,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units with each available metric, see the <code>metricName</code>
-        /// parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
             self.inner = self.inner.unit(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units with each available metric, see the <code>metricName</code>
-        /// parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -13981,33 +11639,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
@@ -14016,33 +11652,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -14112,17 +11726,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14130,11 +11740,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLoadBalancerTlsCertificates`.
     ///
-    /// <p>Returns information about the TLS certificates that are associated with the specified
-    /// Lightsail load balancer.</p>
+    /// <p>Returns information about the TLS certificates that are associated with the specified Lightsail load balancer.</p>
     /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
-    /// <p>You can have a maximum of 2 certificates associated with a Lightsail load balancer. One
-    /// is active and the other is inactive.</p>
+    /// <p>You can have a maximum of 2 certificates associated with a Lightsail load balancer. One is active and the other is inactive.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancerTlsCertificates<
         C = aws_smithy_client::erase::DynConnector,
@@ -14207,8 +11815,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOperation`.
     ///
-    /// <p>Returns information about a specific operation. Operations include events such as when you
-    /// create an instance, allocate a static IP, attach a static IP, and so on.</p>
+    /// <p>Returns information about a specific operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperation<
         C = aws_smithy_client::erase::DynConnector,
@@ -14279,9 +11886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOperations`.
     ///
     /// <p>Returns information about all operations.</p>
-    /// <p>Results are returned from oldest to newest, up to a maximum of 200. Results can be paged
-    /// by making each subsequent call to <code>GetOperations</code> use the maximum (last)
-    /// <code>statusChangedAt</code> value from the previous request.</p>
+    /// <p>Results are returned from oldest to newest, up to a maximum of 200. Results can be paged by making each subsequent call to <code>GetOperations</code> use the maximum (last) <code>statusChangedAt</code> value from the previous request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperations<
         C = aws_smithy_client::erase::DynConnector,
@@ -14339,17 +11944,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify as the
-        /// page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14428,17 +12029,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14446,9 +12043,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRegions`.
     ///
-    /// <p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include
-    /// availability zones</code> parameter to also return the Availability Zones in a
-    /// region.</p>
+    /// <p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code> parameter to also return the Availability Zones in a region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegions<
         C = aws_smithy_client::erase::DynConnector,
@@ -14505,30 +12100,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions
-        /// request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+        /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
         pub fn include_availability_zones(mut self, input: bool) -> Self {
             self.inner = self.inner.include_availability_zones(input);
             self
         }
-        /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions
-        /// request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+        /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
         pub fn set_include_availability_zones(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_availability_zones(input);
             self
         }
-        /// <p>A Boolean value indicating whether to also include Availability Zones for databases in
-        /// your get regions request. Availability Zones are indicated with a letter (e.g.,
-        /// <code>us-east-2a</code>).</p>
+        /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
         pub fn include_relational_database_availability_zones(mut self, input: bool) -> Self {
             self.inner = self
                 .inner
                 .include_relational_database_availability_zones(input);
             self
         }
-        /// <p>A Boolean value indicating whether to also include Availability Zones for databases in
-        /// your get regions request. Availability Zones are indicated with a letter (e.g.,
-        /// <code>us-east-2a</code>).</p>
+        /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
         pub fn set_include_relational_database_availability_zones(
             mut self,
             input: std::option::Option<bool>,
@@ -14614,10 +12203,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRelationalDatabaseBlueprints`.
     ///
-    /// <p>Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes
-    /// the major engine version of a database.</p>
-    /// <p>You can use a blueprint ID to create a new database that runs a specific database
-    /// engine.</p>
+    /// <p>Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine version of a database.</p>
+    /// <p>You can use a blueprint ID to create a new database that runs a specific database engine.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseBlueprints<
         C = aws_smithy_client::erase::DynConnector,
@@ -14675,17 +12262,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14693,10 +12276,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRelationalDatabaseBundles`.
     ///
-    /// <p>Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the
-    /// performance specifications for a database.</p>
-    /// <p>You can use a bundle ID to create a new database with explicit performance
-    /// specifications.</p>
+    /// <p>Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance specifications for a database.</p>
+    /// <p>You can use a bundle ID to create a new database with explicit performance specifications.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseBundles<
         C = aws_smithy_client::erase::DynConnector,
@@ -14754,17 +12335,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14842,36 +12419,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_name(input);
             self
         }
-        /// <p>The number of minutes in the past from which to retrieve events. For example, to get all
-        /// events from the past 2 hours, enter 120.</p>
-        /// <p>Default: <code>60</code>
-        /// </p>
+        /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
+        /// <p>Default: <code>60</code> </p>
         /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.duration_in_minutes(input);
             self
         }
-        /// <p>The number of minutes in the past from which to retrieve events. For example, to get all
-        /// events from the past 2 hours, enter 120.</p>
-        /// <p>Default: <code>60</code>
-        /// </p>
+        /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
+        /// <p>Default: <code>60</code> </p>
         /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_duration_in_minutes(input);
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request.
-        /// If your results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -14950,15 +12519,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log stream.</p>
-        /// <p>Use the <code>get relational database log streams</code> operation to get a list of
-        /// available log streams.</p>
+        /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
         pub fn log_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_stream_name(input.into());
             self
         }
         /// <p>The name of the log stream.</p>
-        /// <p>Use the <code>get relational database log streams</code> operation to get a list of
-        /// available log streams.</p>
+        /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14969,14 +12536,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval from which to get log events.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
@@ -14985,14 +12546,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval from which to get log events.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the start time.</p>
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         pub fn set_start_time(
             mut self,
@@ -15004,15 +12559,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval from which to get log events.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the end time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
         /// </ul>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
@@ -15021,15 +12569,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval from which to get log events.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the end time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
         /// </ul>
         pub fn set_end_time(
             mut self,
@@ -15038,40 +12579,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is
-        /// specified, the log event starts from the head of the log. If <code>false</code> is specified,
-        /// the log event starts from the tail of the log.</p>
-        /// <note>
-        /// <p>For PostgreSQL, the default value of <code>false</code> is the only option
-        /// available.</p>
+        /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+        /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
         /// </note>
         pub fn start_from_head(mut self, input: bool) -> Self {
             self.inner = self.inner.start_from_head(input);
             self
         }
-        /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is
-        /// specified, the log event starts from the head of the log. If <code>false</code> is specified,
-        /// the log event starts from the tail of the log.</p>
-        /// <note>
-        /// <p>For PostgreSQL, the default value of <code>false</code> is the only option
-        /// available.</p>
+        /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+        /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
         /// </note>
         pub fn set_start_from_head(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_start_from_head(input);
             self
         }
         /// <p>The token to advance to the next or previous page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
-        /// request. If your results are paginated, the response will return a next forward token and/or
-        /// next backward token that you can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next or previous page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
-        /// request. If your results are paginated, the response will return a next forward token and/or
-        /// next backward token that you can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -15152,11 +12681,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRelationalDatabaseMasterUserPassword`.
     ///
-    /// <p>Returns the current, previous, or pending versions of the master user password for a
-    /// Lightsail database.</p>
-    /// <p>The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based
-    /// access control via resource tags applied to the resource identified by
-    /// relationalDatabaseName.</p>
+    /// <p>Returns the current, previous, or pending versions of the master user password for a Lightsail database.</p>
+    /// <p>The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseMasterUserPassword<
         C = aws_smithy_client::erase::DynConnector,
@@ -15229,13 +12755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password version to return.</p>
-        /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous
-        /// passwords respectively. Specifying <code>PENDING</code> returns the newest version of the
-        /// password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password
-        /// rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer
-        /// available.</p>
-        /// <p>Default: <code>CURRENT</code>
-        /// </p>
+        /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
+        /// <p>Default: <code>CURRENT</code> </p>
         pub fn password_version(
             mut self,
             input: crate::model::RelationalDatabasePasswordVersion,
@@ -15244,13 +12765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password version to return.</p>
-        /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous
-        /// passwords respectively. Specifying <code>PENDING</code> returns the newest version of the
-        /// password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password
-        /// rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer
-        /// available.</p>
-        /// <p>Default: <code>CURRENT</code>
-        /// </p>
+        /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
+        /// <p>Default: <code>CURRENT</code> </p>
         pub fn set_password_version(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabasePasswordVersion>,
@@ -15262,9 +12778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseMetricData`.
     ///
     /// <p>Returns the data points of the specified metric for a database in Amazon Lightsail.</p>
-    /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
-    /// Monitor and collect metric data regularly to maintain the reliability, availability, and
-    /// performance of your resources.</p>
+    /// <p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseMetricData<
         C = aws_smithy_client::erase::DynConnector,
@@ -15335,162 +12849,28 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid relational database metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value. All relational database metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
+        /// <p>Valid relational database metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value. All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CPUUtilization</code>
-        /// </b> - The percentage of CPU
-        /// utilization currently in use on the database.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>DatabaseConnections</code>
-        /// </b> - The number of
-        /// database connections in use.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>DiskQueueDepth</code>
-        /// </b> - The number of
-        /// outstanding IOs (read/write requests) that are waiting to access the disk.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>FreeStorageSpace</code>
-        /// </b> - The amount of
-        /// available storage space.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkReceiveThroughput</code>
-        /// </b> - The incoming
-        /// (Receive) network traffic on the database, including both customer database traffic and
-        /// AWS traffic used for monitoring and replication.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkTransmitThroughput</code>
-        /// </b> - The outgoing
-        /// (Transmit) network traffic on the database, including both customer database traffic and
-        /// AWS traffic used for monitoring and replication.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
         /// </ul>
         pub fn metric_name(mut self, input: crate::model::RelationalDatabaseMetricName) -> Self {
             self.inner = self.inner.metric_name(input);
             self
         }
         /// <p>The metric for which you want to return information.</p>
-        /// <p>Valid relational database metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value. All relational database metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
+        /// <p>Valid relational database metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value. All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CPUUtilization</code>
-        /// </b> - The percentage of CPU
-        /// utilization currently in use on the database.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>DatabaseConnections</code>
-        /// </b> - The number of
-        /// database connections in use.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>DiskQueueDepth</code>
-        /// </b> - The number of
-        /// outstanding IOs (read/write requests) that are waiting to access the disk.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>FreeStorageSpace</code>
-        /// </b> - The amount of
-        /// available storage space.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkReceiveThroughput</code>
-        /// </b> - The incoming
-        /// (Receive) network traffic on the database, including both customer database traffic and
-        /// AWS traffic used for monitoring and replication.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NetworkTransmitThroughput</code>
-        /// </b> - The outgoing
-        /// (Transmit) network traffic on the database, including both customer database traffic and
-        /// AWS traffic used for monitoring and replication.</p>
-        /// <p>
-        /// <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
-        /// <p>
-        /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
+        /// <li> <p> <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
+        /// <li> <p> <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
+        /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -15500,15 +12880,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <p>All relational database metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
+        /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.inner = self.inner.period(input);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        /// <p>All relational database metric data is available in 1-minute (60 seconds)
-        /// granularity.</p>
+        /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
             self
@@ -15516,15 +12894,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval from which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the start time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
@@ -15533,15 +12904,8 @@ pub mod fluent_builders {
         /// <p>The start of the time interval from which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the start time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
         /// </ul>
         pub fn set_start_time(
             mut self,
@@ -15553,15 +12917,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval from which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the end time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
         /// </ul>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
@@ -15570,15 +12927,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval from which to get metric data.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in the Unix time format.</p>
-        /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you
-        /// input <code>1538424000</code> as the end time.</p>
-        ///
-        /// </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
         /// </ul>
         pub fn set_end_time(
             mut self,
@@ -15587,16 +12937,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units with each available metric, see the <code>metricName</code>
-        /// parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
             self.inner = self.inner.unit(input);
             self
         }
-        /// <p>The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units with each available metric, see the <code>metricName</code>
-        /// parameter.</p>
+        /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -15608,33 +12954,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             self.inner = self.inner.statistics(input);
@@ -15643,33 +12967,11 @@ pub mod fluent_builders {
         /// <p>The statistic for the metric.</p>
         /// <p>The following statistics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
-        /// value to determine low volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
-        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
-        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
-        /// comparison helps you to know when to increase or decrease your resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> - The count, or number, of data points used for the
-        /// statistical calculation.</p>
-        /// </li>
+        /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+        /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+        /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+        /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
         /// </ul>
         pub fn set_statistics(
             mut self,
@@ -15681,11 +12983,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRelationalDatabaseParameters`.
     ///
-    /// <p>Returns all of the runtime parameters offered by the underlying database software, or
-    /// engine, for a specific database in Amazon Lightsail.</p>
-    /// <p>In addition to the parameter names and values, this operation returns other information
-    /// about each parameter. This information includes whether changes require a reboot, whether the
-    /// parameter is modifiable, the allowed values, and the data types.</p>
+    /// <p>Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific database in Amazon Lightsail.</p>
+    /// <p>In addition to the parameter names and values, this operation returns other information about each parameter. This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed values, and the data types.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseParameters<
         C = aws_smithy_client::erase::DynConnector,
@@ -15756,17 +13055,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -15832,17 +13127,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If
-        /// your results are paginated, the response will return a next page token that you can specify as
-        /// the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -15984,17 +13275,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code>
-        /// request. If your results are paginated, the response will return a next page token that you
-        /// can specify as the page token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -16133,17 +13420,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results
-        /// are paginated, the response will return a next page token that you can specify as the page
-        /// token in a subsequent request.</p>
+        /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -16297,11 +13580,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OpenInstancePublicPorts`.
     ///
-    /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
-    /// allowed to connect to the instance through the ports, and the protocol.</p>
-    /// <p>The <code>OpenInstancePublicPorts</code> action supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
+    /// <p>The <code>OpenInstancePublicPorts</code> action supports tag-based access control via resource tags applied to the resource identified by <code>instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OpenInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
@@ -16445,16 +13725,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAlarm`.
     ///
     /// <p>Creates or updates an alarm, and associates it with the specified metric.</p>
-    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric
-    /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
-    /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
-    /// in Amazon Lightsail</a>.</p>
-    /// <p>When this action creates an alarm, the alarm state is immediately set to
-    /// <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
-    /// appropriately. Any actions associated with the new state are then executed.</p>
-    /// <p>When you update an existing alarm, its state is left unchanged, but the update completely
-    /// overwrites the previous configuration of the alarm. The alarm is then evaluated with the
-    /// updated configuration.</p>
+    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
+    /// <p>When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
+    /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm. The alarm is then evaluated with the updated configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -16511,14 +13784,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the
-        /// previous configuration of the alarm.</p>
+        /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
         pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alarm_name(input.into());
             self
         }
-        /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the
-        /// previous configuration of the alarm.</p>
+        /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alarm_name(input);
             self
@@ -16527,31 +13798,9 @@ pub mod fluent_builders {
         /// <p>You can configure up to two alarms per metric.</p>
         /// <p>The following metrics are available for each resource type:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Instances</b>: <code>BurstCapacityPercentage</code>,
-        /// <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>,
-        /// <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-        /// <code>StatusCheckFailed_Instance</code>, and
-        /// <code>StatusCheckFailed_System</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Load balancers</b>:
-        /// <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
-        /// <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
-        /// <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>,
-        /// <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>,
-        /// <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>,
-        /// <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Relational databases</b>: <code>CPUUtilization</code>,
-        /// <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
-        /// <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-        /// <code>NetworkTransmitThroughput</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p> </li>
+        /// <li> <p> <b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p> </li>
+        /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
         /// </ul>
         /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
         pub fn metric_name(mut self, input: crate::model::MetricName) -> Self {
@@ -16562,31 +13811,9 @@ pub mod fluent_builders {
         /// <p>You can configure up to two alarms per metric.</p>
         /// <p>The following metrics are available for each resource type:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Instances</b>: <code>BurstCapacityPercentage</code>,
-        /// <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>,
-        /// <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-        /// <code>StatusCheckFailed_Instance</code>, and
-        /// <code>StatusCheckFailed_System</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Load balancers</b>:
-        /// <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
-        /// <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
-        /// <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>,
-        /// <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>,
-        /// <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>,
-        /// <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Relational databases</b>: <code>CPUUtilization</code>,
-        /// <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
-        /// <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-        /// <code>NetworkTransmitThroughput</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p> </li>
+        /// <li> <p> <b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p> </li>
+        /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
         /// </ul>
         /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
         pub fn set_metric_name(
@@ -16597,15 +13824,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Lightsail resource that will be monitored.</p>
-        /// <p>Instances, load balancers, and relational databases are the only Lightsail resources
-        /// that can currently be monitored by alarms.</p>
+        /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
         pub fn monitored_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitored_resource_name(input.into());
             self
         }
         /// <p>The name of the Lightsail resource that will be monitored.</p>
-        /// <p>Instances, load balancers, and relational databases are the only Lightsail resources
-        /// that can currently be monitored by alarms.</p>
+        /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
         pub fn set_monitored_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16613,14 +13838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitored_resource_name(input);
             self
         }
-        /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold.
-        /// The specified statistic value is used as the first operand.</p>
+        /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.inner = self.inner.comparison_operator(input);
             self
         }
-        /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold.
-        /// The specified statistic value is used as the first operand.</p>
+        /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -16638,44 +13861,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_threshold(input);
             self
         }
-        /// <p>The number of most recent periods over which data is compared to the specified threshold.
-        /// If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the
-        /// N.</p>
-        /// <p>If you are setting an alarm that requires that a number of consecutive data points be
-        /// breaching to trigger the alarm, this value specifies the rolling period of time in which data
-        /// points are evaluated.</p>
-        /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of
-        /// 24 to evaluate a metric over a rolling period of two hours.</p>
-        /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation
-        /// period of 288 (24 hours).</p>
+        /// <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>
+        /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
+        /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
+        /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
         pub fn evaluation_periods(mut self, input: i32) -> Self {
             self.inner = self.inner.evaluation_periods(input);
             self
         }
-        /// <p>The number of most recent periods over which data is compared to the specified threshold.
-        /// If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the
-        /// N.</p>
-        /// <p>If you are setting an alarm that requires that a number of consecutive data points be
-        /// breaching to trigger the alarm, this value specifies the rolling period of time in which data
-        /// points are evaluated.</p>
-        /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of
-        /// 24 to evaluate a metric over a rolling period of two hours.</p>
-        /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation
-        /// period of 288 (24 hours).</p>
+        /// <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>
+        /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
+        /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
+        /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_evaluation_periods(input);
             self
         }
-        /// <p>The number of data points that must be not within the specified threshold to trigger the
-        /// alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>)
-        /// is the M.</p>
+        /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
         pub fn datapoints_to_alarm(mut self, input: i32) -> Self {
             self.inner = self.inner.datapoints_to_alarm(input);
             self
         }
-        /// <p>The number of data points that must be not within the specified threshold to trigger the
-        /// alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>)
-        /// is the M.</p>
+        /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
         pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_datapoints_to_alarm(input);
             self
@@ -16683,29 +13890,12 @@ pub mod fluent_builders {
         /// <p>Sets how this alarm will handle missing data points.</p>
         /// <p>An alarm can treat missing data in the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>breaching</code> - Assume the missing data is not within the threshold. Missing
-        /// data counts towards the number of times the metric is not within the threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
-        /// data does not count towards the number of times the metric is not within the
-        /// threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code> - Ignore the missing data. Maintains the current alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>missing</code> - Missing data is treated as missing.</p>
-        /// </li>
+        /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+        /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+        /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+        /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
         /// </ul>
-        /// <p>If <code>treatMissingData</code> is not specified, the default behavior of
-        /// <code>missing</code> is used.</p>
+        /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
         pub fn treat_missing_data(mut self, input: crate::model::TreatMissingData) -> Self {
             self.inner = self.inner.treat_missing_data(input);
             self
@@ -16713,29 +13903,12 @@ pub mod fluent_builders {
         /// <p>Sets how this alarm will handle missing data points.</p>
         /// <p>An alarm can treat missing data in the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>breaching</code> - Assume the missing data is not within the threshold. Missing
-        /// data counts towards the number of times the metric is not within the threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
-        /// data does not count towards the number of times the metric is not within the
-        /// threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code> - Ignore the missing data. Maintains the current alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>missing</code> - Missing data is treated as missing.</p>
-        /// </li>
+        /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+        /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+        /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+        /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
         /// </ul>
-        /// <p>If <code>treatMissingData</code> is not specified, the default behavior of
-        /// <code>missing</code> is used.</p>
+        /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<crate::model::TreatMissingData>,
@@ -16747,28 +13920,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_contact_protocols`](Self::set_contact_protocols).
         ///
-        /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code>
-        /// (text messaging), or both.</p>
-        /// <p>A notification is sent via the specified contact protocol if notifications are enabled for
-        /// the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified
-        /// contact protocol is not configured in the AWS Region, or if notifications are not enabled
-        /// for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an
-        /// AWS Region.</p>
+        /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
+        /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
         pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             self.inner = self.inner.contact_protocols(input);
             self
         }
-        /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code>
-        /// (text messaging), or both.</p>
-        /// <p>A notification is sent via the specified contact protocol if notifications are enabled for
-        /// the alarm, and when the alarm is triggered.</p>
-        /// <p>A notification is not sent if a contact protocol is not specified, if the specified
-        /// contact protocol is not configured in the AWS Region, or if notifications are not enabled
-        /// for the alarm using the <code>notificationEnabled</code> paramater.</p>
-        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an
-        /// AWS Region.</p>
+        /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
+        /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
+        /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
+        /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
         pub fn set_contact_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -16783,39 +13946,16 @@ pub mod fluent_builders {
         /// <p>The alarm states that trigger a notification.</p>
         /// <p>An alarm has the following possible states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
-        /// available, or not enough data is available for the metric to determine the alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK</code> - The metric is within the defined threshold.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+        /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
         /// </ul>
-        /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified.
-        /// The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to
-        /// the <code>ALARM</code> state.</p>
+        /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the
-        /// alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to
-        /// an <code>OK</code> state. This can be thought of as an <i>all clear</i>
-        /// alarm notification.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is
-        /// sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to
-        /// an <code>INSUFFICIENT_DATA</code> state.</p>
-        /// </li>
+        /// <li> <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p> </li>
+        /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
         /// </ul>
-        /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this
-        /// parameter.</p>
+        /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
         pub fn notification_triggers(mut self, input: crate::model::AlarmState) -> Self {
             self.inner = self.inner.notification_triggers(input);
             self
@@ -16823,39 +13963,16 @@ pub mod fluent_builders {
         /// <p>The alarm states that trigger a notification.</p>
         /// <p>An alarm has the following possible states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
-        /// available, or not enough data is available for the metric to determine the alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK</code> - The metric is within the defined threshold.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+        /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
         /// </ul>
-        /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified.
-        /// The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to
-        /// the <code>ALARM</code> state.</p>
+        /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the
-        /// alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to
-        /// an <code>OK</code> state. This can be thought of as an <i>all clear</i>
-        /// alarm notification.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is
-        /// sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to
-        /// an <code>INSUFFICIENT_DATA</code> state.</p>
-        /// </li>
+        /// <li> <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p> </li>
+        /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
         /// </ul>
-        /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this
-        /// parameter.</p>
+        /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
         pub fn set_notification_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlarmState>>,
@@ -16878,15 +13995,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInstancePublicPorts`.
     ///
-    /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses
-    /// allowed to connect to the instance through the ports, and the protocol. This action also
-    /// closes all currently open ports that are not included in the request. Include all of the ports
-    /// and the protocols you want to open in your <code>PutInstancePublicPorts</code>request. Or use
-    /// the <code>OpenInstancePublicPorts</code> action to open ports without closing currently open
-    /// ports.</p>
-    /// <p>The <code>PutInstancePublicPorts</code> action supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to connect to the instance through the ports, and the protocol. This action also closes all currently open ports that are not included in the request. Include all of the ports and the protocols you want to open in your <code>PutInstancePublicPorts</code>request. Or use the <code>OpenInstancePublicPorts</code> action to open ports without closing currently open ports.</p>
+    /// <p>The <code>PutInstancePublicPorts</code> action supports tag-based access control via resource tags applied to the resource identified by <code>instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
@@ -16977,9 +14087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebootInstance`.
     ///
     /// <p>Restarts a specific instance.</p>
-    /// <p>The <code>reboot instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>instance name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -17053,9 +14161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebootRelationalDatabase`.
     ///
     /// <p>Restarts a specific database in Amazon Lightsail.</p>
-    /// <p>The <code>reboot relational database</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -17128,13 +14234,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterContainerImage`.
     ///
-    /// <p>Registers a container image to your Amazon Lightsail container service.</p>
-    ///
-    /// <note>
-    /// <p>This action is not required if you install and use the Lightsail Control
-    /// (lightsailctl) plugin to push container images to your Lightsail container service. For
-    /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
-    /// in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// <p>Registers a container image to your Amazon Lightsail container service.</p> <note>
+    /// <p>This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container images to your Lightsail container service. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterContainerImage<
@@ -17203,59 +14304,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The label for the container image when it's registered to the container service.</p>
-        ///
-        /// <p>Use a descriptive label that you can use to track the different versions of your
-        /// registered container images.</p>
-        ///
-        /// <p>Use the <code>GetContainerImages</code> action to return the container images registered
-        /// to a Lightsail container service. The label is the <code><imagelabel></code> portion
-        /// of the following image name example:</p>
+        /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
+        /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
+        /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>:container-service-1.<imagelabel>.1</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>:container-service-1.
+        /// <imagelabel>
+        /// .1
+        /// </imagelabel></code> </p> </li>
         /// </ul>
-        ///
-        /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label
-        /// that you specify is <code>mystaticwebsite</code>, then the name of the registered container
-        /// image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
-        ///
-        /// <p>The number at the end of these image name examples represents the version of the
-        /// registered container image. If you push and register another container image to the same
-        /// Lightsail container service, with the same label, then the version number for the new
-        /// registered container image will be <code>2</code>. If you push and register another container
-        /// image, the version number will be <code>3</code>, and so on.</p>
+        /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
+        /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The label for the container image when it's registered to the container service.</p>
-        ///
-        /// <p>Use a descriptive label that you can use to track the different versions of your
-        /// registered container images.</p>
-        ///
-        /// <p>Use the <code>GetContainerImages</code> action to return the container images registered
-        /// to a Lightsail container service. The label is the <code><imagelabel></code> portion
-        /// of the following image name example:</p>
+        /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
+        /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
+        /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>:container-service-1.<imagelabel>.1</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>:container-service-1.
+        /// <imagelabel>
+        /// .1
+        /// </imagelabel></code> </p> </li>
         /// </ul>
-        ///
-        /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label
-        /// that you specify is <code>mystaticwebsite</code>, then the name of the registered container
-        /// image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
-        ///
-        /// <p>The number at the end of these image name examples represents the version of the
-        /// registered container image. If you push and register another container image to the same
-        /// Lightsail container service, with the same label, then the version number for the new
-        /// registered container image will be <code>2</code>. If you push and register another container
-        /// image, the version number will be <code>3</code>, and so on.</p>
+        /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
+        /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_label(input);
             self
@@ -17346,10 +14421,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResetDistributionCache`.
     ///
-    /// <p>Deletes currently cached content from your Amazon Lightsail content delivery network (CDN)
-    /// distribution.</p>
-    /// <p>After resetting the cache, the next time a content request is made, your distribution
-    /// pulls, serves, and caches it from the origin.</p>
+    /// <p>Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches it from the origin.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDistributionCache<
         C = aws_smithy_client::erase::DynConnector,
@@ -17407,15 +14480,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to reset cache.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution for which to reset cache.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17426,18 +14497,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendContactMethodVerification`.
     ///
-    /// <p>Sends a verification request to an email contact method to ensure it's owned by the
-    /// requester. SMS contact methods don't need to be verified.</p>
-    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources.
-    /// You can add one email address and one mobile phone number contact method in each AWS Region.
-    /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
-    /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    /// <p>A verification request is sent to the contact method when you initially create it. Use
-    /// this action to send another verification request if a previous verification request was
-    /// deleted, or has expired.</p>
-    /// <important>
-    /// <p>Notifications are not sent to an email contact method until after it is verified, and
-    /// confirmed as valid.</p>
+    /// <p>Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact methods don't need to be verified.</p>
+    /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>A verification request is sent to the contact method when you initially create it. Use this action to send another verification request if a previous verification request was deleted, or has expired.</p> <important>
+    /// <p>Notifications are not sent to an email contact method until after it is verified, and confirmed as valid.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendContactMethodVerification<
@@ -17495,14 +14558,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
+        /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
         pub fn protocol(mut self, input: crate::model::ContactMethodVerificationProtocol) -> Self {
             self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-        /// messaging).</p>
+        /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ContactMethodVerificationProtocol>,
@@ -17514,10 +14575,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetIpAddressType`.
     ///
     /// <p>Sets the IP address type for an Amazon Lightsail resource.</p>
-    ///
-    /// <p>Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
-    /// specified resource. Alternately, you can use this action to disable dual-stack, and enable
-    /// IPv4 only.</p>
+    /// <p>Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource. Alternately, you can use this action to disable dual-stack, and enable IPv4 only.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIpAddressType<
         C = aws_smithy_client::erase::DynConnector,
@@ -17575,24 +14633,16 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource type.</p>
-        /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and
-        /// <code>LoadBalancer</code>.</p>
-        /// <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>)
-        /// AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view,
-        /// or edit distributions.</p>
+        /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type.</p>
-        /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and
-        /// <code>LoadBalancer</code>.</p>
-        /// <note>
-        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>)
-        /// AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view,
-        /// or edit distributions.</p>
+        /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
+        /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
         /// </note>
         pub fn set_resource_type(
             mut self,
@@ -17615,17 +14665,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address type to set for the specified resource.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type to set for the specified resource.</p>
-        ///
-        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
-        /// IPv4 and IPv6.</p>
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -17636,11 +14682,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetResourceAccessForBucket`.
     ///
-    /// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
-    /// bucket.</p>
-    ///
-    /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same
-    /// AWS Region.</p>
+    /// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.</p>
+    /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same AWS Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetResourceAccessForBucket<
         C = aws_smithy_client::erase::DynConnector,
@@ -17697,14 +14740,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
-        /// in a running or stopped state.</p>
+        /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input.into());
             self
         }
-        /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
-        /// in a running or stopped state.</p>
+        /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17723,38 +14764,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access setting.</p>
-        ///
         /// <p>The following access settings are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>allow</code> - Allows access to the bucket and its objects.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deny</code> - Denies access to the bucket and its objects. Use this setting to
-        /// remove access for a resource previously set to <code>allow</code>.</p>
-        /// </li>
+        /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
+        /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
         /// </ul>
         pub fn access(mut self, input: crate::model::ResourceBucketAccess) -> Self {
             self.inner = self.inner.access(input);
             self
         }
         /// <p>The access setting.</p>
-        ///
         /// <p>The following access settings are available:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>allow</code> - Allows access to the bucket and its objects.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deny</code> - Denies access to the bucket and its objects. Use this setting to
-        /// remove access for a resource previously set to <code>allow</code>.</p>
-        /// </li>
+        /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
+        /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
         /// </ul>
         pub fn set_access(
             mut self,
@@ -17766,16 +14789,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartInstance`.
     ///
-    /// <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance,
-    /// use the <code>reboot instance</code> operation.</p>
-    /// <note>
-    /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the
-    /// instance. To use the same IP address after stopping and starting an instance, create a
-    /// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the <code>reboot instance</code> operation.</p> <note>
+    /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP address after stopping and starting an instance, create a static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
-    /// <p>The <code>start instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>instance name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>start instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -17848,11 +14865,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartRelationalDatabase`.
     ///
-    /// <p>Starts a specific database from a stopped state in Amazon Lightsail. To restart a database,
-    /// use the <code>reboot relational database</code> operation.</p>
-    /// <p>The <code>start relational database</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by relationalDatabaseName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the <code>reboot relational database</code> operation.</p>
+    /// <p>The <code>start relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -17925,15 +14939,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopInstance`.
     ///
-    /// <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-    /// <note>
-    /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the
-    /// instance. To use the same IP address after stopping and starting an instance, create a
-    /// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Stops a specific Amazon Lightsail instance that is currently running.</p> <note>
+    /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP address after stopping and starting an instance, create a static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
-    /// <p>The <code>stop instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>instance name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -18003,23 +15012,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_name(input);
             self
         }
-        /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-        /// <code>stopping</code> state to stop.</p>
-        /// <important>
-        /// <p>Only use the <code>force</code> parameter if your instance is stuck in the
-        /// <code>stopping</code> state. In any other state, your instance should stop normally
-        /// without adding this parameter to your API request.</p>
+        /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
+        /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
         /// </important>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
-        /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-        /// <code>stopping</code> state to stop.</p>
-        /// <important>
-        /// <p>Only use the <code>force</code> parameter if your instance is stuck in the
-        /// <code>stopping</code> state. In any other state, your instance should stop normally
-        /// without adding this parameter to your API request.</p>
+        /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
+        /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
         /// </important>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
@@ -18029,9 +15030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopRelationalDatabase`.
     ///
     /// <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
-    /// <p>The <code>stop relational database</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by relationalDatabaseName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>stop relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -18120,12 +15119,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a
-    /// maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys must be unique
-    /// per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    /// <p>The <code>tag resource</code> operation supports tag-based access control via request tags
-    /// and resource tags applied to the resource identified by <code>resource name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by <code>resource name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -18225,14 +15220,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TestAlarm`.
     ///
-    /// <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification
-    /// trigger is configured for the specified alarm, the test also sends a notification to the
-    /// notification protocol (<code>Email</code> and/or <code>SMS</code>) configured for the
-    /// alarm.</p>
-    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric
-    /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
-    /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
-    /// in Amazon Lightsail</a>.</p>
+    /// <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification trigger is configured for the specified alarm, the test also sends a notification to the notification protocol (<code>Email</code> and/or <code>SMS</code>) configured for the alarm.</p>
+    /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestAlarm<
         C = aws_smithy_client::erase::DynConnector,
@@ -18302,20 +15291,9 @@ pub mod fluent_builders {
         /// <p>The alarm state to test.</p>
         /// <p>An alarm has the following possible states that can be tested:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
-        /// available, or not enough data is available for the metric to determine the alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK</code> - The metric is within the defined threshold.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+        /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::AlarmState) -> Self {
             self.inner = self.inner.state(input);
@@ -18324,20 +15302,9 @@ pub mod fluent_builders {
         /// <p>The alarm state to test.</p>
         /// <p>An alarm has the following possible states that can be tested:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
-        /// available, or not enough data is available for the metric to determine the alarm
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK</code> - The metric is within the defined threshold.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+        /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::AlarmState>) -> Self {
             self.inner = self.inner.set_state(input);
@@ -18406,11 +15373,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Deletes the specified set of tag keys and their values from the specified Amazon Lightsail
-    /// resource.</p>
-    /// <p>The <code>untag resource</code> operation supports tag-based access control via request
-    /// tags and resource tags applied to the resource identified by <code>resource name</code>. For
-    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Deletes the specified set of tag keys and their values from the specified Amazon Lightsail resource.</p>
+    /// <p>The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by <code>resource name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -18511,9 +15475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBucket`.
     ///
     /// <p>Updates an existing Amazon Lightsail bucket.</p>
-    ///
-    /// <p>Use this action to update the configuration of an existing bucket, such as versioning,
-    /// public accessibility, and the AWS accounts that can access the bucket.</p>
+    /// <p>Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and the AWS accounts that can access the bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucket<
         C = aws_smithy_client::erase::DynConnector,
@@ -18594,36 +15556,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
-        ///
         /// <p>The following options can be specified:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Suspended</code> - Suspends versioning of objects in the specified bucket.
-        /// Existing object versions are retained.</p>
-        /// </li>
+        /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
+        /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
         /// </ul>
         pub fn versioning(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.versioning(input.into());
             self
         }
         /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
-        ///
         /// <p>The following options can be specified:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Suspended</code> - Suspends versioning of objects in the specified bucket.
-        /// Existing object versions are retained.</p>
-        /// </li>
+        /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
+        /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
         /// </ul>
         pub fn set_versioning(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_versioning(input);
@@ -18634,14 +15580,12 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
         ///
         /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        ///
         /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
         pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readonly_access_accounts(input.into());
             self
         }
         /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
-        ///
         /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
         pub fn set_readonly_access_accounts(
             mut self,
@@ -18667,20 +15611,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBucketBundle`.
     ///
     /// <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.</p>
-    ///
-    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
-    /// bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To
-    /// determine if you can update a bucket's bundle, use the <a>GetBuckets</a> action.
-    /// The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can
-    /// currently update a bucket's bundle.</p>
-    ///
-    /// <p>Update a bucket's bundle if it's consistently going over its storage space or data
-    /// transfer quota, or if a bucket's usage is consistently in the lower range of its storage space
-    /// or data transfer quota. Due to the unpredictable usage fluctuations that a bucket might
-    /// experience, we strongly recommend that you update a bucket's bundle only as a long-term
-    /// strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
-    /// that will provide the bucket with ample storage space and data transfer for a long time to
-    /// come.</p>
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's bundle, use the <code>GetBuckets</code> action. The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a bucket's bundle.</p>
+    /// <p>Update a bucket's bundle if it's consistently going over its storage space or data transfer quota, or if a bucket's usage is consistently in the lower range of its storage space or data transfer quota. Due to the unpredictable usage fluctuations that a bucket might experience, we strongly recommend that you update a bucket's bundle only as a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle that will provide the bucket with ample storage space and data transfer for a long time to come.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucketBundle<
         C = aws_smithy_client::erase::DynConnector,
@@ -18748,17 +15680,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        ///
-        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-        /// specify.</p>
+        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        ///
-        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
-        /// specify.</p>
+        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -18766,8 +15694,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContainerService`.
     ///
-    /// <p>Updates the configuration of your Amazon Lightsail container service, such as its power,
-    /// scale, and public domain names.</p>
+    /// <p>Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain names.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerService<
         C = aws_smithy_client::erase::DynConnector,
@@ -18835,29 +15762,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The power for the container service.</p>
-        ///
-        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
-        /// container service. The <code>power</code> and <code>scale</code> of a container service makes
-        /// up its configured capacity. To determine the monthly price of your container service, multiply
-        /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
-        /// the service.</p>
-        ///
-        /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each
-        /// power option.</p>
+        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+        /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
         pub fn power(mut self, input: crate::model::ContainerServicePowerName) -> Self {
             self.inner = self.inner.power(input);
             self
         }
         /// <p>The power for the container service.</p>
-        ///
-        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the
-        /// container service. The <code>power</code> and <code>scale</code> of a container service makes
-        /// up its configured capacity. To determine the monthly price of your container service, multiply
-        /// the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of
-        /// the service.</p>
-        ///
-        /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each
-        /// power option.</p>
+        /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+        /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
         pub fn set_power(
             mut self,
             input: std::option::Option<crate::model::ContainerServicePowerName>,
@@ -18866,23 +15779,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The scale for the container service.</p>
-        ///
-        /// <p>The scale specifies the allocated compute nodes of the container service. The
-        /// <code>power</code> and <code>scale</code> of a container service makes up its configured
-        /// capacity. To determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
-        /// service.</p>
+        /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
         pub fn scale(mut self, input: i32) -> Self {
             self.inner = self.inner.scale(input);
             self
         }
         /// <p>The scale for the container service.</p>
-        ///
-        /// <p>The scale specifies the allocated compute nodes of the container service. The
-        /// <code>power</code> and <code>scale</code> of a container service makes up its configured
-        /// capacity. To determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
-        /// service.</p>
+        /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_scale(input);
             self
@@ -18901,24 +15804,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_public_domain_names`](Self::set_public_domain_names).
         ///
-        /// <p>The public domain names to use with the container service, such as
-        /// <code>example.com</code> and <code>www.example.com</code>.</p>
-        ///
-        /// <p>You can specify up to four public domain names for a container service. The domain names
-        /// that you specify are used when you create a deployment with a container configured as the
-        /// public endpoint of your container service.</p>
-        ///
-        /// <p>If you don't specify public domain names, then you can use the default domain of the
-        /// container service.</p>
-        ///
-        /// <important>
-        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
-        /// certificate for the public domain names you want to use with your container service.</p>
+        /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+        /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+        /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
         /// </important>
-        ///
-        /// <p>You can specify public domain names using a string to array map as shown in the example
-        /// later on this page.</p>
+        /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -18927,24 +15818,12 @@ pub mod fluent_builders {
             self.inner = self.inner.public_domain_names(k.into(), v);
             self
         }
-        /// <p>The public domain names to use with the container service, such as
-        /// <code>example.com</code> and <code>www.example.com</code>.</p>
-        ///
-        /// <p>You can specify up to four public domain names for a container service. The domain names
-        /// that you specify are used when you create a deployment with a container configured as the
-        /// public endpoint of your container service.</p>
-        ///
-        /// <p>If you don't specify public domain names, then you can use the default domain of the
-        /// container service.</p>
-        ///
-        /// <important>
-        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
-        /// certificate for the public domain names you want to use with your container service.</p>
+        /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
+        /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
+        /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
         /// </important>
-        ///
-        /// <p>You can specify public domain names using a string to array map as shown in the example
-        /// later on this page.</p>
+        /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
         pub fn set_public_domain_names(
             mut self,
             input: std::option::Option<
@@ -19016,15 +15895,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution to update.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution to update.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19032,15 +15909,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_name(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
-        /// instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.inner = self.inner.origin(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
-        /// instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.inner = self.inner.set_origin(input);
@@ -19059,21 +15934,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_cache_behavior(input);
             self
         }
-        /// <p>An object that describes the cache behavior settings for the distribution.</p>
-        /// <note>
-        /// <p>The <code>cacheBehaviorSettings</code> specified in your
-        /// <code>UpdateDistributionRequest</code> will replace your distribution's existing
-        /// settings.</p>
+        /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+        /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
         /// </note>
         pub fn cache_behavior_settings(mut self, input: crate::model::CacheSettings) -> Self {
             self.inner = self.inner.cache_behavior_settings(input);
             self
         }
-        /// <p>An object that describes the cache behavior settings for the distribution.</p>
-        /// <note>
-        /// <p>The <code>cacheBehaviorSettings</code> specified in your
-        /// <code>UpdateDistributionRequest</code> will replace your distribution's existing
-        /// settings.</p>
+        /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+        /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
         /// </note>
         pub fn set_cache_behavior_settings(
             mut self,
@@ -19112,16 +15981,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDistributionBundle`.
     ///
-    /// <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
-    /// distribution.</p>
-    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of
-    /// your dsitribution.</p>
-    /// <p>Update your distribution's bundle if your distribution is going over its monthly network
-    /// transfer quota and is incurring an overage fee.</p>
-    /// <p>You can update your distribution's bundle only one time within your monthly AWS billing
-    /// cycle. To determine if you can update your distribution's bundle, use the
-    /// <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the
-    /// result will indicate whether you can currently update your distribution's bundle.</p>
+    /// <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p>
+    /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.</p>
+    /// <p>Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is incurring an overage fee.</p>
+    /// <p>You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your distribution's bundle.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionBundle<
         C = aws_smithy_client::erase::DynConnector,
@@ -19179,15 +16042,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to update the bundle.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.distribution_name(input.into());
             self
         }
         /// <p>The name of the distribution for which to update the bundle.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
+        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
         pub fn set_distribution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19196,15 +16057,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
-        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
-        /// IDs that you can specify.</p>
+        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
-        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
-        /// IDs that you can specify.</p>
+        /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -19213,9 +16072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainEntry`.
     ///
     /// <p>Updates a domain recordset after it is created.</p>
-    /// <p>The <code>update domain entry</code> operation supports tag-based access control via
-    /// resource tags applied to the resource identified by <code>domain name</code>. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
@@ -19298,11 +16155,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLoadBalancerAttribute`.
     ///
-    /// <p>Updates the specified attribute for a load balancer. You can only update one attribute at
-    /// a time.</p>
-    /// <p>The <code>update load balancer attribute</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Updates the specified attribute for a load balancer. You can only update one attribute at a time.</p>
+    /// <p>The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoadBalancerAttribute<
         C = aws_smithy_client::erase::DynConnector,
@@ -19359,14 +16213,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the load balancer that you want to modify (e.g.,
-        /// <code>my-load-balancer</code>.</p>
+        /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
         pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.load_balancer_name(input.into());
             self
         }
-        /// <p>The name of the load balancer that you want to modify (e.g.,
-        /// <code>my-load-balancer</code>.</p>
+        /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19404,11 +16256,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRelationalDatabase`.
     ///
     /// <p>Allows the update of one or more attributes of a database in Amazon Lightsail.</p>
-    /// <p>Updates are applied immediately, or in cases where the updates could result in an outage,
-    /// are applied during the database's predefined maintenance window.</p>
-    /// <p>The <code>update relational database</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-    /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the database's predefined maintenance window.</p>
+    /// <p>The <code>update relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
@@ -19478,27 +16327,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_relational_database_name(input);
             self
         }
-        /// <p>The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@".</p>
-        /// <p>My<b>SQL</b>
-        /// </p>
+        /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>My<b>SQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
             self
         }
-        /// <p>The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@".</p>
-        /// <p>My<b>SQL</b>
-        /// </p>
+        /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
+        /// <p>My<b>SQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
+        /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
         pub fn set_master_user_password(
             mut self,
@@ -19507,63 +16348,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_master_user_password(input);
             self
         }
-        /// <p>When <code>true</code>, the master user password is changed to a new strong password
-        /// generated by Lightsail.</p>
-        /// <p>Use the <code>get relational database master user password</code> operation to get the new
-        /// password.</p>
+        /// <p>When <code>true</code>, the master user password is changed to a new strong password generated by Lightsail.</p>
+        /// <p>Use the <code>get relational database master user password</code> operation to get the new password.</p>
         pub fn rotate_master_user_password(mut self, input: bool) -> Self {
             self.inner = self.inner.rotate_master_user_password(input);
             self
         }
-        /// <p>When <code>true</code>, the master user password is changed to a new strong password
-        /// generated by Lightsail.</p>
-        /// <p>Use the <code>get relational database master user password</code> operation to get the new
-        /// password.</p>
+        /// <p>When <code>true</code>, the master user password is changed to a new strong password generated by Lightsail.</p>
+        /// <p>Use the <code>get relational database master user password</code> operation to get the new password.</p>
         pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_rotate_master_user_password(input);
             self
         }
-        /// <p>The daily time range during which automated backups are created for your database if
-        /// automated backups are enabled.</p>
+        /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
-        /// <p>Example: <code>16:00-16:30</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must not conflict with the preferred maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
+        /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
         /// </ul>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
-        /// <p>The daily time range during which automated backups are created for your database if
-        /// automated backups are enabled.</p>
+        /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
-        /// <p>Example: <code>16:00-16:30</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must not conflict with the preferred maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
+        /// <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
         /// </ul>
         pub fn set_preferred_backup_window(
             mut self,
@@ -19573,26 +16388,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
+        /// <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
         /// </ul>
         pub fn preferred_maintenance_window(
             mut self,
@@ -19602,26 +16405,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
-        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each
-        /// AWS Region, occurring on a random day of the week.</p>
+        /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be at least 30 minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>Specified in Coordinated Universal Time (UTC).</p>
-        /// </li>
-        /// <li>
-        /// <p>Example: <code>Tue:17:00-Tue:17:30</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>
+        /// <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>
+        /// <li> <p>Must be at least 30 minutes.</p> </li>
+        /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+        /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
         /// </ul>
         pub fn set_preferred_maintenance_window(
             mut self,
@@ -19631,67 +16422,49 @@ pub mod fluent_builders {
             self
         }
         /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
-        /// <p>Updates are applied during the next maintenance window because this can result in an
-        /// outage.</p>
+        /// <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
         pub fn enable_backup_retention(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_backup_retention(input);
             self
         }
         /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
-        /// <p>Updates are applied during the next maintenance window because this can result in an
-        /// outage.</p>
+        /// <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
         pub fn set_enable_backup_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_backup_retention(input);
             self
         }
         /// <p>When <code>true</code>, disables automated backup retention for your database.</p>
-        /// <p>Disabling backup retention deletes all automated database backups. Before disabling this,
-        /// you may want to create a snapshot of your database using the <code>create relational database
-        /// snapshot</code> operation.</p>
-        /// <p>Updates are applied during the next maintenance window because this can result in an
-        /// outage.</p>
+        /// <p>Disabling backup retention deletes all automated database backups. Before disabling this, you may want to create a snapshot of your database using the <code>create relational database snapshot</code> operation.</p>
+        /// <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
         pub fn disable_backup_retention(mut self, input: bool) -> Self {
             self.inner = self.inner.disable_backup_retention(input);
             self
         }
         /// <p>When <code>true</code>, disables automated backup retention for your database.</p>
-        /// <p>Disabling backup retention deletes all automated database backups. Before disabling this,
-        /// you may want to create a snapshot of your database using the <code>create relational database
-        /// snapshot</code> operation.</p>
-        /// <p>Updates are applied during the next maintenance window because this can result in an
-        /// outage.</p>
+        /// <p>Disabling backup retention deletes all automated database backups. Before disabling this, you may want to create a snapshot of your database using the <code>create relational database snapshot</code> operation.</p>
+        /// <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
         pub fn set_disable_backup_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_disable_backup_retention(input);
             self
         }
-        /// <p>Specifies the accessibility options for your database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
-        /// <p>Specifies the accessibility options for your database. A value of <code>true</code>
-        /// specifies a database that is available to resources outside of your Lightsail account. A
-        /// value of <code>false</code> specifies a database that is available only to your Lightsail
-        /// resources in the same region as your database.</p>
+        /// <p>Specifies the accessibility options for your database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
-        /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies
-        /// changes during the preferred maintenance window. Some changes may cause an outage.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies changes during the preferred maintenance window. Some changes may cause an outage.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
             self.inner = self.inner.apply_immediately(input);
             self
         }
-        /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies
-        /// changes during the preferred maintenance window. Some changes may cause an outage.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies changes during the preferred maintenance window. Some changes may cause an outage.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_apply_immediately(input);
             self
@@ -19713,15 +16486,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRelationalDatabaseParameters`.
     ///
     /// <p>Allows the update of one or more parameters of a database in Amazon Lightsail.</p>
-    /// <p>Parameter updates don't cause outages; therefore, their application is not subject to the
-    /// preferred maintenance window. However, there are two ways in which parameter updates are
-    /// applied: <code>dynamic</code> or <code>pending-reboot</code>. Parameters marked with a
-    /// <code>dynamic</code> apply type are applied immediately. Parameters marked with a
-    /// <code>pending-reboot</code> apply type are applied only after the database is rebooted using
-    /// the <code>reboot relational database</code> operation.</p>
-    /// <p>The <code>update relational database parameters</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by relationalDatabaseName. For
-    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance window. However, there are two ways in which parameter updates are applied: <code>dynamic</code> or <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately. Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted using the <code>reboot relational database</code> operation.</p>
+    /// <p>The <code>update relational database parameters</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRelationalDatabaseParameters<
         C = aws_smithy_client::erase::DynConnector,

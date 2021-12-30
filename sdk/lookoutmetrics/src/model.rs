@@ -2126,8 +2126,7 @@ impl MetricSetSummary {
     }
 }
 
-/// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as
-/// <i>availability</i> in the <i>us-east-1</i> Region.</p>
+/// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeries {
@@ -4730,8 +4729,7 @@ impl LambdaConfiguration {
     }
 }
 
-/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has
-/// access to that topic.</p>
+/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsConfiguration {

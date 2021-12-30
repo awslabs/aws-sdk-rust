@@ -41,31 +41,25 @@ pub mod create_application_input {
             self.application_description = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -256,14 +250,12 @@ pub mod delete_application_input {
             self.application_id = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1303,14 +1295,12 @@ pub mod update_application_input {
             self.application_description = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1481,8 +1471,7 @@ pub struct UpdateApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the web application.</p>
     pub application_description: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -1498,8 +1487,7 @@ impl UpdateApplicationInput {
     pub fn application_description(&self) -> std::option::Option<&str> {
         self.application_description.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1644,8 +1632,7 @@ impl std::fmt::Debug for DescribeApplicationInput {
 pub struct DeleteApplicationInput {
     /// <p>The unique Id of the web application.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -1653,8 +1640,7 @@ impl DeleteApplicationInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1676,13 +1662,10 @@ pub struct CreateApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the web application.</p>
     pub application_description: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    /// <note>
-    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-    /// </code>.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
@@ -1698,15 +1681,12 @@ impl CreateApplicationInput {
     pub fn application_description(&self) -> std::option::Option<&str> {
         self.application_description.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    /// <note>
-    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-    /// </code>.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()

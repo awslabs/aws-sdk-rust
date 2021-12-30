@@ -90,49 +90,23 @@ pub struct BgpPeer {
     pub customer_address: std::option::Option<std::string::String>,
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The BGP peer is ready to be established.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>:  The BGP peer is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
-    /// </li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub bgp_peer_state: std::option::Option<crate::model::BgpPeerState>,
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>up</code>: The BGP peer is established. This state does not indicate the
-    /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The BGP peer is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The BGP peer status is not available.</p>
-    /// </li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub bgp_status: std::option::Option<crate::model::BgpStatus>,
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
 }
 impl BgpPeer {
@@ -162,45 +136,20 @@ impl BgpPeer {
     }
     /// <p>The state of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The BGP peer is ready to be established.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>:  The BGP peer is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
-    /// </li>
+    /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+    /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+    /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+    /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
     pub fn bgp_peer_state(&self) -> std::option::Option<&crate::model::BgpPeerState> {
         self.bgp_peer_state.as_ref()
     }
     /// <p>The status of the BGP peer. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>up</code>: The BGP peer is established. This state does not indicate the
-    /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The BGP peer is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The BGP peer status is not available.</p>
-    /// </li>
+    /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+    /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+    /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
     /// </ul>
     pub fn bgp_status(&self) -> std::option::Option<&crate::model::BgpStatus> {
         self.bgp_status.as_ref()
@@ -209,8 +158,7 @@ impl BgpPeer {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -320,26 +268,11 @@ pub mod bgp_peer {
         }
         /// <p>The state of the BGP peer. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The BGP peer is ready to be established.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>:  The BGP peer is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
-        /// </li>
+        /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+        /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+        /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+        /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
         /// </ul>
         pub fn bgp_peer_state(mut self, input: crate::model::BgpPeerState) -> Self {
             self.bgp_peer_state = Some(input);
@@ -347,26 +280,11 @@ pub mod bgp_peer {
         }
         /// <p>The state of the BGP peer. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The BGP peer is ready to be established.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>:  The BGP peer is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
-        /// </li>
+        /// <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p> </li>
+        /// <li> <p> <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p> </li>
+        /// <li> <p> <code>available</code>: The BGP peer is ready to be established.</p> </li>
+        /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
         /// </ul>
         pub fn set_bgp_peer_state(
             mut self,
@@ -377,19 +295,9 @@ pub mod bgp_peer {
         }
         /// <p>The status of the BGP peer. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>up</code>: The BGP peer is established. This state does not indicate the
-        /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The BGP peer is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The BGP peer status is not available.</p>
-        /// </li>
+        /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+        /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+        /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
         /// </ul>
         pub fn bgp_status(mut self, input: crate::model::BgpStatus) -> Self {
             self.bgp_status = Some(input);
@@ -397,19 +305,9 @@ pub mod bgp_peer {
         }
         /// <p>The status of the BGP peer. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>up</code>: The BGP peer is established. This state does not indicate the
-        /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The BGP peer is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The BGP peer status is not available.</p>
-        /// </li>
+        /// <li> <p> <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function. Ensure that you are receiving routes over the BGP session.</p> </li>
+        /// <li> <p> <code>down</code>: The BGP peer is down.</p> </li>
+        /// <li> <p> <code>unknown</code>: The BGP peer status is not available.</p> </li>
         /// </ul>
         pub fn set_bgp_status(
             mut self,
@@ -431,14 +329,12 @@ pub mod bgp_peer {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -651,8 +547,7 @@ impl AsRef<str> for AddressFamily {
     }
 }
 
-/// <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP)
-/// over a public virtual interface.</p>
+/// <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteFilterPrefix {
@@ -808,22 +703,10 @@ pub struct MacSecKey {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
-    /// </li>
+    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
+    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
     pub state: std::option::Option<std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
@@ -841,22 +724,10 @@ impl MacSecKey {
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
-    /// </li>
+    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
+    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
@@ -911,22 +782,10 @@ pub mod mac_sec_key {
         /// <p>The state of the MAC Security (MACsec) secret key.</p>
         /// <p>The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
-        /// </li>
+        /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
+        /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
+        /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
+        /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
         /// </ul>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
@@ -935,22 +794,10 @@ pub mod mac_sec_key {
         /// <p>The state of the MAC Security (MACsec) secret key.</p>
         /// <p>The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
-        /// </li>
+        /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
+        /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
+        /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
+        /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
@@ -1055,42 +902,15 @@ pub struct Connection {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -1103,7 +923,7 @@ pub struct Connection {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -1113,8 +933,7 @@ pub struct Connection {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -1148,42 +967,15 @@ impl Connection {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -1208,7 +1000,7 @@ impl Connection {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -1228,8 +1020,7 @@ impl Connection {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -1365,42 +1156,15 @@ pub mod connection {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -1408,42 +1172,15 @@ pub mod connection {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -1502,12 +1239,12 @@ pub mod connection {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1558,14 +1295,12 @@ pub mod connection {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1899,22 +1634,10 @@ pub struct DirectConnectGatewayAssociation {
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-    /// </li>
+    /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
     /// </ul>
     pub association_state: std::option::Option<crate::model::DirectConnectGatewayAssociationState>,
     /// <p>The error message if the state of an object failed to advance.</p>
@@ -1944,22 +1667,10 @@ impl DirectConnectGatewayAssociation {
     }
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-    /// </li>
+    /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
+    /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
     /// </ul>
     pub fn association_state(
         &self,
@@ -2073,22 +1784,10 @@ pub mod direct_connect_gateway_association {
         }
         /// <p>The state of the association. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-        /// </li>
+        /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
+        /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
+        /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
+        /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
         /// </ul>
         pub fn association_state(
             mut self,
@@ -2099,22 +1798,10 @@ pub mod direct_connect_gateway_association {
         }
         /// <p>The state of the association. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-        /// </li>
+        /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
+        /// <li> <p> <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p> </li>
+        /// <li> <p> <code>disassociating</code>: The initial state after calling <code>DeleteDirectConnectGatewayAssociation</code>.</p> </li>
+        /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
         /// </ul>
         pub fn set_association_state(
             mut self,
@@ -2509,22 +2196,10 @@ pub struct DirectConnectGateway {
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-    /// </li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub direct_connect_gateway_state: std::option::Option<crate::model::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
@@ -2549,22 +2224,10 @@ impl DirectConnectGateway {
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-    /// </li>
+    /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+    /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+    /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
     /// </ul>
     pub fn direct_connect_gateway_state(
         &self,
@@ -2663,22 +2326,10 @@ pub mod direct_connect_gateway {
         }
         /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-        /// </li>
+        /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+        /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+        /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+        /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
         /// </ul>
         pub fn direct_connect_gateway_state(
             mut self,
@@ -2689,22 +2340,10 @@ pub mod direct_connect_gateway {
         }
         /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
-        /// </li>
+        /// <li> <p> <code>pending</code>: The initial state after calling <code>CreateDirectConnectGateway</code>.</p> </li>
+        /// <li> <p> <code>available</code>: The Direct Connect gateway is ready for use.</p> </li>
+        /// <li> <p> <code>deleting</code>: The initial state after calling <code>DeleteDirectConnectGateway</code>.</p> </li>
+        /// <li> <p> <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p> </li>
         /// </ul>
         pub fn set_direct_connect_gateway_state(
             mut self,
@@ -3050,42 +2689,15 @@ pub struct VirtualInterface {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -3106,8 +2718,7 @@ pub struct VirtualInterface {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3170,42 +2781,15 @@ impl VirtualInterface {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -3248,8 +2832,7 @@ impl VirtualInterface {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -3488,42 +3071,15 @@ pub mod virtual_interface {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -3534,42 +3090,15 @@ pub mod virtual_interface {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -3698,14 +3227,12 @@ pub mod virtual_interface {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3790,22 +3317,10 @@ pub struct VirtualGateway {
     pub virtual_gateway_id: std::option::Option<std::string::String>,
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: Ready for use by a private virtual interface.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
-    /// </li>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
     pub virtual_gateway_state: std::option::Option<std::string::String>,
 }
@@ -3816,22 +3331,10 @@ impl VirtualGateway {
     }
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: Ready for use by a private virtual interface.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
-    /// </li>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
     pub fn virtual_gateway_state(&self) -> std::option::Option<&str> {
         self.virtual_gateway_state.as_deref()
@@ -3870,22 +3373,10 @@ pub mod virtual_gateway {
         }
         /// <p>The state of the virtual private gateway. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: Ready for use by a private virtual interface.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
-        /// </li>
+        /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+        /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+        /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+        /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
         /// </ul>
         pub fn virtual_gateway_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_gateway_state = Some(input.into());
@@ -3893,22 +3384,10 @@ pub mod virtual_gateway {
         }
         /// <p>The state of the virtual private gateway. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: Ready for use by a private virtual interface.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
-        /// </li>
+        /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+        /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+        /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+        /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
         /// </ul>
         pub fn set_virtual_gateway_state(
             mut self,
@@ -4423,8 +3902,7 @@ impl AsRef<str> for LoaContentType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lag {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub number_of_connections: i32,
@@ -4436,35 +3914,13 @@ pub struct Lag {
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
@@ -4477,8 +3933,7 @@ pub struct Lag {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -4501,8 +3956,7 @@ pub struct Lag {
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl Lag {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -4524,35 +3978,13 @@ impl Lag {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
         self.lag_state.as_ref()
@@ -4577,8 +4009,7 @@ impl Lag {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -4678,14 +4109,12 @@ pub mod lag {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.connections_bandwidth = Some(input.into());
             self
         }
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4738,35 +4167,13 @@ pub mod lag {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
@@ -4774,35 +4181,13 @@ pub mod lag {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
             self.lag_state = input;
@@ -4861,14 +4246,12 @@ pub mod lag {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5049,35 +4432,13 @@ pub struct Interconnect {
     pub interconnect_name: std::option::Option<std::string::String>,
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -5086,7 +4447,7 @@ pub struct Interconnect {
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -5096,8 +4457,7 @@ pub struct Interconnect {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -5117,35 +4477,13 @@ impl Interconnect {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
         self.interconnect_state.as_ref()
@@ -5162,7 +4500,7 @@ impl Interconnect {
     pub fn bandwidth(&self) -> std::option::Option<&str> {
         self.bandwidth.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -5182,8 +4520,7 @@ impl Interconnect {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -5274,35 +4611,13 @@ pub mod interconnect {
         }
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn interconnect_state(mut self, input: crate::model::InterconnectState) -> Self {
             self.interconnect_state = Some(input);
@@ -5310,35 +4625,13 @@ pub mod interconnect {
         }
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn set_interconnect_state(
             mut self,
@@ -5377,12 +4670,12 @@ pub mod interconnect {
             self.bandwidth = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5433,14 +4726,12 @@ pub mod interconnect {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5698,22 +4989,10 @@ pub struct DirectConnectGatewayAttachment {
     pub virtual_interface_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
-    /// </li>
+    /// <li> <p> <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p> </li>
+    /// <li> <p> <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
+    /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
     /// </ul>
     pub attachment_state: std::option::Option<crate::model::DirectConnectGatewayAttachmentState>,
     /// <p>The type of attachment.</p>
@@ -5740,22 +5019,10 @@ impl DirectConnectGatewayAttachment {
     }
     /// <p>The state of the attachment. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
-    /// </li>
+    /// <li> <p> <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p> </li>
+    /// <li> <p> <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p> </li>
+    /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
+    /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
     /// </ul>
     pub fn attachment_state(
         &self,
@@ -5863,22 +5130,10 @@ pub mod direct_connect_gateway_attachment {
         }
         /// <p>The state of the attachment. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
-        /// </li>
+        /// <li> <p> <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p> </li>
+        /// <li> <p> <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p> </li>
+        /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
+        /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
         /// </ul>
         pub fn attachment_state(
             mut self,
@@ -5889,22 +5144,10 @@ pub mod direct_connect_gateway_attachment {
         }
         /// <p>The state of the attachment. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
-        /// </li>
+        /// <li> <p> <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p> </li>
+        /// <li> <p> <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p> </li>
+        /// <li> <p> <code>detaching</code>: The initial state after calling <code>DeleteVirtualInterface</code>.</p> </li>
+        /// <li> <p> <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p> </li>
         /// </ul>
         pub fn set_attachment_state(
             mut self,
@@ -6089,7 +5332,7 @@ impl AsRef<str> for DirectConnectGatewayAttachmentState {
     }
 }
 
-/// <p>Information about the  proposal request to attach a virtual private gateway to a Direct Connect gateway. </p>
+/// <p>Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectConnectGatewayAssociationProposal {
@@ -6101,18 +5344,9 @@ pub struct DirectConnectGatewayAssociationProposal {
     pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
-    /// </li>
+    /// <li> <p> <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p> </li>
+    /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
+    /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
     pub proposal_state:
         std::option::Option<crate::model::DirectConnectGatewayAssociationProposalState>,
@@ -6140,18 +5374,9 @@ impl DirectConnectGatewayAssociationProposal {
     }
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
-    /// </li>
+    /// <li> <p> <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p> </li>
+    /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
+    /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
     pub fn proposal_state(
         &self,
@@ -6258,18 +5483,9 @@ pub mod direct_connect_gateway_association_proposal {
         }
         /// <p>The state of the proposal. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
-        /// </li>
+        /// <li> <p> <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p> </li>
+        /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
+        /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
         /// </ul>
         pub fn proposal_state(
             mut self,
@@ -6280,18 +5496,9 @@ pub mod direct_connect_gateway_association_proposal {
         }
         /// <p>The state of the proposal. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
-        /// </li>
+        /// <li> <p> <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p> </li>
+        /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
+        /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
         /// </ul>
         pub fn set_proposal_state(
             mut self,
@@ -6508,8 +5715,7 @@ impl AsRef<str> for NniPartnerType {
 pub struct CustomerAgreement {
     /// <p>The name of the agreement.</p>
     pub agreement_name: std::option::Option<std::string::String>,
-    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
-    /// </p>
+    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
     pub status: std::option::Option<std::string::String>,
 }
 impl CustomerAgreement {
@@ -6517,8 +5723,7 @@ impl CustomerAgreement {
     pub fn agreement_name(&self) -> std::option::Option<&str> {
         self.agreement_name.as_deref()
     }
-    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
-    /// </p>
+    /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -6554,14 +5759,12 @@ pub mod customer_agreement {
             self.agreement_name = input;
             self
         }
-        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
-        /// </p>
+        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
-        /// </p>
+        /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self

@@ -944,25 +944,19 @@ impl SearchProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchNetworkProfilesOutput {
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
-    /// is a list of NetworkProfileData objects. </p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub network_profiles: std::option::Option<std::vec::Vec<crate::model::NetworkProfileData>>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of network profiles returned.</p>
     pub total_count: std::option::Option<i32>,
 }
 impl SearchNetworkProfilesOutput {
-    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
-    /// is a list of NetworkProfileData objects. </p>
+    /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub fn network_profiles(&self) -> std::option::Option<&[crate::model::NetworkProfileData]> {
         self.network_profiles.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -996,16 +990,14 @@ pub mod search_network_profiles_output {
         ///
         /// To override the contents of this collection use [`set_network_profiles`](Self::set_network_profiles).
         ///
-        /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
-        /// is a list of NetworkProfileData objects. </p>
+        /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
         pub fn network_profiles(mut self, input: crate::model::NetworkProfileData) -> Self {
             let mut v = self.network_profiles.unwrap_or_default();
             v.push(input);
             self.network_profiles = Some(v);
             self
         }
-        /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
-        /// is a list of NetworkProfileData objects. </p>
+        /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
         pub fn set_network_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkProfileData>>,
@@ -1013,16 +1005,12 @@ pub mod search_network_profiles_output {
             self.network_profiles = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1260,8 +1248,7 @@ impl SearchContactsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAddressBooksOutput {
-    /// <p>The address books that meet the specified set of filter criteria, in sort
-    /// order.</p>
+    /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
     pub address_books: std::option::Option<std::vec::Vec<crate::model::AddressBookData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -1269,8 +1256,7 @@ pub struct SearchAddressBooksOutput {
     pub total_count: std::option::Option<i32>,
 }
 impl SearchAddressBooksOutput {
-    /// <p>The address books that meet the specified set of filter criteria, in sort
-    /// order.</p>
+    /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
     pub fn address_books(&self) -> std::option::Option<&[crate::model::AddressBookData]> {
         self.address_books.as_deref()
     }
@@ -1307,16 +1293,14 @@ pub mod search_address_books_output {
         ///
         /// To override the contents of this collection use [`set_address_books`](Self::set_address_books).
         ///
-        /// <p>The address books that meet the specified set of filter criteria, in sort
-        /// order.</p>
+        /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
         pub fn address_books(mut self, input: crate::model::AddressBookData) -> Self {
             let mut v = self.address_books.unwrap_or_default();
             v.push(input);
             self.address_books = Some(v);
             self
         }
-        /// <p>The address books that meet the specified set of filter criteria, in sort
-        /// order.</p>
+        /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
         pub fn set_address_books(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddressBookData>>,
@@ -2815,11 +2799,9 @@ impl GetNetworkProfileOutput {
 pub struct GetInvitationConfigurationOutput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub organization_name: std::option::Option<std::string::String>,
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub contact_email: std::option::Option<std::string::String>,
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetInvitationConfigurationOutput {
@@ -2827,13 +2809,11 @@ impl GetInvitationConfigurationOutput {
     pub fn organization_name(&self) -> std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(&self) -> std::option::Option<&str> {
         self.contact_email.as_deref()
     }
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.private_skill_ids.as_deref()
     }
@@ -2871,14 +2851,12 @@ pub mod get_invitation_configuration_output {
             self.organization_name = input;
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_email = Some(input.into());
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn set_contact_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2890,16 +2868,14 @@ pub mod get_invitation_configuration_output {
         ///
         /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
         ///
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.private_skill_ids.unwrap_or_default();
             v.push(input.into());
             self.private_skill_ids = Some(v);
             self
         }
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn set_private_skill_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

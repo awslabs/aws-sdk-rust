@@ -356,13 +356,13 @@ pub mod cancel_batch_import_job_input {
     }
     impl Builder {
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -718,14 +718,12 @@ pub mod create_batch_import_job_input {
             self.event_type_name = input;
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -734,14 +732,14 @@ pub mod create_batch_import_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key-value pairs associated with this request.  </p>
+        /// <p>A collection of key-value pairs associated with this request. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A collection of key-value pairs associated with this request.  </p>
+        /// <p>A collection of key-value pairs associated with this request. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2206,18 +2204,14 @@ pub mod create_variable_input {
             self.description = input;
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.variable_type = Some(input.into());
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6477,25 +6471,14 @@ pub mod get_event_prediction_input {
         ///
         /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
         ///
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn event_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -6506,25 +6489,14 @@ pub mod get_event_prediction_input {
             self.event_variables = Some(hash_map);
             self
         }
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn set_event_variables(
             mut self,
             input: std::option::Option<
@@ -13795,25 +13767,14 @@ pub struct GetEventPredictionInput {
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub event_timestamp: std::option::Option<std::string::String>,
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-    /// their corresponding values for the event you are sending for evaluation.</p>
-    /// <important>         
-    /// <p>You must provide at least one eventVariable</p>        
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>You must provide at least one eventVariable</p>
     /// </important>
-    ///
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    ///
-    /// <p>
-    /// <b>For Amazon Fraud Detector trained models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-    /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    ///
-    /// <p>
-    /// <b>For imported SageMaker models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-    /// will use the default value that is provided for the variable. </p>
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub event_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
@@ -13846,25 +13807,14 @@ impl GetEventPredictionInput {
     pub fn event_timestamp(&self) -> std::option::Option<&str> {
         self.event_timestamp.as_deref()
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-    /// their corresponding values for the event you are sending for evaluation.</p>
-    /// <important>         
-    /// <p>You must provide at least one eventVariable</p>        
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>You must provide at least one eventVariable</p>
     /// </important>
-    ///
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    ///
-    /// <p>
-    /// <b>For Amazon Fraud Detector trained models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-    /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    ///
-    /// <p>
-    /// <b>For imported SageMaker models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-    /// will use the default value that is provided for the variable. </p>
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub fn event_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14570,10 +14520,8 @@ pub struct CreateVariableInput {
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-    /// </p>
-    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-    /// </p>
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14599,10 +14547,8 @@ impl CreateVariableInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-    /// </p>
-    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-    /// </p>
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
     pub fn variable_type(&self) -> std::option::Option<&str> {
         self.variable_type.as_deref()
     }
@@ -14959,10 +14905,9 @@ pub struct CreateBatchImportJobInput {
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
     pub event_type_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of key-value pairs associated with this request.  </p>
+    /// <p>A collection of key-value pairs associated with this request. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchImportJobInput {
@@ -14982,12 +14927,11 @@ impl CreateBatchImportJobInput {
     pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
-    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A collection of key-value pairs associated with this request.  </p>
+    /// <p>A collection of key-value pairs associated with this request. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15031,12 +14975,12 @@ impl std::fmt::Debug for CancelBatchPredictionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
-    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
-    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }

@@ -332,15 +332,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchGetNamedQuery`.
     ///
-    /// <p>Returns the details of a single named query or a list of up to 50 queries, which you
-    /// provide as an array of query ID strings. Requires you to have access to the workgroup in
-    /// which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the
-    /// list of named query IDs in the specified workgroup. If information could not be
-    /// retrieved for a submitted query ID, information about the query ID submitted is listed
-    /// under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed
-    /// queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each
-    /// unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of
-    /// query execution IDs.</p>
+    /// <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <code>ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <code>UnprocessedNamedQueryId</code>. Named queries differ from executed queries. Use <code>BatchGetQueryExecutionInput</code> to get details about each unique query execution, and <code>ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
@@ -417,12 +409,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetQueryExecution`.
     ///
-    /// <p>Returns the details of a single query execution or a list of up to 50 query
-    /// executions, which you provide as an array of query execution ID strings. Requires you to
-    /// have access to the workgroup in which the queries ran. To get a list of query execution
-    /// IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ
-    /// from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details
-    /// about named queries.</p>
+    /// <p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <code>ListQueryExecutionsInput$WorkGroup</code>. Query executions differ from named (saved) queries. Use <code>BatchGetNamedQueryInput</code> to get details about named queries.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -499,8 +486,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataCatalog`.
     ///
-    /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs
-    /// created are visible to all users of the same Amazon Web Services account.</p>
+    /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
@@ -557,30 +543,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -602,73 +580,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -678,73 +603,20 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v.into());
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -775,11 +647,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNamedQuery`.
     ///
-    /// <p>Creates a named query in the specified workgroup. Requires that you have access to the
-    /// workgroup.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
@@ -876,29 +745,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1093,24 +948,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1218,11 +1061,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNamedQuery`.
     ///
-    /// <p>Deletes the named query if you have access to the workgroup in which the query was
-    /// saved.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Deletes the named query if you have access to the workgroup in which the query was saved.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
@@ -1295,8 +1135,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePreparedStatement`.
     ///
-    /// <p>Deletes the prepared statement with the specified name from the specified
-    /// workgroup.</p>
+    /// <p>Deletes the prepared statement with the specified name from the specified workgroup.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
@@ -1379,8 +1218,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWorkGroup`.
     ///
-    /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be
-    /// deleted.</p>
+    /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1447,14 +1285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_work_group(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn recursive_delete_option(mut self, input: bool) -> Self {
             self.inner = self.inner.recursive_delete_option(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_recursive_delete_option(input);
             self
@@ -1615,8 +1451,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetNamedQuery`.
     ///
-    /// <p>Returns information about a single query. Requires that you have access to the
-    /// workgroup in which the query was saved.</p>
+    /// <p>Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
@@ -1673,14 +1508,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.named_query_id(input.into());
             self
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn set_named_query_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1691,8 +1524,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPreparedStatement`.
     ///
-    /// <p>Retrieves the prepared statement with the specified name from the specified
-    /// workgroup.</p>
+    /// <p>Retrieves the prepared statement with the specified name from the specified workgroup.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
@@ -1775,9 +1607,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQueryExecution`.
     ///
-    /// <p>Returns information about a single execution of a query if you have access to the
-    /// workgroup in which the query ran. Each time a query executes, information about the
-    /// query execution is saved with a unique ID.</p>
+    /// <p>Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -1850,20 +1680,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQueryResults`.
     ///
-    /// <p>Streams the results of a single query execution specified by
-    /// <code>QueryExecutionId</code> from the Athena query results location in
-    /// Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query
-    /// but returns results. Use <a>StartQueryExecution</a> to run a query.</p>
-    /// <p>To stream query results successfully, the IAM principal with permission to call
-    /// <code>GetQueryResults</code> also must have permissions to the Amazon S3
-    /// <code>GetObject</code> action for the Athena query results location.</p>
-    /// <important>
-    /// <p>IAM principals with permission to the Amazon S3
-    /// <code>GetObject</code> action for the query results location are able to retrieve
-    /// query results from Amazon S3 even if permission to the
-    /// <code>GetQueryResults</code> action is denied. To restrict user or role access,
-    /// ensure that Amazon S3 permissions to the Athena query location
-    /// are denied.</p>
+    /// <p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <code>StartQueryExecution</code> to run a query.</p>
+    /// <p>To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also must have permissions to the Amazon S3 <code>GetObject</code> action for the Athena query results location.</p> <important>
+    /// <p>IAM principals with permission to the Amazon S3 <code>GetObject</code> action for the query results location are able to retrieve query results from Amazon S3 even if permission to the <code>GetQueryResults</code> action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryResults<
@@ -1934,16 +1753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_execution_id(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2018,14 +1833,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_name(input.into());
             self
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_name(input);
             self
@@ -2193,16 +2006,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_catalog_name(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2277,16 +2086,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2304,8 +2109,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEngineVersions`.
     ///
-    /// <p>Returns a list of engine versions that are available to choose from, including the
-    /// Auto option.</p>
+    /// <p>Returns a list of engine versions that are available to choose from, including the Auto option.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2362,16 +2166,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2389,12 +2189,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNamedQueries`.
     ///
-    /// <p>Provides a list of available query IDs only for queries saved in the specified
-    /// workgroup. Requires that you have access to the specified workgroup. If a workgroup is
-    /// not specified, lists the saved queries for the primary workgroup.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamedQueries<
         C = aws_smithy_client::erase::DynConnector,
@@ -2451,16 +2247,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2475,16 +2267,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.work_group(input.into());
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
             self
@@ -2559,16 +2347,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_work_group(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2586,13 +2370,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQueryExecutions`.
     ///
-    /// <p>Provides a list of available query execution IDs for the queries in the specified
-    /// workgroup. If a workgroup is not specified, returns a list of query execution IDs for
-    /// the primary workgroup. Requires you to have access to the workgroup in which the queries
-    /// ran.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueryExecutions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2649,16 +2428,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2673,16 +2448,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.work_group(input.into());
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
             self
@@ -2770,28 +2541,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.expression(input.into());
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2809,8 +2574,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags associated with an Athena workgroup or data catalog
-    /// resource.</p>
+    /// <p>Lists the tags associated with an Athena workgroup or data catalog resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2877,28 +2641,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2963,16 +2721,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2990,12 +2744,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartQueryExecution`.
     ///
-    /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-    /// have access to the workgroup in which the query ran. Running queries against an external
-    /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code
-    /// samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <code>GetDataCatalog</code> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3062,29 +2811,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -3109,18 +2844,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_execution_context(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
             self.inner = self.inner.result_configuration(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_result_configuration(
             mut self,
             input: std::option::Option<crate::model::ResultConfiguration>,
@@ -3141,11 +2870,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopQueryExecution`.
     ///
-    /// <p>Stops a query execution. Requires you to have access to the workgroup in which the
-    /// query ran.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
+    /// <p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3218,17 +2944,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to an Athena resource. A tag is a label that you
-    /// assign to a resource. In Athena, a resource can be a workgroup or data
-    /// catalog. Each tag consists of a key and an optional value, both of which you define. For
-    /// example, you can use tags to categorize Athena workgroups or data catalogs
-    /// by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to
-    /// search and filter workgroups or data catalogs in your account. For best practices, see
-    /// <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode
-    /// characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use
-    /// letters and numbers representable in UTF-8, and the following characters: + - = . _ : /
-    /// @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you
-    /// specify more than one tag, separate them by commas.</p>
+    /// <p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3285,14 +3001,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3388,14 +3102,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3463,30 +3175,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -3508,44 +3212,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -3555,44 +3229,14 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v.into());
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -3712,8 +3356,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkGroup`.
     ///
-    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be
-    /// changed.</p>
+    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkGroup<
         C = aws_smithy_client::erase::DynConnector,

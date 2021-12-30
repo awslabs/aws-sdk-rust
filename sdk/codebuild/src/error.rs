@@ -574,8 +574,7 @@ pub enum CreateProjectErrorKind {
     AccountLimitExceededException(crate::error::AccountLimitExceededException),
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-    /// settings already exists.</p>
+    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -687,8 +686,7 @@ pub enum CreateReportGroupErrorKind {
     AccountLimitExceededException(crate::error::AccountLimitExceededException),
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-    /// settings already exists.</p>
+    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -803,8 +801,7 @@ pub enum CreateWebhookErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>There was a problem with the underlying OAuth provider.</p>
     OAuthProviderException(crate::error::OAuthProviderException),
-    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-    /// settings already exists.</p>
+    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2007,8 +2004,7 @@ pub enum ImportSourceCredentialsErrorKind {
     AccountLimitExceededException(crate::error::AccountLimitExceededException),
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-    /// settings already exists.</p>
+    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4760,8 +4756,7 @@ impl AccountLimitExceededException {
     }
 }
 
-/// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-/// settings already exists.</p>
+/// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {

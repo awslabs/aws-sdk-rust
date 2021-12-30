@@ -36,30 +36,46 @@ pub mod create_access_point_input {
         }
         /// <p>The name of the bucket that you want to associate this access point with.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket that you want to associate this access point with.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
-        /// specified virtual private cloud (VPC).</p>
-        /// <note>
+        /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
         /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
-        /// specified virtual private cloud (VPC).</p>
-        /// <note>
+        /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
         /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_vpc_configuration(
@@ -69,9 +85,7 @@ pub mod create_access_point_input {
             self.vpc_configuration = input;
             self
         }
-        /// <p>
-        /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
-        /// </p>
+        /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -79,9 +93,7 @@ pub mod create_access_point_input {
             self.public_access_block_configuration = Some(input);
             self
         }
-        /// <p>
-        /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
-        /// </p>
+        /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -529,16 +541,14 @@ pub mod create_bucket_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The canned ACL to apply to the bucket.</p>
-        /// <note>
+        /// <p>The canned ACL to apply to the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn acl(mut self, input: crate::model::BucketCannedAcl) -> Self {
             self.acl = Some(input);
             self
         }
-        /// <p>The canned ACL to apply to the bucket.</p>
-        /// <note>
+        /// <p>The canned ACL to apply to the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_acl(
@@ -558,8 +568,7 @@ pub mod create_bucket_input {
             self.bucket = input;
             self
         }
-        /// <p>The configuration information for the bucket.</p>
-        /// <note>
+        /// <p>The configuration information for the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn create_bucket_configuration(
@@ -569,8 +578,7 @@ pub mod create_bucket_input {
             self.create_bucket_configuration = Some(input);
             self
         }
-        /// <p>The configuration information for the bucket.</p>
-        /// <note>
+        /// <p>The configuration information for the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_create_bucket_configuration(
@@ -580,16 +588,14 @@ pub mod create_bucket_input {
             self.create_bucket_configuration = input;
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_grant_full_control(
@@ -599,32 +605,28 @@ pub mod create_bucket_input {
             self.grant_full_control = input;
             self
         }
-        /// <p>Allows grantee to list the objects in the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to list the objects in the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read = Some(input.into());
             self
         }
-        /// <p>Allows grantee to list the objects in the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to list the objects in the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
             self
         }
-        /// <p>Allows grantee to read the bucket ACL.</p>
-        /// <note>
+        /// <p>Allows grantee to read the bucket ACL.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to read the bucket ACL.</p>
-        /// <note>
+        /// <p>Allows grantee to read the bucket ACL.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_grant_read_acp(
@@ -634,32 +636,28 @@ pub mod create_bucket_input {
             self.grant_read_acp = input;
             self
         }
-        /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write = Some(input.into());
             self
         }
-        /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_write = input;
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        /// <note>
+        /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_grant_write_acp(
@@ -669,16 +667,14 @@ pub mod create_bucket_input {
             self.grant_write_acp = input;
             self
         }
-        /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-        /// <note>
+        /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
             self.object_lock_enabled_for_bucket = Some(input);
             self
         }
-        /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-        /// <note>
+        /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_object_lock_enabled_for_bucket(
@@ -688,16 +684,14 @@ pub mod create_bucket_input {
             self.object_lock_enabled_for_bucket = input;
             self
         }
-        /// <p>The ID of the Outposts where the bucket is being created.</p>
-        /// <note>
+        /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Outposts where the bucket is being created.</p>
-        /// <note>
+        /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1054,16 +1048,12 @@ pub mod create_job_input {
             self.confirmation_required = input;
             self
         }
-        /// <p>The action that you want this job to perform on every object listed in the manifest.
-        /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn operation(mut self, input: crate::model::JobOperation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>The action that you want this job to perform on every object listed in the manifest.
-        /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::JobOperation>,
@@ -1127,16 +1117,12 @@ pub mod create_job_input {
             self.priority = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
-        /// that Batch Operations will use to run this job's action on every object in the
-        /// manifest.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
-        /// that Batch Operations will use to run this job's action on every object in the
-        /// manifest.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1344,26 +1330,22 @@ pub mod create_multi_region_access_point_input {
         pub(crate) details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
-        /// the underlying buckets.</p>
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
-        /// the underlying buckets.</p>
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1592,14 +1574,34 @@ pub mod delete_access_point_input {
         }
         /// <p>The name of the access point you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the access point you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2000,14 +2002,34 @@ pub mod delete_access_point_policy_input {
         }
         /// <p>The name of the access point whose policy you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the access point whose policy you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2409,14 +2431,34 @@ pub mod delete_bucket_input {
         }
         /// <p>Specifies the bucket being deleted.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket being deleted.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2612,14 +2654,34 @@ pub mod delete_bucket_lifecycle_configuration_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2821,14 +2883,34 @@ pub mod delete_bucket_policy_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -3024,14 +3106,34 @@ pub mod delete_bucket_tagging_input {
         }
         /// <p>The bucket ARN that has the tag set to be removed.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket ARN that has the tag set to be removed.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -3429,14 +3531,12 @@ pub mod delete_multi_region_access_point_input {
             self.account_id = input;
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3652,14 +3752,12 @@ pub mod delete_public_access_block_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to remove.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to remove.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4447,16 +4545,12 @@ pub mod describe_multi_region_access_point_operation_input {
             self.account_id = input;
             self
         }
-        /// <p>The request token associated with the request you want to know about. This request token
-        /// is returned as part of the response when you make an asynchronous request. You provide
-        /// this token to query about the status of the asynchronous action.</p>
+        /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
         pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_token_arn = Some(input.into());
             self
         }
-        /// <p>The request token associated with the request you want to know about. This request token
-        /// is returned as part of the response when you make an asynchronous request. You provide
-        /// this token to query about the status of the asynchronous action.</p>
+        /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
         pub fn set_request_token_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4675,14 +4769,34 @@ pub mod get_access_point_input {
         }
         /// <p>The name of the access point whose configuration information you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the access point whose configuration information you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5291,14 +5405,34 @@ pub mod get_access_point_policy_input {
         }
         /// <p>The name of the access point whose policy you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the access point whose policy you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6111,14 +6245,34 @@ pub mod get_bucket_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6310,14 +6464,34 @@ pub mod get_bucket_lifecycle_configuration_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6519,14 +6693,34 @@ pub mod get_bucket_policy_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6722,14 +6916,34 @@ pub mod get_bucket_tagging_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -7126,18 +7340,12 @@ pub mod get_multi_region_access_point_input {
             self.account_id = input;
             self
         }
-        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
-        /// the Multi-Region Access Point is different from the alias. For more information about the distinction
-        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
-        /// the Multi-Region Access Point is different from the alias. For more information about the distinction
-        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7346,18 +7554,12 @@ pub mod get_multi_region_access_point_policy_input {
             self.account_id = input;
             self
         }
-        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7571,18 +7773,12 @@ pub mod get_multi_region_access_point_policy_status_input {
             self.account_id = input;
             self
         }
-        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7785,14 +7981,12 @@ pub mod get_public_access_block_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to retrieve.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to retrieve.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8383,14 +8577,34 @@ pub mod list_access_points_input {
         }
         /// <p>The name of the bucket whose associated access points you want to list.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket whose associated access points you want to list.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -8405,18 +8619,12 @@ pub mod list_access_points_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If the specified
-        /// bucket has more than this number of access points, then the response will include a
-        /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
-        /// next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If the specified
-        /// bucket has more than this number of access points, then the response will include a
-        /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
-        /// next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8617,16 +8825,12 @@ pub mod list_access_points_for_object_lambda_input {
             self.account_id = input;
             self
         }
-        /// <p>If the list has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the list has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9321,16 +9525,14 @@ pub mod list_regional_buckets_input {
             self.max_results = input;
             self
         }
-        /// <p>The ID of the Outposts.</p>
-        /// <note>
+        /// <p>The ID of the Outposts.</p> <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Outposts.</p>
-        /// <note>
+        /// <p>The ID of the Outposts.</p> <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -9982,14 +10184,34 @@ pub mod put_access_point_policy_input {
         }
         /// <p>The name of the access point that you want to associate with the specified policy.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the access point that you want to associate with the specified policy.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /accesspoint/
+        /// <my-accesspoint-name></my-accesspoint-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10699,28 +10921,46 @@ pub mod put_bucket_policy_input {
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
-        /// <note>
+        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
             self.confirm_remove_self_bucket_access = Some(input);
             self
         }
-        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
-        /// <note>
+        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
         pub fn set_confirm_remove_self_bucket_access(
@@ -10984,14 +11224,34 @@ pub mod put_bucket_tagging_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -11462,14 +11722,12 @@ pub mod put_multi_region_access_point_policy_input {
             self.account_id = input;
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>An idempotency token used to identify the request and guarantee that requests are
-        /// unique.</p>
+        /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -11706,14 +11964,12 @@ pub mod put_public_access_block_input {
             self.public_access_block_configuration = input;
             self
         }
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11940,8 +12196,7 @@ pub mod put_storage_lens_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag set of the S3 Storage Lens configuration.</p>
-        /// <note>
+        /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
@@ -11950,8 +12205,7 @@ pub mod put_storage_lens_configuration_input {
             self.tags = Some(v);
             self
         }
-        /// <p>The tag set of the S3 Storage Lens configuration.</p>
-        /// <note>
+        /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
         pub fn set_tags(
@@ -12187,8 +12441,7 @@ pub mod put_storage_lens_configuration_tagging_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag set of the S3 Storage Lens configuration.</p>
-        /// <note>
+        /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
@@ -12197,8 +12450,7 @@ pub mod put_storage_lens_configuration_tagging_input {
             self.tags = Some(v);
             self
         }
-        /// <p>The tag set of the S3 Storage Lens configuration.</p>
-        /// <note>
+        /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
         pub fn set_tags(
@@ -12958,8 +13210,7 @@ pub struct PutStorageLensConfigurationTaggingInput {
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The tag set of the S3 Storage Lens configuration.</p>
-    /// <note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -12973,8 +13224,7 @@ impl PutStorageLensConfigurationTaggingInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p>
-    /// <note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
@@ -13001,8 +13251,7 @@ pub struct PutStorageLensConfigurationInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The S3 Storage Lens configuration.</p>
     pub storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
-    /// <p>The tag set of the S3 Storage Lens configuration.</p>
-    /// <note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -13022,8 +13271,7 @@ impl PutStorageLensConfigurationInput {
     ) -> std::option::Option<&crate::model::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p>
-    /// <note>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
@@ -13051,8 +13299,7 @@ pub struct PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to set.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl PutPublicAccessBlockInput {
@@ -13062,8 +13309,7 @@ impl PutPublicAccessBlockInput {
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to set.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -13086,8 +13332,7 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
@@ -13097,8 +13342,7 @@ impl PutMultiRegionAccessPointPolicyInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13162,7 +13406,17 @@ pub struct PutBucketTaggingInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p></p>
     pub tagging: std::option::Option<crate::model::Tagging>,
@@ -13174,7 +13428,17 @@ impl PutBucketTaggingInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -13201,10 +13465,19 @@ pub struct PutBucketPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
-    /// <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub confirm_remove_self_bucket_access: bool,
@@ -13218,12 +13491,21 @@ impl PutBucketPolicyInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
-    /// <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn confirm_remove_self_bucket_access(&self) -> bool {
@@ -13328,7 +13610,17 @@ pub struct PutAccessPointPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point that you want to associate with the specified policy.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -13340,7 +13632,17 @@ impl PutAccessPointPolicyInput {
     }
     /// <p>The name of the access point that you want to associate with the specified policy.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13432,8 +13734,7 @@ pub struct ListRegionalBucketsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub max_results: i32,
-    /// <p>The ID of the Outposts.</p>
-    /// <note>
+    /// <p>The ID of the Outposts.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub outpost_id: std::option::Option<std::string::String>,
@@ -13451,8 +13752,7 @@ impl ListRegionalBucketsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The ID of the Outposts.</p>
-    /// <note>
+    /// <p>The ID of the Outposts.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
@@ -13553,9 +13853,7 @@ impl std::fmt::Debug for ListJobsInput {
 pub struct ListAccessPointsForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>If the list has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub max_results: i32,
@@ -13565,9 +13863,7 @@ impl ListAccessPointsForObjectLambdaInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>If the list has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13594,14 +13890,21 @@ pub struct ListAccessPointsInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket whose associated access points you want to list.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of access points that you want to include in the list. If the specified
-    /// bucket has more than this number of access points, then the response will include a
-    /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
-    /// next page of access points.</p>
+    /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub max_results: i32,
 }
 impl ListAccessPointsInput {
@@ -13611,7 +13914,17 @@ impl ListAccessPointsInput {
     }
     /// <p>The name of the bucket whose associated access points you want to list.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -13619,10 +13932,7 @@ impl ListAccessPointsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of access points that you want to include in the list. If the specified
-    /// bucket has more than this number of access points, then the response will include a
-    /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
-    /// next page of access points.</p>
+    /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -13698,13 +14008,11 @@ impl std::fmt::Debug for GetStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockInput {
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to retrieve.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetPublicAccessBlockInput {
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to retrieve.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -13723,10 +14031,7 @@ impl std::fmt::Debug for GetPublicAccessBlockInput {
 pub struct GetMultiRegionAccessPointPolicyStatusInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointPolicyStatusInput {
@@ -13734,10 +14039,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13757,10 +14059,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
 pub struct GetMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointPolicyInput {
@@ -13768,10 +14067,7 @@ impl GetMultiRegionAccessPointPolicyInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
-    /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13791,10 +14087,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
 pub struct GetMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
-    /// the Multi-Region Access Point is different from the alias. For more information about the distinction
-    /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointInput {
@@ -13802,10 +14095,7 @@ impl GetMultiRegionAccessPointInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
-    /// the Multi-Region Access Point is different from the alias. For more information about the distinction
-    /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13855,7 +14145,17 @@ pub struct GetBucketTaggingInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketTaggingInput {
@@ -13865,7 +14165,17 @@ impl GetBucketTaggingInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -13887,7 +14197,17 @@ pub struct GetBucketPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyInput {
@@ -13897,7 +14217,17 @@ impl GetBucketPolicyInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -13919,7 +14249,17 @@ pub struct GetBucketLifecycleConfigurationInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketLifecycleConfigurationInput {
@@ -13929,7 +14269,17 @@ impl GetBucketLifecycleConfigurationInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -13951,7 +14301,17 @@ pub struct GetBucketInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketInput {
@@ -13961,7 +14321,17 @@ impl GetBucketInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -14067,7 +14437,17 @@ pub struct GetAccessPointPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose policy you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyInput {
@@ -14077,7 +14457,17 @@ impl GetAccessPointPolicyInput {
     }
     /// <p>The name of the access point whose policy you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14155,7 +14545,17 @@ pub struct GetAccessPointInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose configuration information you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointInput {
@@ -14165,7 +14565,17 @@ impl GetAccessPointInput {
     }
     /// <p>The name of the access point whose configuration information you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14185,9 +14595,7 @@ impl std::fmt::Debug for GetAccessPointInput {
 pub struct DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The request token associated with the request you want to know about. This request token
-    /// is returned as part of the response when you make an asynchronous request. You provide
-    /// this token to query about the status of the asynchronous action.</p>
+    /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMultiRegionAccessPointOperationInput {
@@ -14195,9 +14603,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The request token associated with the request you want to know about. This request token
-    /// is returned as part of the response when you make an asynchronous request. You provide
-    /// this token to query about the status of the asynchronous action.</p>
+    /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
     pub fn request_token_arn(&self) -> std::option::Option<&str> {
         self.request_token_arn.as_deref()
     }
@@ -14299,13 +14705,11 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicAccessBlockInput {
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to remove.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DeletePublicAccessBlockInput {
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to remove.</p>
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -14324,8 +14728,7 @@ impl std::fmt::Debug for DeletePublicAccessBlockInput {
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
@@ -14335,8 +14738,7 @@ impl DeleteMultiRegionAccessPointInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -14391,7 +14793,17 @@ pub struct DeleteBucketTaggingInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bucket ARN that has the tag set to be removed.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketTaggingInput {
@@ -14401,7 +14813,17 @@ impl DeleteBucketTaggingInput {
     }
     /// <p>The bucket ARN that has the tag set to be removed.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -14423,7 +14845,17 @@ pub struct DeleteBucketPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketPolicyInput {
@@ -14433,7 +14865,17 @@ impl DeleteBucketPolicyInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -14455,7 +14897,17 @@ pub struct DeleteBucketLifecycleConfigurationInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketLifecycleConfigurationInput {
@@ -14465,7 +14917,17 @@ impl DeleteBucketLifecycleConfigurationInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -14487,7 +14949,17 @@ pub struct DeleteBucketInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket being deleted.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketInput {
@@ -14497,7 +14969,17 @@ impl DeleteBucketInput {
     }
     /// <p>Specifies the bucket being deleted.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -14547,7 +15029,17 @@ pub struct DeleteAccessPointPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose policy you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointPolicyInput {
@@ -14557,7 +15049,17 @@ impl DeleteAccessPointPolicyInput {
     }
     /// <p>The name of the access point whose policy you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14607,7 +15109,17 @@ pub struct DeleteAccessPointInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointInput {
@@ -14617,7 +15129,17 @@ impl DeleteAccessPointInput {
     }
     /// <p>The name of the access point you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /accesspoint/
+    /// <my-accesspoint-name></my-accesspoint-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14635,23 +15157,19 @@ impl std::fmt::Debug for DeleteAccessPointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointInput {
-    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
-    /// the underlying buckets.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
 }
 impl CreateMultiRegionAccessPointInput {
-    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
-    /// the underlying buckets.</p>
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>An idempotency token used to identify the request and guarantee that requests are
-    /// unique.</p>
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -14678,9 +15196,7 @@ pub struct CreateJobInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
     pub confirmation_required: std::option::Option<bool>,
-    /// <p>The action that you want this job to perform on every object listed in the manifest.
-    /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub operation: std::option::Option<crate::model::JobOperation>,
     /// <p>Configuration parameters for the optional job-completion report.</p>
     pub report: std::option::Option<crate::model::JobReport>,
@@ -14692,9 +15208,7 @@ pub struct CreateJobInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
-    /// that Batch Operations will use to run this job's action on every object in the
-    /// manifest.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -14708,9 +15222,7 @@ impl CreateJobInput {
     pub fn confirmation_required(&self) -> std::option::Option<bool> {
         self.confirmation_required
     }
-    /// <p>The action that you want this job to perform on every object listed in the manifest.
-    /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::JobOperation> {
         self.operation.as_ref()
     }
@@ -14734,9 +15246,7 @@ impl CreateJobInput {
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
-    /// that Batch Operations will use to run this job's action on every object in the
-    /// manifest.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -14766,57 +15276,47 @@ impl std::fmt::Debug for CreateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketInput {
-    /// <p>The canned ACL to apply to the bucket.</p>
-    /// <note>
+    /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The name of the bucket.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The configuration information for the bucket.</p>
-    /// <note>
+    /// <p>The configuration information for the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub grant_full_control: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to list the objects in the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub grant_read: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to read the bucket ACL.</p>
-    /// <note>
+    /// <p>Allows grantee to read the bucket ACL.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub grant_read_acp: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub grant_write: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub grant_write_acp: std::option::Option<std::string::String>,
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    /// <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub object_lock_enabled_for_bucket: bool,
-    /// <p>The ID of the Outposts where the bucket is being created.</p>
-    /// <note>
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl CreateBucketInput {
-    /// <p>The canned ACL to apply to the bucket.</p>
-    /// <note>
+    /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn acl(&self) -> std::option::Option<&crate::model::BucketCannedAcl> {
@@ -14826,8 +15326,7 @@ impl CreateBucketInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The configuration information for the bucket.</p>
-    /// <note>
+    /// <p>The configuration information for the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn create_bucket_configuration(
@@ -14835,50 +15334,43 @@ impl CreateBucketInput {
     ) -> std::option::Option<&crate::model::CreateBucketConfiguration> {
         self.create_bucket_configuration.as_ref()
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn grant_read(&self) -> std::option::Option<&str> {
         self.grant_read.as_deref()
     }
-    /// <p>Allows grantee to read the bucket ACL.</p>
-    /// <note>
+    /// <p>Allows grantee to read the bucket ACL.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn grant_read_acp(&self) -> std::option::Option<&str> {
         self.grant_read_acp.as_deref()
     }
-    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn grant_write(&self) -> std::option::Option<&str> {
         self.grant_write.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    /// <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    /// <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn object_lock_enabled_for_bucket(&self) -> bool {
         self.object_lock_enabled_for_bucket
     }
-    /// <p>The ID of the Outposts where the bucket is being created.</p>
-    /// <note>
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
@@ -14953,17 +15445,23 @@ pub struct CreateAccessPointInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
-    /// specified virtual private cloud (VPC).</p>
-    /// <note>
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
-    /// <p>
-    /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
-    /// </p>
+    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
@@ -14978,21 +15476,27 @@ impl CreateAccessPointInput {
     }
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
-    /// specified virtual private cloud (VPC).</p>
-    /// <note>
+    /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>
-    /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
-    /// </p>
+    /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {

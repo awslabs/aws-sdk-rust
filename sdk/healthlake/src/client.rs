@@ -268,16 +268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_type_version(input);
             self
         }
-        /// <p>
-        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-        /// </p>
+        /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
         pub fn sse_configuration(mut self, input: crate::model::SseConfiguration) -> Self {
             self.inner = self.inner.sse_configuration(input);
             self
         }
-        /// <p>
-        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-        /// </p>
+        /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
         pub fn set_sse_configuration(
             mut self,
             input: std::option::Option<crate::model::SseConfiguration>,
@@ -285,14 +281,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sse_configuration(input);
             self
         }
-        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-        /// supported preloaded data is synthetic data generated from Synthea.</p>
+        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn preload_data_config(mut self, input: crate::model::PreloadDataConfig) -> Self {
             self.inner = self.inner.preload_data_config(input);
             self
         }
-        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-        /// supported preloaded data is synthetic data generated from Synthea.</p>
+        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn set_preload_data_config(
             mut self,
             input: std::option::Option<crate::model::PreloadDataConfig>,
@@ -314,16 +308,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// Resource tags that are applied to a Data Store when it is created.
-        /// </p>
+        /// <p> Resource tags that are applied to a Data Store when it is created. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>
-        /// Resource tags that are applied to a Data Store when it is created.
-        /// </p>
+        /// <p> Resource tags that are applied to a Data Store when it is created. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -404,9 +394,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFHIRDatastore`.
     ///
-    /// <p>Gets the properties associated with the FHIR Data Store, including the Data Store ID,
-    /// Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and
-    /// Data Store endpoint.</p>
+    /// <p>Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFHIRDatastore<
         C = aws_smithy_client::erase::DynConnector,
@@ -636,8 +624,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFHIRDatastores`.
     ///
-    /// <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store
-    /// status.</p>
+    /// <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRDatastores<
         C = aws_smithy_client::erase::DynConnector,
@@ -717,14 +704,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of Data Stores returned in a single page of a
-        /// ListFHIRDatastoresRequest call.</p>
+        /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of Data Stores returned in a single page of a
-        /// ListFHIRDatastoresRequest call.</p>
+        /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -732,9 +717,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFHIRExportJobs`.
     ///
-    /// <p>
-    /// Lists all FHIR export jobs associated with an account and their statuses.
-    /// </p>
+    /// <p> Lists all FHIR export jobs associated with an account and their statuses. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRExportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -791,72 +774,52 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.datastore_id(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_datastore_id(input);
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified job name. </p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_name(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified job name. </p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export jobs with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.inner = self.inner.job_status(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export jobs with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -864,16 +827,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_status(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
         pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.submitted_before(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
         pub fn set_submitted_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -881,16 +840,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_submitted_before(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
         pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.submitted_after(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
         pub fn set_submitted_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -901,9 +856,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFHIRImportJobs`.
     ///
-    /// <p>
-    /// Lists all FHIR import jobs associated with an account and their statuses.
-    /// </p>
+    /// <p> Lists all FHIR import jobs associated with an account and their statuses. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRImportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -960,72 +913,52 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.datastore_id(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_datastore_id(input);
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job name. </p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_name(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job name. </p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job status. </p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.inner = self.inner.job_status(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job status. </p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1033,16 +966,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_status(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
         pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.submitted_before(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
         pub fn set_submitted_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1050,16 +979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_submitted_before(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
         pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.submitted_after(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
         pub fn set_submitted_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1070,9 +995,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>
-    /// Returns a list of all existing tags associated with a Data Store.
-    /// </p>
+    /// <p> Returns a list of all existing tags associated with a Data Store. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1129,16 +1052,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1391,9 +1310,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>
-    /// Adds a user specifed key and value tag to a Data Store.
-    /// </p>
+    /// <p> Adds a user specifed key and value tag to a Data Store. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1450,16 +1367,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1468,16 +1381,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The user specified key and value pair tags being added to a Data Store.
-        /// </p>
+        /// <p> The user specified key and value pair tags being added to a Data Store. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>
-        /// The user specified key and value pair tags being added to a Data Store.
-        /// </p>
+        /// <p> The user specified key and value pair tags being added to a Data Store. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1488,9 +1397,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>
-    /// Removes tags from a Data Store.
-    /// </p>
+    /// <p> Removes tags from a Data Store. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1547,16 +1454,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-        /// </p>
+        /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-        /// </p>
+        /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1565,16 +1468,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// The keys for the tags to be removed from the Healthlake Data Store.
-        /// </p>
+        /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>
-        /// The keys for the tags to be removed from the Healthlake Data Store.
-        /// </p>
+        /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

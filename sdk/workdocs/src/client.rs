@@ -395,10 +395,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AbortDocumentVersionUpload`.
     ///
-    /// <p>Aborts the upload of the specified document version that was previously initiated
-    /// by <a>InitiateDocumentVersionUpload</a>. The client should make this call
-    /// only when it no longer intends to upload the document version, or fails to do
-    /// so.</p>
+    /// <p>Aborts the upload of the specified document version that was previously initiated by <code>InitiateDocumentVersionUpload</code>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AbortDocumentVersionUpload<
         C = aws_smithy_client::erase::DynConnector,
@@ -491,8 +488,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ActivateUser`.
     ///
-    /// <p>Activates the specified user. Only active users can access Amazon
-    /// WorkDocs.</p>
+    /// <p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -575,9 +571,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddResourcePermissions`.
     ///
-    /// <p>Creates a set of permissions for the specified folder or document. The resource
-    /// permissions are overwritten if the principals already have different
-    /// permissions.</p>
+    /// <p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddResourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
@@ -810,16 +804,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_text(input);
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn visibility(mut self, input: crate::model::CommentVisibilityType) -> Self {
             self.inner = self.inner.visibility(input);
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::CommentVisibilityType>,
@@ -827,14 +817,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visibility(input);
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn notify_collaborators(mut self, input: bool) -> Self {
             self.inner = self.inner.notify_collaborators(input);
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn set_notify_collaborators(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_notify_collaborators(input);
             self
@@ -842,8 +830,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomMetadata`.
     ///
-    /// <p>Adds one or more custom properties to the specified resource (a folder, document,
-    /// or version).</p>
+    /// <p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -923,14 +910,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -1057,8 +1042,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLabels`.
     ///
-    /// <p>Adds the specified list of labels to the given resource (a document or
-    /// folder)</p>
+    /// <p>Adds the specified list of labels to the given resource (a document or folder)</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLabels<
         C = aws_smithy_client::erase::DynConnector,
@@ -1158,11 +1142,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNotificationSubscription`.
     ///
-    /// <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a
-    /// confirmation message, and must confirm the subscription.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
-    /// Notifications</a> in the <i>Amazon WorkDocs Developer
-    /// Guide</i>.</p>
+    /// <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotificationSubscription<
         C = aws_smithy_client::erase::DynConnector,
@@ -1232,26 +1213,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint(input.into());
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint(input);
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
             self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -1275,8 +1252,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUser`.
     ///
-    /// <p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly
-    /// created user is "ACTIVE". New users can access Amazon WorkDocs.</p>
+    /// <p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is "ACTIVE". New users can access Amazon WorkDocs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -1438,8 +1414,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeactivateUser`.
     ///
-    /// <p>Deactivates the specified user, which revokes the user's access to Amazon
-    /// WorkDocs.</p>
+    /// <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -1705,14 +1680,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -1734,14 +1707,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keys(input);
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn delete_all(mut self, input: bool) -> Self {
             self.inner = self.inner.delete_all(input);
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn set_delete_all(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_all(input);
             self
@@ -2251,14 +2222,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.authentication_token(input.into());
             self
         }
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn set_authentication_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2349,14 +2318,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authentication_token(input);
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2364,14 +2331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2379,14 +2344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2394,14 +2357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn activity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.activity_types(input.into());
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn set_activity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2419,32 +2380,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn include_indirect_activities(mut self, input: bool) -> Self {
             self.inner = self.inner.include_indirect_activities(input);
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn set_include_indirect_activities(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_indirect_activities(input);
             self
@@ -2572,14 +2523,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -2668,14 +2617,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_id(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -2690,26 +2637,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.include(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_include(input);
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fields(input);
             self
@@ -2717,12 +2660,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFolderContents`.
     ///
-    /// <p>Describes the contents of the specified folder, including its documents and
-    /// subfolders.</p>
-    /// <p>By default, Amazon WorkDocs returns the first 100 active document and folder
-    /// metadata items. If there are more results, the response includes a marker that you can
-    /// use to request the next set of results. You can also request initialized
-    /// documents.</p>
+    /// <p>Describes the contents of the specified folder, including its documents and subfolders.</p>
+    /// <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFolderContents<
         C = aws_smithy_client::erase::DynConnector,
@@ -2835,14 +2774,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -2860,14 +2797,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.include(input.into());
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_include(input);
             self
@@ -2875,8 +2810,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGroups`.
     ///
-    /// <p>Describes the groups specified by the query. Groups are defined by the underlying
-    /// Active Directory.</p>
+    /// <p>Describes the groups specified by the query. Groups are defined by the underlying Active Directory.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -2969,14 +2903,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3064,14 +2996,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3189,14 +3119,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3204,15 +3132,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRootFolders`.
     ///
-    /// <p>Describes the current user's special folders; the <code>RootFolder</code> and the
-    /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and
-    /// folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid
-    /// action for SigV4 (administrative API) clients.</p>
-    /// <p>This action requires an authentication token. To get an authentication token,
-    /// register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
-    /// Control for User Applications</a> in the
-    /// <i>Amazon
-    /// WorkDocs Developer Guide</i>.</p>
+    /// <p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p>
+    /// <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRootFolders<
         C = aws_smithy_client::erase::DynConnector,
@@ -3292,14 +3213,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3307,11 +3226,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeUsers`.
     ///
-    /// <p>Describes the specified users. You can describe all users or filter the results
-    /// (for example, by status or organization).</p>
-    /// <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there
-    /// are more results, the response includes a marker that you can use to request the next
-    /// set of results.</p>
+    /// <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p>
+    /// <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -3447,14 +3363,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3469,14 +3383,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fields(input);
             self
@@ -3484,13 +3396,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCurrentUser`.
     ///
-    /// <p>Retrieves details of the current user for whom the authentication token was
-    /// generated. This is not a valid action for SigV4 (administrative API) clients.</p>
-    /// <p>This action requires an authentication token. To get an authentication token,
-    /// register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
-    /// Control for User Applications</a> in the
-    /// <i>Amazon
-    /// WorkDocs Developer Guide</i>.</p>
+    /// <p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p>
+    /// <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCurrentUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -3656,12 +3563,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDocumentPath`.
     ///
-    /// <p>Retrieves the path information (the hierarchy from the root folder) for the
-    /// requested document.</p>
-    /// <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the
-    /// requested document and only includes the IDs of the parent folders in the path. You can
-    /// limit the maximum number of levels. You can also request the names of the parent
-    /// folders.</p>
+    /// <p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p>
+    /// <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocumentPath<
         C = aws_smithy_client::erase::DynConnector,
@@ -3751,14 +3654,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fields(input);
             self
@@ -3866,14 +3767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_id(input);
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fields(input);
             self
@@ -3984,12 +3883,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFolderPath`.
     ///
-    /// <p>Retrieves the path information (the hierarchy from the root folder) for the
-    /// specified folder.</p>
-    /// <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the
-    /// requested folder and only includes the IDs of the parent folders in the path. You can
-    /// limit the maximum number of levels. You can also request the parent folder
-    /// names.</p>
+    /// <p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p>
+    /// <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFolderPath<
         C = aws_smithy_client::erase::DynConnector,
@@ -4079,14 +3974,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fields(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fields(input);
             self
@@ -4104,8 +3997,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResources`.
     ///
-    /// <p>Retrieves a collection of resources, including folders and documents. The only
-    /// <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.</p>
+    /// <p>Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -4175,14 +4067,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authentication_token(input);
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
@@ -4224,11 +4114,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitiateDocumentVersionUpload`.
     ///
     /// <p>Creates a new document object and version object.</p>
-    /// <p>The client specifies the parent folder ID and name of the document to upload. The
-    /// ID is optionally specified when creating a new version of an existing document. This is
-    /// the first step to upload a document. Next, upload the document to the URL returned from
-    /// the call, and then call <a>UpdateDocumentVersion</a>.</p>
-    /// <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>
+    /// <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <code>UpdateDocumentVersion</code>.</p>
+    /// <p>To cancel the document upload, call <code>AbortDocumentVersionUpload</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateDocumentVersionUpload<
         C = aws_smithy_client::erase::DynConnector,
@@ -4463,8 +4350,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveResourcePermission`.
     ///
-    /// <p>Removes the permission for the specified principal from the specified
-    /// resource.</p>
+    /// <p>Removes the permission for the specified principal from the specified resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveResourcePermission<
         C = aws_smithy_client::erase::DynConnector,
@@ -4570,8 +4456,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDocument`.
     ///
-    /// <p>Updates the specified attributes of a document. The user must have access to both
-    /// the document and its parent folder, if applicable.</p>
+    /// <p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocument<
         C = aws_smithy_client::erase::DynConnector,
@@ -4674,14 +4559,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_folder_id(input);
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.inner = self.inner.resource_state(input);
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -4693,9 +4576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDocumentVersion`.
     ///
     /// <p>Changes the status of the document version to ACTIVE. </p>
-    /// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step
-    /// in a document upload, after the client uploads the document to an S3-presigned URL
-    /// returned by <a>InitiateDocumentVersionUpload</a>. </p>
+    /// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <code>InitiateDocumentVersionUpload</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -4801,8 +4682,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFolder`.
     ///
-    /// <p>Updates the specified attributes of the specified folder. The user must have access
-    /// to both the folder and its parent folder, if applicable.</p>
+    /// <p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -4905,14 +4785,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_folder_id(input);
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.inner = self.inner.resource_state(input);
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -4923,8 +4801,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateUser`.
     ///
-    /// <p>Updates the specified attributes of the specified user, and grants or revokes
-    /// administrative privileges to the Amazon WorkDocs site.</p>
+    /// <p>Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,

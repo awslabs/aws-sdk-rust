@@ -17,9 +17,7 @@ pub struct StartSnapshotOutput {
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub block_size: std::option::Option<i32>,
-    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
-    /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the parent snapshot.</p>
     pub parent_snapshot_id: std::option::Option<std::string::String>,
@@ -55,9 +53,7 @@ impl StartSnapshotOutput {
     pub fn block_size(&self) -> std::option::Option<i32> {
         self.block_size
     }
-    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
-    /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -181,18 +177,14 @@ pub mod start_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
-        /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
-        /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -335,8 +327,7 @@ pub struct ListSnapshotBlocksOutput {
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub block_size: std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnapshotBlocksOutput {
@@ -356,8 +347,7 @@ impl ListSnapshotBlocksOutput {
     pub fn block_size(&self) -> std::option::Option<i32> {
         self.block_size
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -438,14 +428,12 @@ pub mod list_snapshot_blocks_output {
             self.block_size = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -481,8 +469,7 @@ pub struct ListChangedBlocksOutput {
     pub volume_size: std::option::Option<i64>,
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub block_size: std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangedBlocksOutput {
@@ -502,8 +489,7 @@ impl ListChangedBlocksOutput {
     pub fn block_size(&self) -> std::option::Option<i32> {
         self.block_size
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -584,14 +570,12 @@ pub mod list_changed_blocks_output {
             self.block_size = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

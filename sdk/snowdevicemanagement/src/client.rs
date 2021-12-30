@@ -187,11 +187,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelTask`.
     ///
-    /// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a
-    /// <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p>
-    /// <note>
-    /// <p>A task might still run if it's processed from the queue before the
-    /// <code>CancelTask</code> operation changes the task's state.</p>
+    /// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note>
+    /// <p>A task might still run if it's processed from the queue before the <code>CancelTask</code> operation changes the task's state.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTask<
@@ -249,14 +246,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
@@ -362,8 +357,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -372,8 +366,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -396,8 +389,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
-    /// <p>Checks device-specific information, such as the device type, software version, IP
-    /// addresses, and lock status.</p>
+    /// <p>Checks device-specific information, such as the device type, software version, IP addresses, and lock status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -470,9 +462,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeviceEc2Instances`.
     ///
-    /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to
-    /// <code>describeDevice</code>, but the results are sourced from the device cache in the
-    /// Amazon Web Services Cloud and include a subset of the available fields. </p>
+    /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeviceEc2Instances<
         C = aws_smithy_client::erase::DynConnector,
@@ -818,8 +808,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevices`.
     ///
-    /// <p>Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management
-    /// enabled in the Amazon Web Services Region where the command is run.</p>
+    /// <p>Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management enabled in the Amazon Web Services Region where the command is run.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
@@ -1243,8 +1232,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1253,8 +1241,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1338,14 +1325,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

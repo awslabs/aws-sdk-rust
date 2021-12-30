@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
@@ -24,8 +23,7 @@ pub enum Error {
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     QuotaExceededException(crate::error::QuotaExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -37,12 +35,9 @@ pub enum Error {
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>You've exceeded the number of tags allowed for a resource. For more information, see
-    /// <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag
-    /// restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

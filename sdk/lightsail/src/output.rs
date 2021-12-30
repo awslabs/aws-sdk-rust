@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelationalDatabaseParametersOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseParametersOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -34,16 +32,14 @@ pub mod update_relational_database_parameters_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -70,13 +66,11 @@ impl UpdateRelationalDatabaseParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -101,16 +95,14 @@ pub mod update_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -137,13 +129,11 @@ impl UpdateRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLoadBalancerAttributeOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateLoadBalancerAttributeOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -168,16 +158,14 @@ pub mod update_load_balancer_attribute_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -204,13 +192,11 @@ impl UpdateLoadBalancerAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -235,16 +221,14 @@ pub mod update_domain_entry_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -328,13 +312,11 @@ impl UpdateDistributionBundleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UpdateDistributionOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -355,14 +337,12 @@ pub mod update_distribution_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -446,13 +426,11 @@ impl UpdateContainerServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBucketBundleOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateBucketBundleOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -477,16 +455,14 @@ pub mod update_bucket_bundle_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -515,8 +491,7 @@ impl UpdateBucketBundleOutput {
 pub struct UpdateBucketOutput {
     /// <p>An object that describes the bucket that is updated.</p>
     pub bucket: std::option::Option<crate::model::Bucket>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UpdateBucketOutput {
@@ -524,8 +499,7 @@ impl UpdateBucketOutput {
     pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
         self.bucket.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -562,16 +536,14 @@ pub mod update_bucket_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -599,13 +571,11 @@ impl UpdateBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl UntagResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -630,16 +600,14 @@ pub mod untag_resource_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -666,13 +634,11 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnpeerVpcOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl UnpeerVpcOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -693,14 +659,12 @@ pub mod unpeer_vpc_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -727,13 +691,11 @@ impl UnpeerVpcOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TestAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -758,16 +720,14 @@ pub mod test_alarm_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -794,13 +754,11 @@ impl TestAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl TagResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -825,16 +783,14 @@ pub mod tag_resource_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -861,13 +817,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -892,16 +846,14 @@ pub mod stop_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -928,13 +880,11 @@ impl StopRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StopInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -959,16 +909,14 @@ pub mod stop_instance_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -995,13 +943,11 @@ impl StopInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1026,16 +972,14 @@ pub mod start_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1062,13 +1006,11 @@ impl StartRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl StartInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1093,16 +1035,14 @@ pub mod start_instance_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1129,13 +1069,11 @@ impl StartInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetResourceAccessForBucketOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetResourceAccessForBucketOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1160,16 +1098,14 @@ pub mod set_resource_access_for_bucket_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1196,13 +1132,11 @@ impl SetResourceAccessForBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIpAddressTypeOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SetIpAddressTypeOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1227,16 +1161,14 @@ pub mod set_ip_address_type_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1263,13 +1195,11 @@ impl SetIpAddressTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendContactMethodVerificationOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl SendContactMethodVerificationOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1294,16 +1224,14 @@ pub mod send_contact_method_verification_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1332,11 +1260,9 @@ impl SendContactMethodVerificationOutput {
 pub struct ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
-    /// format.</p>
+    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl ResetDistributionCacheOutput {
@@ -1344,13 +1270,11 @@ impl ResetDistributionCacheOutput {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
-    /// format.</p>
+    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -1385,14 +1309,12 @@ pub mod reset_distribution_cache_output {
             self.status = input;
             self
         }
-        /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
-        /// format.</p>
+        /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
-        /// format.</p>
+        /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1400,14 +1322,12 @@ pub mod reset_distribution_cache_output {
             self.create_time = input;
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -1436,13 +1356,11 @@ impl ResetDistributionCacheOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReleaseStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ReleaseStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1467,16 +1385,14 @@ pub mod release_static_ip_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1503,13 +1419,11 @@ impl ReleaseStaticIpOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerImageOutput {
-    /// <p>Describes a container image that is registered to an Amazon Lightsail container
-    /// service.</p>
+    /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
 impl RegisterContainerImageOutput {
-    /// <p>Describes a container image that is registered to an Amazon Lightsail container
-    /// service.</p>
+    /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
     pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
         self.container_image.as_ref()
     }
@@ -1530,14 +1444,12 @@ pub mod register_container_image_output {
         pub(crate) container_image: std::option::Option<crate::model::ContainerImage>,
     }
     impl Builder {
-        /// <p>Describes a container image that is registered to an Amazon Lightsail container
-        /// service.</p>
+        /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
         pub fn container_image(mut self, input: crate::model::ContainerImage) -> Self {
             self.container_image = Some(input);
             self
         }
-        /// <p>Describes a container image that is registered to an Amazon Lightsail container
-        /// service.</p>
+        /// <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
         pub fn set_container_image(
             mut self,
             input: std::option::Option<crate::model::ContainerImage>,
@@ -1564,13 +1476,11 @@ impl RegisterContainerImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1595,16 +1505,14 @@ pub mod reboot_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1631,13 +1539,11 @@ impl RebootRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl RebootInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1662,16 +1568,14 @@ pub mod reboot_instance_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1698,13 +1602,11 @@ impl RebootInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInstancePublicPortsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PutInstancePublicPortsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -1725,14 +1627,12 @@ pub mod put_instance_public_ports_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -1759,13 +1659,11 @@ impl PutInstancePublicPortsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl PutAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -1790,16 +1688,14 @@ pub mod put_alarm_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -1826,13 +1722,11 @@ impl PutAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PeerVpcOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl PeerVpcOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -1853,14 +1747,12 @@ pub mod peer_vpc_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -1887,13 +1779,11 @@ impl PeerVpcOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenInstancePublicPortsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl OpenInstancePublicPortsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -1914,14 +1804,12 @@ pub mod open_instance_public_ports_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -1948,13 +1836,11 @@ impl OpenInstancePublicPortsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IsVpcPeeredOutput {
-    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
-    /// <code>false</code>.</p>
+    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
     pub is_peered: std::option::Option<bool>,
 }
 impl IsVpcPeeredOutput {
-    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
-    /// <code>false</code>.</p>
+    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
     pub fn is_peered(&self) -> std::option::Option<bool> {
         self.is_peered
     }
@@ -1975,14 +1861,12 @@ pub mod is_vpc_peered_output {
         pub(crate) is_peered: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
-        /// <code>false</code>.</p>
+        /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
         pub fn is_peered(mut self, input: bool) -> Self {
             self.is_peered = Some(input);
             self
         }
-        /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
-        /// <code>false</code>.</p>
+        /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
         pub fn set_is_peered(mut self, input: std::option::Option<bool>) -> Self {
             self.is_peered = input;
             self
@@ -2006,13 +1890,11 @@ impl IsVpcPeeredOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportKeyPairOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl ImportKeyPairOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -2033,14 +1915,12 @@ pub mod import_key_pair_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -2067,25 +1947,21 @@ impl ImportKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStaticIpsOutput {
-    /// <p>An array of key-value pairs containing information about your get static IPs
-    /// request.</p>
+    /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
     pub static_ips: std::option::Option<std::vec::Vec<crate::model::StaticIp>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetStaticIpsOutput {
-    /// <p>An array of key-value pairs containing information about your get static IPs
-    /// request.</p>
+    /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
     pub fn static_ips(&self) -> std::option::Option<&[crate::model::StaticIp]> {
         self.static_ips.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2112,16 +1988,14 @@ pub mod get_static_ips_output {
         ///
         /// To override the contents of this collection use [`set_static_ips`](Self::set_static_ips).
         ///
-        /// <p>An array of key-value pairs containing information about your get static IPs
-        /// request.</p>
+        /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
         pub fn static_ips(mut self, input: crate::model::StaticIp) -> Self {
             let mut v = self.static_ips.unwrap_or_default();
             v.push(input);
             self.static_ips = Some(v);
             self
         }
-        /// <p>An array of key-value pairs containing information about your get static IPs
-        /// request.</p>
+        /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
         pub fn set_static_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StaticIp>>,
@@ -2131,16 +2005,14 @@ pub mod get_static_ips_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2227,9 +2099,7 @@ pub struct GetRelationalDatabaseSnapshotsOutput {
         std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseSnapshotsOutput {
@@ -2241,9 +2111,7 @@ impl GetRelationalDatabaseSnapshotsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2294,18 +2162,14 @@ pub mod get_relational_database_snapshots_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2403,8 +2267,7 @@ pub struct GetRelationalDatabasesOutput {
     pub relational_databases: std::option::Option<std::vec::Vec<crate::model::RelationalDatabase>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabasesOutput {
@@ -2414,8 +2277,7 @@ impl GetRelationalDatabasesOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2460,16 +2322,14 @@ pub mod get_relational_databases_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2501,9 +2361,7 @@ pub struct GetRelationalDatabaseParametersOutput {
     pub parameters: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseParameter>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseParameters</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseParametersOutput {
@@ -2513,9 +2371,7 @@ impl GetRelationalDatabaseParametersOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseParameters</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2560,18 +2416,14 @@ pub mod get_relational_database_parameters_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseParameters</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseParameters</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2764,13 +2616,11 @@ impl GetRelationalDatabaseMasterUserPasswordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseLogStreamsOutput {
-    /// <p>An object describing the result of your get relational database log streams
-    /// request.</p>
+    /// <p>An object describing the result of your get relational database log streams request.</p>
     pub log_streams: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetRelationalDatabaseLogStreamsOutput {
-    /// <p>An object describing the result of your get relational database log streams
-    /// request.</p>
+    /// <p>An object describing the result of your get relational database log streams request.</p>
     pub fn log_streams(&self) -> std::option::Option<&[std::string::String]> {
         self.log_streams.as_deref()
     }
@@ -2795,16 +2645,14 @@ pub mod get_relational_database_log_streams_output {
         ///
         /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
         ///
-        /// <p>An object describing the result of your get relational database log streams
-        /// request.</p>
+        /// <p>An object describing the result of your get relational database log streams request.</p>
         pub fn log_streams(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
             v.push(input.into());
             self.log_streams = Some(v);
             self
         }
-        /// <p>An object describing the result of your get relational database log streams
-        /// request.</p>
+        /// <p>An object describing the result of your get relational database log streams request.</p>
         pub fn set_log_streams(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2833,11 +2681,9 @@ impl GetRelationalDatabaseLogStreamsOutput {
 pub struct GetRelationalDatabaseLogEventsOutput {
     /// <p>An object describing the result of your get relational database log events request.</p>
     pub resource_log_events: std::option::Option<std::vec::Vec<crate::model::LogEvent>>,
-    /// <p>A token used for advancing to the previous page of results from your get relational
-    /// database log events request.</p>
+    /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub next_backward_token: std::option::Option<std::string::String>,
-    /// <p>A token used for advancing to the next page of results from your get relational database
-    /// log events request.</p>
+    /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub next_forward_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseLogEventsOutput {
@@ -2845,13 +2691,11 @@ impl GetRelationalDatabaseLogEventsOutput {
     pub fn resource_log_events(&self) -> std::option::Option<&[crate::model::LogEvent]> {
         self.resource_log_events.as_deref()
     }
-    /// <p>A token used for advancing to the previous page of results from your get relational
-    /// database log events request.</p>
+    /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub fn next_backward_token(&self) -> std::option::Option<&str> {
         self.next_backward_token.as_deref()
     }
-    /// <p>A token used for advancing to the next page of results from your get relational database
-    /// log events request.</p>
+    /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub fn next_forward_token(&self) -> std::option::Option<&str> {
         self.next_forward_token.as_deref()
     }
@@ -2895,14 +2739,12 @@ pub mod get_relational_database_log_events_output {
             self.resource_log_events = input;
             self
         }
-        /// <p>A token used for advancing to the previous page of results from your get relational
-        /// database log events request.</p>
+        /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
         pub fn next_backward_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_backward_token = Some(input.into());
             self
         }
-        /// <p>A token used for advancing to the previous page of results from your get relational
-        /// database log events request.</p>
+        /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
         pub fn set_next_backward_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2910,14 +2752,12 @@ pub mod get_relational_database_log_events_output {
             self.next_backward_token = input;
             self
         }
-        /// <p>A token used for advancing to the next page of results from your get relational database
-        /// log events request.</p>
+        /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
         pub fn next_forward_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_forward_token = Some(input.into());
             self
         }
-        /// <p>A token used for advancing to the next page of results from your get relational database
-        /// log events request.</p>
+        /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
         pub fn set_next_forward_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2951,8 +2791,7 @@ pub struct GetRelationalDatabaseEventsOutput {
         std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseEvent>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseEventsOutput {
@@ -2964,8 +2803,7 @@ impl GetRelationalDatabaseEventsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3016,16 +2854,14 @@ pub mod get_relational_database_events_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3057,8 +2893,7 @@ pub struct GetRelationalDatabaseBundlesOutput {
     pub bundles: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBundle>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBundlesOutput {
@@ -3068,8 +2903,7 @@ impl GetRelationalDatabaseBundlesOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3114,16 +2948,14 @@ pub mod get_relational_database_bundles_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3155,9 +2987,7 @@ pub struct GetRelationalDatabaseBlueprintsOutput {
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseBlueprintsOutput {
@@ -3167,9 +2997,7 @@ impl GetRelationalDatabaseBlueprintsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using
-    /// the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3214,18 +3042,14 @@ pub mod get_relational_database_blueprints_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using
-        /// the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3373,41 +3197,31 @@ impl GetRegionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationsForResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p>
-    /// <note>
-    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-    /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
-    /// instead.</p>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     pub next_page_count: std::option::Option<std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsForResourceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p>
-    /// <note>
-    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-    /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
-    /// instead.</p>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     pub fn next_page_count(&self) -> std::option::Option<&str> {
         self.next_page_count.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3436,16 +3250,14 @@ pub mod get_operations_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -3453,21 +3265,15 @@ pub mod get_operations_for_resource_output {
             self.operations = input;
             self
         }
-        /// <p>(Deprecated) Returns the number of pages of results that remain.</p>
-        /// <note>
-        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-        /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
-        /// instead.</p>
+        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
         /// </note>
         pub fn next_page_count(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_count = Some(input.into());
             self
         }
-        /// <p>(Deprecated) Returns the number of pages of results that remain.</p>
-        /// <note>
-        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-        /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
-        /// instead.</p>
+        /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+        /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
         /// </note>
         pub fn set_next_page_count(
             mut self,
@@ -3478,16 +3284,14 @@ pub mod get_operations_for_resource_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3516,25 +3320,21 @@ impl GetOperationsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetOperations</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetOperationsOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetOperations</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3561,16 +3361,14 @@ pub mod get_operations_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -3580,16 +3378,14 @@ pub mod get_operations_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetOperations</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetOperations</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3617,13 +3413,11 @@ impl GetOperationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -3644,14 +3438,12 @@ pub mod get_operation_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -3678,14 +3470,12 @@ impl GetOperationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoadBalancerTlsCertificatesOutput {
-    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
-    /// certificates.</p>
+    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     pub tls_certificates:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
 }
 impl GetLoadBalancerTlsCertificatesOutput {
-    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
-    /// certificates.</p>
+    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     pub fn tls_certificates(
         &self,
     ) -> std::option::Option<&[crate::model::LoadBalancerTlsCertificate]> {
@@ -3713,16 +3503,14 @@ pub mod get_load_balancer_tls_certificates_output {
         ///
         /// To override the contents of this collection use [`set_tls_certificates`](Self::set_tls_certificates).
         ///
-        /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
-        /// certificates.</p>
+        /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
         pub fn tls_certificates(mut self, input: crate::model::LoadBalancerTlsCertificate) -> Self {
             let mut v = self.tls_certificates.unwrap_or_default();
             v.push(input);
             self.tls_certificates = Some(v);
             self
         }
-        /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
-        /// certificates.</p>
+        /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
         pub fn set_tls_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
@@ -3753,8 +3541,7 @@ pub struct GetLoadBalancersOutput {
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancersOutput {
@@ -3764,8 +3551,7 @@ impl GetLoadBalancersOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -3809,16 +3595,14 @@ pub mod get_load_balancers_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3992,8 +3776,7 @@ pub struct GetKeyPairsOutput {
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPair>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetKeyPairsOutput {
@@ -4003,8 +3786,7 @@ impl GetKeyPairsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -4048,16 +3830,14 @@ pub mod get_key_pairs_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4194,25 +3974,21 @@ impl GetInstanceStateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceSnapshotsOutput {
-    /// <p>An array of key-value pairs containing information about the results of your get instance
-    /// snapshots request.</p>
+    /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
     pub instance_snapshots: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
-    /// and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstanceSnapshotsOutput {
-    /// <p>An array of key-value pairs containing information about the results of your get instance
-    /// snapshots request.</p>
+    /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
     pub fn instance_snapshots(&self) -> std::option::Option<&[crate::model::InstanceSnapshot]> {
         self.instance_snapshots.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
-    /// and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -4240,16 +4016,14 @@ pub mod get_instance_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_instance_snapshots`](Self::set_instance_snapshots).
         ///
-        /// <p>An array of key-value pairs containing information about the results of your get instance
-        /// snapshots request.</p>
+        /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
         pub fn instance_snapshots(mut self, input: crate::model::InstanceSnapshot) -> Self {
             let mut v = self.instance_snapshots.unwrap_or_default();
             v.push(input);
             self.instance_snapshots = Some(v);
             self
         }
-        /// <p>An array of key-value pairs containing information about the results of your get instance
-        /// snapshots request.</p>
+        /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
         pub fn set_instance_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceSnapshot>>,
@@ -4259,16 +4033,14 @@ pub mod get_instance_snapshots_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
-        /// and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
-        /// and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4296,13 +4068,11 @@ impl GetInstanceSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceSnapshotOutput {
-    /// <p>An array of key-value pairs containing information about the results of your get instance
-    /// snapshot request.</p>
+    /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     pub instance_snapshot: std::option::Option<crate::model::InstanceSnapshot>,
 }
 impl GetInstanceSnapshotOutput {
-    /// <p>An array of key-value pairs containing information about the results of your get instance
-    /// snapshot request.</p>
+    /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     pub fn instance_snapshot(&self) -> std::option::Option<&crate::model::InstanceSnapshot> {
         self.instance_snapshot.as_ref()
     }
@@ -4323,14 +4093,12 @@ pub mod get_instance_snapshot_output {
         pub(crate) instance_snapshot: std::option::Option<crate::model::InstanceSnapshot>,
     }
     impl Builder {
-        /// <p>An array of key-value pairs containing information about the results of your get instance
-        /// snapshot request.</p>
+        /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
         pub fn instance_snapshot(mut self, input: crate::model::InstanceSnapshot) -> Self {
             self.instance_snapshot = Some(input);
             self
         }
-        /// <p>An array of key-value pairs containing information about the results of your get instance
-        /// snapshot request.</p>
+        /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
         pub fn set_instance_snapshot(
             mut self,
             input: std::option::Option<crate::model::InstanceSnapshot>,
@@ -4361,8 +4129,7 @@ pub struct GetInstancesOutput {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesOutput {
@@ -4372,8 +4139,7 @@ impl GetInstancesOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -4417,16 +4183,14 @@ pub mod get_instances_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4454,13 +4218,11 @@ impl GetInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstancePortStatesOutput {
-    /// <p>An array of objects that describe the firewall port states for the specified
-    /// instance.</p>
+    /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
     pub port_states: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
 }
 impl GetInstancePortStatesOutput {
-    /// <p>An array of objects that describe the firewall port states for the specified
-    /// instance.</p>
+    /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
     pub fn port_states(&self) -> std::option::Option<&[crate::model::InstancePortState]> {
         self.port_states.as_deref()
     }
@@ -4485,16 +4247,14 @@ pub mod get_instance_port_states_output {
         ///
         /// To override the contents of this collection use [`set_port_states`](Self::set_port_states).
         ///
-        /// <p>An array of objects that describe the firewall port states for the specified
-        /// instance.</p>
+        /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
         pub fn port_states(mut self, input: crate::model::InstancePortState) -> Self {
             let mut v = self.port_states.unwrap_or_default();
             v.push(input);
             self.port_states = Some(v);
             self
         }
-        /// <p>An array of objects that describe the firewall port states for the specified
-        /// instance.</p>
+        /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
         pub fn set_port_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
@@ -4606,13 +4366,11 @@ impl GetInstanceMetricDataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstanceAccessDetailsOutput {
-    /// <p>An array of key-value pairs containing information about a get instance access
-    /// request.</p>
+    /// <p>An array of key-value pairs containing information about a get instance access request.</p>
     pub access_details: std::option::Option<crate::model::InstanceAccessDetails>,
 }
 impl GetInstanceAccessDetailsOutput {
-    /// <p>An array of key-value pairs containing information about a get instance access
-    /// request.</p>
+    /// <p>An array of key-value pairs containing information about a get instance access request.</p>
     pub fn access_details(&self) -> std::option::Option<&crate::model::InstanceAccessDetails> {
         self.access_details.as_ref()
     }
@@ -4633,14 +4391,12 @@ pub mod get_instance_access_details_output {
         pub(crate) access_details: std::option::Option<crate::model::InstanceAccessDetails>,
     }
     impl Builder {
-        /// <p>An array of key-value pairs containing information about a get instance access
-        /// request.</p>
+        /// <p>An array of key-value pairs containing information about a get instance access request.</p>
         pub fn access_details(mut self, input: crate::model::InstanceAccessDetails) -> Self {
             self.access_details = Some(input);
             self
         }
-        /// <p>An array of key-value pairs containing information about a get instance access
-        /// request.</p>
+        /// <p>An array of key-value pairs containing information about a get instance access request.</p>
         pub fn set_access_details(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessDetails>,
@@ -4726,8 +4482,7 @@ pub struct GetExportSnapshotRecordsOutput {
         std::option::Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetExportSnapshotRecordsOutput {
@@ -4739,8 +4494,7 @@ impl GetExportSnapshotRecordsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
-    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -4788,16 +4542,14 @@ pub mod get_export_snapshot_records_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
-        /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4825,25 +4577,21 @@ impl GetExportSnapshotRecordsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainsOutput {
-    /// <p>An array of key-value pairs containing information about each of the domain entries in the
-    /// user's account.</p>
+    /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDomains</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDomainsOutput {
-    /// <p>An array of key-value pairs containing information about each of the domain entries in the
-    /// user's account.</p>
+    /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
     pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
         self.domains.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDomains</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -4870,16 +4618,14 @@ pub mod get_domains_output {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>An array of key-value pairs containing information about each of the domain entries in the
-        /// user's account.</p>
+        /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
         pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input);
             self.domains = Some(v);
             self
         }
-        /// <p>An array of key-value pairs containing information about each of the domain entries in the
-        /// user's account.</p>
+        /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Domain>>,
@@ -4889,16 +4635,14 @@ pub mod get_domains_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDomains</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDomains</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4984,8 +4728,7 @@ pub struct GetDistributionsOutput {
     pub distributions: std::option::Option<std::vec::Vec<crate::model::LightsailDistribution>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDistributionsOutput {
@@ -4995,8 +4738,7 @@ impl GetDistributionsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -5041,16 +4783,14 @@ pub mod get_distributions_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5165,8 +4905,7 @@ impl GetDistributionMetricDataOutput {
 pub struct GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
-    /// format.</p>
+    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDistributionLatestCacheResetOutput {
@@ -5174,8 +4913,7 @@ impl GetDistributionLatestCacheResetOutput {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
-    /// format.</p>
+    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -5208,14 +4946,12 @@ pub mod get_distribution_latest_cache_reset_output {
             self.status = input;
             self
         }
-        /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
-        /// format.</p>
+        /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
-        /// format.</p>
+        /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5310,8 +5046,7 @@ pub struct GetDiskSnapshotsOutput {
     pub disk_snapshots: std::option::Option<std::vec::Vec<crate::model::DiskSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDiskSnapshotsOutput {
@@ -5321,8 +5056,7 @@ impl GetDiskSnapshotsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -5366,16 +5100,14 @@ pub mod get_disk_snapshots_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5464,8 +5196,7 @@ pub struct GetDisksOutput {
     pub disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
-    /// the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDisksOutput {
@@ -5475,8 +5206,7 @@ impl GetDisksOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
-    /// the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -5520,16 +5250,14 @@ pub mod get_disks_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
-        /// the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
-        /// the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5673,13 +5401,11 @@ impl GetContainerServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerServicePowersOutput {
-    /// <p>An array of objects that describe the powers that can be specified for a container
-    /// service.</p>
+    /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
     pub powers: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
 }
 impl GetContainerServicePowersOutput {
-    /// <p>An array of objects that describe the powers that can be specified for a container
-    /// service.</p>
+    /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
     pub fn powers(&self) -> std::option::Option<&[crate::model::ContainerServicePower]> {
         self.powers.as_deref()
     }
@@ -5704,16 +5430,14 @@ pub mod get_container_service_powers_output {
         ///
         /// To override the contents of this collection use [`set_powers`](Self::set_powers).
         ///
-        /// <p>An array of objects that describe the powers that can be specified for a container
-        /// service.</p>
+        /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
         pub fn powers(mut self, input: crate::model::ContainerServicePower) -> Self {
             let mut v = self.powers.unwrap_or_default();
             v.push(input);
             self.powers = Some(v);
             self
         }
-        /// <p>An array of objects that describe the powers that can be specified for a container
-        /// service.</p>
+        /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
         pub fn set_powers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
@@ -5892,11 +5616,8 @@ pub struct GetContainerLogOutput {
     /// <p>An array of objects that describe the log events of a container.</p>
     pub log_events: std::option::Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
     /// <p>The token to advance to the next page of results from your request.</p>
-    ///
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    ///
-    /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetContainerLogOutput {
@@ -5905,11 +5626,8 @@ impl GetContainerLogOutput {
         self.log_events.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
-    ///
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    ///
-    /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -5953,21 +5671,15 @@ pub mod get_container_log_output {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        ///
-        /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        ///
-        /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5995,13 +5707,11 @@ impl GetContainerLogOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerImagesOutput {
-    /// <p>An array of objects that describe container images that are registered to the container
-    /// service.</p>
+    /// <p>An array of objects that describe container images that are registered to the container service.</p>
     pub container_images: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
 }
 impl GetContainerImagesOutput {
-    /// <p>An array of objects that describe container images that are registered to the container
-    /// service.</p>
+    /// <p>An array of objects that describe container images that are registered to the container service.</p>
     pub fn container_images(&self) -> std::option::Option<&[crate::model::ContainerImage]> {
         self.container_images.as_deref()
     }
@@ -6027,16 +5737,14 @@ pub mod get_container_images_output {
         ///
         /// To override the contents of this collection use [`set_container_images`](Self::set_container_images).
         ///
-        /// <p>An array of objects that describe container images that are registered to the container
-        /// service.</p>
+        /// <p>An array of objects that describe container images that are registered to the container service.</p>
         pub fn container_images(mut self, input: crate::model::ContainerImage) -> Self {
             let mut v = self.container_images.unwrap_or_default();
             v.push(input);
             self.container_images = Some(v);
             self
         }
-        /// <p>An array of objects that describe container images that are registered to the container
-        /// service.</p>
+        /// <p>An array of objects that describe container images that are registered to the container service.</p>
         pub fn set_container_images(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
@@ -6063,15 +5771,13 @@ impl GetContainerImagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContainerApiMetadataOutput {
-    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail
-    /// Control (lightsailctl) plugin.</p>
+    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     pub metadata: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
 }
 impl GetContainerApiMetadataOutput {
-    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail
-    /// Control (lightsailctl) plugin.</p>
+    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
@@ -6101,8 +5807,7 @@ pub mod get_container_api_metadata_output {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail
-        /// Control (lightsailctl) plugin.</p>
+        /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
         pub fn metadata(
             mut self,
             input: std::collections::HashMap<std::string::String, std::string::String>,
@@ -6112,8 +5817,7 @@ pub mod get_container_api_metadata_output {
             self.metadata = Some(v);
             self
         }
-        /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail
-        /// Control (lightsailctl) plugin.</p>
+        /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -6210,9 +5914,7 @@ pub struct GetCloudFormationStackRecordsOutput {
         std::option::Option<std::vec::Vec<crate::model::CloudFormationStackRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
-    /// <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCloudFormationStackRecordsOutput {
@@ -6224,9 +5926,7 @@ impl GetCloudFormationStackRecordsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another
-    /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
-    /// <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -6277,18 +5977,14 @@ pub mod get_cloud_formation_stack_records_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
-        /// <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another
-        /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
-        /// <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6384,8 +6080,7 @@ pub struct GetBundlesOutput {
     pub bundles: std::option::Option<std::vec::Vec<crate::model::Bundle>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBundlesOutput {
@@ -6395,8 +6090,7 @@ impl GetBundlesOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -6440,16 +6134,14 @@ pub mod get_bundles_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6480,11 +6172,8 @@ pub struct GetBucketsOutput {
     /// <p>An array of objects that describe buckets.</p>
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     /// <p>The token to advance to the next page of results from your request.</p>
-    ///
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    ///
-    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBucketsOutput {
@@ -6493,11 +6182,8 @@ impl GetBucketsOutput {
         self.buckets.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
-    ///
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    ///
-    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -6540,21 +6226,15 @@ pub mod get_buckets_output {
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        ///
-        /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
-        ///
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        ///
-        /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6793,25 +6473,21 @@ impl GetBucketAccessKeysOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintsOutput {
-    /// <p>An array of key-value pairs that contains information about the available
-    /// blueprints.</p>
+    /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
     pub blueprints: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetBlueprintsOutput {
-    /// <p>An array of key-value pairs that contains information about the available
-    /// blueprints.</p>
+    /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
     pub fn blueprints(&self) -> std::option::Option<&[crate::model::Blueprint]> {
         self.blueprints.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -6838,16 +6514,14 @@ pub mod get_blueprints_output {
         ///
         /// To override the contents of this collection use [`set_blueprints`](Self::set_blueprints).
         ///
-        /// <p>An array of key-value pairs that contains information about the available
-        /// blueprints.</p>
+        /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
         pub fn blueprints(mut self, input: crate::model::Blueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
             v.push(input);
             self.blueprints = Some(v);
             self
         }
-        /// <p>An array of key-value pairs that contains information about the available
-        /// blueprints.</p>
+        /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
         pub fn set_blueprints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Blueprint>>,
@@ -6857,16 +6531,14 @@ pub mod get_blueprints_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6898,8 +6570,7 @@ pub struct GetAutoSnapshotsOutput {
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>An array of objects that describe the automatic snapshots that are available for the
-    /// specified source instance or disk.</p>
+    /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
     pub auto_snapshots: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
 }
 impl GetAutoSnapshotsOutput {
@@ -6911,8 +6582,7 @@ impl GetAutoSnapshotsOutput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>An array of objects that describe the automatic snapshots that are available for the
-    /// specified source instance or disk.</p>
+    /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
     pub fn auto_snapshots(&self) -> std::option::Option<&[crate::model::AutoSnapshotDetails]> {
         self.auto_snapshots.as_deref()
     }
@@ -6968,16 +6638,14 @@ pub mod get_auto_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_auto_snapshots`](Self::set_auto_snapshots).
         ///
-        /// <p>An array of objects that describe the automatic snapshots that are available for the
-        /// specified source instance or disk.</p>
+        /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
         pub fn auto_snapshots(mut self, input: crate::model::AutoSnapshotDetails) -> Self {
             let mut v = self.auto_snapshots.unwrap_or_default();
             v.push(input);
             self.auto_snapshots = Some(v);
             self
         }
-        /// <p>An array of objects that describe the automatic snapshots that are available for the
-        /// specified source instance or disk.</p>
+        /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
         pub fn set_auto_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
@@ -7010,8 +6678,7 @@ pub struct GetAlarmsOutput {
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAlarmsOutput {
@@ -7021,8 +6688,7 @@ impl GetAlarmsOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -7066,16 +6732,14 @@ pub mod get_alarms_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7107,8 +6771,7 @@ pub struct GetActiveNamesOutput {
     pub active_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetActiveNamesOutput {
@@ -7118,8 +6781,7 @@ impl GetActiveNamesOutput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
-    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and
-    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -7163,16 +6825,14 @@ pub mod get_active_names_output {
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
         /// <p>A next page token is not returned if there are no more results to display.</p>
-        /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7200,13 +6860,11 @@ impl GetActiveNamesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl ExportSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7231,16 +6889,14 @@ pub mod export_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7267,13 +6923,11 @@ impl ExportSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAddOnOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl EnableAddOnOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7298,16 +6952,14 @@ pub mod enable_add_on_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7413,13 +7065,11 @@ impl DownloadDefaultKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAddOnOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DisableAddOnOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7444,16 +7094,14 @@ pub mod disable_add_on_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7480,13 +7128,11 @@ impl DisableAddOnOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7511,16 +7157,14 @@ pub mod detach_static_ip_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7547,13 +7191,11 @@ impl DetachStaticIpOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachInstancesFromLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachInstancesFromLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7578,16 +7220,14 @@ pub mod detach_instances_from_load_balancer_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7614,13 +7254,11 @@ impl DetachInstancesFromLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DetachDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7645,16 +7283,14 @@ pub mod detach_disk_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7681,13 +7317,11 @@ impl DetachDiskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachCertificateFromDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DetachCertificateFromDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -7708,14 +7342,12 @@ pub mod detach_certificate_from_distribution_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -7742,13 +7374,11 @@ impl DetachCertificateFromDistributionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRelationalDatabaseSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7773,16 +7403,14 @@ pub mod delete_relational_database_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7809,13 +7437,11 @@ impl DeleteRelationalDatabaseSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7840,16 +7466,14 @@ pub mod delete_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7876,13 +7500,11 @@ impl DeleteRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7907,16 +7529,14 @@ pub mod delete_load_balancer_tls_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -7943,13 +7563,11 @@ impl DeleteLoadBalancerTlsCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -7974,16 +7592,14 @@ pub mod delete_load_balancer_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8010,13 +7626,11 @@ impl DeleteLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKnownHostKeysOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteKnownHostKeysOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8041,16 +7655,14 @@ pub mod delete_known_host_keys_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8077,13 +7689,11 @@ impl DeleteKnownHostKeysOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyPairOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteKeyPairOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -8104,14 +7714,12 @@ pub mod delete_key_pair_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -8138,13 +7746,11 @@ impl DeleteKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8169,16 +7775,14 @@ pub mod delete_instance_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8205,13 +7809,11 @@ impl DeleteInstanceSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteInstanceOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8236,16 +7838,14 @@ pub mod delete_instance_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8272,13 +7872,11 @@ impl DeleteInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -8299,14 +7897,12 @@ pub mod delete_domain_entry_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -8333,13 +7929,11 @@ impl DeleteDomainEntryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDomainOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -8360,14 +7954,12 @@ pub mod delete_domain_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -8394,13 +7986,11 @@ impl DeleteDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl DeleteDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -8421,14 +8011,12 @@ pub mod delete_distribution_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -8455,13 +8043,11 @@ impl DeleteDistributionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDiskSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8486,16 +8072,14 @@ pub mod delete_disk_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8522,13 +8106,11 @@ impl DeleteDiskSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8553,16 +8135,14 @@ pub mod delete_disk_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8649,13 +8229,11 @@ impl DeleteContainerImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactMethodOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteContactMethodOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8680,16 +8258,14 @@ pub mod delete_contact_method_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8716,13 +8292,11 @@ impl DeleteContactMethodOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8747,16 +8321,14 @@ pub mod delete_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8783,13 +8355,11 @@ impl DeleteCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketAccessKeyOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketAccessKeyOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8814,16 +8384,14 @@ pub mod delete_bucket_access_key_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8850,13 +8418,11 @@ impl DeleteBucketAccessKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteBucketOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8881,16 +8447,14 @@ pub mod delete_bucket_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8917,13 +8481,11 @@ impl DeleteBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAutoSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -8948,16 +8510,14 @@ pub mod delete_auto_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -8984,13 +8544,11 @@ impl DeleteAutoSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl DeleteAlarmOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9015,16 +8573,14 @@ pub mod delete_alarm_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9051,13 +8607,11 @@ impl DeleteAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9082,16 +8636,14 @@ pub mod create_relational_database_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9118,13 +8670,11 @@ impl CreateRelationalDatabaseSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9149,16 +8699,14 @@ pub mod create_relational_database_from_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9185,13 +8733,11 @@ impl CreateRelationalDatabaseFromSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateRelationalDatabaseOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9216,16 +8762,14 @@ pub mod create_relational_database_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9252,13 +8796,11 @@ impl CreateRelationalDatabaseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9283,16 +8825,14 @@ pub mod create_load_balancer_tls_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9319,13 +8859,11 @@ impl CreateLoadBalancerTlsCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9350,16 +8888,14 @@ pub mod create_load_balancer_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9386,20 +8922,17 @@ impl CreateLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyPairOutput {
-    /// <p>An array of key-value pairs containing information about the new key pair you just
-    /// created.</p>
+    /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
     pub key_pair: std::option::Option<crate::model::KeyPair>,
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub public_key_base64: std::option::Option<std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
     pub private_key_base64: std::option::Option<std::string::String>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateKeyPairOutput {
-    /// <p>An array of key-value pairs containing information about the new key pair you just
-    /// created.</p>
+    /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
     pub fn key_pair(&self) -> std::option::Option<&crate::model::KeyPair> {
         self.key_pair.as_ref()
     }
@@ -9411,8 +8944,7 @@ impl CreateKeyPairOutput {
     pub fn private_key_base64(&self) -> std::option::Option<&str> {
         self.private_key_base64.as_deref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -9439,14 +8971,12 @@ pub mod create_key_pair_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of key-value pairs containing information about the new key pair you just
-        /// created.</p>
+        /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
         pub fn key_pair(mut self, input: crate::model::KeyPair) -> Self {
             self.key_pair = Some(input);
             self
         }
-        /// <p>An array of key-value pairs containing information about the new key pair you just
-        /// created.</p>
+        /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<crate::model::KeyPair>) -> Self {
             self.key_pair = input;
             self
@@ -9477,14 +9007,12 @@ pub mod create_key_pair_output {
             self.private_key_base64 = input;
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -9514,13 +9042,11 @@ impl CreateKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstanceSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9545,16 +9071,14 @@ pub mod create_instance_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9581,13 +9105,11 @@ impl CreateInstanceSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstancesFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9612,16 +9134,14 @@ pub mod create_instances_from_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9648,13 +9168,11 @@ impl CreateInstancesFromSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstancesOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateInstancesOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9679,16 +9197,14 @@ pub mod create_instances_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9715,13 +9231,11 @@ impl CreateInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainEntryOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -9742,14 +9256,12 @@ pub mod create_domain_entry_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -9776,13 +9288,11 @@ impl CreateDomainEntryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDomainOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -9803,14 +9313,12 @@ pub mod create_domain_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -9839,8 +9347,7 @@ impl CreateDomainOutput {
 pub struct CreateDistributionOutput {
     /// <p>An object that describes the distribution created.</p>
     pub distribution: std::option::Option<crate::model::LightsailDistribution>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CreateDistributionOutput {
@@ -9848,8 +9355,7 @@ impl CreateDistributionOutput {
     pub fn distribution(&self) -> std::option::Option<&crate::model::LightsailDistribution> {
         self.distribution.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -9885,14 +9391,12 @@ pub mod create_distribution_output {
             self.distribution = input;
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -9920,13 +9424,11 @@ impl CreateDistributionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -9951,16 +9453,14 @@ pub mod create_disk_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -9987,13 +9487,11 @@ impl CreateDiskSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskFromSnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10018,16 +9516,14 @@ pub mod create_disk_from_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10054,13 +9550,11 @@ impl CreateDiskFromSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10085,16 +9579,14 @@ pub mod create_disk_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10121,13 +9613,11 @@ impl CreateDiskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerServiceRegistryLoginOutput {
-    /// <p>An object that describes the log in information for the container service registry of your
-    /// Lightsail account.</p>
+    /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
     pub registry_login: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
 }
 impl CreateContainerServiceRegistryLoginOutput {
-    /// <p>An object that describes the log in information for the container service registry of your
-    /// Lightsail account.</p>
+    /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
     pub fn registry_login(
         &self,
     ) -> std::option::Option<&crate::model::ContainerServiceRegistryLogin> {
@@ -10150,8 +9640,7 @@ pub mod create_container_service_registry_login_output {
         pub(crate) registry_login: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
     }
     impl Builder {
-        /// <p>An object that describes the log in information for the container service registry of your
-        /// Lightsail account.</p>
+        /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
         pub fn registry_login(
             mut self,
             input: crate::model::ContainerServiceRegistryLogin,
@@ -10159,8 +9648,7 @@ pub mod create_container_service_registry_login_output {
             self.registry_login = Some(input);
             self
         }
-        /// <p>An object that describes the log in information for the container service registry of your
-        /// Lightsail account.</p>
+        /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
         pub fn set_registry_login(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
@@ -10301,13 +9789,11 @@ impl CreateContainerServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactMethodOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateContactMethodOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10332,16 +9818,14 @@ pub mod create_contact_method_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10368,13 +9852,11 @@ impl CreateContactMethodOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFormationStackOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateCloudFormationStackOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10399,16 +9881,14 @@ pub mod create_cloud_formation_stack_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10437,8 +9917,7 @@ impl CreateCloudFormationStackOutput {
 pub struct CreateCertificateOutput {
     /// <p>An object that describes the certificate created.</p>
     pub certificate: std::option::Option<crate::model::CertificateSummary>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateCertificateOutput {
@@ -10446,8 +9925,7 @@ impl CreateCertificateOutput {
     pub fn certificate(&self) -> std::option::Option<&crate::model::CertificateSummary> {
         self.certificate.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10487,16 +9965,14 @@ pub mod create_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10526,8 +10002,7 @@ impl CreateCertificateOutput {
 pub struct CreateBucketAccessKeyOutput {
     /// <p>An object that describes the access key that is created.</p>
     pub access_key: std::option::Option<crate::model::AccessKey>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateBucketAccessKeyOutput {
@@ -10535,8 +10010,7 @@ impl CreateBucketAccessKeyOutput {
     pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
         self.access_key.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10576,16 +10050,14 @@ pub mod create_bucket_access_key_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10615,8 +10087,7 @@ impl CreateBucketAccessKeyOutput {
 pub struct CreateBucketOutput {
     /// <p>An object that describes the bucket that is created.</p>
     pub bucket: std::option::Option<crate::model::Bucket>,
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CreateBucketOutput {
@@ -10624,8 +10095,7 @@ impl CreateBucketOutput {
     pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
         self.bucket.as_ref()
     }
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10662,16 +10132,14 @@ pub mod create_bucket_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10699,13 +10167,11 @@ impl CreateBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopySnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl CopySnapshotOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10730,16 +10196,14 @@ pub mod copy_snapshot_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10766,13 +10230,11 @@ impl CopySnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloseInstancePublicPortsOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl CloseInstancePublicPortsOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -10793,14 +10255,12 @@ pub mod close_instance_public_ports_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -10827,13 +10287,11 @@ impl CloseInstancePublicPortsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10858,16 +10316,14 @@ pub mod attach_static_ip_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10894,17 +10350,13 @@ impl AttachStaticIpOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
-    /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
-    /// the certificate and use it for another purpose.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachLoadBalancerTlsCertificateOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
-    /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
-    /// the certificate and use it for another purpose.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -10929,20 +10381,16 @@ pub mod attach_load_balancer_tls_certificate_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
-        /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
-        /// the certificate and use it for another purpose.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
-        /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
-        /// the certificate and use it for another purpose.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -10969,13 +10417,11 @@ impl AttachLoadBalancerTlsCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachInstancesToLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachInstancesToLoadBalancerOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -11000,16 +10446,14 @@ pub mod attach_instances_to_load_balancer_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -11036,13 +10480,11 @@ impl AttachInstancesToLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AttachDiskOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -11067,16 +10509,14 @@ pub mod attach_disk_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -11103,13 +10543,11 @@ impl AttachDiskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachCertificateToDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl AttachCertificateToDistributionOutput {
-    /// <p>An object that describes the result of the action, such as the status of the request, the
-    /// timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
         self.operation.as_ref()
     }
@@ -11130,14 +10568,12 @@ pub mod attach_certificate_to_distribution_output {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
     impl Builder {
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>An object that describes the result of the action, such as the status of the request, the
-        /// timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -11164,13 +10600,11 @@ impl AttachCertificateToDistributionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
 impl AllocateStaticIpOutput {
-    /// <p>An array of objects that describe the result of the action, such as the status of the
-    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
         self.operations.as_deref()
     }
@@ -11195,16 +10629,14 @@ pub mod allocate_static_ip_output {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input);
             self.operations = Some(v);
             self
         }
-        /// <p>An array of objects that describe the result of the action, such as the status of the
-        /// request, the timestamp of the request, and the resources affected by the request.</p>
+        /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,

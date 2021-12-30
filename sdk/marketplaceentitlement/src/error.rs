@@ -12,8 +12,7 @@ pub struct GetEntitlementsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEntitlementsErrorKind {
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>One or more parameters in your request was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -240,8 +239,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-/// message with details on the AWS forums.</p>
+/// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {

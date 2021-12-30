@@ -15,8 +15,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

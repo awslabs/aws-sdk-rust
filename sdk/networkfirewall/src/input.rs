@@ -447,14 +447,12 @@ pub mod create_firewall_input {
             self.firewall_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-        /// use for the firewall.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-        /// use for the firewall.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
         pub fn set_firewall_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,18 +476,14 @@ pub mod create_firewall_input {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-        /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-        /// subnet. </p>
+        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
         pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
             v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
-        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-        /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-        /// subnet. </p>
+        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -497,44 +491,32 @@ pub mod create_firewall_input {
             self.subnet_mappings = input;
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn delete_protection(mut self, input: bool) -> Self {
             self.delete_protection = Some(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_protection = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn subnet_change_protection(mut self, input: bool) -> Self {
             self.subnet_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.subnet_change_protection = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
             self.firewall_policy_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -785,20 +767,14 @@ pub mod create_firewall_policy_input {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
@@ -974,16 +950,14 @@ pub mod create_rule_group_input {
             self.rule_group_name = input;
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
             self.rule_group = Some(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn set_rule_group(
@@ -993,36 +967,28 @@ pub mod create_rule_group_input {
             self.rule_group = input;
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.rules = Some(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rules = input;
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
             self.r#type = input;
             self
@@ -1037,92 +1003,40 @@ pub mod create_rule_group_input {
             self.description = input;
             self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-        /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-        /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-        /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-        /// <note>
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-        /// room for your rule group to grow. </p>
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
         /// </note>
-        /// <p>
-        /// <b>Capacity for a stateless rule group</b>
-        /// </p>
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-        /// requirements of the individual rules that you expect to have in the rule group. </p>
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-        /// requirement values of each of the rule's match settings:</p>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
         /// <ul>
-        /// <li>
-        /// <p>A match setting with no criteria specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>All other match settings have a value equal to the number of elements provided in
-        /// the setting. For example, a protocol setting ["UDP"] and a source setting
-        /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-        /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-        /// </p>
-        /// </li>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
         /// </ul>
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity
-        /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-        /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-        /// for each of the other match settings has a capacity requirement of 6. </p>
-        /// <p>
-        /// <b>Capacity for a stateful rule group</b>
-        /// </p>
-        /// <p>For
-        /// a stateful rule group, the minimum capacity required is the number of individual rules that
-        /// you expect to have in the rule group. </p>
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
+        /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
         pub fn capacity(mut self, input: i32) -> Self {
             self.capacity = Some(input);
             self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-        /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-        /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-        /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-        /// <note>
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-        /// room for your rule group to grow. </p>
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
         /// </note>
-        /// <p>
-        /// <b>Capacity for a stateless rule group</b>
-        /// </p>
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-        /// requirements of the individual rules that you expect to have in the rule group. </p>
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-        /// requirement values of each of the rule's match settings:</p>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
         /// <ul>
-        /// <li>
-        /// <p>A match setting with no criteria specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>All other match settings have a value equal to the number of elements provided in
-        /// the setting. For example, a protocol setting ["UDP"] and a source setting
-        /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-        /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-        /// </p>
-        /// </li>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
         /// </ul>
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity
-        /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-        /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-        /// for each of the other match settings has a capacity requirement of 6. </p>
-        /// <p>
-        /// <b>Capacity for a stateful rule group</b>
-        /// </p>
-        /// <p>For
-        /// a stateful rule group, the minimum capacity required is the number of individual rules that
-        /// you expect to have in the rule group. </p>
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
+        /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.capacity = input;
             self
@@ -1147,20 +1061,14 @@ pub mod create_rule_group_input {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
@@ -1856,18 +1764,14 @@ pub mod delete_rule_group_input {
             self.rule_group_arn = input;
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -2735,18 +2639,14 @@ pub mod describe_rule_group_input {
             self.rule_group_arn = input;
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -3110,30 +3010,22 @@ pub mod list_firewall_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3287,16 +3179,12 @@ pub mod list_firewalls_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3305,16 +3193,14 @@ pub mod list_firewalls_input {
         ///
         /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
         ///
-        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-        /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
         pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_ids.unwrap_or_default();
             v.push(input.into());
             self.vpc_ids = Some(v);
             self
         }
-        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-        /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
         pub fn set_vpc_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3322,16 +3208,12 @@ pub mod list_firewalls_input {
             self.vpc_ids = input;
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3482,30 +3364,22 @@ pub mod list_rule_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3657,30 +3531,22 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3854,68 +3720,38 @@ pub mod put_resource_policy_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-        /// and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListRuleGroups</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
         /// </ul>
         /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:AssociateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListFirewallPolicies</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
         /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-        /// and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListRuleGroups</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
         /// </ul>
         /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:AssociateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListFirewallPolicies</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
         /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4459,16 +4295,12 @@ pub mod update_firewall_delete_protection_input {
             self.firewall_name = input;
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn delete_protection(mut self, input: bool) -> Self {
             self.delete_protection = Some(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_protection = input;
             self
@@ -4667,14 +4499,12 @@ pub mod update_firewall_description_input {
             self.firewall_name = input;
             self
         }
-        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-        /// the description for the firewall.</p>
+        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-        /// the description for the firewall.</p>
+        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4900,20 +4730,14 @@ pub mod update_firewall_policy_input {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
@@ -5114,16 +4938,12 @@ pub mod update_firewall_policy_change_protection_input {
             self.firewall_name = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
             self.firewall_policy_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -5312,14 +5132,12 @@ pub mod update_logging_configuration_input {
             self.firewall_name = input;
             self
         }
-        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-        /// Network Firewall disables logging for the firewall.</p>
+        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-        /// Network Firewall disables logging for the firewall.</p>
+        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -5525,16 +5343,14 @@ pub mod update_rule_group_input {
             self.rule_group_name = input;
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
             self.rule_group = Some(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn set_rule_group(
@@ -5544,40 +5360,30 @@ pub mod update_rule_group_input {
             self.rule_group = input;
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.rules = Some(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rules = input;
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -5595,20 +5401,14 @@ pub mod update_rule_group_input {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
@@ -5809,16 +5609,12 @@ pub mod update_subnet_change_protection_input {
             self.firewall_name = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn subnet_change_protection(mut self, input: bool) -> Self {
             self.subnet_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.subnet_change_protection = input;
             self
@@ -5978,9 +5774,7 @@ pub struct UpdateSubnetChangeProtectionInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub subnet_change_protection: bool,
 }
 impl UpdateSubnetChangeProtectionInput {
@@ -6000,9 +5794,7 @@ impl UpdateSubnetChangeProtectionInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn subnet_change_protection(&self) -> bool {
         self.subnet_change_protection
     }
@@ -6031,32 +5823,23 @@ pub struct UpdateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the rule group rules. </p>
-    /// <note>
+    /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-    /// <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-    /// </note>  
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    /// </note>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
     pub rules: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
     /// <p>A description of the rule group. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
@@ -6076,26 +5859,20 @@ impl UpdateRuleGroupInput {
     pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules. </p>
-    /// <note>
+    /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
     pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-    /// <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-    /// </note>  
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    /// </note>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
     pub fn rules(&self) -> std::option::Option<&str> {
         self.rules.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
@@ -6106,10 +5883,7 @@ impl UpdateRuleGroupInput {
         self.description.as_deref()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
@@ -6140,8 +5914,7 @@ pub struct UpdateLoggingConfigurationInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-    /// Network Firewall disables logging for the firewall.</p>
+    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl UpdateLoggingConfigurationInput {
@@ -6155,8 +5928,7 @@ impl UpdateLoggingConfigurationInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-    /// Network Firewall disables logging for the firewall.</p>
+    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -6187,9 +5959,7 @@ pub struct UpdateFirewallPolicyChangeProtectionInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub firewall_policy_change_protection: bool,
 }
 impl UpdateFirewallPolicyChangeProtectionInput {
@@ -6209,9 +5979,7 @@ impl UpdateFirewallPolicyChangeProtectionInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn firewall_policy_change_protection(&self) -> bool {
         self.firewall_policy_change_protection
     }
@@ -6248,10 +6016,7 @@ pub struct UpdateFirewallPolicyInput {
     /// <p>A description of the firewall policy.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
@@ -6280,10 +6045,7 @@ impl UpdateFirewallPolicyInput {
         self.description.as_deref()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
@@ -6316,8 +6078,7 @@ pub struct UpdateFirewallDescriptionInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-    /// the description for the firewall.</p>
+    /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateFirewallDescriptionInput {
@@ -6337,8 +6098,7 @@ impl UpdateFirewallDescriptionInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-    /// the description for the firewall.</p>
+    /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6368,9 +6128,7 @@ pub struct UpdateFirewallDeleteProtectionInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-    /// that the firewall is protected against deletion. Use this setting to protect against
-    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: bool,
 }
 impl UpdateFirewallDeleteProtectionInput {
@@ -6390,9 +6148,7 @@ impl UpdateFirewallDeleteProtectionInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-    /// that the firewall is protected against deletion. Use this setting to protect against
-    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(&self) -> bool {
         self.delete_protection
     }
@@ -6470,34 +6226,19 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-    /// and the operations that you want the accounts to be able to perform. </p>
+    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li>
-    /// <p>network-firewall:CreateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:UpdateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:ListRuleGroups</p>
-    /// </li>
+    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListRuleGroups</p> </li>
     /// </ul>
     /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li>
-    /// <p>network-firewall:CreateFirewall</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:UpdateFirewall</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:AssociateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:ListFirewallPolicies</p>
-    /// </li>
+    /// <li> <p>network-firewall:CreateFirewall</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
     /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -6507,34 +6248,19 @@ impl PutResourcePolicyInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-    /// and the operations that you want the accounts to be able to perform. </p>
+    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li>
-    /// <p>network-firewall:CreateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:UpdateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:ListRuleGroups</p>
-    /// </li>
+    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListRuleGroups</p> </li>
     /// </ul>
     /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li>
-    /// <p>network-firewall:CreateFirewall</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:UpdateFirewall</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:AssociateFirewallPolicy</p>
-    /// </li>
-    /// <li>
-    /// <p>network-firewall:ListFirewallPolicies</p>
-    /// </li>
+    /// <li> <p>network-firewall:CreateFirewall</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
     /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
@@ -6554,27 +6280,19 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6597,25 +6315,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRuleGroupsInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6633,33 +6343,23 @@ impl std::fmt::Debug for ListRuleGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallsInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-    /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
     pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFirewallsInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-    /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
     pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_ids.as_deref()
     }
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6678,25 +6378,17 @@ impl std::fmt::Debug for ListFirewallsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallPoliciesInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFirewallPoliciesInput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-    /// objects are available, in the response, Network Firewall provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6770,9 +6462,7 @@ pub struct DescribeRuleGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
@@ -6788,9 +6478,7 @@ impl DescribeRuleGroupInput {
     pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
@@ -6934,9 +6622,7 @@ pub struct DeleteRuleGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
@@ -6952,9 +6638,7 @@ impl DeleteRuleGroupInput {
     pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
-    /// <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
@@ -7062,73 +6746,39 @@ impl std::fmt::Debug for DeleteFirewallInput {
 pub struct CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the rule group rules. </p>
-    /// <note>
+    /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-    /// <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-    /// </note>  
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    /// </note>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
     pub rules: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
     /// <p>A description of the rule group. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-    /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-    /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-    /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-    /// <note>
-    /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-    /// room for your rule group to grow. </p>
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
     /// </note>
-    /// <p>
-    /// <b>Capacity for a stateless rule group</b>
-    /// </p>
-    /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-    /// requirements of the individual rules that you expect to have in the rule group. </p>
-    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-    /// requirement values of each of the rule's match settings:</p>
+    /// <p> <b>Capacity for a stateless rule group</b> </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li>
-    /// <p>A match setting with no criteria specified has a value of 1. </p>
-    /// </li>
-    /// <li>
-    /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-    /// </li>
-    /// <li>
-    /// <p>All other match settings have a value equal to the number of elements provided in
-    /// the setting. For example, a protocol setting ["UDP"] and a source setting
-    /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-    /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-    /// </p>
-    /// </li>
+    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
     /// </ul>
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity
-    /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-    /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-    /// for each of the other match settings has a capacity requirement of 6. </p>
-    /// <p>
-    /// <b>Capacity for a stateful rule group</b>
-    /// </p>
-    /// <p>For
-    /// a stateful rule group, the minimum capacity required is the number of individual rules that
-    /// you expect to have in the rule group. </p>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p> <b>Capacity for a stateful rule group</b> </p>
+    /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
     pub capacity: std::option::Option<i32>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
@@ -7137,25 +6787,20 @@ impl CreateRuleGroupInput {
     pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules. </p>
-    /// <note>
+    /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
     pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-    /// <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-    /// </note>  
-    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    /// </note>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
     pub fn rules(&self) -> std::option::Option<&str> {
         self.rules.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
@@ -7163,47 +6808,21 @@ impl CreateRuleGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-    /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-    /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-    /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-    /// <note>
-    /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-    /// room for your rule group to grow. </p>
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
     /// </note>
-    /// <p>
-    /// <b>Capacity for a stateless rule group</b>
-    /// </p>
-    /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-    /// requirements of the individual rules that you expect to have in the rule group. </p>
-    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-    /// requirement values of each of the rule's match settings:</p>
+    /// <p> <b>Capacity for a stateless rule group</b> </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li>
-    /// <p>A match setting with no criteria specified has a value of 1. </p>
-    /// </li>
-    /// <li>
-    /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-    /// </li>
-    /// <li>
-    /// <p>All other match settings have a value equal to the number of elements provided in
-    /// the setting. For example, a protocol setting ["UDP"] and a source setting
-    /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-    /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-    /// </p>
-    /// </li>
+    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
     /// </ul>
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity
-    /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-    /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-    /// for each of the other match settings has a capacity requirement of 6. </p>
-    /// <p>
-    /// <b>Capacity for a stateful rule group</b>
-    /// </p>
-    /// <p>For
-    /// a stateful rule group, the minimum capacity required is the number of individual rules that
-    /// you expect to have in the rule group. </p>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p> <b>Capacity for a stateful rule group</b> </p>
+    /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
     pub fn capacity(&self) -> std::option::Option<i32> {
         self.capacity
     }
@@ -7212,10 +6831,7 @@ impl CreateRuleGroupInput {
         self.tags.as_deref()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
@@ -7249,10 +6865,7 @@ pub struct CreateFirewallPolicyInput {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
@@ -7274,10 +6887,7 @@ impl CreateFirewallPolicyInput {
         self.tags.as_deref()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
@@ -7301,27 +6911,18 @@ impl std::fmt::Debug for CreateFirewallPolicyInput {
 pub struct CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-    /// use for the firewall.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
     pub firewall_policy_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-    /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-    /// subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
-    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-    /// that the firewall is protected against deletion. Use this setting to protect against
-    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: bool,
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub subnet_change_protection: bool,
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub firewall_policy_change_protection: bool,
     /// <p>A description of the firewall.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7333,8 +6934,7 @@ impl CreateFirewallInput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-    /// use for the firewall.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
     pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
@@ -7343,27 +6943,19 @@ impl CreateFirewallInput {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-    /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-    /// subnet. </p>
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
     pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
-    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-    /// that the firewall is protected against deletion. Use this setting to protect against
-    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(&self) -> bool {
         self.delete_protection
     }
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn subnet_change_protection(&self) -> bool {
         self.subnet_change_protection
     }
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn firewall_policy_change_protection(&self) -> bool {
         self.firewall_policy_change_protection
     }

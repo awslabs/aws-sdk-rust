@@ -15,14 +15,12 @@ pub mod create_lifecycle_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30,14 +28,12 @@ pub mod create_lifecycle_policy_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1346,14 +1342,12 @@ pub mod update_lifecycle_policy_input {
             self.policy_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1384,14 +1378,12 @@ pub mod update_lifecycle_policy_input {
             self.description = input;
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn policy_details(mut self, input: crate::model::PolicyDetails) -> Self {
             self.policy_details = Some(input);
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -1557,15 +1549,13 @@ impl UpdateLifecyclePolicyInput {
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
     /// <p>A description of the lifecycle policy.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-    /// resource type.</p>
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
 }
 impl UpdateLifecyclePolicyInput {
@@ -1573,8 +1563,7 @@ impl UpdateLifecyclePolicyInput {
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
@@ -1586,8 +1575,7 @@ impl UpdateLifecyclePolicyInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-    /// resource type.</p>
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub fn policy_details(&self) -> std::option::Option<&crate::model::PolicyDetails> {
         self.policy_details.as_ref()
     }
@@ -1786,11 +1774,9 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLifecyclePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-    /// supported.</p>
+    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
@@ -1801,13 +1787,11 @@ pub struct CreateLifecyclePolicyInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLifecyclePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-    /// supported.</p>
+    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }

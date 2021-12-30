@@ -107,8 +107,7 @@ pub struct CreateAnomalySubscriptionError {
 pub enum CreateAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -212,8 +211,7 @@ pub struct CreateCostCategoryDefinitionError {
 pub enum CreateCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resource. </p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -321,8 +319,7 @@ pub struct DeleteAnomalyMonitorError {
 pub enum DeleteAnomalyMonitorErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -426,8 +423,7 @@ pub struct DeleteAnomalySubscriptionError {
 pub enum DeleteAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -535,9 +531,7 @@ pub struct DeleteCostCategoryDefinitionError {
 pub enum DeleteCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -645,9 +639,7 @@ pub struct DescribeCostCategoryDefinitionError {
 pub enum DescribeCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -863,8 +855,7 @@ pub enum GetAnomalyMonitorsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -979,8 +970,7 @@ pub enum GetAnomalySubscriptionsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1099,8 +1089,7 @@ pub enum GetCostAndUsageErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1237,8 +1226,7 @@ pub enum GetCostAndUsageWithResourcesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1381,8 +1369,7 @@ pub enum GetCostCategoriesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1623,8 +1610,7 @@ pub enum GetDimensionValuesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2697,8 +2683,7 @@ pub enum GetTagsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3115,8 +3100,7 @@ pub struct UpdateAnomalyMonitorError {
 pub enum UpdateAnomalyMonitorErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3220,11 +3204,9 @@ pub struct UpdateAnomalySubscriptionError {
 pub enum UpdateAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3341,12 +3323,9 @@ pub struct UpdateCostCategoryDefinitionError {
 pub enum UpdateCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resource. </p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3452,8 +3431,7 @@ impl std::error::Error for UpdateCostCategoryDefinitionError {
     }
 }
 
-/// <p> You've reached the limit on the number of resources you can create, or exceeded the
-/// size of an individual resource. </p>
+/// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -3517,9 +3495,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>
-/// The specified ARN in the request doesn't exist.
-/// </p>
+/// <p> The specified ARN in the request doesn't exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3647,8 +3623,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The cost anomaly subscription does not exist for the account.
-/// </p>
+/// <p>The cost anomaly subscription does not exist for the account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownSubscriptionException {
@@ -3712,8 +3687,7 @@ impl UnknownSubscriptionException {
     }
 }
 
-/// <p>The cost anomaly monitor does not exist for the account.
-/// </p>
+/// <p>The cost anomaly monitor does not exist for the account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownMonitorException {
@@ -3905,8 +3879,7 @@ impl DataUnavailableException {
     }
 }
 
-/// <p>Your request parameters changed between pages. Try again with the old parameters or
-/// without a pagination token.</p>
+/// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestChangedException {

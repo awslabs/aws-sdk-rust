@@ -14,18 +14,15 @@ pub struct CreateSignalingChannelError {
 pub enum CreateSignalingChannelErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You have reached the maximum limit of active signaling channels for this AWS account
-    /// in this region.</p>
+    /// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
     AccountChannelLimitExceededException(crate::error::AccountChannelLimitExceededException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The signaling channel is currently not available for this operation.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource.
-    /// Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -173,11 +170,9 @@ pub struct CreateStreamError {
 pub enum CreateStreamErrorKind {
     /// <p>The number of streams created for the account is too high.</p>
     AccountStreamLimitExceededException(crate::error::AccountStreamLimitExceededException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>Not implemented.
-    /// </p>
+    /// <p>Not implemented. </p>
     DeviceStreamLimitExceededException(crate::error::DeviceStreamLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -185,8 +180,7 @@ pub enum CreateStreamErrorKind {
     InvalidDeviceException(crate::error::InvalidDeviceException),
     /// <p>The signaling channel is currently not available for this operation.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource.
-    /// Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -329,8 +323,7 @@ pub struct DeleteSignalingChannelError {
 pub enum DeleteSignalingChannelErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -338,9 +331,7 @@ pub enum DeleteSignalingChannelErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -478,8 +469,7 @@ pub struct DeleteStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -489,9 +479,7 @@ pub enum DeleteStreamErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -625,8 +613,7 @@ pub struct DescribeSignalingChannelError {
 pub enum DescribeSignalingChannelErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -752,8 +739,7 @@ pub struct DescribeStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -879,8 +865,7 @@ pub struct GetDataEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDataEndpointErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1008,8 +993,7 @@ pub struct GetSignalingChannelEndpointError {
 pub enum GetSignalingChannelEndpointErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1152,8 +1136,7 @@ pub struct ListSignalingChannelsError {
 pub enum ListSignalingChannelsErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1266,8 +1249,7 @@ pub struct ListStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamsErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1373,8 +1355,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1498,8 +1479,7 @@ pub struct ListTagsForStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1638,15 +1618,13 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource.
-    /// Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1772,8 +1750,7 @@ pub struct TagStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1783,8 +1760,7 @@ pub enum TagStreamErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded the limit of tags that you can associate with the resource.
-    /// Kinesis video streams support up to 50 tags. </p>
+    /// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1915,8 +1891,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2037,8 +2012,7 @@ pub struct UntagStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2172,8 +2146,7 @@ pub struct UpdateDataRetentionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataRetentionErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2183,9 +2156,7 @@ pub enum UpdateDataRetentionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2325,8 +2296,7 @@ pub struct UpdateSignalingChannelError {
 pub enum UpdateSignalingChannelErrorKind {
     /// <p>You do not have required permissions to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2334,9 +2304,7 @@ pub enum UpdateSignalingChannelErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2474,8 +2442,7 @@ pub struct UpdateStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStreamErrorKind {
-    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-    /// allowed client calls. Try making the call later.</p>
+    /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2485,9 +2452,7 @@ pub enum UpdateStreamErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The stream version that you specified is not the latest version. To get the latest
-    /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-    /// API.</p>
+    /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2606,9 +2571,7 @@ impl std::error::Error for UpdateStreamError {
     }
 }
 
-/// <p>The stream version that you specified is not the latest version. To get the latest
-/// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
-/// API.</p>
+/// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionMismatchException {
@@ -2928,8 +2891,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of
-/// allowed client calls. Try making the call later.</p>
+/// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientLimitExceededException {
@@ -3121,8 +3083,7 @@ impl InvalidResourceFormatException {
     }
 }
 
-/// <p>You have exceeded the limit of tags that you can associate with the resource.
-/// Kinesis video streams support up to 50 tags. </p>
+/// <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagsPerResourceExceededLimitException {
@@ -3250,8 +3211,7 @@ impl InvalidDeviceException {
     }
 }
 
-/// <p>Not implemented.
-/// </p>
+/// <p>Not implemented. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceStreamLimitExceededException {
@@ -3379,8 +3339,7 @@ impl AccountStreamLimitExceededException {
     }
 }
 
-/// <p>You have reached the maximum limit of active signaling channels for this AWS account
-/// in this region.</p>
+/// <p>You have reached the maximum limit of active signaling channels for this AWS account in this region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountChannelLimitExceededException {

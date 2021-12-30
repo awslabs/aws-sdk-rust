@@ -282,8 +282,7 @@ impl ListTagsForResourceOutput {
 pub struct ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     pub metric_set_summary_list: std::option::Option<std::vec::Vec<crate::model::MetricSetSummary>>,
-    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-    /// of results, use the token in the next list request. </p>
+    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricSetsOutput {
@@ -293,8 +292,7 @@ impl ListMetricSetsOutput {
     ) -> std::option::Option<&[crate::model::MetricSetSummary]> {
         self.metric_set_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-    /// of results, use the token in the next list request. </p>
+    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -337,14 +335,12 @@ pub mod list_metric_sets_output {
             self.metric_set_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-        /// of results, use the token in the next list request. </p>
+        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-        /// of results, use the token in the next list request. </p>
+        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -643,8 +639,7 @@ pub struct ListAnomalyDetectorsOutput {
     /// <p>A list of anomaly detectors in the account in the current region.</p>
     pub anomaly_detector_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorSummary>>,
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyDetectorsOutput {
@@ -654,8 +649,7 @@ impl ListAnomalyDetectorsOutput {
     ) -> std::option::Option<&[crate::model::AnomalyDetectorSummary]> {
         self.anomaly_detector_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -704,14 +698,12 @@ pub mod list_anomaly_detectors_output {
             self.anomaly_detector_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -738,8 +730,7 @@ impl ListAnomalyDetectorsOutput {
 pub struct ListAlertsOutput {
     /// <p>Contains information about an alert.</p>
     pub alert_summary_list: std::option::Option<std::vec::Vec<crate::model::AlertSummary>>,
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlertsOutput {
@@ -747,8 +738,7 @@ impl ListAlertsOutput {
     pub fn alert_summary_list(&self) -> std::option::Option<&[crate::model::AlertSummary]> {
         self.alert_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -791,14 +781,12 @@ pub mod list_alerts_output {
             self.alert_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

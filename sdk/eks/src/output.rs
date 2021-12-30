@@ -389,11 +389,7 @@ impl RegisterClusterOutput {
 pub struct ListUpdatesOutput {
     /// <p>A list of all the updates for the specified cluster and Region.</p>
     pub update_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code>
-    /// request. When the results of a <code>ListUpdates</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUpdatesOutput {
@@ -401,11 +397,7 @@ impl ListUpdatesOutput {
     pub fn update_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.update_ids.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code>
-    /// request. When the results of a <code>ListUpdates</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -447,20 +439,12 @@ pub mod list_updates_output {
             self.update_ids = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code>
-        /// request. When the results of a <code>ListUpdates</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code>
-        /// request. When the results of a <code>ListUpdates</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -560,11 +544,7 @@ impl ListTagsForResourceOutput {
 pub struct ListNodegroupsOutput {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
     pub nodegroups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code>
-    /// request. When the results of a <code>ListNodegroups</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodegroupsOutput {
@@ -572,11 +552,7 @@ impl ListNodegroupsOutput {
     pub fn nodegroups(&self) -> std::option::Option<&[std::string::String]> {
         self.nodegroups.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code>
-    /// request. When the results of a <code>ListNodegroups</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -618,20 +594,12 @@ pub mod list_nodegroups_output {
             self.nodegroups = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code>
-        /// request. When the results of a <code>ListNodegroups</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code>
-        /// request. When the results of a <code>ListNodegroups</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -659,10 +627,7 @@ pub struct ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
     pub identity_provider_configs:
         std::option::Option<std::vec::Vec<crate::model::IdentityProviderConfig>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was
-    /// used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProviderConfigsOutput {
@@ -672,10 +637,7 @@ impl ListIdentityProviderConfigsOutput {
     ) -> std::option::Option<&[crate::model::IdentityProviderConfig]> {
         self.identity_provider_configs.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was
-    /// used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -721,18 +683,12 @@ pub mod list_identity_provider_configs_output {
             self.identity_provider_configs = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -759,11 +715,7 @@ impl ListIdentityProviderConfigsOutput {
 pub struct ListFargateProfilesOutput {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
     pub fargate_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListFargateProfiles</code> request. When the results of a
-    /// <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
-    /// this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFargateProfilesOutput {
@@ -771,11 +723,7 @@ impl ListFargateProfilesOutput {
     pub fn fargate_profile_names(&self) -> std::option::Option<&[std::string::String]> {
         self.fargate_profile_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListFargateProfiles</code> request. When the results of a
-    /// <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
-    /// this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -817,20 +765,12 @@ pub mod list_fargate_profiles_output {
             self.fargate_profile_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListFargateProfiles</code> request. When the results of a
-        /// <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
-        /// this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListFargateProfiles</code> request. When the results of a
-        /// <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
-        /// this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -857,11 +797,7 @@ impl ListFargateProfilesOutput {
 pub struct ListClustersOutput {
     /// <p>A list of all of the clusters for your account in the specified Region.</p>
     pub clusters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-    /// request. When the results of a <code>ListClusters</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -869,11 +805,7 @@ impl ListClustersOutput {
     pub fn clusters(&self) -> std::option::Option<&[std::string::String]> {
         self.clusters.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-    /// request. When the results of a <code>ListClusters</code> request exceed
-    /// <code>maxResults</code>, you can use this value to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -915,20 +847,12 @@ pub mod list_clusters_output {
             self.clusters = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-        /// request. When the results of a <code>ListClusters</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-        /// request. When the results of a <code>ListClusters</code> request exceed
-        /// <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -955,13 +879,8 @@ impl ListClustersOutput {
 pub struct ListAddonsOutput {
     /// <p>A list of available add-ons.</p>
     pub addons: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -970,13 +889,8 @@ impl ListAddonsOutput {
     pub fn addons(&self) -> std::option::Option<&[std::string::String]> {
         self.addons.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1019,25 +933,15 @@ pub mod list_addons_output {
             self.addons = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1228,13 +1132,11 @@ impl DescribeNodegroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderConfigOutput {
-    /// <p>The object that represents an OpenID Connect (OIDC) identity provider
-    /// configuration.</p>
+    /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfigResponse>,
 }
 impl DescribeIdentityProviderConfigOutput {
-    /// <p>The object that represents an OpenID Connect (OIDC) identity provider
-    /// configuration.</p>
+    /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn identity_provider_config(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderConfigResponse> {
@@ -1258,8 +1160,7 @@ pub mod describe_identity_provider_config_output {
             std::option::Option<crate::model::IdentityProviderConfigResponse>,
     }
     impl Builder {
-        /// <p>The object that represents an OpenID Connect (OIDC) identity provider
-        /// configuration.</p>
+        /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
             input: crate::model::IdentityProviderConfigResponse,
@@ -1267,8 +1168,7 @@ pub mod describe_identity_provider_config_output {
             self.identity_provider_config = Some(input);
             self
         }
-        /// <p>The object that represents an OpenID Connect (OIDC) identity provider
-        /// configuration.</p>
+        /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
         pub fn set_identity_provider_config(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderConfigResponse>,
@@ -1408,13 +1308,8 @@ impl DescribeClusterOutput {
 pub struct DescribeAddonVersionsOutput {
     /// <p>The list of available versions with Kubernetes version compatibility.</p>
     pub addons: std::option::Option<std::vec::Vec<crate::model::AddonInfo>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used
-    /// and the results exceeded the value of that parameter. Pagination continues from the end
-    /// of the previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1423,13 +1318,8 @@ impl DescribeAddonVersionsOutput {
     pub fn addons(&self) -> std::option::Option<&[crate::model::AddonInfo]> {
         self.addons.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used
-    /// and the results exceeded the value of that parameter. Pagination continues from the end
-    /// of the previous results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1472,25 +1362,15 @@ pub mod describe_addon_versions_output {
             self.addons = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used
-        /// and the results exceeded the value of that parameter. Pagination continues from the end
-        /// of the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used
-        /// and the results exceeded the value of that parameter. Pagination continues from the end
-        /// of the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1516,13 +1396,11 @@ impl DescribeAddonVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DescribeAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -1543,14 +1421,12 @@ pub mod describe_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self
@@ -1794,13 +1670,11 @@ impl DeleteClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl DeleteAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -1821,14 +1695,12 @@ pub mod delete_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self
@@ -2018,13 +1890,11 @@ impl CreateClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
 impl CreateAddonOutput {
-    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-    /// the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
         self.addon.as_ref()
     }
@@ -2045,14 +1915,12 @@ pub mod create_addon_output {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
     }
     impl Builder {
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn addon(mut self, input: crate::model::Addon) -> Self {
             self.addon = Some(input);
             self
         }
-        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
-        /// the <i>Amazon EKS User Guide</i>.</p>
+        /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_addon(mut self, input: std::option::Option<crate::model::Addon>) -> Self {
             self.addon = input;
             self

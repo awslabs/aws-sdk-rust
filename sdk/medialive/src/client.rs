@@ -1305,14 +1305,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// Unique request ID to be specified. This is needed to prevent retries from
-        /// creating multiple resources.
+        /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
             self
         }
-        /// Unique request ID to be specified. This is needed to prevent retries from
-        /// creating multiple resources.
+        /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_request_id(input);
             self
@@ -1488,16 +1486,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
-        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             self.inner = self.inner.media_connect_flows(input);
             self
         }
-        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
@@ -1515,14 +1509,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_request_id(input);
             self
@@ -1541,16 +1533,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             self.inner = self.inner.sources(input);
             self
         }
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
@@ -1591,18 +1579,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// Settings for a private VPC Input.
-        /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-        /// This property requires setting the roleArn property on Input creation.
-        /// Not compatible with the inputSecurityGroups property.
+        /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
         pub fn vpc(mut self, input: crate::model::InputVpcRequest) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        /// Settings for a private VPC Input.
-        /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-        /// This property requires setting the roleArn property on Input creation.
-        /// Not compatible with the inputSecurityGroups property.
+        /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::InputVpcRequest>,
@@ -1810,14 +1792,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_request_id(input);
             self
@@ -1941,14 +1921,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_program_name(input);
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_request_id(input);
             self
@@ -2023,14 +2001,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_id(input);
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_request_id(input);
             self
@@ -5530,16 +5506,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
-        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             self.inner = self.inner.media_connect_flows(input);
             self
         }
-        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
@@ -5571,16 +5543,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             self.inner = self.inner.sources(input);
             self
         }
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,

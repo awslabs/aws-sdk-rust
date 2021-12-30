@@ -3385,15 +3385,9 @@ pub mod get_table_objects_input {
         }
         /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
         /// <ul>
-        /// <li>
-        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-        /// </li>
-        /// <li>
-        /// <p>The logical operators supported are: AND</p>
-        /// </li>
-        /// <li>
-        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-        /// </li>
+        /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+        /// <li> <p>The logical operators supported are: AND</p> </li>
+        /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
         /// </ul>
         pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
             self.partition_predicate = Some(input.into());
@@ -3401,15 +3395,9 @@ pub mod get_table_objects_input {
         }
         /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
         /// <ul>
-        /// <li>
-        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-        /// </li>
-        /// <li>
-        /// <p>The logical operators supported are: AND</p>
-        /// </li>
-        /// <li>
-        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-        /// </li>
+        /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+        /// <li> <p>The logical operators supported are: AND</p> </li>
+        /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
         /// </ul>
         pub fn set_partition_predicate(
             mut self,
@@ -5520,14 +5508,12 @@ pub mod register_resource_input {
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn use_service_linked_role(mut self, input: bool) -> Self {
             self.use_service_linked_role = Some(input);
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-        ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn set_use_service_linked_role(mut self, input: std::option::Option<bool>) -> Self {
             self.use_service_linked_role = input;
@@ -5911,16 +5897,14 @@ pub mod revoke_permissions_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-        /// and Access Control to Metadata and Data</a>.</p>
+        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-        /// and Access Control to Metadata and Data</a>.</p>
+        /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -7899,8 +7883,7 @@ pub struct RevokePermissionsInput {
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
     /// <p>The resource to which permissions are to be revoked.</p>
     pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-    /// and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -7918,8 +7901,7 @@ impl RevokePermissionsInput {
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
-    /// and Access Control to Metadata and Data</a>.</p>
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
     }
@@ -7987,7 +7969,6 @@ pub struct RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-    ///
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub use_service_linked_role: std::option::Option<bool>,
     /// <p>The identifier for the role that registers the resource.</p>
@@ -7999,7 +7980,6 @@ impl RegisterResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
-    ///
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(&self) -> std::option::Option<bool> {
         self.use_service_linked_role
@@ -8464,15 +8444,9 @@ pub struct GetTableObjectsInput {
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li>
-    /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-    /// </li>
-    /// <li>
-    /// <p>The logical operators supported are: AND</p>
-    /// </li>
-    /// <li>
-    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    /// </li>
+    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+    /// <li> <p>The logical operators supported are: AND</p> </li>
+    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
     pub partition_predicate: std::option::Option<std::string::String>,
     /// <p>Specifies how many values to return in a page.</p>
@@ -8503,15 +8477,9 @@ impl GetTableObjectsInput {
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li>
-    /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
-    /// </li>
-    /// <li>
-    /// <p>The logical operators supported are: AND</p>
-    /// </li>
-    /// <li>
-    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    /// </li>
+    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+    /// <li> <p>The logical operators supported are: AND</p> </li>
+    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
     pub fn partition_predicate(&self) -> std::option::Option<&str> {
         self.partition_predicate.as_deref()

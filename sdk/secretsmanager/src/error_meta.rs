@@ -5,10 +5,7 @@
 pub enum Error {
     /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
     DecryptionFailure(crate::error::DecryptionFailure),
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the customer master key (CMK) is available, enabled, and not in an invalid state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
@@ -16,17 +13,11 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>

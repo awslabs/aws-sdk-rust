@@ -701,8 +701,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entitlements(input);
             self
         }
-        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-        /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn digital_signature_method(
             mut self,
             input: crate::model::DigitalSignatureMethod,
@@ -710,8 +709,7 @@ pub mod fluent_builders {
             self.inner = self.inner.digital_signature_method(input);
             self
         }
-        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-        /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn set_digital_signature_method(
             mut self,
             input: std::option::Option<crate::model::DigitalSignatureMethod>,
@@ -1326,9 +1324,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_beneficiary(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn consumption_configuration(
             mut self,
             input: crate::model::ConsumptionConfiguration,
@@ -1336,9 +1332,7 @@ pub mod fluent_builders {
             self.inner = self.inner.consumption_configuration(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -1377,11 +1371,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLicenseConfiguration`.
     ///
     /// <p>Creates a license configuration.</p>
-    /// <p>A license configuration is an abstraction of a customer license agreement that can be
-    /// consumed and enforced by License Manager. Components include specifications for the license
-    /// type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-    /// Dedicated Instance, Dedicated Host, or all of these), license affinity  to host (how long a
-    /// license must be associated with a host), and the number of licenses purchased and used.</p>
+    /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), license affinity to host (how long a license must be associated with a host), and the number of licenses purchased and used.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1481,14 +1471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_license_count(input);
             self
         }
-        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-        /// blocks the launch of new instances.</p>
+        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
             self.inner = self.inner.license_count_hard_limit(input);
             self
         }
-        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-        /// blocks the launch of new instances.</p>
+        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_license_count_hard_limit(input);
             self
@@ -1497,84 +1485,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
         ///
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-        /// vary by dimension, as follows.</p>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-        /// <code>honorVcpuOptimization</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
         /// </ul>
-        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-        /// <code>True</code> and <code>False</code>.</p>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_rules(input.into());
             self
         }
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-        /// vary by dimension, as follows.</p>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-        /// <code>honorVcpuOptimization</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
         /// </ul>
-        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-        /// <code>True</code> and <code>False</code>.</p>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1698,8 +1628,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from.
-        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn source_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -1707,8 +1636,7 @@ pub mod fluent_builders {
             self.inner = self.inner.source_license_context(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from.
-        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -1813,12 +1741,8 @@ pub mod fluent_builders {
         ///
         /// <p>Type of reports to generate. The following report types an be generated:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -1826,12 +1750,8 @@ pub mod fluent_builders {
         }
         /// <p>Type of reports to generate. The following report types an be generated:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -1853,12 +1773,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_context(input);
             self
         }
-        /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+        /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
             self.inner = self.inner.report_frequency(input);
             self
         }
-        /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+        /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -2060,9 +1980,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entitlements(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn consumption_configuration(
             mut self,
             input: crate::model::ConsumptionConfiguration,
@@ -2070,9 +1988,7 @@ pub mod fluent_builders {
             self.inner = self.inner.consumption_configuration(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -2120,9 +2036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateToken`.
     ///
     /// <p>Creates a long-lived token.</p>
-    /// <p>A refresh token is a JWT token used to get an access token. With an access token,
-    /// you can call AssumeRoleWithWebIdentity to get role credentials that you can use to
-    /// call License Manager to manage the specified license.</p>
+    /// <p>A refresh token is a JWT token used to get an access token. With an access token, you can call AssumeRoleWithWebIdentity to get role credentials that you can use to call License Manager to manage the specified license.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
@@ -2179,14 +2093,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-        /// JWT token.</p>
+        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_arn(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-        /// JWT token.</p>
+        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_arn(input);
             self
@@ -2195,14 +2107,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
         ///
-        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-        /// License Manager does not check whether the roles are in use.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arns(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-        /// License Manager does not check whether the roles are in use.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
         pub fn set_role_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2224,14 +2134,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
         ///
-        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-        /// to the amr claim of the JWT token.</p>
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.token_properties(input.into());
             self
         }
-        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-        /// to the amr claim of the JWT token.</p>
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
         pub fn set_token_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2503,8 +2411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLicenseManagerReportGenerator`.
     ///
     /// <p>Deletes the specified report generator.</p>
-    /// <p>This action deletes the report generator, which stops it from generating future reports.
-    /// The action cannot be reversed. It has no effect on the previous reports from this generator.</p>
+    /// <p>This action deletes the report generator, which stops it from generating future reports. The action cannot be reversed. It has no effect on the previous reports from this generator.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLicenseManagerReportGenerator<
         C = aws_smithy_client::erase::DynConnector,
@@ -2737,8 +2644,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccessToken`.
     ///
-    /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens
-    /// are valid for one hour.</p>
+    /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessToken<
         C = aws_smithy_client::erase::DynConnector,
@@ -3340,9 +3246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociationsForLicenseConfiguration`.
     ///
     /// <p>Lists the resource associations for the specified license configuration.</p>
-    /// <p>Resource associations need not consume licenses from a license configuration.
-    /// For example, an AMI or a stopped instance might not consume a license (depending on
-    /// the license rules).</p>
+    /// <p>Resource associations need not consume licenses from a license configuration. For example, an AMI or a stopped instance might not consume a license (depending on the license rules).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociationsForLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -3517,31 +3421,11 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranteePrincipalARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -3549,31 +3433,11 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranteePrincipalARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -3789,49 +3653,21 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -3924,16 +3760,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-        /// </p>
+        /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-        /// </p>
+        /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4009,11 +3841,7 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filters are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseConfigurationArn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4021,11 +3849,7 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filters are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseConfigurationArn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4137,26 +3961,10 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4164,26 +3972,10 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4477,31 +4269,11 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranterAccountId</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranterAccountId</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4509,31 +4281,11 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranterAccountId</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranterAccountId</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4645,31 +4397,11 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>IssuerName</code> </p> </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -4677,31 +4409,11 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>IssuerName</code> </p> </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4814,87 +4526,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application_name</code> - The name of the application.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>license_included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// Possible values are <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code> - The platform of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resource_id</code> - The ID of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tag:<key></code> - The key/value combination of a tag assigned
-        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-        /// </li>
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>tag:
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application_name</code> - The name of the application.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>license_included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// Possible values are <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code> - The platform of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resource_id</code> - The ID of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tag:<key></code> - The key/value combination of a tag assigned
-        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-        /// </li>
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>tag:
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5056,11 +4710,7 @@ pub mod fluent_builders {
         ///
         /// <p>Filters to scope the results. The following filter is supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArns</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArns</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
@@ -5068,11 +4718,7 @@ pub mod fluent_builders {
         }
         /// <p>Filters to scope the results. The following filter is supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArns</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArns</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5104,9 +4750,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUsageForLicenseConfiguration`.
     ///
-    /// <p>Lists all license usage records for a license configuration, displaying license
-    /// consumption details by resource at a selected point in time. Use this action to audit the
-    /// current license consumption for any license inventory and configuration.</p>
+    /// <p>Lists all license usage records for a license configuration, displaying license consumption details by resource at a selected point in time. Use this action to audit the current license consumption for any license inventory and configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsageForLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -5200,47 +4844,21 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resourceArn</code> - The ARN of the license configuration resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resourceArn</code> - The ARN of the license configuration resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5586,14 +5204,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
         ///
-        /// <p>New license rule. The only rule that you can add after you create a license
-        /// configuration is licenseAffinityToHost.</p>
+        /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.license_rules(input.into());
             self
         }
-        /// <p>New license rule. The only rule that you can add after you create a license
-        /// configuration is licenseAffinityToHost.</p>
+        /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5768,12 +5384,8 @@ pub mod fluent_builders {
         ///
         /// <p>Type of reports to generate. The following report types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -5781,12 +5393,8 @@ pub mod fluent_builders {
         }
         /// <p>Type of reports to generate. The following report types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -5845,9 +5453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLicenseSpecificationsForResource`.
     ///
     /// <p>Adds or removes the specified license configurations for the specified Amazon Web Services resource.</p>
-    /// <p>You can update the license specifications of AMIs, instances, and hosts.
-    /// You cannot update the license specifications for launch templates and CloudFormation templates,
-    /// as they send license configurations to the operation that creates the resource.</p>
+    /// <p>You can update the license specifications of AMIs, instances, and hosts. You cannot update the license specifications for launch templates and CloudFormation templates, as they send license configurations to the operation that creates the resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLicenseSpecificationsForResource<
         C = aws_smithy_client::erase::DynConnector,

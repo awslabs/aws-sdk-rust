@@ -44,14 +44,12 @@ pub mod create_app_input {
             self.role_name = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -290,14 +288,12 @@ pub mod create_replication_job_input {
             self.run_once = input;
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -325,14 +321,12 @@ pub mod create_replication_job_input {
             self.description = input;
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.number_of_recent_amis_to_keep = Some(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -350,46 +344,26 @@ pub mod create_replication_job_input {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -561,26 +535,22 @@ pub mod delete_app_input {
             self.app_id = input;
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn force_stop_app_replication(mut self, input: bool) -> Self {
             self.force_stop_app_replication = Some(input);
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn set_force_stop_app_replication(mut self, input: std::option::Option<bool>) -> Self {
             self.force_stop_app_replication = input;
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn force_terminate_app(mut self, input: bool) -> Self {
             self.force_terminate_app = Some(input);
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn set_force_terminate_app(mut self, input: std::option::Option<bool>) -> Self {
             self.force_terminate_app = input;
             self
@@ -2766,16 +2736,12 @@ pub mod get_connectors_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2949,16 +2915,12 @@ pub mod get_replication_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3134,16 +3096,12 @@ pub mod get_replication_runs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3307,16 +3265,12 @@ pub mod get_servers_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3485,16 +3439,12 @@ pub mod import_app_catalog_input {
         pub(crate) role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -3955,16 +3905,12 @@ pub mod list_apps_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4293,14 +4239,12 @@ pub mod put_app_launch_configuration_input {
             self.app_id = input;
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -5959,14 +5903,12 @@ pub mod update_replication_job_input {
             self.next_replication_run_start_time = input;
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -5994,14 +5936,12 @@ pub mod update_replication_job_input {
             self.description = input;
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.number_of_recent_amis_to_keep = Some(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -6009,58 +5949,36 @@ pub mod update_replication_job_input {
             self.number_of_recent_amis_to_keep = input;
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -6220,37 +6138,24 @@ pub struct UpdateReplicationJobInput {
     pub frequency: std::option::Option<i32>,
     /// <p>The start time of the next replication run.</p>
     pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by AWS SMS.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
-    /// <p>When true, the replication job produces encrypted AMIs. For more information,
-    /// <code>KmsKeyId</code>.</p>
+    /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationJobInput {
@@ -6268,8 +6173,7 @@ impl UpdateReplicationJobInput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
         self.license_type.as_ref()
     }
@@ -6281,34 +6185,22 @@ impl UpdateReplicationJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
         self.number_of_recent_amis_to_keep
     }
-    /// <p>When true, the replication job produces encrypted AMIs. For more information,
-    /// <code>KmsKeyId</code>.</p>
+    /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -6597,8 +6489,7 @@ impl std::fmt::Debug for PutAppReplicationConfigurationInput {
 pub struct PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub auto_launch: std::option::Option<bool>,
@@ -6611,8 +6502,7 @@ impl PutAppLaunchConfigurationInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6677,9 +6567,7 @@ pub struct ListAppsInput {
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 100. To
-    /// retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value. </p>
+    /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppsInput {
@@ -6691,9 +6579,7 @@ impl ListAppsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 100. To
-    /// retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value. </p>
+    /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6744,15 +6630,11 @@ impl std::fmt::Debug for ImportServerCatalogInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAppCatalogInput {
-    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-    /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-    /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
     pub role_name: std::option::Option<std::string::String>,
 }
 impl ImportAppCatalogInput {
-    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-    /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-    /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6771,9 +6653,7 @@ impl std::fmt::Debug for ImportAppCatalogInput {
 pub struct GetServersInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The server addresses.</p>
     pub vm_server_address_list: std::option::Option<std::vec::Vec<crate::model::VmServerAddress>>,
@@ -6783,9 +6663,7 @@ impl GetServersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6812,9 +6690,7 @@ pub struct GetReplicationRunsInput {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationRunsInput {
@@ -6826,9 +6702,7 @@ impl GetReplicationRunsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6851,9 +6725,7 @@ pub struct GetReplicationJobsInput {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationJobsInput {
@@ -6865,9 +6737,7 @@ impl GetReplicationJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6888,9 +6758,7 @@ impl std::fmt::Debug for GetReplicationJobsInput {
 pub struct GetConnectorsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetConnectorsInput {
@@ -6898,9 +6766,7 @@ impl GetConnectorsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7197,11 +7063,9 @@ impl std::fmt::Debug for DeleteAppLaunchConfigurationInput {
 pub struct DeleteAppInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-    /// in the application while deleting the application.</p>
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub force_stop_app_replication: std::option::Option<bool>,
-    /// <p>Indicates whether to terminate the stack corresponding to the
-    /// application while deleting the application.</p>
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub force_terminate_app: std::option::Option<bool>,
 }
 impl DeleteAppInput {
@@ -7209,13 +7073,11 @@ impl DeleteAppInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-    /// in the application while deleting the application.</p>
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn force_stop_app_replication(&self) -> std::option::Option<bool> {
         self.force_stop_app_replication
     }
-    /// <p>Indicates whether to terminate the stack corresponding to the
-    /// application while deleting the application.</p>
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn force_terminate_app(&self) -> std::option::Option<bool> {
         self.force_terminate_app
     }
@@ -7245,36 +7107,24 @@ pub struct CreateReplicationJobInput {
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
     pub run_once: std::option::Option<bool>,
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by the AWS SMS.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateReplicationJobInput {
@@ -7294,8 +7144,7 @@ impl CreateReplicationJobInput {
     pub fn run_once(&self) -> std::option::Option<bool> {
         self.run_once
     }
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
         self.license_type.as_ref()
     }
@@ -7307,8 +7156,7 @@ impl CreateReplicationJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
         self.number_of_recent_amis_to_keep
     }
@@ -7316,24 +7164,14 @@ impl CreateReplicationJobInput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -7368,8 +7206,7 @@ pub struct CreateAppInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-    /// application creation.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The server groups to include in the application.</p>
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
@@ -7389,8 +7226,7 @@ impl CreateAppInput {
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-    /// application creation.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

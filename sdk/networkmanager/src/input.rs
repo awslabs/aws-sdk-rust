@@ -1661,18 +1661,9 @@ pub mod create_site_input {
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.location = Some(input);
@@ -1680,18 +1671,9 @@ pub mod create_site_input {
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
@@ -4955,79 +4937,25 @@ pub mod get_network_resource_counts_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -5036,79 +4964,25 @@ pub mod get_network_resource_counts_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -5365,79 +5239,25 @@ pub mod get_network_resource_relationships_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -5446,79 +5266,25 @@ pub mod get_network_resource_relationships_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -5808,79 +5574,25 @@ pub mod get_network_resources_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -5889,79 +5601,25 @@ pub mod get_network_resources_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -6612,79 +6270,25 @@ pub mod get_network_telemetry_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -6693,79 +6297,25 @@ pub mod get_network_telemetry_input {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -7663,16 +7213,14 @@ pub mod get_transit_gateway_registrations_input {
         ///
         /// To override the contents of this collection use [`set_transit_gateway_arns`](Self::set_transit_gateway_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
         pub fn transit_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.transit_gateway_arns.unwrap_or_default();
             v.push(input.into());
             self.transit_gateway_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
         pub fn set_transit_gateway_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8276,14 +7824,12 @@ pub mod start_route_analysis_input {
             self.include_return_path = input;
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
         pub fn use_middleboxes(mut self, input: bool) -> Self {
             self.use_middleboxes = Some(input);
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
         pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
             self.use_middleboxes = input;
             self
@@ -10088,18 +9634,9 @@ pub mod update_site_input {
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn location(mut self, input: crate::model::Location) -> Self {
             self.location = Some(input);
@@ -10107,18 +9644,9 @@ pub mod update_site_input {
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
@@ -10305,18 +9833,9 @@ pub struct UpdateSiteInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Address</code>: The physical address of the site.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Latitude</code>: The latitude of the site. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Longitude</code>: The longitude of the site.</p>
-    /// </li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub location: std::option::Option<crate::model::Location>,
 }
@@ -10336,18 +9855,9 @@ impl UpdateSiteInput {
     }
     /// <p>The site location:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Address</code>: The physical address of the site.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Latitude</code>: The latitude of the site. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Longitude</code>: The longitude of the site.</p>
-    /// </li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn location(&self) -> std::option::Option<&crate::model::Location> {
         self.location.as_ref()
@@ -10706,8 +10216,7 @@ pub struct StartRouteAnalysisInput {
     pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     pub include_return_path: bool,
-    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-    /// The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub use_middleboxes: bool,
 }
 impl StartRouteAnalysisInput {
@@ -10731,8 +10240,7 @@ impl StartRouteAnalysisInput {
     pub fn include_return_path(&self) -> bool {
         self.include_return_path
     }
-    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-    /// The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub fn use_middleboxes(&self) -> bool {
         self.use_middleboxes
     }
@@ -10804,8 +10312,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct GetTransitGatewayRegistrationsInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-    /// 10.</p>
+    /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
     pub transit_gateway_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10817,8 +10324,7 @@ impl GetTransitGatewayRegistrationsInput {
     pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-    /// 10.</p>
+    /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
     pub fn transit_gateway_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.transit_gateway_arns.as_deref()
     }
@@ -10972,79 +10478,25 @@ pub struct GetNetworkTelemetryInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
@@ -11074,79 +10526,25 @@ impl GetNetworkTelemetryInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -11286,79 +10684,25 @@ pub struct GetNetworkResourcesInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-    /// </li>
+    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
@@ -11388,79 +10732,25 @@ impl GetNetworkResourcesInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-    /// </li>
+    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code> - The definition model is
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -11508,79 +10798,25 @@ pub struct GetNetworkResourceRelationshipsInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway.</p>
@@ -11610,79 +10846,25 @@ impl GetNetworkResourceRelationshipsInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -11724,79 +10906,25 @@ pub struct GetNetworkResourceCountsInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
@@ -11812,79 +10940,25 @@ impl GetNetworkResourceCountsInput {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -12462,18 +11536,9 @@ pub struct CreateSiteInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Address</code>: The physical address of the site.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Latitude</code>: The latitude of the site. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Longitude</code>: The longitude of the site.</p>
-    /// </li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The tags to apply to the resource during creation.</p>
@@ -12491,18 +11556,9 @@ impl CreateSiteInput {
     }
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Address</code>: The physical address of the site.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Latitude</code>: The latitude of the site. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Longitude</code>: The longitude of the site.</p>
-    /// </li>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn location(&self) -> std::option::Option<&crate::model::Location> {
         self.location.as_ref()

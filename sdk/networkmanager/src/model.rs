@@ -1598,15 +1598,13 @@ impl AsRef<str> for DeviceState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLocation {
-    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
-    /// Zone, Wavelength Zone, or an Outpost.</p>
+    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
     pub zone: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub subnet_arn: std::option::Option<std::string::String>,
 }
 impl AwsLocation {
-    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
-    /// Zone, Wavelength Zone, or an Outpost.</p>
+    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
     pub fn zone(&self) -> std::option::Option<&str> {
         self.zone.as_deref()
     }
@@ -1633,14 +1631,12 @@ pub mod aws_location {
         pub(crate) subnet_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
-        /// Zone, Wavelength Zone, or an Outpost.</p>
+        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
         pub fn zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.zone = Some(input.into());
             self
         }
-        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
-        /// Zone, Wavelength Zone, or an Outpost.</p>
+        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
         pub fn set_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zone = input;
             self
@@ -2026,8 +2022,7 @@ pub struct RouteAnalysis {
     pub source: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
     /// <p>The destination.</p>
     pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
-    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
-    /// analysis does not succeed.</p>
+    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
     pub include_return_path: bool,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
     pub use_middleboxes: bool,
@@ -2065,8 +2060,7 @@ impl RouteAnalysis {
     pub fn destination(&self) -> std::option::Option<&crate::model::RouteAnalysisEndpointOptions> {
         self.destination.as_ref()
     }
-    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
-    /// analysis does not succeed.</p>
+    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
     pub fn include_return_path(&self) -> bool {
         self.include_return_path
     }
@@ -2210,14 +2204,12 @@ pub mod route_analysis {
             self.destination = input;
             self
         }
-        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
-        /// analysis does not succeed.</p>
+        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
         pub fn include_return_path(mut self, input: bool) -> Self {
             self.include_return_path = Some(input);
             self
         }
-        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
-        /// analysis does not succeed.</p>
+        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
         pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
             self.include_return_path = input;
             self
@@ -2625,47 +2617,19 @@ impl NetworkResourceSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteAnalysisCompletion {
-    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
-    /// reason code.</p>
+    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
     pub result_code: std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
-    /// </li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub reason_code: std::option::Option<crate::model::RouteAnalysisCompletionReasonCode>,
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
@@ -2673,8 +2637,7 @@ pub struct RouteAnalysisCompletion {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RouteAnalysisCompletion {
-    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
-    /// reason code.</p>
+    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
     pub fn result_code(
         &self,
     ) -> std::option::Option<&crate::model::RouteAnalysisCompletionResultCode> {
@@ -2682,42 +2645,15 @@ impl RouteAnalysisCompletion {
     }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
-    /// </li>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
     pub fn reason_code(
         &self,
@@ -2756,8 +2692,7 @@ pub mod route_analysis_completion {
         >,
     }
     impl Builder {
-        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
-        /// reason code.</p>
+        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
         pub fn result_code(
             mut self,
             input: crate::model::RouteAnalysisCompletionResultCode,
@@ -2765,8 +2700,7 @@ pub mod route_analysis_completion {
             self.result_code = Some(input);
             self
         }
-        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
-        /// reason code.</p>
+        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
         pub fn set_result_code(
             mut self,
             input: std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
@@ -2776,42 +2710,15 @@ pub mod route_analysis_completion {
         }
         /// <p>The reason code. Available only if a connection is not found.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
-        /// </li>
+        /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+        /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+        /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
         /// </ul>
         pub fn reason_code(
             mut self,
@@ -2822,42 +2729,15 @@ pub mod route_analysis_completion {
         }
         /// <p>The reason code. Available only if a connection is not found.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
-        /// </li>
+        /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+        /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+        /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+        /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
         /// </ul>
         pub fn set_reason_code(
             mut self,
@@ -4693,79 +4573,25 @@ pub struct NetworkResource {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -4798,79 +4624,25 @@ impl NetworkResource {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dxcon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dx-vif</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>device</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>link</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>site</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>customer-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-attachment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-connect-peer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>transit-gateway-route-table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vpn-connection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -4975,79 +4747,25 @@ pub mod network_resource {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -5056,79 +4774,25 @@ pub mod network_resource {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,

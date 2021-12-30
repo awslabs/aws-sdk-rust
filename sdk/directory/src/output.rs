@@ -126,7 +126,7 @@ impl UpdateTrustOutput {
     }
 }
 
-/// <p>Contains the results of the <a>UpdateRadius</a> operation.</p>
+/// <p>Contains the results of the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRadiusOutput {}
@@ -220,13 +220,11 @@ impl UpdateConditionalForwarderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareDirectoryOutput {
-    /// <p>Identifier of the directory stored in the directory consumer account that is to be
-    /// unshared from the specified directory (<code>DirectoryId</code>).</p>
+    /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl UnshareDirectoryOutput {
-    /// <p>Identifier of the directory stored in the directory consumer account that is to be
-    /// unshared from the specified directory (<code>DirectoryId</code>).</p>
+    /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
     }
@@ -247,14 +245,12 @@ pub mod unshare_directory_output {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the directory stored in the directory consumer account that is to be
-        /// unshared from the specified directory (<code>DirectoryId</code>).</p>
+        /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory stored in the directory consumer account that is to be
-        /// unshared from the specified directory (<code>DirectoryId</code>).</p>
+        /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -338,13 +334,11 @@ impl StartSchemaExtensionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareDirectoryOutput {
-    /// <p>Identifier of the directory that is stored in the directory consumer account that is
-    /// shared from the specified directory (<code>DirectoryId</code>).</p>
+    /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl ShareDirectoryOutput {
-    /// <p>Identifier of the directory that is stored in the directory consumer account that is
-    /// shared from the specified directory (<code>DirectoryId</code>).</p>
+    /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
     }
@@ -365,14 +359,12 @@ pub mod share_directory_output {
         pub(crate) shared_directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier of the directory that is stored in the directory consumer account that is
-        /// shared from the specified directory (<code>DirectoryId</code>).</p>
+        /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory that is stored in the directory consumer account that is
-        /// shared from the specified directory (<code>DirectoryId</code>).</p>
+        /// <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -395,7 +387,7 @@ impl ShareDirectoryOutput {
     }
 }
 
-/// <p>Contains the results of the <a>RestoreFromSnapshot</a> operation.</p>
+/// <p>Contains the results of the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromSnapshotOutput {}
@@ -778,9 +770,7 @@ pub struct ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
     pub schema_extensions_info:
         std::option::Option<std::vec::Vec<crate::model::SchemaExtensionInfo>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
-    /// of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemaExtensionsOutput {
@@ -790,9 +780,7 @@ impl ListSchemaExtensionsOutput {
     ) -> std::option::Option<&[crate::model::SchemaExtensionInfo]> {
         self.schema_extensions_info.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
-    /// of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -835,16 +823,12 @@ pub mod list_schema_extensions_output {
             self.schema_extensions_info = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
-        /// of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
-        /// of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -869,13 +853,13 @@ impl ListSchemaExtensionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsOutput {
-    /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
+    /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     pub log_subscriptions: std::option::Option<std::vec::Vec<crate::model::LogSubscription>>,
     /// <p>The token for the next set of items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogSubscriptionsOutput {
-    /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
+    /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     pub fn log_subscriptions(&self) -> std::option::Option<&[crate::model::LogSubscription]> {
         self.log_subscriptions.as_deref()
     }
@@ -907,14 +891,14 @@ pub mod list_log_subscriptions_output {
         ///
         /// To override the contents of this collection use [`set_log_subscriptions`](Self::set_log_subscriptions).
         ///
-        /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
+        /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
         pub fn log_subscriptions(mut self, input: crate::model::LogSubscription) -> Self {
             let mut v = self.log_subscriptions.unwrap_or_default();
             v.push(input);
             self.log_subscriptions = Some(v);
             self
         }
-        /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
+        /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
         pub fn set_log_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogSubscription>>,
@@ -952,19 +936,17 @@ impl ListLogSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpRoutesOutput {
-    /// <p>A list of <a>IpRoute</a>s.</p>
+    /// <p>A list of <code>IpRoute</code>s.</p>
     pub ip_routes_info: std::option::Option<std::vec::Vec<crate::model::IpRouteInfo>>,
-    /// <p>If not null, more results are available. Pass this value for the
-    /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpRoutesOutput {
-    /// <p>A list of <a>IpRoute</a>s.</p>
+    /// <p>A list of <code>IpRoute</code>s.</p>
     pub fn ip_routes_info(&self) -> std::option::Option<&[crate::model::IpRouteInfo]> {
         self.ip_routes_info.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the
-    /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -991,14 +973,14 @@ pub mod list_ip_routes_output {
         ///
         /// To override the contents of this collection use [`set_ip_routes_info`](Self::set_ip_routes_info).
         ///
-        /// <p>A list of <a>IpRoute</a>s.</p>
+        /// <p>A list of <code>IpRoute</code>s.</p>
         pub fn ip_routes_info(mut self, input: crate::model::IpRouteInfo) -> Self {
             let mut v = self.ip_routes_info.unwrap_or_default();
             v.push(input);
             self.ip_routes_info = Some(v);
             self
         }
-        /// <p>A list of <a>IpRoute</a>s.</p>
+        /// <p>A list of <code>IpRoute</code>s.</p>
         pub fn set_ip_routes_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpRouteInfo>>,
@@ -1006,14 +988,12 @@ pub mod list_ip_routes_output {
             self.ip_routes_info = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the
-        /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the
-        /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1038,21 +1018,17 @@ impl ListIpRoutesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
-    /// <p>Indicates whether another page of certificates is available when the number of available
-    /// certificates exceeds the page limit.</p>
+    /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of certificates with basic details including certificate ID, certificate common
-    /// name, certificate state.</p>
+    /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
     pub certificates_info: std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
 }
 impl ListCertificatesOutput {
-    /// <p>Indicates whether another page of certificates is available when the number of available
-    /// certificates exceeds the page limit.</p>
+    /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of certificates with basic details including certificate ID, certificate common
-    /// name, certificate state.</p>
+    /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
     pub fn certificates_info(&self) -> std::option::Option<&[crate::model::CertificateInfo]> {
         self.certificates_info.as_deref()
     }
@@ -1076,14 +1052,12 @@ pub mod list_certificates_output {
             std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
     }
     impl Builder {
-        /// <p>Indicates whether another page of certificates is available when the number of available
-        /// certificates exceeds the page limit.</p>
+        /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Indicates whether another page of certificates is available when the number of available
-        /// certificates exceeds the page limit.</p>
+        /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1092,16 +1066,14 @@ pub mod list_certificates_output {
         ///
         /// To override the contents of this collection use [`set_certificates_info`](Self::set_certificates_info).
         ///
-        /// <p>A list of certificates with basic details including certificate ID, certificate common
-        /// name, certificate state.</p>
+        /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
         pub fn certificates_info(mut self, input: crate::model::CertificateInfo) -> Self {
             let mut v = self.certificates_info.unwrap_or_default();
             v.push(input);
             self.certificates_info = Some(v);
             self
         }
-        /// <p>A list of certificates with basic details including certificate ID, certificate common
-        /// name, certificate state.</p>
+        /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
         pub fn set_certificates_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
@@ -1125,17 +1097,15 @@ impl ListCertificatesOutput {
     }
 }
 
-/// <p>Contains the results of the <a>GetSnapshotLimits</a> operation.</p>
+/// <p>Contains the results of the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotLimitsOutput {
-    /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
-    /// directory.</p>
+    /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     pub snapshot_limits: std::option::Option<crate::model::SnapshotLimits>,
 }
 impl GetSnapshotLimitsOutput {
-    /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
-    /// directory.</p>
+    /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     pub fn snapshot_limits(&self) -> std::option::Option<&crate::model::SnapshotLimits> {
         self.snapshot_limits.as_ref()
     }
@@ -1156,14 +1126,12 @@ pub mod get_snapshot_limits_output {
         pub(crate) snapshot_limits: std::option::Option<crate::model::SnapshotLimits>,
     }
     impl Builder {
-        /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
-        /// directory.</p>
+        /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
         pub fn snapshot_limits(mut self, input: crate::model::SnapshotLimits) -> Self {
             self.snapshot_limits = Some(input);
             self
         }
-        /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
-        /// directory.</p>
+        /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
         pub fn set_snapshot_limits(
             mut self,
             input: std::option::Option<crate::model::SnapshotLimits>,
@@ -1186,17 +1154,15 @@ impl GetSnapshotLimitsOutput {
     }
 }
 
-/// <p>Contains the results of the <a>GetDirectoryLimits</a> operation.</p>
+/// <p>Contains the results of the <code>GetDirectoryLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryLimitsOutput {
-    /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-    /// current Region.</p>
+    /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     pub directory_limits: std::option::Option<crate::model::DirectoryLimits>,
 }
 impl GetDirectoryLimitsOutput {
-    /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-    /// current Region.</p>
+    /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     pub fn directory_limits(&self) -> std::option::Option<&crate::model::DirectoryLimits> {
         self.directory_limits.as_ref()
     }
@@ -1217,14 +1183,12 @@ pub mod get_directory_limits_output {
         pub(crate) directory_limits: std::option::Option<crate::model::DirectoryLimits>,
     }
     impl Builder {
-        /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-        /// current Region.</p>
+        /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
         pub fn directory_limits(mut self, input: crate::model::DirectoryLimits) -> Self {
             self.directory_limits = Some(input);
             self
         }
-        /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-        /// current Region.</p>
+        /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
         pub fn set_directory_limits(
             mut self,
             input: std::option::Option<crate::model::DirectoryLimits>,
@@ -1247,7 +1211,7 @@ impl GetDirectoryLimitsOutput {
     }
 }
 
-/// <p>Contains the results of the <a>EnableSso</a> operation.</p>
+/// <p>Contains the results of the <code>EnableSso</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSsoOutput {}
@@ -1277,7 +1241,7 @@ impl EnableSsoOutput {
     }
 }
 
-/// <p>Contains the results of the <a>EnableRadius</a> operation.</p>
+/// <p>Contains the results of the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableRadiusOutput {}
@@ -1367,7 +1331,7 @@ impl EnableClientAuthenticationOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DisableSso</a> operation.</p>
+/// <p>Contains the results of the <code>DisableSso</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSsoOutput {}
@@ -1397,7 +1361,7 @@ impl DisableSsoOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DisableRadius</a> operation.</p>
+/// <p>Contains the results of the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableRadiusOutput {}
@@ -1492,26 +1456,18 @@ impl DisableClientAuthenticationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <i>Limit</i> member of the request. This occurs if there are less than the
-    /// requested number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub trusts: std::option::Option<std::vec::Vec<crate::model::Trust>>,
-    /// <p>If not null, more results are available. Pass this value for the
-    /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <i>Limit</i> member of the request. This occurs if there are less than the
-    /// requested number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn trusts(&self) -> std::option::Option<&[crate::model::Trust]> {
         self.trusts.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the
-    /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1539,10 +1495,7 @@ pub mod describe_trusts_output {
         /// To override the contents of this collection use [`set_trusts`](Self::set_trusts).
         ///
         /// <p>The list of Trust objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <i>Limit</i> member of the request. This occurs if there are less than the
-        /// requested number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn trusts(mut self, input: crate::model::Trust) -> Self {
             let mut v = self.trusts.unwrap_or_default();
             v.push(input);
@@ -1550,10 +1503,7 @@ pub mod describe_trusts_output {
             self
         }
         /// <p>The list of Trust objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <i>Limit</i> member of the request. This occurs if there are less than the
-        /// requested number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn set_trusts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Trust>>,
@@ -1561,14 +1511,12 @@ pub mod describe_trusts_output {
             self.trusts = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the
-        /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the
-        /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1589,31 +1537,23 @@ impl DescribeTrustsOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DescribeSnapshots</a> operation.</p>
+/// <p>Contains the results of the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
-    /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <i>Limit</i> member of the request. This occurs if there are less than the requested
-    /// number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-    /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
-    /// a subsequent call to <a>DescribeSnapshots</a>.</p>
+    /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
-    /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <i>Limit</i> member of the request. This occurs if there are less than the requested
-    /// number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
-    /// a subsequent call to <a>DescribeSnapshots</a>.</p>
+    /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1640,22 +1580,16 @@ pub mod describe_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
-        /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <i>Limit</i> member of the request. This occurs if there are less than the requested
-        /// number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
             v.push(input);
             self.snapshots = Some(v);
             self
         }
-        /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <i>Limit</i> member of the request. This occurs if there are less than the requested
-        /// number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn set_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -1663,14 +1597,12 @@ pub mod describe_snapshots_output {
             self.snapshots = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
-        /// a subsequent call to <a>DescribeSnapshots</a>.</p>
+        /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
-        /// a subsequent call to <a>DescribeSnapshots</a>.</p>
+        /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1697,8 +1629,7 @@ impl DescribeSnapshotsOutput {
 pub struct DescribeSharedDirectoriesOutput {
     /// <p>A list of all shared directories in your account.</p>
     pub shared_directories: std::option::Option<std::vec::Vec<crate::model::SharedDirectory>>,
-    /// <p>If not null, token that indicates that more results are available. Pass this value for the
-    /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSharedDirectoriesOutput {
@@ -1706,8 +1637,7 @@ impl DescribeSharedDirectoriesOutput {
     pub fn shared_directories(&self) -> std::option::Option<&[crate::model::SharedDirectory]> {
         self.shared_directories.as_deref()
     }
-    /// <p>If not null, token that indicates that more results are available. Pass this value for the
-    /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1750,14 +1680,12 @@ pub mod describe_shared_directories_output {
             self.shared_directories = input;
             self
         }
-        /// <p>If not null, token that indicates that more results are available. Pass this value for the
-        /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
+        /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, token that indicates that more results are available. Pass this value for the
-        /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
+        /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1784,9 +1712,7 @@ impl DescribeSharedDirectoriesOutput {
 pub struct DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
     pub regions_description: std::option::Option<std::vec::Vec<crate::model::RegionDescription>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
-    /// of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegionsOutput {
@@ -1794,9 +1720,7 @@ impl DescribeRegionsOutput {
     pub fn regions_description(&self) -> std::option::Option<&[crate::model::RegionDescription]> {
         self.regions_description.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
-    /// of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1839,16 +1763,12 @@ pub mod describe_regions_output {
             self.regions_description = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
-        /// of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
-        /// of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1873,21 +1793,17 @@ impl DescribeRegionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLdapsSettingsOutput {
-    /// <p>Information about LDAP security for the specified directory, including status of
-    /// enablement, state last updated date time, and the reason for the state.</p>
+    /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     pub ldaps_settings_info: std::option::Option<std::vec::Vec<crate::model::LdapsSettingInfo>>,
-    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
-    /// page limit and there is another page.</p>
+    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLdapsSettingsOutput {
-    /// <p>Information about LDAP security for the specified directory, including status of
-    /// enablement, state last updated date time, and the reason for the state.</p>
+    /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     pub fn ldaps_settings_info(&self) -> std::option::Option<&[crate::model::LdapsSettingInfo]> {
         self.ldaps_settings_info.as_deref()
     }
-    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
-    /// page limit and there is another page.</p>
+    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1915,16 +1831,14 @@ pub mod describe_ldaps_settings_output {
         ///
         /// To override the contents of this collection use [`set_ldaps_settings_info`](Self::set_ldaps_settings_info).
         ///
-        /// <p>Information about LDAP security for the specified directory, including status of
-        /// enablement, state last updated date time, and the reason for the state.</p>
+        /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
         pub fn ldaps_settings_info(mut self, input: crate::model::LdapsSettingInfo) -> Self {
             let mut v = self.ldaps_settings_info.unwrap_or_default();
             v.push(input);
             self.ldaps_settings_info = Some(v);
             self
         }
-        /// <p>Information about LDAP security for the specified directory, including status of
-        /// enablement, state last updated date time, and the reason for the state.</p>
+        /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
         pub fn set_ldaps_settings_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LdapsSettingInfo>>,
@@ -1932,14 +1846,12 @@ pub mod describe_ldaps_settings_output {
             self.ldaps_settings_info = input;
             self
         }
-        /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
-        /// page limit and there is another page.</p>
+        /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
-        /// page limit and there is another page.</p>
+        /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1964,13 +1876,11 @@ impl DescribeLdapsSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTopicsOutput {
-    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
-    /// ID.</p>
+    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     pub event_topics: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
 }
 impl DescribeEventTopicsOutput {
-    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
-    /// ID.</p>
+    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     pub fn event_topics(&self) -> std::option::Option<&[crate::model::EventTopic]> {
         self.event_topics.as_deref()
     }
@@ -1995,16 +1905,14 @@ pub mod describe_event_topics_output {
         ///
         /// To override the contents of this collection use [`set_event_topics`](Self::set_event_topics).
         ///
-        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
-        /// ID.</p>
+        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
         pub fn event_topics(mut self, input: crate::model::EventTopic) -> Self {
             let mut v = self.event_topics.unwrap_or_default();
             v.push(input);
             self.event_topics = Some(v);
             self
         }
-        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
-        /// ID.</p>
+        /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
         pub fn set_event_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
@@ -2031,21 +1939,17 @@ impl DescribeEventTopicsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainControllersOutput {
-    /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
+    /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     pub domain_controllers: std::option::Option<std::vec::Vec<crate::model::DomainController>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
-    /// next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDomainControllersOutput {
-    /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
+    /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     pub fn domain_controllers(&self) -> std::option::Option<&[crate::model::DomainController]> {
         self.domain_controllers.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
-    /// next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2073,14 +1977,14 @@ pub mod describe_domain_controllers_output {
         ///
         /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
         ///
-        /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
+        /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
         pub fn domain_controllers(mut self, input: crate::model::DomainController) -> Self {
             let mut v = self.domain_controllers.unwrap_or_default();
             v.push(input);
             self.domain_controllers = Some(v);
             self
         }
-        /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
+        /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
         pub fn set_domain_controllers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainController>>,
@@ -2088,16 +1992,12 @@ pub mod describe_domain_controllers_output {
             self.domain_controllers = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
-        /// next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
-        /// next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2118,36 +2018,26 @@ impl DescribeDomainControllersOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DescribeDirectories</a> operation.</p>
+/// <p>Contains the results of the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectoriesOutput {
-    /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <code>Limit</code> member of the request. This occurs if there are less than the requested
-    /// number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub directory_descriptions:
         std::option::Option<std::vec::Vec<crate::model::DirectoryDescription>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
-    /// set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectoriesOutput {
-    /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
-    /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <code>Limit</code> member of the request. This occurs if there are less than the requested
-    /// number of items left to retrieve, or if the limitations of the operation have been
-    /// exceeded.</p>
+    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn directory_descriptions(
         &self,
     ) -> std::option::Option<&[crate::model::DirectoryDescription]> {
         self.directory_descriptions.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-    /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
-    /// set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2175,22 +2065,16 @@ pub mod describe_directories_output {
         ///
         /// To override the contents of this collection use [`set_directory_descriptions`](Self::set_directory_descriptions).
         ///
-        /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <code>Limit</code> member of the request. This occurs if there are less than the requested
-        /// number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn directory_descriptions(mut self, input: crate::model::DirectoryDescription) -> Self {
             let mut v = self.directory_descriptions.unwrap_or_default();
             v.push(input);
             self.directory_descriptions = Some(v);
             self
         }
-        /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
-        /// <p>It is possible that this list contains less than the number of items specified in the
-        /// <code>Limit</code> member of the request. This occurs if there are less than the requested
-        /// number of items left to retrieve, or if the limitations of the operation have been
-        /// exceeded.</p>
+        /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
         pub fn set_directory_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DirectoryDescription>>,
@@ -2198,16 +2082,12 @@ pub mod describe_directories_output {
             self.directory_descriptions = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
-        /// set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
-        /// set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2302,8 +2182,7 @@ pub struct DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     pub client_authentication_settings_info:
         std::option::Option<std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>>,
-    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
-    /// page limit and there is another page.</p>
+    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClientAuthenticationSettingsOutput {
@@ -2313,8 +2192,7 @@ impl DescribeClientAuthenticationSettingsOutput {
     ) -> std::option::Option<&[crate::model::ClientAuthenticationSettingInfo]> {
         self.client_authentication_settings_info.as_deref()
     }
-    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
-    /// page limit and there is another page.</p>
+    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2365,14 +2243,12 @@ pub mod describe_client_authentication_settings_output {
             self.client_authentication_settings_info = input;
             self
         }
-        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
-        /// page limit and there is another page.</p>
+        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
-        /// page limit and there is another page.</p>
+        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2397,13 +2273,11 @@ impl DescribeClientAuthenticationSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateOutput {
-    /// <p>Information about the certificate, including registered date time, certificate state, the
-    /// reason for the state, expiration date time, and certificate common name.</p>
+    /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl DescribeCertificateOutput {
-    /// <p>Information about the certificate, including registered date time, certificate state, the
-    /// reason for the state, expiration date time, and certificate common name.</p>
+    /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
     pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
         self.certificate.as_ref()
     }
@@ -2424,14 +2298,12 @@ pub mod describe_certificate_output {
         pub(crate) certificate: std::option::Option<crate::model::Certificate>,
     }
     impl Builder {
-        /// <p>Information about the certificate, including registered date time, certificate state, the
-        /// reason for the state, expiration date time, and certificate common name.</p>
+        /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
         pub fn certificate(mut self, input: crate::model::Certificate) -> Self {
             self.certificate = Some(input);
             self
         }
-        /// <p>Information about the certificate, including registered date time, certificate state, the
-        /// reason for the state, expiration date time, and certificate common name.</p>
+        /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -2568,7 +2440,7 @@ impl DeleteTrustOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DeleteSnapshot</a> operation.</p>
+/// <p>Contains the results of the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
@@ -2652,7 +2524,7 @@ impl DeleteLogSubscriptionOutput {
     }
 }
 
-/// <p>Contains the results of the <a>DeleteDirectory</a> operation.</p>
+/// <p>Contains the results of the <code>DeleteDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryOutput {
@@ -2790,7 +2662,7 @@ impl CreateTrustOutput {
     }
 }
 
-/// <p>Contains the results of the <a>CreateSnapshot</a> operation.</p>
+/// <p>Contains the results of the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
@@ -2928,7 +2800,7 @@ impl CreateLogSubscriptionOutput {
     }
 }
 
-/// <p>Contains the results of the <a>CreateDirectory</a> operation.</p>
+/// <p>Contains the results of the <code>CreateDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryOutput {
@@ -3012,15 +2884,15 @@ impl CreateConditionalForwarderOutput {
     }
 }
 
-/// <p>Contains the results for the <a>CreateComputer</a> operation.</p>
+/// <p>Contains the results for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputerOutput {
-    /// <p>A <a>Computer</a> object that represents the computer account.</p>
+    /// <p>A <code>Computer</code> object that represents the computer account.</p>
     pub computer: std::option::Option<crate::model::Computer>,
 }
 impl CreateComputerOutput {
-    /// <p>A <a>Computer</a> object that represents the computer account.</p>
+    /// <p>A <code>Computer</code> object that represents the computer account.</p>
     pub fn computer(&self) -> std::option::Option<&crate::model::Computer> {
         self.computer.as_ref()
     }
@@ -3041,12 +2913,12 @@ pub mod create_computer_output {
         pub(crate) computer: std::option::Option<crate::model::Computer>,
     }
     impl Builder {
-        /// <p>A <a>Computer</a> object that represents the computer account.</p>
+        /// <p>A <code>Computer</code> object that represents the computer account.</p>
         pub fn computer(mut self, input: crate::model::Computer) -> Self {
             self.computer = Some(input);
             self
         }
-        /// <p>A <a>Computer</a> object that represents the computer account.</p>
+        /// <p>A <code>Computer</code> object that represents the computer account.</p>
         pub fn set_computer(mut self, input: std::option::Option<crate::model::Computer>) -> Self {
             self.computer = input;
             self
@@ -3066,7 +2938,7 @@ impl CreateComputerOutput {
     }
 }
 
-/// <p>Contains the results of the <a>CreateAlias</a> operation.</p>
+/// <p>Contains the results of the <code>CreateAlias</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasOutput {
@@ -3139,7 +3011,7 @@ impl CreateAliasOutput {
     }
 }
 
-/// <p>Contains the results of the <a>ConnectDirectory</a> operation.</p>
+/// <p>Contains the results of the <code>ConnectDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectDirectoryOutput {

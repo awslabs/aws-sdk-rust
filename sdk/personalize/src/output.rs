@@ -723,15 +723,13 @@ impl ListEventTrackersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
-    /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
-    /// information.</p>
+    /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
     /// <p>A token for getting the next set of datasets (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
-    /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
-    /// information.</p>
+    /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
     pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
         self.datasets.as_deref()
     }
@@ -762,16 +760,14 @@ pub mod list_datasets_output {
         ///
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
-        /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
-        /// information.</p>
+        /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
         pub fn datasets(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.datasets.unwrap_or_default();
             v.push(input);
             self.datasets = Some(v);
             self
         }
-        /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
-        /// information.</p>
+        /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
         pub fn set_datasets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
@@ -1149,8 +1145,7 @@ pub struct ListBatchSegmentJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
     pub batch_segment_jobs:
         std::option::Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
-    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchSegmentJobsOutput {
@@ -1160,8 +1155,7 @@ impl ListBatchSegmentJobsOutput {
     ) -> std::option::Option<&[crate::model::BatchSegmentJobSummary]> {
         self.batch_segment_jobs.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1204,14 +1198,12 @@ pub mod list_batch_segment_jobs_output {
             self.batch_segment_jobs = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1239,8 +1231,7 @@ pub struct ListBatchInferenceJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
     pub batch_inference_jobs:
         std::option::Option<std::vec::Vec<crate::model::BatchInferenceJobSummary>>,
-    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchInferenceJobsOutput {
@@ -1250,8 +1241,7 @@ impl ListBatchInferenceJobsOutput {
     ) -> std::option::Option<&[crate::model::BatchInferenceJobSummary]> {
         self.batch_inference_jobs.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1297,14 +1287,12 @@ pub mod list_batch_inference_jobs_output {
             self.batch_inference_jobs = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1872,18 +1860,10 @@ pub struct DescribeDatasetImportJobOutput {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub dataset_import_job: std::option::Option<crate::model::DatasetImportJob>,
 }
@@ -1891,18 +1871,10 @@ impl DescribeDatasetImportJobOutput {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn dataset_import_job(&self) -> std::option::Option<&crate::model::DatasetImportJob> {
         self.dataset_import_job.as_ref()
@@ -1927,18 +1899,10 @@ pub mod describe_dataset_import_job_output {
         /// <p>Information about the dataset import job, including the status.</p>
         /// <p>The status is one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATE PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE IN_PROGRESS</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE FAILED</p>
-        /// </li>
+        /// <li> <p>CREATE PENDING</p> </li>
+        /// <li> <p>CREATE IN_PROGRESS</p> </li>
+        /// <li> <p>ACTIVE</p> </li>
+        /// <li> <p>CREATE FAILED</p> </li>
         /// </ul>
         pub fn dataset_import_job(mut self, input: crate::model::DatasetImportJob) -> Self {
             self.dataset_import_job = Some(input);
@@ -1947,18 +1911,10 @@ pub mod describe_dataset_import_job_output {
         /// <p>Information about the dataset import job, including the status.</p>
         /// <p>The status is one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATE PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE IN_PROGRESS</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE FAILED</p>
-        /// </li>
+        /// <li> <p>CREATE PENDING</p> </li>
+        /// <li> <p>CREATE IN_PROGRESS</p> </li>
+        /// <li> <p>ACTIVE</p> </li>
+        /// <li> <p>CREATE FAILED</p> </li>
         /// </ul>
         pub fn set_dataset_import_job(
             mut self,
@@ -2046,18 +2002,10 @@ pub struct DescribeDatasetExportJobOutput {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub dataset_export_job: std::option::Option<crate::model::DatasetExportJob>,
 }
@@ -2065,18 +2013,10 @@ impl DescribeDatasetExportJobOutput {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
     pub fn dataset_export_job(&self) -> std::option::Option<&crate::model::DatasetExportJob> {
         self.dataset_export_job.as_ref()
@@ -2101,18 +2041,10 @@ pub mod describe_dataset_export_job_output {
         /// <p>Information about the dataset export job, including the status.</p>
         /// <p>The status is one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATE PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE IN_PROGRESS</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE FAILED</p>
-        /// </li>
+        /// <li> <p>CREATE PENDING</p> </li>
+        /// <li> <p>CREATE IN_PROGRESS</p> </li>
+        /// <li> <p>ACTIVE</p> </li>
+        /// <li> <p>CREATE FAILED</p> </li>
         /// </ul>
         pub fn dataset_export_job(mut self, input: crate::model::DatasetExportJob) -> Self {
             self.dataset_export_job = Some(input);
@@ -2121,18 +2053,10 @@ pub mod describe_dataset_export_job_output {
         /// <p>Information about the dataset export job, including the status.</p>
         /// <p>The status is one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATE PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE IN_PROGRESS</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE</p>
-        /// </li>
-        /// <li>
-        /// <p>CREATE FAILED</p>
-        /// </li>
+        /// <li> <p>CREATE PENDING</p> </li>
+        /// <li> <p>CREATE IN_PROGRESS</p> </li>
+        /// <li> <p>ACTIVE</p> </li>
+        /// <li> <p>CREATE FAILED</p> </li>
         /// </ul>
         pub fn set_dataset_export_job(
             mut self,
@@ -2957,8 +2881,7 @@ impl CreateFilterOutput {
 pub struct CreateEventTrackerOutput {
     /// <p>The ARN of the event tracker.</p>
     pub event_tracker_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event tracker. Include this ID in requests to the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub tracking_id: std::option::Option<std::string::String>,
 }
 impl CreateEventTrackerOutput {
@@ -2966,8 +2889,7 @@ impl CreateEventTrackerOutput {
     pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
         self.event_tracker_arn.as_deref()
     }
-    /// <p>The ID of the event tracker. Include this ID in requests to the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn tracking_id(&self) -> std::option::Option<&str> {
         self.tracking_id.as_deref()
     }
@@ -3003,14 +2925,12 @@ pub mod create_event_tracker_output {
             self.event_tracker_arn = input;
             self
         }
-        /// <p>The ID of the event tracker. Include this ID in requests to the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+        /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
         pub fn tracking_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracking_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event tracker. Include this ID in requests to the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+        /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
         pub fn set_tracking_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracking_id = input;
             self

@@ -913,7 +913,6 @@ pub struct TableResource {
     /// <p>The name of the table.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A wildcard object representing every table under a database.</p>
-    ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
 }
@@ -931,7 +930,6 @@ impl TableResource {
         self.name.as_deref()
     }
     /// <p>A wildcard object representing every table under a database.</p>
-    ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub fn table_wildcard(&self) -> std::option::Option<&crate::model::TableWildcard> {
         self.table_wildcard.as_ref()
@@ -993,14 +991,12 @@ pub mod table_resource {
             self
         }
         /// <p>A wildcard object representing every table under a database.</p>
-        ///
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn table_wildcard(mut self, input: crate::model::TableWildcard) -> Self {
             self.table_wildcard = Some(input);
             self
         }
         /// <p>A wildcard object representing every table under a database.</p>
-        ///
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn set_table_wildcard(
             mut self,
@@ -2541,25 +2537,18 @@ pub struct DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     pub data_lake_admins: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub create_database_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2569,11 +2558,8 @@ impl DataLakeSettings {
         self.data_lake_admins.as_deref()
     }
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub fn create_database_default_permissions(
         &self,
@@ -2581,11 +2567,8 @@ impl DataLakeSettings {
         self.create_database_default_permissions.as_deref()
     }
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub fn create_table_default_permissions(
         &self,
@@ -2593,7 +2576,6 @@ impl DataLakeSettings {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub fn trusted_resource_owners(&self) -> std::option::Option<&[std::string::String]> {
         self.trusted_resource_owners.as_deref()
@@ -2654,11 +2636,8 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_create_database_default_permissions`](Self::set_create_database_default_permissions).
         ///
         /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_database_default_permissions(
             mut self,
@@ -2670,11 +2649,8 @@ pub mod data_lake_settings {
             self
         }
         /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn set_create_database_default_permissions(
             mut self,
@@ -2688,11 +2664,8 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
         ///
         /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_table_default_permissions(
             mut self,
@@ -2704,11 +2677,8 @@ pub mod data_lake_settings {
             self
         }
         /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn set_create_table_default_permissions(
             mut self,
@@ -2722,7 +2692,6 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_trusted_resource_owners`](Self::set_trusted_resource_owners).
         ///
         /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-        ///
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn trusted_resource_owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trusted_resource_owners.unwrap_or_default();
@@ -2731,7 +2700,6 @@ pub mod data_lake_settings {
             self
         }
         /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-        ///
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn set_trusted_resource_owners(
             mut self,
@@ -3106,7 +3074,6 @@ pub struct StorageOptimizer {
     pub config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A message that contains information about any error (if present).</p>
-    ///
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -3128,7 +3095,6 @@ impl StorageOptimizer {
         self.config.as_ref()
     }
     /// <p>A message that contains information about any error (if present).</p>
-    ///
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
@@ -3208,7 +3174,6 @@ pub mod storage_optimizer {
             self
         }
         /// <p>A message that contains information about any error (if present).</p>
-        ///
         /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3216,7 +3181,6 @@ pub mod storage_optimizer {
             self
         }
         /// <p>A message that contains information about any error (if present).</p>
-        ///
         /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
         pub fn set_error_message(
@@ -3793,7 +3757,6 @@ impl PrincipalResourcePermissions {
 }
 
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
-///
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4866,8 +4829,7 @@ impl AsRef<str> for QueryStateString {
     }
 }
 
-/// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that
-/// <code>VirtualPut</code> was called before writing the object.</p>
+/// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualObject {

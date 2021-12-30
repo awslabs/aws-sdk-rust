@@ -9,9 +9,7 @@ pub struct StartDeviceAuthorizationOutput {
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
     pub verification_uri: std::option::Option<std::string::String>,
-    /// <p>An alternate URL that the client can use to automatically launch a browser. This process
-    /// skips the manual step in which the user visits the verification page and enters their
-    /// code.</p>
+    /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
     pub verification_uri_complete: std::option::Option<std::string::String>,
     /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
     pub expires_in: i32,
@@ -31,9 +29,7 @@ impl StartDeviceAuthorizationOutput {
     pub fn verification_uri(&self) -> std::option::Option<&str> {
         self.verification_uri.as_deref()
     }
-    /// <p>An alternate URL that the client can use to automatically launch a browser. This process
-    /// skips the manual step in which the user visits the verification page and enters their
-    /// code.</p>
+    /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
     pub fn verification_uri_complete(&self) -> std::option::Option<&str> {
         self.verification_uri_complete.as_deref()
     }
@@ -105,16 +101,12 @@ pub mod start_device_authorization_output {
             self.verification_uri = input;
             self
         }
-        /// <p>An alternate URL that the client can use to automatically launch a browser. This process
-        /// skips the manual step in which the user visits the verification page and enters their
-        /// code.</p>
+        /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
         pub fn verification_uri_complete(mut self, input: impl Into<std::string::String>) -> Self {
             self.verification_uri_complete = Some(input.into());
             self
         }
-        /// <p>An alternate URL that the client can use to automatically launch a browser. This process
-        /// skips the manual step in which the user visits the verification page and enters their
-        /// code.</p>
+        /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
         pub fn set_verification_uri_complete(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -166,11 +158,9 @@ impl StartDeviceAuthorizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterClientOutput {
-    /// <p>The unique identifier string for each client. This client uses this identifier to get
-    /// authenticated by the service in subsequent calls.</p>
+    /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A secret string generated for the client. The client will use this string to get
-    /// authenticated by the service in subsequent calls.</p>
+    /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
     pub client_id_issued_at: i64,
@@ -182,13 +172,11 @@ pub struct RegisterClientOutput {
     pub token_endpoint: std::option::Option<std::string::String>,
 }
 impl RegisterClientOutput {
-    /// <p>The unique identifier string for each client. This client uses this identifier to get
-    /// authenticated by the service in subsequent calls.</p>
+    /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A secret string generated for the client. The client will use this string to get
-    /// authenticated by the service in subsequent calls.</p>
+    /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -235,26 +223,22 @@ pub mod register_client_output {
         pub(crate) token_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier string for each client. This client uses this identifier to get
-        /// authenticated by the service in subsequent calls.</p>
+        /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier string for each client. This client uses this identifier to get
-        /// authenticated by the service in subsequent calls.</p>
+        /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>A secret string generated for the client. The client will use this string to get
-        /// authenticated by the service in subsequent calls.</p>
+        /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p>A secret string generated for the client. The client will use this string to get
-        /// authenticated by the service in subsequent calls.</p>
+        /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -334,13 +318,11 @@ impl RegisterClientOutput {
 pub struct CreateTokenOutput {
     /// <p>An opaque token to access AWS SSO resources assigned to a user.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>Used to notify the client that the returned token is an access token. The supported type
-    /// is <code>BearerToken</code>.</p>
+    /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     pub token_type: std::option::Option<std::string::String>,
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub expires_in: i32,
-    /// <p>A token that, if present, can be used to refresh a previously issued access token that
-    /// might have expired.</p>
+    /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     pub id_token: std::option::Option<std::string::String>,
@@ -350,8 +332,7 @@ impl CreateTokenOutput {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>Used to notify the client that the returned token is an access token. The supported type
-    /// is <code>BearerToken</code>.</p>
+    /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
     pub fn token_type(&self) -> std::option::Option<&str> {
         self.token_type.as_deref()
     }
@@ -359,8 +340,7 @@ impl CreateTokenOutput {
     pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
-    /// <p>A token that, if present, can be used to refresh a previously issued access token that
-    /// might have expired.</p>
+    /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
@@ -403,14 +383,12 @@ pub mod create_token_output {
             self.access_token = input;
             self
         }
-        /// <p>Used to notify the client that the returned token is an access token. The supported type
-        /// is <code>BearerToken</code>.</p>
+        /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
         pub fn token_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_type = Some(input.into());
             self
         }
-        /// <p>Used to notify the client that the returned token is an access token. The supported type
-        /// is <code>BearerToken</code>.</p>
+        /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
         pub fn set_token_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_type = input;
             self
@@ -425,14 +403,12 @@ pub mod create_token_output {
             self.expires_in = input;
             self
         }
-        /// <p>A token that, if present, can be used to refresh a previously issued access token that
-        /// might have expired.</p>
+        /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.refresh_token = Some(input.into());
             self
         }
-        /// <p>A token that, if present, can be used to refresh a previously issued access token that
-        /// might have expired.</p>
+        /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<std::string::String>,

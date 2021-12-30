@@ -14,21 +14,17 @@ pub struct BatchMeterUsageError {
 pub enum BatchMeterUsageErrorKind {
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::error::DisabledApiException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
     InvalidCustomerIdentifierException(crate::error::InvalidCustomerIdentifierException),
-    /// <p>The product code passed does not match the product code used for publishing the
-    /// product.</p>
+    /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>The usage allocation objects are invalid, or the number of allocations is greater
-    /// than 500 for a single usage record.</p>
+    /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
     InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
-    /// <p>The usage dimension does not match one of the UsageDimensions associated with
-    /// products.</p>
+    /// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -191,30 +187,21 @@ pub struct MeterUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MeterUsageErrorKind {
-    /// <p>Exception thrown when the customer does not have a valid subscription for the
-    /// product.</p>
+    /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
     CustomerNotEntitledException(crate::error::CustomerNotEntitledException),
-    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or
-    /// EKS pod for the given {usageDimension, timestamp} with a different
-    /// usageQuantity.</p>
+    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.</p>
     DuplicateRequestException(crate::error::DuplicateRequestException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS
-    /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the
-    /// resource must match.</p>
+    /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
     InvalidEndpointRegionException(crate::error::InvalidEndpointRegionException),
-    /// <p>The product code passed does not match the product code used for publishing the
-    /// product.</p>
+    /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>The usage allocation objects are invalid, or the number of allocations is greater
-    /// than 500 for a single usage record.</p>
+    /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
     InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
-    /// <p>The usage dimension does not match one of the UsageDimensions associated with
-    /// products.</p>
+    /// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -386,25 +373,19 @@ pub struct RegisterUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterUsageErrorKind {
-    /// <p>Exception thrown when the customer does not have a valid subscription for the
-    /// product.</p>
+    /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
     CustomerNotEntitledException(crate::error::CustomerNotEntitledException),
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::error::DisabledApiException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>The product code passed does not match the product code used for publishing the
-    /// product.</p>
+    /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
     InvalidPublicKeyVersionException(crate::error::InvalidPublicKeyVersionException),
-    /// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in.
-    /// This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when
-    /// calling RegisterUsage.</p>
+    /// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.</p>
     InvalidRegionException(crate::error::InvalidRegionException),
-    /// <p>AWS Marketplace does not support metering usage from the underlying platform.
-    /// Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
+    /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
     PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -558,14 +539,9 @@ pub struct ResolveCustomerError {
 pub enum ResolveCustomerErrorKind {
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::error::DisabledApiException),
-    /// <p>The submitted registration token has expired. This can happen if the buyer's
-    /// browser takes too long to redirect to your page, the buyer has resubmitted the
-    /// registration token, or your application has held on to the registration token for too
-    /// long. Your SaaS registration website should redeem this token as soon as it is submitted
-    /// by the buyer's browser.</p>
+    /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>Registration token is invalid.</p>
     InvalidTokenException(crate::error::InvalidTokenException),
@@ -810,8 +786,7 @@ impl InvalidTokenException {
     }
 }
 
-/// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-/// message with details on the AWS forums.</p>
+/// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {
@@ -875,11 +850,7 @@ impl InternalServiceErrorException {
     }
 }
 
-/// <p>The submitted registration token has expired. This can happen if the buyer's
-/// browser takes too long to redirect to your page, the buyer has resubmitted the
-/// registration token, or your application has held on to the registration token for too
-/// long. Your SaaS registration website should redeem this token as soon as it is submitted
-/// by the buyer's browser.</p>
+/// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredTokenException {
@@ -1007,8 +978,7 @@ impl DisabledApiException {
     }
 }
 
-/// <p>AWS Marketplace does not support metering usage from the underlying platform.
-/// Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
+/// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformNotSupportedException {
@@ -1072,9 +1042,7 @@ impl PlatformNotSupportedException {
     }
 }
 
-/// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in.
-/// This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when
-/// calling RegisterUsage.</p>
+/// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegionException {
@@ -1202,8 +1170,7 @@ impl InvalidPublicKeyVersionException {
     }
 }
 
-/// <p>The product code passed does not match the product code used for publishing the
-/// product.</p>
+/// <p>The product code passed does not match the product code used for publishing the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidProductCodeException {
@@ -1267,8 +1234,7 @@ impl InvalidProductCodeException {
     }
 }
 
-/// <p>Exception thrown when the customer does not have a valid subscription for the
-/// product.</p>
+/// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerNotEntitledException {
@@ -1396,8 +1362,7 @@ impl TimestampOutOfBoundsException {
     }
 }
 
-/// <p>The usage dimension does not match one of the UsageDimensions associated with
-/// products.</p>
+/// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUsageDimensionException {
@@ -1461,8 +1426,7 @@ impl InvalidUsageDimensionException {
     }
 }
 
-/// <p>The usage allocation objects are invalid, or the number of allocations is greater
-/// than 500 for a single usage record.</p>
+/// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUsageAllocationsException {
@@ -1590,9 +1554,7 @@ impl InvalidTagException {
     }
 }
 
-/// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS
-/// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the
-/// resource must match.</p>
+/// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEndpointRegionException {
@@ -1656,9 +1618,7 @@ impl InvalidEndpointRegionException {
     }
 }
 
-/// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or
-/// EKS pod for the given {usageDimension, timestamp} with a different
-/// usageQuantity.</p>
+/// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequestException {

@@ -1198,14 +1198,12 @@ pub mod create_address_book_input {
             self.description = input;
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1402,14 +1400,12 @@ pub mod create_business_report_schedule_input {
             self.schedule_name = input;
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1430,14 +1426,12 @@ pub mod create_business_report_schedule_input {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -1458,14 +1452,12 @@ pub mod create_business_report_schedule_input {
             self.content_range = input;
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
             self.recurrence = Some(input);
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn set_recurrence(
             mut self,
             input: std::option::Option<crate::model::BusinessReportRecurrence>,
@@ -1942,40 +1934,32 @@ pub mod create_contact_input {
             self.display_name = input;
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.first_name = Some(input.into());
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_name = Some(input.into());
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -2018,14 +2002,12 @@ pub mod create_contact_input {
             self.sip_addresses = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2453,14 +2435,12 @@ pub mod create_network_profile_input {
             self.ssid = input;
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
             self.security_type = Some(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -2468,14 +2448,12 @@ pub mod create_network_profile_input {
             self.security_type = input;
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
             self.eap_method = Some(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -2496,16 +2474,12 @@ pub mod create_network_profile_input {
             self.current_password = input;
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_password = Some(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2513,14 +2487,12 @@ pub mod create_network_profile_input {
             self.next_password = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2532,16 +2504,14 @@ pub mod create_network_profile_input {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3125,14 +3095,12 @@ pub mod create_room_input {
             self.provider_calendar_id = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3336,14 +3304,12 @@ pub mod create_skill_group_input {
             self.description = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3565,14 +3531,12 @@ pub mod create_user_input {
             self.email = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6671,14 +6635,12 @@ pub mod disassociate_skill_group_from_room_input {
             self.skill_group_arn = input;
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.room_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -8657,14 +8619,12 @@ pub mod get_room_skill_parameter_input {
             self.room_arn = input;
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.skill_id = Some(input.into());
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_id = input;
             self
@@ -9166,14 +9126,12 @@ pub mod list_conference_providers_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9339,18 +9297,12 @@ pub mod list_device_events_input {
             self.device_arn = input;
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn event_type(mut self, input: crate::model::DeviceEventType) -> Self {
             self.event_type = Some(input);
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::DeviceEventType>,
@@ -9358,32 +9310,22 @@ pub mod list_device_events_input {
             self.event_type = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9924,30 +9866,22 @@ pub mod list_skills_input {
             self.skill_type = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10270,14 +10204,12 @@ pub mod list_skills_store_skills_by_category_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn category_id(mut self, input: i64) -> Self {
             self.category_id = Some(input);
             self
         }
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
             self.category_id = input;
             self
@@ -10644,30 +10576,22 @@ pub mod list_tags_input {
             self.arn = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10988,14 +10912,12 @@ pub mod put_invitation_configuration_input {
             self.organization_name = input;
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_email = Some(input.into());
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn set_contact_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11007,16 +10929,14 @@ pub mod put_invitation_configuration_input {
         ///
         /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
         ///
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.private_skill_ids.unwrap_or_default();
             v.push(input.into());
             self.private_skill_ids = Some(v);
             self
         }
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn set_private_skill_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11364,8 +11284,7 @@ pub mod put_skill_authorization_input {
         ///
         /// To override the contents of this collection use [`set_authorization_result`](Self::set_authorization_result).
         ///
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn authorization_result(
             mut self,
             k: impl Into<std::string::String>,
@@ -11376,8 +11295,7 @@ pub mod put_skill_authorization_input {
             self.authorization_result = Some(hash_map);
             self
         }
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn set_authorization_result(
             mut self,
             input: std::option::Option<
@@ -11561,28 +11479,22 @@ pub mod register_avs_device_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_code = Some(input.into());
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_code = input;
             self
@@ -11597,14 +11509,12 @@ pub mod register_avs_device_input {
             self.product_id = input;
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_serial_number = Some(input.into());
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn set_device_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11612,14 +11522,12 @@ pub mod register_avs_device_input {
             self.device_serial_number = input;
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.amazon_id = Some(input.into());
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -12297,16 +12205,14 @@ pub mod search_address_books_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12318,16 +12224,14 @@ pub mod search_address_books_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12335,30 +12239,22 @@ pub mod search_address_books_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12517,16 +12413,14 @@ pub mod search_contacts_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12538,16 +12432,14 @@ pub mod search_contacts_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12555,30 +12447,22 @@ pub mod search_contacts_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12733,30 +12617,22 @@ pub mod search_devices_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12765,20 +12641,14 @@ pub mod search_devices_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12790,18 +12660,14 @@ pub mod search_devices_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12958,30 +12824,22 @@ pub mod search_network_profiles_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12990,16 +12848,14 @@ pub mod search_network_profiles_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13011,16 +12867,14 @@ pub mod search_network_profiles_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13180,30 +13034,22 @@ pub mod search_profiles_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13212,16 +13058,14 @@ pub mod search_profiles_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13233,16 +13077,14 @@ pub mod search_profiles_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13400,30 +13242,22 @@ pub mod search_rooms_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13432,16 +13266,14 @@ pub mod search_rooms_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13453,16 +13285,14 @@ pub mod search_rooms_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13619,32 +13449,22 @@ pub mod search_skill_groups_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13653,16 +13473,14 @@ pub mod search_skill_groups_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13674,16 +13492,14 @@ pub mod search_skill_groups_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13841,32 +13657,22 @@ pub mod search_users_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13875,16 +13681,14 @@ pub mod search_users_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13896,16 +13700,14 @@ pub mod search_users_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
             v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -14091,14 +13893,12 @@ pub mod send_announcement_input {
             self.content = input;
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
             self.time_to_live_in_seconds = Some(input);
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live_in_seconds = input;
             self
@@ -14779,16 +14579,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14955,16 +14753,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15338,14 +15134,12 @@ pub mod update_business_report_schedule_input {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -15801,16 +15595,12 @@ pub mod update_contact_input {
             self.last_name = input;
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -16200,14 +15990,12 @@ pub mod update_gateway_input {
             self.description = input;
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.software_version = Some(input.into());
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16597,16 +16385,12 @@ pub mod update_network_profile_input {
             self.current_password = input;
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_password = Some(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16614,14 +16398,12 @@ pub mod update_network_profile_input {
             self.next_password = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16633,16 +16415,14 @@ pub mod update_network_profile_input {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16836,14 +16616,12 @@ pub mod update_profile_input {
             self.profile_name = input;
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn is_default(mut self, input: bool) -> Self {
             self.is_default = Some(input);
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default = input;
             self
@@ -17597,8 +17375,7 @@ pub struct UpdateProfileInput {
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The updated name for the room profile.</p>
     pub profile_name: std::option::Option<std::string::String>,
-    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-    /// default status.</p>
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
     pub is_default: std::option::Option<bool>,
     /// <p>The updated timezone for the room profile.</p>
     pub timezone: std::option::Option<std::string::String>,
@@ -17633,8 +17410,7 @@ impl UpdateProfileInput {
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
-    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-    /// default status.</p>
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
     pub fn is_default(&self) -> std::option::Option<bool> {
         self.is_default
     }
@@ -17721,15 +17497,11 @@ pub struct UpdateNetworkProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: std::option::Option<std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub next_password: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The root certificate(s) of your authentication server that will be installed on your
-    /// devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateNetworkProfileInput {
@@ -17749,19 +17521,15 @@ impl UpdateNetworkProfileInput {
     pub fn current_password(&self) -> std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(&self) -> std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificate(s) of your authentication server that will be installed on your
-    /// devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_anchors.as_deref()
     }
@@ -17825,8 +17593,7 @@ pub struct UpdateGatewayInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the gateway.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated software version of the gateway. The gateway automatically updates its
-    /// software version during normal operation.</p>
+    /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInput {
@@ -17842,8 +17609,7 @@ impl UpdateGatewayInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated software version of the gateway. The gateway automatically updates its
-    /// software version during normal operation.</p>
+    /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
     }
@@ -17899,9 +17665,7 @@ pub struct UpdateContactInput {
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The updated last name of the contact.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-    /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -17925,9 +17689,7 @@ impl UpdateContactInput {
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-    /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -18015,8 +17777,7 @@ pub struct UpdateBusinessReportScheduleInput {
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The name identifier of the schedule.</p>
     pub schedule_name: std::option::Option<std::string::String>,
@@ -18036,8 +17797,7 @@ impl UpdateBusinessReportScheduleInput {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
@@ -18104,8 +17864,7 @@ impl std::fmt::Debug for UpdateAddressBookInput {
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-    /// Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -18113,8 +17872,7 @@ impl UntagResourceInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-    /// Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -18134,8 +17892,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-    /// </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -18143,8 +17900,7 @@ impl TagResourceInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-    /// </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -18243,8 +17999,7 @@ pub struct SendAnnouncementInput {
     pub room_filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub content: std::option::Option<crate::model::Content>,
-    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-    /// announcement is not delivered.</p>
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -18258,8 +18013,7 @@ impl SendAnnouncementInput {
     pub fn content(&self) -> std::option::Option<&crate::model::Content> {
         self.content.as_ref()
     }
-    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-    /// announcement is not delivered.</p>
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
         self.time_to_live_in_seconds
     }
@@ -18283,43 +18037,29 @@ impl std::fmt::Debug for SendAnnouncementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. Required.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchUsersInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. Required.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18339,43 +18079,29 @@ impl std::fmt::Debug for SearchUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSkillGroupsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-    /// is SkillGroupName. </p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported
-    /// sort key is SkillGroupName. </p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchSkillGroupsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-    /// is SkillGroupName. </p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported
-    /// sort key is SkillGroupName. </p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18395,41 +18121,29 @@ impl std::fmt::Debug for SearchSkillGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchRoomsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-    /// RoomName and ProfileName.</p>
+    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-    /// are RoomName and ProfileName.</p>
+    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchRoomsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-    /// RoomName and ProfileName.</p>
+    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-    /// are RoomName and ProfileName.</p>
+    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18449,41 +18163,29 @@ impl std::fmt::Debug for SearchRoomsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-    /// are ProfileName and Address. Required. </p>
+    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-    /// keys are ProfileName and Address.</p>
+    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-    /// are ProfileName and Address. Required. </p>
+    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-    /// keys are ProfileName and Address.</p>
+    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18503,41 +18205,29 @@ impl std::fmt::Debug for SearchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchNetworkProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the
-    /// specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-    /// NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-    /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchNetworkProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the
-    /// specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-    /// NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-    /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18557,47 +18247,29 @@ impl std::fmt::Debug for SearchNetworkProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-    /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-    /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-    /// NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-    /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-    /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchDevicesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-    /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-    /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-    /// NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-    /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-    /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18617,41 +18289,29 @@ impl std::fmt::Debug for SearchDevicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContactsInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter
-    /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-    /// keys are DisplayName, FirstName, and LastName.</p>
+    /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl SearchContactsInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter
-    /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-    /// keys are DisplayName, FirstName, and LastName.</p>
+    /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -18671,41 +18331,29 @@ impl std::fmt::Debug for SearchContactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAddressBooksInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter key
-    /// is AddressBookName.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of address books. The supported
-    /// sort key is AddressBookName.</p>
+    /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl SearchAddressBooksInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter key
-    /// is AddressBookName.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of address books. The supported
-    /// sort key is AddressBookName.</p>
+    /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -18802,20 +18450,15 @@ impl std::fmt::Debug for RejectSkillInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAvsDeviceInput {
-    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-    /// device.</p>
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-    /// part of the Device Authorization Request component of the OAuth code-based linking
-    /// specification.</p>
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The product ID used to identify your AVS device during authorization.</p>
     pub product_id: std::option::Option<std::string::String>,
-    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-    /// AVS device.</p>
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
     pub device_serial_number: std::option::Option<std::string::String>,
-    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-    /// product on Amazon's Developer Console.</p>
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
     pub room_arn: std::option::Option<std::string::String>,
@@ -18823,14 +18466,11 @@ pub struct RegisterAvsDeviceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterAvsDeviceInput {
-    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-    /// device.</p>
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-    /// part of the Device Authorization Request component of the OAuth code-based linking
-    /// specification.</p>
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
     pub fn user_code(&self) -> std::option::Option<&str> {
         self.user_code.as_deref()
     }
@@ -18838,13 +18478,11 @@ impl RegisterAvsDeviceInput {
     pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
-    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-    /// AVS device.</p>
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
     pub fn device_serial_number(&self) -> std::option::Option<&str> {
         self.device_serial_number.as_deref()
     }
-    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-    /// product on Amazon's Developer Console.</p>
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
     pub fn amazon_id(&self) -> std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
@@ -18875,8 +18513,7 @@ impl std::fmt::Debug for RegisterAvsDeviceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSkillAuthorizationInput {
-    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-    /// populated in the AuthorizationResult map to establish the authorization.</p>
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     pub authorization_result:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of a skill.</p>
@@ -18885,8 +18522,7 @@ pub struct PutSkillAuthorizationInput {
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl PutSkillAuthorizationInput {
-    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-    /// populated in the AuthorizationResult map to establish the authorization.</p>
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     pub fn authorization_result(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -18953,11 +18589,9 @@ impl std::fmt::Debug for PutRoomSkillParameterInput {
 pub struct PutInvitationConfigurationInput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub organization_name: std::option::Option<std::string::String>,
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub contact_email: std::option::Option<std::string::String>,
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutInvitationConfigurationInput {
@@ -18965,13 +18599,11 @@ impl PutInvitationConfigurationInput {
     pub fn organization_name(&self) -> std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(&self) -> std::option::Option<&str> {
         self.contact_email.as_deref()
     }
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.private_skill_ids.as_deref()
     }
@@ -19015,13 +18647,9 @@ impl std::fmt::Debug for PutConferencePreferenceInput {
 pub struct ListTagsInput {
     /// <p>The ARN of the specified resource for which to list tags.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
@@ -19029,15 +18657,11 @@ impl ListTagsInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19091,8 +18715,7 @@ impl std::fmt::Debug for ListSmartHomeAppliancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreSkillsByCategoryInput {
-    /// <p>The category ID for which the skills are being retrieved from the skill
-    /// store.</p>
+    /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub category_id: std::option::Option<i64>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -19100,8 +18723,7 @@ pub struct ListSkillsStoreSkillsByCategoryInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsStoreSkillsByCategoryInput {
-    /// <p>The category ID for which the skills are being retrieved from the skill
-    /// store.</p>
+    /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub fn category_id(&self) -> std::option::Option<i64> {
         self.category_id
     }
@@ -19162,13 +18784,9 @@ pub struct ListSkillsInput {
     pub enablement_type: std::option::Option<crate::model::EnablementTypeFilter>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub skill_type: std::option::Option<crate::model::SkillTypeFilter>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsInput {
@@ -19184,15 +18802,11 @@ impl ListSkillsInput {
     pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillTypeFilter> {
         self.skill_type.as_ref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19278,19 +18892,11 @@ impl std::fmt::Debug for ListGatewayGroupsInput {
 pub struct ListDeviceEventsInput {
     /// <p>The ARN of a device.</p>
     pub device_arn: std::option::Option<std::string::String>,
-    /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-    /// list of all device events in reverse chronological order. If EventType is specified, this
-    /// returns a list of device events for that EventType in reverse chronological order.
-    /// </p>
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub event_type: std::option::Option<crate::model::DeviceEventType>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults. When the end of results
-    /// is reached, the response has a value of null.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. The default value is 50. If
-    /// more results exist than the specified MaxResults value, a token is included in the response
-    /// so that the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeviceEventsInput {
@@ -19298,23 +18904,15 @@ impl ListDeviceEventsInput {
     pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
-    /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-    /// list of all device events in reverse chronological order. If EventType is specified, this
-    /// returns a list of device events for that EventType in reverse chronological order.
-    /// </p>
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::DeviceEventType> {
         self.event_type.as_ref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults. When the end of results
-    /// is reached, the response has a value of null.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. The default value is 50. If
-    /// more results exist than the specified MaxResults value, a token is included in the response
-    /// so that the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19336,8 +18934,7 @@ impl std::fmt::Debug for ListDeviceEventsInput {
 pub struct ListConferenceProvidersInput {
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of conference providers to be returned, per paginated
-    /// calls.</p>
+    /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListConferenceProvidersInput {
@@ -19345,8 +18942,7 @@ impl ListConferenceProvidersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of conference providers to be returned, per paginated
-    /// calls.</p>
+    /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19415,8 +19011,7 @@ impl std::fmt::Debug for GetSkillGroupInput {
 pub struct GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub room_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the skill from which to get the room skill parameter details.
-    /// Required.</p>
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub parameter_key: std::option::Option<std::string::String>,
@@ -19426,8 +19021,7 @@ impl GetRoomSkillParameterInput {
     pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
-    /// <p>The ARN of the skill from which to get the room skill parameter details.
-    /// Required.</p>
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
@@ -19684,8 +19278,7 @@ impl std::fmt::Debug for ForgetSmartHomeAppliancesInput {
 pub struct DisassociateSkillGroupFromRoomInput {
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
     pub skill_group_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the room from which the skill group is to be disassociated.
-    /// Required.</p>
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillGroupFromRoomInput {
@@ -19693,8 +19286,7 @@ impl DisassociateSkillGroupFromRoomInput {
     pub fn skill_group_arn(&self) -> std::option::Option<&str> {
         self.skill_group_arn.as_deref()
     }
-    /// <p>The ARN of the room from which the skill group is to be disassociated.
-    /// Required.</p>
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
@@ -20147,8 +19739,7 @@ pub struct CreateUserInput {
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address for the user.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the user.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20170,8 +19761,7 @@ impl CreateUserInput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20201,8 +19791,7 @@ pub struct CreateSkillGroupInput {
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the skill group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the skill group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20216,8 +19805,7 @@ impl CreateSkillGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20249,8 +19837,7 @@ pub struct CreateRoomInput {
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The calendar ARN for the room.</p>
     pub provider_calendar_id: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the room.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20272,8 +19859,7 @@ impl CreateRoomInput {
     pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
         self.provider_calendar_id.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20423,23 +20009,17 @@ pub struct CreateNetworkProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
     pub ssid: std::option::Option<std::string::String>,
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: std::option::Option<std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub next_password: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The root certificates of your authentication server that is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -20459,13 +20039,11 @@ impl CreateNetworkProfileInput {
     pub fn ssid(&self) -> std::option::Option<&str> {
         self.ssid.as_deref()
     }
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
@@ -20473,19 +20051,15 @@ impl CreateNetworkProfileInput {
     pub fn current_password(&self) -> std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(&self) -> std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificates of your authentication server that is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_anchors.as_deref()
     }
@@ -20564,22 +20138,17 @@ impl std::fmt::Debug for CreateGatewayGroupInput {
 pub struct CreateContactInput {
     /// <p>The name of the contact to display on the console.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The first name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The first name of the contact that is used to call the contact on the device.</p>
     pub first_name: std::option::Option<std::string::String>,
-    /// <p>The last name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The last name of the contact that is used to call the contact on the device.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-    /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
-    /// <p>A unique, user-specified identifier for this request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20589,19 +20158,15 @@ impl CreateContactInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The first name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The first name of the contact that is used to call the contact on the device.</p>
     pub fn first_name(&self) -> std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The last name of the contact that is used to call the contact on the device.</p>
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-    /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -20613,8 +20178,7 @@ impl CreateContactInput {
     pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
         self.sip_addresses.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20709,18 +20273,15 @@ impl std::fmt::Debug for CreateConferenceProviderInput {
 pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
     pub schedule_name: std::option::Option<std::string::String>,
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-    /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
     pub content_range: std::option::Option<crate::model::BusinessReportContentRange>,
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-    /// delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
     /// <p>The client request token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -20732,8 +20293,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn schedule_name(&self) -> std::option::Option<&str> {
         self.schedule_name.as_deref()
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-    /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -20741,8 +20301,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
@@ -20750,8 +20309,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn content_range(&self) -> std::option::Option<&crate::model::BusinessReportContentRange> {
         self.content_range.as_ref()
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-    /// delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
@@ -20787,8 +20345,7 @@ pub struct CreateAddressBookInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the address book.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for the request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20802,8 +20359,7 @@ impl CreateAddressBookInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, user-specified identifier for the request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

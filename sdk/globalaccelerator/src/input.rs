@@ -196,14 +196,12 @@ pub mod advertise_byoip_cidr_input {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-        /// You can't advertise only a portion of the provisioned range.</p>
+        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
         pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr = Some(input.into());
             self
         }
-        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-        /// You can't advertise only a portion of the provisioned range.</p>
+        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -381,22 +379,16 @@ pub mod allow_custom_routing_traffic_input {
         ///
         /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
         ///
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-        /// <p>
-        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-        /// not specified.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
         pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destination_addresses.unwrap_or_default();
             v.push(input.into());
             self.destination_addresses = Some(v);
             self
         }
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-        /// <p>
-        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-        /// not specified.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -423,25 +415,17 @@ pub mod allow_custom_routing_traffic_input {
             self.destination_ports = input;
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-        /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-        /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn allow_all_traffic_to_endpoint(mut self, input: bool) -> Self {
             self.allow_all_traffic_to_endpoint = Some(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-        /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-        /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn set_allow_all_traffic_to_endpoint(
             mut self,
@@ -606,14 +590,12 @@ pub mod create_accelerator_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -635,32 +617,20 @@ pub mod create_accelerator_input {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -680,14 +650,12 @@ pub mod create_accelerator_input {
             self.enabled = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of an accelerator.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of an accelerator.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -700,8 +668,7 @@ pub mod create_accelerator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -709,8 +676,7 @@ pub mod create_accelerator_input {
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -875,14 +841,12 @@ pub mod create_custom_routing_accelerator_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -904,32 +868,20 @@ pub mod create_custom_routing_accelerator_input {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -949,14 +901,12 @@ pub mod create_custom_routing_accelerator_input {
             self.enabled = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-        /// is, the uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-        /// is, the uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -969,8 +919,7 @@ pub mod create_custom_routing_accelerator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -978,8 +927,7 @@ pub mod create_custom_routing_accelerator_input {
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1156,14 +1104,12 @@ pub mod create_custom_routing_endpoint_group_input {
             self.listener_arn = input;
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_group_region = Some(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1175,8 +1121,7 @@ pub mod create_custom_routing_endpoint_group_input {
         ///
         /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
         ///
-        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-        /// client traffic on.</p>
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
         pub fn destination_configurations(
             mut self,
             input: crate::model::CustomRoutingDestinationConfiguration,
@@ -1186,8 +1131,7 @@ pub mod create_custom_routing_endpoint_group_input {
             self.destination_configurations = Some(v);
             self
         }
-        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-        /// client traffic on.</p>
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
         pub fn set_destination_configurations(
             mut self,
             input: std::option::Option<
@@ -1197,14 +1141,12 @@ pub mod create_custom_routing_endpoint_group_input {
             self.destination_configurations = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1385,8 +1327,7 @@ pub mod create_custom_routing_listener_input {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The port range to support for connections from clients to your accelerator.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input);
@@ -1394,8 +1335,7 @@ pub mod create_custom_routing_listener_input {
             self
         }
         /// <p>The port range to support for connections from clients to your accelerator.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1403,14 +1343,12 @@ pub mod create_custom_routing_listener_input {
             self.port_ranges = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1590,14 +1528,12 @@ pub mod create_endpoint_group_input {
             self.listener_arn = input;
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_group_region = Some(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1627,46 +1563,36 @@ pub mod create_endpoint_group_input {
             self.endpoint_configurations = input;
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
             self.traffic_dial_percentage = Some(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.traffic_dial_percentage = input;
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-        /// first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn health_check_port(mut self, input: i32) -> Self {
             self.health_check_port = Some(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-        /// first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_port = input;
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -1674,14 +1600,12 @@ pub mod create_endpoint_group_input {
             self.health_check_protocol = input;
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1702,26 +1626,22 @@ pub mod create_endpoint_group_input {
             self.health_check_interval_seconds = input;
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn threshold_count(mut self, input: i32) -> Self {
             self.threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold_count = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1733,24 +1653,16 @@ pub mod create_endpoint_group_input {
         ///
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
             v.push(input);
             self.port_overrides = Some(v);
             self
         }
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -1961,33 +1873,17 @@ pub mod create_listener_input {
             self.protocol = input;
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
             self.client_affinity = Some(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
@@ -1996,14 +1892,12 @@ pub mod create_listener_input {
             self.client_affinity = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3137,18 +3031,14 @@ pub mod deny_custom_routing_traffic_input {
         ///
         /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
         ///
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-        /// endpoint group.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
         pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destination_addresses.unwrap_or_default();
             v.push(input.into());
             self.destination_addresses = Some(v);
             self
         }
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-        /// endpoint group.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3160,16 +3050,14 @@ pub mod deny_custom_routing_traffic_input {
         ///
         /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
         ///
-        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-        /// receiving traffic.</p>
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
         pub fn destination_ports(mut self, input: i32) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
             v.push(input);
             self.destination_ports = Some(v);
             self
         }
-        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-        /// receiving traffic.</p>
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
         pub fn set_destination_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -3177,25 +3065,17 @@ pub mod deny_custom_routing_traffic_input {
             self.destination_ports = input;
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-        /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-        /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn deny_all_traffic_to_endpoint(mut self, input: bool) -> Self {
             self.deny_all_traffic_to_endpoint = Some(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-        /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-        /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn set_deny_all_traffic_to_endpoint(
             mut self,
@@ -3355,14 +3235,12 @@ pub mod deprovision_byoip_cidr_input {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-        /// when you provisioned the address range.</p>
+        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
         pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr = Some(input.into());
             self
         }
-        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-        /// when you provisioned the address range.</p>
+        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -4948,14 +4826,12 @@ pub mod list_byoip_cidrs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-        /// another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-        /// another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5860,14 +5736,12 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self.endpoint_id = input;
             self
         }
-        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-        /// mappings.</p>
+        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
         pub fn destination_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_address = Some(input.into());
             self
         }
-        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-        /// mappings.</p>
+        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
         pub fn set_destination_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6564,23 +6438,17 @@ pub mod provision_byoip_cidr_input {
             std::option::Option<crate::model::CidrAuthorizationContext>,
     }
     impl Builder {
-        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-        /// specify is /24. The address range cannot overlap with another address range that you've brought
-        /// to this or another Region.</p>
+        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
         pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr = Some(input.into());
             self
         }
-        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-        /// specify is /24. The address range cannot overlap with another address range that you've brought
-        /// to this or another Region.</p>
+        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
         }
-        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-        /// Amazon using BYOIP.
-        /// </p>
+        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
         pub fn cidr_authorization_context(
             mut self,
             input: crate::model::CidrAuthorizationContext,
@@ -6588,9 +6456,7 @@ pub mod provision_byoip_cidr_input {
             self.cidr_authorization_context = Some(input);
             self
         }
-        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-        /// Amazon using BYOIP.
-        /// </p>
+        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
         pub fn set_cidr_authorization_context(
             mut self,
             input: std::option::Option<crate::model::CidrAuthorizationContext>,
@@ -6748,16 +6614,14 @@ pub mod remove_custom_routing_endpoints_input {
         ///
         /// To override the contents of this collection use [`set_endpoint_ids`](Self::set_endpoint_ids).
         ///
-        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-        /// subnet IDs. </p>
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
         pub fn endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.endpoint_ids.unwrap_or_default();
             v.push(input.into());
             self.endpoint_ids = Some(v);
             self
         }
-        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-        /// subnet IDs. </p>
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
         pub fn set_endpoint_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7290,14 +7154,12 @@ pub mod update_accelerator_input {
             self.accelerator_arn = input;
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7490,32 +7352,24 @@ pub mod update_accelerator_attributes_input {
             self.accelerator_arn = input;
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn flow_logs_enabled(mut self, input: bool) -> Self {
             self.flow_logs_enabled = Some(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7523,19 +7377,15 @@ pub mod update_accelerator_attributes_input {
             self.flow_logs_s3_bucket = input;
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
@@ -7709,14 +7559,12 @@ pub mod update_custom_routing_accelerator_input {
             self.accelerator_arn = input;
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7912,32 +7760,24 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.accelerator_arn = input;
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn flow_logs_enabled(mut self, input: bool) -> Self {
             self.flow_logs_enabled = Some(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7945,19 +7785,15 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.flow_logs_s3_bucket = input;
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
         pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
@@ -8133,20 +7969,16 @@ pub mod update_custom_routing_listener_input {
         ///
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
-        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-        /// currently being used by a subnet endpoint, the call fails.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input);
             self.port_ranges = Some(v);
             self
         }
-        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-        /// currently being used by a subnet endpoint, the call fails.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -8345,46 +8177,36 @@ pub mod update_endpoint_group_input {
             self.endpoint_configurations = input;
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
             self.traffic_dial_percentage = Some(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.traffic_dial_percentage = input;
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-        /// the first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn health_check_port(mut self, input: i32) -> Self {
             self.health_check_port = Some(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-        /// the first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_port = input;
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -8392,14 +8214,12 @@ pub mod update_endpoint_group_input {
             self.health_check_protocol = input;
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8420,14 +8240,12 @@ pub mod update_endpoint_group_input {
             self.health_check_interval_seconds = input;
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn threshold_count(mut self, input: i32) -> Self {
             self.threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold_count = input;
             self
@@ -8436,24 +8254,16 @@ pub mod update_endpoint_group_input {
         ///
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
             v.push(input);
             self.port_overrides = Some(v);
             self
         }
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -8655,33 +8465,17 @@ pub mod update_listener_input {
             self.protocol = input;
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
             self.client_affinity = Some(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
@@ -9011,17 +8805,9 @@ pub struct UpdateListenerInput {
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The updated protocol for the connections from clients to the accelerator.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
-    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-    /// route each client to the same specific endpoint.</p>
-    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-    /// be always routed to the same endpoint because the hash value changes. </p>
-    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub client_affinity: std::option::Option<crate::model::ClientAffinity>,
 }
@@ -9038,17 +8824,9 @@ impl UpdateListenerInput {
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
-    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-    /// route each client to the same specific endpoint.</p>
-    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-    /// be always routed to the same endpoint because the hash value changes. </p>
-    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
         self.client_affinity.as_ref()
@@ -9074,33 +8852,22 @@ pub struct UpdateEndpointGroupInput {
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
     pub endpoint_configurations:
         std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
-    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-    /// this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub traffic_dial_percentage: std::option::Option<f32>,
-    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-    /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-    /// the first port in the list.</p>
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
     pub health_check_port: std::option::Option<i32>,
-    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-    /// value is TCP.</p>
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub health_check_protocol: std::option::Option<crate::model::HealthCheckProtocol>,
-    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-    /// default value is slash (/).</p>
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub threshold_count: std::option::Option<i32>,
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-    /// For example, you can create a port override in which the listener
-    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-    /// and 1443, respectively, on the endpoints.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
 }
 impl UpdateEndpointGroupInput {
@@ -9114,27 +8881,21 @@ impl UpdateEndpointGroupInput {
     ) -> std::option::Option<&[crate::model::EndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
-    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-    /// this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn traffic_dial_percentage(&self) -> std::option::Option<f32> {
         self.traffic_dial_percentage
     }
-    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-    /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-    /// the first port in the list.</p>
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
     pub fn health_check_port(&self) -> std::option::Option<i32> {
         self.health_check_port
     }
-    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-    /// value is TCP.</p>
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
         self.health_check_protocol.as_ref()
     }
-    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-    /// default value is slash (/).</p>
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
@@ -9142,17 +8903,12 @@ impl UpdateEndpointGroupInput {
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub fn threshold_count(&self) -> std::option::Option<i32> {
         self.threshold_count
     }
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-    /// For example, you can create a port override in which the listener
-    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-    /// and 1443, respectively, on the endpoints.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
         self.port_overrides.as_deref()
     }
@@ -9182,10 +8938,8 @@ impl std::fmt::Debug for UpdateEndpointGroupInput {
 pub struct UpdateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-    /// currently being used by a subnet endpoint, the call fails.</p>
-    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-    /// endpoints for custom routing accelerators</a>.</p>
+    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
 }
 impl UpdateCustomRoutingListenerInput {
@@ -9193,10 +8947,8 @@ impl UpdateCustomRoutingListenerInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-    /// currently being used by a subnet endpoint, the call fails.</p>
-    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-    /// endpoints for custom routing accelerators</a>.</p>
+    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
         self.port_ranges.as_deref()
     }
@@ -9216,19 +8968,13 @@ impl std::fmt::Debug for UpdateCustomRoutingListenerInput {
 pub struct UpdateCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
-    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub flow_logs_enabled: std::option::Option<bool>,
-    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-    /// bucket.</p>
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
     pub flow_logs_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the
-    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
@@ -9237,23 +8983,17 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
     pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
-    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
         self.flow_logs_enabled
     }
-    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-    /// bucket.</p>
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
     pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_bucket.as_deref()
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the
-    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_prefix.as_deref()
@@ -9276,8 +9016,7 @@ impl std::fmt::Debug for UpdateCustomRoutingAcceleratorAttributesInput {
 pub struct UpdateCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value for the address type must be IPv4.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -9290,8 +9029,7 @@ impl UpdateCustomRoutingAcceleratorInput {
     pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
-    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9322,19 +9060,13 @@ impl std::fmt::Debug for UpdateCustomRoutingAcceleratorInput {
 pub struct UpdateAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
-    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub flow_logs_enabled: std::option::Option<bool>,
-    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-    /// bucket.</p>
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
     pub flow_logs_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the
-    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
@@ -9343,23 +9075,17 @@ impl UpdateAcceleratorAttributesInput {
     pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
-    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
         self.flow_logs_enabled
     }
-    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-    /// bucket.</p>
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
     pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_bucket.as_deref()
     }
-    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the
-    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
         self.flow_logs_s3_prefix.as_deref()
@@ -9382,8 +9108,7 @@ impl std::fmt::Debug for UpdateAcceleratorAttributesInput {
 pub struct UpdateAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The IP address type, which must be IPv4.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -9396,8 +9121,7 @@ impl UpdateAcceleratorInput {
     pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
-    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9482,15 +9206,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveCustomRoutingEndpointsInput {
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-    /// subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
     pub endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl RemoveCustomRoutingEndpointsInput {
-    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-    /// subnet IDs. </p>
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
     pub fn endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.endpoint_ids.as_deref()
     }
@@ -9512,25 +9234,17 @@ impl std::fmt::Debug for RemoveCustomRoutingEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionByoipCidrInput {
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-    /// specify is /24. The address range cannot overlap with another address range that you've brought
-    /// to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub cidr: std::option::Option<std::string::String>,
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-    /// Amazon using BYOIP.
-    /// </p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub cidr_authorization_context: std::option::Option<crate::model::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInput {
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-    /// specify is /24. The address range cannot overlap with another address range that you've brought
-    /// to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
-    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-    /// Amazon using BYOIP.
-    /// </p>
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub fn cidr_authorization_context(
         &self,
     ) -> std::option::Option<&crate::model::CidrAuthorizationContext> {
@@ -9646,8 +9360,7 @@ impl std::fmt::Debug for ListEndpointGroupsInput {
 pub struct ListCustomRoutingPortMappingsByDestinationInput {
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
-    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-    /// mappings.</p>
+    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
     pub destination_address: std::option::Option<std::string::String>,
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
     pub max_results: std::option::Option<i32>,
@@ -9659,8 +9372,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
-    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-    /// mappings.</p>
+    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
     pub fn destination_address(&self) -> std::option::Option<&str> {
         self.destination_address.as_deref()
     }
@@ -9828,15 +9540,13 @@ impl std::fmt::Debug for ListCustomRoutingAcceleratorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByoipCidrsInput {
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-    /// another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListByoipCidrsInput {
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-    /// another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10054,13 +9764,11 @@ impl std::fmt::Debug for DescribeAcceleratorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionByoipCidrInput {
-    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-    /// when you provisioned the address range.</p>
+    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     pub cidr: std::option::Option<std::string::String>,
 }
 impl DeprovisionByoipCidrInput {
-    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-    /// when you provisioned the address range.</p>
+    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
@@ -10081,20 +9789,13 @@ pub struct DenyCustomRoutingTrafficInput {
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
-    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-    /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-    /// endpoint group.</p>
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
     pub destination_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-    /// receiving traffic.</p>
+    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
     pub destination_ports: std::option::Option<std::vec::Vec<i32>>,
-    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-    /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-    /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub deny_all_traffic_to_endpoint: std::option::Option<bool>,
 }
@@ -10107,24 +9808,17 @@ impl DenyCustomRoutingTrafficInput {
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
-    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-    /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-    /// endpoint group.</p>
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
     pub fn destination_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.destination_addresses.as_deref()
     }
-    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-    /// receiving traffic.</p>
+    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
     pub fn destination_ports(&self) -> std::option::Option<&[i32]> {
         self.destination_ports.as_deref()
     }
-    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-    /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-    /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub fn deny_all_traffic_to_endpoint(&self) -> std::option::Option<bool> {
         self.deny_all_traffic_to_endpoint
@@ -10281,21 +9975,12 @@ pub struct CreateListenerInput {
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The protocol for connections from clients to your accelerator.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
-    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-    /// route each client to the same specific endpoint.</p>
-    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-    /// be always routed to the same endpoint because the hash value changes. </p>
-    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub client_affinity: std::option::Option<crate::model::ClientAffinity>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateListenerInput {
@@ -10311,23 +9996,14 @@ impl CreateListenerInput {
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
-    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-    /// route each client to the same specific endpoint.</p>
-    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-    /// be always routed to the same endpoint because the hash value changes. </p>
-    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
         self.client_affinity.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -10350,42 +10026,29 @@ impl std::fmt::Debug for CreateListenerInput {
 pub struct CreateEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-    /// specific Region.</p>
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub endpoint_group_region: std::option::Option<std::string::String>,
     /// <p>The list of endpoint objects.</p>
     pub endpoint_configurations:
         std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
-    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-    /// this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub traffic_dial_percentage: std::option::Option<f32>,
-    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-    /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-    /// first port in the list.</p>
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
     pub health_check_port: std::option::Option<i32>,
-    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-    /// value is TCP.</p>
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub health_check_protocol: std::option::Option<crate::model::HealthCheckProtocol>,
-    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-    /// default value is slash (/).</p>
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub threshold_count: std::option::Option<i32>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-    /// For example, you can create a port override in which the listener
-    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-    /// and 1443, respectively, on the endpoints.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
 }
 impl CreateEndpointGroupInput {
@@ -10393,8 +10056,7 @@ impl CreateEndpointGroupInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-    /// specific Region.</p>
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
         self.endpoint_group_region.as_deref()
     }
@@ -10404,27 +10066,21 @@ impl CreateEndpointGroupInput {
     ) -> std::option::Option<&[crate::model::EndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
-    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-    /// this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn traffic_dial_percentage(&self) -> std::option::Option<f32> {
         self.traffic_dial_percentage
     }
-    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-    /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-    /// first port in the list.</p>
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
     pub fn health_check_port(&self) -> std::option::Option<i32> {
         self.health_check_port
     }
-    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-    /// value is TCP.</p>
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
         self.health_check_protocol.as_ref()
     }
-    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-    /// default value is slash (/).</p>
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
@@ -10432,22 +10088,16 @@ impl CreateEndpointGroupInput {
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub fn threshold_count(&self) -> std::option::Option<i32> {
         self.threshold_count
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-    /// For example, you can create a port override in which the listener
-    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-    /// and 1443, respectively, on the endpoints.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
         self.port_overrides.as_deref()
     }
@@ -10480,11 +10130,9 @@ pub struct CreateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
     /// <p>The port range to support for connections from clients to your accelerator.</p>
-    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-    /// endpoints for custom routing accelerators</a>.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateCustomRoutingListenerInput {
@@ -10493,13 +10141,11 @@ impl CreateCustomRoutingListenerInput {
         self.accelerator_arn.as_deref()
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
-    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-    /// endpoints for custom routing accelerators</a>.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
         self.port_ranges.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -10520,15 +10166,12 @@ impl std::fmt::Debug for CreateCustomRoutingListenerInput {
 pub struct CreateCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-    /// specific Region.</p>
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub endpoint_group_region: std::option::Option<std::string::String>,
-    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-    /// client traffic on.</p>
+    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
     pub destination_configurations:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingDestinationConfiguration>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateCustomRoutingEndpointGroupInput {
@@ -10536,20 +10179,17 @@ impl CreateCustomRoutingEndpointGroupInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-    /// specific Region.</p>
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
         self.endpoint_group_region.as_deref()
     }
-    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-    /// client traffic on.</p>
+    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
     pub fn destination_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::CustomRoutingDestinationConfiguration]> {
         self.destination_configurations.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -10572,36 +10212,26 @@ impl std::fmt::Debug for CreateCustomRoutingEndpointGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingAcceleratorInput {
-    /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-    /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value for the address type must be IPv4.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-    /// accelerator from the AWS IP address pool.</p>
-    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-    /// accelerator with the new addresses.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-    /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-    /// is, the uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Create tags for an accelerator.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCustomRoutingAcceleratorInput {
-    /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-    /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10609,16 +10239,10 @@ impl CreateCustomRoutingAcceleratorInput {
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-    /// accelerator from the AWS IP address pool.</p>
-    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-    /// accelerator with the new addresses.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-    /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
     }
@@ -10627,14 +10251,12 @@ impl CreateCustomRoutingAcceleratorInput {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-    /// is, the uniqueness—of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Create tags for an accelerator.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -10656,36 +10278,26 @@ impl std::fmt::Debug for CreateCustomRoutingAcceleratorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAcceleratorInput {
-    /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value for the address type must be IPv4.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-    /// accelerator from the AWS IP address pool.</p>
-    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-    /// accelerator with the new addresses.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of an accelerator.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Create tags for an accelerator.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAcceleratorInput {
-    /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10693,16 +10305,10 @@ impl CreateAcceleratorInput {
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-    /// accelerator from the AWS IP address pool.</p>
-    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-    /// accelerator with the new addresses.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
     }
@@ -10711,14 +10317,12 @@ impl CreateAcceleratorInput {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-    /// uniqueness—of an accelerator.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Create tags for an accelerator.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -10744,21 +10348,14 @@ pub struct AllowCustomRoutingTrafficInput {
     pub endpoint_group_arn: std::option::Option<std::string::String>,
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
-    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-    /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-    /// <p>
-    /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-    /// not specified.</p>
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+    /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
     pub destination_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
     pub destination_ports: std::option::Option<std::vec::Vec<i32>>,
-    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-    /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-    /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-    /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub allow_all_traffic_to_endpoint: std::option::Option<bool>,
 }
@@ -10771,11 +10368,8 @@ impl AllowCustomRoutingTrafficInput {
     pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
-    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-    /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-    /// <p>
-    /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-    /// not specified.</p>
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+    /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
     pub fn destination_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.destination_addresses.as_deref()
     }
@@ -10783,13 +10377,9 @@ impl AllowCustomRoutingTrafficInput {
     pub fn destination_ports(&self) -> std::option::Option<&[i32]> {
         self.destination_ports.as_deref()
     }
-    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-    /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-    /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-    /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub fn allow_all_traffic_to_endpoint(&self) -> std::option::Option<bool> {
         self.allow_all_traffic_to_endpoint
@@ -10814,13 +10404,11 @@ impl std::fmt::Debug for AllowCustomRoutingTrafficInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvertiseByoipCidrInput {
-    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-    /// You can't advertise only a portion of the provisioned range.</p>
+    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub cidr: std::option::Option<std::string::String>,
 }
 impl AdvertiseByoipCidrInput {
-    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-    /// You can't advertise only a portion of the provisioned range.</p>
+    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }

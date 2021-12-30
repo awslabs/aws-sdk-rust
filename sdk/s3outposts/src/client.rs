@@ -115,27 +115,15 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action creates an endpoint and associates it with the specified Outposts.</p>
-    /// <note>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action creates an endpoint and associates it with the specified Outposts.</p> <note>
     /// <p>It can take up to 5 minutes for this action to complete.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
@@ -203,14 +191,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outpost_id(input);
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
@@ -228,16 +214,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_id(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
             self.inner = self.inner.access_type(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -245,14 +227,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_type(input);
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.customer_owned_ipv4_pool(input.into());
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -263,27 +243,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action deletes an endpoint.</p>
-    /// <note>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action deletes an endpoint.</p> <note>
     /// <p>It can take up to 5 minutes for this action to complete.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
@@ -364,25 +332,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action lists endpoints associated with the Outposts.
-    /// </p>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action lists endpoints associated with the Outposts. </p>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpoints<

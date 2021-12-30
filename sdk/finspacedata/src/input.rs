@@ -27,34 +27,21 @@ pub mod create_changeset_input {
             self.client_token = input;
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
         pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_id = input;
             self
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
@@ -62,20 +49,9 @@ pub mod create_changeset_input {
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,
@@ -113,44 +89,15 @@ pub mod create_changeset_input {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -161,44 +108,15 @@ pub mod create_changeset_input {
             self.format_params = Some(hash_map);
             self
         }
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -407,14 +325,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -422,14 +334,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -1785,16 +1691,8 @@ pub mod get_working_location_input {
     impl Builder {
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
             self.location_type = Some(input);
@@ -1802,16 +1700,8 @@ pub mod get_working_location_input {
         }
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn set_location_type(
             mut self,
@@ -2826,14 +2716,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -2841,14 +2725,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -3056,14 +2934,8 @@ pub struct UpdateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description for the Dataset.</p>
@@ -3088,14 +2960,8 @@ impl UpdateDatasetInput {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -3288,32 +3154,16 @@ impl std::fmt::Debug for ListChangesetsInput {
 pub struct GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-    /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-    /// data content and then use the location with the Changeset creation operation.</p>
-    /// </li>
+    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub location_type: std::option::Option<crate::model::LocationType>,
 }
 impl GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-    /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-    /// data content and then use the location with the Changeset creation operation.</p>
-    /// </li>
+    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
         self.location_type.as_ref()
@@ -3535,14 +3385,8 @@ pub struct CreateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description of a Dataset.</p>
@@ -3567,14 +3411,8 @@ impl CreateDatasetInput {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -3623,68 +3461,27 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct CreateChangesetInput {
     /// <p>A token used to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-    /// </p>
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-    /// prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-    /// </p>
-    /// <p>
-    /// <code>formatType</code> is a required attribute and can have the following values:
-    /// </p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PARQUET</code> - Parquet source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CSV</code> - CSV source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - JSON source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XML</code> - XML source file format.</p>
-    /// </li>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    ///
-    /// For example, you could specify the following for <code>formatParams</code>:
-    ///
-    /// <code>
-    /// "formatParams":
-    /// {
-    /// "formatType": "CSV",
-    /// "withHeader": "true",
-    /// "separator": ",",
-    /// "compression":"None"
-    /// }
-    /// </code>
-    /// </p>
+    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3693,27 +3490,15 @@ impl CreateChangesetInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-    /// </p>
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-    /// prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
@@ -3725,44 +3510,15 @@ impl CreateChangesetInput {
     {
         self.source_params.as_ref()
     }
-    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-    /// </p>
-    /// <p>
-    /// <code>formatType</code> is a required attribute and can have the following values:
-    /// </p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PARQUET</code> - Parquet source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CSV</code> - CSV source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - JSON source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XML</code> - XML source file format.</p>
-    /// </li>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    ///
-    /// For example, you could specify the following for <code>formatParams</code>:
-    ///
-    /// <code>
-    /// "formatParams":
-    /// {
-    /// "formatType": "CSV",
-    /// "withHeader": "true",
-    /// "separator": ",",
-    /// "compression":"None"
-    /// }
-    /// </code>
-    /// </p>
+    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
     pub fn format_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

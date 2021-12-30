@@ -14,21 +14,15 @@ pub struct AttachManagedPolicyToPermissionSetError {
 pub enum AttachManagedPolicyToPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -206,21 +200,15 @@ pub struct CreateAccountAssignmentError {
 pub enum CreateAccountAssignmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -373,18 +361,13 @@ pub struct CreateInstanceAccessControlAttributeConfigurationError {
 pub enum CreateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -561,21 +544,15 @@ pub struct CreatePermissionSetError {
 pub enum CreatePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -726,18 +703,13 @@ pub struct DeleteAccountAssignmentError {
 pub enum DeleteAccountAssignmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -879,18 +851,13 @@ pub struct DeleteInlinePolicyFromPermissionSetError {
 pub enum DeleteInlinePolicyFromPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1059,18 +1026,13 @@ pub struct DeleteInstanceAccessControlAttributeConfigurationError {
 pub enum DeleteInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1247,18 +1209,13 @@ pub struct DeletePermissionSetError {
 pub enum DeletePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1400,13 +1357,11 @@ pub struct DescribeAccountAssignmentCreationStatusError {
 pub enum DescribeAccountAssignmentCreationStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1564,13 +1519,11 @@ pub struct DescribeAccountAssignmentDeletionStatusError {
 pub enum DescribeAccountAssignmentDeletionStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1728,13 +1681,11 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationError {
 pub enum DescribeInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1904,13 +1855,11 @@ pub struct DescribePermissionSetError {
 pub enum DescribePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2043,13 +1992,11 @@ pub struct DescribePermissionSetProvisioningStatusError {
 pub enum DescribePermissionSetProvisioningStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2207,18 +2154,13 @@ pub struct DetachManagedPolicyFromPermissionSetError {
 pub enum DetachManagedPolicyFromPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2389,13 +2331,11 @@ pub struct GetInlinePolicyForPermissionSetError {
 pub enum GetInlinePolicyForPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2541,13 +2481,11 @@ pub struct ListAccountAssignmentCreationStatusError {
 pub enum ListAccountAssignmentCreationStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2705,13 +2643,11 @@ pub struct ListAccountAssignmentDeletionStatusError {
 pub enum ListAccountAssignmentDeletionStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2869,13 +2805,11 @@ pub struct ListAccountAssignmentsError {
 pub enum ListAccountAssignmentsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3008,13 +2942,11 @@ pub struct ListAccountsForProvisionedPermissionSetError {
 pub enum ListAccountsForProvisionedPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3172,11 +3104,9 @@ pub struct ListInstancesError {
 pub enum ListInstancesErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3291,13 +3221,11 @@ pub struct ListManagedPoliciesInPermissionSetError {
 pub enum ListManagedPoliciesInPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3453,13 +3381,11 @@ pub struct ListPermissionSetProvisioningStatusError {
 pub enum ListPermissionSetProvisioningStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3617,13 +3543,11 @@ pub struct ListPermissionSetsError {
 pub enum ListPermissionSetsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3756,13 +3680,11 @@ pub struct ListPermissionSetsProvisionedToAccountError {
 pub enum ListPermissionSetsProvisionedToAccountErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3920,13 +3842,11 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4059,18 +3979,13 @@ pub struct ProvisionPermissionSetError {
 pub enum ProvisionPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4212,21 +4127,15 @@ pub struct PutInlinePolicyToPermissionSetError {
 pub enum PutInlinePolicyToPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4392,21 +4301,15 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4542,18 +4445,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4683,18 +4581,13 @@ pub struct UpdateInstanceAccessControlAttributeConfigurationError {
 pub enum UpdateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4871,18 +4764,13 @@ pub struct UpdatePermissionSetError {
 pub enum UpdatePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -5073,8 +4961,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Indicates that the principal has crossed the throttling limits of the API
-/// operations.</p>
+/// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -5202,8 +5089,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception, or failure with
-/// an internal server.</p>
+/// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -5267,10 +5153,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-/// when the previous write did not have time to propagate to the host serving the current
-/// request. A retry (with appropriate backoff logic) is the recommended response to this
-/// exception.</p>
+/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -5398,8 +5281,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Indicates that the principal has crossed the permitted number of resources that can be
-/// created.</p>
+/// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

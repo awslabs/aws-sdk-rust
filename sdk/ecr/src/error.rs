@@ -12,11 +12,9 @@ pub struct BatchCheckLayerAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCheckLayerAvailabilityErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -135,11 +133,9 @@ pub struct BatchDeleteImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteImageErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -249,11 +245,9 @@ pub struct BatchGetImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetImageErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -363,11 +357,9 @@ pub struct BatchGetRepositoryScanningConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetRepositoryScanningConfigurationErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -514,11 +506,9 @@ pub struct CompleteLayerUploadError {
 pub enum CompleteLayerUploadErrorKind {
     /// <p>The specified layer upload does not contain any layer parts.</p>
     EmptyUploadException(crate::error::EmptyUploadException),
-    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does
-    /// not match the digest specified.</p>
+    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
     InvalidLayerException(crate::error::InvalidLayerException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
@@ -526,13 +516,11 @@ pub enum CompleteLayerUploadErrorKind {
     LayerAlreadyExistsException(crate::error::LayerAlreadyExistsException),
     /// <p>Layer parts must be at least 5 MiB in size.</p>
     LayerPartTooSmallException(crate::error::LayerPartTooSmallException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -691,15 +679,11 @@ pub struct CreatePullThroughCacheRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePullThroughCacheRuleErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A pull through cache rule with these settings already exists for the private
-    /// registry.</p>
+    /// <p>A pull through cache rule with these settings already exists for the private registry.</p>
     PullThroughCacheRuleAlreadyExistsException(
         crate::error::PullThroughCacheRuleAlreadyExistsException,
     ),
@@ -853,24 +837,19 @@ pub struct CreateRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRepositoryErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified repository already exists in the specified registry.</p>
     RepositoryAlreadyExistsException(crate::error::RepositoryAlreadyExistsException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1011,14 +990,11 @@ pub struct DeleteLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLifecyclePolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The lifecycle policy could not be found, and no policy is set to the
-    /// repository.</p>
+    /// <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
     LifecyclePolicyNotFoundException(crate::error::LifecyclePolicyNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1144,11 +1120,9 @@ pub struct DeletePullThroughCacheRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePullThroughCacheRuleErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
-    /// try again.</p>
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and try again.</p>
     PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1276,8 +1250,7 @@ pub struct DeleteRegistryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRegistryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The registry doesn't have an associated registry policy.</p>
     RegistryPolicyNotFoundException(crate::error::RegistryPolicyNotFoundException),
@@ -1403,16 +1376,13 @@ pub struct DeleteRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
-    /// <p>The specified repository contains images. To delete a repository that contains images,
-    /// you must force the deletion with the <code>force</code> parameter.</p>
+    /// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
     RepositoryNotEmptyException(crate::error::RepositoryNotEmptyException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1537,14 +1507,11 @@ pub struct DeleteRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated
-    /// repository policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1672,11 +1639,9 @@ pub struct DescribeImageReplicationStatusError {
 pub enum DescribeImageReplicationStatusErrorKind {
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1824,11 +1789,9 @@ pub struct DescribeImagesError {
 pub enum DescribeImagesErrorKind {
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1949,14 +1912,11 @@ pub struct DescribeImageScanFindingsError {
 pub enum DescribeImageScanFindingsErrorKind {
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on
-    /// the repository and try again.</p>
+    /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on the repository and try again.</p>
     ScanNotFoundException(crate::error::ScanNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2100,11 +2060,9 @@ pub struct DescribePullThroughCacheRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePullThroughCacheRulesErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
-    /// try again.</p>
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and try again.</p>
     PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2239,8 +2197,7 @@ pub struct DescribeRegistryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRegistryErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2352,11 +2309,9 @@ pub struct DescribeRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRepositoriesErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2469,8 +2424,7 @@ pub struct GetAuthorizationTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizationTokenErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2574,17 +2528,13 @@ pub struct GetDownloadUrlForLayerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDownloadUrlForLayerErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified layer is not available because it is not associated with an image.
-    /// Unassociated image layers may be cleaned up at any time.</p>
+    /// <p>The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.</p>
     LayerInaccessibleException(crate::error::LayerInaccessibleException),
-    /// <p>The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.</p>
+    /// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
     LayersNotFoundException(crate::error::LayersNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2715,14 +2665,11 @@ pub struct GetLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLifecyclePolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The lifecycle policy could not be found, and no policy is set to the
-    /// repository.</p>
+    /// <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
     LifecyclePolicyNotFoundException(crate::error::LifecyclePolicyNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2841,13 +2788,11 @@ pub struct GetLifecyclePolicyPreviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLifecyclePolicyPreviewErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>There is no dry run for this repository.</p>
     LifecyclePolicyPreviewNotFoundException(crate::error::LifecyclePolicyPreviewNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2975,8 +2920,7 @@ pub struct GetRegistryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRegistryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The registry doesn't have an associated registry policy.</p>
     RegistryPolicyNotFoundException(crate::error::RegistryPolicyNotFoundException),
@@ -3099,8 +3043,7 @@ pub struct GetRegistryScanningConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRegistryScanningConfigurationErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3222,14 +3165,11 @@ pub struct GetRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated
-    /// repository policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3350,13 +3290,11 @@ pub struct InitiateLayerUploadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitiateLayerUploadErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3472,11 +3410,9 @@ pub struct ListImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImagesErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3586,11 +3522,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3700,31 +3634,23 @@ pub struct PutImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutImageErrorKind {
-    /// <p>The specified image has already been pushed, and there were no changes to the manifest
-    /// or image tag after the last push.</p>
+    /// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
     ImageAlreadyExistsException(crate::error::ImageAlreadyExistsException),
-    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-    /// image.</p>
+    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
     ImageDigestDoesNotMatchException(crate::error::ImageDigestDoesNotMatchException),
-    /// <p>The specified image is tagged with a tag that already exists. The repository is
-    /// configured for tag immutability.</p>
+    /// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
     ImageTagAlreadyExistsException(crate::error::ImageTagAlreadyExistsException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
-    /// <p>The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.</p>
+    /// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
     LayersNotFoundException(crate::error::LayersNotFoundException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The manifest list is referencing an image that does not exist.</p>
     ReferencedImagesNotFoundException(crate::error::ReferencedImagesNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3885,11 +3811,9 @@ pub struct PutImageScanningConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutImageScanningConfigurationErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4024,11 +3948,9 @@ pub struct PutImageTagMutabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutImageTagMutabilityErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4141,11 +4063,9 @@ pub struct PutLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecyclePolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4255,8 +4175,7 @@ pub struct PutRegistryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRegistryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4368,8 +4287,7 @@ pub struct PutRegistryScanningConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRegistryScanningConfigurationErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4491,8 +4409,7 @@ pub struct PutReplicationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutReplicationConfigurationErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4609,11 +4526,9 @@ pub struct SetRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4725,15 +4640,11 @@ pub struct StartImageScanError {
 pub enum StartImageScanErrorKind {
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4880,19 +4791,15 @@ pub struct StartLifecyclePolicyPreviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartLifecyclePolicyPreviewErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The lifecycle policy could not be found, and no policy is set to the
-    /// repository.</p>
+    /// <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
     LifecyclePolicyNotFoundException(crate::error::LifecyclePolicyNotFoundException),
-    /// <p>The previous lifecycle policy preview request has not completed. Wait and try
-    /// again.</p>
+    /// <p>The previous lifecycle policy preview request has not completed. Wait and try again.</p>
     LifecyclePolicyPreviewInProgressException(
         crate::error::LifecyclePolicyPreviewInProgressException,
     ),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -5037,19 +4944,15 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5172,19 +5075,15 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5307,25 +5206,19 @@ pub struct UploadLayerPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadLayerPartErrorKind {
-    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to
-    /// the last byte of a previous layer part upload.</p>
+    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
     InvalidLayerPartException(crate::error::InvalidLayerPartException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5453,8 +5346,7 @@ impl std::error::Error for UploadLayerPartError {
     }
 }
 
-/// <p>The upload could not be found, or the specified upload ID is not valid for this
-/// repository.</p>
+/// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadNotFoundException {
@@ -5582,8 +5474,7 @@ impl ServerException {
     }
 }
 
-/// <p>The specified repository could not be found. Check the spelling of the specified
-/// repository and ensure that you are performing operations on the correct registry.</p>
+/// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotFoundException {
@@ -5647,9 +5538,7 @@ impl RepositoryNotFoundException {
     }
 }
 
-/// <p>The operation did not succeed because it would have exceeded a service limit for your
-/// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-/// the Amazon Elastic Container Registry User Guide.</p>
+/// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -5798,8 +5687,7 @@ impl KmsException {
     }
 }
 
-/// <p>The specified parameter is invalid. Review the available parameters for the API
-/// request.</p>
+/// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -5863,8 +5751,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>The layer part size is not valid, or the first byte specified is not consecutive to
-/// the last byte of a previous layer part upload.</p>
+/// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerPartException {
@@ -5874,8 +5761,7 @@ pub struct InvalidLayerPartException {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the exception.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>The last valid byte received from the layer part upload that is associated with the
-    /// exception.</p>
+    /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
     pub last_valid_byte_received: std::option::Option<i64>,
     /// <p>The error message associated with the exception.</p>
     pub message: std::option::Option<std::string::String>,
@@ -5893,8 +5779,7 @@ impl InvalidLayerPartException {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>The last valid byte received from the layer part upload that is associated with the
-    /// exception.</p>
+    /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
     pub fn last_valid_byte_received(&self) -> std::option::Option<i64> {
         self.last_valid_byte_received
     }
@@ -5972,14 +5857,12 @@ pub mod invalid_layer_part_exception {
             self.upload_id = input;
             self
         }
-        /// <p>The last valid byte received from the layer part upload that is associated with the
-        /// exception.</p>
+        /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
         pub fn last_valid_byte_received(mut self, input: i64) -> Self {
             self.last_valid_byte_received = Some(input);
             self
         }
-        /// <p>The last valid byte received from the layer part upload that is associated with the
-        /// exception.</p>
+        /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
         pub fn set_last_valid_byte_received(mut self, input: std::option::Option<i64>) -> Self {
             self.last_valid_byte_received = input;
             self
@@ -6013,8 +5896,7 @@ impl InvalidLayerPartException {
     }
 }
 
-/// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-/// can be applied to a repository is 50.</p>
+/// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -6078,8 +5960,7 @@ impl TooManyTagsException {
     }
 }
 
-/// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have
-/// a maximum length of 256 characters.</p>
+/// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
@@ -6143,8 +6024,7 @@ impl InvalidTagParameterException {
     }
 }
 
-/// <p>The previous lifecycle policy preview request has not completed. Wait and try
-/// again.</p>
+/// <p>The previous lifecycle policy preview request has not completed. Wait and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewInProgressException {
@@ -6208,8 +6088,7 @@ impl LifecyclePolicyPreviewInProgressException {
     }
 }
 
-/// <p>The lifecycle policy could not be found, and no policy is set to the
-/// repository.</p>
+/// <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyNotFoundException {
@@ -6529,8 +6408,7 @@ impl ReferencedImagesNotFoundException {
     }
 }
 
-/// <p>The specified layers could not be found, or the specified layer is not valid for this
-/// repository.</p>
+/// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersNotFoundException {
@@ -6594,8 +6472,7 @@ impl LayersNotFoundException {
     }
 }
 
-/// <p>The specified image is tagged with a tag that already exists. The repository is
-/// configured for tag immutability.</p>
+/// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTagAlreadyExistsException {
@@ -6659,8 +6536,7 @@ impl ImageTagAlreadyExistsException {
     }
 }
 
-/// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-/// image.</p>
+/// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDigestDoesNotMatchException {
@@ -6724,8 +6600,7 @@ impl ImageDigestDoesNotMatchException {
     }
 }
 
-/// <p>The specified image has already been pushed, and there were no changes to the manifest
-/// or image tag after the last push.</p>
+/// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageAlreadyExistsException {
@@ -6789,8 +6664,7 @@ impl ImageAlreadyExistsException {
     }
 }
 
-/// <p>The specified repository and registry combination does not have an associated
-/// repository policy.</p>
+/// <p>The specified repository and registry combination does not have an associated repository policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryPolicyNotFoundException {
@@ -6982,8 +6856,7 @@ impl LifecyclePolicyPreviewNotFoundException {
     }
 }
 
-/// <p>The specified layer is not available because it is not associated with an image.
-/// Unassociated image layers may be cleaned up at any time.</p>
+/// <p>The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerInaccessibleException {
@@ -7047,8 +6920,7 @@ impl LayerInaccessibleException {
     }
 }
 
-/// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
-/// try again.</p>
+/// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullThroughCacheRuleNotFoundException {
@@ -7112,8 +6984,7 @@ impl PullThroughCacheRuleNotFoundException {
     }
 }
 
-/// <p>The specified image scan could not be found. Ensure that image scanning is enabled on
-/// the repository and try again.</p>
+/// <p>The specified image scan could not be found. Ensure that image scanning is enabled on the repository and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanNotFoundException {
@@ -7177,8 +7048,7 @@ impl ScanNotFoundException {
     }
 }
 
-/// <p>The specified repository contains images. To delete a repository that contains images,
-/// you must force the deletion with the <code>force</code> parameter.</p>
+/// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotEmptyException {
@@ -7370,8 +7240,7 @@ impl UnsupportedUpstreamRegistryException {
     }
 }
 
-/// <p>A pull through cache rule with these settings already exists for the private
-/// registry.</p>
+/// <p>A pull through cache rule with these settings already exists for the private registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullThroughCacheRuleAlreadyExistsException {
@@ -7563,8 +7432,7 @@ impl LayerAlreadyExistsException {
     }
 }
 
-/// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does
-/// not match the digest specified.</p>
+/// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerException {

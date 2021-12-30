@@ -12,10 +12,7 @@ pub struct BatchCreateTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCreateTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -23,17 +20,13 @@ pub enum BatchCreateTableRowsErrorKind {
     RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request caused service quota to be breached.
-    /// </p>
+    /// <p> The request caused service quota to be breached. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -189,10 +182,7 @@ pub struct BatchDeleteTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -204,9 +194,7 @@ pub enum BatchDeleteTableRowsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -353,10 +341,7 @@ pub struct BatchUpdateTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchUpdateTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -368,9 +353,7 @@ pub enum BatchUpdateTableRowsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -517,10 +500,7 @@ pub struct BatchUpsertTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchUpsertTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -528,17 +508,13 @@ pub enum BatchUpsertTableRowsErrorKind {
     RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request caused service quota to be breached.
-    /// </p>
+    /// <p> The request caused service quota to be breached. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -694,10 +670,7 @@ pub struct DescribeTableDataImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTableDataImportJobErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -707,9 +680,7 @@ pub enum DescribeTableDataImportJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -851,10 +822,7 @@ pub struct GetScreenDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetScreenDataErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -866,9 +834,7 @@ pub enum GetScreenDataErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1006,10 +972,7 @@ pub struct InvokeScreenAutomationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InvokeScreenAutomationErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The automation execution did not end successfully.</p>
     AutomationExecutionException(crate::error::AutomationExecutionException),
@@ -1025,9 +988,7 @@ pub enum InvokeScreenAutomationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1196,10 +1157,7 @@ pub struct ListTableColumnsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTableColumnsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1211,9 +1169,7 @@ pub enum ListTableColumnsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1360,10 +1316,7 @@ pub struct ListTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1375,9 +1328,7 @@ pub enum ListTableRowsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1515,10 +1466,7 @@ pub struct ListTablesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTablesErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1530,9 +1478,7 @@ pub enum ListTablesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1664,10 +1610,7 @@ pub struct QueryTableRowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum QueryTableRowsErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1679,9 +1622,7 @@ pub enum QueryTableRowsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1822,10 +1763,7 @@ pub struct StartTableDataImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartTableDataImportJobErrorKind {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1835,9 +1773,7 @@ pub enum StartTableDataImportJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1962,9 +1898,7 @@ impl std::error::Error for StartTableDataImportJobError {
     }
 }
 
-/// <p>
-/// Request is invalid. The message in the response contains details on why the request is invalid.
-/// </p>
+/// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -2284,10 +2218,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>
-/// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-/// IAM policy allows access to the resource in the request.
-/// </p>
+/// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -2543,9 +2474,7 @@ impl AutomationExecutionException {
     }
 }
 
-/// <p>
-/// The request caused service quota to be breached.
-/// </p>
+/// <p> The request caused service quota to be breached. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

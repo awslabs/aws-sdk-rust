@@ -489,8 +489,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBatchInferenceJob`.
     ///
-    /// <p>Creates a batch inference job. The operation can handle up to 50 million records and the
-    /// input file must be in JSON format. For more information, see <a>recommendations-batch</a>.</p>
+    /// <p>Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <code>recommendations-batch</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -557,14 +556,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -572,16 +569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_arn(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
             self
@@ -596,14 +589,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_num_results(input);
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn job_input(mut self, input: crate::model::BatchInferenceJobInput) -> Self {
             self.inner = self.inner.job_input(input);
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn set_job_input(
             mut self,
             input: std::option::Option<crate::model::BatchInferenceJobInput>,
@@ -624,14 +615,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_output(input);
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -655,8 +644,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBatchSegmentJob`.
     ///
-    /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the
-    /// input file must be in JSON format. For more information, see <a>recommendations-batch</a>.</p>
+    /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <code>recommendations-batch</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchSegmentJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -723,14 +711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -738,14 +724,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_arn(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
             self
@@ -786,14 +770,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_output(input);
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -801,76 +783,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCampaign`.
     ///
-    /// <p>Creates a campaign that deploys a solution version. When a client calls the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-    /// and
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
-    /// APIs, a campaign is specified in the request.</p>
-    ///
-    /// <p>
-    /// <b>Minimum Provisioned TPS and Auto-Scaling</b>
-    /// </p>
-    ///
-    /// <p>A transaction is a single <code>GetRecommendations</code> or
-    /// <code>GetPersonalizedRanking</code> call. Transactions per second (TPS) is the throughput
-    /// and unit of billing for Amazon Personalize. The minimum provisioned TPS
-    /// (<code>minProvisionedTPS</code>) specifies the baseline throughput provisioned by
-    /// Amazon Personalize, and thus, the minimum billing charge.
-    /// </p>
-    /// <p>
-    /// If your TPS increases beyond
-    /// <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned capacity up and down,
-    /// but never below <code>minProvisionedTPS</code>.
-    /// There's a short time delay while the capacity is increased that might cause loss of
-    /// transactions.</p>
-    /// <p>The actual TPS used is calculated as the average requests/second within a 5-minute window.
-    /// You pay for maximum of either the minimum provisioned TPS or the actual TPS.
-    /// We recommend starting with a low <code>minProvisionedTPS</code>, track
-    /// your usage using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
-    /// as necessary.</p>
-    ///
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p>Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a> APIs, a campaign is specified in the request.</p>
+    /// <p> <b>Minimum Provisioned TPS and Auto-Scaling</b> </p>
+    /// <p>A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call. Transactions per second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing charge. </p>
+    /// <p> If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>. There's a short time delay while the capacity is increased that might cause loss of transactions.</p>
+    /// <p>The actual TPS used is calculated as the average requests/second within a 5-minute window. You pay for maximum of either the minimum provisioned TPS or the actual TPS. We recommend starting with a low <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code> as necessary.</p>
+    /// <p> <b>Status</b> </p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the campaign status, call <a>DescribeCampaign</a>.</p>
-    /// <note>
-    /// <p>Wait until the <code>status</code> of the campaign
-    /// is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
+    /// <p>To get the campaign status, call <code>DescribeCampaign</code>.</p> <note>
+    /// <p>Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
     /// </note>
-    ///
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListCampaigns</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeCampaign</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>UpdateCampaign</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteCampaign</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListCampaigns</code> </p> </li>
+    /// <li> <p> <code>DescribeCampaign</code> </p> </li>
+    /// <li> <p> <code>UpdateCampaign</code> </p> </li>
+    /// <li> <p> <code>DeleteCampaign</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCampaign<
@@ -951,14 +883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.inner = self.inner.min_provisioned_tps(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_provisioned_tps(input);
             self
@@ -979,56 +909,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <a>CreateDatasetImportJob</a> to import your training data to a dataset.</p>
+    /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <code>CreateDatasetImportJob</code> to import your training data to a dataset.</p>
     /// <p>There are three types of datasets:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
-    /// <p>Each dataset type has an associated schema with required field types. Only the
-    /// <code>Interactions</code> dataset is required in order to train a model (also referred to as
-    /// creating a solution).</p>
+    /// <p>Each dataset type has an associated schema with required field types. Only the <code>Interactions</code> dataset is required in order to train a model (also referred to as creating a solution).</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the dataset, call <a>DescribeDataset</a>.</p>
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p>To get the status of the dataset, call <code>DescribeDataset</code>.</p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>CreateDatasetGroup</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>ListDatasets</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeDataset</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteDataset</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateDatasetGroup</code> </p> </li>
+    /// <li> <p> <code>ListDatasets</code> </p> </li>
+    /// <li> <p> <code>DescribeDataset</code> </p> </li>
+    /// <li> <p> <code>DeleteDataset</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
@@ -1096,14 +996,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -1124,15 +1022,9 @@ pub mod fluent_builders {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dataset_type(input.into());
@@ -1141,15 +1033,9 @@ pub mod fluent_builders {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
@@ -1158,28 +1044,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetExportJob`.
     ///
-    /// <p>
-    /// Creates a job that exports data from your dataset to an Amazon S3 bucket.
-    /// To allow Amazon Personalize to export the training data, you must specify an
-    /// service-linked IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket.
-    /// For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting a dataset</a>
-    /// in the Amazon Personalize developer guide.
-    /// </p>
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export the training data, you must specify an service-linked IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting a dataset</a> in the Amazon Personalize developer guide. </p>
+    /// <p> <b>Status</b> </p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    /// <p>
-    /// To get the status of the export job, call <a>DescribeDatasetExportJob</a>,
-    /// and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is
-    /// complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed.
-    /// </p>
+    /// <p> To get the status of the export job, call <code>DescribeDatasetExportJob</code>, and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1256,18 +1127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_arn(input);
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn ingestion_mode(mut self, input: crate::model::IngestionMode) -> Self {
             self.inner = self.inner.ingestion_mode(input);
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn set_ingestion_mode(
             mut self,
             input: std::option::Option<crate::model::IngestionMode>,
@@ -1275,14 +1140,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ingestion_mode(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1303,84 +1166,33 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetGroup`.
     ///
-    /// <p>Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources.
-    /// A dataset group can contain at most three datasets, one for each type of
-    /// dataset:</p>
+    /// <p>Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources. A dataset group can contain at most three datasets, one for each type of dataset:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
-    /// <p>
-    /// A dataset group can be a Domain dataset group, where you specify a domain and use
-    /// pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that
-    /// you deploy with a campaign.  If you start with a Domain dataset group, you can still add custom resources such as
-    /// solutions and solution versions trained with recipes for custom use cases and deployed with campaigns.
-    /// </p>
+    /// <p> A dataset group can be a Domain dataset group, where you specify a domain and use pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that you deploy with a campaign. If you start with a Domain dataset group, you can still add custom resources such as solutions and solution versions trained with recipes for custom use cases and deployed with campaigns. </p>
     /// <p>A dataset group can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
-    /// <p>To get the status of the dataset group, call <a>DescribeDatasetGroup</a>. If
-    /// the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key,
-    /// which describes why the creation failed.</p>
-    /// <note>
-    /// <p>You must wait until the <code>status</code> of the dataset group is <code>ACTIVE</code>
-    /// before adding a dataset to the group.</p>
+    /// <p>To get the status of the dataset group, call <code>DescribeDatasetGroup</code>. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the creation failed.</p> <note>
+    /// <p>You must wait until the <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a dataset to the group.</p>
     /// </note>
-    /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group. If you
-    /// specify a KMS key, you must also include an Identity and Access Management (IAM) role that has permission to
-    /// access the key.</p>
-    /// <p class="title">
-    /// <b>APIs that require a dataset group ARN in the request</b>
-    /// </p>
+    /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you must also include an Identity and Access Management (IAM) role that has permission to access the key.</p>
+    /// <p class="title"> <b>APIs that require a dataset group ARN in the request</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>CreateDataset</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>CreateEventTracker</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>CreateSolution</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateDataset</code> </p> </li>
+    /// <li> <p> <code>CreateEventTracker</code> </p> </li>
+    /// <li> <p> <code>CreateSolution</code> </p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListDatasetGroups</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeDatasetGroup</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteDatasetGroup</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListDatasetGroups</code> </p> </li>
+    /// <li> <p> <code>DescribeDatasetGroup</code> </p> </li>
+    /// <li> <p> <code>DeleteDatasetGroup</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup<
@@ -1448,14 +1260,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1470,18 +1280,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -1489,47 +1293,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetImportJob`.
     ///
-    /// <p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an
-    /// Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an
-    /// IAM service role that has permission to read from the data source, as Amazon Personalize makes a
-    /// copy of your data and processes it internally. For information on granting access
-    /// to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon Personalize
-    /// Access to Amazon S3 Resources</a>. </p>
-    /// <important>
+    /// <p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an IAM service role that has permission to read from the data source, as Amazon Personalize makes a copy of your data and processes it internally. For information on granting access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon Personalize Access to Amazon S3 Resources</a>. </p> <important>
     /// <p>The dataset import job replaces any existing data in the dataset that you imported in bulk.</p>
     /// </important>
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p> <b>Status</b> </p>
     /// <p>A dataset import job can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    /// <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
-    /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is
-    /// complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed.</p>
-    /// <note>
-    /// <p>Importing takes time. You must wait until the status shows as ACTIVE before training a
-    /// model using the dataset.</p>
+    /// <p>To get the status of the import job, call <code>DescribeDatasetImportJob</code>, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <note>
+    /// <p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.</p>
     /// </note>
-    ///
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListDatasetImportJobs</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeDatasetImportJob</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListDatasetImportJobs</code> </p> </li>
+    /// <li> <p> <code>DescribeDatasetImportJob</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob<
@@ -1633,51 +1411,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEventTracker`.
     ///
-    /// <p>Creates an event tracker that you use when adding event data to a specified dataset
-    /// group using the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    /// <note>
-    /// <p>Only one event tracker can be associated with a dataset group. You will get
-    /// an error if you call <code>CreateEventTracker</code> using the same dataset group as an
-    /// existing event tracker.</p>
+    /// <p>Creates an event tracker that you use when adding event data to a specified dataset group using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p> <note>
+    /// <p>Only one event tracker can be associated with a dataset group. You will get an error if you call <code>CreateEventTracker</code> using the same dataset group as an existing event tracker.</p>
     /// </note>
-    /// <p>When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> operation.
-    /// Amazon Personalize then appends the event data to the Interactions dataset of the dataset group you specify
-    /// in your event tracker.
-    /// </p>
+    /// <p>When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> operation. Amazon Personalize then appends the event data to the Interactions dataset of the dataset group you specify in your event tracker. </p>
     /// <p>The event tracker can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the event tracker, call <a>DescribeEventTracker</a>.</p>
-    /// <note>
+    /// <p>To get the status of the event tracker, call <code>DescribeEventTracker</code>.</p> <note>
     /// <p>The event tracker must be in the ACTIVE state before using the tracking ID.</p>
     /// </note>
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListEventTrackers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeEventTracker</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteEventTracker</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListEventTrackers</code> </p> </li>
+    /// <li> <p> <code>DescribeEventTracker</code> </p> </li>
+    /// <li> <p> <code>DeleteEventTracker</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventTracker<
@@ -1761,7 +1511,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
-    /// <p>Creates a recommendation filter. For more information, see <a>filter</a>.</p>
+    /// <p>Creates a recommendation filter. For more information, see <code>filter</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
@@ -1841,16 +1591,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_expression(input.into());
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1861,55 +1607,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRecommender`.
     ///
-    /// <p>Creates a recommender with the recipe (a Domain dataset group use case) you specify.
-    /// You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-    /// request.
-    /// </p>
-    ///
-    ///
-    ///
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p>Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. </p>
+    /// <p> <b>Status</b> </p>
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the recommender status, call <a>DescribeRecommender</a>.</p>
-    /// <note>
-    /// <p>Wait until the <code>status</code> of the recommender
-    /// is <code>ACTIVE</code> before asking the recommender for recommendations.</p>
+    /// <p>To get the recommender status, call <code>DescribeRecommender</code>.</p> <note>
+    /// <p>Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before asking the recommender for recommendations.</p>
     /// </note>
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListRecommenders</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeRecommender</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>UpdateRecommender</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteRecommender</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListRecommenders</code> </p> </li>
+    /// <li> <p> <code>DescribeRecommender</code> </p> </li>
+    /// <li> <p> <code>UpdateRecommender</code> </p> </li>
+    /// <li> <p> <code>DeleteRecommender</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommender<
@@ -1990,16 +1703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_recipe_arn(input);
             self
@@ -2020,32 +1729,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
-    /// <p>Creates an Amazon Personalize schema from the specified schema string. The schema you create
-    /// must be in Avro JSON format.</p>
-    /// <p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset
-    /// type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you
-    /// provide the domain of the Domain dataset group.
-    /// You specify a schema when you call <a>CreateDataset</a>.</p>
-    ///
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p>Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON format.</p>
+    /// <p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you provide the domain of the Domain dataset group. You specify a schema when you call <code>CreateDataset</code>.</p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListSchemas</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeSchema</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteSchema</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListSchemas</code> </p> </li>
+    /// <li> <p> <code>DescribeSchema</code> </p> </li>
+    /// <li> <p> <code>DeleteSchema</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
@@ -2123,14 +1813,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema(input);
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -2138,78 +1826,28 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSolution`.
     ///
-    /// <p>Creates the configuration for training a model. A trained model is known as
-    /// a solution. After the configuration is created, you train the model (create a solution)
-    /// by calling the <a>CreateSolutionVersion</a> operation. Every time you call
-    /// <code>CreateSolutionVersion</code>, a new version of the solution is created.</p>
-    /// <p>After creating a solution version, you check its accuracy by calling
-    /// <a>GetSolutionMetrics</a>. When you are satisfied with the version, you
-    /// deploy it using <a>CreateCampaign</a>. The campaign provides recommendations
-    /// to a client through the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
-    /// <p>To train a model, Amazon Personalize requires training data and a recipe. The training data
-    /// comes from the dataset group that you provide in the request. A recipe specifies
-    /// the training algorithm and a feature transformation. You can specify one of the predefined
-    /// recipes provided by Amazon Personalize. Alternatively, you can specify
-    /// <code>performAutoML</code> and Amazon Personalize will analyze your data and select the
-    /// optimum USER_PERSONALIZATION recipe for you.</p>
-    /// <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-    /// for solution hyperparameter optimization at this time.</p>
+    /// <p>Creates the configuration for training a model. A trained model is known as a solution. After the configuration is created, you train the model (create a solution) by calling the <code>CreateSolutionVersion</code> operation. Every time you call <code>CreateSolutionVersion</code>, a new version of the solution is created.</p>
+    /// <p>After creating a solution version, you check its accuracy by calling <code>GetSolutionMetrics</code>. When you are satisfied with the version, you deploy it using <code>CreateCampaign</code>. The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
+    /// <p>To train a model, Amazon Personalize requires training data and a recipe. The training data comes from the dataset group that you provide in the request. A recipe specifies the training algorithm and a feature transformation. You can specify one of the predefined recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION recipe for you.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution hyperparameter optimization at this time.</p>
     /// </note>
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p> <b>Status</b> </p>
     /// <p>A solution can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>To get the status of the solution, call <a>DescribeSolution</a>. Wait
-    /// until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.</p>
-    ///
-    ///
-    ///
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p>To get the status of the solution, call <code>DescribeSolution</code>. Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.</p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListSolutions</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>CreateSolutionVersion</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeSolution</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteSolution</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListSolutions</code> </p> </li>
+    /// <li> <p> <code>CreateSolutionVersion</code> </p> </li>
+    /// <li> <p> <code>DescribeSolution</code> </p> </li>
+    /// <li> <p> <code>DeleteSolution</code> </p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListSolutionVersions</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeSolutionVersion</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListSolutionVersions</code> </p> </li>
+    /// <li> <p> <code>DescribeSolutionVersion</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolution<
@@ -2277,52 +1915,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn perform_hpo(mut self, input: bool) -> Self {
             self.inner = self.inner.perform_hpo(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_hpo(input);
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
             self.inner = self.inner.perform_auto_ml(input);
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_auto_ml(input);
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_arn(input.into());
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_recipe_arn(input);
             self
@@ -2340,41 +1962,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_type(input.into());
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn solution_config(mut self, input: crate::model::SolutionConfig) -> Self {
             self.inner = self.inner.solution_config(input);
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn set_solution_config(
             mut self,
@@ -2386,73 +1994,29 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSolutionVersion`.
     ///
-    /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-    /// <code>CreateSolutionVersion</code>. A new version of the solution is created every time you
-    /// call this operation.</p>
-    /// <p>
-    /// <b>Status</b>
-    /// </p>
+    /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <code>CreateSolution</code> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p>
+    /// <p> <b>Status</b> </p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE IN_PROGRESS</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE STOPPING</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE STOPPED</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING</p> </li>
+    /// <li> <p>CREATE IN_PROGRESS</p> </li>
+    /// <li> <p>ACTIVE</p> </li>
+    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li> <p>CREATE STOPPING</p> </li>
+    /// <li> <p>CREATE STOPPED</p> </li>
     /// </ul>
-    /// <p>To get the status of the version, call <a>DescribeSolutionVersion</a>. Wait
-    /// until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
-    /// <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
-    /// key, which describes why the job failed.</p>
-    /// <p class="title">
-    /// <b>Related APIs</b>
-    /// </p>
+    /// <p>To get the status of the version, call <code>DescribeSolutionVersion</code>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
+    /// <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p>
+    /// <p class="title"> <b>Related APIs</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListSolutionVersions</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeSolutionVersion</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListSolutionVersions</code> </p> </li>
+    /// <li> <p> <code>DescribeSolutionVersion</code> </p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ListSolutions</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>CreateSolution</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DescribeSolution</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>DeleteSolution</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ListSolutions</code> </p> </li>
+    /// <li> <p> <code>CreateSolution</code> </p> </li>
+    /// <li> <p> <code>DescribeSolution</code> </p> </li>
+    /// <li> <p> <code>DeleteSolution</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolutionVersion<
@@ -2510,47 +2074,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_solution_arn(input);
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn training_mode(mut self, input: crate::model::TrainingMode) -> Self {
             self.inner = self.inner.training_mode(input);
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn set_training_mode(
             mut self,
@@ -2562,12 +2104,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCampaign`.
     ///
-    /// <p>Removes a campaign by deleting the solution deployment. The solution that
-    /// the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no
-    /// longer be specified in a
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-    /// request.
-    /// For more information on campaigns, see <a>CreateCampaign</a>.</p>
+    /// <p>Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. For more information on campaigns, see <code>CreateCampaign</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCampaign<
         C = aws_smithy_client::erase::DynConnector,
@@ -2637,9 +2174,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
-    /// <p>Deletes a dataset. You can't delete a dataset if an associated
-    /// <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN
-    /// PROGRESS state. For more information on datasets, see <a>CreateDataset</a>.</p>
+    /// <p>Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code>CreateDataset</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -2709,18 +2244,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatasetGroup`.
     ///
-    /// <p>Deletes a dataset group. Before you delete a dataset group, you must delete the
-    /// following:</p>
+    /// <p>Deletes a dataset group. Before you delete a dataset group, you must delete the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>All associated event trackers.</p>
-    /// </li>
-    /// <li>
-    /// <p>All associated solutions.</p>
-    /// </li>
-    /// <li>
-    /// <p>All datasets in the dataset group.</p>
-    /// </li>
+    /// <li> <p>All associated event trackers.</p> </li>
+    /// <li> <p>All associated solutions.</p> </li>
+    /// <li> <p>All datasets in the dataset group.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetGroup<
@@ -2794,9 +2322,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventTracker`.
     ///
-    /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from
-    /// the associated dataset group. For more
-    /// information on event trackers, see <a>CreateEventTracker</a>.</p>
+    /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventTracker<
         C = aws_smithy_client::erase::DynConnector,
@@ -2939,8 +2465,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRecommender`.
     ///
-    /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-    /// request.</p>
+    /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommender<
         C = aws_smithy_client::erase::DynConnector,
@@ -3013,9 +2538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
-    /// <p>Deletes a schema. Before deleting a schema, you must delete all
-    /// datasets referencing the schema. For more information on schemas, see
-    /// <a>CreateSchema</a>.</p>
+    /// <p>Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see <code>CreateSchema</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
@@ -3085,13 +2608,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSolution`.
     ///
-    /// <p>Deletes all versions of a solution and the <code>Solution</code> object itself.
-    /// Before deleting a solution, you must delete all campaigns based on
-    /// the solution. To determine what campaigns are using the solution, call
-    /// <a>ListCampaigns</a> and supply the Amazon Resource Name (ARN) of the solution.
-    /// You can't delete a solution if an associated <code>SolutionVersion</code> is in the
-    /// CREATE PENDING or IN PROGRESS state.
-    /// For more information on solutions, see <a>CreateSolution</a>.</p>
+    /// <p>Deletes all versions of a solution and the <code>Solution</code> object itself. Before deleting a solution, you must delete all campaigns based on the solution. To determine what campaigns are using the solution, call <code>ListCampaigns</code> and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on solutions, see <code>CreateSolution</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSolution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3234,9 +2751,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBatchInferenceJob`.
     ///
-    /// <p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN),
-    /// status, input and output configurations, and the ARN of the solution version used to generate
-    /// the recommendations.</p>
+    /// <p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate the recommendations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3309,9 +2824,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBatchSegmentJob`.
     ///
-    /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
-    /// status, input and output configurations, and the ARN of the solution version used to generate
-    /// segments.</p>
+    /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate segments.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchSegmentJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3387,16 +2900,11 @@ pub mod fluent_builders {
     /// <p>Describes the given campaign, including its status.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the
-    /// <code>failureReason</code> key, which describes why.</p>
-    /// <p>For more information on campaigns, see <a>CreateCampaign</a>.</p>
+    /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code> key, which describes why.</p>
+    /// <p>For more information on campaigns, see <code>CreateCampaign</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCampaign<
         C = aws_smithy_client::erase::DynConnector,
@@ -3466,7 +2974,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
-    /// <p>Describes the given dataset. For more information on datasets, see <a>CreateDataset</a>.</p>
+    /// <p>Describes the given dataset. For more information on datasets, see <code>CreateDataset</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -3536,8 +3044,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetExportJob`.
     ///
-    /// <p>Describes the dataset export job created by <a>CreateDatasetExportJob</a>,
-    /// including the export job status.</p>
+    /// <p>Describes the dataset export job created by <code>CreateDatasetExportJob</code>, including the export job status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3610,7 +3117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetGroup`.
     ///
-    /// <p>Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.</p>
+    /// <p>Describes the given dataset group. For more information on dataset groups, see <code>CreateDatasetGroup</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -3683,8 +3190,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetImportJob`.
     ///
-    /// <p>Describes the dataset import job created by <a>CreateDatasetImportJob</a>,
-    /// including the import job status.</p>
+    /// <p>Describes the dataset import job created by <code>CreateDatasetImportJob</code>, including the import job status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3757,9 +3263,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventTracker`.
     ///
-    /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and
-    /// <code>status</code> of the event tracker.
-    /// For more information on event trackers, see <a>CreateEventTracker</a>.</p>
+    /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and <code>status</code> of the event tracker. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventTracker<
         C = aws_smithy_client::erase::DynConnector,
@@ -3978,22 +3482,11 @@ pub mod fluent_builders {
     /// <p>Describes a recipe.</p>
     /// <p>A recipe contains three items:</p>
     /// <ul>
-    /// <li>
-    /// <p>An algorithm that trains a model.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyperparameters that govern the training.</p>
-    /// </li>
-    /// <li>
-    /// <p>Feature transformation information for modifying the input data before training.</p>
-    /// </li>
+    /// <li> <p>An algorithm that trains a model.</p> </li>
+    /// <li> <p>Hyperparameters that govern the training.</p> </li>
+    /// <li> <p>Feature transformation information for modifying the input data before training.</p> </li>
     /// </ul>
-    /// <p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a
-    /// solution with the <a>CreateSolution</a> API.
-    /// <code>CreateSolution</code> trains a model by using the algorithm
-    /// in the specified recipe and a training dataset. The solution, when deployed as a campaign,
-    /// can provide recommendations using the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
+    /// <p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a solution with the <code>CreateSolution</code> API. <code>CreateSolution</code> trains a model by using the algorithm in the specified recipe and a training dataset. The solution, when deployed as a campaign, can provide recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
@@ -4066,15 +3559,10 @@ pub mod fluent_builders {
     /// <p>Describes the given recommender, including its status.</p>
     /// <p>A recommender can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
-    /// </li>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the
-    /// <code>failureReason</code> key, which describes why.</p>
+    /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the <code>failureReason</code> key, which describes why.</p>
     /// <p>For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecommender<
@@ -4148,8 +3636,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSchema`.
     ///
-    /// <p>Describes a schema. For more information on schemas, see
-    /// <a>CreateSchema</a>.</p>
+    /// <p>Describes a schema. For more information on schemas, see <code>CreateSchema</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchema<
         C = aws_smithy_client::erase::DynConnector,
@@ -4219,8 +3706,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSolution`.
     ///
-    /// <p>Describes a solution.
-    /// For more information on solutions, see <a>CreateSolution</a>.</p>
+    /// <p>Describes a solution. For more information on solutions, see <code>CreateSolution</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolution<
         C = aws_smithy_client::erase::DynConnector,
@@ -4290,7 +3776,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSolutionVersion`.
     ///
-    /// <p>Describes a specific version of a solution. For more information on solutions, see <a>CreateSolution</a>.</p>
+    /// <p>Describes a specific version of a solution. For more information on solutions, see <code>CreateSolution</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolutionVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -4436,8 +3922,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBatchInferenceJobs`.
     ///
-    /// <p>Gets a list of the batch inference jobs that have been performed off of a solution
-    /// version.</p>
+    /// <p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBatchInferenceJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4494,14 +3979,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4519,14 +4002,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4534,8 +4015,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBatchSegmentJobs`.
     ///
-    /// <p>Gets a list of the batch segment jobs that have been performed off of a solution
-    /// version that you specify.</p>
+    /// <p>Gets a list of the batch segment jobs that have been performed off of a solution version that you specify.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBatchSegmentJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4615,14 +4095,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4630,10 +4108,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCampaigns`.
     ///
-    /// <p>Returns a list of campaigns that use the given solution.
-    /// When a solution is not specified, all the campaigns associated with the account are listed.
-    /// The response provides the properties for each campaign, including the Amazon Resource Name (ARN).
-    /// For more information on campaigns, see <a>CreateCampaign</a>.</p>
+    /// <p>Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see <code>CreateCampaign</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCampaigns<
         C = aws_smithy_client::erase::DynConnector,
@@ -4690,26 +4165,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.solution_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_solution_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4727,11 +4198,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetExportJobs`.
     ///
-    /// <p>Returns a list of dataset export jobs that use the given dataset. When a dataset is not
-    /// specified, all the dataset export jobs associated with the account are listed. The response
-    /// provides the properties for each dataset export job, including the Amazon Resource Name (ARN).
-    /// For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>. For
-    /// more information on datasets, see <a>CreateDataset</a>.</p>
+    /// <p>Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see <code>CreateDatasetExportJob</code>. For more information on datasets, see <code>CreateDataset</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetExportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4798,14 +4265,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4823,9 +4288,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetGroups`.
     ///
-    /// <p>Returns a list of dataset groups. The response provides the properties for each dataset
-    /// group, including the Amazon Resource Name (ARN). For more information on dataset groups, see
-    /// <a>CreateDatasetGroup</a>.</p>
+    /// <p>Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see <code>CreateDatasetGroup</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -4882,14 +4345,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4907,11 +4368,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetImportJobs`.
     ///
-    /// <p>Returns a list of dataset import jobs that use the given dataset. When a dataset is not
-    /// specified, all the dataset import jobs associated with the account are listed. The response
-    /// provides the properties for each dataset import job, including the Amazon Resource Name (ARN).
-    /// For more information on dataset import jobs, see <a>CreateDatasetImportJob</a>. For
-    /// more information on datasets, see <a>CreateDataset</a>.</p>
+    /// <p>Returns a list of dataset import jobs that use the given dataset. When a dataset is not specified, all the dataset import jobs associated with the account are listed. The response provides the properties for each dataset import job, including the Amazon Resource Name (ARN). For more information on dataset import jobs, see <code>CreateDatasetImportJob</code>. For more information on datasets, see <code>CreateDataset</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4978,14 +4435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5003,9 +4458,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
-    /// <p>Returns the list of datasets contained in the given dataset group. The response provides
-    /// the properties for each dataset, including the Amazon Resource Name (ARN). For more
-    /// information on datasets, see <a>CreateDataset</a>.</p>
+    /// <p>Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see <code>CreateDataset</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
@@ -5062,14 +4515,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5077,14 +4528,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5102,10 +4551,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEventTrackers`.
     ///
-    /// <p>Returns the list of event trackers associated with the account.
-    /// The response provides the properties for each event tracker, including the Amazon Resource
-    /// Name (ARN) and tracking ID. For more
-    /// information on event trackers, see <a>CreateEventTracker</a>.</p>
+    /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <code>CreateEventTracker</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventTrackers<
         C = aws_smithy_client::erase::DynConnector,
@@ -5175,14 +4621,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5270,14 +4714,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5295,8 +4737,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecipes`.
     ///
-    /// <p>Returns a list of available recipes. The response provides the properties
-    /// for each recipe, including the recipe's Amazon Resource Name (ARN).</p>
+    /// <p>Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's Amazon Resource Name (ARN).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipes<
         C = aws_smithy_client::erase::DynConnector,
@@ -5366,14 +4807,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_provider(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5388,18 +4827,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.inner = self.inner.domain(input);
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -5407,10 +4840,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecommenders`.
     ///
-    /// <p>Returns a list of recommenders in a given Domain dataset group.
-    /// When a Domain dataset group is not specified, all the recommenders associated with the account are listed.
-    /// The response provides the properties for each recommender, including the Amazon Resource Name (ARN).
-    /// For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
+    /// <p>Returns a list of recommenders in a given Domain dataset group. When a Domain dataset group is not specified, all the recommenders associated with the account are listed. The response provides the properties for each recommender, including the Amazon Resource Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommenders<
         C = aws_smithy_client::erase::DynConnector,
@@ -5467,14 +4897,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5482,14 +4910,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5507,9 +4933,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
-    /// <p>Returns the list of schemas associated with the account. The response provides the
-    /// properties for each schema, including the Amazon Resource Name (ARN).
-    /// For more information on schemas, see <a>CreateSchema</a>.</p>
+    /// <p>Returns the list of schemas associated with the account. The response provides the properties for each schema, including the Amazon Resource Name (ARN). For more information on schemas, see <code>CreateSchema</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
@@ -5566,14 +4990,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5591,10 +5013,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSolutions`.
     ///
-    /// <p>Returns a list of solutions that use the given dataset group.
-    /// When a dataset group is not specified, all the solutions associated with the account are listed.
-    /// The response provides the properties for each solution, including the Amazon Resource Name (ARN).
-    /// For more information on solutions, see <a>CreateSolution</a>.</p>
+    /// <p>Returns a list of solutions that use the given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see <code>CreateSolution</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5664,14 +5083,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5689,10 +5106,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSolutionVersions`.
     ///
-    /// <p>Returns a list of solution versions for the given solution. When a solution is not
-    /// specified, all the solution versions associated with the account are listed. The response
-    /// provides the properties for each solution version, including the Amazon Resource Name (ARN).
-    /// For more information on solutions, see <a>CreateSolution</a>.</p>
+    /// <p>Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN). For more information on solutions, see <code>CreateSolution</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutionVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5759,14 +5173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_arn(input);
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5784,20 +5196,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopSolutionVersionCreation`.
     ///
-    /// <p>Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
-    /// </p>
+    /// <p>Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS. </p>
     /// <p>Depending on the current state of the solution version, the solution version state changes as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATE_PENDING > CREATE_STOPPED</p>
-    /// <p>or</p>
-    /// </li>
-    /// <li>
-    /// <p>CREATE_IN_PROGRESS > CREATE_STOPPING > CREATE_STOPPED</p>
-    /// </li>
+    /// <li> <p>CREATE_PENDING &gt; CREATE_STOPPED</p> <p>or</p> </li>
+    /// <li> <p>CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED</p> </li>
     /// </ul>
-    /// <p>You are billed for all of the training completed up
-    /// until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped.</p>
+    /// <p>You are billed for all of the training completed up until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopSolutionVersionCreation<
         C = aws_smithy_client::erase::DynConnector,
@@ -5870,15 +5275,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCampaign`.
     ///
-    /// <p>Updates a campaign by either deploying a new solution or changing the value of the
-    /// campaign's <code>minProvisionedTPS</code> parameter.</p>
-    /// <p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED.
-    /// Check the campaign status using the <a>DescribeCampaign</a> API.</p>
-    /// <note>
-    /// <p>You must wait until the <code>status</code> of the
-    /// updated campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
+    /// <p>Updates a campaign by either deploying a new solution or changing the value of the campaign's <code>minProvisionedTPS</code> parameter.</p>
+    /// <p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the <code>DescribeCampaign</code> API.</p> <note>
+    /// <p>You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
     /// </note>
-    /// <p>For more information on campaigns, see <a>CreateCampaign</a>.</p>
+    /// <p>For more information on campaigns, see <code>CreateCampaign</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCampaign<
         C = aws_smithy_client::erase::DynConnector,
@@ -5958,14 +5359,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_solution_version_arn(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.inner = self.inner.min_provisioned_tps(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_provisioned_tps(input);
             self

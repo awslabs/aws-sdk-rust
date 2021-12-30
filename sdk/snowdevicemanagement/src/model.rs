@@ -9,8 +9,7 @@ pub struct TaskSummary {
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The state of the task assigned to one or many devices.</p>
     pub state: std::option::Option<crate::model::TaskState>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -27,8 +26,7 @@ impl TaskSummary {
     pub fn state(&self) -> std::option::Option<&crate::model::TaskState> {
         self.state.as_ref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -94,8 +92,7 @@ pub mod task_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -106,8 +103,7 @@ pub mod task_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -676,16 +672,13 @@ impl InstanceSummary {
     }
 }
 
-/// <p>The description of an
-/// instance.
-/// Currently, Amazon EC2 instances are the only supported instance type.</p>
+/// <p>The description of an instance. Currently, Amazon EC2 instances are the only supported instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
-    /// the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
     pub ami_launch_index: std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -716,8 +709,7 @@ impl Instance {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
-    /// the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
     pub fn ami_launch_index(&self) -> std::option::Option<i32> {
         self.ami_launch_index
     }
@@ -820,14 +812,12 @@ pub mod instance {
             self.image_id = input;
             self
         }
-        /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
-        /// the launch group. </p>
+        /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
         pub fn ami_launch_index(mut self, input: i32) -> Self {
             self.ami_launch_index = Some(input);
             self
         }
-        /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
-        /// the launch group. </p>
+        /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
         pub fn set_ami_launch_index(mut self, input: std::option::Option<i32>) -> Self {
             self.ami_launch_index = input;
             self
@@ -1166,8 +1156,7 @@ impl SecurityGroupIdentifier {
 pub struct InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
     pub device_name: std::option::Option<std::string::String>,
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
-    /// volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
     pub ebs: std::option::Option<crate::model::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {
@@ -1175,8 +1164,7 @@ impl InstanceBlockDeviceMapping {
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
-    /// volumes when the instance is launched. </p>
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
     pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDevice> {
         self.ebs.as_ref()
     }
@@ -1209,14 +1197,12 @@ pub mod instance_block_device_mapping {
             self.device_name = input;
             self
         }
-        /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
-        /// volumes when the instance is launched. </p>
+        /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
         pub fn ebs(mut self, input: crate::model::EbsInstanceBlockDevice) -> Self {
             self.ebs = Some(input);
             self
         }
-        /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
-        /// volumes when the instance is launched. </p>
+        /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
         pub fn set_ebs(
             mut self,
             input: std::option::Option<crate::model::EbsInstanceBlockDevice>,
@@ -1240,8 +1226,7 @@ impl InstanceBlockDeviceMapping {
     }
 }
 
-/// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume
-/// in a block device mapping.</p>
+/// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume in a block device mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsInstanceBlockDevice {
@@ -1426,102 +1411,40 @@ impl AsRef<str> for AttachmentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceState {
     /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
-    /// between 256 and 65,535. These numerical values are used for internal purposes and should be
-    /// ignored. </p>
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
-    /// between 0 and 255. </p>
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These
-    /// values are: </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>0</code> : <code>pending</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>16</code> : <code>running</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>32</code> : <code>shutting-down</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>48</code> : <code>terminated</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>64</code> : <code>stopping</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>80</code> : <code>stopped</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
     /// </ul>
-    /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
-    /// decimal. </p>
+    /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub code: std::option::Option<i32>,
-    /// <p>The current
-    /// state
-    /// of the instance.</p>
+    /// <p>The current state of the instance.</p>
     pub name: std::option::Option<crate::model::InstanceStateName>,
 }
 impl InstanceState {
     /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
-    /// between 256 and 65,535. These numerical values are used for internal purposes and should be
-    /// ignored. </p>
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
-    /// between 0 and 255. </p>
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These
-    /// values are: </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>0</code> : <code>pending</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>16</code> : <code>running</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>32</code> : <code>shutting-down</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>48</code> : <code>terminated</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>64</code> : <code>stopping</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>80</code> : <code>stopped</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
     /// </ul>
-    /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
-    /// decimal. </p>
+    /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub fn code(&self) -> std::option::Option<i32> {
         self.code
     }
-    /// <p>The current
-    /// state
-    /// of the instance.</p>
+    /// <p>The current state of the instance.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::InstanceStateName> {
         self.name.as_ref()
     }
@@ -1545,107 +1468,45 @@ pub mod instance_state {
     }
     impl Builder {
         /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
-        /// between 256 and 65,535. These numerical values are used for internal purposes and should be
-        /// ignored. </p>
-        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
-        /// between 0 and 255. </p>
-        /// <p>The valid values for the instance state code are all in the range of the low byte. These
-        /// values are: </p>
+        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>0</code> : <code>pending</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>16</code> : <code>running</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>32</code> : <code>shutting-down</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>48</code> : <code>terminated</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>64</code> : <code>stopping</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>80</code> : <code>stopped</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+        /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
         /// </ul>
-        /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
-        /// decimal. </p>
+        /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
         pub fn code(mut self, input: i32) -> Self {
             self.code = Some(input);
             self
         }
         /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
-        /// between 256 and 65,535. These numerical values are used for internal purposes and should be
-        /// ignored. </p>
-        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
-        /// between 0 and 255. </p>
-        /// <p>The valid values for the instance state code are all in the range of the low byte. These
-        /// values are: </p>
+        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>0</code> : <code>pending</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>16</code> : <code>running</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>32</code> : <code>shutting-down</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>48</code> : <code>terminated</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>64</code> : <code>stopping</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>80</code> : <code>stopped</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+        /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
         /// </ul>
-        /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
-        /// decimal. </p>
+        /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
             self.code = input;
             self
         }
-        /// <p>The current
-        /// state
-        /// of the instance.</p>
+        /// <p>The current state of the instance.</p>
         pub fn name(mut self, input: crate::model::InstanceStateName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The current
-        /// state
-        /// of the instance.</p>
+        /// <p>The current state of the instance.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::InstanceStateName>,
@@ -1757,8 +1618,7 @@ pub struct DeviceSummary {
     pub managed_device_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the job used to order the device.</p>
     pub associated_with_job: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1775,8 +1635,7 @@ impl DeviceSummary {
     pub fn associated_with_job(&self) -> std::option::Option<&str> {
         self.associated_with_job.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1851,8 +1710,7 @@ pub mod device_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1863,8 +1721,7 @@ pub mod device_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1900,8 +1757,7 @@ pub struct SoftwareInformation {
     pub installed_version: std::option::Option<std::string::String>,
     /// <p>The version of the software being installed on the device.</p>
     pub installing_version: std::option::Option<std::string::String>,
-    /// <p>The state of the software that is installed or that is being installed on the
-    /// device.</p>
+    /// <p>The state of the software that is installed or that is being installed on the device.</p>
     pub install_state: std::option::Option<std::string::String>,
 }
 impl SoftwareInformation {
@@ -1913,8 +1769,7 @@ impl SoftwareInformation {
     pub fn installing_version(&self) -> std::option::Option<&str> {
         self.installing_version.as_deref()
     }
-    /// <p>The state of the software that is installed or that is being installed on the
-    /// device.</p>
+    /// <p>The state of the software that is installed or that is being installed on the device.</p>
     pub fn install_state(&self) -> std::option::Option<&str> {
         self.install_state.as_deref()
     }
@@ -1965,14 +1820,12 @@ pub mod software_information {
             self.installing_version = input;
             self
         }
-        /// <p>The state of the software that is installed or that is being installed on the
-        /// device.</p>
+        /// <p>The state of the software that is installed or that is being installed on the device.</p>
         pub fn install_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.install_state = Some(input.into());
             self
         }
-        /// <p>The state of the software that is installed or that is being installed on the
-        /// device.</p>
+        /// <p>The state of the software that is installed or that is being installed on the device.</p>
         pub fn set_install_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2133,9 +1986,7 @@ impl Capacity {
 pub struct PhysicalNetworkInterface {
     /// <p>The physical network interface ID.</p>
     pub physical_network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The
-    /// physical
-    /// connector type.</p>
+    /// <p>The physical connector type.</p>
     pub physical_connector_type: std::option::Option<crate::model::PhysicalConnectorType>,
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
     pub ip_address_assignment: std::option::Option<crate::model::IpAddressAssignment>,
@@ -2153,9 +2004,7 @@ impl PhysicalNetworkInterface {
     pub fn physical_network_interface_id(&self) -> std::option::Option<&str> {
         self.physical_network_interface_id.as_deref()
     }
-    /// <p>The
-    /// physical
-    /// connector type.</p>
+    /// <p>The physical connector type.</p>
     pub fn physical_connector_type(
         &self,
     ) -> std::option::Option<&crate::model::PhysicalConnectorType> {
@@ -2230,9 +2079,7 @@ pub mod physical_network_interface {
             self.physical_network_interface_id = input;
             self
         }
-        /// <p>The
-        /// physical
-        /// connector type.</p>
+        /// <p>The physical connector type.</p>
         pub fn physical_connector_type(
             mut self,
             input: crate::model::PhysicalConnectorType,
@@ -2240,9 +2087,7 @@ pub mod physical_network_interface {
             self.physical_connector_type = Some(input);
             self
         }
-        /// <p>The
-        /// physical
-        /// connector type.</p>
+        /// <p>The physical connector type.</p>
         pub fn set_physical_connector_type(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectorType>,

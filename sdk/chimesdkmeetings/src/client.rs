@@ -175,8 +175,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchCreateAttendee`.
     ///
-    /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -263,12 +262,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAttendee`.
     ///
-    /// <p>
-    /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -351,13 +345,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeeting`.
     ///
-    /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -428,91 +416,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self
@@ -578,13 +488,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
     ///
-    /// <p>
-    /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingWithAttendees<
         C = aws_smithy_client::erase::DynConnector,
@@ -742,10 +646,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAttendee`.
     ///
-    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-    /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -825,10 +726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMeeting`.
     ///
-    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from
-    /// joining the meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-    /// <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -898,11 +796,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttendee`.
     ///
-    /// <p>
-    /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -982,9 +876,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMeeting`.
     ///
-    /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -1054,11 +946,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAttendees`.
     ///
-    /// <p>
-    /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttendees<
         C = aws_smithy_client::erase::DynConnector,
@@ -1215,8 +1103,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_meeting_id(input);
             self
         }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or
-        /// <code>EngineTranscribeMedicalSettings</code>.</p>
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn transcription_configuration(
             mut self,
             input: crate::model::TranscriptionConfiguration,
@@ -1224,8 +1111,7 @@ pub mod fluent_builders {
             self.inner = self.inner.transcription_configuration(input);
             self
         }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or
-        /// <code>EngineTranscribeMedicalSettings</code>.</p>
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn set_transcription_configuration(
             mut self,
             input: std::option::Option<crate::model::TranscriptionConfiguration>,

@@ -12,24 +12,17 @@ pub struct CreateDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDomainErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service
-    /// Quotas</a> and try your request again.</p>
+    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -166,21 +159,15 @@ pub struct DeleteDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -308,18 +295,13 @@ pub struct DeleteFraudsterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFraudsterErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -444,21 +426,15 @@ pub struct DeleteSpeakerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSpeakerErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -586,18 +562,13 @@ pub struct DescribeDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDomainErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -722,18 +693,13 @@ pub struct DescribeFraudsterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFraudsterErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -864,18 +830,13 @@ pub struct DescribeFraudsterRegistrationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFraudsterRegistrationJobErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1021,18 +982,13 @@ pub struct DescribeSpeakerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpeakerErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1157,18 +1113,13 @@ pub struct DescribeSpeakerEnrollmentJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpeakerEnrollmentJobErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1303,18 +1254,13 @@ pub struct EvaluateSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EvaluateSessionErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1439,15 +1385,11 @@ pub struct ListDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainsErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1557,18 +1499,13 @@ pub struct ListFraudsterRegistrationJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFraudsterRegistrationJobsErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1708,18 +1645,13 @@ pub struct ListSpeakerEnrollmentJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSpeakerEnrollmentJobsErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1850,18 +1782,13 @@ pub struct ListSpeakersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSpeakersErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -1983,18 +1910,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2125,21 +2047,15 @@ pub struct OptOutSpeakerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum OptOutSpeakerErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2267,24 +2183,17 @@ pub struct StartFraudsterRegistrationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartFraudsterRegistrationJobErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service
-    /// Quotas</a> and try your request again.</p>
+    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2446,24 +2355,17 @@ pub struct StartSpeakerEnrollmentJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSpeakerEnrollmentJobErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service
-    /// Quotas</a> and try your request again.</p>
+    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2616,21 +2518,15 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2755,21 +2651,15 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -2897,21 +2787,15 @@ pub struct UpdateDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDomainErrorKind {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),
@@ -3090,10 +2974,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-/// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-/// Amazon Connect Voice ID Service API throttling quotas
-/// </a> and try your request again.</p>
+/// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -3157,20 +3038,17 @@ impl ThrottlingException {
     }
 }
 
-/// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-/// more details.</p>
+/// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>,
-    /// <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
+    /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>, <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ResourceNotFoundException {
-    /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>,
-    /// <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
+    /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>, <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -3219,14 +3097,12 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>,
-        /// <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
+        /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>, <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>,
-        /// <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
+        /// <p>The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>, <code>COMPLIANCE_CONSENT</code>, <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code> and <code>SPEAKER</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -3314,71 +3190,32 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-/// more details.</p>
+/// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages
-    /// are as follows:</p>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p>
-    /// </li>
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
     /// </ul>
     pub conflict_type: std::option::Option<crate::model::ConflictType>,
 }
 impl ConflictException {
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages
-    /// are as follows:</p>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p>
-    /// </li>
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
     /// </ul>
     pub fn conflict_type(&self) -> std::option::Option<&crate::model::ConflictType> {
         self.conflict_type.as_ref()
@@ -3428,65 +3265,27 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages
-        /// are as follows:</p>
+        /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p>
-        /// </li>
+        /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
+        /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
+        /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
+        /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
+        /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
+        /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
         /// </ul>
         pub fn conflict_type(mut self, input: crate::model::ConflictType) -> Self {
             self.conflict_type = Some(input);
             self
         }
-        /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages
-        /// are as follows:</p>
+        /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p>
-        /// </li>
+        /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
+        /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
+        /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
+        /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
+        /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
+        /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
         /// </ul>
         pub fn set_conflict_type(
             mut self,
@@ -3511,8 +3310,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-/// again.</p>
+/// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3576,8 +3374,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service
-/// Quotas</a> and try your request again.</p>
+/// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

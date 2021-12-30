@@ -12,10 +12,7 @@ pub struct AddNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddNotificationChannelErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -27,8 +24,7 @@ pub enum AddNotificationChannelErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -175,17 +171,13 @@ pub struct DescribeAccountHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -305,17 +297,13 @@ pub struct DescribeAccountOverviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountOverviewErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -435,10 +423,7 @@ pub struct DescribeAnomalyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAnomalyErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -446,8 +431,7 @@ pub enum DescribeAnomalyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -570,10 +554,7 @@ pub struct DescribeFeedbackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFeedbackErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -581,8 +562,7 @@ pub enum DescribeFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -711,10 +691,7 @@ pub struct DescribeInsightError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInsightErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -722,8 +699,7 @@ pub enum DescribeInsightErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -846,17 +822,13 @@ pub struct DescribeOrganizationHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrganizationHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -976,17 +948,13 @@ pub struct DescribeOrganizationOverviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrganizationOverviewErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1106,17 +1074,13 @@ pub struct DescribeOrganizationResourceCollectionHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrganizationResourceCollectionHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1261,17 +1225,13 @@ pub struct DescribeResourceCollectionHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourceCollectionHealthErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1402,17 +1362,13 @@ pub struct DescribeServiceIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServiceIntegrationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1532,10 +1488,7 @@ pub struct GetCostEstimationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCostEstimationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1543,8 +1496,7 @@ pub enum GetCostEstimationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1673,10 +1625,7 @@ pub struct GetResourceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceCollectionErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1684,8 +1633,7 @@ pub enum GetResourceCollectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1814,10 +1762,7 @@ pub struct ListAnomaliesForInsightError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAnomaliesForInsightErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1825,8 +1770,7 @@ pub enum ListAnomaliesForInsightErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1955,10 +1899,7 @@ pub struct ListEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEventsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1966,8 +1907,7 @@ pub enum ListEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2084,17 +2024,13 @@ pub struct ListInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2205,17 +2141,13 @@ pub struct ListNotificationChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotificationChannelsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2335,17 +2267,13 @@ pub struct ListOrganizationInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOrganizationInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2465,10 +2393,7 @@ pub struct ListRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendationsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2476,8 +2401,7 @@ pub enum ListRecommendationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2606,10 +2530,7 @@ pub struct PutFeedbackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFeedbackErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -2619,8 +2540,7 @@ pub enum PutFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2743,10 +2663,7 @@ pub struct RemoveNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveNotificationChannelErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -2756,8 +2673,7 @@ pub enum RemoveNotificationChannelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2895,17 +2811,13 @@ pub struct SearchInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3019,17 +2931,13 @@ pub struct SearchOrganizationInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchOrganizationInsightsErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3149,10 +3057,7 @@ pub struct StartCostEstimationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartCostEstimationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -3162,8 +3067,7 @@ pub enum StartCostEstimationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3301,10 +3205,7 @@ pub struct UpdateResourceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourceCollectionErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -3312,8 +3213,7 @@ pub enum UpdateResourceCollectionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3442,10 +3342,7 @@ pub struct UpdateServiceIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceIntegrationErrorKind {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -3453,8 +3350,7 @@ pub enum UpdateServiceIntegrationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3570,8 +3466,7 @@ impl std::error::Error for UpdateServiceIntegrationError {
     }
 }
 
-/// <p> Contains information about data passed in to a field during a request that is not
-/// valid. </p>
+/// <p> Contains information about data passed in to a field during a request that is not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3698,8 +3593,7 @@ pub struct ThrottlingException {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p> The code of the service that caused the throttling exception. </p>
     pub service_code: std::option::Option<std::string::String>,
-    /// <p> The number of seconds after which the action that caused the throttling exception can
-    /// be retried. </p>
+    /// <p> The number of seconds after which the action that caused the throttling exception can be retried. </p>
     pub retry_after_seconds: i32,
 }
 impl ThrottlingException {
@@ -3711,8 +3605,7 @@ impl ThrottlingException {
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p> The number of seconds after which the action that caused the throttling exception can
-    /// be retried. </p>
+    /// <p> The number of seconds after which the action that caused the throttling exception can be retried. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -3785,14 +3678,12 @@ pub mod throttling_exception {
             self.service_code = input;
             self
         }
-        /// <p> The number of seconds after which the action that caused the throttling exception can
-        /// be retried. </p>
+        /// <p> The number of seconds after which the action that caused the throttling exception can be retried. </p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
             self.retry_after_seconds = Some(input);
             self
         }
-        /// <p> The number of seconds after which the action that caused the throttling exception can
-        /// be retried. </p>
+        /// <p> The number of seconds after which the action that caused the throttling exception can be retried. </p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_after_seconds = input;
             self
@@ -3821,13 +3712,11 @@ impl ThrottlingException {
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p> The number of seconds after which the action that caused the internal server
-    /// exception can be retried. </p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub retry_after_seconds: i32,
 }
 impl InternalServerException {
-    /// <p> The number of seconds after which the action that caused the internal server
-    /// exception can be retried. </p>
+    /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
     }
@@ -3876,14 +3765,12 @@ pub mod internal_server_exception {
             self.message = input;
             self
         }
-        /// <p> The number of seconds after which the action that caused the internal server
-        /// exception can be retried. </p>
+        /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
             self.retry_after_seconds = Some(input);
             self
         }
-        /// <p> The number of seconds after which the action that caused the internal server
-        /// exception can be retried. </p>
+        /// <p> The number of seconds after which the action that caused the internal server exception can be retried. </p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_after_seconds = input;
             self
@@ -4011,10 +3898,7 @@ impl ConflictException {
     }
 }
 
-/// <p> You don't have permissions to perform the requested operation. The user or role that
-/// is making the request must have at least one IAM permissions policy attached that grants
-/// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-/// <i>IAM User Guide</i>. </p>
+/// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

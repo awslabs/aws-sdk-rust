@@ -514,24 +514,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_snapshot_name(input);
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
         pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_bucket(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
         pub fn set_target_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -937,19 +925,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_window(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -993,10 +977,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParameterGroup`.
     ///
-    /// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For
-    /// more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>.
-    ///
-    /// </p>
+    /// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1216,10 +1197,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSubnetGroup`.
     ///
-    /// <p>Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment.
-    ///
-    /// When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes.
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets and subnet groups</a>.</p>
+    /// <p>Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets and subnet groups</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1602,8 +1580,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteParameterGroup`.
     ///
-    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any clusters.
-    /// You cannot delete the default parameter groups in your account.</p>
+    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any clusters. You cannot delete the default parameter groups in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2198,9 +2175,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEvents`.
     ///
-    /// <p>Returns events related to clusters, security groups, and parameter groups. You can obtain events specific to a particular cluster, security group, or parameter group by providing the name as a parameter.
-    ///
-    /// By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
+    /// <p>Returns events related to clusters, security groups, and parameter groups. You can obtain events specific to a particular cluster, security group, or parameter group by providing the name as a parameter. By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -2280,16 +2255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_type(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2297,16 +2268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2404,12 +2371,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a specific  parameter group to return details for.</p>
+        /// <p>The name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parameter_group_name(input.into());
             self
         }
-        /// <p>The name of a specific  parameter group to return details for.</p>
+        /// <p>The name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2497,12 +2464,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>he name of a specific  parameter group to return details for.</p>
+        /// <p>he name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parameter_group_name(input.into());
             self
         }
-        /// <p>he name of a specific  parameter group to return details for.</p>
+        /// <p>he name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2660,8 +2627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSnapshots`.
     ///
-    /// <p>Returns information about cluster snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot,
-    /// or just the snapshots associated with a particular cluster.</p>
+    /// <p>Returns information about cluster snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cluster.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
@@ -3064,9 +3030,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAllowedNodeTypeUpdates`.
     ///
-    /// <p>Lists all available node types that you can scale to from your cluster's current node type.
-    ///
-    /// When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>
+    /// <p>Lists all available node types that you can scale to from your cluster's current node type. When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAllowedNodeTypeUpdates<
         C = aws_smithy_client::erase::DynConnector,
@@ -3123,14 +3087,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_name(input.into());
             self
         }
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_name(input);
             self
@@ -3138,11 +3100,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Lists all tags currently on a named resource.
-    ///
-    /// A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources.
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a>
-    /// </p>
+    /// <p>Lists all tags currently on a named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -3312,17 +3270,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your MemoryDB resources.
-    ///
-    /// When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. For more information, see
-    ///
-    /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level permissions</a>.</p>
-    ///
-    /// <p>For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates a cost allocation report as a comma-separated value
-    /// (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories
-    /// (such as cost centers, application names, or owners) to organize your costs across multiple services.
-    ///
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using Cost Allocation Tags</a>.</p>
+    /// <p>A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your MemoryDB resources. When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level permissions</a>.</p>
+    /// <p>For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using Cost Allocation Tags</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3927,8 +3876,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSubnetGroup`.
     ///
-    /// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a>
-    /// </p>
+    /// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,

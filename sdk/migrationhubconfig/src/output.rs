@@ -59,9 +59,7 @@ impl GetHomeRegionOutput {
 pub struct DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
     pub home_region_controls: std::option::Option<std::vec::Vec<crate::model::HomeRegionControl>>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-    /// To retrieve the next page of results, make the call again using the returned token in
-    /// <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeHomeRegionControlsOutput {
@@ -69,9 +67,7 @@ impl DescribeHomeRegionControlsOutput {
     pub fn home_region_controls(&self) -> std::option::Option<&[crate::model::HomeRegionControl]> {
         self.home_region_controls.as_deref()
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-    /// To retrieve the next page of results, make the call again using the returned token in
-    /// <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -114,16 +110,12 @@ pub mod describe_home_region_controls_output {
             self.home_region_controls = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -148,13 +140,11 @@ impl DescribeHomeRegionControlsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHomeRegionControlOutput {
-    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
-    /// call to <code>CreateHomeRegionControl</code>.</p>
+    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     pub home_region_control: std::option::Option<crate::model::HomeRegionControl>,
 }
 impl CreateHomeRegionControlOutput {
-    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
-    /// call to <code>CreateHomeRegionControl</code>.</p>
+    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     pub fn home_region_control(&self) -> std::option::Option<&crate::model::HomeRegionControl> {
         self.home_region_control.as_ref()
     }
@@ -175,14 +165,12 @@ pub mod create_home_region_control_output {
         pub(crate) home_region_control: std::option::Option<crate::model::HomeRegionControl>,
     }
     impl Builder {
-        /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
-        /// call to <code>CreateHomeRegionControl</code>.</p>
+        /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
         pub fn home_region_control(mut self, input: crate::model::HomeRegionControl) -> Self {
             self.home_region_control = Some(input);
             self
         }
-        /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
-        /// call to <code>CreateHomeRegionControl</code>.</p>
+        /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
         pub fn set_home_region_control(
             mut self,
             input: std::option::Option<crate::model::HomeRegionControl>,

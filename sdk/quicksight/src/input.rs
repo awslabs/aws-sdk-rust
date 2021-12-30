@@ -249,26 +249,14 @@ pub mod create_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-        /// these to an Amazon Web Services account and a QuickSight namespace. </p>
-        /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
-        /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
-        /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
-        /// specifying <code>"AccountCustomization": { "DefaultTheme":
-        /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
-        /// }</code>. </p>
+        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
+        /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-        /// these to an Amazon Web Services account and a QuickSight namespace. </p>
-        /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
-        /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
-        /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
-        /// specifying <code>"AccountCustomization": { "DefaultTheme":
-        /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
-        /// }</code>. </p>
+        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
+        /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
         pub fn set_account_customization(
             mut self,
             input: std::option::Option<crate::model::AccountCustomization>,
@@ -492,38 +480,32 @@ pub mod create_analysis_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
-        /// analysis.</p>
+        /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
-        /// analysis.</p>
+        /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
         }
-        /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-        /// analysis in the Amazon QuickSight console. </p>
+        /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-        /// analysis in the Amazon QuickSight console. </p>
+        /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The parameter names and override values that you want to use. An analysis can have
-        /// any parameter type, and some parameters might accept multiple values. </p>
+        /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
         pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>The parameter names and override values that you want to use. An analysis can have
-        /// any parameter type, and some parameters might accept multiple values. </p>
+        /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::Parameters>,
@@ -535,11 +517,7 @@ pub mod create_analysis_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
-        /// providing a list of Identity and Access Management (IAM) action information for each
-        /// principal listed by Amazon Resource Name (ARN). </p>
-        ///
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
         /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
@@ -547,11 +525,7 @@ pub mod create_analysis_input {
             self.permissions = Some(v);
             self
         }
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
-        /// providing a list of Identity and Access Management (IAM) action information for each
-        /// principal listed by Amazon Resource Name (ARN). </p>
-        ///
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
         /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
         pub fn set_permissions(
             mut self,
@@ -560,14 +534,12 @@ pub mod create_analysis_input {
             self.permissions = input;
             self
         }
-        /// <p>A source entity to use for the analysis that you're creating. This metadata structure
-        /// contains details that describe a source template and one or more datasets.</p>
+        /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
         pub fn source_entity(mut self, input: crate::model::AnalysisSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>A source entity to use for the analysis that you're creating. This metadata structure
-        /// contains details that describe a source template and one or more datasets.</p>
+        /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::AnalysisSourceEntity>,
@@ -575,14 +547,12 @@ pub mod create_analysis_input {
             self.source_entity = input;
             self
         }
-        /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-        /// in the Amazon QuickSight console, make sure that you have access to it.</p>
+        /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-        /// in the Amazon QuickSight console, make sure that you have access to it.</p>
+        /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.theme_arn = input;
             self
@@ -591,16 +561,14 @@ pub mod create_analysis_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// analysis.</p>
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// analysis.</p>
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -834,16 +802,12 @@ pub mod create_dashboard_input {
             self.name = input;
             self
         }
-        /// <p>The parameters for the creation of the dashboard, which you want to use to override
-        /// the default settings. A dashboard can have any type of parameters, and some parameters
-        /// might accept multiple values. </p>
+        /// <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
         pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>The parameters for the creation of the dashboard, which you want to use to override
-        /// the default settings. A dashboard can have any type of parameters, and some parameters
-        /// might accept multiple values. </p>
+        /// <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::Parameters>,
@@ -855,10 +819,7 @@ pub mod create_dashboard_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAM action information for each
-        /// principal ARN. </p>
-        ///
+        /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
         /// <p>To specify no permissions, omit the permissions list.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
@@ -866,10 +827,7 @@ pub mod create_dashboard_input {
             self.permissions = Some(v);
             self
         }
-        /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAM action information for each
-        /// principal ARN. </p>
-        ///
+        /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
         /// <p>To specify no permissions, omit the permissions list.</p>
         pub fn set_permissions(
             mut self,
@@ -878,38 +836,14 @@ pub mod create_dashboard_input {
             self.permissions = input;
             self
         }
-        /// <p>The entity that you are using as a source when you create the dashboard. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-        /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
-        /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code>
-        /// API operation. For
-        /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
-        /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-        /// list the replacement datasets for the placeholders listed in the original. The schema in
-        /// each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn source_entity(mut self, input: crate::model::DashboardSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>The entity that you are using as a source when you create the dashboard. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-        /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
-        /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code>
-        /// API operation. For
-        /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
-        /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-        /// list the replacement datasets for the placeholders listed in the original. The schema in
-        /// each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::DashboardSourceEntity>,
@@ -921,16 +855,14 @@ pub mod create_dashboard_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// dashboard.</p>
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// dashboard.</p>
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -953,27 +885,9 @@ pub mod create_dashboard_input {
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-        /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-        /// option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-        /// option to export data to .CSV format isn't enabled when this is set to
-        /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-        /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-        /// This option is <code>COLLAPSED</code> by default. </p>
-        /// </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
         /// </ul>
         pub fn dashboard_publish_options(
             mut self,
@@ -984,27 +898,9 @@ pub mod create_dashboard_input {
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-        /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-        /// option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-        /// option to export data to .CSV format isn't enabled when this is set to
-        /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-        /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-        /// This option is <code>COLLAPSED</code> by default. </p>
-        /// </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
         /// </ul>
         pub fn set_dashboard_publish_options(
             mut self,
@@ -1013,18 +909,12 @@ pub mod create_dashboard_input {
             self.dashboard_publish_options = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-        /// you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-        /// dashboard.</p>
+        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-        /// you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-        /// dashboard.</p>
+        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.theme_arn = input;
             self
@@ -1432,9 +1322,7 @@ pub mod create_data_set_input {
         ///
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
             input: crate::model::ColumnLevelPermissionRule,
@@ -1444,9 +1332,7 @@ pub mod create_data_set_input {
             self.column_level_permission_rules = Some(v);
             self
         }
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
@@ -1708,15 +1594,13 @@ pub mod create_data_source_input {
             self.name = input;
             self
         }
-        /// <p>The type of the data source. To return a
-        /// list of all data sources, use <code>ListDataSources</code>.</p>
+        /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
         /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the data source. To return a
-        /// list of all data sources, use <code>ListDataSources</code>.</p>
+        /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
         /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
         pub fn set_type(
             mut self,
@@ -1738,14 +1622,12 @@ pub mod create_data_source_input {
             self.data_source_parameters = input;
             self
         }
-        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
-        /// credentials based on user name and password are supported.</p>
+        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
             self.credentials = Some(input);
             self
         }
-        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
-        /// credentials based on user name and password are supported.</p>
+        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
         pub fn set_credentials(
             mut self,
             input: std::option::Option<crate::model::DataSourceCredentials>,
@@ -1772,8 +1654,7 @@ pub mod create_data_source_input {
             self.permissions = input;
             self
         }
-        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-        /// your underlying source.</p>
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
             input: crate::model::VpcConnectionProperties,
@@ -1781,8 +1662,7 @@ pub mod create_data_source_input {
             self.vpc_connection_properties = Some(input);
             self
         }
-        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-        /// your underlying source.</p>
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn set_vpc_connection_properties(
             mut self,
             input: std::option::Option<crate::model::VpcConnectionProperties>,
@@ -2044,15 +1924,13 @@ pub mod create_folder_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-        /// <p>
-        /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+        /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
         pub fn parent_folder_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_folder_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-        /// <p>
-        /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+        /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
         pub fn set_parent_folder_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2548,14 +2426,12 @@ pub mod create_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2773,14 +2649,12 @@ pub mod create_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2993,14 +2867,12 @@ pub mod create_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
-        /// groups.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
-        /// groups.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3023,20 +2895,9 @@ pub mod create_iam_policy_assignment_input {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
@@ -3044,20 +2905,9 @@ pub mod create_iam_policy_assignment_input {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn set_assignment_status(
             mut self,
@@ -3066,14 +2916,12 @@ pub mod create_iam_policy_assignment_input {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-        /// specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-        /// specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -3565,14 +3413,12 @@ pub mod create_namespace_input {
             self.namespace = input;
             self
         }
-        /// <p>Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn identity_store(mut self, input: crate::model::IdentityStore) -> Self {
             self.identity_store = Some(input);
             self
         }
-        /// <p>Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn set_identity_store(
             mut self,
             input: std::option::Option<crate::model::IdentityStore>,
@@ -3781,14 +3627,12 @@ pub mod create_template_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account.</p>
+        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
         }
-        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account.</p>
+        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -3822,30 +3666,14 @@ pub mod create_template_input {
             self.permissions = input;
             self
         }
-        /// <p>The entity that you are using as a source when you create the template. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-        /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-        /// analysis. Both of these require an Amazon Resource Name (ARN). For
-        /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-        /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-        /// in the original. The schema in each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn source_entity(mut self, input: crate::model::TemplateSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>The entity that you are using as a source when you create the template. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-        /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-        /// analysis. Both of these require an Amazon Resource Name (ARN). For
-        /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-        /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-        /// in the original. The schema in each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::TemplateSourceEntity>,
@@ -3872,18 +3700,12 @@ pub mod create_template_input {
             self.tags = input;
             self
         }
-        /// <p>A description of the current template version being created. This API operation creates the
-        /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
-        /// version is created. Each version of the template maintains a description of the version
-        /// in the <code>VersionDescription</code> field.</p>
+        /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_description = Some(input.into());
             self
         }
-        /// <p>A description of the current template version being created. This API operation creates the
-        /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
-        /// version is created. Each version of the template maintains a description of the version
-        /// in the <code>VersionDescription</code> field.</p>
+        /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn set_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4098,16 +3920,12 @@ pub mod create_template_alias_input {
             self.template_id = input;
             self
         }
-        /// <p>The name that you want to give to the template alias that you're creating. Don't start the
-        /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-        /// are reserved by Amazon QuickSight. </p>
+        /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The name that you want to give to the template alias that you're creating. Don't start the
-        /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-        /// are reserved by Amazon QuickSight. </p>
+        /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -4337,14 +4155,12 @@ pub mod create_theme_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
-        /// each Amazon Web Services account.</p>
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
-        /// each Amazon Web Services account.</p>
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.theme_id = input;
             self
@@ -4359,18 +4175,12 @@ pub mod create_theme_input {
             self.name = input;
             self
         }
-        /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
-        /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
-        /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within an analysis. </p>
+        /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
         }
-        /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
-        /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
-        /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within an analysis. </p>
+        /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
         pub fn set_base_theme_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4378,18 +4188,12 @@ pub mod create_theme_input {
             self.base_theme_id = input;
             self
         }
-        /// <p>A description of the first version of the theme that you're creating. Every time
-        /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
-        /// theme has a description of the version in the <code>VersionDescription</code>
-        /// field.</p>
+        /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_description = Some(input.into());
             self
         }
-        /// <p>A description of the first version of the theme that you're creating. Every time
-        /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
-        /// theme has a description of the version in the <code>VersionDescription</code>
-        /// field.</p>
+        /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn set_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4414,16 +4218,14 @@ pub mod create_theme_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>A valid grouping of resource permissions to apply to the new theme.
-        /// </p>
+        /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>A valid grouping of resource permissions to apply to the new theme.
-        /// </p>
+        /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -4435,16 +4237,14 @@ pub mod create_theme_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
-        /// resource.</p>
+        /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
-        /// resource.</p>
+        /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4659,16 +4459,12 @@ pub mod create_theme_alias_input {
             self.theme_id = input;
             self
         }
-        /// <p>The name that you want to give to the theme alias that you are creating. The
-        /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
-        /// are reserved by Amazon QuickSight. </p>
+        /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The name that you want to give to the theme alias that you are creating. The
-        /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
-        /// are reserved by Amazon QuickSight. </p>
+        /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -4878,14 +4674,12 @@ pub mod delete_account_customization_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
-        /// this Amazon Web Services Region.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
-        /// this Amazon Web Services Region.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5087,30 +4881,22 @@ pub mod delete_analysis_input {
             self.analysis_id = input;
             self
         }
-        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
-        /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
-        /// option in the same API call. The default value is 30.</p>
+        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
         pub fn recovery_window_in_days(mut self, input: i64) -> Self {
             self.recovery_window_in_days = Some(input);
             self
         }
-        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
-        /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
-        /// option in the same API call. The default value is 30.</p>
+        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
         pub fn set_recovery_window_in_days(mut self, input: std::option::Option<i64>) -> Self {
             self.recovery_window_in_days = input;
             self
         }
-        /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
-        /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
-        /// You can't restore an analysis after it's deleted. </p>
+        /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
         pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
             self.force_delete_without_recovery = Some(input);
             self
         }
-        /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
-        /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
-        /// You can't restore an analysis after it's deleted. </p>
+        /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
         pub fn set_force_delete_without_recovery(
             mut self,
             input: std::option::Option<bool>,
@@ -5309,14 +5095,12 @@ pub mod delete_dashboard_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5334,14 +5118,12 @@ pub mod delete_dashboard_input {
             self.dashboard_id = input;
             self
         }
-        /// <p>The version number of the dashboard. If the version number property is provided, only
-        /// the specified version of the dashboard is deleted.</p>
+        /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version number of the dashboard. If the version number property is provided, only
-        /// the specified version of the dashboard is deleted.</p>
+        /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -6120,14 +5902,12 @@ pub mod delete_folder_membership_input {
             self.member_id = input;
             self
         }
-        /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
-        /// </p>
+        /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
         pub fn member_type(mut self, input: crate::model::MemberType) -> Self {
             self.member_type = Some(input);
             self
         }
-        /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
-        /// </p>
+        /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
         pub fn set_member_type(
             mut self,
             input: std::option::Option<crate::model::MemberType>,
@@ -6343,14 +6123,12 @@ pub mod delete_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6570,14 +6348,12 @@ pub mod delete_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7205,16 +6981,12 @@ pub mod delete_template_input {
             self.template_id = input;
             self
         }
-        /// <p>Specifies the version of the template that you want to delete.
-        /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
-        /// </p>
+        /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>Specifies the version of the template that you want to delete.
-        /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
-        /// </p>
+        /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -7421,18 +7193,12 @@ pub mod delete_template_alias_input {
             self.template_id = input;
             self
         }
-        /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
-        /// alias points to. You can specify the alias name, or specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. </p>
+        /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
-        /// alias points to. You can specify the alias name, or specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. </p>
+        /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -7642,17 +7408,13 @@ pub mod delete_theme_input {
             self
         }
         /// <p>The version of the theme that you want to delete. </p>
-        /// <p>
-        /// <b>Note:</b> If you don't provide a version number, you're
-        /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+        /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
         /// <p>The version of the theme that you want to delete. </p>
-        /// <p>
-        /// <b>Note:</b> If you don't provide a version number, you're
-        /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+        /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -8060,14 +7822,12 @@ pub mod delete_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8276,14 +8036,12 @@ pub mod delete_user_by_principal_id_input {
             self.principal_id = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8483,14 +8241,12 @@ pub mod describe_account_customization_input {
         pub(crate) resolved: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8498,32 +8254,22 @@ pub mod describe_account_customization_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-        /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
-        /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
-        /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
-        /// that are configured at different levels. </p>
+        /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
         pub fn resolved(mut self, input: bool) -> Self {
             self.resolved = Some(input);
             self
         }
-        /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-        /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
-        /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
-        /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
-        /// that are configured at different levels. </p>
+        /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
         pub fn set_resolved(mut self, input: std::option::Option<bool>) -> Self {
             self.resolved = input;
             self
@@ -8854,14 +8600,12 @@ pub mod describe_analysis_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
-        /// Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
-        /// Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8869,14 +8613,12 @@ pub mod describe_analysis_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
-        /// analysis.</p>
+        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
-        /// analysis.</p>
+        /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
@@ -9044,14 +8786,12 @@ pub mod describe_analysis_permissions_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-        /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-        /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9059,14 +8799,12 @@ pub mod describe_analysis_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
-        /// analysis URL.</p>
+        /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
-        /// analysis URL.</p>
+        /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
@@ -9237,14 +8975,12 @@ pub mod describe_dashboard_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9262,14 +8998,12 @@ pub mod describe_dashboard_input {
             self.dashboard_id = input;
             self
         }
-        /// <p>The version number for the dashboard. If a version number isn't passed, the
-        /// latest published dashboard version is described. </p>
+        /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version number for the dashboard. If a version number isn't passed, the
-        /// latest published dashboard version is described. </p>
+        /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -9466,14 +9200,12 @@ pub mod describe_dashboard_permissions_input {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
-        /// permissions for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
-        /// permissions for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10981,14 +10713,12 @@ pub mod describe_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11980,30 +11710,22 @@ pub mod describe_template_input {
             self.template_id = input;
             self
         }
-        /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
-        /// value isn't provided, the latest version of the template is described.</p>
+        /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
-        /// value isn't provided, the latest version of the template is described.</p>
+        /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
         }
-        /// <p>The alias of the template that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The alias of the template that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -12194,14 +11916,12 @@ pub mod describe_template_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12219,18 +11939,12 @@ pub mod describe_template_alias_input {
             self.template_id = input;
             self
         }
-        /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -12627,30 +12341,22 @@ pub mod describe_theme_input {
             self.theme_id = input;
             self
         }
-        /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
-        /// value isn't provided, the latest version of the theme is described.</p>
+        /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
-        /// value isn't provided, the latest version of the theme is described.</p>
+        /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
         }
-        /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+        /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
-        /// describe the version that the alias points to. You can specify the latest version of the
-        /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+        /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -12841,14 +12547,12 @@ pub mod describe_theme_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
-        /// describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13254,14 +12958,12 @@ pub mod describe_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13502,8 +13204,7 @@ pub mod generate_embed_url_for_anonymous_user_input {
         ///
         /// To override the contents of this collection use [`set_session_tags`](Self::set_session_tags).
         ///
-        /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
-        /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+        /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
         /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
         pub fn session_tags(mut self, input: crate::model::SessionTag) -> Self {
             let mut v = self.session_tags.unwrap_or_default();
@@ -13511,8 +13212,7 @@ pub mod generate_embed_url_for_anonymous_user_input {
             self.session_tags = Some(v);
             self
         }
-        /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
-        /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+        /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
         /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
         pub fn set_session_tags(
             mut self,
@@ -13966,14 +13666,12 @@ pub mod get_dashboard_embed_url_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
-        /// policy.</p>
+        /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_id = Some(input.into());
             self
         }
-        /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
-        /// policy.</p>
+        /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dashboard_id = input;
             self
@@ -14001,102 +13699,64 @@ pub mod get_dashboard_embed_url_input {
             self.session_lifetime_in_minutes = input;
             self
         }
-        /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
-        /// the undo/redo button.</p>
+        /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
         pub fn undo_redo_disabled(mut self, input: bool) -> Self {
             self.undo_redo_disabled = Some(input);
             self
         }
-        /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
-        /// the undo/redo button.</p>
+        /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
         pub fn set_undo_redo_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.undo_redo_disabled = input;
             self
         }
-        /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
-        /// reset button.</p>
+        /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
         pub fn reset_disabled(mut self, input: bool) -> Self {
             self.reset_disabled = Some(input);
             self
         }
-        /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
-        /// reset button.</p>
+        /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
         pub fn set_reset_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.reset_disabled = input;
             self
         }
-        /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
-        /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
-        /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-        /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
-        /// set to FALSE, the state of the user session is not persisted. The default is
-        /// <code>FALSE</code>.</p>
+        /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
         pub fn state_persistence_enabled(mut self, input: bool) -> Self {
             self.state_persistence_enabled = Some(input);
             self
         }
-        /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
-        /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
-        /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-        /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
-        /// set to FALSE, the state of the user session is not persisted. The default is
-        /// <code>FALSE</code>.</p>
+        /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
         pub fn set_state_persistence_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.state_persistence_enabled = input;
             self
         }
-        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-        /// You can use this for any Amazon QuickSight users in your account (readers, authors, or
-        /// admins) authenticated as one of the following:</p>
+        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Active Directory (AD) users or group members</p>
-        /// </li>
-        /// <li>
-        /// <p>Invited nonfederated users</p>
-        /// </li>
-        /// <li>
-        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAM federation.</p>
-        /// </li>
+        /// <li> <p>Active Directory (AD) users or group members</p> </li>
+        /// <li> <p>Invited nonfederated users</p> </li>
+        /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAM users and IAM
-        /// role-based sessions.</p>
+        /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-        /// You can use this for any Amazon QuickSight users in your account (readers, authors, or
-        /// admins) authenticated as one of the following:</p>
+        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Active Directory (AD) users or group members</p>
-        /// </li>
-        /// <li>
-        /// <p>Invited nonfederated users</p>
-        /// </li>
-        /// <li>
-        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAM federation.</p>
-        /// </li>
+        /// <li> <p>Active Directory (AD) users or group members</p> </li>
+        /// <li> <p>Invited nonfederated users</p> </li>
+        /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAM users and IAM
-        /// role-based sessions.</p>
+        /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
         }
-        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
-        /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
-        /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -14105,24 +13765,14 @@ pub mod get_dashboard_embed_url_input {
         ///
         /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
         ///
-        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
-        /// anonymous users. The <code>IdentityType</code> parameter must be set to
-        /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-        /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
-        /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
-        /// can access all three dashboards. </p>
+        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
         pub fn additional_dashboard_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_dashboard_ids.unwrap_or_default();
             v.push(input.into());
             self.additional_dashboard_ids = Some(v);
             self
         }
-        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
-        /// anonymous users. The <code>IdentityType</code> parameter must be set to
-        /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-        /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
-        /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
-        /// can access all three dashboards. </p>
+        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
         pub fn set_additional_dashboard_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14369,77 +14019,27 @@ pub mod get_session_embed_url_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
-        /// the following paths:</p>
+        /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/analyses</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/dashboards</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/favorites</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/dashboards/<i>DashboardId</i>
-        /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/analyses/<i>AnalysisId</i>
-        /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
-        /// </li>
+        /// <li> <p> <code>/start</code> </p> </li>
+        /// <li> <p> <code>/start/analyses</code> </p> </li>
+        /// <li> <p> <code>/start/dashboards</code> </p> </li>
+        /// <li> <p> <code>/start/favorites</code> </p> </li>
+        /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
+        /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
         /// </ul>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             self.entry_point = Some(input.into());
             self
         }
-        /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
-        /// the following paths:</p>
+        /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/analyses</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/dashboards</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/favorites</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/dashboards/<i>DashboardId</i>
-        /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/analyses/<i>AnalysisId</i>
-        /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
-        /// </li>
+        /// <li> <p> <code>/start</code> </p> </li>
+        /// <li> <p> <code>/start/analyses</code> </p> </li>
+        /// <li> <p> <code>/start/dashboards</code> </p> </li>
+        /// <li> <p> <code>/start/favorites</code> </p> </li>
+        /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
+        /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
         /// </ul>
         pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_point = input;
@@ -14455,46 +14055,24 @@ pub mod get_session_embed_url_input {
             self.session_lifetime_in_minutes = input;
             self
         }
-        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-        /// You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
-        /// admins). They need to be authenticated as one of the following:</p>
+        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
         /// <ol>
-        /// <li>
-        /// <p>Active Directory (AD) users or group members</p>
-        /// </li>
-        /// <li>
-        /// <p>Invited nonfederated users</p>
-        /// </li>
-        /// <li>
-        /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
-        /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
-        /// federation</p>
-        /// </li>
+        /// <li> <p>Active Directory (AD) users or group members</p> </li>
+        /// <li> <p>Invited nonfederated users</p> </li>
+        /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
         /// </ol>
-        /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
-        /// sessions.</p>
+        /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-        /// You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
-        /// admins). They need to be authenticated as one of the following:</p>
+        /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
         /// <ol>
-        /// <li>
-        /// <p>Active Directory (AD) users or group members</p>
-        /// </li>
-        /// <li>
-        /// <p>Invited nonfederated users</p>
-        /// </li>
-        /// <li>
-        /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
-        /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
-        /// federation</p>
-        /// </li>
+        /// <li> <p>Active Directory (AD) users or group members</p> </li>
+        /// <li> <p>Invited nonfederated users</p> </li>
+        /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
         /// </ol>
-        /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
-        /// sessions.</p>
+        /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -14874,14 +14452,12 @@ pub mod list_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
-        /// listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
-        /// listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15079,14 +14655,12 @@ pub mod list_dashboard_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
-        /// for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
-        /// for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16178,14 +15752,12 @@ pub mod list_group_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16407,14 +15979,12 @@ pub mod list_groups_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18668,18 +18238,9 @@ pub mod list_themes_input {
         }
         /// <p>The type of themes that you want to list. Valid options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL (default)</code>- Display all existing themes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
-        /// </li>
+        /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+        /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+        /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ThemeType) -> Self {
             self.r#type = Some(input);
@@ -18687,18 +18248,9 @@ pub mod list_themes_input {
         }
         /// <p>The type of themes that you want to list. Valid options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL (default)</code>- Display all existing themes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
-        /// </li>
+        /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+        /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+        /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ThemeType>) -> Self {
             self.r#type = input;
@@ -19119,14 +18671,12 @@ pub mod list_user_groups_input {
             self.user_name = input;
             self
         }
-        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
-        /// that contains your Amazon QuickSight account.</p>
+        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
-        /// that contains your Amazon QuickSight account.</p>
+        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19368,14 +18918,12 @@ pub mod list_users_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19605,37 +19153,19 @@ pub mod register_user_input {
         pub(crate) external_login_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
-        /// parameter accepts two values:</p>
+        /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
-        /// Amazon QuickSight. </p>
-        /// </li>
+        /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
+        /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
         /// </ul>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
         }
-        /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
-        /// parameter accepts two values:</p>
+        /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
-        /// Amazon QuickSight. </p>
-        /// </li>
+        /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
+        /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
         /// </ul>
         pub fn set_identity_type(
             mut self,
@@ -19654,65 +19184,25 @@ pub mod register_user_input {
             self.email = input;
             self
         }
-        /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-        /// following:</p>
+        /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
+        /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+        /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
         /// </ul>
         pub fn user_role(mut self, input: crate::model::UserRole) -> Self {
             self.user_role = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-        /// following:</p>
+        /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
+        /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+        /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
         /// </ul>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.user_role = input;
@@ -19728,38 +19218,22 @@ pub mod register_user_input {
             self.iam_arn = input;
             self
         }
-        /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAM role. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAM role if each user has a different session name. For more
-        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
-        /// <code>assume-role</code>
-        /// </a> in the <i>CLI Reference.</i>
-        /// </p>
+        /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
         pub fn session_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_name = Some(input.into());
             self
         }
-        /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAM role. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAM role if each user has a different session name. For more
-        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
-        /// <code>assume-role</code>
-        /// </a> in the <i>CLI Reference.</i>
-        /// </p>
+        /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
         pub fn set_session_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19777,77 +19251,41 @@ pub mod register_user_input {
             self.namespace = input;
             self
         }
-        /// <p>The Amazon QuickSight user name that you want to create for the user you are
-        /// registering.</p>
+        /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight user name that you want to create for the user you are
-        /// registering.</p>
+        /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-        /// assign to this user. Customized permissions allows you to control a user's access by
-        /// restricting access the following operations:</p>
+        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>Create and update data sources</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update datasets</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update email reports</p>
-        /// </li>
-        /// <li>
-        /// <p>Subscribe to email reports</p>
-        /// </li>
+        /// <li> <p>Create and update data sources</p> </li>
+        /// <li> <p>Create and update datasets</p> </li>
+        /// <li> <p>Create and update email reports</p> </li>
+        /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>To add custom permissions to an existing user, use <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> instead.</p>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-        /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
         }
-        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-        /// assign to this user. Customized permissions allows you to control a user's access by
-        /// restricting access the following operations:</p>
+        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>Create and update data sources</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update datasets</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update email reports</p>
-        /// </li>
-        /// <li>
-        /// <p>Subscribe to email reports</p>
-        /// </li>
+        /// <li> <p>Create and update data sources</p> </li>
+        /// <li> <p>Create and update datasets</p> </li>
+        /// <li> <p>Create and update email reports</p> </li>
+        /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>To add custom permissions to an existing user, use <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> instead.</p>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-        /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn set_custom_permissions_name(
             mut self,
@@ -19858,14 +19296,8 @@ pub mod register_user_input {
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
         /// </ul>
         pub fn external_login_federation_provider_type(
             mut self,
@@ -19876,14 +19308,8 @@ pub mod register_user_input {
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
         /// </ul>
         pub fn set_external_login_federation_provider_type(
             mut self,
@@ -19892,9 +19318,7 @@ pub mod register_user_input {
             self.external_login_federation_provider_type = input;
             self
         }
-        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-        /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
             input: impl Into<std::string::String>,
@@ -19902,9 +19326,7 @@ pub mod register_user_input {
             self.custom_federation_provider_url = Some(input.into());
             self
         }
-        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-        /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn set_custom_federation_provider_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20300,14 +19722,12 @@ pub mod search_analyses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
-        /// for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
-        /// for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20519,14 +19939,12 @@ pub mod search_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
-        /// for. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
-        /// for. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20538,20 +19956,14 @@ pub mod search_dashboards_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to apply to the search. Currently, you can search only by user name, for
-        /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
-        /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
-        /// </p>
+        /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
         pub fn filters(mut self, input: crate::model::DashboardSearchFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to apply to the search. Currently, you can search only by user name, for
-        /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
-        /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
-        /// </p>
+        /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DashboardSearchFilter>>,
@@ -21337,14 +20749,12 @@ pub mod update_account_customization_input {
         pub(crate) account_customization: std::option::Option<crate::model::AccountCustomization>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21552,14 +20962,12 @@ pub mod update_account_settings_input {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
-        /// list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
-        /// list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21567,18 +20975,12 @@ pub mod update_account_settings_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
-        /// <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with Amazon QuickSight provide an email that becomes associated with the
-        /// default namespace.</p>
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_namespace = Some(input.into());
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
-        /// <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with Amazon QuickSight provide an email that becomes associated with the
-        /// default namespace.</p>
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
         pub fn set_default_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21586,14 +20988,12 @@ pub mod update_account_settings_input {
             self.default_namespace = input;
             self
         }
-        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
-        /// Amazon Web Services account or Amazon QuickSight subscription.</p>
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
         pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_email = Some(input.into());
             self
         }
-        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
-        /// Amazon Web Services account or Amazon QuickSight subscription.</p>
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
         pub fn set_notification_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21782,38 +21182,32 @@ pub mod update_analysis_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
-        /// analysis.</p>
+        /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
-        /// analysis.</p>
+        /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
         }
-        /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-        /// analysis in the Amazon QuickSight console.</p>
+        /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-        /// analysis in the Amazon QuickSight console.</p>
+        /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The parameter names and override values that you want to use. An analysis can have
-        /// any parameter type, and some parameters might accept multiple values. </p>
+        /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
         pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>The parameter names and override values that you want to use. An analysis can have
-        /// any parameter type, and some parameters might accept multiple values. </p>
+        /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::Parameters>,
@@ -21821,14 +21215,12 @@ pub mod update_analysis_input {
             self.parameters = input;
             self
         }
-        /// <p>A source entity to use for the analysis that you're updating. This metadata structure
-        /// contains details that describe a source template and one or more datasets.</p>
+        /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
         pub fn source_entity(mut self, input: crate::model::AnalysisSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>A source entity to use for the analysis that you're updating. This metadata structure
-        /// contains details that describe a source template and one or more datasets.</p>
+        /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::AnalysisSourceEntity>,
@@ -21836,16 +21228,12 @@ pub mod update_analysis_input {
             self.source_entity = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-        /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
-        /// it.</p>
+        /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-        /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
-        /// it.</p>
+        /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.theme_arn = input;
             self
@@ -22035,14 +21423,12 @@ pub mod update_analysis_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-        /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-        /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22050,14 +21436,12 @@ pub mod update_analysis_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
-        /// analysis URL.</p>
+        /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
-        /// analysis URL.</p>
+        /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
@@ -22066,16 +21450,14 @@ pub mod update_analysis_permissions_input {
         ///
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
-        /// <p>A structure that describes the permissions to add and the principal to add them
-        /// to.</p>
+        /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
         pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
             v.push(input);
             self.grant_permissions = Some(v);
             self
         }
-        /// <p>A structure that describes the permissions to add and the principal to add them
-        /// to.</p>
+        /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
         pub fn set_grant_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -22087,16 +21469,14 @@ pub mod update_analysis_permissions_input {
         ///
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
-        /// <p>A structure that describes the permissions to remove and the principal to remove them
-        /// from.</p>
+        /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
         pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
             v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
-        /// <p>A structure that describes the permissions to remove and the principal to remove them
-        /// from.</p>
+        /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
         pub fn set_revoke_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -22293,14 +21673,12 @@ pub mod update_dashboard_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22328,36 +21706,14 @@ pub mod update_dashboard_input {
             self.name = input;
             self
         }
-        /// <p>The entity that you are using as a source when you update the dashboard. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-        /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
-        /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code> API operation. For
-        /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
-        /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-        /// list the replacement datasets for the placeholders listed in the original. The schema in
-        /// each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn source_entity(mut self, input: crate::model::DashboardSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>The entity that you are using as a source when you update the dashboard. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-        /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
-        /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code> API operation. For
-        /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
-        /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-        /// list the replacement datasets for the placeholders listed in the original. The schema in
-        /// each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::DashboardSourceEntity>,
@@ -22365,16 +21721,12 @@ pub mod update_dashboard_input {
             self.source_entity = input;
             self
         }
-        /// <p>A structure that contains the parameters of the dashboard. These are parameter
-        /// overrides for a dashboard. A dashboard can have any type of parameters, and some
-        /// parameters might accept multiple values.</p>
+        /// <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
         pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>A structure that contains the parameters of the dashboard. These are parameter
-        /// overrides for a dashboard. A dashboard can have any type of parameters, and some
-        /// parameters might accept multiple values.</p>
+        /// <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::Parameters>,
@@ -22397,27 +21749,9 @@ pub mod update_dashboard_input {
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-        /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-        /// option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-        /// option to export data to .CSV format isn't enabled when this is set to
-        /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-        /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-        /// This option is <code>COLLAPSED</code> by default. </p>
-        /// </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
         /// </ul>
         pub fn dashboard_publish_options(
             mut self,
@@ -22428,27 +21762,9 @@ pub mod update_dashboard_input {
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-        /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-        /// option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-        /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-        /// option to export data to .CSV format isn't enabled when this is set to
-        /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-        /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-        /// This option is <code>COLLAPSED</code> by default. </p>
-        /// </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+        /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
         /// </ul>
         pub fn set_dashboard_publish_options(
             mut self,
@@ -22457,18 +21773,12 @@ pub mod update_dashboard_input {
             self.dashboard_publish_options = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-        /// you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-        /// dashboard.</p>
+        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-        /// you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-        /// dashboard.</p>
+        /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.theme_arn = input;
             self
@@ -22664,14 +21974,12 @@ pub mod update_dashboard_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22950,14 +22258,12 @@ pub mod update_dashboard_published_version_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-        /// updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23201,14 +22507,12 @@ pub mod update_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
-        /// Amazon Web Services account.</p>
+        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
-        /// Amazon Web Services account.</p>
+        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -23366,9 +22670,7 @@ pub mod update_data_set_input {
         ///
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
             input: crate::model::ColumnLevelPermissionRule,
@@ -23378,9 +22680,7 @@ pub mod update_data_set_input {
             self.column_level_permission_rules = Some(v);
             self
         }
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
@@ -23608,14 +22908,12 @@ pub mod update_data_set_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region for each Amazon Web Services account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region for each Amazon Web Services account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -23895,14 +23193,12 @@ pub mod update_data_source_input {
             self.data_source_parameters = input;
             self
         }
-        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
-        /// only credentials based on user name and password are supported.</p>
+        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
             self.credentials = Some(input);
             self
         }
-        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
-        /// only credentials based on user name and password are supported.</p>
+        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
         pub fn set_credentials(
             mut self,
             input: std::option::Option<crate::model::DataSourceCredentials>,
@@ -23910,8 +23206,7 @@ pub mod update_data_source_input {
             self.credentials = input;
             self
         }
-        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-        /// your underlying source.</p>
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
             input: crate::model::VpcConnectionProperties,
@@ -23919,8 +23214,7 @@ pub mod update_data_source_input {
             self.vpc_connection_properties = Some(input);
             self
         }
-        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-        /// your underlying source.</p>
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn set_vpc_connection_properties(
             mut self,
             input: std::option::Option<crate::model::VpcConnectionProperties>,
@@ -23928,14 +23222,12 @@ pub mod update_data_source_input {
             self.vpc_connection_properties = input;
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
-        /// source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
             self.ssl_properties = Some(input);
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
-        /// source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn set_ssl_properties(
             mut self,
             input: std::option::Option<crate::model::SslProperties>,
@@ -24854,14 +24146,12 @@ pub mod update_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25117,20 +24407,9 @@ pub mod update_iam_policy_assignment_input {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
@@ -25138,20 +24417,9 @@ pub mod update_iam_policy_assignment_input {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn set_assignment_status(
             mut self,
@@ -25160,14 +24428,12 @@ pub mod update_iam_policy_assignment_input {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-        /// specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-        /// specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -25629,30 +24895,14 @@ pub mod update_template_input {
             self.template_id = input;
             self
         }
-        /// <p>The entity that you are using as a source when you update the template. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-        /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-        /// analysis. Both of these require an Amazon Resource Name (ARN). For
-        /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-        /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-        /// in the original. The schema in each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn source_entity(mut self, input: crate::model::TemplateSourceEntity) -> Self {
             self.source_entity = Some(input);
             self
         }
-        /// <p>The entity that you are using as a source when you update the template. In
-        /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-        /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-        /// analysis. Both of these require an Amazon Resource Name (ARN). For
-        /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-        /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
-        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-        /// in the original. The schema in each dataset must match its placeholder. </p>
+        /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+        /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
         pub fn set_source_entity(
             mut self,
             input: std::option::Option<crate::model::TemplateSourceEntity>,
@@ -25660,18 +24910,12 @@ pub mod update_template_input {
             self.source_entity = input;
             self
         }
-        /// <p>A description of the current template version that is being updated. Every time you call
-        /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
-        /// of the template maintains a description of the version in the
-        /// <code>VersionDescription</code> field.</p>
+        /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_description = Some(input.into());
             self
         }
-        /// <p>A description of the current template version that is being updated. Every time you call
-        /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
-        /// of the template maintains a description of the version in the
-        /// <code>VersionDescription</code> field.</p>
+        /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
         pub fn set_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25894,18 +25138,12 @@ pub mod update_template_alias_input {
             self.template_id = input;
             self
         }
-        /// <p>The alias of the template that you want to update. If you name a specific alias, you update
-        /// the version that the alias points to. You can specify the latest version of the template
-        /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
-        /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>The alias of the template that you want to update. If you name a specific alias, you update
-        /// the version that the alias points to. You can specify the latest version of the template
-        /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
-        /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+        /// <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -26399,14 +25637,12 @@ pub mod update_theme_input {
             self.name = input;
             self
         }
-        /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-        /// All themes initially inherit from a default Amazon QuickSight theme.</p>
+        /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
         }
-        /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-        /// All themes initially inherit from a default Amazon QuickSight theme.</p>
+        /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn set_base_theme_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26414,16 +25650,12 @@ pub mod update_theme_input {
             self.base_theme_id = input;
             self
         }
-        /// <p>A description of the theme version that you're updating Every time that you call
-        /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
-        /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
+        /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
         pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_description = Some(input.into());
             self
         }
-        /// <p>A description of the theme version that you're updating Every time that you call
-        /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
-        /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
+        /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
         pub fn set_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27129,14 +26361,12 @@ pub mod update_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27164,107 +26394,51 @@ pub mod update_user_input {
             self.email = input;
             self
         }
-        /// <p>The Amazon QuickSight role of the user. The role can be one of the
-        /// following default security cohorts:</p>
+        /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
         /// </ul>
-        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
-        /// screens dealing with permissions.</p>
+        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
         pub fn role(mut self, input: crate::model::UserRole) -> Self {
             self.role = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight role of the user. The role can be one of the
-        /// following default security cohorts:</p>
+        /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
         /// </ul>
-        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
-        /// screens dealing with permissions.</p>
+        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.role = input;
             self
         }
-        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-        /// assign to this user. Customized permissions allows you to control a user's access by
-        /// restricting access the following operations:</p>
+        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>Create and update data sources</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update datasets</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update email reports</p>
-        /// </li>
-        /// <li>
-        /// <p>Subscribe to email reports</p>
-        /// </li>
+        /// <li> <p>Create and update data sources</p> </li>
+        /// <li> <p>Create and update datasets</p> </li>
+        /// <li> <p>Create and update email reports</p> </li>
+        /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-        /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
         }
-        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-        /// assign to this user. Customized permissions allows you to control a user's access by
-        /// restricting access the following operations:</p>
+        /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>Create and update data sources</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update datasets</p>
-        /// </li>
-        /// <li>
-        /// <p>Create and update email reports</p>
-        /// </li>
-        /// <li>
-        /// <p>Subscribe to email reports</p>
-        /// </li>
+        /// <li> <p>Create and update data sources</p> </li>
+        /// <li> <p>Create and update datasets</p> </li>
+        /// <li> <p>Create and update email reports</p> </li>
+        /// <li> <p>Subscribe to email reports</p> </li>
         /// </ul>
-        /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-        /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn set_custom_permissions_name(
             mut self,
@@ -27273,40 +26447,21 @@ pub mod update_user_input {
             self.custom_permissions_name = input;
             self
         }
-        /// <p>A flag that you use to indicate that you want to remove all custom permissions
-        /// from this user. Using this parameter resets the user to the state
-        /// it was in before a custom permissions profile was applied. This parameter defaults to
-        /// NULL and it doesn't accept any other value.</p>
+        /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
         pub fn unapply_custom_permissions(mut self, input: bool) -> Self {
             self.unapply_custom_permissions = Some(input);
             self
         }
-        /// <p>A flag that you use to indicate that you want to remove all custom permissions
-        /// from this user. Using this parameter resets the user to the state
-        /// it was in before a custom permissions profile was applied. This parameter defaults to
-        /// NULL and it doesn't accept any other value.</p>
+        /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
         pub fn set_unapply_custom_permissions(mut self, input: std::option::Option<bool>) -> Self {
             self.unapply_custom_permissions = input;
             self
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-        /// </code>
-        /// API operation to check the external login information.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+        /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
         /// </ul>
         pub fn external_login_federation_provider_type(
             mut self,
@@ -27317,22 +26472,9 @@ pub mod update_user_input {
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-        /// </code>
-        /// API operation to check the external login information.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+        /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
         /// </ul>
         pub fn set_external_login_federation_provider_type(
             mut self,
@@ -27341,9 +26483,7 @@ pub mod update_user_input {
             self.external_login_federation_provider_type = input;
             self
         }
-        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-        /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
             input: impl Into<std::string::String>,
@@ -27351,9 +26491,7 @@ pub mod update_user_input {
             self.custom_federation_provider_url = Some(input.into());
             self
         }
-        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-        /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+        /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn set_custom_federation_provider_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27571,88 +26709,41 @@ impl UpdateUserInput {
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The email address of the user that you want to update.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight role of the user. The role can be one of the
-    /// following default security cohorts:</p>
+    /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-    /// dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-    /// settings.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
     /// </ul>
-    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
-    /// screens dealing with permissions.</p>
+    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
     pub role: std::option::Option<crate::model::UserRole>,
-    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-    /// assign to this user. Customized permissions allows you to control a user's access by
-    /// restricting access the following operations:</p>
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Create and update data sources</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update datasets</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update email reports</p>
-    /// </li>
-    /// <li>
-    /// <p>Subscribe to email reports</p>
-    /// </li>
+    /// <li> <p>Create and update data sources</p> </li>
+    /// <li> <p>Create and update datasets</p> </li>
+    /// <li> <p>Create and update email reports</p> </li>
+    /// <li> <p>Subscribe to email reports</p> </li>
     /// </ul>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
-    /// <p>A flag that you use to indicate that you want to remove all custom permissions
-    /// from this user. Using this parameter resets the user to the state
-    /// it was in before a custom permissions profile was applied. This parameter defaults to
-    /// NULL and it doesn't accept any other value.</p>
+    /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
     pub unapply_custom_permissions: bool,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-    /// </code>
-    /// API operation to check the external login information.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
     /// </ul>
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub custom_federation_provider_url: std::option::Option<std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: std::option::Option<std::string::String>,
@@ -27662,8 +26753,7 @@ impl UpdateUserInput {
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -27675,89 +26765,43 @@ impl UpdateUserInput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The Amazon QuickSight role of the user. The role can be one of the
-    /// following default security cohorts:</p>
+    /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-    /// dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-    /// settings.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
     /// </ul>
-    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
-    /// screens dealing with permissions.</p>
+    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.role.as_ref()
     }
-    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-    /// assign to this user. Customized permissions allows you to control a user's access by
-    /// restricting access the following operations:</p>
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Create and update data sources</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update datasets</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update email reports</p>
-    /// </li>
-    /// <li>
-    /// <p>Subscribe to email reports</p>
-    /// </li>
+    /// <li> <p>Create and update data sources</p> </li>
+    /// <li> <p>Create and update datasets</p> </li>
+    /// <li> <p>Create and update email reports</p> </li>
+    /// <li> <p>Subscribe to email reports</p> </li>
     /// </ul>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
         self.custom_permissions_name.as_deref()
     }
-    /// <p>A flag that you use to indicate that you want to remove all custom permissions
-    /// from this user. Using this parameter resets the user to the state
-    /// it was in before a custom permissions profile was applied. This parameter defaults to
-    /// NULL and it doesn't accept any other value.</p>
+    /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
     pub fn unapply_custom_permissions(&self) -> bool {
         self.unapply_custom_permissions
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-    /// </code>
-    /// API operation to check the external login information.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
+    /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
     /// </ul>
     pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
         self.external_login_federation_provider_type.as_deref()
     }
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn custom_federation_provider_url(&self) -> std::option::Option<&str> {
         self.custom_federation_provider_url.as_deref()
     }
@@ -27886,12 +26930,9 @@ pub struct UpdateThemeInput {
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-    /// All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub base_theme_id: std::option::Option<std::string::String>,
-    /// <p>A description of the theme version that you're updating Every time that you call
-    /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
-    /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
     pub version_description: std::option::Option<std::string::String>,
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub configuration: std::option::Option<crate::model::ThemeConfiguration>,
@@ -27909,14 +26950,11 @@ impl UpdateThemeInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
-    /// All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(&self) -> std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
-    /// <p>A description of the theme version that you're updating Every time that you call
-    /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
-    /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
     pub fn version_description(&self) -> std::option::Option<&str> {
         self.version_description.as_deref()
     }
@@ -27988,10 +27026,7 @@ pub struct UpdateTemplateAliasInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>The alias of the template that you want to update. If you name a specific alias, you update
-    /// the version that the alias points to. You can specify the latest version of the template
-    /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
-    /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the template.</p>
     pub template_version_number: std::option::Option<i64>,
@@ -28005,10 +27040,7 @@ impl UpdateTemplateAliasInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The alias of the template that you want to update. If you name a specific alias, you update
-    /// the version that the alias points to. You can specify the latest version of the template
-    /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
-    /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -28036,21 +27068,10 @@ pub struct UpdateTemplateInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>The entity that you are using as a source when you update the template. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-    /// analysis. Both of these require an Amazon Resource Name (ARN). For
-    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-    /// in the original. The schema in each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub source_entity: std::option::Option<crate::model::TemplateSourceEntity>,
-    /// <p>A description of the current template version that is being updated. Every time you call
-    /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
-    /// of the template maintains a description of the version in the
-    /// <code>VersionDescription</code> field.</p>
+    /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub version_description: std::option::Option<std::string::String>,
     /// <p>The name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -28064,23 +27085,12 @@ impl UpdateTemplateInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The entity that you are using as a source when you update the template. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-    /// analysis. Both of these require an Amazon Resource Name (ARN). For
-    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-    /// in the original. The schema in each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::TemplateSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>A description of the current template version that is being updated. Every time you call
-    /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
-    /// of the template maintains a description of the version in the
-    /// <code>VersionDescription</code> field.</p>
+    /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(&self) -> std::option::Option<&str> {
         self.version_description.as_deref()
     }
@@ -28152,24 +27162,12 @@ pub struct UpdateIamPolicyAssignmentInput {
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-    /// specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub identities: std::option::Option<
@@ -28191,26 +27189,14 @@ impl UpdateIamPolicyAssignmentInput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-    /// specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -28244,8 +27230,7 @@ pub struct UpdateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The description for the group that you want to update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -28259,8 +27244,7 @@ impl UpdateGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -28411,14 +27395,11 @@ pub struct UpdateDataSourceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
-    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
-    /// only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub credentials: std::option::Option<crate::model::DataSourceCredentials>,
-    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-    /// your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
-    /// source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
 }
 impl UpdateDataSourceInput {
@@ -28440,20 +27421,17 @@ impl UpdateDataSourceInput {
     ) -> std::option::Option<&crate::model::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
-    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
-    /// only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(&self) -> std::option::Option<&crate::model::DataSourceCredentials> {
         self.credentials.as_ref()
     }
-    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-    /// your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(
         &self,
     ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
-    /// source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub fn ssl_properties(&self) -> std::option::Option<&crate::model::SslProperties> {
         self.ssl_properties.as_ref()
     }
@@ -28478,8 +27456,7 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 pub struct UpdateDataSetPermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The resource permissions that you want to grant to the dataset.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -28491,8 +27468,7 @@ impl UpdateDataSetPermissionsInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -28522,8 +27498,7 @@ impl std::fmt::Debug for UpdateDataSetPermissionsInput {
 pub struct UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
-    /// Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -28548,9 +27523,7 @@ pub struct UpdateDataSetInput {
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub row_level_permission_tag_configuration:
         std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -28561,8 +27534,7 @@ impl UpdateDataSetInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
-    /// Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -28614,9 +27586,7 @@ impl UpdateDataSetInput {
     ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
         self.row_level_permission_tag_configuration.as_ref()
     }
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub fn column_level_permission_rules(
         &self,
     ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
@@ -28664,8 +27634,7 @@ impl std::fmt::Debug for UpdateDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPublishedVersionInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -28673,8 +27642,7 @@ pub struct UpdateDashboardPublishedVersionInput {
     pub version_number: std::option::Option<i64>,
 }
 impl UpdateDashboardPublishedVersionInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -28701,8 +27669,7 @@ impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -28718,8 +27685,7 @@ pub struct UpdateDashboardPermissionsInput {
         std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
 impl UpdateDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -28765,67 +27731,31 @@ impl std::fmt::Debug for UpdateDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The display name of the dashboard.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The entity that you are using as a source when you update the dashboard. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-    /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
-    /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-    /// to a template by using the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-    /// </code> API operation. For
-    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
-    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-    /// list the replacement datasets for the placeholders listed in the original. The schema in
-    /// each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub source_entity: std::option::Option<crate::model::DashboardSourceEntity>,
-    /// <p>A structure that contains the parameters of the dashboard. These are parameter
-    /// overrides for a dashboard. A dashboard can have any type of parameters, and some
-    /// parameters might accept multiple values.</p>
+    /// <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
     pub parameters: std::option::Option<crate::model::Parameters>,
     /// <p>A description for the first version of the dashboard being created.</p>
     pub version_description: std::option::Option<std::string::String>,
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-    /// option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-    /// option to export data to .CSV format isn't enabled when this is set to
-    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-    /// This option is <code>COLLAPSED</code> by default. </p>
-    /// </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
-    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-    /// you add a value for this field, it overrides the value that was originally associated
-    /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-    /// dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
 impl UpdateDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -28837,25 +27767,12 @@ impl UpdateDashboardInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The entity that you are using as a source when you update the dashboard. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-    /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
-    /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-    /// to a template by using the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-    /// </code> API operation. For
-    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
-    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-    /// list the replacement datasets for the placeholders listed in the original. The schema in
-    /// each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::DashboardSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>A structure that contains the parameters of the dashboard. These are parameter
-    /// overrides for a dashboard. A dashboard can have any type of parameters, and some
-    /// parameters might accept multiple values.</p>
+    /// <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
         self.parameters.as_ref()
     }
@@ -28865,37 +27782,16 @@ impl UpdateDashboardInput {
     }
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-    /// option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-    /// option to export data to .CSV format isn't enabled when this is set to
-    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-    /// This option is <code>COLLAPSED</code> by default. </p>
-    /// </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
     pub fn dashboard_publish_options(
         &self,
     ) -> std::option::Option<&crate::model::DashboardPublishOptions> {
         self.dashboard_publish_options.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-    /// you add a value for this field, it overrides the value that was originally associated
-    /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-    /// dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     pub fn theme_arn(&self) -> std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
@@ -28919,37 +27815,29 @@ impl std::fmt::Debug for UpdateDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-    /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
-    /// analysis URL.</p>
+    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A structure that describes the permissions to add and the principal to add them
-    /// to.</p>
+    /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>A structure that describes the permissions to remove and the principal to remove them
-    /// from.</p>
+    /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
 impl UpdateAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-    /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
-    /// analysis URL.</p>
+    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A structure that describes the permissions to add and the principal to add them
-    /// to.</p>
+    /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
     pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.grant_permissions.as_deref()
     }
-    /// <p>A structure that describes the permissions to remove and the principal to remove them
-    /// from.</p>
+    /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
     pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.revoke_permissions.as_deref()
     }
@@ -28971,21 +27859,15 @@ impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
 pub struct UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
-    /// analysis.</p>
+    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-    /// analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The parameter names and override values that you want to use. An analysis can have
-    /// any parameter type, and some parameters might accept multiple values. </p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub parameters: std::option::Option<crate::model::Parameters>,
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure
-    /// contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub source_entity: std::option::Option<crate::model::AnalysisSourceEntity>,
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-    /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
-    /// it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnalysisInput {
@@ -28993,29 +27875,23 @@ impl UpdateAnalysisInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
-    /// analysis.</p>
+    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-    /// analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have
-    /// any parameter type, and some parameters might accept multiple values. </p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
         self.parameters.as_ref()
     }
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure
-    /// contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-    /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
-    /// it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(&self) -> std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
@@ -29037,33 +27913,23 @@ impl std::fmt::Debug for UpdateAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
-    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
-    /// list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
-    /// <code>default</code>. Identity and Access Management (IAM) users that register
-    /// for the first time with Amazon QuickSight provide an email that becomes associated with the
-    /// default namespace.</p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
     pub default_namespace: std::option::Option<std::string::String>,
-    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
-    /// Amazon Web Services account or Amazon QuickSight subscription.</p>
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
 }
 impl UpdateAccountSettingsInput {
-    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
-    /// list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
-    /// <code>default</code>. Identity and Access Management (IAM) users that register
-    /// for the first time with Amazon QuickSight provide an email that becomes associated with the
-    /// default namespace.</p>
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
     pub fn default_namespace(&self) -> std::option::Option<&str> {
         self.default_namespace.as_deref()
     }
-    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
-    /// Amazon Web Services account or Amazon QuickSight subscription.</p>
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn notification_email(&self) -> std::option::Option<&str> {
         self.notification_email.as_deref()
     }
@@ -29082,8 +27948,7 @@ impl std::fmt::Debug for UpdateAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -29091,8 +27956,7 @@ pub struct UpdateAccountCustomizationInput {
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
 }
 impl UpdateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -29219,13 +28083,9 @@ impl std::fmt::Debug for SearchFoldersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
-    /// for. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for
-    /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
-    /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
-    /// </p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::DashboardSearchFilter>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -29233,15 +28093,11 @@ pub struct SearchDashboardsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl SearchDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
-    /// for. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for
-    /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
-    /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
-    /// </p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::DashboardSearchFilter]> {
         self.filters.as_deref()
     }
@@ -29269,8 +28125,7 @@ impl std::fmt::Debug for SearchDashboardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAnalysesInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
-    /// for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The structure for the search filters that you want to apply to your search. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::AnalysisSearchFilter>>,
@@ -29280,8 +28135,7 @@ pub struct SearchAnalysesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl SearchAnalysesInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
-    /// for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -29341,133 +28195,61 @@ impl std::fmt::Debug for RestoreAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUserInput {
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
-    /// parameter accepts two values:</p>
+    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
-    /// Amazon QuickSight. </p>
-    /// </li>
+    /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
     /// </ul>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The email address of the user that you want to register.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-    /// following:</p>
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-    /// dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-    /// settings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
+    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
     pub iam_arn: std::option::Option<std::string::String>,
-    /// <p>You need to use this parameter only when you register one or more users using an assumed
-    /// IAM role. You don't need to provide the session name for other scenarios, for example when
-    /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-    /// users using the same IAM role if each user has a different session name. For more
-    /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
-    /// <code>assume-role</code>
-    /// </a> in the <i>CLI Reference.</i>
-    /// </p>
+    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
     pub session_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight user name that you want to create for the user you are
-    /// registering.</p>
+    /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-    /// assign to this user. Customized permissions allows you to control a user's access by
-    /// restricting access the following operations:</p>
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Create and update data sources</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update datasets</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update email reports</p>
-    /// </li>
-    /// <li>
-    /// <p>Subscribe to email reports</p>
-    /// </li>
+    /// <li> <p>Create and update data sources</p> </li>
+    /// <li> <p>Create and update datasets</p> </li>
+    /// <li> <p>Create and update email reports</p> </li>
+    /// <li> <p>Subscribe to email reports</p> </li>
     /// </ul>
-    /// <p>To add custom permissions to an existing user, use <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-    /// </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
     /// </ul>
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub custom_federation_provider_url: std::option::Option<std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: std::option::Option<std::string::String>,
 }
 impl RegisterUserInput {
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
-    /// parameter accepts two values:</p>
+    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
-    /// Amazon QuickSight. </p>
-    /// </li>
+    /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
     /// </ul>
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
@@ -29476,33 +28258,13 @@ impl RegisterUserInput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-    /// following:</p>
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-    /// dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-    /// settings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
+    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
     pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.user_role.as_ref()
@@ -29511,19 +28273,11 @@ impl RegisterUserInput {
     pub fn iam_arn(&self) -> std::option::Option<&str> {
         self.iam_arn.as_deref()
     }
-    /// <p>You need to use this parameter only when you register one or more users using an assumed
-    /// IAM role. You don't need to provide the session name for other scenarios, for example when
-    /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-    /// users using the same IAM role if each user has a different session name. For more
-    /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
-    /// <code>assume-role</code>
-    /// </a> in the <i>CLI Reference.</i>
-    /// </p>
+    /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
     pub fn session_name(&self) -> std::option::Option<&str> {
         self.session_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -29531,59 +28285,33 @@ impl RegisterUserInput {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The Amazon QuickSight user name that you want to create for the user you are
-    /// registering.</p>
+    /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
-    /// assign to this user. Customized permissions allows you to control a user's access by
-    /// restricting access the following operations:</p>
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Create and update data sources</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update datasets</p>
-    /// </li>
-    /// <li>
-    /// <p>Create and update email reports</p>
-    /// </li>
-    /// <li>
-    /// <p>Subscribe to email reports</p>
-    /// </li>
+    /// <li> <p>Create and update data sources</p> </li>
+    /// <li> <p>Create and update datasets</p> </li>
+    /// <li> <p>Create and update email reports</p> </li>
+    /// <li> <p>Subscribe to email reports</p> </li>
     /// </ul>
-    /// <p>To add custom permissions to an existing user, use <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-    /// </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
-    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
-    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
         self.custom_permissions_name.as_deref()
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
     /// </ul>
     pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
         self.external_login_federation_provider_type.as_deref()
     }
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
-    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn custom_federation_provider_url(&self) -> std::option::Option<&str> {
         self.custom_federation_provider_url.as_deref()
     }
@@ -29621,8 +28349,7 @@ impl std::fmt::Debug for RegisterUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -29632,8 +28359,7 @@ pub struct ListUsersInput {
     pub namespace: std::option::Option<std::string::String>,
 }
 impl ListUsersInput {
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -29667,8 +28393,7 @@ impl std::fmt::Debug for ListUsersInput {
 pub struct ListUserGroupsInput {
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
-    /// that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -29682,8 +28407,7 @@ impl ListUserGroupsInput {
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
-    /// that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -29766,18 +28490,9 @@ pub struct ListThemesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL (default)</code>- Display all existing themes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
-    /// </li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ThemeType>,
 }
@@ -29796,18 +28511,9 @@ impl ListThemesInput {
     }
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL (default)</code>- Display all existing themes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
-    /// </li>
+    /// <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeType> {
         self.r#type.as_ref()
@@ -30185,8 +28891,7 @@ impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -30196,8 +28901,7 @@ pub struct ListGroupsInput {
     pub namespace: std::option::Option<std::string::String>,
 }
 impl ListGroupsInput {
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30235,8 +28939,7 @@ pub struct ListGroupMembershipsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return from this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -30254,8 +28957,7 @@ impl ListGroupMembershipsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30427,8 +29129,7 @@ impl std::fmt::Debug for ListDataSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardVersionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
-    /// for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -30438,8 +29139,7 @@ pub struct ListDashboardVersionsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDashboardVersionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
-    /// for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30471,8 +29171,7 @@ impl std::fmt::Debug for ListDashboardVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
-    /// listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -30480,8 +29179,7 @@ pub struct ListDashboardsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
-    /// listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30545,61 +29243,25 @@ impl std::fmt::Debug for ListAnalysesInput {
 pub struct GetSessionEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
-    /// the following paths:</p>
+    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>/start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/analyses</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/dashboards</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/favorites</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/dashboards/<i>DashboardId</i>
-    /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/analyses/<i>AnalysisId</i>
-    /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
-    /// </li>
+    /// <li> <p> <code>/start</code> </p> </li>
+    /// <li> <p> <code>/start/analyses</code> </p> </li>
+    /// <li> <p> <code>/start/dashboards</code> </p> </li>
+    /// <li> <p> <code>/start/favorites</code> </p> </li>
+    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
+    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
     /// </ul>
     pub entry_point: std::option::Option<std::string::String>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub session_lifetime_in_minutes: std::option::Option<i64>,
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-    /// You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
-    /// admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Active Directory (AD) users or group members</p>
-    /// </li>
-    /// <li>
-    /// <p>Invited nonfederated users</p>
-    /// </li>
-    /// <li>
-    /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
-    /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
-    /// federation</p>
-    /// </li>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
     /// </ol>
-    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
-    /// sessions.</p>
+    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl GetSessionEmbedUrlInput {
@@ -30607,39 +29269,14 @@ impl GetSessionEmbedUrlInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
-    /// the following paths:</p>
+    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>/start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/analyses</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/dashboards</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/favorites</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/dashboards/<i>DashboardId</i>
-    /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/analyses/<i>AnalysisId</i>
-    /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
-    /// </li>
+    /// <li> <p> <code>/start</code> </p> </li>
+    /// <li> <p> <code>/start/analyses</code> </p> </li>
+    /// <li> <p> <code>/start/dashboards</code> </p> </li>
+    /// <li> <p> <code>/start/favorites</code> </p> </li>
+    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
+    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
     /// </ul>
     pub fn entry_point(&self) -> std::option::Option<&str> {
         self.entry_point.as_deref()
@@ -30648,24 +29285,13 @@ impl GetSessionEmbedUrlInput {
     pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
         self.session_lifetime_in_minutes
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-    /// You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
-    /// admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Active Directory (AD) users or group members</p>
-    /// </li>
-    /// <li>
-    /// <p>Invited nonfederated users</p>
-    /// </li>
-    /// <li>
-    /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
-    /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
-    /// federation</p>
-    /// </li>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
     /// </ol>
-    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
-    /// sessions.</p>
+    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -30690,54 +29316,29 @@ impl std::fmt::Debug for GetSessionEmbedUrlInput {
 pub struct GetDashboardEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
-    /// policy.</p>
+    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The authentication method that the user uses to sign in.</p>
     pub identity_type: std::option::Option<crate::model::EmbeddingIdentityType>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub session_lifetime_in_minutes: std::option::Option<i64>,
-    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
-    /// the undo/redo button.</p>
+    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     pub undo_redo_disabled: bool,
-    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
-    /// reset button.</p>
+    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     pub reset_disabled: bool,
-    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
-    /// applies to the sheet and the parameter settings. These are control settings that the
-    /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
-    /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-    /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
-    /// set to FALSE, the state of the user session is not persisted. The default is
-    /// <code>FALSE</code>.</p>
+    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub state_persistence_enabled: bool,
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-    /// You can use this for any Amazon QuickSight users in your account (readers, authors, or
-    /// admins) authenticated as one of the following:</p>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Active Directory (AD) users or group members</p>
-    /// </li>
-    /// <li>
-    /// <p>Invited nonfederated users</p>
-    /// </li>
-    /// <li>
-    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-    /// SAML, OpenID Connect, or IAM federation.</p>
-    /// </li>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
     /// </ul>
-    /// <p>Omit this parameter for users in the third group – IAM users and IAM
-    /// role-based sessions.</p>
+    /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
-    /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
-    /// anonymous users. The <code>IdentityType</code> parameter must be set to
-    /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-    /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
-    /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
-    /// can access all three dashboards. </p>
+    /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
     pub additional_dashboard_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDashboardEmbedUrlInput {
@@ -30745,8 +29346,7 @@ impl GetDashboardEmbedUrlInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
-    /// policy.</p>
+    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
     pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
@@ -30758,57 +29358,33 @@ impl GetDashboardEmbedUrlInput {
     pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
         self.session_lifetime_in_minutes
     }
-    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
-    /// the undo/redo button.</p>
+    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     pub fn undo_redo_disabled(&self) -> bool {
         self.undo_redo_disabled
     }
-    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
-    /// reset button.</p>
+    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     pub fn reset_disabled(&self) -> bool {
         self.reset_disabled
     }
-    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
-    /// applies to the sheet and the parameter settings. These are control settings that the
-    /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
-    /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-    /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
-    /// set to FALSE, the state of the user session is not persisted. The default is
-    /// <code>FALSE</code>.</p>
+    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub fn state_persistence_enabled(&self) -> bool {
         self.state_persistence_enabled
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
-    /// You can use this for any Amazon QuickSight users in your account (readers, authors, or
-    /// admins) authenticated as one of the following:</p>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Active Directory (AD) users or group members</p>
-    /// </li>
-    /// <li>
-    /// <p>Invited nonfederated users</p>
-    /// </li>
-    /// <li>
-    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-    /// SAML, OpenID Connect, or IAM federation.</p>
-    /// </li>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
     /// </ul>
-    /// <p>Omit this parameter for users in the third group – IAM users and IAM
-    /// role-based sessions.</p>
+    /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
-    /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
-    /// anonymous users. The <code>IdentityType</code> parameter must be set to
-    /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-    /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
-    /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
-    /// can access all three dashboards. </p>
+    /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
     pub fn additional_dashboard_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_dashboard_ids.as_deref()
     }
@@ -30891,8 +29467,7 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     pub session_lifetime_in_minutes: std::option::Option<i64>,
     /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
-    /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
     pub session_tags: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
     /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
@@ -30914,8 +29489,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
-    /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
     pub fn session_tags(&self) -> std::option::Option<&[crate::model::SessionTag]> {
         self.session_tags.as_deref()
@@ -30953,8 +29527,7 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
 pub struct DescribeUserInput {
     /// <p>The name of the user that you want to describe.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -30964,8 +29537,7 @@ impl DescribeUserInput {
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31016,8 +29588,7 @@ impl std::fmt::Debug for DescribeThemePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -31025,8 +29596,7 @@ pub struct DescribeThemeAliasInput {
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DescribeThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31057,13 +29627,9 @@ pub struct DescribeThemeInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
-    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
-    /// value isn't provided, the latest version of the theme is described.</p>
+    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
     pub version_number: std::option::Option<i64>,
-    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DescribeThemeInput {
@@ -31075,15 +29641,11 @@ impl DescribeThemeInput {
     pub fn theme_id(&self) -> std::option::Option<&str> {
         self.theme_id.as_deref()
     }
-    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
-    /// value isn't provided, the latest version of the theme is described.</p>
+    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
-    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -31131,20 +29693,15 @@ impl std::fmt::Debug for DescribeTemplatePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DescribeTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31152,10 +29709,7 @@ impl DescribeTemplateAliasInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -31178,13 +29732,9 @@ pub struct DescribeTemplateInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
-    /// value isn't provided, the latest version of the template is described.</p>
+    /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
     pub version_number: std::option::Option<i64>,
-    /// <p>The alias of the template that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DescribeTemplateInput {
@@ -31196,15 +29746,11 @@ impl DescribeTemplateInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
-    /// value isn't provided, the latest version of the template is described.</p>
+    /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
-    /// <p>The alias of the template that you want to describe. If you name a specific alias, you
-    /// describe the version that the alias points to. You can specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -31345,8 +29891,7 @@ impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
 pub struct DescribeGroupInput {
     /// <p>The name of the group that you want to describe.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -31356,8 +29901,7 @@ impl DescribeGroupInput {
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31576,15 +30120,13 @@ impl std::fmt::Debug for DescribeDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
-    /// permissions for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
 }
 impl DescribeDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
-    /// permissions for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31606,20 +30148,17 @@ impl std::fmt::Debug for DescribeDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
-    /// <p>The version number for the dashboard. If a version number isn't passed, the
-    /// latest published dashboard version is described. </p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub version_number: std::option::Option<i64>,
     /// <p>The alias name.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DescribeDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31627,8 +30166,7 @@ impl DescribeDashboardInput {
     pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the
-    /// latest published dashboard version is described. </p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
@@ -31652,21 +30190,17 @@ impl std::fmt::Debug for DescribeDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-    /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
-    /// analysis URL.</p>
+    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
-    /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
-    /// analysis URL.</p>
+    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
@@ -31684,21 +30218,17 @@ impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
-    /// Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
-    /// analysis.</p>
+    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
-    /// Amazon Web Services account that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
-    /// analysis.</p>
+    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
@@ -31737,35 +30267,23 @@ impl std::fmt::Debug for DescribeAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-    /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
-    /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
-    /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
-    /// that are configured at different levels. </p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     pub resolved: bool,
 }
 impl DescribeAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-    /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
-    /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
-    /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
-    /// that are configured at different levels. </p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     pub fn resolved(&self) -> bool {
         self.resolved
     }
@@ -31786,8 +30304,7 @@ impl std::fmt::Debug for DescribeAccountCustomizationInput {
 pub struct DeleteUserByPrincipalIdInput {
     /// <p>The principal ID of the user.</p>
     pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -31797,8 +30314,7 @@ impl DeleteUserByPrincipalIdInput {
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31823,8 +30339,7 @@ impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
 pub struct DeleteUserInput {
     /// <p>The name of the user that you want to delete.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -31834,8 +30349,7 @@ impl DeleteUserInput {
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -31898,9 +30412,7 @@ pub struct DeleteThemeInput {
     /// <p>An ID for the theme that you want to delete.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The version of the theme that you want to delete. </p>
-    /// <p>
-    /// <b>Note:</b> If you don't provide a version number, you're
-    /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub version_number: std::option::Option<i64>,
 }
 impl DeleteThemeInput {
@@ -31913,9 +30425,7 @@ impl DeleteThemeInput {
         self.theme_id.as_deref()
     }
     /// <p>The version of the theme that you want to delete. </p>
-    /// <p>
-    /// <b>Note:</b> If you don't provide a version number, you're
-    /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
@@ -31938,10 +30448,7 @@ pub struct DeleteTemplateAliasInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template that the specified alias is for.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
-    /// alias points to. You can specify the alias name, or specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DeleteTemplateAliasInput {
@@ -31953,10 +30460,7 @@ impl DeleteTemplateAliasInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
-    /// alias points to. You can specify the alias name, or specify the latest version of the
-    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-    /// parameter. </p>
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -31979,9 +30483,7 @@ pub struct DeleteTemplateInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template you want to delete.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the version of the template that you want to delete.
-    /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
-    /// </p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub version_number: std::option::Option<i64>,
 }
 impl DeleteTemplateInput {
@@ -31993,9 +30495,7 @@ impl DeleteTemplateInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>Specifies the version of the template that you want to delete.
-    /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
-    /// </p>
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
@@ -32081,8 +30581,7 @@ pub struct DeleteGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to delete the user from.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -32096,8 +30595,7 @@ impl DeleteGroupMembershipInput {
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32123,8 +30621,7 @@ impl std::fmt::Debug for DeleteGroupMembershipInput {
 pub struct DeleteGroupInput {
     /// <p>The name of the group that you want to delete.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -32134,8 +30631,7 @@ impl DeleteGroupInput {
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32164,8 +30660,7 @@ pub struct DeleteFolderMembershipInput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
     pub member_id: std::option::Option<std::string::String>,
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
-    /// </p>
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
     pub member_type: std::option::Option<crate::model::MemberType>,
 }
 impl DeleteFolderMembershipInput {
@@ -32181,8 +30676,7 @@ impl DeleteFolderMembershipInput {
     pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
-    /// </p>
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
     pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
         self.member_type.as_ref()
     }
@@ -32286,18 +30780,15 @@ impl std::fmt::Debug for DeleteDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// deleting.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
-    /// <p>The version number of the dashboard. If the version number property is provided, only
-    /// the specified version of the dashboard is deleted.</p>
+    /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
     pub version_number: std::option::Option<i64>,
 }
 impl DeleteDashboardInput {
-    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
-    /// deleting.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32305,8 +30796,7 @@ impl DeleteDashboardInput {
     pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The version number of the dashboard. If the version number property is provided, only
-    /// the specified version of the dashboard is deleted.</p>
+    /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
     pub fn version_number(&self) -> std::option::Option<i64> {
         self.version_number
     }
@@ -32329,13 +30819,9 @@ pub struct DeleteAnalysisInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're deleting.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
-    /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
-    /// option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub recovery_window_in_days: std::option::Option<i64>,
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
-    /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
-    /// You can't restore an analysis after it's deleted. </p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub force_delete_without_recovery: bool,
 }
 impl DeleteAnalysisInput {
@@ -32347,15 +30833,11 @@ impl DeleteAnalysisInput {
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
-    /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
-    /// option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(&self) -> std::option::Option<i64> {
         self.recovery_window_in_days
     }
-    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
-    /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
-    /// You can't restore an analysis after it's deleted. </p>
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(&self) -> bool {
         self.force_delete_without_recovery
     }
@@ -32378,15 +30860,13 @@ impl std::fmt::Debug for DeleteAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
-    /// this Amazon Web Services Region.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
 impl DeleteAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
-    /// this Amazon Web Services Region.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32412,9 +30892,7 @@ pub struct CreateThemeAliasInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the theme alias.</p>
     pub theme_id: std::option::Option<std::string::String>,
-    /// <p>The name that you want to give to the theme alias that you are creating. The
-    /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
-    /// are reserved by Amazon QuickSight. </p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the theme.</p>
     pub theme_version_number: std::option::Option<i64>,
@@ -32428,9 +30906,7 @@ impl CreateThemeAliasInput {
     pub fn theme_id(&self) -> std::option::Option<&str> {
         self.theme_id.as_deref()
     }
-    /// <p>The name that you want to give to the theme alias that you are creating. The
-    /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
-    /// are reserved by Amazon QuickSight. </p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -32456,28 +30932,19 @@ impl std::fmt::Debug for CreateThemeAliasInput {
 pub struct CreateThemeInput {
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
-    /// each Amazon Web Services account.</p>
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>A display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
-    /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
-    /// <code>ListThemes</code> or choose <b>Themes</b> from
-    /// within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
     pub base_theme_id: std::option::Option<std::string::String>,
-    /// <p>A description of the first version of the theme that you're creating. Every time
-    /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
-    /// theme has a description of the version in the <code>VersionDescription</code>
-    /// field.</p>
+    /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
     pub version_description: std::option::Option<std::string::String>,
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub configuration: std::option::Option<crate::model::ThemeConfiguration>,
-    /// <p>A valid grouping of resource permissions to apply to the new theme.
-    /// </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
-    /// resource.</p>
+    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateThemeInput {
@@ -32485,8 +30952,7 @@ impl CreateThemeInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
-    /// each Amazon Web Services account.</p>
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
     pub fn theme_id(&self) -> std::option::Option<&str> {
         self.theme_id.as_deref()
     }
@@ -32494,17 +30960,11 @@ impl CreateThemeInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
-    /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
-    /// <code>ListThemes</code> or choose <b>Themes</b> from
-    /// within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
     pub fn base_theme_id(&self) -> std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
-    /// <p>A description of the first version of the theme that you're creating. Every time
-    /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
-    /// theme has a description of the version in the <code>VersionDescription</code>
-    /// field.</p>
+    /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(&self) -> std::option::Option<&str> {
         self.version_description.as_deref()
     }
@@ -32512,13 +30972,11 @@ impl CreateThemeInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::ThemeConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme.
-    /// </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
-    /// resource.</p>
+    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -32546,9 +31004,7 @@ pub struct CreateTemplateAliasInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
-    /// <p>The name that you want to give to the template alias that you're creating. Don't start the
-    /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-    /// are reserved by Amazon QuickSight. </p>
+    /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the template.</p>
     pub template_version_number: std::option::Option<i64>,
@@ -32562,9 +31018,7 @@ impl CreateTemplateAliasInput {
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
-    /// <p>The name that you want to give to the template alias that you're creating. Don't start the
-    /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
-    /// are reserved by Amazon QuickSight. </p>
+    /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -32590,30 +31044,18 @@ impl std::fmt::Debug for CreateTemplateAliasInput {
 pub struct CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-    /// each Amazon Web Services account.</p>
+    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions to be set on the template. </p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The entity that you are using as a source when you create the template. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-    /// analysis. Both of these require an Amazon Resource Name (ARN). For
-    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-    /// in the original. The schema in each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub source_entity: std::option::Option<crate::model::TemplateSourceEntity>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A description of the current template version being created. This API operation creates the
-    /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
-    /// version is created. Each version of the template maintains a description of the version
-    /// in the <code>VersionDescription</code> field.</p>
+    /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub version_description: std::option::Option<std::string::String>,
 }
 impl CreateTemplateInput {
@@ -32621,8 +31063,7 @@ impl CreateTemplateInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-    /// each Amazon Web Services account.</p>
+    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
@@ -32634,16 +31075,8 @@ impl CreateTemplateInput {
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The entity that you are using as a source when you create the template. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
-    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
-    /// analysis. Both of these require an Amazon Resource Name (ARN). For
-    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
-    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
-    /// in the original. The schema in each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::TemplateSourceEntity> {
         self.source_entity.as_ref()
     }
@@ -32651,10 +31084,7 @@ impl CreateTemplateInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A description of the current template version being created. This API operation creates the
-    /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
-    /// version is created. Each version of the template maintains a description of the version
-    /// in the <code>VersionDescription</code> field.</p>
+    /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(&self) -> std::option::Option<&str> {
         self.version_description.as_deref()
     }
@@ -32681,8 +31111,7 @@ pub struct CreateNamespaceInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of your user identity directory. Currently, this supports users
-    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub identity_store: std::option::Option<crate::model::IdentityStore>,
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -32696,8 +31125,7 @@ impl CreateNamespaceInput {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>Specifies the type of your user identity directory. Currently, this supports users
-    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
         self.identity_store.as_ref()
     }
@@ -32763,31 +31191,18 @@ impl std::fmt::Debug for CreateIngestionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
-    /// groups.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-    /// specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub identities: std::option::Option<
@@ -32797,8 +31212,7 @@ pub struct CreateIamPolicyAssignmentInput {
     pub namespace: std::option::Option<std::string::String>,
 }
 impl CreateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
-    /// groups.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32808,26 +31222,14 @@ impl CreateIamPolicyAssignmentInput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
-    /// specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -32865,8 +31267,7 @@ pub struct CreateGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to add the user to.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -32880,8 +31281,7 @@ impl CreateGroupMembershipInput {
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -32909,8 +31309,7 @@ pub struct CreateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>A description for the group that you want to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -32924,8 +31323,7 @@ impl CreateGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -33000,8 +31398,7 @@ pub struct CreateFolderInput {
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub folder_type: std::option::Option<crate::model::FolderType>,
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p>
-    /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub parent_folder_arn: std::option::Option<std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
@@ -33027,8 +31424,7 @@ impl CreateFolderInput {
         self.folder_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
-    /// <p>
-    /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(&self) -> std::option::Option<&str> {
         self.parent_folder_arn.as_deref()
     }
@@ -33066,19 +31462,16 @@ pub struct CreateDataSourceInput {
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the data source. To return a
-    /// list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
-    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
-    /// credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub credentials: std::option::Option<crate::model::DataSourceCredentials>,
     /// <p>A list of resource permissions on the data source.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-    /// your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
@@ -33098,8 +31491,7 @@ impl CreateDataSourceInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the data source. To return a
-    /// list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
@@ -33110,8 +31502,7 @@ impl CreateDataSourceInput {
     ) -> std::option::Option<&crate::model::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
-    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
-    /// credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(&self) -> std::option::Option<&crate::model::DataSourceCredentials> {
         self.credentials.as_ref()
     }
@@ -33119,8 +31510,7 @@ impl CreateDataSourceInput {
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
-    /// your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(
         &self,
     ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
@@ -33185,9 +31575,7 @@ pub struct CreateDataSetInput {
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub row_level_permission_tag_configuration:
         std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
@@ -33256,9 +31644,7 @@ impl CreateDataSetInput {
     ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
         self.row_level_permission_tag_configuration.as_ref()
     }
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub fn column_level_permission_rules(
         &self,
     ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
@@ -33318,65 +31704,26 @@ pub struct CreateDashboardInput {
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The display name of the dashboard.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The parameters for the creation of the dashboard, which you want to use to override
-    /// the default settings. A dashboard can have any type of parameters, and some parameters
-    /// might accept multiple values. </p>
+    /// <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
     pub parameters: std::option::Option<crate::model::Parameters>,
-    /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-    /// for granting permissions by providing a list of IAM action information for each
-    /// principal ARN. </p>
-    ///
+    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The entity that you are using as a source when you create the dashboard. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-    /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
-    /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-    /// to a template by using the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-    /// </code>
-    /// API operation. For
-    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
-    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-    /// list the replacement datasets for the placeholders listed in the original. The schema in
-    /// each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub source_entity: std::option::Option<crate::model::DashboardSourceEntity>,
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// dashboard.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A description for the first version of the dashboard being created.</p>
     pub version_description: std::option::Option<std::string::String>,
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-    /// option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-    /// option to export data to .CSV format isn't enabled when this is set to
-    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-    /// This option is <code>COLLAPSED</code> by default. </p>
-    /// </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
-    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-    /// you add a value for this field, it overrides the value that is used in the source
-    /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-    /// dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
 impl CreateDashboardInput {
@@ -33392,39 +31739,21 @@ impl CreateDashboardInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameters for the creation of the dashboard, which you want to use to override
-    /// the default settings. A dashboard can have any type of parameters, and some parameters
-    /// might accept multiple values. </p>
+    /// <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
         self.parameters.as_ref()
     }
-    /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-    /// for granting permissions by providing a list of IAM action information for each
-    /// principal ARN. </p>
-    ///
+    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In
-    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
-    /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
-    /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-    /// to a template by using the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-    /// </code>
-    /// API operation. For
-    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
-    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-    /// list the replacement datasets for the placeholders listed in the original. The schema in
-    /// each dataset must match its placeholder. </p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::DashboardSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// dashboard.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -33434,37 +31763,16 @@ impl CreateDashboardInput {
     }
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
-    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
-    /// option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
-    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
-    /// option to export data to .CSV format isn't enabled when this is set to
-    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
-    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
-    /// This option is <code>COLLAPSED</code> by default. </p>
-    /// </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
     pub fn dashboard_publish_options(
         &self,
     ) -> std::option::Option<&crate::model::DashboardPublishOptions> {
         self.dashboard_publish_options.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
-    /// you add a value for this field, it overrides the value that is used in the source
-    /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
-    /// dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     pub fn theme_arn(&self) -> std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
@@ -33492,30 +31800,20 @@ impl std::fmt::Debug for CreateDashboardInput {
 pub struct CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
-    /// analysis.</p>
+    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-    /// analysis in the Amazon QuickSight console. </p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The parameter names and override values that you want to use. An analysis can have
-    /// any parameter type, and some parameters might accept multiple values. </p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub parameters: std::option::Option<crate::model::Parameters>,
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
-    /// providing a list of Identity and Access Management (IAM) action information for each
-    /// principal listed by Amazon Resource Name (ARN). </p>
-    ///
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>A source entity to use for the analysis that you're creating. This metadata structure
-    /// contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub source_entity: std::option::Option<crate::model::AnalysisSourceEntity>,
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-    /// in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: std::option::Option<std::string::String>,
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// analysis.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAnalysisInput {
@@ -33523,42 +31821,32 @@ impl CreateAnalysisInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
-    /// analysis.</p>
+    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-    /// analysis in the Amazon QuickSight console. </p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameter names and override values that you want to use. An analysis can have
-    /// any parameter type, and some parameters might accept multiple values. </p>
+    /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
         self.parameters.as_ref()
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
-    /// providing a list of Identity and Access Management (IAM) action information for each
-    /// principal listed by Amazon Resource Name (ARN). </p>
-    ///
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>A source entity to use for the analysis that you're creating. This metadata structure
-    /// contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub fn source_entity(&self) -> std::option::Option<&crate::model::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-    /// in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(&self) -> std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// analysis.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -33586,14 +31874,8 @@ pub struct CreateAccountCustomizationInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-    /// these to an Amazon Web Services account and a QuickSight namespace. </p>
-    /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
-    /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
-    /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
-    /// specifying <code>"AccountCustomization": { "DefaultTheme":
-    /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
-    /// }</code>. </p>
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
+    /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
     /// <p>A list of the tags that you want to attach to this resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -33607,14 +31889,8 @@ impl CreateAccountCustomizationInput {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-    /// these to an Amazon Web Services account and a QuickSight namespace. </p>
-    /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
-    /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
-    /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
-    /// specifying <code>"AccountCustomization": { "DefaultTheme":
-    /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
-    /// }</code>. </p>
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
+    /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
     pub fn account_customization(
         &self,
     ) -> std::option::Option<&crate::model::AccountCustomization> {

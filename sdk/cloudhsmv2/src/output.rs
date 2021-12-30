@@ -171,21 +171,11 @@ impl ModifyClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyBackupAttributesOutput {
-    /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-    /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
-    /// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
-    /// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-    /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
-    /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+    /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl ModifyBackupAttributesOutput {
-    /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-    /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
-    /// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
-    /// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-    /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
-    /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+    /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
     pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
         self.backup.as_ref()
     }
@@ -206,22 +196,12 @@ pub mod modify_backup_attributes_output {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
     }
     impl Builder {
-        /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-        /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
-        /// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
-        /// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-        /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
-        /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+        /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
         pub fn backup(mut self, input: crate::model::Backup) -> Self {
             self.backup = Some(input);
             self
         }
-        /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-        /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
-        /// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
-        /// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-        /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
-        /// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+        /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
             self.backup = input;
             self
@@ -247,8 +227,7 @@ impl ModifyBackupAttributesOutput {
 pub struct ListTagsOutput {
     /// <p>A list of tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
-    /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -256,8 +235,7 @@ impl ListTagsOutput {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
-    /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
-    /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -299,14 +277,12 @@ pub mod list_tags_output {
             self.tag_list = input;
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
-        /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of tags. Use
-        /// this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -409,9 +385,7 @@ impl InitializeClusterOutput {
 pub struct DescribeClustersOutput {
     /// <p>A list of clusters.</p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
-    /// <p>An opaque string that indicates that the response contains only a subset of clusters.
-    /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
-    /// clusters.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClustersOutput {
@@ -419,9 +393,7 @@ impl DescribeClustersOutput {
     pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
         self.clusters.as_deref()
     }
-    /// <p>An opaque string that indicates that the response contains only a subset of clusters.
-    /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
-    /// clusters.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -463,16 +435,12 @@ pub mod describe_clusters_output {
             self.clusters = input;
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of clusters.
-        /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
-        /// clusters.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of clusters.
-        /// Use this value in a subsequent <code>DescribeClusters</code> request to get more
-        /// clusters.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -499,9 +467,7 @@ impl DescribeClustersOutput {
 pub struct DescribeBackupsOutput {
     /// <p>A list of backups.</p>
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
-    /// <p>An opaque string that indicates that the response contains only a subset of backups.
-    /// Use this value in a subsequent <code>DescribeBackups</code> request to get more
-    /// backups.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
@@ -509,9 +475,7 @@ impl DescribeBackupsOutput {
     pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
         self.backups.as_deref()
     }
-    /// <p>An opaque string that indicates that the response contains only a subset of backups.
-    /// Use this value in a subsequent <code>DescribeBackups</code> request to get more
-    /// backups.</p>
+    /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -553,16 +517,12 @@ pub mod describe_backups_output {
             self.backups = input;
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of backups.
-        /// Use this value in a subsequent <code>DescribeBackups</code> request to get more
-        /// backups.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque string that indicates that the response contains only a subset of backups.
-        /// Use this value in a subsequent <code>DescribeBackups</code> request to get more
-        /// backups.</p>
+        /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -855,21 +815,13 @@ impl CreateClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyBackupToRegionOutput {
-    /// <p>Information on the backup that will be copied to the destination region, including
-    /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the
-    /// destination backup will be the same as that of the source backup.</p>
-    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use
-    /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
-    /// destination region.</p>
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     pub destination_backup: std::option::Option<crate::model::DestinationBackup>,
 }
 impl CopyBackupToRegionOutput {
-    /// <p>Information on the backup that will be copied to the destination region, including
-    /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the
-    /// destination backup will be the same as that of the source backup.</p>
-    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use
-    /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
-    /// destination region.</p>
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     pub fn destination_backup(&self) -> std::option::Option<&crate::model::DestinationBackup> {
         self.destination_backup.as_ref()
     }
@@ -890,22 +842,14 @@ pub mod copy_backup_to_region_output {
         pub(crate) destination_backup: std::option::Option<crate::model::DestinationBackup>,
     }
     impl Builder {
-        /// <p>Information on the backup that will be copied to the destination region, including
-        /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the
-        /// destination backup will be the same as that of the source backup.</p>
-        /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use
-        /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
-        /// destination region.</p>
+        /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+        /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
         pub fn destination_backup(mut self, input: crate::model::DestinationBackup) -> Self {
             self.destination_backup = Some(input);
             self
         }
-        /// <p>Information on the backup that will be copied to the destination region, including
-        /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the
-        /// destination backup will be the same as that of the source backup.</p>
-        /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use
-        /// the <a>DescribeBackups</a> operation on the backup that will be copied to the
-        /// destination region.</p>
+        /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+        /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
         pub fn set_destination_backup(
             mut self,
             input: std::option::Option<crate::model::DestinationBackup>,

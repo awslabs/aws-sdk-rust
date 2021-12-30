@@ -389,8 +389,7 @@ impl ListTagsForResourceOutput {
 pub struct ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     pub protocols_lists: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtocolsListsOutput {
@@ -400,8 +399,7 @@ impl ListProtocolsListsOutput {
     ) -> std::option::Option<&[crate::model::ProtocolsListDataSummary]> {
         self.protocols_lists.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -444,14 +442,12 @@ pub mod list_protocols_lists_output {
             self.protocols_lists = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -478,11 +474,7 @@ impl ListProtocolsListsOutput {
 pub struct ListPoliciesOutput {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
     pub policy_list: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-    /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for
-    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-    /// value. To list more <code>PolicySummary</code> objects, submit another
-    /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
-    /// response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -490,11 +482,7 @@ impl ListPoliciesOutput {
     pub fn policy_list(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
         self.policy_list.as_deref()
     }
-    /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for
-    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-    /// value. To list more <code>PolicySummary</code> objects, submit another
-    /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
-    /// response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -536,20 +524,12 @@ pub mod list_policies_output {
             self.policy_list = input;
             self
         }
-        /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for
-        /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-        /// value. To list more <code>PolicySummary</code> objects, submit another
-        /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
-        /// response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for
-        /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-        /// value. To list more <code>PolicySummary</code> objects, submit another
-        /// <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the
-        /// response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -576,11 +556,7 @@ impl ListPoliciesOutput {
 pub struct ListMemberAccountsOutput {
     /// <p>An array of account IDs.</p>
     pub member_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you have more member account IDs than the number that you specified for
-    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-    /// value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify
-    /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-    /// next request.</p>
+    /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMemberAccountsOutput {
@@ -588,11 +564,7 @@ impl ListMemberAccountsOutput {
     pub fn member_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.member_accounts.as_deref()
     }
-    /// <p>If you have more member account IDs than the number that you specified for
-    /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-    /// value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify
-    /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-    /// next request.</p>
+    /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -634,20 +606,12 @@ pub mod list_member_accounts_output {
             self.member_accounts = input;
             self
         }
-        /// <p>If you have more member account IDs than the number that you specified for
-        /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-        /// value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify
-        /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-        /// next request.</p>
+        /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you have more member account IDs than the number that you specified for
-        /// <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-        /// value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify
-        /// the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-        /// next request.</p>
+        /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -675,12 +639,7 @@ pub struct ListComplianceStatusOutput {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
     pub policy_compliance_status_list:
         std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
-    /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you
-    /// specified for <code>MaxResults</code> in the request, the response includes a
-    /// <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects,
-    /// submit another <code>ListComplianceStatus</code> request, and specify the
-    /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-    /// next request.</p>
+    /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceStatusOutput {
@@ -690,12 +649,7 @@ impl ListComplianceStatusOutput {
     ) -> std::option::Option<&[crate::model::PolicyComplianceStatus]> {
         self.policy_compliance_status_list.as_deref()
     }
-    /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you
-    /// specified for <code>MaxResults</code> in the request, the response includes a
-    /// <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects,
-    /// submit another <code>ListComplianceStatus</code> request, and specify the
-    /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-    /// next request.</p>
+    /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -744,22 +698,12 @@ pub mod list_compliance_status_output {
             self.policy_compliance_status_list = input;
             self
         }
-        /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you
-        /// specified for <code>MaxResults</code> in the request, the response includes a
-        /// <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects,
-        /// submit another <code>ListComplianceStatus</code> request, and specify the
-        /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-        /// next request.</p>
+        /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you
-        /// specified for <code>MaxResults</code> in the request, the response includes a
-        /// <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects,
-        /// submit another <code>ListComplianceStatus</code> request, and specify the
-        /// <code>NextToken</code> value from the response in the <code>NextToken</code> value in the
-        /// next request.</p>
+        /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -786,8 +730,7 @@ impl ListComplianceStatusOutput {
 pub struct ListAppsListsOutput {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
     pub apps_lists: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsListsOutput {
@@ -795,8 +738,7 @@ impl ListAppsListsOutput {
     pub fn apps_lists(&self) -> std::option::Option<&[crate::model::AppsListDataSummary]> {
         self.apps_lists.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -839,14 +781,12 @@ pub mod list_apps_lists_output {
             self.apps_lists = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1009,37 +949,20 @@ impl GetProtocolsListOutput {
 pub struct GetProtectionStatusOutput {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
-    /// <p>The service type that is protected by the policy. Currently, this is always
-    /// <code>SHIELD_ADVANCED</code>.</p>
+    /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
     pub service_type: std::option::Option<crate::model::SecurityServiceType>,
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Attack type</p>
-    /// </li>
-    /// <li>
-    /// <p>Account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN of the resource attacked</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time of the attack</p>
-    /// </li>
-    /// <li>
-    /// <p>End time of the attack (ongoing attacks will not have an end time)</p>
-    /// </li>
+    /// <li> <p>Attack type</p> </li>
+    /// <li> <p>Account ID</p> </li>
+    /// <li> <p>ARN of the resource attacked</p> </li>
+    /// <li> <p>Start time of the attack</p> </li>
+    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
     /// </ul>
     /// <p>The details are in JSON format. </p>
     pub data: std::option::Option<std::string::String>,
-    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
-    /// the response includes a <code>NextToken</code> value. To list more objects, submit another
-    /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
-    /// <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
-    /// make subsequent request calls automatically on your behalf. However, this feature is not
-    /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
-    /// <code>NextToken</code> using your own processes. </p>
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetProtectionStatusOutput {
@@ -1047,41 +970,24 @@ impl GetProtectionStatusOutput {
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
-    /// <p>The service type that is protected by the policy. Currently, this is always
-    /// <code>SHIELD_ADVANCED</code>.</p>
+    /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
     pub fn service_type(&self) -> std::option::Option<&crate::model::SecurityServiceType> {
         self.service_type.as_ref()
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Attack type</p>
-    /// </li>
-    /// <li>
-    /// <p>Account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN of the resource attacked</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time of the attack</p>
-    /// </li>
-    /// <li>
-    /// <p>End time of the attack (ongoing attacks will not have an end time)</p>
-    /// </li>
+    /// <li> <p>Attack type</p> </li>
+    /// <li> <p>Account ID</p> </li>
+    /// <li> <p>ARN of the resource attacked</p> </li>
+    /// <li> <p>Start time of the attack</p> </li>
+    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
     /// </ul>
     /// <p>The details are in JSON format. </p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
     }
-    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
-    /// the response includes a <code>NextToken</code> value. To list more objects, submit another
-    /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
-    /// <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
-    /// make subsequent request calls automatically on your behalf. However, this feature is not
-    /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
-    /// <code>NextToken</code> using your own processes. </p>
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1121,14 +1027,12 @@ pub mod get_protection_status_output {
             self.admin_account_id = input;
             self
         }
-        /// <p>The service type that is protected by the policy. Currently, this is always
-        /// <code>SHIELD_ADVANCED</code>.</p>
+        /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
         pub fn service_type(mut self, input: crate::model::SecurityServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The service type that is protected by the policy. Currently, this is always
-        /// <code>SHIELD_ADVANCED</code>.</p>
+        /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::SecurityServiceType>,
@@ -1138,21 +1042,11 @@ pub mod get_protection_status_output {
         }
         /// <p>Details about the attack, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Attack type</p>
-        /// </li>
-        /// <li>
-        /// <p>Account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN of the resource attacked</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time of the attack</p>
-        /// </li>
-        /// <li>
-        /// <p>End time of the attack (ongoing attacks will not have an end time)</p>
-        /// </li>
+        /// <li> <p>Attack type</p> </li>
+        /// <li> <p>Account ID</p> </li>
+        /// <li> <p>ARN of the resource attacked</p> </li>
+        /// <li> <p>Start time of the attack</p> </li>
+        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
         /// </ul>
         /// <p>The details are in JSON format. </p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,47 +1055,25 @@ pub mod get_protection_status_output {
         }
         /// <p>Details about the attack, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Attack type</p>
-        /// </li>
-        /// <li>
-        /// <p>Account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN of the resource attacked</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time of the attack</p>
-        /// </li>
-        /// <li>
-        /// <p>End time of the attack (ongoing attacks will not have an end time)</p>
-        /// </li>
+        /// <li> <p>Attack type</p> </li>
+        /// <li> <p>Account ID</p> </li>
+        /// <li> <p>ARN of the resource attacked</p> </li>
+        /// <li> <p>Start time of the attack</p> </li>
+        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
         /// </ul>
         /// <p>The details are in JSON format. </p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
         }
-        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
-        /// the response includes a <code>NextToken</code> value. To list more objects, submit another
-        /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
-        /// <code>NextToken</code> value in the next request.</p>
-        /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
-        /// make subsequent request calls automatically on your behalf. However, this feature is not
-        /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
-        /// <code>NextToken</code> using your own processes. </p>
+        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
-        /// the response includes a <code>NextToken</code> value. To list more objects, submit another
-        /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
-        /// <code>NextToken</code> value in the next request.</p>
-        /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
-        /// make subsequent request calls automatically on your behalf. However, this feature is not
-        /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
-        /// <code>NextToken</code> using your own processes. </p>
+        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1380,13 +1252,11 @@ impl GetNotificationChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailOutput {
-    /// <p>Information about the resources and the policy that you specified in the
-    /// <code>GetComplianceDetail</code> request.</p>
+    /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
     pub policy_compliance_detail: std::option::Option<crate::model::PolicyComplianceDetail>,
 }
 impl GetComplianceDetailOutput {
-    /// <p>Information about the resources and the policy that you specified in the
-    /// <code>GetComplianceDetail</code> request.</p>
+    /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
     pub fn policy_compliance_detail(
         &self,
     ) -> std::option::Option<&crate::model::PolicyComplianceDetail> {
@@ -1410,8 +1280,7 @@ pub mod get_compliance_detail_output {
             std::option::Option<crate::model::PolicyComplianceDetail>,
     }
     impl Builder {
-        /// <p>Information about the resources and the policy that you specified in the
-        /// <code>GetComplianceDetail</code> request.</p>
+        /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
         pub fn policy_compliance_detail(
             mut self,
             input: crate::model::PolicyComplianceDetail,
@@ -1419,8 +1288,7 @@ pub mod get_compliance_detail_output {
             self.policy_compliance_detail = Some(input);
             self
         }
-        /// <p>Information about the resources and the policy that you specified in the
-        /// <code>GetComplianceDetail</code> request.</p>
+        /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
         pub fn set_policy_compliance_detail(
             mut self,
             input: std::option::Option<crate::model::PolicyComplianceDetail>,
@@ -1528,8 +1396,7 @@ impl GetAppsListOutput {
 pub struct GetAdminAccountOutput {
     /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
     pub admin_account: std::option::Option<std::string::String>,
-    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
-    /// administrator.</p>
+    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
     pub role_status: std::option::Option<crate::model::AccountRoleStatus>,
 }
 impl GetAdminAccountOutput {
@@ -1537,8 +1404,7 @@ impl GetAdminAccountOutput {
     pub fn admin_account(&self) -> std::option::Option<&str> {
         self.admin_account.as_deref()
     }
-    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
-    /// administrator.</p>
+    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
     pub fn role_status(&self) -> std::option::Option<&crate::model::AccountRoleStatus> {
         self.role_status.as_ref()
     }
@@ -1574,14 +1440,12 @@ pub mod get_admin_account_output {
             self.admin_account = input;
             self
         }
-        /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
-        /// administrator.</p>
+        /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
         pub fn role_status(mut self, input: crate::model::AccountRoleStatus) -> Self {
             self.role_status = Some(input);
             self
         }
-        /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
-        /// administrator.</p>
+        /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
         pub fn set_role_status(
             mut self,
             input: std::option::Option<crate::model::AccountRoleStatus>,

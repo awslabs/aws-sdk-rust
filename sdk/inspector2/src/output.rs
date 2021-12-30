@@ -329,8 +329,7 @@ impl ListTagsForResourceOutput {
 pub struct ListMembersOutput {
     /// <p>An object that contains details for each member account.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -338,8 +337,7 @@ impl ListMembersOutput {
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -381,14 +379,12 @@ pub mod list_members_output {
             self.members = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -413,19 +409,13 @@ impl ListMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Contains details on the findings in your environment.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
 impl ListFindingsOutput {
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -452,18 +442,12 @@ pub mod list_findings_output {
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
     }
     impl Builder {
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -511,10 +495,7 @@ pub struct ListFindingAggregationsOutput {
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
     /// <p>Objects that contain the results of an aggregation operation.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::AggregationResponse>>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingAggregationsOutput {
@@ -526,10 +507,7 @@ impl ListFindingAggregationsOutput {
     pub fn responses(&self) -> std::option::Option<&[crate::model::AggregationResponse]> {
         self.responses.as_deref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -586,18 +564,12 @@ pub mod list_finding_aggregations_output {
             self.responses = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -625,10 +597,7 @@ impl ListFindingAggregationsOutput {
 pub struct ListFiltersOutput {
     /// <p>Contains details on the filters associated with your account.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersOutput {
@@ -636,10 +605,7 @@ impl ListFiltersOutput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -681,18 +647,12 @@ pub mod list_filters_output {
             self.filters = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -720,10 +680,7 @@ pub struct ListDelegatedAdminAccountsOutput {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     pub delegated_admin_accounts:
         std::option::Option<std::vec::Vec<crate::model::DelegatedAdminAccount>>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdminAccountsOutput {
@@ -733,10 +690,7 @@ impl ListDelegatedAdminAccountsOutput {
     ) -> std::option::Option<&[crate::model::DelegatedAdminAccount]> {
         self.delegated_admin_accounts.as_deref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -782,18 +736,12 @@ pub mod list_delegated_admin_accounts_output {
             self.delegated_admin_accounts = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -822,10 +770,7 @@ pub struct ListCoverageStatisticsOutput {
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::Counts>>,
     /// <p>The total number for all groups.</p>
     pub total_counts: std::option::Option<i64>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoverageStatisticsOutput {
@@ -837,10 +782,7 @@ impl ListCoverageStatisticsOutput {
     pub fn total_counts(&self) -> std::option::Option<i64> {
         self.total_counts
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -894,18 +836,12 @@ pub mod list_coverage_statistics_output {
             self.total_counts = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -931,19 +867,13 @@ impl ListCoverageStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoverageOutput {
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An object that contains details on the covered resources in your environment.</p>
     pub covered_resources: std::option::Option<std::vec::Vec<crate::model::CoveredResource>>,
 }
 impl ListCoverageOutput {
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -971,18 +901,12 @@ pub mod list_coverage_output {
             std::option::Option<std::vec::Vec<crate::model::CoveredResource>>,
     }
     impl Builder {
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1028,10 +952,7 @@ impl ListCoverageOutput {
 pub struct ListAccountPermissionsOutput {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountPermissionsOutput {
@@ -1039,10 +960,7 @@ impl ListAccountPermissionsOutput {
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1084,18 +1002,12 @@ pub mod list_account_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1455,21 +1367,17 @@ impl EnableDelegatedAdminAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOutput {
-    /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
-    /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
     pub failed_accounts: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
 }
 impl EnableOutput {
-    /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
-    /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
     pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
@@ -1496,16 +1404,14 @@ pub mod enable_output {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input);
             self.accounts = Some(v);
             self
         }
-        /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1517,16 +1423,14 @@ pub mod enable_output {
         ///
         /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
         ///
-        /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
         pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
             v.push(input);
             self.failed_accounts = Some(v);
             self
         }
-        /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
         pub fn set_failed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
@@ -1668,21 +1572,17 @@ impl DisableDelegatedAdminAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOutput {
-    /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
-    /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
     pub failed_accounts: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
 }
 impl DisableOutput {
-    /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
-    /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are
-    /// provided for each account.</p>
+    /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
     pub fn failed_accounts(&self) -> std::option::Option<&[crate::model::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
@@ -1709,16 +1609,14 @@ pub mod disable_output {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input);
             self.accounts = Some(v);
             self
         }
-        /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1730,16 +1628,14 @@ pub mod disable_output {
         ///
         /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
         ///
-        /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
         pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
             v.push(input);
             self.failed_accounts = Some(v);
             self
         }
-        /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are
-        /// provided for each account.</p>
+        /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
         pub fn set_failed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedAccount>>,
@@ -2055,15 +1951,13 @@ impl CancelFindingsReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetFreeTrialInfoOutput {
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.
-    /// </p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
     pub failed_accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfoError>>,
 }
 impl BatchGetFreeTrialInfoOutput {
-    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.
-    /// </p>
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn accounts(&self) -> std::option::Option<&[crate::model::FreeTrialAccountInfo]> {
         self.accounts.as_deref()
     }
@@ -2095,16 +1989,14 @@ pub mod batch_get_free_trial_info_output {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.
-        /// </p>
+        /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
         pub fn accounts(mut self, input: crate::model::FreeTrialAccountInfo) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input);
             self.accounts = Some(v);
             self
         }
-        /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.
-        /// </p>
+        /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,

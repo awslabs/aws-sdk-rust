@@ -228,12 +228,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRetainedMessage`.
     ///
     /// <p>Gets the details of a single retained message for the specified topic.</p>
-    /// <p>This action returns the message payload of the retained message, which can
-    /// incur messaging costs. To list only the topic names of the retained messages, call
-    /// <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
+    /// <p>This action returns the message payload of the retained message, which can incur messaging costs. To list only the topic names of the retained messages, call <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a> action.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core
-    /// pricing - Messaging</a>.</p>
+    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing - Messaging</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRetainedMessage<
         C = aws_smithy_client::erase::DynConnector,
@@ -305,8 +302,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the shadow for the specified thing.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetThingShadow</a> action.</p>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the
-    /// IoT Developer Guide.</p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the IoT Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThingShadow<
         C = aws_smithy_client::erase::DynConnector,
@@ -478,15 +474,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRetainedMessages`.
     ///
     /// <p>Lists summary information about the retained messages stored for the account.</p>
-    /// <p>This action returns only the topic names of the retained messages. It doesn't
-    /// return any message payloads. Although this action doesn't return a message payload,
-    /// it can still incur messaging costs.</p>
-    /// <p>To get the message payload of a retained message, call
-    /// <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
-    /// with the topic name of the retained message.</p>
+    /// <p>This action returns only the topic names of the retained messages. It doesn't return any message payloads. Although this action doesn't return a message payload, it can still incur messaging costs.</p>
+    /// <p>To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a> with the topic name of the retained message.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a> action.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core
-    /// pricing - Messaging</a>.</p>
+    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing - Messaging</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRetainedMessages<
         C = aws_smithy_client::erase::DynConnector,
@@ -543,16 +534,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -572,11 +559,8 @@ pub mod fluent_builders {
     ///
     /// <p>Publishes an MQTT message.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p>
-    /// <p>For more information about MQTT messages, see
-    /// <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the
-    /// IoT Developer Guide.</p>
-    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core
-    /// pricing - Messaging</a>.</p>
+    /// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p>
+    /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing - Messaging</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Publish<
         C = aws_smithy_client::erase::DynConnector,
@@ -655,34 +639,28 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn retain(mut self, input: bool) -> Self {
             self.inner = self.inner.retain(input);
             self
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retain(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.payload(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_payload(input);
             self
@@ -692,8 +670,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the shadow for the specified thing.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingShadow</a> action.</p>
-    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the
-    /// IoT Developer Guide.</p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the IoT Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThingShadow<
         C = aws_smithy_client::erase::DynConnector,

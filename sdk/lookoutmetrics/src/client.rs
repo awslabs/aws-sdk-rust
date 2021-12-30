@@ -983,8 +983,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
     ///
-    /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any
-    /// configured datasets and alerts.</p>
+    /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any configured datasets and alerts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
@@ -1058,8 +1057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlert`.
     ///
     /// <p>Describes an alert.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlert<
         C = aws_smithy_client::erase::DynConnector,
@@ -1235,8 +1233,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomalyDetector`.
     ///
     /// <p>Describes a detector.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
@@ -1310,8 +1307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMetricSet`.
     ///
     /// <p>Describes a dataset.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1653,8 +1649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlerts`.
     ///
     /// <p>Lists the alerts attached to a detector.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts<
         C = aws_smithy_client::erase::DynConnector,
@@ -1724,14 +1719,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_anomaly_detector_arn(input);
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1750,8 +1743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyDetectors`.
     ///
     /// <p>Lists the detectors in the current AWS Region.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
@@ -1818,14 +1810,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2053,8 +2043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMetricSets`.
     ///
     /// <p>Lists the datasets in the current AWS Region.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetricSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -2134,16 +2123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2381,9 +2366,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2392,9 +2375,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

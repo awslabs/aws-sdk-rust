@@ -2387,15 +2387,11 @@ impl PutSchemaVersionMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
-    /// <p>A hash of the policy that has just been set. This must
-    /// be included in a subsequent call that overwrites or updates
-    /// this policy.</p>
+    /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
     pub policy_hash: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
-    /// <p>A hash of the policy that has just been set. This must
-    /// be included in a subsequent call that overwrites or updates
-    /// this policy.</p>
+    /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
     pub fn policy_hash(&self) -> std::option::Option<&str> {
         self.policy_hash.as_deref()
     }
@@ -2416,16 +2412,12 @@ pub mod put_resource_policy_output {
         pub(crate) policy_hash: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A hash of the policy that has just been set. This must
-        /// be included in a subsequent call that overwrites or updates
-        /// this policy.</p>
+        /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
         pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_hash = Some(input.into());
             self
         }
-        /// <p>A hash of the policy that has just been set. This must
-        /// be included in a subsequent call that overwrites or updates
-        /// this policy.</p>
+        /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
         pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_hash = input;
             self
@@ -2563,8 +2555,7 @@ impl ListWorkflowsOutput {
 pub struct ListTriggersOutput {
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
     pub trigger_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTriggersOutput {
@@ -2572,8 +2563,7 @@ impl ListTriggersOutput {
     pub fn trigger_names(&self) -> std::option::Option<&[std::string::String]> {
         self.trigger_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2615,14 +2605,12 @@ pub mod list_triggers_output {
             self.trigger_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2893,21 +2881,17 @@ impl ListRegistriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMlTransformsOutput {
-    /// <p>The identifiers of all the machine learning transforms in the account, or the
-    /// machine learning transforms with the specified tags.</p>
+    /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     pub transform_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMlTransformsOutput {
-    /// <p>The identifiers of all the machine learning transforms in the account, or the
-    /// machine learning transforms with the specified tags.</p>
+    /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     pub fn transform_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.transform_ids.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2934,16 +2918,14 @@ pub mod list_ml_transforms_output {
         ///
         /// To override the contents of this collection use [`set_transform_ids`](Self::set_transform_ids).
         ///
-        /// <p>The identifiers of all the machine learning transforms in the account, or the
-        /// machine learning transforms with the specified tags.</p>
+        /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
         pub fn transform_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.transform_ids.unwrap_or_default();
             v.push(input.into());
             self.transform_ids = Some(v);
             self
         }
-        /// <p>The identifiers of all the machine learning transforms in the account, or the
-        /// machine learning transforms with the specified tags.</p>
+        /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
         pub fn set_transform_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2951,14 +2933,12 @@ pub mod list_ml_transforms_output {
             self.transform_ids = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2985,8 +2965,7 @@ impl ListMlTransformsOutput {
 pub struct ListJobsOutput {
     /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -2994,8 +2973,7 @@ impl ListJobsOutput {
     pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
         self.job_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3037,14 +3015,12 @@ pub mod list_jobs_output {
             self.job_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3069,21 +3045,17 @@ impl ListJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevEndpointsOutput {
-    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-    /// <code>DevEndpoint</code>s with the specified tags.</p>
+    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevEndpointsOutput {
-    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-    /// <code>DevEndpoint</code>s with the specified tags.</p>
+    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
         self.dev_endpoint_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3110,16 +3082,14 @@ pub mod list_dev_endpoints_output {
         ///
         /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
         ///
-        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-        /// <code>DevEndpoint</code>s with the specified tags.</p>
+        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
         pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dev_endpoint_names.unwrap_or_default();
             v.push(input.into());
             self.dev_endpoint_names = Some(v);
             self
         }
-        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-        /// <code>DevEndpoint</code>s with the specified tags.</p>
+        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
         pub fn set_dev_endpoint_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3127,14 +3097,12 @@ pub mod list_dev_endpoints_output {
             self.dev_endpoint_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3161,8 +3129,7 @@ impl ListDevEndpointsOutput {
 pub struct ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrawlersOutput {
@@ -3170,8 +3137,7 @@ impl ListCrawlersOutput {
     pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
         self.crawler_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3213,14 +3179,12 @@ pub mod list_crawlers_output {
             self.crawler_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3623,8 +3587,7 @@ pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
     pub user_defined_functions:
         std::option::Option<std::vec::Vec<crate::model::UserDefinedFunction>>,
-    /// <p>A continuation token, if the list of functions returned does
-    /// not include the last requested function.</p>
+    /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUserDefinedFunctionsOutput {
@@ -3634,8 +3597,7 @@ impl GetUserDefinedFunctionsOutput {
     ) -> std::option::Option<&[crate::model::UserDefinedFunction]> {
         self.user_defined_functions.as_deref()
     }
-    /// <p>A continuation token, if the list of functions returned does
-    /// not include the last requested function.</p>
+    /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3678,14 +3640,12 @@ pub mod get_user_defined_functions_output {
             self.user_defined_functions = input;
             self
         }
-        /// <p>A continuation token, if the list of functions returned does
-        /// not include the last requested function.</p>
+        /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of functions returned does
-        /// not include the last requested function.</p>
+        /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3769,8 +3729,7 @@ impl GetUserDefinedFunctionOutput {
 pub struct GetTriggersOutput {
     /// <p>A list of triggers for the specified job.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
-    /// <p>A continuation token, if not all the requested triggers
-    /// have yet been returned.</p>
+    /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTriggersOutput {
@@ -3778,8 +3737,7 @@ impl GetTriggersOutput {
     pub fn triggers(&self) -> std::option::Option<&[crate::model::Trigger]> {
         self.triggers.as_deref()
     }
-    /// <p>A continuation token, if not all the requested triggers
-    /// have yet been returned.</p>
+    /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3821,14 +3779,12 @@ pub mod get_triggers_output {
             self.triggers = input;
             self
         }
-        /// <p>A continuation token, if not all the requested triggers
-        /// have yet been returned.</p>
+        /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if not all the requested triggers
-        /// have yet been returned.</p>
+        /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3980,21 +3936,17 @@ impl GetTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionsOutput {
-    /// <p>A list of strings identifying available versions of the
-    /// specified table.</p>
+    /// <p>A list of strings identifying available versions of the specified table.</p>
     pub table_versions: std::option::Option<std::vec::Vec<crate::model::TableVersion>>,
-    /// <p>A continuation token, if the list of available versions does
-    /// not include the last one.</p>
+    /// <p>A continuation token, if the list of available versions does not include the last one.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTableVersionsOutput {
-    /// <p>A list of strings identifying available versions of the
-    /// specified table.</p>
+    /// <p>A list of strings identifying available versions of the specified table.</p>
     pub fn table_versions(&self) -> std::option::Option<&[crate::model::TableVersion]> {
         self.table_versions.as_deref()
     }
-    /// <p>A continuation token, if the list of available versions does
-    /// not include the last one.</p>
+    /// <p>A continuation token, if the list of available versions does not include the last one.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4021,16 +3973,14 @@ pub mod get_table_versions_output {
         ///
         /// To override the contents of this collection use [`set_table_versions`](Self::set_table_versions).
         ///
-        /// <p>A list of strings identifying available versions of the
-        /// specified table.</p>
+        /// <p>A list of strings identifying available versions of the specified table.</p>
         pub fn table_versions(mut self, input: crate::model::TableVersion) -> Self {
             let mut v = self.table_versions.unwrap_or_default();
             v.push(input);
             self.table_versions = Some(v);
             self
         }
-        /// <p>A list of strings identifying available versions of the
-        /// specified table.</p>
+        /// <p>A list of strings identifying available versions of the specified table.</p>
         pub fn set_table_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TableVersion>>,
@@ -4038,14 +3988,12 @@ pub mod get_table_versions_output {
             self.table_versions = input;
             self
         }
-        /// <p>A continuation token, if the list of available versions does
-        /// not include the last one.</p>
+        /// <p>A continuation token, if the list of available versions does not include the last one.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of available versions does
-        /// not include the last one.</p>
+        /// <p>A continuation token, if the list of available versions does not include the last one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4129,8 +4077,7 @@ impl GetTableVersionOutput {
 pub struct GetTablesOutput {
     /// <p>A list of the requested <code>Table</code> objects.</p>
     pub table_list: std::option::Option<std::vec::Vec<crate::model::Table>>,
-    /// <p>A continuation token, present if the current list segment is
-    /// not the last.</p>
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTablesOutput {
@@ -4138,8 +4085,7 @@ impl GetTablesOutput {
     pub fn table_list(&self) -> std::option::Option<&[crate::model::Table]> {
         self.table_list.as_deref()
     }
-    /// <p>A continuation token, present if the current list segment is
-    /// not the last.</p>
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4181,14 +4127,12 @@ pub mod get_tables_output {
             self.table_list = input;
             self
         }
-        /// <p>A continuation token, present if the current list segment is
-        /// not the last.</p>
+        /// <p>A continuation token, present if the current list segment is not the last.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, present if the current list segment is
-        /// not the last.</p>
+        /// <p>A continuation token, present if the current list segment is not the last.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4268,8 +4212,7 @@ pub struct GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
     pub security_configurations:
         std::option::Option<std::vec::Vec<crate::model::SecurityConfiguration>>,
-    /// <p>A continuation token, if there are more security
-    /// configurations to return.</p>
+    /// <p>A continuation token, if there are more security configurations to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationsOutput {
@@ -4279,8 +4222,7 @@ impl GetSecurityConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::SecurityConfiguration]> {
         self.security_configurations.as_deref()
     }
-    /// <p>A continuation token, if there are more security
-    /// configurations to return.</p>
+    /// <p>A continuation token, if there are more security configurations to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4326,14 +4268,12 @@ pub mod get_security_configurations_output {
             self.security_configurations = input;
             self
         }
-        /// <p>A continuation token, if there are more security
-        /// configurations to return.</p>
+        /// <p>A continuation token, if there are more security configurations to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if there are more security
-        /// configurations to return.</p>
+        /// <p>A continuation token, if there are more security configurations to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5530,8 +5470,7 @@ impl GetPlanOutput {
 pub struct GetPartitionsOutput {
     /// <p>A list of requested partitions.</p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
-    /// <p>A continuation token, if the returned list of partitions does not include the last
-    /// one.</p>
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPartitionsOutput {
@@ -5539,8 +5478,7 @@ impl GetPartitionsOutput {
     pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
         self.partitions.as_deref()
     }
-    /// <p>A continuation token, if the returned list of partitions does not include the last
-    /// one.</p>
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5582,14 +5520,12 @@ pub mod get_partitions_output {
             self.partitions = input;
             self
         }
-        /// <p>A continuation token, if the returned list of partitions does not include the last
-        /// one.</p>
+        /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list of partitions does not include the last
-        /// one.</p>
+        /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5706,13 +5642,11 @@ impl GetPartitionIndexesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionOutput {
-    /// <p>The requested information, in the form of a <code>Partition</code>
-    /// object.</p>
+    /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
     pub partition: std::option::Option<crate::model::Partition>,
 }
 impl GetPartitionOutput {
-    /// <p>The requested information, in the form of a <code>Partition</code>
-    /// object.</p>
+    /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
     pub fn partition(&self) -> std::option::Option<&crate::model::Partition> {
         self.partition.as_ref()
     }
@@ -5733,14 +5667,12 @@ pub mod get_partition_output {
         pub(crate) partition: std::option::Option<crate::model::Partition>,
     }
     impl Builder {
-        /// <p>The requested information, in the form of a <code>Partition</code>
-        /// object.</p>
+        /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
         pub fn partition(mut self, input: crate::model::Partition) -> Self {
             self.partition = Some(input);
             self
         }
-        /// <p>The requested information, in the form of a <code>Partition</code>
-        /// object.</p>
+        /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
         pub fn set_partition(
             mut self,
             input: std::option::Option<crate::model::Partition>,
@@ -5849,8 +5781,7 @@ impl GetMlTransformsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformOutput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique name given to the transform when it was created.</p>
     pub name: std::option::Option<std::string::String>,
@@ -5870,32 +5801,21 @@ pub struct GetMlTransformOutput {
     pub evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
     /// <p>The number of labels available for this transform.</p>
     pub label_count: i32,
-    /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-    /// transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map
+    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -5908,8 +5828,7 @@ pub struct GetMlTransformOutput {
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl GetMlTransformOutput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
@@ -5949,40 +5868,29 @@ impl GetMlTransformOutput {
     pub fn label_count(&self) -> i32 {
         self.label_count
     }
-    /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-    /// transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map
+    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
         self.schema.as_deref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
@@ -6056,14 +5964,12 @@ pub mod get_ml_transform_output {
         pub(crate) transform_encryption: std::option::Option<crate::model::TransformEncryption>,
     }
     impl Builder {
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transform_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
@@ -6186,16 +6092,16 @@ pub mod get_ml_transform_output {
         ///
         /// To override the contents of this collection use [`set_schema`](Self::set_schema).
         ///
-        /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-        /// transform accepts. Has an upper bound of 100 columns.</p>
+        /// <p>The <code>Map
+        /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
         pub fn schema(mut self, input: crate::model::SchemaColumn) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input);
             self.schema = Some(v);
             self
         }
-        /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-        /// transform accepts. Has an upper bound of 100 columns.</p>
+        /// <p>The <code>Map
+        /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -6203,43 +6109,33 @@ pub mod get_ml_transform_output {
             self.schema = input;
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -6247,15 +6143,9 @@ pub mod get_ml_transform_output {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -6263,15 +6153,9 @@ pub mod get_ml_transform_output {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -7077,8 +6961,7 @@ impl GetJobOutput {
 pub struct GetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::model::DevEndpoint>>,
-    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-    /// returned.</p>
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevEndpointsOutput {
@@ -7086,8 +6969,7 @@ impl GetDevEndpointsOutput {
     pub fn dev_endpoints(&self) -> std::option::Option<&[crate::model::DevEndpoint]> {
         self.dev_endpoints.as_deref()
     }
-    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-    /// returned.</p>
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7129,14 +7011,12 @@ pub mod get_dev_endpoints_output {
             self.dev_endpoints = input;
             self
         }
-        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-        /// returned.</p>
+        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-        /// returned.</p>
+        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7378,8 +7258,7 @@ impl GetDataCatalogEncryptionSettingsOutput {
 pub struct GetDatabasesOutput {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
     pub database_list: std::option::Option<std::vec::Vec<crate::model::Database>>,
-    /// <p>A continuation token for paginating the returned list of tokens,
-    /// returned if the current segment of the list is not the last.</p>
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDatabasesOutput {
@@ -7387,8 +7266,7 @@ impl GetDatabasesOutput {
     pub fn database_list(&self) -> std::option::Option<&[crate::model::Database]> {
         self.database_list.as_deref()
     }
-    /// <p>A continuation token for paginating the returned list of tokens,
-    /// returned if the current segment of the list is not the last.</p>
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7430,14 +7308,12 @@ pub mod get_databases_output {
             self.database_list = input;
             self
         }
-        /// <p>A continuation token for paginating the returned list of tokens,
-        /// returned if the current segment of the list is not the last.</p>
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token for paginating the returned list of tokens,
-        /// returned if the current segment of the list is not the last.</p>
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7518,8 +7394,7 @@ impl GetDatabaseOutput {
 pub struct GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
     pub crawlers: std::option::Option<std::vec::Vec<crate::model::Crawler>>,
-    /// <p>A continuation token, if the returned list has not reached the end
-    /// of those defined in this customer account.</p>
+    /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlersOutput {
@@ -7527,8 +7402,7 @@ impl GetCrawlersOutput {
     pub fn crawlers(&self) -> std::option::Option<&[crate::model::Crawler]> {
         self.crawlers.as_deref()
     }
-    /// <p>A continuation token, if the returned list has not reached the end
-    /// of those defined in this customer account.</p>
+    /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7570,14 +7444,12 @@ pub mod get_crawlers_output {
             self.crawlers = input;
             self
         }
-        /// <p>A continuation token, if the returned list has not reached the end
-        /// of those defined in this customer account.</p>
+        /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list has not reached the end
-        /// of those defined in this customer account.</p>
+        /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7604,8 +7476,7 @@ impl GetCrawlersOutput {
 pub struct GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
     pub crawler_metrics_list: std::option::Option<std::vec::Vec<crate::model::CrawlerMetrics>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlerMetricsOutput {
@@ -7613,8 +7484,7 @@ impl GetCrawlerMetricsOutput {
     pub fn crawler_metrics_list(&self) -> std::option::Option<&[crate::model::CrawlerMetrics]> {
         self.crawler_metrics_list.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7657,14 +7527,12 @@ pub mod get_crawler_metrics_output {
             self.crawler_metrics_list = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7745,8 +7613,7 @@ impl GetCrawlerOutput {
 pub struct GetConnectionsOutput {
     /// <p>A list of requested connection definitions.</p>
     pub connection_list: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-    /// <p>A continuation token, if the list of connections returned does not
-    /// include the last of the filtered connections.</p>
+    /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectionsOutput {
@@ -7754,8 +7621,7 @@ impl GetConnectionsOutput {
     pub fn connection_list(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connection_list.as_deref()
     }
-    /// <p>A continuation token, if the list of connections returned does not
-    /// include the last of the filtered connections.</p>
+    /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7797,14 +7663,12 @@ pub mod get_connections_output {
             self.connection_list = input;
             self
         }
-        /// <p>A continuation token, if the list of connections returned does not
-        /// include the last of the filtered connections.</p>
+        /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of connections returned does not
-        /// include the last of the filtered connections.</p>
+        /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8070,15 +7934,13 @@ impl GetColumnStatisticsForPartitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifiersOutput {
-    /// <p>The requested list of classifier
-    /// objects.</p>
+    /// <p>The requested list of classifier objects.</p>
     pub classifiers: std::option::Option<std::vec::Vec<crate::model::Classifier>>,
     /// <p>A continuation token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetClassifiersOutput {
-    /// <p>The requested list of classifier
-    /// objects.</p>
+    /// <p>The requested list of classifier objects.</p>
     pub fn classifiers(&self) -> std::option::Option<&[crate::model::Classifier]> {
         self.classifiers.as_deref()
     }
@@ -8109,16 +7971,14 @@ pub mod get_classifiers_output {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>The requested list of classifier
-        /// objects.</p>
+        /// <p>The requested list of classifier objects.</p>
         pub fn classifiers(mut self, input: crate::model::Classifier) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
             v.push(input);
             self.classifiers = Some(v);
             self
         }
-        /// <p>The requested list of classifier
-        /// objects.</p>
+        /// <p>The requested list of classifier objects.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Classifier>>,
@@ -10378,8 +10238,7 @@ pub struct CreateDevEndpointOutput {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
     pub yarn_endpoint_address: std::option::Option<std::string::String>,
@@ -10390,7 +10249,6 @@ pub struct CreateDevEndpointOutput {
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
@@ -10399,30 +10257,21 @@ pub struct CreateDevEndpointOutput {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-    /// your <code>DevEndpoint</code>.</p>
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-    ///
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -10444,8 +10293,7 @@ impl CreateDevEndpointOutput {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10466,7 +10314,6 @@ impl CreateDevEndpointOutput {
         self.worker_type.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -10483,13 +10330,11 @@ impl CreateDevEndpointOutput {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-    /// your <code>DevEndpoint</code>.</p>
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
         self.extra_jars_s3_path.as_deref()
     }
@@ -10497,8 +10342,7 @@ impl CreateDevEndpointOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -10507,16 +10351,10 @@ impl CreateDevEndpointOutput {
         self.created_timestamp.as_ref()
     }
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-    ///
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(
         &self,
@@ -10634,14 +10472,12 @@ pub mod create_dev_endpoint_output {
             self.subnet_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10696,14 +10532,12 @@ pub mod create_dev_endpoint_output {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
@@ -10742,14 +10576,12 @@ pub mod create_dev_endpoint_output {
             self.vpc_id = input;
             self
         }
-        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_python_libs_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10757,14 +10589,12 @@ pub mod create_dev_endpoint_output {
             self.extra_python_libs_s3_path = input;
             self
         }
-        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-        /// your <code>DevEndpoint</code>.</p>
+        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
-        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-        /// your <code>DevEndpoint</code>.</p>
+        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10785,14 +10615,12 @@ pub mod create_dev_endpoint_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10818,16 +10646,10 @@ pub mod create_dev_endpoint_output {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-        ///
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn arguments(
             mut self,
@@ -10840,16 +10662,10 @@ pub mod create_dev_endpoint_output {
             self
         }
         /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-        ///
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_arguments(
             mut self,
@@ -11308,9 +11124,7 @@ pub struct BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     pub successful_submissions:
         std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunSuccessfulSubmission>>,
-    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-    /// including the <code>JobRunId</code> for which each error was encountered and details about the
-    /// error.</p>
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
 }
 impl BatchStopJobRunOutput {
@@ -11320,9 +11134,7 @@ impl BatchStopJobRunOutput {
     ) -> std::option::Option<&[crate::model::BatchStopJobRunSuccessfulSubmission]> {
         self.successful_submissions.as_deref()
     }
-    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-    /// including the <code>JobRunId</code> for which each error was encountered and details about the
-    /// error.</p>
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchStopJobRunError]> {
         self.errors.as_deref()
     }
@@ -11374,18 +11186,14 @@ pub mod batch_stop_job_run_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-        /// including the <code>JobRunId</code> for which each error was encountered and details about the
-        /// error.</p>
+        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
         pub fn errors(mut self, input: crate::model::BatchStopJobRunError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-        /// including the <code>JobRunId</code> for which each error was encountered and details about the
-        /// error.</p>
+        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
@@ -11597,8 +11405,7 @@ impl BatchGetTriggersOutput {
 pub struct BatchGetPartitionOutput {
     /// <p>A list of the requested partitions.</p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
-    /// <p>A list of the partition values in the request for which partitions were not
-    /// returned.</p>
+    /// <p>A list of the partition values in the request for which partitions were not returned.</p>
     pub unprocessed_keys: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchGetPartitionOutput {
@@ -11606,8 +11413,7 @@ impl BatchGetPartitionOutput {
     pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
         self.partitions.as_deref()
     }
-    /// <p>A list of the partition values in the request for which partitions were not
-    /// returned.</p>
+    /// <p>A list of the partition values in the request for which partitions were not returned.</p>
     pub fn unprocessed_keys(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
         self.unprocessed_keys.as_deref()
     }
@@ -11654,16 +11460,14 @@ pub mod batch_get_partition_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_keys`](Self::set_unprocessed_keys).
         ///
-        /// <p>A list of the partition values in the request for which partitions were not
-        /// returned.</p>
+        /// <p>A list of the partition values in the request for which partitions were not returned.</p>
         pub fn unprocessed_keys(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.unprocessed_keys.unwrap_or_default();
             v.push(input);
             self.unprocessed_keys = Some(v);
             self
         }
-        /// <p>A list of the partition values in the request for which partitions were not
-        /// returned.</p>
+        /// <p>A list of the partition values in the request for which partitions were not returned.</p>
         pub fn set_unprocessed_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -12055,13 +11859,11 @@ impl BatchGetBlueprintsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableVersionOutput {
-    /// <p>A list of errors encountered while trying to delete
-    /// the specified table versions.</p>
+    /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
 }
 impl BatchDeleteTableVersionOutput {
-    /// <p>A list of errors encountered while trying to delete
-    /// the specified table versions.</p>
+    /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::TableVersionError]> {
         self.errors.as_deref()
     }
@@ -12086,16 +11888,14 @@ pub mod batch_delete_table_version_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of errors encountered while trying to delete
-        /// the specified table versions.</p>
+        /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
         pub fn errors(mut self, input: crate::model::TableVersionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of errors encountered while trying to delete
-        /// the specified table versions.</p>
+        /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
@@ -12248,23 +12048,19 @@ impl BatchDeletePartitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteConnectionOutput {
-    /// <p>A list of names of the connection definitions that were
-    /// successfully deleted.</p>
+    /// <p>A list of names of the connection definitions that were successfully deleted.</p>
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A map of the names of connections that were not successfully
-    /// deleted to error details.</p>
+    /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     pub errors: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ErrorDetail>,
     >,
 }
 impl BatchDeleteConnectionOutput {
-    /// <p>A list of names of the connection definitions that were
-    /// successfully deleted.</p>
+    /// <p>A list of names of the connection definitions that were successfully deleted.</p>
     pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
         self.succeeded.as_deref()
     }
-    /// <p>A map of the names of connections that were not successfully
-    /// deleted to error details.</p>
+    /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     pub fn errors(
         &self,
     ) -> std::option::Option<
@@ -12297,16 +12093,14 @@ pub mod batch_delete_connection_output {
         ///
         /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
         ///
-        /// <p>A list of names of the connection definitions that were
-        /// successfully deleted.</p>
+        /// <p>A list of names of the connection definitions that were successfully deleted.</p>
         pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded.unwrap_or_default();
             v.push(input.into());
             self.succeeded = Some(v);
             self
         }
-        /// <p>A list of names of the connection definitions that were
-        /// successfully deleted.</p>
+        /// <p>A list of names of the connection definitions that were successfully deleted.</p>
         pub fn set_succeeded(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12318,8 +12112,7 @@ pub mod batch_delete_connection_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A map of the names of connections that were not successfully
-        /// deleted to error details.</p>
+        /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
         pub fn errors(
             mut self,
             k: impl Into<std::string::String>,
@@ -12330,8 +12123,7 @@ pub mod batch_delete_connection_output {
             self.errors = Some(hash_map);
             self
         }
-        /// <p>A map of the names of connections that were not successfully
-        /// deleted to error details.</p>
+        /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<

@@ -16,14 +16,11 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     AuthException(crate::error::AuthException),
     /// <p>The specified instance was not found.</p>
     Ec2InstanceNotFoundException(crate::error::Ec2InstanceNotFoundException),
-    /// <p>The instance type is not supported for connecting via the serial console. Only Nitro
-    /// instance types are currently supported.</p>
+    /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
     Ec2InstanceTypeInvalidException(crate::error::Ec2InstanceTypeInvalidException),
     /// <p>One of the parameters is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your
-    /// account, run the EnableSerialConsoleAccess API. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
     SerialConsoleAccessDisabledException(crate::error::SerialConsoleAccessDisabledException),
     /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
     SerialConsoleSessionLimitExceededException(
@@ -35,8 +32,7 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     ),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The requests were made too frequently and have been throttled. Wait a while and try again.
-    /// To increase the limit on your request frequency, contact AWS Support.</p>
+    /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -232,8 +228,7 @@ pub enum SendSSHPublicKeyErrorKind {
     InvalidArgsException(crate::error::InvalidArgsException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The requests were made too frequently and have been throttled. Wait a while and try again.
-    /// To increase the limit on your request frequency, contact AWS Support.</p>
+    /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -343,8 +338,7 @@ impl std::error::Error for SendSSHPublicKeyError {
     }
 }
 
-/// <p>The requests were made too frequently and have been throttled. Wait a while and try again.
-/// To increase the limit on your request frequency, contact AWS Support.</p>
+/// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -795,9 +789,7 @@ impl SerialConsoleSessionLimitExceededException {
     }
 }
 
-/// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your
-/// account, run the EnableSerialConsoleAccess API. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
+/// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerialConsoleAccessDisabledException {
@@ -861,8 +853,7 @@ impl SerialConsoleAccessDisabledException {
     }
 }
 
-/// <p>The instance type is not supported for connecting via the serial console. Only Nitro
-/// instance types are currently supported.</p>
+/// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceTypeInvalidException {

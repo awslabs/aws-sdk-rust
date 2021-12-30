@@ -198,14 +198,12 @@ pub mod create_batch_prediction_input {
         pub(crate) output_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A user-supplied ID that uniquely identifies the
-        /// <code>BatchPrediction</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
         pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.batch_prediction_id = Some(input.into());
             self
         }
-        /// <p>A user-supplied ID that uniquely identifies the
-        /// <code>BatchPrediction</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -418,14 +416,12 @@ pub mod create_data_source_from_rds_input {
         pub(crate) compute_statistics: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-        /// becomes the ID for a <code>DataSource</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
-        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-        /// becomes the ID for a <code>DataSource</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -448,51 +444,20 @@ pub mod create_data_source_from_rds_input {
         }
         /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-        /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-        /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn rds_data(mut self, input: crate::model::RdsDataSpec) -> Self {
             self.rds_data = Some(input);
@@ -500,51 +465,20 @@ pub mod create_data_source_from_rds_input {
         }
         /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-        /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-        /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_rds_data(
             mut self,
@@ -553,32 +487,24 @@ pub mod create_data_source_from_rds_input {
             self.rds_data = input;
             self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-        /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
         /// <p></p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-        /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
         /// <p></p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-        /// </p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
             self.compute_statistics = Some(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-        /// </p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.compute_statistics = input;
             self
@@ -766,43 +692,17 @@ pub mod create_data_source_from_redshift_input {
         }
         /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-        /// <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-        /// Redshift data. The data retrieved from Amazon Redshift using
-        /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn data_spec(mut self, input: crate::model::RedshiftDataSpec) -> Self {
             self.data_spec = Some(input);
@@ -810,43 +710,17 @@ pub mod create_data_source_from_redshift_input {
         }
         /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-        /// <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-        /// Redshift data. The data retrieved from Amazon Redshift using
-        /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_data_spec(
             mut self,
@@ -856,47 +730,29 @@ pub mod create_data_source_from_redshift_input {
             self
         }
         /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-        /// be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
             self.compute_statistics = Some(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-        /// be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.compute_statistics = input;
             self
@@ -1083,21 +939,10 @@ pub mod create_data_source_from_s3_input {
         }
         /// <p>The data specification of a <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn data_spec(mut self, input: crate::model::S3DataSpec) -> Self {
             self.data_spec = Some(input);
@@ -1105,21 +950,10 @@ pub mod create_data_source_from_s3_input {
         }
         /// <p>The data specification of a <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_data_spec(
             mut self,
@@ -1128,16 +962,12 @@ pub mod create_data_source_from_s3_input {
             self.data_spec = input;
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
         pub fn compute_statistics(mut self, input: bool) -> Self {
             self.compute_statistics = Some(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.compute_statistics = input;
             self
@@ -1332,14 +1162,12 @@ pub mod create_evaluation_input {
             self.ml_model_id = input;
             self
         }
-        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-        /// must match the schema used to create the <code>MLModel</code>.</p>
+        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
         pub fn evaluation_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.evaluation_data_source_id = Some(input.into());
             self
         }
-        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-        /// must match the schema used to create the <code>MLModel</code>.</p>
+        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
         pub fn set_evaluation_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1527,15 +1355,9 @@ pub mod create_ml_model_input {
         }
         /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-        /// </li>
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
         /// </ul>
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn ml_model_type(mut self, input: crate::model::MlModelType) -> Self {
@@ -1544,15 +1366,9 @@ pub mod create_ml_model_input {
         }
         /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-        /// </li>
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
         /// </ul>
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn set_ml_model_type(
@@ -1566,50 +1382,14 @@ pub mod create_ml_model_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-        /// a map of key-value pairs.</p>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
         /// <p>The following is the current set of training parameters:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-        /// input data, the size of the model might affect its performance.</p>
-        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-        /// observations to build the <code>MLModel</code>. The value is an integer that
-        /// ranges from <code>1</code> to <code>10000</code>. The default value is
-        /// <code>10</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-        /// the data improves a model's ability to find the optimal solution for a variety
-        /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-        /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to zero, resulting in a sparse feature set. If you use this
-        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L1 normalization. This parameter can't be used when
-        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to small, nonzero values. If you use this parameter, start by
-        /// specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L2 normalization. This parameter can't be used when
-        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -1621,50 +1401,14 @@ pub mod create_ml_model_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-        /// a map of key-value pairs.</p>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
         /// <p>The following is the current set of training parameters:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-        /// input data, the size of the model might affect its performance.</p>
-        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-        /// observations to build the <code>MLModel</code>. The value is an integer that
-        /// ranges from <code>1</code> to <code>10000</code>. The default value is
-        /// <code>10</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-        /// the data improves a model's ability to find the optimal solution for a variety
-        /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-        /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to zero, resulting in a sparse feature set. If you use this
-        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L1 normalization. This parameter can't be used when
-        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to small, nonzero values. If you use this parameter, start by
-        /// specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L2 normalization. This parameter can't be used when
-        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -1688,14 +1432,12 @@ pub mod create_ml_model_input {
             self.training_data_source_id = input;
             self
         }
-        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-        /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn recipe(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe = Some(input.into());
             self
         }
-        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-        /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn set_recipe(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe = input;
             self
@@ -3001,36 +2743,13 @@ pub mod describe_batch_predictions_input {
     impl Builder {
         /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn filter_variable(
             mut self,
@@ -3041,36 +2760,13 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -3079,50 +2775,42 @@ pub mod describe_batch_predictions_input {
             self.filter_variable = input;
             self
         }
-        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             self.eq = Some(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eq = input;
             self
         }
-        /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
             self.gt = Some(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gt = input;
             self
         }
-        /// <p>The less than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
             self.lt = Some(input.into());
             self
         }
-        /// <p>The less than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lt = input;
             self
         }
-        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
             self.ge = Some(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ge = input;
             self
@@ -3148,44 +2836,22 @@ pub mod describe_batch_predictions_input {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
@@ -3193,14 +2859,8 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -3209,14 +2869,8 @@ pub mod describe_batch_predictions_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -3415,27 +3069,11 @@ pub mod describe_data_sources_input {
     impl Builder {
         /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::DataSourceFilterVariable) -> Self {
             self.filter_variable = Some(input);
@@ -3443,27 +3081,11 @@ pub mod describe_data_sources_input {
         }
         /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -3472,50 +3094,42 @@ pub mod describe_data_sources_input {
             self.filter_variable = input;
             self
         }
-        /// <p>The equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             self.eq = Some(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eq = input;
             self
         }
-        /// <p>The greater than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
             self.gt = Some(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gt = input;
             self
         }
-        /// <p>The less than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
             self.lt = Some(input.into());
             self
         }
-        /// <p>The less than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lt = input;
             self
         }
-        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
             self.ge = Some(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ge = input;
             self
@@ -3541,44 +3155,22 @@ pub mod describe_data_sources_input {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
@@ -3586,14 +3178,8 @@ pub mod describe_data_sources_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -3602,14 +3188,8 @@ pub mod describe_data_sources_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -3803,75 +3383,29 @@ pub mod describe_evaluations_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::EvaluationFilterVariable) -> Self {
             self.filter_variable = Some(input);
             self
         }
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -3880,50 +3414,42 @@ pub mod describe_evaluations_input {
             self.filter_variable = input;
             self
         }
-        /// <p>The equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             self.eq = Some(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eq = input;
             self
         }
-        /// <p>The greater than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
             self.gt = Some(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gt = input;
             self
         }
-        /// <p>The less than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
             self.lt = Some(input.into());
             self
         }
-        /// <p>The less than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lt = input;
             self
         }
-        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
             self.ge = Some(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ge = input;
             self
@@ -3949,44 +3475,22 @@ pub mod describe_evaluations_input {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
@@ -3994,14 +3498,8 @@ pub mod describe_evaluations_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -4010,14 +3508,8 @@ pub mod describe_evaluations_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -4213,44 +3705,15 @@ pub mod describe_ml_models_input {
     impl Builder {
         /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn filter_variable(mut self, input: crate::model::MlModelFilterVariable) -> Self {
             self.filter_variable = Some(input);
@@ -4258,44 +3721,15 @@ pub mod describe_ml_models_input {
         }
         /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -4304,50 +3738,42 @@ pub mod describe_ml_models_input {
             self.filter_variable = input;
             self
         }
-        /// <p>The equal to operator. The <code>MLModel</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             self.eq = Some(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>MLModel</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eq = input;
             self
         }
-        /// <p>The greater than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
             self.gt = Some(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gt = input;
             self
         }
-        /// <p>The less than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
             self.lt = Some(input.into());
             self
         }
-        /// <p>The less than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lt = input;
             self
         }
-        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
             self.ge = Some(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ge = input;
             self
@@ -4373,44 +3799,22 @@ pub mod describe_ml_models_input {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
@@ -4418,14 +3822,8 @@ pub mod describe_ml_models_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -4434,14 +3832,8 @@ pub mod describe_ml_models_input {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -6633,91 +6025,41 @@ impl std::fmt::Debug for DescribeTagsInput {
 pub struct DescribeMlModelsInput {
     /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub filter_variable: std::option::Option<crate::model::MlModelFilterVariable>,
-    /// <p>The equal to operator. The <code>MLModel</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub eq: std::option::Option<std::string::String>,
-    /// <p>The greater than operator. The <code>MLModel</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub gt: std::option::Option<std::string::String>,
-    /// <p>The less than operator. The <code>MLModel</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub lt: std::option::Option<std::string::String>,
-    /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
@@ -6729,65 +6071,32 @@ pub struct DescribeMlModelsInput {
 impl DescribeMlModelsInput {
     /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub fn filter_variable(&self) -> std::option::Option<&crate::model::MlModelFilterVariable> {
         self.filter_variable.as_ref()
     }
-    /// <p>The equal to operator. The <code>MLModel</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(&self) -> std::option::Option<&str> {
         self.eq.as_deref()
     }
-    /// <p>The greater than operator. The <code>MLModel</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(&self) -> std::option::Option<&str> {
         self.gt.as_deref()
     }
-    /// <p>The less than operator. The <code>MLModel</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(&self) -> std::option::Option<&str> {
         self.lt.as_deref()
     }
-    /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(&self) -> std::option::Option<&str> {
         self.ge.as_deref()
     }
@@ -6800,36 +6109,19 @@ impl DescribeMlModelsInput {
         self.ne.as_deref()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
@@ -6866,85 +6158,41 @@ impl std::fmt::Debug for DescribeMlModelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEvaluationsInput {
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub filter_variable: std::option::Option<crate::model::EvaluationFilterVariable>,
-    /// <p>The equal to operator. The <code>Evaluation</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub eq: std::option::Option<std::string::String>,
-    /// <p>The greater than operator. The <code>Evaluation</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub gt: std::option::Option<std::string::String>,
-    /// <p>The less than operator. The <code>Evaluation</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub lt: std::option::Option<std::string::String>,
-    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
@@ -6954,59 +6202,32 @@ pub struct DescribeEvaluationsInput {
     pub limit: std::option::Option<i32>,
 }
 impl DescribeEvaluationsInput {
-    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub fn filter_variable(&self) -> std::option::Option<&crate::model::EvaluationFilterVariable> {
         self.filter_variable.as_ref()
     }
-    /// <p>The equal to operator. The <code>Evaluation</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(&self) -> std::option::Option<&str> {
         self.eq.as_deref()
     }
-    /// <p>The greater than operator. The <code>Evaluation</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(&self) -> std::option::Option<&str> {
         self.gt.as_deref()
     }
-    /// <p>The less than operator. The <code>Evaluation</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(&self) -> std::option::Option<&str> {
         self.lt.as_deref()
     }
-    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(&self) -> std::option::Option<&str> {
         self.ge.as_deref()
     }
@@ -7019,36 +6240,19 @@ impl DescribeEvaluationsInput {
         self.ne.as_deref()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
@@ -7087,74 +6291,37 @@ impl std::fmt::Debug for DescribeEvaluationsInput {
 pub struct DescribeDataSourcesInput {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
     pub filter_variable: std::option::Option<crate::model::DataSourceFilterVariable>,
-    /// <p>The equal to operator. The <code>DataSource</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub eq: std::option::Option<std::string::String>,
-    /// <p>The greater than operator. The <code>DataSource</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub gt: std::option::Option<std::string::String>,
-    /// <p>The less than operator. The <code>DataSource</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub lt: std::option::Option<std::string::String>,
-    /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
@@ -7166,48 +6333,28 @@ pub struct DescribeDataSourcesInput {
 impl DescribeDataSourcesInput {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
     pub fn filter_variable(&self) -> std::option::Option<&crate::model::DataSourceFilterVariable> {
         self.filter_variable.as_ref()
     }
-    /// <p>The equal to operator. The <code>DataSource</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(&self) -> std::option::Option<&str> {
         self.eq.as_deref()
     }
-    /// <p>The greater than operator. The <code>DataSource</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(&self) -> std::option::Option<&str> {
         self.gt.as_deref()
     }
-    /// <p>The less than operator. The <code>DataSource</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(&self) -> std::option::Option<&str> {
         self.lt.as_deref()
     }
-    /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(&self) -> std::option::Option<&str> {
         self.ge.as_deref()
     }
@@ -7220,36 +6367,19 @@ impl DescribeDataSourcesInput {
         self.ne.as_deref()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
@@ -7288,83 +6418,39 @@ impl std::fmt::Debug for DescribeDataSourcesInput {
 pub struct DescribeBatchPredictionsInput {
     /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub filter_variable: std::option::Option<crate::model::BatchPredictionFilterVariable>,
-    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub eq: std::option::Option<std::string::String>,
-    /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub gt: std::option::Option<std::string::String>,
-    /// <p>The less than operator. The <code>BatchPrediction</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub lt: std::option::Option<std::string::String>,
-    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub ge: std::option::Option<std::string::String>,
     /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub le: std::option::Option<std::string::String>,
     /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub ne: std::option::Option<std::string::String>,
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
@@ -7376,59 +6462,32 @@ pub struct DescribeBatchPredictionsInput {
 impl DescribeBatchPredictionsInput {
     /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-    /// <b> </b>
-    /// <code>Name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-    /// </li>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+    /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub fn filter_variable(
         &self,
     ) -> std::option::Option<&crate::model::BatchPredictionFilterVariable> {
         self.filter_variable.as_ref()
     }
-    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(&self) -> std::option::Option<&str> {
         self.eq.as_deref()
     }
-    /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(&self) -> std::option::Option<&str> {
         self.gt.as_deref()
     }
-    /// <p>The less than operator. The <code>BatchPrediction</code> results will
-    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(&self) -> std::option::Option<&str> {
         self.lt.as_deref()
     }
-    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-    /// </p>
+    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(&self) -> std::option::Option<&str> {
         self.ge.as_deref()
     }
@@ -7441,36 +6500,19 @@ impl DescribeBatchPredictionsInput {
         self.ne.as_deref()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-    /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-    /// <code>Prefix</code>:
-    /// </p>
-    ///
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>2014-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09</p>
-    /// </li>
-    /// <li>
-    /// <p>2014-09-09-Holiday</p>
-    /// </li>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-    /// </li>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
@@ -7674,69 +6716,26 @@ pub struct CreateMlModelInput {
     pub ml_model_name: std::option::Option<std::string::String>,
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-    /// </li>
-    /// <li>
-    /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-    /// </li>
+    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
     /// </ul>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub ml_model_type: std::option::Option<crate::model::MlModelType>,
-    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-    /// a map of key-value pairs.</p>
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-    /// input data, the size of the model might affect its performance.</p>
-    /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-    /// observations to build the <code>MLModel</code>. The value is an integer that
-    /// ranges from <code>1</code> to <code>10000</code>. The default value is
-    /// <code>10</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-    /// the data improves a model's ability to find the optimal solution for a variety
-    /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-    /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-    /// overfitting the data by penalizing large coefficients. This tends to drive
-    /// coefficients to zero, resulting in a sparse feature set. If you use this
-    /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-    /// The default is to not use L1 normalization. This parameter can't be used when
-    /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-    /// overfitting the data by penalizing large coefficients. This tends to drive
-    /// coefficients to small, nonzero values. If you use this parameter, start by
-    /// specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-    /// The default is to not use L2 normalization. This parameter can't be used when
-    /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-    /// </li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <code>DataSource</code> that points to the training data.</p>
     pub training_data_source_id: std::option::Option<std::string::String>,
-    /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-    /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub recipe: std::option::Option<std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub recipe_uri: std::option::Option<std::string::String>,
@@ -7752,64 +6751,22 @@ impl CreateMlModelInput {
     }
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-    /// </li>
-    /// <li>
-    /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-    /// </li>
+    /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+    /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+    /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
     /// </ul>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn ml_model_type(&self) -> std::option::Option<&crate::model::MlModelType> {
         self.ml_model_type.as_ref()
     }
-    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-    /// a map of key-value pairs.</p>
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-    /// input data, the size of the model might affect its performance.</p>
-    /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-    /// observations to build the <code>MLModel</code>. The value is an integer that
-    /// ranges from <code>1</code> to <code>10000</code>. The default value is
-    /// <code>10</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-    /// the data improves a model's ability to find the optimal solution for a variety
-    /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-    /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-    /// overfitting the data by penalizing large coefficients. This tends to drive
-    /// coefficients to zero, resulting in a sparse feature set. If you use this
-    /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-    /// The default is to not use L1 normalization. This parameter can't be used when
-    /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-    /// overfitting the data by penalizing large coefficients. This tends to drive
-    /// coefficients to small, nonzero values. If you use this parameter, start by
-    /// specifying a small value, such as <code>1.0E-08</code>.</p>
-    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-    /// The default is to not use L2 normalization. This parameter can't be used when
-    /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-    /// </li>
+    /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+    /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+    /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+    /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+    /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     pub fn parameters(
         &self,
@@ -7821,8 +6778,7 @@ impl CreateMlModelInput {
     pub fn training_data_source_id(&self) -> std::option::Option<&str> {
         self.training_data_source_id.as_deref()
     }
-    /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-    /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub fn recipe(&self) -> std::option::Option<&str> {
         self.recipe.as_deref()
     }
@@ -7856,8 +6812,7 @@ pub struct CreateEvaluationInput {
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-    /// must match the schema used to create the <code>MLModel</code>.</p>
+    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub evaluation_data_source_id: std::option::Option<std::string::String>,
 }
 impl CreateEvaluationInput {
@@ -7874,8 +6829,7 @@ impl CreateEvaluationInput {
     pub fn ml_model_id(&self) -> std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
-    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-    /// must match the schema used to create the <code>MLModel</code>.</p>
+    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub fn evaluation_data_source_id(&self) -> std::option::Option<&str> {
         self.evaluation_data_source_id.as_deref()
     }
@@ -7901,26 +6855,13 @@ pub struct CreateDataSourceFromS3Input {
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub data_spec: std::option::Option<crate::model::S3DataSpec>,
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromS3Input {
@@ -7934,28 +6875,15 @@ impl CreateDataSourceFromS3Input {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+    /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub fn data_spec(&self) -> std::option::Option<&crate::model::S3DataSpec> {
         self.data_spec.as_ref()
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn compute_statistics(&self) -> bool {
         self.compute_statistics
     }
@@ -7981,61 +6909,26 @@ pub struct CreateDataSourceFromRedshiftInput {
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DatabaseInformation -</p>
+    /// <li> <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-    /// </li>
-    /// <li>
-    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-    /// <code>Datasource</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-    /// Redshift data. The data retrieved from Amazon Redshift using
-    /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub data_spec: std::option::Option<crate::model::RedshiftDataSpec>,
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-    /// be used for <code>MLModel</code> training.</p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRedshiftInput {
@@ -8049,65 +6942,30 @@ impl CreateDataSourceFromRedshiftInput {
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DatabaseInformation -</p>
+    /// <li> <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-    /// </li>
-    /// <li>
-    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-    /// <code>Datasource</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-    /// Redshift data. The data retrieved from Amazon Redshift using
-    /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub fn data_spec(&self) -> std::option::Option<&crate::model::RedshiftDataSpec> {
         self.data_spec.as_ref()
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-    /// be used for <code>MLModel</code> training.</p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub fn compute_statistics(&self) -> bool {
         self.compute_statistics
     }
@@ -8128,73 +6986,36 @@ impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceFromRdsInput {
-    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-    /// becomes the ID for a <code>DataSource</code>.</p>
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub data_source_name: std::option::Option<std::string::String>,
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DatabaseInformation -</p>
+    /// <li> <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-    /// </li>
-    /// <li>
-    /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-    /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    /// </li>
-    /// <li>
-    /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-    /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    /// </li>
-    /// <li>
-    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub rds_data: std::option::Option<crate::model::RdsDataSpec>,
-    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-    /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-    /// </p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromRdsInput {
-    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-    /// becomes the ID for a <code>DataSource</code>.</p>
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -8204,65 +7025,30 @@ impl CreateDataSourceFromRdsInput {
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>DatabaseInformation -</p>
+    /// <li> <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-    /// </li>
-    /// <li>
-    /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-    /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    /// </li>
-    /// <li>
-    /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-    /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-    /// </li>
-    /// <li>
-    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-    /// </li>
-    /// <li>
-    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-    /// <p> Sample -
-    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+    /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+    /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+    /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+    /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+    /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+    /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
     pub fn rds_data(&self) -> std::option::Option<&crate::model::RdsDataSpec> {
         self.rds_data.as_ref()
     }
-    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-    /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-    /// </p>
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
     pub fn compute_statistics(&self) -> bool {
         self.compute_statistics
     }
@@ -8283,8 +7069,7 @@ impl std::fmt::Debug for CreateDataSourceFromRdsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchPredictionInput {
-    /// <p>A user-supplied ID that uniquely identifies the
-    /// <code>BatchPrediction</code>.</p>
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
     pub batch_prediction_name: std::option::Option<std::string::String>,
@@ -8297,8 +7082,7 @@ pub struct CreateBatchPredictionInput {
     pub output_uri: std::option::Option<std::string::String>,
 }
 impl CreateBatchPredictionInput {
-    /// <p>A user-supplied ID that uniquely identifies the
-    /// <code>BatchPrediction</code>.</p>
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
         self.batch_prediction_id.as_deref()
     }

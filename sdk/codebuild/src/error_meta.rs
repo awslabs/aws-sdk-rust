@@ -9,8 +9,7 @@ pub enum Error {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>There was a problem with the underlying OAuth provider.</p>
     OAuthProviderException(crate::error::OAuthProviderException),
-    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
-    /// settings already exists.</p>
+    /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

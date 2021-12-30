@@ -845,8 +845,7 @@ pub struct DescribeUsersOutput {
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The total number of users included in the results.</p>
     pub total_number_of_users: std::option::Option<i64>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -858,8 +857,7 @@ impl DescribeUsersOutput {
     pub fn total_number_of_users(&self) -> std::option::Option<i64> {
         self.total_number_of_users
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -913,14 +911,12 @@ pub mod describe_users_output {
             self.total_number_of_users = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1030,8 +1026,7 @@ impl DescribeRootFoldersOutput {
 pub struct DescribeResourcePermissionsOutput {
     /// <p>The principals.</p>
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsOutput {
@@ -1039,8 +1034,7 @@ impl DescribeResourcePermissionsOutput {
     pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principals.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1082,14 +1076,12 @@ pub mod describe_resource_permissions_output {
             self.principals = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1116,8 +1108,7 @@ impl DescribeResourcePermissionsOutput {
 pub struct DescribeNotificationSubscriptionsOutput {
     /// <p>The subscriptions.</p>
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationSubscriptionsOutput {
@@ -1125,8 +1116,7 @@ impl DescribeNotificationSubscriptionsOutput {
     pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
         self.subscriptions.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1168,14 +1158,12 @@ pub mod describe_notification_subscriptions_output {
             self.subscriptions = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1202,8 +1190,7 @@ impl DescribeNotificationSubscriptionsOutput {
 pub struct DescribeGroupsOutput {
     /// <p>The list of groups.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no additional
-    /// results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeGroupsOutput {
@@ -1211,8 +1198,7 @@ impl DescribeGroupsOutput {
     pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
         self.groups.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no additional
-    /// results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1254,14 +1240,12 @@ pub mod describe_groups_output {
             self.groups = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no additional
-        /// results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no additional
-        /// results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1290,8 +1274,7 @@ pub struct DescribeFolderContentsOutput {
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
     /// <p>The documents in the specified folder.</p>
     pub documents: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsOutput {
@@ -1303,8 +1286,7 @@ impl DescribeFolderContentsOutput {
     pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
         self.documents.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1367,14 +1349,12 @@ pub mod describe_folder_contents_output {
             self.documents = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1403,8 +1383,7 @@ pub struct DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
     pub document_versions:
         std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsOutput {
@@ -1414,8 +1393,7 @@ impl DescribeDocumentVersionsOutput {
     ) -> std::option::Option<&[crate::model::DocumentVersionMetadata]> {
         self.document_versions.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1458,14 +1436,12 @@ pub mod describe_document_versions_output {
             self.document_versions = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1492,8 +1468,7 @@ impl DescribeDocumentVersionsOutput {
 pub struct DescribeCommentsOutput {
     /// <p>The list of comments for the specified document version.</p>
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsOutput {
@@ -1501,8 +1476,7 @@ impl DescribeCommentsOutput {
     pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
         self.comments.as_deref()
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1544,14 +1518,12 @@ pub mod describe_comments_output {
             self.comments = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self

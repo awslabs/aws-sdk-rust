@@ -14,8 +14,7 @@ pub struct AcceptPortfolioShareError {
 pub enum AcceptPortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -132,8 +131,7 @@ pub enum AssociateBudgetWithResourceErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -267,8 +265,7 @@ pub struct AssociatePrincipalWithPortfolioError {
 pub enum AssociatePrincipalWithPortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -398,8 +395,7 @@ pub struct AssociateProductWithPortfolioError {
 pub enum AssociateProductWithPortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -525,8 +521,7 @@ pub struct AssociateServiceActionWithProvisioningArtifactError {
 pub enum AssociateServiceActionWithProvisioningArtifactErrorKind {
     /// <p>The specified resource is a duplicate.</p>
     DuplicateResourceException(crate::error::DuplicateResourceException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -664,17 +659,13 @@ pub enum AssociateTagOptionWithResourceErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1155,8 +1146,7 @@ pub enum CreateConstraintErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1280,12 +1270,9 @@ pub struct CreatePortfolioError {
 pub enum CreatePortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1398,11 +1385,9 @@ pub struct CreatePortfolioShareError {
 pub enum CreatePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -1537,12 +1522,9 @@ pub struct CreateProductError {
 pub enum CreateProductErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1655,8 +1637,7 @@ pub struct CreateProvisionedProductPlanError {
 pub enum CreateProvisionedProductPlanErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1779,8 +1760,7 @@ pub struct CreateProvisioningArtifactError {
 pub enum CreateProvisioningArtifactErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1897,8 +1877,7 @@ pub struct CreateServiceActionError {
 pub enum CreateServiceActionErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2002,12 +1981,9 @@ pub struct CreateTagOptionError {
 pub enum CreateTagOptionErrorKind {
     /// <p>The specified resource is a duplicate.</p>
     DuplicateResourceException(crate::error::DuplicateResourceException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2228,9 +2204,7 @@ pub enum DeletePortfolioErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2352,8 +2326,7 @@ pub struct DeletePortfolioShareError {
 pub enum DeletePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -2483,9 +2456,7 @@ pub enum DeleteProductErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2942,9 +2913,7 @@ pub enum DeleteTagOptionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4630,9 +4599,7 @@ pub struct DescribeTagOptionError {
 pub enum DescribeTagOptionErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4734,8 +4701,7 @@ pub struct DisableAWSOrganizationsAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableAWSOrganizationsAccessErrorKind {
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -5316,9 +5282,7 @@ pub struct DisassociateTagOptionFromResourceError {
 pub enum DisassociateTagOptionFromResourceErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5431,8 +5395,7 @@ pub struct EnableAWSOrganizationsAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableAWSOrganizationsAccessErrorKind {
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -5557,8 +5520,7 @@ pub struct ExecuteProvisionedProductPlanError {
 pub enum ExecuteProvisionedProductPlanErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5684,8 +5646,7 @@ pub struct ExecuteProvisionedProductServiceActionError {
 pub enum ExecuteProvisionedProductServiceActionErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6046,8 +6007,7 @@ pub enum ImportAsProvisionedProductErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7568,9 +7528,7 @@ pub enum ListResourcesForTagOptionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8014,9 +7972,7 @@ pub struct ListTagOptionsError {
 pub enum ListTagOptionsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8910,14 +8866,11 @@ pub struct UpdatePortfolioError {
 pub enum UpdatePortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9039,8 +8992,7 @@ pub struct UpdatePortfolioShareError {
 pub enum UpdatePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -9168,9 +9120,7 @@ pub enum UpdateProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9387,8 +9337,7 @@ pub struct UpdateProvisionedProductPropertiesError {
 pub enum UpdateProvisionedProductPropertiesErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -9732,9 +9681,7 @@ pub enum UpdateTagOptionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9841,9 +9788,7 @@ impl std::error::Error for UpdateTagOptionError {
     }
 }
 
-/// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-/// not been performed for this account. Please use the AWS console to perform the migration
-/// process before retrying the operation.</p>
+/// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOptionNotMigratedException {
@@ -10099,8 +10044,7 @@ impl DuplicateResourceException {
     }
 }
 
-/// <p>An attempt was made to modify a resource that is in a state that is not valid.
-/// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+/// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateException {
@@ -10228,8 +10172,7 @@ impl OperationNotSupportedException {
     }
 }
 
-/// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-/// resource use or increase your service limits and retry the operation.</p>
+/// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

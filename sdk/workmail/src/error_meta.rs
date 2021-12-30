@@ -11,29 +11,21 @@ pub enum Error {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The user, group, or resource that you're trying to register is already
-    /// registered.</p>
+    /// <p>The user, group, or resource that you're trying to register is already registered.</p>
     EntityAlreadyRegisteredException(crate::error::EntityAlreadyRegisteredException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
-    /// <p>The configuration for a resource isn't valid. A resource must either be able to
-    /// auto-respond to requests or have at least one delegate associated that can do so on its
-    /// behalf.</p>
+    /// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
-    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
-    /// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
     InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The supplied password doesn't match the minimum security constraints, such as length
-    /// or use of special characters.</p>
+    /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -41,16 +33,13 @@ pub enum Error {
     MailDomainInUseException(crate::error::MailDomainInUseException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),

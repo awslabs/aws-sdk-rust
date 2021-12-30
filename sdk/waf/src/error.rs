@@ -20,46 +20,18 @@ pub enum CreateByteMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -207,46 +179,18 @@ pub enum CreateGeoMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -394,46 +338,18 @@ pub enum CreateIPSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -578,46 +494,18 @@ pub enum CreateRateBasedRuleErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -787,9 +675,7 @@ pub enum CreateRegexMatchSetErrorKind {
     WafDisallowedNameException(crate::error::WafDisallowedNameException),
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -915,9 +801,7 @@ pub enum CreateRegexPatternSetErrorKind {
     WafDisallowedNameException(crate::error::WafDisallowedNameException),
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -1047,46 +931,18 @@ pub enum CreateRuleErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -1245,9 +1101,7 @@ pub enum CreateRuleGroupErrorKind {
     WafDisallowedNameException(crate::error::WafDisallowedNameException),
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -1410,46 +1264,18 @@ pub enum CreateSizeConstraintSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -1597,46 +1423,18 @@ pub enum CreateSqlInjectionMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -1796,46 +1594,18 @@ pub enum CreateWebACLErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -2002,97 +1772,37 @@ pub struct CreateWebACLMigrationStackError {
 pub enum CreateWebACLMigrationStackErrorKind {
     /// <p>The operation failed due to a problem with the migration. The failure cause is provided in the exception, in the <code>MigrationErrorType</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist.  </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p>
-    /// </li>
+    /// <li> <p> <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p> </li>
+    /// <li> <p> <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist. </p> </li>
+    /// <li> <p> <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p> </li>
+    /// <li> <p> <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p> </li>
+    /// <li> <p> <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p> </li>
+    /// <li> <p> <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p> </li>
+    /// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li>
     /// </ul>
     WafEntityMigrationException(crate::error::WafEntityMigrationException),
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -2248,46 +1958,18 @@ pub enum CreateXssMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
@@ -2433,31 +2115,18 @@ pub enum DeleteByteMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -2604,31 +2273,18 @@ pub enum DeleteGeoMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -2775,31 +2431,18 @@ pub enum DeleteIPSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -3177,31 +2820,18 @@ pub enum DeleteRateBasedRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -3374,31 +3004,18 @@ pub enum DeleteRegexMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -3545,31 +3162,18 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -3716,31 +3320,18 @@ pub enum DeleteRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -3901,53 +3492,27 @@ pub enum DeleteRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -4118,31 +3683,18 @@ pub enum DeleteSizeConstraintSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -4289,31 +3841,18 @@ pub enum DeleteSqlInjectionMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -4470,31 +4009,18 @@ pub enum DeleteWebACLErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -4660,31 +4186,18 @@ pub enum DeleteXssMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-    /// or other predicates.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
     /// </ul>
     WafNonEmptyEntityException(crate::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -5690,41 +5203,15 @@ pub enum GetRateBasedRuleManagedKeysErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -6866,41 +6353,15 @@ pub enum ListActivatedRulesInRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -7345,41 +6806,15 @@ pub enum ListLoggingConfigurationsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -8323,41 +7758,15 @@ pub enum ListTagsForResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -8849,32 +8258,14 @@ pub enum PutPermissionPolicyErrorKind {
     /// <p>The operation failed because the specified policy is not in the proper format. </p>
     /// <p>The policy is subject to the following restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p>
-    /// </li>
-    /// <li>
-    ///
-    /// <p>
-    /// <code>Effect</code> must specify <code>Allow</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy cannot include a <code>Resource</code> parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The user making the request must be the owner of the RuleGroup.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your policy must be composed using IAM Policy version 2012-10-17.</p>
-    /// </li>
+    /// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li>
+    /// <li> <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p> </li>
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+    /// <li> <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p> </li>
+    /// <li> <p>The policy cannot include a <code>Resource</code> parameter.</p> </li>
+    /// <li> <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p> </li>
+    /// <li> <p>The user making the request must be the owner of the RuleGroup.</p> </li>
+    /// <li> <p>Your policy must be composed using IAM Policy version 2012-10-17.</p> </li>
     /// </ul>
     WafInvalidPermissionPolicyException(crate::error::WafInvalidPermissionPolicyException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -9009,46 +8400,18 @@ pub enum TagResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
@@ -9204,41 +8567,15 @@ pub enum UntagResourceErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -9389,84 +8726,34 @@ pub enum UpdateByteMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -9633,96 +8920,42 @@ pub enum UpdateGeoMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -9896,96 +9129,42 @@ pub enum UpdateIPSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -10156,96 +9335,42 @@ pub enum UpdateRateBasedRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -10421,45 +9546,21 @@ pub enum UpdateRegexMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -10626,47 +9727,23 @@ pub enum UpdateRegexPatternSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The regular expression (regex) you specified in <code>RegexPatternString</code> is invalid.</p>
     WafInvalidRegexPatternException(crate::error::WafInvalidRegexPatternException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -10839,96 +9916,42 @@ pub enum UpdateRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -11097,84 +10120,34 @@ pub enum UpdateRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -11332,96 +10305,42 @@ pub enum UpdateSizeConstraintSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -11599,84 +10518,34 @@ pub enum UpdateSqlInjectionMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -11863,96 +10732,42 @@ pub enum UpdateWebACLErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
     /// </ul>
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
@@ -12134,84 +10949,34 @@ pub enum UpdateXssMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// isn't in the specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-    /// specified <code>WebACL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-    /// already exists in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an invalid parameter name.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specified an invalid value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-    /// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-    /// <code>Type</code> other than
-    /// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-    /// <code>Type</code> other than
-    /// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-    /// </li>
+    /// <li> <p>You specified an invalid parameter name.</p> </li>
+    /// <li> <p>You specified an invalid value.</p> </li>
+    /// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+    /// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-    /// for an AWS account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-    /// that doesn't exist.</p>
-    /// </li>
+    /// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
     /// </ul>
     WafNonexistentContainerException(crate::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
@@ -12492,19 +11257,10 @@ impl WafNonexistentItemException {
 
 /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p>
-/// </li>
-/// <li>
-/// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p>
-/// </li>
-/// <li>
-/// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p>
-/// </li>
-/// <li>
-/// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>
-/// that doesn't exist.</p>
-/// </li>
+/// <li> <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p> </li>
+/// <li> <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p> </li>
+/// <li> <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p> </li>
+/// <li> <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12572,9 +11328,7 @@ impl WafNonexistentContainerException {
     }
 }
 
-/// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create
-/// for an AWS account. For more information, see
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
+/// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLimitsExceededException {
@@ -12640,41 +11394,15 @@ impl WafLimitsExceededException {
 
 /// <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
 /// <ul>
-/// <li>
-/// <p>You specified an invalid parameter name.</p>
-/// </li>
-/// <li>
-/// <p>You specified an invalid value.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
-/// using an action other than <code>INSERT</code> or <code>DELETE</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code>
-/// <code>Type</code> other than
-/// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-/// <code>Type</code> other than
-/// <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-/// <code>Type</code> other than
-/// HEADER, METHOD, QUERY_STRING, URI, or BODY.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-/// but no value for <code>Data</code>.</p>
-/// </li>
-/// <li>
-/// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>
-/// </li>
+/// <li> <p>You specified an invalid parameter name.</p> </li>
+/// <li> <p>You specified an invalid value.</p> </li>
+/// <li> <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.</p> </li>
+/// <li> <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+/// <li> <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p> </li>
+/// <li> <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p> </li>
+/// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER, METHOD, QUERY_STRING, URI, or BODY.</p> </li>
+/// <li> <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no value for <code>Data</code>.</p> </li>
+/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12809,24 +11537,11 @@ impl WafInvalidParameterException {
 
 /// <p>The operation failed because there was nothing to do. For example:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-/// isn't in the specified <code>WebACL</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
-/// specified <code>WebACL</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
-/// already exists in the specified <code>WebACL</code>.</p>
-/// </li>
+/// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
+/// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
+/// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
+/// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
+/// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13091,12 +11806,8 @@ impl WafSubscriptionNotFoundException {
 
 /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p>
-/// </li>
-/// <li>
-/// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p>
-/// </li>
+/// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
+/// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13490,32 +12201,14 @@ impl WafBadRequestException {
 /// <p>The operation failed because the specified policy is not in the proper format. </p>
 /// <p>The policy is subject to the following restrictions:</p>
 /// <ul>
-/// <li>
-/// <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p>
-/// </li>
-/// <li>
-/// <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p>
-/// </li>
-/// <li>
-///
-/// <p>
-/// <code>Effect</code> must specify <code>Allow</code>.</p>
-/// </li>
-/// <li>
-/// <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p>
-/// </li>
-/// <li>
-/// <p>The policy cannot include a <code>Resource</code> parameter.</p>
-/// </li>
-/// <li>
-/// <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p>
-/// </li>
-/// <li>
-/// <p>The user making the request must be the owner of the RuleGroup.</p>
-/// </li>
-/// <li>
-/// <p>Your policy must be composed using IAM Policy version 2012-10-17.</p>
-/// </li>
+/// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li>
+/// <li> <p>The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>. </p> </li>
+/// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+/// <li> <p>The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.</p> </li>
+/// <li> <p>The policy cannot include a <code>Resource</code> parameter.</p> </li>
+/// <li> <p>The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.</p> </li>
+/// <li> <p>The user making the request must be the owner of the RuleGroup.</p> </li>
+/// <li> <p>Your policy must be composed using IAM Policy version 2012-10-17.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13652,19 +12345,10 @@ impl WafServiceLinkedRoleErrorException {
 
 /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p>
-/// </li>
-/// <li>
-/// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
-/// or other predicates.</p>
-/// </li>
-/// <li>
-/// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p>
-/// </li>
-/// <li>
-/// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p>
-/// </li>
+/// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
+/// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
+/// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
+/// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13731,34 +12415,13 @@ impl WafNonEmptyEntityException {
 
 /// <p>The operation failed due to a problem with the migration. The failure cause is provided in the exception, in the <code>MigrationErrorType</code>: </p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist.  </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p>
-/// </li>
+/// <li> <p> <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the <code>IgnoreUnsupportedType</code> is not set to true.</p> </li>
+/// <li> <p> <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist. </p> </li>
+/// <li> <p> <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code> action to the specified Amazon S3 bucket.</p> </li>
+/// <li> <p> <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to perform the <code>PutObject</code> action in the bucket.</p> </li>
+/// <li> <p> <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. </p> </li>
+/// <li> <p> <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as the web ACL.</p> </li>
+/// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

@@ -85,9 +85,10 @@ pub struct OptionStatus {
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub update_version: i32,
-    /// <p>The state of processing a change to an option.  Possible values:</p><ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+    /// <p>The state of processing a change to an option. Possible values:</p>
+    /// <ul>
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -108,9 +109,10 @@ impl OptionStatus {
     pub fn update_version(&self) -> i32 {
         self.update_version
     }
-    /// <p>The state of processing a change to an option.  Possible values:</p><ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+    /// <p>The state of processing a change to an option. Possible values:</p>
+    /// <ul>
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -182,9 +184,10 @@ pub mod option_status {
             self.update_version = input;
             self
         }
-        /// <p>The state of processing a change to an option.  Possible values:</p><ul>
-        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
-        /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+        /// <p>The state of processing a change to an option. Possible values:</p>
+        /// <ul>
+        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
+        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
         /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
         /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
         /// </ul>
@@ -192,9 +195,10 @@ pub mod option_status {
             self.state = Some(input);
             self
         }
-        /// <p>The state of processing a change to an option.  Possible values:</p><ul>
-        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
-        /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+        /// <p>The state of processing a change to an option. Possible values:</p>
+        /// <ul>
+        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
+        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
         /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
         /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
         /// </ul>
@@ -392,8 +396,7 @@ pub struct ScalingParameters {
     pub desired_instance_type: std::option::Option<crate::model::PartitionInstanceType>,
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
     pub desired_replication_count: i32,
-    /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
-    /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
+    /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
     pub desired_partition_count: i32,
 }
 impl ScalingParameters {
@@ -407,8 +410,7 @@ impl ScalingParameters {
     pub fn desired_replication_count(&self) -> i32 {
         self.desired_replication_count
     }
-    /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
-    /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
+    /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
     pub fn desired_partition_count(&self) -> i32 {
         self.desired_partition_count
     }
@@ -456,14 +458,12 @@ pub mod scaling_parameters {
             self.desired_replication_count = input;
             self
         }
-        /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
-        /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
+        /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
         pub fn desired_partition_count(mut self, input: i32) -> Self {
             self.desired_partition_count = Some(input);
             self
         }
-        /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
-        /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
+        /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
         pub fn set_desired_partition_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_partition_count = input;
             self
@@ -1000,15 +1000,13 @@ impl SuggesterStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Suggester {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub suggester_name: std::option::Option<std::string::String>,
     /// <p>Options for a search suggester.</p>
     pub document_suggester_options: std::option::Option<crate::model::DocumentSuggesterOptions>,
 }
 impl Suggester {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn suggester_name(&self) -> std::option::Option<&str> {
         self.suggester_name.as_deref()
     }
@@ -1041,14 +1039,12 @@ pub mod suggester {
             std::option::Option<crate::model::DocumentSuggesterOptions>,
     }
     impl Builder {
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn suggester_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.suggester_name = Some(input.into());
             self
         }
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_suggester_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1092,22 +1088,15 @@ impl Suggester {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentSuggesterOptions {
-    /// <p>The name of the index field you want to use for suggestions.
-    /// </p>
+    /// <p>The name of the index field you want to use for suggestions. </p>
     pub source_field: std::option::Option<std::string::String>,
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
     pub fuzzy_matching: std::option::Option<crate::model::SuggesterFuzzyMatching>,
-    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
-    /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
-    /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
-    /// To sort suggestions using a numeric field or existing expression, simply specify
-    /// the name of the field or expression. If no expression is configured for the suggester, the
-    /// suggestions are sorted with the closest matches listed first.</p>
+    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
     pub sort_expression: std::option::Option<std::string::String>,
 }
 impl DocumentSuggesterOptions {
-    /// <p>The name of the index field you want to use for suggestions.
-    /// </p>
+    /// <p>The name of the index field you want to use for suggestions. </p>
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -1115,12 +1104,7 @@ impl DocumentSuggesterOptions {
     pub fn fuzzy_matching(&self) -> std::option::Option<&crate::model::SuggesterFuzzyMatching> {
         self.fuzzy_matching.as_ref()
     }
-    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
-    /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
-    /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
-    /// To sort suggestions using a numeric field or existing expression, simply specify
-    /// the name of the field or expression. If no expression is configured for the suggester, the
-    /// suggestions are sorted with the closest matches listed first.</p>
+    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
     pub fn sort_expression(&self) -> std::option::Option<&str> {
         self.sort_expression.as_deref()
     }
@@ -1145,14 +1129,12 @@ pub mod document_suggester_options {
         pub(crate) sort_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the index field you want to use for suggestions.
-        /// </p>
+        /// <p>The name of the index field you want to use for suggestions. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>The name of the index field you want to use for suggestions.
-        /// </p>
+        /// <p>The name of the index field you want to use for suggestions. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -1170,22 +1152,12 @@ pub mod document_suggester_options {
             self.fuzzy_matching = input;
             self
         }
-        /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
-        /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
-        /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
-        /// To sort suggestions using a numeric field or existing expression, simply specify
-        /// the name of the field or expression. If no expression is configured for the suggester, the
-        /// suggestions are sorted with the closest matches listed first.</p>
+        /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
         pub fn sort_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.sort_expression = Some(input.into());
             self
         }
-        /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
-        /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
-        /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
-        /// To sort suggestions using a numeric field or existing expression, simply specify
-        /// the name of the field or expression. If no expression is configured for the suggester, the
-        /// suggestions are sorted with the closest matches listed first.</p>
+        /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
         pub fn set_sort_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1273,13 +1245,13 @@ impl AsRef<str> for SuggesterFuzzyMatching {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFieldStatus {
-    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
     pub options: std::option::Option<crate::model::IndexField>,
     /// <p>The status of domain configuration option.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl IndexFieldStatus {
-    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+    /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
     pub fn options(&self) -> std::option::Option<&crate::model::IndexField> {
         self.options.as_ref()
     }
@@ -1306,12 +1278,12 @@ pub mod index_field_status {
         pub(crate) status: std::option::Option<crate::model::OptionStatus>,
     }
     impl Builder {
-        /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+        /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
         pub fn options(mut self, input: crate::model::IndexField) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+        /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::IndexField>) -> Self {
             self.options = input;
             self
@@ -1345,65 +1317,43 @@ impl IndexFieldStatus {
     }
 }
 
-/// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+/// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexField {
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub index_field_name: std::option::Option<std::string::String>,
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub index_field_type: std::option::Option<crate::model::IndexFieldType>,
-    /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+    /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
     pub int_options: std::option::Option<crate::model::IntOptions>,
-    /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+    /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
     pub double_options: std::option::Option<crate::model::DoubleOptions>,
-    /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+    /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
     pub literal_options: std::option::Option<crate::model::LiteralOptions>,
-    /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+    /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
     pub text_options: std::option::Option<crate::model::TextOptions>,
-    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
     pub date_options: std::option::Option<crate::model::DateOptions>,
     /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
     pub lat_lon_options: std::option::Option<crate::model::LatLonOptions>,
-    /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
     pub int_array_options: std::option::Option<crate::model::IntArrayOptions>,
-    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
     pub double_array_options: std::option::Option<crate::model::DoubleArrayOptions>,
-    /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
     pub literal_array_options: std::option::Option<crate::model::LiteralArrayOptions>,
-    /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
     pub text_array_options: std::option::Option<crate::model::TextArrayOptions>,
-    /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
     pub date_array_options: std::option::Option<crate::model::DateArrayOptions>,
 }
 impl IndexField {
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
     }
@@ -1411,23 +1361,23 @@ impl IndexField {
     pub fn index_field_type(&self) -> std::option::Option<&crate::model::IndexFieldType> {
         self.index_field_type.as_ref()
     }
-    /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+    /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
     pub fn int_options(&self) -> std::option::Option<&crate::model::IntOptions> {
         self.int_options.as_ref()
     }
-    /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+    /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
     pub fn double_options(&self) -> std::option::Option<&crate::model::DoubleOptions> {
         self.double_options.as_ref()
     }
-    /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+    /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
     pub fn literal_options(&self) -> std::option::Option<&crate::model::LiteralOptions> {
         self.literal_options.as_ref()
     }
-    /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+    /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
     pub fn text_options(&self) -> std::option::Option<&crate::model::TextOptions> {
         self.text_options.as_ref()
     }
-    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+    /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
     pub fn date_options(&self) -> std::option::Option<&crate::model::DateOptions> {
         self.date_options.as_ref()
     }
@@ -1435,23 +1385,23 @@ impl IndexField {
     pub fn lat_lon_options(&self) -> std::option::Option<&crate::model::LatLonOptions> {
         self.lat_lon_options.as_ref()
     }
-    /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
     pub fn int_array_options(&self) -> std::option::Option<&crate::model::IntArrayOptions> {
         self.int_array_options.as_ref()
     }
-    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
     pub fn double_array_options(&self) -> std::option::Option<&crate::model::DoubleArrayOptions> {
         self.double_array_options.as_ref()
     }
-    /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
     pub fn literal_array_options(&self) -> std::option::Option<&crate::model::LiteralArrayOptions> {
         self.literal_array_options.as_ref()
     }
-    /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
     pub fn text_array_options(&self) -> std::option::Option<&crate::model::TextArrayOptions> {
         self.text_array_options.as_ref()
     }
-    /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+    /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
     pub fn date_array_options(&self) -> std::option::Option<&crate::model::DateArrayOptions> {
         self.date_array_options.as_ref()
     }
@@ -1496,38 +1446,16 @@ pub mod index_field {
         pub(crate) date_array_options: std::option::Option<crate::model::DateArrayOptions>,
     }
     impl Builder {
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_field_name = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1548,12 +1476,12 @@ pub mod index_field {
             self.index_field_type = input;
             self
         }
-        /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+        /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
         pub fn int_options(mut self, input: crate::model::IntOptions) -> Self {
             self.int_options = Some(input);
             self
         }
-        /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+        /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
         pub fn set_int_options(
             mut self,
             input: std::option::Option<crate::model::IntOptions>,
@@ -1561,12 +1489,12 @@ pub mod index_field {
             self.int_options = input;
             self
         }
-        /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+        /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
         pub fn double_options(mut self, input: crate::model::DoubleOptions) -> Self {
             self.double_options = Some(input);
             self
         }
-        /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+        /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
         pub fn set_double_options(
             mut self,
             input: std::option::Option<crate::model::DoubleOptions>,
@@ -1574,12 +1502,12 @@ pub mod index_field {
             self.double_options = input;
             self
         }
-        /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+        /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
         pub fn literal_options(mut self, input: crate::model::LiteralOptions) -> Self {
             self.literal_options = Some(input);
             self
         }
-        /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+        /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
         pub fn set_literal_options(
             mut self,
             input: std::option::Option<crate::model::LiteralOptions>,
@@ -1587,12 +1515,12 @@ pub mod index_field {
             self.literal_options = input;
             self
         }
-        /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+        /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
         pub fn text_options(mut self, input: crate::model::TextOptions) -> Self {
             self.text_options = Some(input);
             self
         }
-        /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+        /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
         pub fn set_text_options(
             mut self,
             input: std::option::Option<crate::model::TextOptions>,
@@ -1600,12 +1528,12 @@ pub mod index_field {
             self.text_options = input;
             self
         }
-        /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+        /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
         pub fn date_options(mut self, input: crate::model::DateOptions) -> Self {
             self.date_options = Some(input);
             self
         }
-        /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+        /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
         pub fn set_date_options(
             mut self,
             input: std::option::Option<crate::model::DateOptions>,
@@ -1626,12 +1554,12 @@ pub mod index_field {
             self.lat_lon_options = input;
             self
         }
-        /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
         pub fn int_array_options(mut self, input: crate::model::IntArrayOptions) -> Self {
             self.int_array_options = Some(input);
             self
         }
-        /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
         pub fn set_int_array_options(
             mut self,
             input: std::option::Option<crate::model::IntArrayOptions>,
@@ -1639,12 +1567,12 @@ pub mod index_field {
             self.int_array_options = input;
             self
         }
-        /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
         pub fn double_array_options(mut self, input: crate::model::DoubleArrayOptions) -> Self {
             self.double_array_options = Some(input);
             self
         }
-        /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
         pub fn set_double_array_options(
             mut self,
             input: std::option::Option<crate::model::DoubleArrayOptions>,
@@ -1652,12 +1580,12 @@ pub mod index_field {
             self.double_array_options = input;
             self
         }
-        /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
         pub fn literal_array_options(mut self, input: crate::model::LiteralArrayOptions) -> Self {
             self.literal_array_options = Some(input);
             self
         }
-        /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
         pub fn set_literal_array_options(
             mut self,
             input: std::option::Option<crate::model::LiteralArrayOptions>,
@@ -1665,12 +1593,12 @@ pub mod index_field {
             self.literal_array_options = input;
             self
         }
-        /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
         pub fn text_array_options(mut self, input: crate::model::TextArrayOptions) -> Self {
             self.text_array_options = Some(input);
             self
         }
-        /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
         pub fn set_text_array_options(
             mut self,
             input: std::option::Option<crate::model::TextArrayOptions>,
@@ -1678,12 +1606,12 @@ pub mod index_field {
             self.text_array_options = input;
             self
         }
-        /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
         pub fn date_array_options(mut self, input: crate::model::DateArrayOptions) -> Self {
             self.date_array_options = Some(input);
             self
         }
-        /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+        /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
         pub fn set_date_array_options(
             mut self,
             input: std::option::Option<crate::model::DateArrayOptions>,
@@ -1718,7 +1646,7 @@ impl IndexField {
     }
 }
 
-/// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+/// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateArrayOptions {
@@ -1854,7 +1782,7 @@ impl DateArrayOptions {
     }
 }
 
-/// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+/// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextArrayOptions {
@@ -1866,7 +1794,7 @@ pub struct TextArrayOptions {
     pub return_enabled: std::option::Option<bool>,
     /// <p>Whether highlights can be returned for the field.</p>
     pub highlight_enabled: std::option::Option<bool>,
-    /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
+    /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
     pub analysis_scheme: std::option::Option<std::string::String>,
 }
 impl TextArrayOptions {
@@ -1886,7 +1814,7 @@ impl TextArrayOptions {
     pub fn highlight_enabled(&self) -> std::option::Option<bool> {
         self.highlight_enabled
     }
-    /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
+    /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&str> {
         self.analysis_scheme.as_deref()
     }
@@ -1961,12 +1889,12 @@ pub mod text_array_options {
             self.highlight_enabled = input;
             self
         }
-        /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
+        /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
         pub fn analysis_scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_scheme = Some(input.into());
             self
         }
-        /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
+        /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1993,7 +1921,7 @@ impl TextArrayOptions {
     }
 }
 
-/// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+/// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LiteralArrayOptions {
@@ -2129,7 +2057,7 @@ impl LiteralArrayOptions {
     }
 }
 
-/// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
+/// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoubleArrayOptions {
@@ -2262,7 +2190,7 @@ impl DoubleArrayOptions {
     }
 }
 
-/// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+/// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntArrayOptions {
@@ -2401,20 +2329,9 @@ impl IntArrayOptions {
 pub struct LatLonOptions {
     /// A value to use for the field if the field isn't specified for a document.
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
     pub facet_enabled: std::option::Option<bool>,
@@ -2430,20 +2347,9 @@ impl LatLonOptions {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -2503,38 +2409,16 @@ pub mod lat_lon_options {
             self.default_value = input;
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2599,26 +2483,15 @@ impl LatLonOptions {
     }
 }
 
-/// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+/// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateOptions {
     /// A value to use for the field if the field isn't specified for a document.
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
     pub facet_enabled: std::option::Option<bool>,
@@ -2634,20 +2507,9 @@ impl DateOptions {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -2707,38 +2569,16 @@ pub mod date_options {
             self.default_value = input;
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2803,26 +2643,15 @@ impl DateOptions {
     }
 }
 
-/// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+/// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextOptions {
     /// A value to use for the field if the field isn't specified for a document.
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub return_enabled: std::option::Option<bool>,
@@ -2830,7 +2659,7 @@ pub struct TextOptions {
     pub sort_enabled: std::option::Option<bool>,
     /// <p>Whether highlights can be returned for the field.</p>
     pub highlight_enabled: std::option::Option<bool>,
-    /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
+    /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
     pub analysis_scheme: std::option::Option<std::string::String>,
 }
 impl TextOptions {
@@ -2838,20 +2667,9 @@ impl TextOptions {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -2867,7 +2685,7 @@ impl TextOptions {
     pub fn highlight_enabled(&self) -> std::option::Option<bool> {
         self.highlight_enabled
     }
-    /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
+    /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&str> {
         self.analysis_scheme.as_deref()
     }
@@ -2911,38 +2729,16 @@ pub mod text_options {
             self.default_value = input;
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2977,12 +2773,12 @@ pub mod text_options {
             self.highlight_enabled = input;
             self
         }
-        /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
+        /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
         pub fn analysis_scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_scheme = Some(input.into());
             self
         }
-        /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
+        /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3010,26 +2806,15 @@ impl TextOptions {
     }
 }
 
-/// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+/// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LiteralOptions {
     /// A value to use for the field if the field isn't specified for a document.
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub source_field: std::option::Option<std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
     pub facet_enabled: std::option::Option<bool>,
@@ -3045,20 +2830,9 @@ impl LiteralOptions {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-    /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-    /// Any document fields that don't map to a regular index field but do match a  
-    /// dynamic field's pattern are configured with the dynamic field's indexing options.
-    /// </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).
-    /// Dynamic field names must begin or end with a wildcard (*).
-    /// The wildcard can also be the only character in a dynamic field name.
-    /// Multiple wildcards, and wildcards embedded within a string are not supported.
-    /// </p>
-    /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-    /// To reference a document's ID, you can use the name <code>_id</code>.
-    /// </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -3118,38 +2892,16 @@ pub mod literal_options {
             self.default_value = input;
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
-        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
-        /// Any document fields that don't map to a regular index field but do match a  
-        /// dynamic field's pattern are configured with the dynamic field's indexing options.
-        /// </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).
-        /// Dynamic field names must begin or end with a wildcard (*).
-        /// The wildcard can also be the only character in a dynamic field name.
-        /// Multiple wildcards, and wildcards embedded within a string are not supported.
-        /// </p>
-        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
-        /// To reference a document's ID, you can use the name <code>_id</code>.
-        /// </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -3214,7 +2966,7 @@ impl LiteralOptions {
     }
 }
 
-/// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+/// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoubleOptions {
@@ -3363,7 +3115,7 @@ impl DoubleOptions {
     }
 }
 
-/// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+/// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntOptions {
@@ -3691,23 +3443,21 @@ impl ExpressionStatus {
     }
 }
 
-/// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+/// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Expression {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub expression_name: std::option::Option<std::string::String>,
-    /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub expression_value: std::option::Option<std::string::String>,
 }
 impl Expression {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn expression_name(&self) -> std::option::Option<&str> {
         self.expression_name.as_deref()
     }
-    /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub fn expression_value(&self) -> std::option::Option<&str> {
         self.expression_value.as_deref()
     }
@@ -3730,14 +3480,12 @@ pub mod expression {
         pub(crate) expression_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression_name = Some(input.into());
             self
         }
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_expression_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3745,12 +3493,12 @@ pub mod expression {
             self.expression_name = input;
             self
         }
-        /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+        /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn expression_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression_value = Some(input.into());
             self
         }
-        /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+        /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn set_expression_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3782,17 +3530,17 @@ pub struct DomainStatus {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
+    /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
     pub created: std::option::Option<bool>,
-    /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+    /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
     pub deleted: std::option::Option<bool>,
     /// <p>The service endpoint for updating documents in a search domain.</p>
     pub doc_service: std::option::Option<crate::model::ServiceEndpoint>,
     /// <p>The service endpoint for requesting search results from a search domain.</p>
     pub search_service: std::option::Option<crate::model::ServiceEndpoint>,
-    /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
+    /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
     pub requires_index_documents: std::option::Option<bool>,
     /// <p>True if processing is being done to activate the current domain configuration.</p>
     pub processing: std::option::Option<bool>,
@@ -3814,15 +3562,15 @@ impl DomainStatus {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
+    /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
     pub fn created(&self) -> std::option::Option<bool> {
         self.created
     }
-    /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+    /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
     pub fn deleted(&self) -> std::option::Option<bool> {
         self.deleted
     }
@@ -3834,7 +3582,7 @@ impl DomainStatus {
     pub fn search_service(&self) -> std::option::Option<&crate::model::ServiceEndpoint> {
         self.search_service.as_ref()
     }
-    /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
+    /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
     pub fn requires_index_documents(&self) -> std::option::Option<bool> {
         self.requires_index_documents
     }
@@ -3919,32 +3667,32 @@ pub mod domain_status {
             self.domain_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
+        /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
         pub fn created(mut self, input: bool) -> Self {
             self.created = Some(input);
             self
         }
-        /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
+        /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
         pub fn set_created(mut self, input: std::option::Option<bool>) -> Self {
             self.created = input;
             self
         }
-        /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+        /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
         pub fn deleted(mut self, input: bool) -> Self {
             self.deleted = Some(input);
             self
         }
-        /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
+        /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.deleted = input;
             self
@@ -3975,12 +3723,12 @@ pub mod domain_status {
             self.search_service = input;
             self
         }
-        /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
+        /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
         pub fn requires_index_documents(mut self, input: bool) -> Self {
             self.requires_index_documents = Some(input);
             self
         }
-        /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
+        /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
         pub fn set_requires_index_documents(mut self, input: std::option::Option<bool>) -> Self {
             self.requires_index_documents = input;
             self
@@ -4192,7 +3940,7 @@ impl ServiceEndpoint {
     }
 }
 
-/// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+/// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSchemeStatus {
@@ -4275,21 +4023,19 @@ impl AnalysisSchemeStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisScheme {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub analysis_scheme_name: std::option::Option<std::string::String>,
-    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
+    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub analysis_scheme_language: std::option::Option<crate::model::AnalysisSchemeLanguage>,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub analysis_options: std::option::Option<crate::model::AnalysisOptions>,
 }
 impl AnalysisScheme {
-    /// <p>Names must begin with a letter and can contain the following characters:
-    /// a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
         self.analysis_scheme_name.as_deref()
     }
-    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
+    /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn analysis_scheme_language(
         &self,
     ) -> std::option::Option<&crate::model::AnalysisSchemeLanguage> {
@@ -4321,14 +4067,12 @@ pub mod analysis_scheme {
         pub(crate) analysis_options: std::option::Option<crate::model::AnalysisOptions>,
     }
     impl Builder {
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_scheme_name = Some(input.into());
             self
         }
-        /// <p>Names must begin with a letter and can contain the following characters:
-        /// a-z (lowercase), 0-9, and _ (underscore).</p>
+        /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_analysis_scheme_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4336,7 +4080,7 @@ pub mod analysis_scheme {
             self.analysis_scheme_name = input;
             self
         }
-        /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
+        /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
         pub fn analysis_scheme_language(
             mut self,
             input: crate::model::AnalysisSchemeLanguage,
@@ -4344,7 +4088,7 @@ pub mod analysis_scheme {
             self.analysis_scheme_language = Some(input);
             self
         }
-        /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
+        /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
         pub fn set_analysis_scheme_language(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeLanguage>,
@@ -4388,7 +4132,7 @@ impl AnalysisScheme {
 pub struct AnalysisOptions {
     /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub synonyms: std::option::Option<std::string::String>,
-    /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+    /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
     pub stopwords: std::option::Option<std::string::String>,
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
     pub stemming_dictionary: std::option::Option<std::string::String>,
@@ -4402,7 +4146,7 @@ impl AnalysisOptions {
     pub fn synonyms(&self) -> std::option::Option<&str> {
         self.synonyms.as_deref()
     }
-    /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+    /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
     pub fn stopwords(&self) -> std::option::Option<&str> {
         self.stopwords.as_deref()
     }
@@ -4456,12 +4200,12 @@ pub mod analysis_options {
             self.synonyms = input;
             self
         }
-        /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+        /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
         pub fn stopwords(mut self, input: impl Into<std::string::String>) -> Self {
             self.stopwords = Some(input.into());
             self
         }
-        /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+        /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
         pub fn set_stopwords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stopwords = input;
             self

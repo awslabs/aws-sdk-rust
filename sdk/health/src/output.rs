@@ -65,16 +65,12 @@ impl DisableHealthServiceAccessForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHealthServiceStatusForOrganizationOutput {
-    /// <p>Information about the status of enabling or disabling the Health organizational
-    /// view feature in
-    /// your organization.</p>
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
-    /// <p>Information about the status of enabling or disabling the Health organizational
-    /// view feature in
-    /// your organization.</p>
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     pub fn health_service_access_status_for_organization(&self) -> std::option::Option<&str> {
         self.health_service_access_status_for_organization
@@ -101,9 +97,7 @@ pub mod describe_health_service_status_for_organization_output {
             std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the status of enabling or disabling the Health organizational
-        /// view feature in
-        /// your organization.</p>
+        /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
         /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
         pub fn health_service_access_status_for_organization(
             mut self,
@@ -112,9 +106,7 @@ pub mod describe_health_service_status_for_organization_output {
             self.health_service_access_status_for_organization = Some(input.into());
             self
         }
-        /// <p>Information about the status of enabling or disabling the Health organizational
-        /// view feature in
-        /// your organization.</p>
+        /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
         /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
         pub fn set_health_service_access_status_for_organization(
             mut self,
@@ -144,35 +136,17 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTypesOutput {
-    /// <p>A list of event types that match the filter criteria. Event types have a category
-    /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-    /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-    /// <code>BILLING</code>), and a code (in the format
-    /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-    /// </code>; for
-    /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+    /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventTypesOutput {
-    /// <p>A list of event types that match the filter criteria. Event types have a category
-    /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-    /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-    /// <code>BILLING</code>), and a code (in the format
-    /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-    /// </code>; for
-    /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+    /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
     pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
         self.event_types.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -199,26 +173,14 @@ pub mod describe_event_types_output {
         ///
         /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
         ///
-        /// <p>A list of event types that match the filter criteria. Event types have a category
-        /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-        /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-        /// <code>BILLING</code>), and a code (in the format
-        /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for
-        /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+        /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
         pub fn event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.event_types.unwrap_or_default();
             v.push(input);
             self.event_types = Some(v);
             self
         }
-        /// <p>A list of event types that match the filter criteria. Event types have a category
-        /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
-        /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
-        /// <code>BILLING</code>), and a code (in the format
-        /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for
-        /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+        /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
         pub fn set_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -226,18 +188,12 @@ pub mod describe_event_types_output {
             self.event_types = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -264,10 +220,7 @@ impl DescribeEventTypesOutput {
 pub struct DescribeEventsForOrganizationOutput {
     /// <p>The events that match the specified filter criteria.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::OrganizationEvent>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsForOrganizationOutput {
@@ -275,10 +228,7 @@ impl DescribeEventsForOrganizationOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::OrganizationEvent]> {
         self.events.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -320,18 +270,12 @@ pub mod describe_events_for_organization_output {
             self.events = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -358,10 +302,7 @@ impl DescribeEventsForOrganizationOutput {
 pub struct DescribeEventsOutput {
     /// <p>The events that match the specified filter criteria.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
@@ -369,10 +310,7 @@ impl DescribeEventsOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -414,18 +352,12 @@ pub mod describe_events_output {
             self.events = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -645,10 +577,7 @@ impl DescribeEventDetailsOutput {
 pub struct DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
     pub event_aggregates: std::option::Option<std::vec::Vec<crate::model::EventAggregate>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventAggregatesOutput {
@@ -656,10 +585,7 @@ impl DescribeEventAggregatesOutput {
     pub fn event_aggregates(&self) -> std::option::Option<&[crate::model::EventAggregate]> {
         self.event_aggregates.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -702,18 +628,12 @@ pub mod describe_event_aggregates_output {
             self.event_aggregates = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -802,38 +722,26 @@ impl DescribeEntityAggregatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesForOrganizationOutput {
-    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
-    /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-    /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
-    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
-    /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
     pub failed_set:
         std::option::Option<std::vec::Vec<crate::model::OrganizationAffectedEntitiesErrorItem>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
-    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
-    /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-    /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::AffectedEntity]> {
         self.entities.as_deref()
     }
-    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
-    /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
     pub fn failed_set(
         &self,
     ) -> std::option::Option<&[crate::model::OrganizationAffectedEntitiesErrorItem]> {
         self.failed_set.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -863,18 +771,14 @@ pub mod describe_affected_entities_for_organization_output {
         ///
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
-        /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-        /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
         pub fn entities(mut self, input: crate::model::AffectedEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input);
             self.entities = Some(v);
             self
         }
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
-        /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
-        /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
@@ -886,8 +790,7 @@ pub mod describe_affected_entities_for_organization_output {
         ///
         /// To override the contents of this collection use [`set_failed_set`](Self::set_failed_set).
         ///
-        /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
-        /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
         pub fn failed_set(
             mut self,
             input: crate::model::OrganizationAffectedEntitiesErrorItem,
@@ -897,8 +800,7 @@ pub mod describe_affected_entities_for_organization_output {
             self.failed_set = Some(v);
             self
         }
-        /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
-        /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
         pub fn set_failed_set(
             mut self,
             input: std::option::Option<
@@ -908,18 +810,12 @@ pub mod describe_affected_entities_for_organization_output {
             self.failed_set = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -947,10 +843,7 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
 pub struct DescribeAffectedEntitiesOutput {
     /// <p>The entities that match the filter criteria.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedEntitiesOutput {
@@ -958,10 +851,7 @@ impl DescribeAffectedEntitiesOutput {
     pub fn entities(&self) -> std::option::Option<&[crate::model::AffectedEntity]> {
         self.entities.as_deref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1003,18 +893,12 @@ pub mod describe_affected_entities_output {
             self.entities = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1043,28 +927,12 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     pub affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
-    /// <code>affectedAccounts</code> value is always empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-    /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
-    /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-    /// have Amazon Web Services accounts that use that service, those account IDs appear in the
-    /// response.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
-    /// <code>eventArn</code> that you specified in the request is invalid or doesn't
-    /// exist.</p>
-    /// </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
     pub event_scope_code: std::option::Option<crate::model::EventScopeCode>,
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
@@ -1074,30 +942,14 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
-    /// <code>affectedAccounts</code> value is always empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-    /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
-    /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-    /// have Amazon Web Services accounts that use that service, those account IDs appear in the
-    /// response.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
-    /// <code>eventArn</code> that you specified in the request is invalid or doesn't
-    /// exist.</p>
-    /// </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
     pub fn event_scope_code(&self) -> std::option::Option<&crate::model::EventScopeCode> {
         self.event_scope_code.as_ref()
     }
-    /// <p>If the results of a search are large, only a portion of the
-    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-    /// retrieve the next batch of results, reissue the search request and include the returned token.
-    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1143,22 +995,9 @@ pub mod describe_affected_accounts_for_organization_output {
         }
         /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
-        /// <code>affectedAccounts</code> value is always empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-        /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
-        /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-        /// have Amazon Web Services accounts that use that service, those account IDs appear in the
-        /// response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
-        /// <code>eventArn</code> that you specified in the request is invalid or doesn't
-        /// exist.</p>
-        /// </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
         /// </ul>
         pub fn event_scope_code(mut self, input: crate::model::EventScopeCode) -> Self {
             self.event_scope_code = Some(input);
@@ -1166,22 +1005,9 @@ pub mod describe_affected_accounts_for_organization_output {
         }
         /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
-        /// <code>affectedAccounts</code> value is always empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
-        /// the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your
-        /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
-        /// have Amazon Web Services accounts that use that service, those account IDs appear in the
-        /// response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
-        /// <code>eventArn</code> that you specified in the request is invalid or doesn't
-        /// exist.</p>
-        /// </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+        /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
         /// </ul>
         pub fn set_event_scope_code(
             mut self,
@@ -1190,18 +1016,12 @@ pub mod describe_affected_accounts_for_organization_output {
             self.event_scope_code = input;
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

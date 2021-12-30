@@ -224,10 +224,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConnectorProfile`.
     ///
-    /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota
-    /// of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota
-    /// allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support
-    /// channel. </p>
+    /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -284,14 +281,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_name(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -299,18 +294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_profile_name(input);
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_arn(input.into());
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_arn(input);
             self
@@ -328,16 +317,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_type(input);
             self
         }
-        /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-        /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-        /// public internet. </p>
+        /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
         pub fn connection_mode(mut self, input: crate::model::ConnectionMode) -> Self {
             self.inner = self.inner.connection_mode(input);
             self
         }
-        /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-        /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-        /// public internet. </p>
+        /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
         pub fn set_connection_mode(
             mut self,
             input: std::option::Option<crate::model::ConnectionMode>,
@@ -364,10 +349,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFlow`.
     ///
-    /// <p> Enables your application to create a new flow using Amazon AppFlow. You must create a
-    /// connector profile before calling this API. Please note that the Request Syntax below shows
-    /// syntax for multiple destinations, however, you can only transfer data to one item in this list
-    /// at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>
+    /// <p> Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlow<
         C = aws_smithy_client::erase::DynConnector,
@@ -424,14 +406,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
@@ -446,18 +426,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_arn(input.into());
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_arn(input);
             self
@@ -475,14 +449,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trigger_config(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.inner = self.inner.source_flow_config(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -494,8 +466,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
-        /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
         pub fn destination_flow_config_list(
             mut self,
             input: crate::model::DestinationFlowConfig,
@@ -503,8 +474,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_flow_config_list(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
         pub fn set_destination_flow_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
@@ -516,14 +486,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             self.inner = self.inner.tasks(input);
             self
         }
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -614,14 +582,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_name(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -629,14 +595,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_profile_name(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-        /// use in one or more flows. </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-        /// use in one or more flows. </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
             self
@@ -644,9 +608,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFlow`.
     ///
-    /// <p> Enables your application to delete an existing flow. Before deleting the flow, Amazon
-    /// AppFlow validates the request by checking the flow configuration and status. You can delete
-    /// flows one at a time. </p>
+    /// <p> Enables your application to delete an existing flow. Before deleting the flow, Amazon AppFlow validates the request by checking the flow configuration and status. You can delete flows one at a time. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlow<
         C = aws_smithy_client::erase::DynConnector,
@@ -703,26 +665,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-        /// </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-        /// </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
             self
@@ -730,8 +688,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectorEntity`.
     ///
-    /// <p> Provides details regarding the entity used with the connector, with a description of the
-    /// data model for each entity. </p>
+    /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each entity. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectorEntity<
         C = aws_smithy_client::erase::DynConnector,
@@ -814,14 +771,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_type(input);
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_name(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -832,11 +787,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectorProfiles`.
     ///
-    /// <p> Returns a list of <code>connector-profile</code> details matching the provided
-    /// <code>connector-profile</code> names and <code>connector-types</code>. Both input lists are
-    /// optional, and you can use them to filter the result. </p>
-    /// <p>If no names or <code>connector-types</code> are provided, returns all connector profiles
-    /// in a paginated form. If there is no match, this operation returns an empty list.</p>
+    /// <p> Returns a list of <code>connector-profile</code> details matching the provided <code>connector-profile</code> names and <code>connector-types</code>. Both input lists are optional, and you can use them to filter the result. </p>
+    /// <p>If no names or <code>connector-types</code> are provided, returns all connector profiles in a paginated form. If there is no match, this operation returns an empty list.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectorProfiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -897,14 +849,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_connector_profile_names`](Self::set_connector_profile_names).
         ///
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_names(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -925,14 +875,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_type(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -950,11 +898,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectors`.
     ///
-    /// <p> Describes the connectors vended by Amazon AppFlow for specified connector types. If you
-    /// don't specify a connector type, this operation describes all connectors vended by Amazon
-    /// AppFlow. If there are more connectors than can be returned in one page, the response contains
-    /// a <code>nextToken</code> object, which can be be passed in to the next call to the
-    /// <code>DescribeConnectors</code> API operation to retrieve the next page. </p>
+    /// <p> Describes the connectors vended by Amazon AppFlow for specified connector types. If you don't specify a connector type, this operation describes all connectors vended by Amazon AppFlow. If there are more connectors than can be returned in one page, the response contains a <code>nextToken</code> object, which can be be passed in to the next call to the <code>DescribeConnectors</code> API operation to retrieve the next page. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectors<
         C = aws_smithy_client::erase::DynConnector,
@@ -1098,14 +1042,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
@@ -1170,26 +1112,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1207,10 +1145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConnectorEntities`.
     ///
-    /// <p> Returns the list of available connector entities supported by Amazon AppFlow. For
-    /// example, you can query Salesforce for <i>Account</i> and
-    /// <i>Opportunity</i> entities, or query ServiceNow for the
-    /// <i>Incident</i> entity. </p>
+    /// <p> Returns the list of available connector entities supported by Amazon AppFlow. For example, you can query Salesforce for <i>Account</i> and <i>Opportunity</i> entities, or query ServiceNow for the <i>Incident</i> entity. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -1267,16 +1202,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-        /// connector. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_name(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-        /// connector. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1297,20 +1228,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_type(input);
             self
         }
-        /// <p> This optional parameter is specific to connector implementation. Some connectors support
-        /// multiple levels or categories of entities. You can find out the list of roots for such
-        /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-        /// connector supports entities at different roots, this initial request returns the list of
-        /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+        /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
         pub fn entities_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entities_path(input.into());
             self
         }
-        /// <p> This optional parameter is specific to connector implementation. Some connectors support
-        /// multiple levels or categories of entities. You can find out the list of roots for such
-        /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-        /// connector supports entities at different roots, this initial request returns the list of
-        /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+        /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
         pub fn set_entities_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1471,8 +1394,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartFlow`.
     ///
-    /// <p> Activates an existing flow. For on-demand flows, this operation runs the flow
-    /// immediately. For schedule and event-triggered flows, this operation activates the flow. </p>
+    /// <p> Activates an existing flow. For on-demand flows, this operation runs the flow immediately. For schedule and event-triggered flows, this operation activates the flow. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFlow<
         C = aws_smithy_client::erase::DynConnector,
@@ -1529,14 +1451,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
@@ -1544,9 +1464,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopFlow`.
     ///
-    /// <p> Deactivates the existing flow. For on-demand flows, this operation returns an
-    /// <code>unsupportedOperationException</code> error message. For schedule and event-triggered
-    /// flows, this operation deactivates the flow. </p>
+    /// <p> Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code> error message. For schedule and event-triggered flows, this operation deactivates the flow. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFlow<
         C = aws_smithy_client::erase::DynConnector,
@@ -1603,14 +1521,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
@@ -1855,14 +1771,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connector_profile_name(input.into());
             self
         }
-        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1959,14 +1873,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_name(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_flow_name(input);
             self
@@ -1994,14 +1906,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trigger_config(input);
             self
         }
-        /// <p> Contains information about the configuration of the source connector used in the flow.
-        /// </p>
+        /// <p> Contains information about the configuration of the source connector used in the flow. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.inner = self.inner.source_flow_config(input);
             self
         }
-        /// <p> Contains information about the configuration of the source connector used in the flow.
-        /// </p>
+        /// <p> Contains information about the configuration of the source connector used in the flow. </p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -2013,8 +1923,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn destination_flow_config_list(
             mut self,
             input: crate::model::DestinationFlowConfig,
@@ -2022,8 +1931,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_flow_config_list(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn set_destination_flow_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
@@ -2035,14 +1943,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             self.inner = self.inner.tasks(input);
             self
         }
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,

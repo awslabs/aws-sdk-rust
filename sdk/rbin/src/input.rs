@@ -55,14 +55,12 @@ pub mod create_rule_input {
             self.tags = input;
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -74,11 +72,7 @@ pub mod create_rule_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
@@ -86,11 +80,7 @@ pub mod create_rule_input {
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -559,14 +549,12 @@ pub mod list_rules_input {
             self.next_token = input;
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -1305,11 +1293,7 @@ pub mod update_rule_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
@@ -1317,11 +1301,7 @@ pub mod update_rule_input {
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -1491,11 +1471,7 @@ pub struct UpdateRuleInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule. </p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
@@ -1516,11 +1492,7 @@ impl UpdateRuleInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule. </p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
@@ -1623,8 +1595,7 @@ pub struct ListRulesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-    /// are listed.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -1638,8 +1609,7 @@ impl ListRulesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-    /// are listed.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -1711,14 +1681,9 @@ pub struct CreateRuleInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the tags to assign to the retention rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-    /// supported.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule.</p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
@@ -1735,16 +1700,11 @@ impl CreateRuleInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-    /// supported.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule.</p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()

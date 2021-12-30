@@ -1815,8 +1815,7 @@ impl InternalFailureException {
 pub struct RangeNotSatisfiableException {
     /// <p>416</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The requested number of results specified by nextToken cannot be
-    /// satisfied.</p>
+    /// <p>The requested number of results specified by nextToken cannot be satisfied.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl RangeNotSatisfiableException {
@@ -1869,14 +1868,12 @@ pub mod range_not_satisfiable_exception {
             self.code = input;
             self
         }
-        /// <p>The requested number of results specified by nextToken cannot be
-        /// satisfied.</p>
+        /// <p>The requested number of results specified by nextToken cannot be satisfied.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The requested number of results specified by nextToken cannot be
-        /// satisfied.</p>
+        /// <p>The requested number of results specified by nextToken cannot be satisfied.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

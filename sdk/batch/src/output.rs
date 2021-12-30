@@ -112,15 +112,13 @@ impl UpdateJobQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl UpdateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -147,14 +145,12 @@ pub mod update_compute_environment_output {
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -551,9 +547,7 @@ pub struct ListSchedulingPoliciesOutput {
     /// <p>A list of scheduling policies that match the request.</p>
     pub scheduling_policies:
         std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
-    /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
-    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulingPoliciesOutput {
@@ -563,9 +557,7 @@ impl ListSchedulingPoliciesOutput {
     ) -> std::option::Option<&[crate::model::SchedulingPolicyListingDetail]> {
         self.scheduling_policies.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
-    /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
-    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -611,16 +603,12 @@ pub mod list_scheduling_policies_output {
             self.scheduling_policies = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
-        /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
-        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
-        /// results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to
-        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -647,9 +635,7 @@ impl ListSchedulingPoliciesOutput {
 pub struct ListJobsOutput {
     /// <p>A list of job summaries that match the request.</p>
     pub job_summary_list: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
-    /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -657,9 +643,7 @@ impl ListJobsOutput {
     pub fn job_summary_list(&self) -> std::option::Option<&[crate::model::JobSummary]> {
         self.job_summary_list.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
-    /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -701,16 +685,12 @@ pub mod list_jobs_output {
             self.job_summary_list = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
-        /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
-        /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -865,9 +845,7 @@ impl DescribeJobsOutput {
 pub struct DescribeJobQueuesOutput {
     /// <p>The list of job queues.</p>
     pub job_queues: std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
-    /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-    /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobQueuesOutput {
@@ -875,9 +853,7 @@ impl DescribeJobQueuesOutput {
     pub fn job_queues(&self) -> std::option::Option<&[crate::model::JobQueueDetail]> {
         self.job_queues.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
-    /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-    /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -919,16 +895,12 @@ pub mod describe_job_queues_output {
             self.job_queues = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
-        /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-        /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
-        /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-        /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -955,9 +927,7 @@ impl DescribeJobQueuesOutput {
 pub struct DescribeJobDefinitionsOutput {
     /// <p>The list of job definitions.</p>
     pub job_definitions: std::option::Option<std::vec::Vec<crate::model::JobDefinition>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
-    /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
-    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobDefinitionsOutput {
@@ -965,9 +935,7 @@ impl DescribeJobDefinitionsOutput {
     pub fn job_definitions(&self) -> std::option::Option<&[crate::model::JobDefinition]> {
         self.job_definitions.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
-    /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
-    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1009,16 +977,12 @@ pub mod describe_job_definitions_output {
             self.job_definitions = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
-        /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
-        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
-        /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
-        /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1046,10 +1010,7 @@ pub struct DescribeComputeEnvironmentsOutput {
     /// <p>The list of compute environments.</p>
     pub compute_environments:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-    /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
-    /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComputeEnvironmentsOutput {
@@ -1059,10 +1020,7 @@ impl DescribeComputeEnvironmentsOutput {
     ) -> std::option::Option<&[crate::model::ComputeEnvironmentDetail]> {
         self.compute_environments.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-    /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
-    /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1108,18 +1066,12 @@ pub mod describe_compute_environments_output {
             self.compute_environments = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-        /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
-        /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
-        /// the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be
-        /// used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1266,11 +1218,7 @@ impl DeleteComputeEnvironmentOutput {
 pub struct CreateSchedulingPolicyOutput {
     /// <p>The name of the scheduling policy.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// For example,
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateSchedulingPolicyOutput {
@@ -1278,11 +1226,7 @@ impl CreateSchedulingPolicyOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// For example,
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1315,20 +1259,12 @@ pub mod create_scheduling_policy_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// For example,
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// For example,
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1432,15 +1368,13 @@ impl CreateJobQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl CreateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -1467,14 +1401,12 @@ pub mod create_compute_environment_output {
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,

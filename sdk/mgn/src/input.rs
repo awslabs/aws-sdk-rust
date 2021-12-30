@@ -340,7 +340,7 @@ pub mod create_replication_configuration_template_input {
             self.bandwidth_throttling = input;
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn data_plane_routing(
             mut self,
             input: crate::model::ReplicationConfigurationDataPlaneRouting,
@@ -348,7 +348,7 @@ pub mod create_replication_configuration_template_input {
             self.data_plane_routing = Some(input);
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn set_data_plane_routing(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
@@ -6247,7 +6247,7 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
     pub bandwidth_throttling: i64,
-    /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+    /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
@@ -6303,7 +6303,7 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn bandwidth_throttling(&self) -> i64 {
         self.bandwidth_throttling
     }
-    /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+    /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
     pub fn data_plane_routing(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {

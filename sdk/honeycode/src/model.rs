@@ -147,9 +147,7 @@ impl ImportOptions {
     }
 }
 
-/// <p>
-/// An object that contains the options relating to parsing delimited text as part of an import request.
-/// </p>
+/// <p> An object that contains the options relating to parsing delimited text as part of an import request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelimitedTextImportOptions {
@@ -592,21 +590,15 @@ impl ImportDataSource {
     }
 }
 
-/// <p>
-/// An object that contains the configuration parameters for the data source of an import request.
-/// </p>
+/// <p> An object that contains the configuration parameters for the data source of an import request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDataSourceConfig {
-    /// <p>
-    /// The URL from which source data will be downloaded for the import request.
-    /// </p>
+    /// <p> The URL from which source data will be downloaded for the import request. </p>
     pub data_source_url: std::option::Option<std::string::String>,
 }
 impl ImportDataSourceConfig {
-    /// <p>
-    /// The URL from which source data will be downloaded for the import request.
-    /// </p>
+    /// <p> The URL from which source data will be downloaded for the import request. </p>
     pub fn data_source_url(&self) -> std::option::Option<&str> {
         self.data_source_url.as_deref()
     }
@@ -627,16 +619,12 @@ pub mod import_data_source_config {
         pub(crate) data_source_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The URL from which source data will be downloaded for the import request.
-        /// </p>
+        /// <p> The URL from which source data will be downloaded for the import request. </p>
         pub fn data_source_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_url = Some(input.into());
             self
         }
-        /// <p>
-        /// The URL from which source data will be downloaded for the import request.
-        /// </p>
+        /// <p> The URL from which source data will be downloaded for the import request. </p>
         pub fn set_data_source_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -665,8 +653,7 @@ impl ImportDataSourceConfig {
 pub struct TableRow {
     /// <p>The id of the row in the table.</p>
     pub row_id: std::option::Option<std::string::String>,
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
-    /// </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
     pub cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
 }
 impl TableRow {
@@ -674,8 +661,7 @@ impl TableRow {
     pub fn row_id(&self) -> std::option::Option<&str> {
         self.row_id.as_deref()
     }
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
-    /// </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
     pub fn cells(&self) -> std::option::Option<&[crate::model::Cell]> {
         self.cells.as_deref()
     }
@@ -712,16 +698,14 @@ pub mod table_row {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
-        /// </p>
+        /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
         pub fn cells(mut self, input: crate::model::Cell) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input);
             self.cells = Some(v);
             self
         }
-        /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
-        /// </p>
+        /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Cell>>,
@@ -749,129 +733,43 @@ impl TableRow {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cell {
-    /// <p>
-    /// The formula contained in the cell. This field is empty if a cell does not have a formula.
-    /// </p>
+    /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
     pub formula: std::option::Option<std::string::String>,
-    /// <p>The format of the cell. If this field is empty, then the format is either not specified in the
-    /// workbook or the format is set to AUTO.</p>
+    /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
     pub format: std::option::Option<crate::model::Format>,
-    /// <p>
-    /// The raw value of the data contained in the cell. The raw value depends on the format of the data in the
-    /// cell. However the attribute in the API return value is always a string containing the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point
-    /// number where the whole number represents the number of days since 1/1/1900 and the fractional part
-    /// represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value
-    /// "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of
-    /// 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all
-    /// three cases, it is still represented as a string.
-    /// </p>
-    /// <p>
-    /// Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number
-    /// representing the data being displayed. For example, the number 1.325 with two decimal places in the format
-    /// will have it's raw value as "1.325" and formatted value as "1.33". A currency value for
-    /// $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two
-    /// decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An
-    /// accounting value of -$25 will have "-25" as the raw value and "$  (25.00)" as the formatted value.
-    /// </p>
-    /// <p>
-    /// Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith"
-    /// will have "John Smith" as both the raw value and the formatted value.
-    /// </p>
-    /// <p>
-    /// Cells with format CONTACT will have the name of the contact as a formatted value and the email address of
-    /// the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the
-    /// formatted value and "john.smith@example.com" as the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value
-    /// and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table
-    /// that displays task status might have "Completed" as the formatted value and
-    /// "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
-    /// contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
-    /// auto-detected format, the raw and formatted values will be the same as the data in the cell.
-    /// </p>
+    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
+    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
+    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
+    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
+    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
+    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
     pub raw_value: std::option::Option<std::string::String>,
-    /// <p>
-    /// The formatted value of the cell. This is the value that you see displayed in the cell in the UI.
-    /// </p>
-    /// <p>
-    /// Note that the formatted value of a cell is always represented as a string irrespective of the data that is
-    /// stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string
-    /// representation of the formatted date being shown in the cell in the UI. See details in the rawValue field
-    /// below for how cells of different formats will have different raw and formatted values.
-    /// </p>
+    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+    /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
     pub formatted_value: std::option::Option<std::string::String>,
 }
 impl Cell {
-    /// <p>
-    /// The formula contained in the cell. This field is empty if a cell does not have a formula.
-    /// </p>
+    /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
     pub fn formula(&self) -> std::option::Option<&str> {
         self.formula.as_deref()
     }
-    /// <p>The format of the cell. If this field is empty, then the format is either not specified in the
-    /// workbook or the format is set to AUTO.</p>
+    /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::Format> {
         self.format.as_ref()
     }
-    /// <p>
-    /// The raw value of the data contained in the cell. The raw value depends on the format of the data in the
-    /// cell. However the attribute in the API return value is always a string containing the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point
-    /// number where the whole number represents the number of days since 1/1/1900 and the fractional part
-    /// represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value
-    /// "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of
-    /// 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all
-    /// three cases, it is still represented as a string.
-    /// </p>
-    /// <p>
-    /// Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number
-    /// representing the data being displayed. For example, the number 1.325 with two decimal places in the format
-    /// will have it's raw value as "1.325" and formatted value as "1.33". A currency value for
-    /// $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two
-    /// decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An
-    /// accounting value of -$25 will have "-25" as the raw value and "$  (25.00)" as the formatted value.
-    /// </p>
-    /// <p>
-    /// Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith"
-    /// will have "John Smith" as both the raw value and the formatted value.
-    /// </p>
-    /// <p>
-    /// Cells with format CONTACT will have the name of the contact as a formatted value and the email address of
-    /// the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the
-    /// formatted value and "john.smith@example.com" as the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value
-    /// and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table
-    /// that displays task status might have "Completed" as the formatted value and
-    /// "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
-    /// </p>
-    /// <p>
-    /// Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
-    /// contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
-    /// auto-detected format, the raw and formatted values will be the same as the data in the cell.
-    /// </p>
+    /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
+    /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
+    /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
+    /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
+    /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
+    /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
     pub fn raw_value(&self) -> std::option::Option<&str> {
         self.raw_value.as_deref()
     }
-    /// <p>
-    /// The formatted value of the cell. This is the value that you see displayed in the cell in the UI.
-    /// </p>
-    /// <p>
-    /// Note that the formatted value of a cell is always represented as a string irrespective of the data that is
-    /// stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string
-    /// representation of the formatted date being shown in the cell in the UI. See details in the rawValue field
-    /// below for how cells of different formats will have different raw and formatted values.
-    /// </p>
+    /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+    /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
     pub fn formatted_value(&self) -> std::option::Option<&str> {
         self.formatted_value.as_deref()
     }
@@ -898,142 +796,56 @@ pub mod cell {
         pub(crate) formatted_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The formula contained in the cell. This field is empty if a cell does not have a formula.
-        /// </p>
+        /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
         pub fn formula(mut self, input: impl Into<std::string::String>) -> Self {
             self.formula = Some(input.into());
             self
         }
-        /// <p>
-        /// The formula contained in the cell. This field is empty if a cell does not have a formula.
-        /// </p>
+        /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
         pub fn set_formula(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.formula = input;
             self
         }
-        /// <p>The format of the cell. If this field is empty, then the format is either not specified in the
-        /// workbook or the format is set to AUTO.</p>
+        /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the cell. If this field is empty, then the format is either not specified in the
-        /// workbook or the format is set to AUTO.</p>
+        /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
         }
-        /// <p>
-        /// The raw value of the data contained in the cell. The raw value depends on the format of the data in the
-        /// cell. However the attribute in the API return value is always a string containing the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point
-        /// number where the whole number represents the number of days since 1/1/1900 and the fractional part
-        /// represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value
-        /// "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of
-        /// 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all
-        /// three cases, it is still represented as a string.
-        /// </p>
-        /// <p>
-        /// Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number
-        /// representing the data being displayed. For example, the number 1.325 with two decimal places in the format
-        /// will have it's raw value as "1.325" and formatted value as "1.33". A currency value for
-        /// $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two
-        /// decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An
-        /// accounting value of -$25 will have "-25" as the raw value and "$  (25.00)" as the formatted value.
-        /// </p>
-        /// <p>
-        /// Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith"
-        /// will have "John Smith" as both the raw value and the formatted value.
-        /// </p>
-        /// <p>
-        /// Cells with format CONTACT will have the name of the contact as a formatted value and the email address of
-        /// the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the
-        /// formatted value and "john.smith@example.com" as the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value
-        /// and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table
-        /// that displays task status might have "Completed" as the formatted value and
-        /// "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
-        /// contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
-        /// auto-detected format, the raw and formatted values will be the same as the data in the cell.
-        /// </p>
+        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
+        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
+        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
+        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
+        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
+        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.raw_value = Some(input.into());
             self
         }
-        /// <p>
-        /// The raw value of the data contained in the cell. The raw value depends on the format of the data in the
-        /// cell. However the attribute in the API return value is always a string containing the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point
-        /// number where the whole number represents the number of days since 1/1/1900 and the fractional part
-        /// represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value
-        /// "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of
-        /// 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all
-        /// three cases, it is still represented as a string.
-        /// </p>
-        /// <p>
-        /// Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number
-        /// representing the data being displayed. For example, the number 1.325 with two decimal places in the format
-        /// will have it's raw value as "1.325" and formatted value as "1.33". A currency value for
-        /// $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two
-        /// decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An
-        /// accounting value of -$25 will have "-25" as the raw value and "$  (25.00)" as the formatted value.
-        /// </p>
-        /// <p>
-        /// Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith"
-        /// will have "John Smith" as both the raw value and the formatted value.
-        /// </p>
-        /// <p>
-        /// Cells with format CONTACT will have the name of the contact as a formatted value and the email address of
-        /// the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the
-        /// formatted value and "john.smith@example.com" as the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value
-        /// and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table
-        /// that displays task status might have "Completed" as the formatted value and
-        /// "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
-        /// </p>
-        /// <p>
-        /// Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
-        /// contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
-        /// auto-detected format, the raw and formatted values will be the same as the data in the cell.
-        /// </p>
+        /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
+        /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
+        /// <p> Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number representing the data being displayed. For example, the number 1.325 with two decimal places in the format will have it's raw value as "1.325" and formatted value as "1.33". A currency value for $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An accounting value of -$25 will have "-25" as the raw value and "$ (25.00)" as the formatted value. </p>
+        /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
+        /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
+        /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_value = input;
             self
         }
-        /// <p>
-        /// The formatted value of the cell. This is the value that you see displayed in the cell in the UI.
-        /// </p>
-        /// <p>
-        /// Note that the formatted value of a cell is always represented as a string irrespective of the data that is
-        /// stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string
-        /// representation of the formatted date being shown in the cell in the UI. See details in the rawValue field
-        /// below for how cells of different formats will have different raw and formatted values.
-        /// </p>
+        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+        /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
         pub fn formatted_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.formatted_value = Some(input.into());
             self
         }
-        /// <p>
-        /// The formatted value of the cell. This is the value that you see displayed in the cell in the UI.
-        /// </p>
-        /// <p>
-        /// Note that the formatted value of a cell is always represented as a string irrespective of the data that is
-        /// stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string
-        /// representation of the formatted date being shown in the cell in the UI. See details in the rawValue field
-        /// below for how cells of different formats will have different raw and formatted values.
-        /// </p>
+        /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
+        /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
         pub fn set_formatted_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1162,44 +974,21 @@ impl AsRef<str> for Format {
     }
 }
 
-/// <p>
-/// An object that represents a filter formula along with the id of the context row under which the filter
-/// function needs to evaluate.
-/// </p>
+/// <p> An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>
-    /// A formula representing a filter function that returns zero or more matching rows from a table. Valid
-    /// formulas in this field return a list of rows from a table. The most common ways of writing a formula to
-    /// return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or
-    /// more rows is also acceptable. For example, you can use a formula that points to a cell that contains a
-    /// filter function.
-    /// </p>
+    /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
     pub formula: std::option::Option<std::string::String>,
-    /// <p>
-    /// The optional contextRowId attribute can be used to specify the row id of the context row if the filter
-    /// formula contains unqualified references to table columns and needs a context row to evaluate them
-    /// successfully.
-    /// </p>
+    /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
     pub context_row_id: std::option::Option<std::string::String>,
 }
 impl Filter {
-    /// <p>
-    /// A formula representing a filter function that returns zero or more matching rows from a table. Valid
-    /// formulas in this field return a list of rows from a table. The most common ways of writing a formula to
-    /// return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or
-    /// more rows is also acceptable. For example, you can use a formula that points to a cell that contains a
-    /// filter function.
-    /// </p>
+    /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
     pub fn formula(&self) -> std::option::Option<&str> {
         self.formula.as_deref()
     }
-    /// <p>
-    /// The optional contextRowId attribute can be used to specify the row id of the context row if the filter
-    /// formula contains unqualified references to table columns and needs a context row to evaluate them
-    /// successfully.
-    /// </p>
+    /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
     pub fn context_row_id(&self) -> std::option::Option<&str> {
         self.context_row_id.as_deref()
     }
@@ -1222,42 +1011,22 @@ pub mod filter {
         pub(crate) context_row_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A formula representing a filter function that returns zero or more matching rows from a table. Valid
-        /// formulas in this field return a list of rows from a table. The most common ways of writing a formula to
-        /// return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or
-        /// more rows is also acceptable. For example, you can use a formula that points to a cell that contains a
-        /// filter function.
-        /// </p>
+        /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
         pub fn formula(mut self, input: impl Into<std::string::String>) -> Self {
             self.formula = Some(input.into());
             self
         }
-        /// <p>
-        /// A formula representing a filter function that returns zero or more matching rows from a table. Valid
-        /// formulas in this field return a list of rows from a table. The most common ways of writing a formula to
-        /// return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or
-        /// more rows is also acceptable. For example, you can use a formula that points to a cell that contains a
-        /// filter function.
-        /// </p>
+        /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
         pub fn set_formula(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.formula = input;
             self
         }
-        /// <p>
-        /// The optional contextRowId attribute can be used to specify the row id of the context row if the filter
-        /// formula contains unqualified references to table columns and needs a context row to evaluate them
-        /// successfully.
-        /// </p>
+        /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
         pub fn context_row_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.context_row_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The optional contextRowId attribute can be used to specify the row id of the context row if the filter
-        /// formula contains unqualified references to table columns and needs a context row to evaluate them
-        /// successfully.
-        /// </p>
+        /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
         pub fn set_context_row_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1362,10 +1131,7 @@ pub struct TableColumn {
     pub table_column_id: std::option::Option<std::string::String>,
     /// <p>The name of the column in the table.</p>
     pub table_column_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The column level format that is applied in the table. An empty value in this field means that the
-    /// column format is the default value 'AUTO'.
-    /// </p>
+    /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
     pub format: std::option::Option<crate::model::Format>,
 }
 impl TableColumn {
@@ -1377,10 +1143,7 @@ impl TableColumn {
     pub fn table_column_name(&self) -> std::option::Option<&str> {
         self.table_column_name.as_deref()
     }
-    /// <p>
-    /// The column level format that is applied in the table. An empty value in this field means that the
-    /// column format is the default value 'AUTO'.
-    /// </p>
+    /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::Format> {
         self.format.as_ref()
     }
@@ -1431,18 +1194,12 @@ pub mod table_column {
             self.table_column_name = input;
             self
         }
-        /// <p>
-        /// The column level format that is applied in the table. An empty value in this field means that the
-        /// column format is the default value 'AUTO'.
-        /// </p>
+        /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>
-        /// The column level format that is applied in the table. An empty value in this field means that the
-        /// column format is the default value 'AUTO'.
-        /// </p>
+        /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -1518,53 +1275,23 @@ impl VariableValue {
     }
 }
 
-/// <p>
-/// ResultSet contains the results of the request for a single block or list defined on the screen.
-/// </p>
+/// <p> ResultSet contains the results of the request for a single block or list defined on the screen. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSet {
-    /// <p>
-    /// List of headers for all the data cells in the block. The header identifies the name and default format of
-    /// the data cell. Data cells appear in the same order in all rows as defined in the header. The names and
-    /// formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank
-    /// value is used.
-    /// </p>
-    /// <p>
-    /// For example, a task list that displays the task name, due date and assigned person might have headers
-    /// [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ].
-    /// Every row in the result will have the task name as the first item, due date as the second item and assigned
-    /// person as the third item. If a particular task does not have a due date, that row will still have a blank
-    /// value in the second element and the assigned person will still be in the third element.
-    /// </p>
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+    /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-    /// <p>
-    /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
-    /// cells will be present in the same order as they are defined in the header.
-    /// </p>
+    /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
     pub rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
 }
 impl ResultSet {
-    /// <p>
-    /// List of headers for all the data cells in the block. The header identifies the name and default format of
-    /// the data cell. Data cells appear in the same order in all rows as defined in the header. The names and
-    /// formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank
-    /// value is used.
-    /// </p>
-    /// <p>
-    /// For example, a task list that displays the task name, due date and assigned person might have headers
-    /// [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ].
-    /// Every row in the result will have the task name as the first item, due date as the second item and assigned
-    /// person as the third item. If a particular task does not have a due date, that row will still have a blank
-    /// value in the second element and the assigned person will still be in the third element.
-    /// </p>
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+    /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
     pub fn headers(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
         self.headers.as_deref()
     }
-    /// <p>
-    /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
-    /// cells will be present in the same order as they are defined in the header.
-    /// </p>
+    /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
     pub fn rows(&self) -> std::option::Option<&[crate::model::ResultRow]> {
         self.rows.as_deref()
     }
@@ -1591,38 +1318,16 @@ pub mod result_set {
         ///
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
-        /// <p>
-        /// List of headers for all the data cells in the block. The header identifies the name and default format of
-        /// the data cell. Data cells appear in the same order in all rows as defined in the header. The names and
-        /// formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank
-        /// value is used.
-        /// </p>
-        /// <p>
-        /// For example, a task list that displays the task name, due date and assigned person might have headers
-        /// [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ].
-        /// Every row in the result will have the task name as the first item, due date as the second item and assigned
-        /// person as the third item. If a particular task does not have a due date, that row will still have a blank
-        /// value in the second element and the assigned person will still be in the third element.
-        /// </p>
+        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+        /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
         pub fn headers(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.headers.unwrap_or_default();
             v.push(input);
             self.headers = Some(v);
             self
         }
-        /// <p>
-        /// List of headers for all the data cells in the block. The header identifies the name and default format of
-        /// the data cell. Data cells appear in the same order in all rows as defined in the header. The names and
-        /// formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank
-        /// value is used.
-        /// </p>
-        /// <p>
-        /// For example, a task list that displays the task name, due date and assigned person might have headers
-        /// [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ].
-        /// Every row in the result will have the task name as the first item, due date as the second item and assigned
-        /// person as the third item. If a particular task does not have a due date, that row will still have a blank
-        /// value in the second element and the assigned person will still be in the third element.
-        /// </p>
+        /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
+        /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
         pub fn set_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
@@ -1634,20 +1339,14 @@ pub mod result_set {
         ///
         /// To override the contents of this collection use [`set_rows`](Self::set_rows).
         ///
-        /// <p>
-        /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
-        /// cells will be present in the same order as they are defined in the header.
-        /// </p>
+        /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
         pub fn rows(mut self, input: crate::model::ResultRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
             v.push(input);
             self.rows = Some(v);
             self
         }
-        /// <p>
-        /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
-        /// cells will be present in the same order as they are defined in the header.
-        /// </p>
+        /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
         pub fn set_rows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
@@ -1757,10 +1456,7 @@ impl ResultRow {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataItem {
-    /// <p>
-    /// The overrideFormat is optional and is specified only if a particular row of data has a different format for
-    /// the data than the default format defined on the screen or the table.
-    /// </p>
+    /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
     pub override_format: std::option::Option<crate::model::Format>,
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
     pub raw_value: std::option::Option<std::string::String>,
@@ -1768,10 +1464,7 @@ pub struct DataItem {
     pub formatted_value: std::option::Option<std::string::String>,
 }
 impl DataItem {
-    /// <p>
-    /// The overrideFormat is optional and is specified only if a particular row of data has a different format for
-    /// the data than the default format defined on the screen or the table.
-    /// </p>
+    /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
     pub fn override_format(&self) -> std::option::Option<&crate::model::Format> {
         self.override_format.as_ref()
     }
@@ -1804,18 +1497,12 @@ pub mod data_item {
         pub(crate) formatted_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The overrideFormat is optional and is specified only if a particular row of data has a different format for
-        /// the data than the default format defined on the screen or the table.
-        /// </p>
+        /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
         pub fn override_format(mut self, input: crate::model::Format) -> Self {
             self.override_format = Some(input);
             self
         }
-        /// <p>
-        /// The overrideFormat is optional and is specified only if a particular row of data has a different format for
-        /// the data than the default format defined on the screen or the table.
-        /// </p>
+        /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
         pub fn set_override_format(
             mut self,
             input: std::option::Option<crate::model::Format>,
@@ -2132,36 +1819,21 @@ impl ImportJobSubmitter {
     }
 }
 
-/// <p>
-/// A single item in a batch that failed to perform the intended action because of an error preventing it from
-/// succeeding.
-/// </p>
+/// <p> A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedBatchItem {
-    /// <p>
-    /// The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and
-    /// BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows
-    /// operations.
-    /// </p>
+    /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The error message that indicates why the batch item failed.
-    /// </p>
+    /// <p> The error message that indicates why the batch item failed. </p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedBatchItem {
-    /// <p>
-    /// The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and
-    /// BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows
-    /// operations.
-    /// </p>
+    /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>
-    /// The error message that indicates why the batch item failed.
-    /// </p>
+    /// <p> The error message that indicates why the batch item failed. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -2184,34 +1856,22 @@ pub mod failed_batch_item {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and
-        /// BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows
-        /// operations.
-        /// </p>
+        /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>
-        /// The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and
-        /// BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows
-        /// operations.
-        /// </p>
+        /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>
-        /// The error message that indicates why the batch item failed.
-        /// </p>
+        /// <p> The error message that indicates why the batch item failed. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>
-        /// The error message that indicates why the batch item failed.
-        /// </p>
+        /// <p> The error message that indicates why the batch item failed. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2235,35 +1895,21 @@ impl FailedBatchItem {
     }
 }
 
-/// <p>
-/// An object that represents the result of a single upsert row request.
-/// </p>
+/// <p> An object that represents the result of a single upsert row request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsertRowsResult {
-    /// <p>
-    /// The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an
-    /// update, this list could potentially contain multiple rows that matched the filter and hence got updated.
-    /// If the upsert resulted in an append, this list would only have the single row that was appended.
-    /// </p>
+    /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
     pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The result of the upsert action.
-    /// </p>
+    /// <p> The result of the upsert action. </p>
     pub upsert_action: std::option::Option<crate::model::UpsertAction>,
 }
 impl UpsertRowsResult {
-    /// <p>
-    /// The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an
-    /// update, this list could potentially contain multiple rows that matched the filter and hence got updated.
-    /// If the upsert resulted in an append, this list would only have the single row that was appended.
-    /// </p>
+    /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
     pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.row_ids.as_deref()
     }
-    /// <p>
-    /// The result of the upsert action.
-    /// </p>
+    /// <p> The result of the upsert action. </p>
     pub fn upsert_action(&self) -> std::option::Option<&crate::model::UpsertAction> {
         self.upsert_action.as_ref()
     }
@@ -2290,22 +1936,14 @@ pub mod upsert_rows_result {
         ///
         /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).
         ///
-        /// <p>
-        /// The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an
-        /// update, this list could potentially contain multiple rows that matched the filter and hence got updated.
-        /// If the upsert resulted in an append, this list would only have the single row that was appended.
-        /// </p>
+        /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
         pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.row_ids.unwrap_or_default();
             v.push(input.into());
             self.row_ids = Some(v);
             self
         }
-        /// <p>
-        /// The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an
-        /// update, this list could potentially contain multiple rows that matched the filter and hence got updated.
-        /// If the upsert resulted in an append, this list would only have the single row that was appended.
-        /// </p>
+        /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
         pub fn set_row_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2313,16 +1951,12 @@ pub mod upsert_rows_result {
             self.row_ids = input;
             self
         }
-        /// <p>
-        /// The result of the upsert action.
-        /// </p>
+        /// <p> The result of the upsert action. </p>
         pub fn upsert_action(mut self, input: crate::model::UpsertAction) -> Self {
             self.upsert_action = Some(input);
             self
         }
-        /// <p>
-        /// The result of the upsert action.
-        /// </p>
+        /// <p> The result of the upsert action. </p>
         pub fn set_upsert_action(
             mut self,
             input: std::option::Option<crate::model::UpsertAction>,
@@ -2401,67 +2035,31 @@ impl AsRef<str> for UpsertAction {
     }
 }
 
-/// <p>
-/// Data needed to upsert rows in a table as part of a single item in the BatchUpsertTableRows request.
-/// </p>
+/// <p> Data needed to upsert rows in a table as part of a single item in the BatchUpsertTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsertRowData {
-    /// <p>
-    /// An external identifier that represents a single item in the request that is being upserted as part of the
-    /// BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request.
-    /// The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the
-    /// request to data in the results.
-    /// </p>
+    /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     pub batch_item_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The filter formula to use to find existing matching rows to update. The formula needs to return zero or more
-    /// rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula
-    /// returns one or more rows, then the returned rows will be updated.
-    /// </p>
-    /// <p>
-    /// Note that the filter formula needs to return rows from the target table for the upsert operation to succeed.
-    /// If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table
-    /// for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are
-    /// made to the table.
-    /// </p>
+    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+    /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
     pub filter: std::option::Option<crate::model::Filter>,
-    /// <p>
-    /// A map representing the cells to update for the matching rows or an appended row. The key is the column id
-    /// of the cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub cells_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
 }
 impl UpsertRowData {
-    /// <p>
-    /// An external identifier that represents a single item in the request that is being upserted as part of the
-    /// BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request.
-    /// The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the
-    /// request to data in the results.
-    /// </p>
+    /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     pub fn batch_item_id(&self) -> std::option::Option<&str> {
         self.batch_item_id.as_deref()
     }
-    /// <p>
-    /// The filter formula to use to find existing matching rows to update. The formula needs to return zero or more
-    /// rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula
-    /// returns one or more rows, then the returned rows will be updated.
-    /// </p>
-    /// <p>
-    /// Note that the filter formula needs to return rows from the target table for the upsert operation to succeed.
-    /// If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table
-    /// for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are
-    /// made to the table.
-    /// </p>
+    /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+    /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Filter> {
         self.filter.as_ref()
     }
-    /// <p>
-    /// A map representing the cells to update for the matching rows or an appended row. The key is the column id
-    /// of the cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub fn cells_to_update(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
@@ -2491,22 +2089,12 @@ pub mod upsert_row_data {
         >,
     }
     impl Builder {
-        /// <p>
-        /// An external identifier that represents a single item in the request that is being upserted as part of the
-        /// BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request.
-        /// The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the
-        /// request to data in the results.
-        /// </p>
+        /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
         pub fn batch_item_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.batch_item_id = Some(input.into());
             self
         }
-        /// <p>
-        /// An external identifier that represents a single item in the request that is being upserted as part of the
-        /// BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request.
-        /// The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the
-        /// request to data in the results.
-        /// </p>
+        /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
         pub fn set_batch_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2514,32 +2102,14 @@ pub mod upsert_row_data {
             self.batch_item_id = input;
             self
         }
-        /// <p>
-        /// The filter formula to use to find existing matching rows to update. The formula needs to return zero or more
-        /// rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula
-        /// returns one or more rows, then the returned rows will be updated.
-        /// </p>
-        /// <p>
-        /// Note that the filter formula needs to return rows from the target table for the upsert operation to succeed.
-        /// If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table
-        /// for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are
-        /// made to the table.
-        /// </p>
+        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+        /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
         pub fn filter(mut self, input: crate::model::Filter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>
-        /// The filter formula to use to find existing matching rows to update. The formula needs to return zero or more
-        /// rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula
-        /// returns one or more rows, then the returned rows will be updated.
-        /// </p>
-        /// <p>
-        /// Note that the filter formula needs to return rows from the target table for the upsert operation to succeed.
-        /// If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table
-        /// for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are
-        /// made to the table.
-        /// </p>
+        /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
+        /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Filter>) -> Self {
             self.filter = input;
             self
@@ -2548,10 +2118,7 @@ pub mod upsert_row_data {
         ///
         /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
         ///
-        /// <p>
-        /// A map representing the cells to update for the matching rows or an appended row. The key is the column id
-        /// of the cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn cells_to_update(
             mut self,
             k: impl Into<std::string::String>,
@@ -2562,10 +2129,7 @@ pub mod upsert_row_data {
             self.cells_to_update = Some(hash_map);
             self
         }
-        /// <p>
-        /// A map representing the cells to update for the matching rows or an appended row. The key is the column id
-        /// of the cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn set_cells_to_update(
             mut self,
             input: std::option::Option<
@@ -2592,23 +2156,15 @@ impl UpsertRowData {
     }
 }
 
-/// <p>
-/// CellInput object contains the data needed to create or update cells in a table.
-/// </p>
+/// <p> CellInput object contains the data needed to create or update cells in a table. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CellInput {
-    /// <p>
-    /// Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need
-    /// to start with the equals (=) sign.
-    /// </p>
+    /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     pub fact: std::option::Option<std::string::String>,
 }
 impl CellInput {
-    /// <p>
-    /// Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need
-    /// to start with the equals (=) sign.
-    /// </p>
+    /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     pub fn fact(&self) -> std::option::Option<&str> {
         self.fact.as_deref()
     }
@@ -2629,18 +2185,12 @@ pub mod cell_input {
         pub(crate) fact: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need
-        /// to start with the equals (=) sign.
-        /// </p>
+        /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
         pub fn fact(mut self, input: impl Into<std::string::String>) -> Self {
             self.fact = Some(input.into());
             self
         }
-        /// <p>
-        /// Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need
-        /// to start with the equals (=) sign.
-        /// </p>
+        /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
         pub fn set_fact(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fact = input;
             self
@@ -2658,35 +2208,23 @@ impl CellInput {
     }
 }
 
-/// <p>
-/// Data needed to create a single row in a table as part of the BatchCreateTableRows request.
-/// </p>
+/// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRowData {
-    /// <p>
-    /// The id of the row that needs to be updated.
-    /// </p>
+    /// <p> The id of the row that needs to be updated. </p>
     pub row_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A map representing the cells to update in the given row. The key is the column id of the
-    /// cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub cells_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
 }
 impl UpdateRowData {
-    /// <p>
-    /// The id of the row that needs to be updated.
-    /// </p>
+    /// <p> The id of the row that needs to be updated. </p>
     pub fn row_id(&self) -> std::option::Option<&str> {
         self.row_id.as_deref()
     }
-    /// <p>
-    /// A map representing the cells to update in the given row. The key is the column id of the
-    /// cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub fn cells_to_update(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
@@ -2714,16 +2252,12 @@ pub mod update_row_data {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The id of the row that needs to be updated.
-        /// </p>
+        /// <p> The id of the row that needs to be updated. </p>
         pub fn row_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.row_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The id of the row that needs to be updated.
-        /// </p>
+        /// <p> The id of the row that needs to be updated. </p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_id = input;
             self
@@ -2732,10 +2266,7 @@ pub mod update_row_data {
         ///
         /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
         ///
-        /// <p>
-        /// A map representing the cells to update in the given row. The key is the column id of the
-        /// cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn cells_to_update(
             mut self,
             k: impl Into<std::string::String>,
@@ -2746,10 +2277,7 @@ pub mod update_row_data {
             self.cells_to_update = Some(hash_map);
             self
         }
-        /// <p>
-        /// A map representing the cells to update in the given row. The key is the column id of the
-        /// cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn set_cells_to_update(
             mut self,
             input: std::option::Option<
@@ -2775,41 +2303,23 @@ impl UpdateRowData {
     }
 }
 
-/// <p>
-/// Data needed to create a single row in a table as part of the BatchCreateTableRows request.
-/// </p>
+/// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRowData {
-    /// <p>
-    /// An external identifier that represents the single row that is being created as part of the
-    /// BatchCreateTableRows request. This can be any string that you can use to identify the row in the request.
-    /// The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the
-    /// request to data in the results.
-    /// </p>
+    /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     pub batch_item_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A map representing the cells to create in the new row. The key is the column id of the
-    /// cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub cells_to_create: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
 }
 impl CreateRowData {
-    /// <p>
-    /// An external identifier that represents the single row that is being created as part of the
-    /// BatchCreateTableRows request. This can be any string that you can use to identify the row in the request.
-    /// The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the
-    /// request to data in the results.
-    /// </p>
+    /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
     pub fn batch_item_id(&self) -> std::option::Option<&str> {
         self.batch_item_id.as_deref()
     }
-    /// <p>
-    /// A map representing the cells to create in the new row. The key is the column id of the
-    /// cell and the value is the CellInput object that represents the data to set in that cell.
-    /// </p>
+    /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub fn cells_to_create(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
@@ -2837,22 +2347,12 @@ pub mod create_row_data {
         >,
     }
     impl Builder {
-        /// <p>
-        /// An external identifier that represents the single row that is being created as part of the
-        /// BatchCreateTableRows request. This can be any string that you can use to identify the row in the request.
-        /// The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the
-        /// request to data in the results.
-        /// </p>
+        /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
         pub fn batch_item_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.batch_item_id = Some(input.into());
             self
         }
-        /// <p>
-        /// An external identifier that represents the single row that is being created as part of the
-        /// BatchCreateTableRows request. This can be any string that you can use to identify the row in the request.
-        /// The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the
-        /// request to data in the results.
-        /// </p>
+        /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
         pub fn set_batch_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2864,10 +2364,7 @@ pub mod create_row_data {
         ///
         /// To override the contents of this collection use [`set_cells_to_create`](Self::set_cells_to_create).
         ///
-        /// <p>
-        /// A map representing the cells to create in the new row. The key is the column id of the
-        /// cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn cells_to_create(
             mut self,
             k: impl Into<std::string::String>,
@@ -2878,10 +2375,7 @@ pub mod create_row_data {
             self.cells_to_create = Some(hash_map);
             self
         }
-        /// <p>
-        /// A map representing the cells to create in the new row. The key is the column id of the
-        /// cell and the value is the CellInput object that represents the data to set in that cell.
-        /// </p>
+        /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
         pub fn set_cells_to_create(
             mut self,
             input: std::option::Option<

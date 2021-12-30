@@ -13,26 +13,22 @@ pub mod create_signaling_channel_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-        /// account and AWS Region.</p>
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_name = Some(input.into());
             self
         }
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-        /// account and AWS Region.</p>
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
         }
-        /// <p>A type of the signaling channel that you are creating. Currently,
-        /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+        /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
         pub fn channel_type(mut self, input: crate::model::ChannelType) -> Self {
             self.channel_type = Some(input);
             self
         }
-        /// <p>A type of the signaling channel that you are creating. Currently,
-        /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+        /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -40,8 +36,7 @@ pub mod create_signaling_channel_input {
             self.channel_type = input;
             self
         }
-        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-        /// type. </p>
+        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
         pub fn single_master_configuration(
             mut self,
             input: crate::model::SingleMasterConfiguration,
@@ -49,8 +44,7 @@ pub mod create_signaling_channel_input {
             self.single_master_configuration = Some(input);
             self
         }
-        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-        /// type. </p>
+        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -228,98 +222,70 @@ pub mod create_stream_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p>In the current implementation, Kinesis Video Streams does not use this
-        /// name.</p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
         /// </note>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_name = Some(input.into());
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p>In the current implementation, Kinesis Video Streams does not use this
-        /// name.</p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
         /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
         }
         /// <p>A name for the stream that you are creating.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
         /// <p>A name for the stream that you are creating.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
-        /// <p>The media type of the stream. Consumers of the stream can use this information when
-        /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-        /// for guidelines.</p>
-        ///
+        /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-        /// JSON).</p>
+        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
         pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_type = Some(input.into());
             self
         }
-        /// <p>The media type of the stream. Consumers of the stream can use this information when
-        /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-        /// for guidelines.</p>
-        ///
+        /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-        /// JSON).</p>
+        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-        /// Streams to use to encrypt stream data.</p>
-        /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-        /// (<code>aws/kinesisvideo</code>) is used.</p>
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-        /// Streams to use to encrypt stream data.</p>
-        /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-        /// (<code>aws/kinesisvideo</code>) is used.</p>
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-        /// Streams retains the data in a data store that is associated with the stream.</p>
+        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-        /// the fragments that remain in the service host buffer, which has a retention time limit
-        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-        /// buffer when either limit is reached.</p>
+        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
         pub fn data_retention_in_hours(mut self, input: i32) -> Self {
             self.data_retention_in_hours = Some(input);
             self
         }
-        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-        /// Streams retains the data in a data store that is associated with the stream.</p>
+        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-        /// the fragments that remain in the service host buffer, which has a retention time limit
-        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-        /// buffer when either limit is reached.</p>
+        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.data_retention_in_hours = input;
             self
@@ -328,8 +294,7 @@ pub mod create_stream_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -340,8 +305,7 @@ pub mod create_stream_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -495,28 +459,22 @@ pub mod delete_signaling_channel_input {
         pub(crate) current_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
         }
-        /// <p>The current version of the signaling channel that you want to delete. You can obtain
-        /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-        /// <code>ListSignalingChannels</code> API operations.</p>
+        /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
         pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_version = Some(input.into());
             self
         }
-        /// <p>The current version of the signaling channel that you want to delete. You can obtain
-        /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-        /// <code>ListSignalingChannels</code> API operations.</p>
+        /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -678,19 +636,15 @@ pub mod delete_stream_input {
             self
         }
         /// <p>Optional: The version of the stream that you want to delete. </p>
-        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-        /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-        /// stream.</p>
+        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
         pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_version = Some(input.into());
             self
         }
         /// <p>Optional: The version of the stream that you want to delete. </p>
-        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-        /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-        /// stream.</p>
+        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1164,28 +1118,22 @@ pub mod get_data_endpoint_input {
         pub(crate) api_name: std::option::Option<crate::model::ApiName>,
     }
     impl Builder {
-        /// <p>The name of the stream that you want to get the endpoint for. You must specify
-        /// either this parameter or a <code>StreamARN</code> in the request.</p>
+        /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the stream that you want to get the endpoint for. You must specify
-        /// either this parameter or a <code>StreamARN</code> in the request.</p>
+        /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-        /// You must specify either this parameter or a <code>StreamName</code> in the request.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-        /// You must specify either this parameter or a <code>StreamName</code> in the request.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1343,20 +1291,17 @@ pub mod get_signaling_channel_endpoint_input {
             std::option::Option<crate::model::SingleMasterChannelEndpointConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-        /// endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-        /// endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
         }
-        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-        /// channel type.</p>
+        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
         pub fn single_master_channel_endpoint_configuration(
             mut self,
             input: crate::model::SingleMasterChannelEndpointConfiguration,
@@ -1364,8 +1309,7 @@ pub mod get_signaling_channel_endpoint_input {
             self.single_master_channel_endpoint_configuration = Some(input);
             self
         }
-        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-        /// channel type.</p>
+        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
         pub fn set_single_master_channel_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterChannelEndpointConfiguration>,
@@ -1528,16 +1472,12 @@ pub mod list_signaling_channels_input {
             self.max_results = input;
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of channels, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of channels, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1700,40 +1640,32 @@ pub mod list_streams_input {
         pub(crate) stream_name_condition: std::option::Option<crate::model::StreamNameCondition>,
     }
     impl Builder {
-        /// <p>The maximum number of streams to return in the response. The default is
-        /// 10,000.</p>
+        /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of streams to return in the response. The default is
-        /// 10,000.</p>
+        /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of streams, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of streams, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-        /// can specify only the prefix of a stream name as a condition. </p>
+        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
         pub fn stream_name_condition(mut self, input: crate::model::StreamNameCondition) -> Self {
             self.stream_name_condition = Some(input);
             self
         }
-        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-        /// can specify only the prefix of a stream name as a condition. </p>
+        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
         pub fn set_stream_name_condition(
             mut self,
             input: std::option::Option<crate::model::StreamNameCondition>,
@@ -1882,28 +1814,22 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags. </p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags. </p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2052,28 +1978,22 @@ pub mod list_tags_for_stream_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags.</p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags.</p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2230,14 +2150,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2246,16 +2164,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-        /// key-value pair.</p>
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-        /// key-value pair.</p>
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2406,14 +2322,12 @@ pub mod tag_stream_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2432,8 +2346,7 @@ pub mod tag_stream_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2444,8 +2357,7 @@ pub mod tag_stream_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2592,14 +2504,12 @@ pub mod untag_resource_input {
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2764,14 +2674,12 @@ pub mod untag_stream_input {
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2959,28 +2867,22 @@ pub mod update_data_retention_input {
             self.stream_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-        /// change.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-        /// change.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
         }
-        /// <p>The version of the stream whose retention period you want to change. To get the
-        /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-        /// API.</p>
+        /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
         pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_version = Some(input.into());
             self
         }
-        /// <p>The version of the stream whose retention period you want to change. To get the
-        /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-        /// API.</p>
+        /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3001,14 +2903,12 @@ pub mod update_data_retention_input {
             self.operation = input;
             self
         }
-        /// <p>The retention period, in hours. The value you specify replaces the current value.
-        /// The maximum value for this parameter is 87600 (ten years).</p>
+        /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
         pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
             self.data_retention_change_in_hours = Some(input);
             self
         }
-        /// <p>The retention period, in hours. The value you specify replaces the current value.
-        /// The maximum value for this parameter is 87600 (ten years).</p>
+        /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
         pub fn set_data_retention_change_in_hours(
             mut self,
             input: std::option::Option<i32>,
@@ -3162,14 +3062,12 @@ pub mod update_signaling_channel_input {
             std::option::Option<crate::model::SingleMasterConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -3187,8 +3085,7 @@ pub mod update_signaling_channel_input {
             self.current_version = input;
             self
         }
-        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-        /// the signaling channel that you want to update. </p>
+        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
         pub fn single_master_configuration(
             mut self,
             input: crate::model::SingleMasterConfiguration,
@@ -3196,8 +3093,7 @@ pub mod update_signaling_channel_input {
             self.single_master_configuration = Some(input);
             self
         }
-        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-        /// the signaling channel that you want to update. </p>
+        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -3353,15 +3249,13 @@ pub mod update_stream_input {
     }
     impl Builder {
         /// <p>The name of the stream whose metadata you want to update.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
         /// <p>The name of the stream whose metadata you want to update.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3389,44 +3283,28 @@ pub mod update_stream_input {
             self.current_version = input;
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-        /// </p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
         /// </note>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_name = Some(input.into());
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-        /// </p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
         /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
         }
-        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-        /// that the stream contains to the consumers of the stream. For more information about
-        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-        /// Requirements</a>.</p>
-        /// <p>To play video on the console, you must specify the correct video type. For example,
-        /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-        /// <code>MediaType</code>.</p>
+        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+        /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
         pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_type = Some(input.into());
             self
         }
-        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-        /// that the stream contains to the consumers of the stream. For more information about
-        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-        /// Requirements</a>.</p>
-        /// <p>To play video on the console, you must specify the correct video type. For example,
-        /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-        /// <code>MediaType</code>.</p>
+        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+        /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
@@ -3569,33 +3447,23 @@ impl UpdateStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamInput {
     /// <p>The name of the stream whose metadata you want to update.</p>
-    /// <p>The stream name is an identifier for the stream, and must be unique for each
-    /// account and region.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the stream whose metadata you want to update.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The version of the stream whose metadata you want to update.</p>
     pub current_version: std::option::Option<std::string::String>,
-    /// <p>The name of the device that is writing to the stream. </p>
-    /// <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-    /// </p>
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
     /// </note>
     pub device_name: std::option::Option<std::string::String>,
-    /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-    /// that the stream contains to the consumers of the stream. For more information about
-    /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-    /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-    /// Requirements</a>.</p>
-    /// <p>To play video on the console, you must specify the correct video type. For example,
-    /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-    /// <code>MediaType</code>.</p>
+    /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+    /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     pub media_type: std::option::Option<std::string::String>,
 }
 impl UpdateStreamInput {
     /// <p>The name of the stream whose metadata you want to update.</p>
-    /// <p>The stream name is an identifier for the stream, and must be unique for each
-    /// account and region.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
@@ -3607,22 +3475,14 @@ impl UpdateStreamInput {
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
-    /// <p>The name of the device that is writing to the stream. </p>
-    /// <note>
-    /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-    /// </p>
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
     /// </note>
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-    /// that the stream contains to the consumers of the stream. For more information about
-    /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-    /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-    /// Requirements</a>.</p>
-    /// <p>To play video on the console, you must specify the correct video type. For example,
-    /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-    /// <code>MediaType</code>.</p>
+    /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+    /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     pub fn media_type(&self) -> std::option::Option<&str> {
         self.media_type.as_deref()
     }
@@ -3643,18 +3503,15 @@ impl std::fmt::Debug for UpdateStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSignalingChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the signaling channel that you want to update.</p>
     pub current_version: std::option::Option<std::string::String>,
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-    /// the signaling channel that you want to update. </p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
 }
 impl UpdateSignalingChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -3662,8 +3519,7 @@ impl UpdateSignalingChannelInput {
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-    /// the signaling channel that you want to update. </p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
     pub fn single_master_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SingleMasterConfiguration> {
@@ -3689,17 +3545,13 @@ impl std::fmt::Debug for UpdateSignalingChannelInput {
 pub struct UpdateDataRetentionInput {
     /// <p>The name of the stream whose retention period you want to change.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-    /// change.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The version of the stream whose retention period you want to change. To get the
-    /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-    /// API.</p>
+    /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
     pub current_version: std::option::Option<std::string::String>,
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
     pub operation: std::option::Option<crate::model::UpdateDataRetentionOperation>,
-    /// <p>The retention period, in hours. The value you specify replaces the current value.
-    /// The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
     pub data_retention_change_in_hours: std::option::Option<i32>,
 }
 impl UpdateDataRetentionInput {
@@ -3707,14 +3559,11 @@ impl UpdateDataRetentionInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-    /// change.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>The version of the stream whose retention period you want to change. To get the
-    /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-    /// API.</p>
+    /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
@@ -3722,8 +3571,7 @@ impl UpdateDataRetentionInput {
     pub fn operation(&self) -> std::option::Option<&crate::model::UpdateDataRetentionOperation> {
         self.operation.as_ref()
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value.
-    /// The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
     pub fn data_retention_change_in_hours(&self) -> std::option::Option<i32> {
         self.data_retention_change_in_hours
     }
@@ -3747,8 +3595,7 @@ impl std::fmt::Debug for UpdateDataRetentionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagStreamInput {
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-    /// from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name of the stream that you want to remove tags from.</p>
     pub stream_name: std::option::Option<std::string::String>,
@@ -3756,8 +3603,7 @@ pub struct UntagStreamInput {
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagStreamInput {
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-    /// from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -3784,15 +3630,13 @@ impl std::fmt::Debug for UntagStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the keys of the tags that you want to remove.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3814,19 +3658,16 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagStreamInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-    /// (the value is optional).</p>
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagStreamInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -3834,8 +3675,7 @@ impl TagStreamInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-    /// (the value is optional).</p>
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3857,21 +3697,17 @@ impl std::fmt::Debug for TagStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-    /// key-value pair.</p>
+    /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-    /// key-value pair.</p>
+    /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -3889,25 +3725,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamInput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next batch of tags.</p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-    /// for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name of the stream that you want to list tags for.</p>
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl ListTagsForStreamInput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next batch of tags.</p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-    /// for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -3930,23 +3760,17 @@ impl std::fmt::Debug for ListTagsForStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next batch of tags. </p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next batch of tags. </p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3964,31 +3788,23 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsInput {
-    /// <p>The maximum number of streams to return in the response. The default is
-    /// 10,000.</p>
+    /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-    /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-    /// get another batch of streams, provide this token in your next request.</p>
+    /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-    /// can specify only the prefix of a stream name as a condition. </p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub stream_name_condition: std::option::Option<crate::model::StreamNameCondition>,
 }
 impl ListStreamsInput {
-    /// <p>The maximum number of streams to return in the response. The default is
-    /// 10,000.</p>
+    /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-    /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-    /// get another batch of streams, provide this token in your next request.</p>
+    /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-    /// can specify only the prefix of a stream name as a condition. </p>
+    /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn stream_name_condition(&self) -> std::option::Option<&crate::model::StreamNameCondition> {
         self.stream_name_condition.as_ref()
     }
@@ -4009,9 +3825,7 @@ impl std::fmt::Debug for ListStreamsInput {
 pub struct ListSignalingChannelsInput {
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-    /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-    /// get another batch of channels, provide this token in your next request.</p>
+    /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
     pub channel_name_condition: std::option::Option<crate::model::ChannelNameCondition>,
@@ -4021,9 +3835,7 @@ impl ListSignalingChannelsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-    /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-    /// get another batch of channels, provide this token in your next request.</p>
+    /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4048,22 +3860,18 @@ impl std::fmt::Debug for ListSignalingChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSignalingChannelEndpointInput {
-    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-    /// endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-    /// channel type.</p>
+    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub single_master_channel_endpoint_configuration:
         std::option::Option<crate::model::SingleMasterChannelEndpointConfiguration>,
 }
 impl GetSignalingChannelEndpointInput {
-    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-    /// endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-    /// channel type.</p>
+    /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_channel_endpoint_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SingleMasterChannelEndpointConfiguration> {
@@ -4086,25 +3894,19 @@ impl std::fmt::Debug for GetSignalingChannelEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataEndpointInput {
-    /// <p>The name of the stream that you want to get the endpoint for. You must specify
-    /// either this parameter or a <code>StreamARN</code> in the request.</p>
+    /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-    /// You must specify either this parameter or a <code>StreamName</code> in the request.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name of the API action for which to get an endpoint.</p>
     pub api_name: std::option::Option<crate::model::ApiName>,
 }
 impl GetDataEndpointInput {
-    /// <p>The name of the stream that you want to get the endpoint for. You must specify
-    /// either this parameter or a <code>StreamARN</code> in the request.</p>
+    /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-    /// You must specify either this parameter or a <code>StreamName</code> in the request.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -4186,10 +3988,8 @@ pub struct DeleteStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-    /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-    /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-    /// stream.</p>
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub current_version: std::option::Option<std::string::String>,
 }
 impl DeleteStreamInput {
@@ -4198,10 +3998,8 @@ impl DeleteStreamInput {
         self.stream_arn.as_deref()
     }
     /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-    /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-    /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-    /// stream.</p>
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
@@ -4219,23 +4017,17 @@ impl std::fmt::Debug for DeleteStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSignalingChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The current version of the signaling channel that you want to delete. You can obtain
-    /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-    /// <code>ListSignalingChannels</code> API operations.</p>
+    /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
     pub current_version: std::option::Option<std::string::String>,
 }
 impl DeleteSignalingChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The current version of the signaling channel that you want to delete. You can obtain
-    /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-    /// <code>ListSignalingChannels</code> API operations.</p>
+    /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
     pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
@@ -4253,90 +4045,60 @@ impl std::fmt::Debug for DeleteSignalingChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamInput {
-    /// <p>The name of the device that is writing to the stream. </p>
-    /// <note>
-    /// <p>In the current implementation, Kinesis Video Streams does not use this
-    /// name.</p>
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub device_name: std::option::Option<std::string::String>,
     /// <p>A name for the stream that you are creating.</p>
-    /// <p>The stream name is an identifier for the stream, and must be unique for each
-    /// account and region.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The media type of the stream. Consumers of the stream can use this information when
-    /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-    /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-    /// for guidelines.</p>
-    ///
+    /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
     /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-    /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-    /// JSON).</p>
+    /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
     pub media_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-    /// Streams to use to encrypt stream data.</p>
-    /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-    /// (<code>aws/kinesisvideo</code>) is used.</p>
+    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-    /// Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-    /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-    /// the fragments that remain in the service host buffer, which has a retention time limit
-    /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-    /// buffer when either limit is reached.</p>
+    /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     pub data_retention_in_hours: std::option::Option<i32>,
-    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-    /// (the value is optional).</p>
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamInput {
-    /// <p>The name of the device that is writing to the stream. </p>
-    /// <note>
-    /// <p>In the current implementation, Kinesis Video Streams does not use this
-    /// name.</p>
+    /// <p>The name of the device that is writing to the stream. </p> <note>
+    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>A name for the stream that you are creating.</p>
-    /// <p>The stream name is an identifier for the stream, and must be unique for each
-    /// account and region.</p>
+    /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The media type of the stream. Consumers of the stream can use this information when
-    /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-    /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-    /// for guidelines.</p>
-    ///
+    /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
     /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-    /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-    /// JSON).</p>
+    /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
     pub fn media_type(&self) -> std::option::Option<&str> {
         self.media_type.as_deref()
     }
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-    /// Streams to use to encrypt stream data.</p>
-    /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-    /// (<code>aws/kinesisvideo</code>) is used.</p>
+    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-    /// Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-    /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-    /// the fragments that remain in the service host buffer, which has a retention time limit
-    /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-    /// buffer when either limit is reached.</p>
+    /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     pub fn data_retention_in_hours(&self) -> std::option::Option<i32> {
         self.data_retention_in_hours
     }
-    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-    /// (the value is optional).</p>
+    /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4361,31 +4123,25 @@ impl std::fmt::Debug for CreateStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSignalingChannelInput {
-    /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-    /// account and AWS Region.</p>
+    /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>A type of the signaling channel that you are creating. Currently,
-    /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
     pub channel_type: std::option::Option<crate::model::ChannelType>,
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type. </p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSignalingChannelInput {
-    /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-    /// account and AWS Region.</p>
+    /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>A type of the signaling channel that you are creating. Currently,
-    /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
     pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.channel_type.as_ref()
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type. </p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
     pub fn single_master_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SingleMasterConfiguration> {

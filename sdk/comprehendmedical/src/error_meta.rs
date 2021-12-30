@@ -5,27 +5,19 @@
 pub enum Error {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -6058,7 +6058,7 @@ pub struct DeletePartitionIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePartitionIndexErrorKind {
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
@@ -11074,7 +11074,7 @@ pub struct GetPartitionIndexesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPartitionIndexesErrorKind {
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
@@ -23132,7 +23132,7 @@ impl InvalidStateException {
     }
 }
 
-/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

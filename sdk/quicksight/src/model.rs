@@ -98,62 +98,31 @@ impl AsRef<str> for ExceptionResourceType {
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The user's user name. In the output, the value for <code>UserName</code> is
-    /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
-    /// and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The user's email address.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-    /// following:.</p>
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses,
-    /// and dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-    /// Amazon QuickSight settings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p> </li>
+    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
     pub role: std::option::Option<crate::model::UserRole>,
     /// <p>The type of identity authentication used by the user.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM
-    /// user or an Active Directory user, that user is inactive until they sign in and provide a
-    /// password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub active: bool,
     /// <p>The principal ID of the user.</p>
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The custom permissions profile associated with this user.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
-    /// <p>The type of supported external login provider that provides identity to let the user
-    /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+    /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
     /// <p>The URL of the external login provider.</p>
@@ -166,9 +135,7 @@ impl User {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The user's user name. In the output, the value for <code>UserName</code> is
-    /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
-    /// and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -176,33 +143,13 @@ impl User {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-    /// following:.</p>
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses,
-    /// and dashboards.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-    /// Amazon QuickSight settings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-    /// use.</p>
-    /// </li>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p> </li>
+    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
     pub fn role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.role.as_ref()
@@ -211,9 +158,7 @@ impl User {
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM
-    /// user or an Active Directory user, that user is inactive until they sign in and provide a
-    /// password.</p>
+    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub fn active(&self) -> bool {
         self.active
     }
@@ -225,17 +170,10 @@ impl User {
     pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
         self.custom_permissions_name.as_deref()
     }
-    /// <p>The type of supported external login provider that provides identity to let the user
-    /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+    /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p>
-    /// </li>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
     /// </ul>
     pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
         self.external_login_federation_provider_type.as_deref()
@@ -302,16 +240,12 @@ pub mod user {
             self.arn = input;
             self
         }
-        /// <p>The user's user name. In the output, the value for <code>UserName</code> is
-        /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
-        /// and the corresponding IAM user is deleted.</p>
+        /// <p>The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The user's user name. In the output, the value for <code>UserName</code> is
-        /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
-        /// and the corresponding IAM user is deleted.</p>
+        /// <p>The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -326,65 +260,25 @@ pub mod user {
             self.email = input;
             self
         }
-        /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-        /// following:.</p>
+        /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses,
-        /// and dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-        /// Amazon QuickSight settings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p> </li>
+        /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+        /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
         /// </ul>
         pub fn role(mut self, input: crate::model::UserRole) -> Self {
             self.role = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight role for the user. The user role can be one of the
-        /// following:.</p>
+        /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READER</code>: A user who has read-only access to dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses,
-        /// and dashboards.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-        /// Amazon QuickSight settings.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_READER</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
-        /// use.</p>
-        /// </li>
+        /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+        /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+        /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p> </li>
+        /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+        /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
         /// </ul>
         pub fn set_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.role = input;
@@ -403,16 +297,12 @@ pub mod user {
             self.identity_type = input;
             self
         }
-        /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM
-        /// user or an Active Directory user, that user is inactive until they sign in and provide a
-        /// password.</p>
+        /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
             self
         }
-        /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM
-        /// user or an Active Directory user, that user is inactive until they sign in and provide a
-        /// password.</p>
+        /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -440,17 +330,10 @@ pub mod user {
             self.custom_permissions_name = input;
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
         /// </ul>
         pub fn external_login_federation_provider_type(
             mut self,
@@ -459,17 +342,10 @@ pub mod user {
             self.external_login_federation_provider_type = Some(input.into());
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p>
-        /// </li>
+        /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
+        /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
         /// </ul>
         pub fn set_external_login_federation_provider_type(
             mut self,
@@ -665,40 +541,22 @@ impl AsRef<str> for UserRole {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePermission {
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
-    /// following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
-    /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
-    /// (This is less common.) </p>
-    /// </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The IAM action to grant or revoke permissions on.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourcePermission {
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
-    /// following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
-    /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
-    /// (This is less common.) </p>
-    /// </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
@@ -726,39 +584,21 @@ pub mod resource_permission {
         pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
-        /// following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p>
-        /// </li>
-        /// <li>
-        /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
-        /// </li>
-        /// <li>
-        /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
-        /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
-        /// (This is less common.) </p>
-        /// </li>
+        /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+        /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+        /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
         /// </ul>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
-        /// following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p>
-        /// </li>
-        /// <li>
-        /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
-        /// </li>
-        /// <li>
-        /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
-        /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
-        /// (This is less common.) </p>
-        /// </li>
+        /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+        /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+        /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
         /// </ul>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
@@ -974,15 +814,13 @@ impl AsRef<str> for ResourceStatus {
     }
 }
 
-/// <p>The theme configuration. This configuration contains all of the display properties for
-/// a theme.</p>
+/// <p>The theme configuration. This configuration contains all of the display properties for a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThemeConfiguration {
     /// <p>Color properties that apply to chart data colors.</p>
     pub data_color_palette: std::option::Option<crate::model::DataColorPalette>,
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply
-    /// to data. </p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub ui_color_palette: std::option::Option<crate::model::UiColorPalette>,
     /// <p>Display options related to sheets.</p>
     pub sheet: std::option::Option<crate::model::SheetStyle>,
@@ -992,8 +830,7 @@ impl ThemeConfiguration {
     pub fn data_color_palette(&self) -> std::option::Option<&crate::model::DataColorPalette> {
         self.data_color_palette.as_ref()
     }
-    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply
-    /// to data. </p>
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
     pub fn ui_color_palette(&self) -> std::option::Option<&crate::model::UiColorPalette> {
         self.ui_color_palette.as_ref()
     }
@@ -1035,14 +872,12 @@ pub mod theme_configuration {
             self.data_color_palette = input;
             self
         }
-        /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply
-        /// to data. </p>
+        /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
         pub fn ui_color_palette(mut self, input: crate::model::UiColorPalette) -> Self {
             self.ui_color_palette = Some(input);
             self
         }
-        /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply
-        /// to data. </p>
+        /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply to data. </p>
         pub fn set_ui_color_palette(
             mut self,
             input: std::option::Option<crate::model::UiColorPalette>,
@@ -1282,13 +1117,11 @@ impl MarginStyle {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GutterStyle {
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
-    /// </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     pub show: std::option::Option<bool>,
 }
 impl GutterStyle {
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
-    /// </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     pub fn show(&self) -> std::option::Option<bool> {
         self.show
     }
@@ -1309,14 +1142,12 @@ pub mod gutter_style {
         pub(crate) show: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
-        /// </p>
+        /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
         pub fn show(mut self, input: bool) -> Self {
             self.show = Some(input);
             self
         }
-        /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
-        /// </p>
+        /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
         pub fn set_show(mut self, input: std::option::Option<bool>) -> Self {
             self.show = input;
             self
@@ -1440,60 +1271,45 @@ impl BorderStyle {
     }
 }
 
-/// <p>The theme colors that apply to UI and to charts, excluding data colors. The colors
-/// description is a hexadecimal color code that consists of six alphanumerical characters,
-/// prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User
-/// Guide.</i>
-/// </p>
+/// <p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UiColorPalette {
-    /// <p>The color of text and other foreground elements that appear over the primary
-    /// background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+    /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
     pub primary_foreground: std::option::Option<std::string::String>,
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
     pub primary_background: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that
-    /// appears over the secondary background.</p>
+    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
     pub secondary_foreground: std::option::Option<std::string::String>,
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
     pub secondary_background: std::option::Option<std::string::String>,
     /// <p>This color is that applies to selected states and buttons.</p>
     pub accent: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// accent color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
     pub accent_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to error messages.</p>
     pub danger: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// error color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
     pub danger_foreground: std::option::Option<std::string::String>,
     /// <p>This color that applies to warning and informational messages.</p>
     pub warning: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// warning color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
     pub warning_foreground: std::option::Option<std::string::String>,
-    /// <p>The color that applies to success messages, for example the check mark for a
-    /// successful download.</p>
+    /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
     pub success: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// success color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
     pub success_foreground: std::option::Option<std::string::String>,
-    /// <p>The color that applies to the names of fields that are identified as
-    /// dimensions.</p>
+    /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
     pub dimension: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// dimension color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
     pub dimension_foreground: std::option::Option<std::string::String>,
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
     pub measure: std::option::Option<std::string::String>,
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// measure color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
     pub measure_foreground: std::option::Option<std::string::String>,
 }
 impl UiColorPalette {
-    /// <p>The color of text and other foreground elements that appear over the primary
-    /// background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+    /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
     pub fn primary_foreground(&self) -> std::option::Option<&str> {
         self.primary_foreground.as_deref()
     }
@@ -1501,8 +1317,7 @@ impl UiColorPalette {
     pub fn primary_background(&self) -> std::option::Option<&str> {
         self.primary_background.as_deref()
     }
-    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that
-    /// appears over the secondary background.</p>
+    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
     pub fn secondary_foreground(&self) -> std::option::Option<&str> {
         self.secondary_foreground.as_deref()
     }
@@ -1514,8 +1329,7 @@ impl UiColorPalette {
     pub fn accent(&self) -> std::option::Option<&str> {
         self.accent.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// accent color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
     pub fn accent_foreground(&self) -> std::option::Option<&str> {
         self.accent_foreground.as_deref()
     }
@@ -1523,8 +1337,7 @@ impl UiColorPalette {
     pub fn danger(&self) -> std::option::Option<&str> {
         self.danger.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// error color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
     pub fn danger_foreground(&self) -> std::option::Option<&str> {
         self.danger_foreground.as_deref()
     }
@@ -1532,28 +1345,23 @@ impl UiColorPalette {
     pub fn warning(&self) -> std::option::Option<&str> {
         self.warning.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// warning color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
     pub fn warning_foreground(&self) -> std::option::Option<&str> {
         self.warning_foreground.as_deref()
     }
-    /// <p>The color that applies to success messages, for example the check mark for a
-    /// successful download.</p>
+    /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
     pub fn success(&self) -> std::option::Option<&str> {
         self.success.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// success color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
     pub fn success_foreground(&self) -> std::option::Option<&str> {
         self.success_foreground.as_deref()
     }
-    /// <p>The color that applies to the names of fields that are identified as
-    /// dimensions.</p>
+    /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
     pub fn dimension(&self) -> std::option::Option<&str> {
         self.dimension.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// dimension color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
     pub fn dimension_foreground(&self) -> std::option::Option<&str> {
         self.dimension_foreground.as_deref()
     }
@@ -1561,8 +1369,7 @@ impl UiColorPalette {
     pub fn measure(&self) -> std::option::Option<&str> {
         self.measure.as_deref()
     }
-    /// <p>The foreground color that applies to any text or other elements that appear over the
-    /// measure color.</p>
+    /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
     pub fn measure_foreground(&self) -> std::option::Option<&str> {
         self.measure_foreground.as_deref()
     }
@@ -1613,14 +1420,12 @@ pub mod ui_color_palette {
         pub(crate) measure_foreground: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The color of text and other foreground elements that appear over the primary
-        /// background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+        /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
         pub fn primary_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.primary_foreground = Some(input.into());
             self
         }
-        /// <p>The color of text and other foreground elements that appear over the primary
-        /// background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+        /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
         pub fn set_primary_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1641,14 +1446,12 @@ pub mod ui_color_palette {
             self.primary_background = input;
             self
         }
-        /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that
-        /// appears over the secondary background.</p>
+        /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
         pub fn secondary_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.secondary_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that
-        /// appears over the secondary background.</p>
+        /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
         pub fn set_secondary_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1679,14 +1482,12 @@ pub mod ui_color_palette {
             self.accent = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// accent color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
         pub fn accent_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.accent_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// accent color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
         pub fn set_accent_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1704,14 +1505,12 @@ pub mod ui_color_palette {
             self.danger = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// error color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
         pub fn danger_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.danger_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// error color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
         pub fn set_danger_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1729,14 +1528,12 @@ pub mod ui_color_palette {
             self.warning = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// warning color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
         pub fn warning_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.warning_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// warning color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
         pub fn set_warning_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1744,26 +1541,22 @@ pub mod ui_color_palette {
             self.warning_foreground = input;
             self
         }
-        /// <p>The color that applies to success messages, for example the check mark for a
-        /// successful download.</p>
+        /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
         pub fn success(mut self, input: impl Into<std::string::String>) -> Self {
             self.success = Some(input.into());
             self
         }
-        /// <p>The color that applies to success messages, for example the check mark for a
-        /// successful download.</p>
+        /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
         pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.success = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// success color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
         pub fn success_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// success color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
         pub fn set_success_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1771,26 +1564,22 @@ pub mod ui_color_palette {
             self.success_foreground = input;
             self
         }
-        /// <p>The color that applies to the names of fields that are identified as
-        /// dimensions.</p>
+        /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
         pub fn dimension(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension = Some(input.into());
             self
         }
-        /// <p>The color that applies to the names of fields that are identified as
-        /// dimensions.</p>
+        /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dimension = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// dimension color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
         pub fn dimension_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// dimension color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
         pub fn set_dimension_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1808,14 +1597,12 @@ pub mod ui_color_palette {
             self.measure = input;
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// measure color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
         pub fn measure_foreground(mut self, input: impl Into<std::string::String>) -> Self {
             self.measure_foreground = Some(input.into());
             self
         }
-        /// <p>The foreground color that applies to any text or other elements that appear over the
-        /// measure color.</p>
+        /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
         pub fn set_measure_foreground(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1853,9 +1640,7 @@ impl UiColorPalette {
     }
 }
 
-/// <p>The theme colors that are used for data colors in charts. The colors description is a
-/// hexadecimal color code that consists of six alphanumerical characters, prefixed with
-/// <code>#</code>, for example #37BFF5. </p>
+/// <p>The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataColorPalette {
@@ -1863,8 +1648,7 @@ pub struct DataColorPalette {
     pub colors: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
     pub min_max_gradient: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is
-    /// highlighted.</p>
+    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     pub empty_fill_color: std::option::Option<std::string::String>,
 }
 impl DataColorPalette {
@@ -1876,8 +1660,7 @@ impl DataColorPalette {
     pub fn min_max_gradient(&self) -> std::option::Option<&[std::string::String]> {
         self.min_max_gradient.as_deref()
     }
-    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is
-    /// highlighted.</p>
+    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     pub fn empty_fill_color(&self) -> std::option::Option<&str> {
         self.empty_fill_color.as_deref()
     }
@@ -1940,14 +1723,12 @@ pub mod data_color_palette {
             self.min_max_gradient = input;
             self
         }
-        /// <p>The hexadecimal code of a color that applies to charts where a lack of data is
-        /// highlighted.</p>
+        /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
         pub fn empty_fill_color(mut self, input: impl Into<std::string::String>) -> Self {
             self.empty_fill_color = Some(input.into());
             self
         }
-        /// <p>The hexadecimal code of a color that applies to charts where a lack of data is
-        /// highlighted.</p>
+        /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
         pub fn set_empty_fill_color(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2201,8 +1982,7 @@ impl TemplateSourceTemplate {
 pub struct TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>A structure containing information about the dataset references used as placeholders
-    /// in the template.</p>
+    /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
 }
 impl TemplateSourceAnalysis {
@@ -2210,8 +1990,7 @@ impl TemplateSourceAnalysis {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>A structure containing information about the dataset references used as placeholders
-    /// in the template.</p>
+    /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
     pub fn data_set_references(&self) -> std::option::Option<&[crate::model::DataSetReference]> {
         self.data_set_references.as_deref()
     }
@@ -2249,16 +2028,14 @@ pub mod template_source_analysis {
         ///
         /// To override the contents of this collection use [`set_data_set_references`](Self::set_data_set_references).
         ///
-        /// <p>A structure containing information about the dataset references used as placeholders
-        /// in the template.</p>
+        /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
         pub fn data_set_references(mut self, input: crate::model::DataSetReference) -> Self {
             let mut v = self.data_set_references.unwrap_or_default();
             v.push(input);
             self.data_set_references = Some(v);
             self
         }
-        /// <p>A structure containing information about the dataset references used as placeholders
-        /// in the template.</p>
+        /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
         pub fn set_data_set_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
@@ -2417,8 +2194,7 @@ impl AsRef<str> for AssignmentStatus {
     }
 }
 
-/// <p>A <i>group</i> in Amazon QuickSight consists of a set of users. You can
-/// use groups to make it easier to manage access and security. </p>
+/// <p>A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Group {
@@ -2529,8 +2305,7 @@ impl Group {
     }
 }
 
-/// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
-/// underlying data source.</p>
+/// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SslProperties {
@@ -2641,34 +2416,21 @@ impl VpcConnectionProperties {
     }
 }
 
-/// <p>Data source credentials. This is a variant type structure. For this structure to be
-/// valid, only one of the attributes can be non-null.</p>
+/// <p>Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceCredentials {
-    /// <p>Credential pair. For more information, see
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
-    /// </code>.</p>
+    /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
     pub credential_pair: std::option::Option<crate::model::CredentialPair>,
-    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
-    /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
-    /// data source in the ARN is used as the credentials for the
-    /// <code>DataSourceCredentials</code> structure.</p>
+    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
     pub copy_source_arn: std::option::Option<std::string::String>,
 }
 impl DataSourceCredentials {
-    /// <p>Credential pair. For more information, see
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
-    /// </code>.</p>
+    /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
     pub fn credential_pair(&self) -> std::option::Option<&crate::model::CredentialPair> {
         self.credential_pair.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
-    /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
-    /// data source in the ARN is used as the credentials for the
-    /// <code>DataSourceCredentials</code> structure.</p>
+    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
     pub fn copy_source_arn(&self) -> std::option::Option<&str> {
         self.copy_source_arn.as_deref()
     }
@@ -2691,18 +2453,12 @@ pub mod data_source_credentials {
         pub(crate) copy_source_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Credential pair. For more information, see
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
-        /// </code>.</p>
+        /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
         pub fn credential_pair(mut self, input: crate::model::CredentialPair) -> Self {
             self.credential_pair = Some(input);
             self
         }
-        /// <p>Credential pair. For more information, see
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
-        /// </code>.</p>
+        /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
         pub fn set_credential_pair(
             mut self,
             input: std::option::Option<crate::model::CredentialPair>,
@@ -2710,18 +2466,12 @@ pub mod data_source_credentials {
             self.credential_pair = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
-        /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
-        /// data source in the ARN is used as the credentials for the
-        /// <code>DataSourceCredentials</code> structure.</p>
+        /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
         pub fn copy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_source_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
-        /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
-        /// data source in the ARN is used as the credentials for the
-        /// <code>DataSourceCredentials</code> structure.</p>
+        /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
         pub fn set_copy_source_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2753,15 +2503,7 @@ pub struct CredentialPair {
     pub username: std::option::Option<std::string::String>,
     /// <p>Password.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>A set of alternate data source parameters that you want to share for these
-    /// credentials. The credentials are applied in tandem with the data source parameters when
-    /// you copy a data source by using a create or update request. The API operation compares
-    /// the <code>DataSourceParameters</code> structure that's in the request with the
-    /// structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-    /// structures are an exact match, the request is allowed to use the new data source with
-    /// the existing credentials. If the <code>AlternateDataSourceParameters</code> list is
-    /// null, the <code>DataSourceParameters</code> originally used with these
-    /// <code>Credentials</code> is automatically allowed.</p>
+    /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
 }
@@ -2774,15 +2516,7 @@ impl CredentialPair {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>A set of alternate data source parameters that you want to share for these
-    /// credentials. The credentials are applied in tandem with the data source parameters when
-    /// you copy a data source by using a create or update request. The API operation compares
-    /// the <code>DataSourceParameters</code> structure that's in the request with the
-    /// structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-    /// structures are an exact match, the request is allowed to use the new data source with
-    /// the existing credentials. If the <code>AlternateDataSourceParameters</code> list is
-    /// null, the <code>DataSourceParameters</code> originally used with these
-    /// <code>Credentials</code> is automatically allowed.</p>
+    /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     pub fn alternate_data_source_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceParameters]> {
@@ -2837,15 +2571,7 @@ pub mod credential_pair {
         ///
         /// To override the contents of this collection use [`set_alternate_data_source_parameters`](Self::set_alternate_data_source_parameters).
         ///
-        /// <p>A set of alternate data source parameters that you want to share for these
-        /// credentials. The credentials are applied in tandem with the data source parameters when
-        /// you copy a data source by using a create or update request. The API operation compares
-        /// the <code>DataSourceParameters</code> structure that's in the request with the
-        /// structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-        /// structures are an exact match, the request is allowed to use the new data source with
-        /// the existing credentials. If the <code>AlternateDataSourceParameters</code> list is
-        /// null, the <code>DataSourceParameters</code> originally used with these
-        /// <code>Credentials</code> is automatically allowed.</p>
+        /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
         pub fn alternate_data_source_parameters(
             mut self,
             input: crate::model::DataSourceParameters,
@@ -2855,15 +2581,7 @@ pub mod credential_pair {
             self.alternate_data_source_parameters = Some(v);
             self
         }
-        /// <p>A set of alternate data source parameters that you want to share for these
-        /// credentials. The credentials are applied in tandem with the data source parameters when
-        /// you copy a data source by using a create or update request. The API operation compares
-        /// the <code>DataSourceParameters</code> structure that's in the request with the
-        /// structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-        /// structures are an exact match, the request is allowed to use the new data source with
-        /// the existing credentials. If the <code>AlternateDataSourceParameters</code> list is
-        /// null, the <code>DataSourceParameters</code> originally used with these
-        /// <code>Credentials</code> is automatically allowed.</p>
+        /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
         pub fn set_alternate_data_source_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
@@ -2888,9 +2606,7 @@ impl CredentialPair {
     }
 }
 
-/// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source.
-/// This is a variant type structure. For this structure to be valid, only one of the
-/// attributes can be non-null.</p>
+/// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DataSourceParameters {
@@ -3889,13 +3605,11 @@ impl ServiceNowParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Parameters {
-    /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-    /// uploaded into Amazon QuickSight.</p>
+    /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
     pub manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
 }
 impl S3Parameters {
-    /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-    /// uploaded into Amazon QuickSight.</p>
+    /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
     pub fn manifest_file_location(
         &self,
     ) -> std::option::Option<&crate::model::ManifestFileLocation> {
@@ -3918,14 +3632,12 @@ pub mod s3_parameters {
         pub(crate) manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
     }
     impl Builder {
-        /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-        /// uploaded into Amazon QuickSight.</p>
+        /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
         pub fn manifest_file_location(mut self, input: crate::model::ManifestFileLocation) -> Self {
             self.manifest_file_location = Some(input);
             self
         }
-        /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
-        /// uploaded into Amazon QuickSight.</p>
+        /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
         pub fn set_manifest_file_location(
             mut self,
             input: std::option::Option<crate::model::ManifestFileLocation>,
@@ -4021,9 +3733,7 @@ impl ManifestFileLocation {
     }
 }
 
-/// <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if
-/// <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and
-/// <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>
+/// <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftParameters {
@@ -4033,8 +3743,7 @@ pub struct RedshiftParameters {
     pub port: i32,
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
-    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
-    /// provided.</p>
+    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RedshiftParameters {
@@ -4050,8 +3759,7 @@ impl RedshiftParameters {
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
-    /// provided.</p>
+    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -4108,14 +3816,12 @@ pub mod redshift_parameters {
             self.database = input;
             self
         }
-        /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
-        /// provided.</p>
+        /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
-        /// provided.</p>
+        /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -5166,12 +4872,7 @@ impl DataSetUsageConfiguration {
     }
 }
 
-/// <p>A rule defined to grant access on one or more restricted columns.
-/// Each dataset can have multiple rules.
-/// To create a restricted column, you add it to one or more rules.
-/// Each rule must contain at least one column and at least one user or group.
-/// To be able to see a restricted column, a user or group needs to be added
-/// to a rule for that column.</p>
+/// <p>A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnLevelPermissionRule {
@@ -5517,12 +5218,8 @@ impl AsRef<str> for Status {
     }
 }
 
-/// <p>Information about a dataset that contains permissions for row-level security (RLS).
-/// The permissions dataset maps fields to users or groups. For more information, see
-/// <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User
-/// Guide</i>.</p>
-/// <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is
-/// not supported for new RLS datasets.</p>
+/// <p>Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+/// <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RowLevelPermissionDataSet {
@@ -5530,8 +5227,7 @@ pub struct RowLevelPermissionDataSet {
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
-    /// is included for backward compatibility only.</p>
+    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
     pub permission_policy: std::option::Option<crate::model::RowLevelPermissionPolicy>,
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
@@ -5548,8 +5244,7 @@ impl RowLevelPermissionDataSet {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
-    /// is included for backward compatibility only.</p>
+    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
     pub fn permission_policy(
         &self,
     ) -> std::option::Option<&crate::model::RowLevelPermissionPolicy> {
@@ -5612,14 +5307,12 @@ pub mod row_level_permission_data_set {
             self.arn = input;
             self
         }
-        /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
-        /// is included for backward compatibility only.</p>
+        /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
         pub fn permission_policy(mut self, input: crate::model::RowLevelPermissionPolicy) -> Self {
             self.permission_policy = Some(input);
             self
         }
-        /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
-        /// is included for backward compatibility only.</p>
+        /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
         pub fn set_permission_policy(
             mut self,
             input: std::option::Option<crate::model::RowLevelPermissionPolicy>,
@@ -5866,9 +5559,7 @@ impl FieldFolder {
     }
 }
 
-/// <p>Groupings of columns that work together in certain Amazon QuickSight features. This is
-/// a variant type structure. For this structure to be valid, only one of the attributes can
-/// be non-null.</p>
+/// <p>Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnGroup {
@@ -6141,10 +5832,7 @@ impl AsRef<str> for DataSetImportMode {
     }
 }
 
-/// <p>A <i>logical table</i> is a unit that joins and that data
-/// transformations operate on. A logical table has a source, which can be either a physical
-/// table or result of a join. When a logical table points to a physical table, the logical
-/// table acts as a mutable copy of that physical table through transform operations.</p>
+/// <p>A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogicalTable {
@@ -6249,8 +5937,7 @@ impl LogicalTable {
     }
 }
 
-/// <p>Information about the source of a logical table. This is a variant type structure. For
-/// this structure to be valid, only one of the attributes can be non-null.</p>
+/// <p>Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogicalTableSource {
@@ -6577,13 +6264,11 @@ impl AsRef<str> for JoinType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JoinKeyProperties {
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-    /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub unique_key: std::option::Option<bool>,
 }
 impl JoinKeyProperties {
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-    /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn unique_key(&self) -> std::option::Option<bool> {
         self.unique_key
     }
@@ -6604,14 +6289,12 @@ pub mod join_key_properties {
         pub(crate) unique_key: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-        /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+        /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
         pub fn unique_key(mut self, input: bool) -> Self {
             self.unique_key = Some(input);
             self
         }
-        /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
-        /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+        /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
         pub fn set_unique_key(mut self, input: std::option::Option<bool>) -> Self {
             self.unique_key = input;
             self
@@ -6631,20 +6314,17 @@ impl JoinKeyProperties {
     }
 }
 
-/// <p>A data transformation on a logical table. This is a variant type structure. For this
-/// structure to be valid, only one of the attributes can be non-null.</p>
+/// <p>A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum TransformOperation {
     /// <p>A transform operation that casts a column to a different type.</p>
     CastColumnTypeOperation(crate::model::CastColumnTypeOperation),
-    /// <p>An operation that creates calculated columns. Columns created in one such operation
-    /// form a lexical closure.</p>
+    /// <p>An operation that creates calculated columns. Columns created in one such operation form a lexical closure.</p>
     CreateColumnsOperation(crate::model::CreateColumnsOperation),
     /// <p>An operation that filters rows based on some condition.</p>
     FilterOperation(crate::model::FilterOperation),
-    /// <p>An operation that projects columns. Operations that come after a projection can only
-    /// refer to projected columns.</p>
+    /// <p>An operation that projects columns. Operations that come after a projection can only refer to projected columns.</p>
     ProjectOperation(crate::model::ProjectOperation),
     /// <p>An operation that renames a column.</p>
     RenameColumnOperation(crate::model::RenameColumnOperation),
@@ -6917,8 +6597,7 @@ impl AsRef<str> for ColumnTagName {
 pub struct TagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     pub column_name: std::option::Option<std::string::String>,
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
-    /// <note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ColumnTag>>,
@@ -6928,8 +6607,7 @@ impl TagColumnOperation {
     pub fn column_name(&self) -> std::option::Option<&str> {
         self.column_name.as_deref()
     }
-    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
-    /// <note>
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::ColumnTag]> {
@@ -6968,8 +6646,7 @@ pub mod tag_column_operation {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
-        /// <note>
+        /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
         /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::ColumnTag) -> Self {
@@ -6978,8 +6655,7 @@ pub mod tag_column_operation {
             self.tags = Some(v);
             self
         }
-        /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
-        /// <note>
+        /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
         /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
         /// </note>
         pub fn set_tags(
@@ -7005,13 +6681,7 @@ impl TagColumnOperation {
     }
 }
 
-/// <p>A tag for a column in a
-/// <code>
-/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a>
-/// </code>
-/// structure. This is a
-/// variant type structure. For this structure to be valid, only one of the attributes can
-/// be non-null.</p>
+/// <p>A tag for a column in a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a> </code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnTag {
@@ -7233,8 +6903,7 @@ pub struct CastColumnTypeOperation {
     pub column_name: std::option::Option<std::string::String>,
     /// <p>New column data type.</p>
     pub new_column_type: std::option::Option<crate::model::ColumnDataType>,
-    /// <p>When casting a column from string to datetime type, you can supply a string in a
-    /// format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub format: std::option::Option<std::string::String>,
 }
 impl CastColumnTypeOperation {
@@ -7246,8 +6915,7 @@ impl CastColumnTypeOperation {
     pub fn new_column_type(&self) -> std::option::Option<&crate::model::ColumnDataType> {
         self.new_column_type.as_ref()
     }
-    /// <p>When casting a column from string to datetime type, you can supply a string in a
-    /// format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
     }
@@ -7295,14 +6963,12 @@ pub mod cast_column_type_operation {
             self.new_column_type = input;
             self
         }
-        /// <p>When casting a column from string to datetime type, you can supply a string in a
-        /// format supported by Amazon QuickSight to denote the source data format.</p>
+        /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
         pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
             self.format = Some(input.into());
             self
         }
-        /// <p>When casting a column from string to datetime type, you can supply a string in a
-        /// format supported by Amazon QuickSight to denote the source data format.</p>
+        /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.format = input;
             self
@@ -7463,8 +7129,7 @@ impl RenameColumnOperation {
     }
 }
 
-/// <p>A transform operation that creates calculated columns. Columns created in one such
-/// operation form a lexical closure.</p>
+/// <p>A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateColumnsOperation {
@@ -7533,9 +7198,7 @@ impl CreateColumnsOperation {
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
     pub column_name: std::option::Option<std::string::String>,
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID
-    /// of a calculated column matches that of an existing calculated column, Amazon QuickSight
-    /// preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     pub column_id: std::option::Option<std::string::String>,
     /// <p>An expression that defines the calculated column.</p>
     pub expression: std::option::Option<std::string::String>,
@@ -7545,9 +7208,7 @@ impl CalculatedColumn {
     pub fn column_name(&self) -> std::option::Option<&str> {
         self.column_name.as_deref()
     }
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID
-    /// of a calculated column matches that of an existing calculated column, Amazon QuickSight
-    /// preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     pub fn column_id(&self) -> std::option::Option<&str> {
         self.column_id.as_deref()
     }
@@ -7586,16 +7247,12 @@ pub mod calculated_column {
             self.column_name = input;
             self
         }
-        /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID
-        /// of a calculated column matches that of an existing calculated column, Amazon QuickSight
-        /// preserves the existing calculated column.</p>
+        /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
         pub fn column_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.column_id = Some(input.into());
             self
         }
-        /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID
-        /// of a calculated column matches that of an existing calculated column, Amazon QuickSight
-        /// preserves the existing calculated column.</p>
+        /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
         pub fn set_column_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_id = input;
             self
@@ -7631,13 +7288,11 @@ impl CalculatedColumn {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterOperation {
-    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression
-    /// evaluates to true are kept in the dataset.</p>
+    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub condition_expression: std::option::Option<std::string::String>,
 }
 impl FilterOperation {
-    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression
-    /// evaluates to true are kept in the dataset.</p>
+    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
@@ -7658,14 +7313,12 @@ pub mod filter_operation {
         pub(crate) condition_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression
-        /// evaluates to true are kept in the dataset.</p>
+        /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression
-        /// evaluates to true are kept in the dataset.</p>
+        /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7688,8 +7341,7 @@ impl FilterOperation {
     }
 }
 
-/// <p>A transform operation that projects columns. Operations that come after a projection
-/// can only refer to projected columns.</p>
+/// <p>A transform operation that projects columns. Operations that come after a projection can only refer to projected columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectOperation {
@@ -7752,9 +7404,7 @@ impl ProjectOperation {
     }
 }
 
-/// <p>A view of a data source that contains information about the shape of the data in the
-/// underlying source. This is a variant type structure. For this structure to be valid,
-/// only one of the attributes can be non-null.</p>
+/// <p>A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum PhysicalTable {
@@ -7830,8 +7480,7 @@ pub struct S3Source {
     pub data_source_arn: std::option::Option<std::string::String>,
     /// <p>Information about the format for the S3 source file or files.</p>
     pub upload_settings: std::option::Option<crate::model::UploadSettings>,
-    /// <p>A physical table type for an S3 data source.</p>
-    /// <note>
+    /// <p>A physical table type for an S3 data source.</p> <note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
@@ -7845,8 +7494,7 @@ impl S3Source {
     pub fn upload_settings(&self) -> std::option::Option<&crate::model::UploadSettings> {
         self.upload_settings.as_ref()
     }
-    /// <p>A physical table type for an S3 data source.</p>
-    /// <note>
+    /// <p>A physical table type for an S3 data source.</p> <note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub fn input_columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
@@ -7903,8 +7551,7 @@ pub mod s3_source {
         ///
         /// To override the contents of this collection use [`set_input_columns`](Self::set_input_columns).
         ///
-        /// <p>A physical table type for an S3 data source.</p>
-        /// <note>
+        /// <p>A physical table type for an S3 data source.</p> <note>
         /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
         /// </note>
         pub fn input_columns(mut self, input: crate::model::InputColumn) -> Self {
@@ -7913,8 +7560,7 @@ pub mod s3_source {
             self.input_columns = Some(v);
             self
         }
-        /// <p>A physical table type for an S3 data source.</p>
-        /// <note>
+        /// <p>A physical table type for an S3 data source.</p> <note>
         /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
         /// </note>
         pub fn set_input_columns(
@@ -9907,8 +9553,7 @@ impl AccountCustomization {
     }
 }
 
-/// <p>The key or keys of the key-value pairs for the resource tag or tags assigned to the
-/// resource.</p>
+/// <p>The key or keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -10571,31 +10216,23 @@ impl DashboardSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashboardSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter, for example,
-    /// <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
     pub operator: std::option::Option<crate::model::FilterOperator>,
-    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name":
-    /// "QUICKSIGHT_USER"</code>. </p>
+    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>. </p>
     pub name: std::option::Option<crate::model::DashboardFilterAttribute>,
-    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-    /// to use as a filter, for example, <code>"Value":
-    /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl DashboardSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter, for example,
-    /// <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
         self.operator.as_ref()
     }
-    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name":
-    /// "QUICKSIGHT_USER"</code>. </p>
+    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>. </p>
     pub fn name(&self) -> std::option::Option<&crate::model::DashboardFilterAttribute> {
         self.name.as_ref()
     }
-    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-    /// to use as a filter, for example, <code>"Value":
-    /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -10620,14 +10257,12 @@ pub mod dashboard_search_filter {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The comparison operator that you want to use as a filter, for example,
-        /// <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
         pub fn operator(mut self, input: crate::model::FilterOperator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The comparison operator that you want to use as a filter, for example,
-        /// <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::FilterOperator>,
@@ -10635,14 +10270,12 @@ pub mod dashboard_search_filter {
             self.operator = input;
             self
         }
-        /// <p>The name of the value that you want to use as a filter, for example, <code>"Name":
-        /// "QUICKSIGHT_USER"</code>. </p>
+        /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>. </p>
         pub fn name(mut self, input: crate::model::DashboardFilterAttribute) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of the value that you want to use as a filter, for example, <code>"Name":
-        /// "QUICKSIGHT_USER"</code>. </p>
+        /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>. </p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::DashboardFilterAttribute>,
@@ -10650,16 +10283,12 @@ pub mod dashboard_search_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter, for example, <code>"Value":
-        /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter, for example, <code>"Value":
-        /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -10740,8 +10369,7 @@ pub struct AnalysisSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
-    /// </p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The last known status for the analysis.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
@@ -10759,8 +10387,7 @@ impl AnalysisSummary {
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
-    /// </p>
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10823,14 +10450,12 @@ pub mod analysis_summary {
             self.analysis_id = input;
             self
         }
-        /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
-        /// </p>
+        /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
-        /// </p>
+        /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10898,31 +10523,23 @@ impl AnalysisSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalysisSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter, for example
-    /// <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
     pub operator: std::option::Option<crate::model::FilterOperator>,
-    /// <p>The name of the value that you want to use as a filter, for example <code>"Name":
-    /// "QUICKSIGHT_USER"</code>.</p>
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_USER"</code>.</p>
     pub name: std::option::Option<crate::model::AnalysisFilterAttribute>,
-    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-    /// to use as a filter, for example <code>"Value"</code>. An example is
-    /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl AnalysisSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter, for example
-    /// <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
         self.operator.as_ref()
     }
-    /// <p>The name of the value that you want to use as a filter, for example <code>"Name":
-    /// "QUICKSIGHT_USER"</code>.</p>
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_USER"</code>.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::AnalysisFilterAttribute> {
         self.name.as_ref()
     }
-    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-    /// to use as a filter, for example <code>"Value"</code>. An example is
-    /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -10947,14 +10564,12 @@ pub mod analysis_search_filter {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The comparison operator that you want to use as a filter, for example
-        /// <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
         pub fn operator(mut self, input: crate::model::FilterOperator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The comparison operator that you want to use as a filter, for example
-        /// <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::FilterOperator>,
@@ -10962,14 +10577,12 @@ pub mod analysis_search_filter {
             self.operator = input;
             self
         }
-        /// <p>The name of the value that you want to use as a filter, for example <code>"Name":
-        /// "QUICKSIGHT_USER"</code>.</p>
+        /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_USER"</code>.</p>
         pub fn name(mut self, input: crate::model::AnalysisFilterAttribute) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of the value that you want to use as a filter, for example <code>"Name":
-        /// "QUICKSIGHT_USER"</code>.</p>
+        /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_USER"</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::AnalysisFilterAttribute>,
@@ -10977,16 +10590,12 @@ pub mod analysis_search_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter, for example <code>"Value"</code>. An example is
-        /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter, for example <code>"Value"</code>. An example is
-        /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+        /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -12507,8 +12116,7 @@ impl AsRef<str> for IngestionRequestSource {
 pub struct QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
     pub waiting_on_ingestion: std::option::Option<std::string::String>,
-    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing
-    /// ingestion to complete.</p>
+    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub queued_ingestion: std::option::Option<std::string::String>,
 }
 impl QueueInfo {
@@ -12516,8 +12124,7 @@ impl QueueInfo {
     pub fn waiting_on_ingestion(&self) -> std::option::Option<&str> {
         self.waiting_on_ingestion.as_deref()
     }
-    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing
-    /// ingestion to complete.</p>
+    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn queued_ingestion(&self) -> std::option::Option<&str> {
         self.queued_ingestion.as_deref()
     }
@@ -12553,14 +12160,12 @@ pub mod queue_info {
             self.waiting_on_ingestion = input;
             self
         }
-        /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing
-        /// ingestion to complete.</p>
+        /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
         pub fn queued_ingestion(mut self, input: impl Into<std::string::String>) -> Self {
             self.queued_ingestion = Some(input.into());
             self
         }
-        /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing
-        /// ingestion to complete.</p>
+        /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
         pub fn set_queued_ingestion(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13261,8 +12866,7 @@ impl IamPolicyAssignmentSummary {
     }
 }
 
-/// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups
-/// can't be members of another group. .</p>
+/// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupMember {
@@ -13414,13 +13018,11 @@ impl MemberIdArnPair {
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each
-    /// Amazon Web Services account.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the data source. This type indicates which database engine the data source
-    /// connects to.</p>
+    /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The HTTP status of the request.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
@@ -13428,26 +13030,14 @@ pub struct DataSource {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that this data source was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This
-    /// is a variant type structure. For this structure to be valid, only one of the attributes
-    /// can be non-null.</p>
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
-    /// <p>A set of alternate data source parameters that you want to share for the credentials
-    /// stored with this data source. The credentials are applied in tandem with the data source
-    /// parameters when you copy a data source by using a create or update request. The API
-    /// operation compares the <code>DataSourceParameters</code> structure that's in the request
-    /// with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-    /// structures are an exact match, the request is allowed to use the credentials from this
-    /// existing data source. If the <code>AlternateDataSourceParameters</code> list is null,
-    /// the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
-    /// are automatically allowed.</p>
+    /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
-    /// <p>The VPC connection information. You need to use this parameter only when you want
-    /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
-    /// underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Error information from the last update or the creation of the data source.</p>
     pub error_info: std::option::Option<crate::model::DataSourceErrorInfo>,
@@ -13457,8 +13047,7 @@ impl DataSource {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each
-    /// Amazon Web Services account.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -13466,8 +13055,7 @@ impl DataSource {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the data source. This type indicates which database engine the data source
-    /// connects to.</p>
+    /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
@@ -13483,37 +13071,25 @@ impl DataSource {
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This
-    /// is a variant type structure. For this structure to be valid, only one of the attributes
-    /// can be non-null.</p>
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_source_parameters(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
-    /// <p>A set of alternate data source parameters that you want to share for the credentials
-    /// stored with this data source. The credentials are applied in tandem with the data source
-    /// parameters when you copy a data source by using a create or update request. The API
-    /// operation compares the <code>DataSourceParameters</code> structure that's in the request
-    /// with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-    /// structures are an exact match, the request is allowed to use the credentials from this
-    /// existing data source. If the <code>AlternateDataSourceParameters</code> list is null,
-    /// the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
-    /// are automatically allowed.</p>
+    /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
     pub fn alternate_data_source_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceParameters]> {
         self.alternate_data_source_parameters.as_deref()
     }
-    /// <p>The VPC connection information. You need to use this parameter only when you want
-    /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(
         &self,
     ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
-    /// underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub fn ssl_properties(&self) -> std::option::Option<&crate::model::SslProperties> {
         self.ssl_properties.as_ref()
     }
@@ -13575,14 +13151,12 @@ pub mod data_source {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each
-        /// Amazon Web Services account.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each
-        /// Amazon Web Services account.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13600,14 +13174,12 @@ pub mod data_source {
             self.name = input;
             self
         }
-        /// <p>The type of the data source. This type indicates which database engine the data source
-        /// connects to.</p>
+        /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the data source. This type indicates which database engine the data source
-        /// connects to.</p>
+        /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -13654,16 +13226,12 @@ pub mod data_source {
             self.last_updated_time = input;
             self
         }
-        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This
-        /// is a variant type structure. For this structure to be valid, only one of the attributes
-        /// can be non-null.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
         pub fn data_source_parameters(mut self, input: crate::model::DataSourceParameters) -> Self {
             self.data_source_parameters = Some(input);
             self
         }
-        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This
-        /// is a variant type structure. For this structure to be valid, only one of the attributes
-        /// can be non-null.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
         pub fn set_data_source_parameters(
             mut self,
             input: std::option::Option<crate::model::DataSourceParameters>,
@@ -13675,15 +13243,7 @@ pub mod data_source {
         ///
         /// To override the contents of this collection use [`set_alternate_data_source_parameters`](Self::set_alternate_data_source_parameters).
         ///
-        /// <p>A set of alternate data source parameters that you want to share for the credentials
-        /// stored with this data source. The credentials are applied in tandem with the data source
-        /// parameters when you copy a data source by using a create or update request. The API
-        /// operation compares the <code>DataSourceParameters</code> structure that's in the request
-        /// with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-        /// structures are an exact match, the request is allowed to use the credentials from this
-        /// existing data source. If the <code>AlternateDataSourceParameters</code> list is null,
-        /// the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
-        /// are automatically allowed.</p>
+        /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
         pub fn alternate_data_source_parameters(
             mut self,
             input: crate::model::DataSourceParameters,
@@ -13693,15 +13253,7 @@ pub mod data_source {
             self.alternate_data_source_parameters = Some(v);
             self
         }
-        /// <p>A set of alternate data source parameters that you want to share for the credentials
-        /// stored with this data source. The credentials are applied in tandem with the data source
-        /// parameters when you copy a data source by using a create or update request. The API
-        /// operation compares the <code>DataSourceParameters</code> structure that's in the request
-        /// with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the
-        /// structures are an exact match, the request is allowed to use the credentials from this
-        /// existing data source. If the <code>AlternateDataSourceParameters</code> list is null,
-        /// the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
-        /// are automatically allowed.</p>
+        /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
         pub fn set_alternate_data_source_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
@@ -13709,8 +13261,7 @@ pub mod data_source {
             self.alternate_data_source_parameters = input;
             self
         }
-        /// <p>The VPC connection information. You need to use this parameter only when you want
-        /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+        /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
             input: crate::model::VpcConnectionProperties,
@@ -13718,8 +13269,7 @@ pub mod data_source {
             self.vpc_connection_properties = Some(input);
             self
         }
-        /// <p>The VPC connection information. You need to use this parameter only when you want
-        /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+        /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
         pub fn set_vpc_connection_properties(
             mut self,
             input: std::option::Option<crate::model::VpcConnectionProperties>,
@@ -13727,14 +13277,12 @@ pub mod data_source {
             self.vpc_connection_properties = input;
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
-        /// underlying source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
             self.ssl_properties = Some(input);
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
-        /// underlying source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn set_ssl_properties(
             mut self,
             input: std::option::Option<crate::model::SslProperties>,
@@ -14578,52 +14126,25 @@ impl AsRef<str> for EmbeddingIdentityType {
     }
 }
 
-/// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p>
-/// <note>
-/// <p>Exactly one of the experience configurations is required. You can choose
-/// <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more
-/// than one experience configuration.</p>
+/// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p> <note>
+/// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
     pub dashboard: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
-    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
-    /// Guide</i>.</p>
-    /// <p>Use <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
-    /// </code>
-    /// where
-    /// you want to provide an authoring portal that allows users to create data sources,
-    /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
-    /// needs to belong to the author or admin security cohort. If you want to restrict permissions
-    /// to some of these features, add a custom permissions profile to the user with the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-    /// </code> API operation. Use the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-    /// </code> API operation to add a new user with a custom permission profile attached. For more
-    /// information, see the following sections in the <i>Amazon QuickSight User
-    /// Guide</i>:</p>
+    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
     /// </ul>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
     pub quick_sight_console:
         std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
@@ -14634,34 +14155,11 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::RegisteredUserDashboardEmbeddingConfiguration> {
         self.dashboard.as_ref()
     }
-    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
-    /// Guide</i>.</p>
-    /// <p>Use <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
-    /// </code>
-    /// where
-    /// you want to provide an authoring portal that allows users to create data sources,
-    /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
-    /// needs to belong to the author or admin security cohort. If you want to restrict permissions
-    /// to some of these features, add a custom permissions profile to the user with the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-    /// </code> API operation. Use the <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-    /// </code> API operation to add a new user with a custom permission profile attached. For more
-    /// information, see the following sections in the <i>Amazon QuickSight User
-    /// Guide</i>:</p>
+    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
     /// </ul>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
     pub fn quick_sight_console(
@@ -14671,8 +14169,7 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
         self.quick_sight_console.as_ref()
     }
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
     pub fn q_search_bar(
         &self,
     ) -> std::option::Option<&crate::model::RegisteredUserQSearchBarEmbeddingConfiguration> {
@@ -14719,34 +14216,11 @@ pub mod registered_user_embedding_experience_configuration {
             self.dashboard = input;
             self
         }
-        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
-        /// Guide</i>.</p>
-        /// <p>Use <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
-        /// </code>
-        /// where
-        /// you want to provide an authoring portal that allows users to create data sources,
-        /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
-        /// needs to belong to the author or admin security cohort. If you want to restrict permissions
-        /// to some of these features, add a custom permissions profile to the user with the
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> API operation. Use the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-        /// </code> API operation to add a new user with a custom permission profile attached. For more
-        /// information, see the following sections in the <i>Amazon QuickSight User
-        /// Guide</i>:</p>
+        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+        /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
         /// </ul>
         /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
         pub fn quick_sight_console(
@@ -14756,34 +14230,11 @@ pub mod registered_user_embedding_experience_configuration {
             self.quick_sight_console = Some(input);
             self
         }
-        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
-        /// Guide</i>.</p>
-        /// <p>Use <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
-        /// </code>
-        /// where
-        /// you want to provide an authoring portal that allows users to create data sources,
-        /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
-        /// needs to belong to the author or admin security cohort. If you want to restrict permissions
-        /// to some of these features, add a custom permissions profile to the user with the
-        /// <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> API operation. Use the <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-        /// </code> API operation to add a new user with a custom permission profile attached. For more
-        /// information, see the following sections in the <i>Amazon QuickSight User
-        /// Guide</i>:</p>
+        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+        /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
         /// </ul>
         /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
         pub fn set_quick_sight_console(
@@ -14796,8 +14247,7 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
         pub fn q_search_bar(
             mut self,
             input: crate::model::RegisteredUserQSearchBarEmbeddingConfiguration,
@@ -14806,8 +14256,7 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
         pub fn set_q_search_bar(
             mut self,
             input: std::option::Option<
@@ -14838,21 +14287,13 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
-    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
-    /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
-    /// a topic. The ID is in the URL for the topic that you open.</p>
-    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
-    /// for your readers. When you select an initial topic, you can specify whether or not readers
-    /// are allowed to select other topics from the available ones in the list.</p>
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
     pub initial_topic_id: std::option::Option<std::string::String>,
 }
 impl RegisteredUserQSearchBarEmbeddingConfiguration {
-    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
-    /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
-    /// a topic. The ID is in the URL for the topic that you open.</p>
-    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
-    /// for your readers. When you select an initial topic, you can specify whether or not readers
-    /// are allowed to select other topics from the available ones in the list.</p>
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
     pub fn initial_topic_id(&self) -> std::option::Option<&str> {
         self.initial_topic_id.as_deref()
     }
@@ -14873,22 +14314,14 @@ pub mod registered_user_q_search_bar_embedding_configuration {
         pub(crate) initial_topic_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
-        /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
-        /// a topic. The ID is in the URL for the topic that you open.</p>
-        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
-        /// for your readers. When you select an initial topic, you can specify whether or not readers
-        /// are allowed to select other topics from the available ones in the list.</p>
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
         pub fn initial_topic_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_topic_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
-        /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
-        /// a topic. The ID is in the URL for the topic that you open.</p>
-        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
-        /// for your readers. When you select an initial topic, you can specify whether or not readers
-        /// are allowed to select other topics from the available ones in the list.</p>
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
         pub fn set_initial_topic_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14919,34 +14352,12 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>/start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/analyses</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/dashboards</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/favorites</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
-    /// </li>
+    /// <li> <p> <code>/start</code> </p> </li>
+    /// <li> <p> <code>/start/analyses</code> </p> </li>
+    /// <li> <p> <code>/start/dashboards</code> </p> </li>
+    /// <li> <p> <code>/start/favorites</code> </p> </li>
+    /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
+    /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
     pub initial_path: std::option::Option<std::string::String>,
 }
@@ -14954,34 +14365,12 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>/start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/analyses</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/dashboards</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/start/favorites</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
-    /// </li>
+    /// <li> <p> <code>/start</code> </p> </li>
+    /// <li> <p> <code>/start/analyses</code> </p> </li>
+    /// <li> <p> <code>/start/dashboards</code> </p> </li>
+    /// <li> <p> <code>/start/favorites</code> </p> </li>
+    /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
+    /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
     pub fn initial_path(&self) -> std::option::Option<&str> {
         self.initial_path.as_deref()
@@ -15006,34 +14395,12 @@ pub mod registered_user_quick_sight_console_embedding_configuration {
         /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
         /// <p>The entry point URL is constrained to the following paths:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/analyses</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/dashboards</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/favorites</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
-        /// </li>
+        /// <li> <p> <code>/start</code> </p> </li>
+        /// <li> <p> <code>/start/analyses</code> </p> </li>
+        /// <li> <p> <code>/start/dashboards</code> </p> </li>
+        /// <li> <p> <code>/start/favorites</code> </p> </li>
+        /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
+        /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
         /// </ul>
         pub fn initial_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_path = Some(input.into());
@@ -15042,34 +14409,12 @@ pub mod registered_user_quick_sight_console_embedding_configuration {
         /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
         /// <p>The entry point URL is constrained to the following paths:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/analyses</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/dashboards</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/start/favorites</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
-        /// </li>
+        /// <li> <p> <code>/start</code> </p> </li>
+        /// <li> <p> <code>/start/analyses</code> </p> </li>
+        /// <li> <p> <code>/start/dashboards</code> </p> </li>
+        /// <li> <p> <code>/start/favorites</code> </p> </li>
+        /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
+        /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
         /// </ul>
         pub fn set_initial_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.initial_path = input;
@@ -15366,8 +14711,7 @@ pub struct Theme {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the theme was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of theme, based on how it was created. Valid values include:
-    /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+    /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub r#type: std::option::Option<crate::model::ThemeType>,
 }
 impl Theme {
@@ -15395,8 +14739,7 @@ impl Theme {
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The type of theme, based on how it was created. Valid values include:
-    /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+    /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeType> {
         self.r#type.as_ref()
     }
@@ -15498,14 +14841,12 @@ pub mod theme {
             self.last_updated_time = input;
             self
         }
-        /// <p>The type of theme, based on how it was created. Valid values include:
-        /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+        /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThemeType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of theme, based on how it was created. Valid values include:
-        /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+        /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ThemeType>) -> Self {
             self.r#type = input;
             self
@@ -15541,8 +14882,7 @@ pub struct ThemeVersion {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the theme.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-    /// themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub base_theme_id: std::option::Option<std::string::String>,
     /// <p>The date and time that this theme version was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -15566,8 +14906,7 @@ impl ThemeVersion {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-    /// themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(&self) -> std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
@@ -15648,14 +14987,12 @@ pub mod theme_version {
             self.description = input;
             self
         }
-        /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-        /// themes initially inherit from a default Amazon QuickSight theme.</p>
+        /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
         }
-        /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
-        /// themes initially inherit from a default Amazon QuickSight theme.</p>
+        /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
         pub fn set_base_theme_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15870,14 +15207,8 @@ impl AsRef<str> for ThemeErrorType {
     }
 }
 
-/// <p>A template object. A <i>template</i> is an entity in Amazon QuickSight that
-/// encapsulates the metadata required to create an analysis and that you can use to create
-/// a dashboard. A template adds a layer of abstraction by using placeholders to replace the
-/// dataset associated with an analysis. You can use templates to create dashboards by
-/// replacing dataset placeholders with datasets that follow the same schema that was used
-/// to create the source analysis and template.</p>
-/// <p>You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to
-/// create a template or a dashboard from an existing template.</p>
+/// <p>A template object. A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p>
+/// <p>You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to create a template or a dashboard from an existing template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Template {
@@ -16047,15 +15378,12 @@ pub struct TemplateVersion {
     pub version_number: std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
-    /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this
-    /// template should be bound to new datasets matching the same schema described through this
-    /// API operation.</p>
+    /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
     pub data_set_configurations:
         std::option::Option<std::vec::Vec<crate::model::DataSetConfiguration>>,
     /// <p>The description of the template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this
-    /// template.</p>
+    /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
     pub source_entity_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the theme associated with this version of the template.</p>
     pub theme_arn: std::option::Option<std::string::String>,
@@ -16079,9 +15407,7 @@ impl TemplateVersion {
     pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
         self.status.as_ref()
     }
-    /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this
-    /// template should be bound to new datasets matching the same schema described through this
-    /// API operation.</p>
+    /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
     pub fn data_set_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::DataSetConfiguration]> {
@@ -16091,8 +15417,7 @@ impl TemplateVersion {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this
-    /// template.</p>
+    /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
     pub fn source_entity_arn(&self) -> std::option::Option<&str> {
         self.source_entity_arn.as_deref()
     }
@@ -16197,9 +15522,7 @@ pub mod template_version {
         ///
         /// To override the contents of this collection use [`set_data_set_configurations`](Self::set_data_set_configurations).
         ///
-        /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this
-        /// template should be bound to new datasets matching the same schema described through this
-        /// API operation.</p>
+        /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
         pub fn data_set_configurations(
             mut self,
             input: crate::model::DataSetConfiguration,
@@ -16209,9 +15532,7 @@ pub mod template_version {
             self.data_set_configurations = Some(v);
             self
         }
-        /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this
-        /// template should be bound to new datasets matching the same schema described through this
-        /// API operation.</p>
+        /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
         pub fn set_data_set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSetConfiguration>>,
@@ -16229,14 +15550,12 @@ pub mod template_version {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this
-        /// template.</p>
+        /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
         pub fn source_entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_entity_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this
-        /// template.</p>
+        /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
         pub fn set_source_entity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16296,18 +15615,13 @@ impl TemplateVersion {
     }
 }
 
-/// <p>A <i>sheet</i>, which is an object that contains a set of visuals that
-/// are viewed together on one page in Amazon QuickSight. Every analysis and dashboard
-/// contains at least one sheet. Each sheet contains at least one visualization widget, for
-/// example a chart, pivot table, or narrative insight. Sheets can be associated with other
-/// components, such as controls, filters, and so on.</p>
+/// <p>A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
     pub sheet_id: std::option::Option<std::string::String>,
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
-    /// console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl Sheet {
@@ -16315,8 +15629,7 @@ impl Sheet {
     pub fn sheet_id(&self) -> std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
-    /// console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -16349,14 +15662,12 @@ pub mod sheet {
             self.sheet_id = input;
             self
         }
-        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
-        /// console.</p>
+        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
-        /// console.</p>
+        /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17320,21 +16631,17 @@ pub struct DataSet {
     pub physical_table_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PhysicalTable>,
     >,
-    /// <p>Configures the combination and transformation of the data from the physical
-    /// tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
     pub logical_table_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::LogicalTable>,
     >,
-    /// <p>The list of columns after all transforms. These columns are available in templates,
-    /// analyses, and dashboards.</p>
+    /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
     pub output_columns: std::option::Option<std::vec::Vec<crate::model::OutputColumn>>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
-    /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't
-    /// imported into SPICE.</p>
+    /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
     pub consumed_spice_capacity_in_bytes: i64,
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
-    /// Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub column_groups: std::option::Option<std::vec::Vec<crate::model::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub field_folders: std::option::Option<
@@ -17345,9 +16652,7 @@ pub struct DataSet {
     /// <p>The element you can use to define tags for row-level security.</p>
     pub row_level_permission_tag_configuration:
         std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -17382,8 +16687,7 @@ impl DataSet {
     > {
         self.physical_table_map.as_ref()
     }
-    /// <p>Configures the combination and transformation of the data from the physical
-    /// tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
     pub fn logical_table_map(
         &self,
     ) -> std::option::Option<
@@ -17391,8 +16695,7 @@ impl DataSet {
     > {
         self.logical_table_map.as_ref()
     }
-    /// <p>The list of columns after all transforms. These columns are available in templates,
-    /// analyses, and dashboards.</p>
+    /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
     pub fn output_columns(&self) -> std::option::Option<&[crate::model::OutputColumn]> {
         self.output_columns.as_deref()
     }
@@ -17400,13 +16703,11 @@ impl DataSet {
     pub fn import_mode(&self) -> std::option::Option<&crate::model::DataSetImportMode> {
         self.import_mode.as_ref()
     }
-    /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't
-    /// imported into SPICE.</p>
+    /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
     pub fn consumed_spice_capacity_in_bytes(&self) -> i64 {
         self.consumed_spice_capacity_in_bytes
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
-    /// Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn column_groups(&self) -> std::option::Option<&[crate::model::ColumnGroup]> {
         self.column_groups.as_deref()
     }
@@ -17430,9 +16731,7 @@ impl DataSet {
     ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
         self.row_level_permission_tag_configuration.as_ref()
     }
-    /// <p>A set of one or more definitions of a <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-    /// </code>.</p>
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub fn column_level_permission_rules(
         &self,
     ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
@@ -17601,8 +16900,7 @@ pub mod data_set {
         ///
         /// To override the contents of this collection use [`set_logical_table_map`](Self::set_logical_table_map).
         ///
-        /// <p>Configures the combination and transformation of the data from the physical
-        /// tables.</p>
+        /// <p>Configures the combination and transformation of the data from the physical tables.</p>
         pub fn logical_table_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -17613,8 +16911,7 @@ pub mod data_set {
             self.logical_table_map = Some(hash_map);
             self
         }
-        /// <p>Configures the combination and transformation of the data from the physical
-        /// tables.</p>
+        /// <p>Configures the combination and transformation of the data from the physical tables.</p>
         pub fn set_logical_table_map(
             mut self,
             input: std::option::Option<
@@ -17628,16 +16925,14 @@ pub mod data_set {
         ///
         /// To override the contents of this collection use [`set_output_columns`](Self::set_output_columns).
         ///
-        /// <p>The list of columns after all transforms. These columns are available in templates,
-        /// analyses, and dashboards.</p>
+        /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
         pub fn output_columns(mut self, input: crate::model::OutputColumn) -> Self {
             let mut v = self.output_columns.unwrap_or_default();
             v.push(input);
             self.output_columns = Some(v);
             self
         }
-        /// <p>The list of columns after all transforms. These columns are available in templates,
-        /// analyses, and dashboards.</p>
+        /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
         pub fn set_output_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputColumn>>,
@@ -17658,14 +16953,12 @@ pub mod data_set {
             self.import_mode = input;
             self
         }
-        /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't
-        /// imported into SPICE.</p>
+        /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
         pub fn consumed_spice_capacity_in_bytes(mut self, input: i64) -> Self {
             self.consumed_spice_capacity_in_bytes = Some(input);
             self
         }
-        /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't
-        /// imported into SPICE.</p>
+        /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
         pub fn set_consumed_spice_capacity_in_bytes(
             mut self,
             input: std::option::Option<i64>,
@@ -17677,16 +16970,14 @@ pub mod data_set {
         ///
         /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
         ///
-        /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
-        /// Currently, only geospatial hierarchy is supported.</p>
+        /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
         pub fn column_groups(mut self, input: crate::model::ColumnGroup) -> Self {
             let mut v = self.column_groups.unwrap_or_default();
             v.push(input);
             self.column_groups = Some(v);
             self
         }
-        /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
-        /// Currently, only geospatial hierarchy is supported.</p>
+        /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
         pub fn set_column_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnGroup>>,
@@ -17755,9 +17046,7 @@ pub mod data_set {
         ///
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
             input: crate::model::ColumnLevelPermissionRule,
@@ -17767,9 +17056,7 @@ pub mod data_set {
             self.column_level_permission_rules = Some(v);
             self
         }
-        /// <p>A set of one or more definitions of a <code>
-        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
-        /// </code>.</p>
+        /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
@@ -18116,8 +17403,7 @@ pub struct DashboardVersion {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source entity ARN.</p>
     pub source_entity_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
-    /// version of the dashboard.</p>
+    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -18151,8 +17437,7 @@ impl DashboardVersion {
     pub fn source_entity_arn(&self) -> std::option::Option<&str> {
         self.source_entity_arn.as_deref()
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
-    /// version of the dashboard.</p>
+    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub fn data_set_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.data_set_arns.as_deref()
     }
@@ -18285,16 +17570,14 @@ pub mod dashboard_version {
         ///
         /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
         ///
-        /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
-        /// version of the dashboard.</p>
+        /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
         pub fn data_set_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.data_set_arns.unwrap_or_default();
             v.push(input.into());
             self.data_set_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
-        /// version of the dashboard.</p>
+        /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
         pub fn set_data_set_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18978,12 +18261,9 @@ impl AsRef<str> for AnalysisErrorType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
-    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
-    /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
-    /// it appears only when users sign in.</p>
+    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
     pub account_name: std::option::Option<std::string::String>,
-    /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
-    /// Enterprise edition or Standard edition.</p>
+    /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     pub edition: std::option::Option<crate::model::Edition>,
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
     pub default_namespace: std::option::Option<std::string::String>,
@@ -18991,14 +18271,11 @@ pub struct AccountSettings {
     pub notification_email: std::option::Option<std::string::String>,
 }
 impl AccountSettings {
-    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
-    /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
-    /// it appears only when users sign in.</p>
+    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
     pub fn account_name(&self) -> std::option::Option<&str> {
         self.account_name.as_deref()
     }
-    /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
-    /// Enterprise edition or Standard edition.</p>
+    /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
         self.edition.as_ref()
     }
@@ -19033,28 +18310,22 @@ pub mod account_settings {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
-        /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
-        /// it appears only when users sign in.</p>
+        /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_name = Some(input.into());
             self
         }
-        /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
-        /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
-        /// it appears only when users sign in.</p>
+        /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_name = input;
             self
         }
-        /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
-        /// Enterprise edition or Standard edition.</p>
+        /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
         pub fn edition(mut self, input: crate::model::Edition) -> Self {
             self.edition = Some(input);
             self
         }
-        /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
-        /// Enterprise edition or Standard edition.</p>
+        /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
         pub fn set_edition(mut self, input: std::option::Option<crate::model::Edition>) -> Self {
             self.edition = input;
             self

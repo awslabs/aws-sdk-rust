@@ -369,14 +369,12 @@ pub mod list_human_loops_input {
             self.flow_definition_arn = input;
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -394,16 +392,12 @@ pub mod list_human_loops_input {
             self.next_token = input;
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -598,14 +592,12 @@ pub mod start_human_loop_input {
             self.human_loop_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
         pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_definition_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -626,14 +618,12 @@ pub mod start_human_loop_input {
             self.human_loop_input = input;
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
         pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
             self.data_attributes = Some(input);
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
         pub fn set_data_attributes(
             mut self,
             input: std::option::Option<crate::model::HumanLoopDataAttributes>,
@@ -953,13 +943,11 @@ impl std::fmt::Debug for StopHumanLoopInput {
 pub struct StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
     pub human_loop_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-    /// loop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>An object that contains information about the human loop.</p>
     pub human_loop_input: std::option::Option<crate::model::HumanLoopInput>,
-    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-    /// is free of personally identifiable information and/or free of adult content.</p>
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
 impl StartHumanLoopInput {
@@ -967,8 +955,7 @@ impl StartHumanLoopInput {
     pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-    /// loop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
     pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
@@ -976,8 +963,7 @@ impl StartHumanLoopInput {
     pub fn human_loop_input(&self) -> std::option::Option<&crate::model::HumanLoopInput> {
         self.human_loop_input.as_ref()
     }
-    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-    /// is free of personally identifiable information and/or free of adult content.</p>
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
     }
@@ -1003,14 +989,11 @@ pub struct ListHumanLoopsInput {
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
-    /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-    /// <code>Descending</code>.</p>
+    /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>A token to display the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of items to return. If the total number of available items is more than
-    /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-    /// the output. You can use this token to display the next page of results. </p>
+    /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListHumanLoopsInput {
@@ -1026,8 +1009,7 @@ impl ListHumanLoopsInput {
     pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
-    /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-    /// <code>Descending</code>.</p>
+    /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -1035,9 +1017,7 @@ impl ListHumanLoopsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of items to return. If the total number of available items is more than
-    /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-    /// the output. You can use this token to display the next page of results. </p>
+    /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }

@@ -407,66 +407,32 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             self.inner = self.inner.messages(input);
             self
         }
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -547,14 +513,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
         pub fn reprocessing_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reprocessing_id(input.into());
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
         pub fn set_reprocessing_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -565,8 +529,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
-    /// <p>Used to create a channel. A channel collects data from an MQTT topic and archives the raw,
-    /// unprocessed messages before publishing the data to a pipeline.</p>
+    /// <p>Used to create a channel. A channel collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -633,18 +596,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.inner = self.inner.channel_storage(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -652,14 +609,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -687,11 +642,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Used to create a dataset. A dataset stores data retrieved from a data store by applying a
-    /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a
-    /// containerized application). This operation creates the skeleton of a dataset. The dataset can
-    /// be populated manually by calling <code>CreateDatasetContent</code> or automatically according
-    /// to a trigger you specify.</p>
+    /// <p>Used to create a dataset. A dataset stores data retrieved from a data store by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application). This operation creates the skeleton of a dataset. The dataset can be populated manually by calling <code>CreateDatasetContent</code> or automatically according to a trigger you specify.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -779,16 +730,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
         pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             self.inner = self.inner.triggers(input);
             self
         }
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -800,8 +747,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
             input: crate::model::DatasetContentDeliveryRule,
@@ -809,8 +755,7 @@ pub mod fluent_builders {
             self.inner = self.inner.content_delivery_rules(input);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -818,22 +763,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_delivery_rules(input);
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -841,11 +776,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -853,11 +784,7 @@ pub mod fluent_builders {
             self.inner = self.inner.versioning_configuration(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -902,8 +829,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetContent`.
     ///
-    /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a
-    /// <code>containerAction</code> (executing a containerized application).</p>
+    /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
@@ -970,14 +896,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -1068,14 +992,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -1100,7 +1022,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -1110,7 +1032,7 @@ pub mod fluent_builders {
             self.inner = self.inner.file_format_configuration(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -1136,10 +1058,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
-    /// <p>Creates a pipeline. A pipeline consumes messages from a channel and allows you to process
-    /// the messages before storing them in a data store. You must specify both a <code>channel</code>
-    /// and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in
-    /// the <code>pipelineActivities</code> array.</p>
+    /// <p>Creates a pipeline. A pipeline consumes messages from a channel and allows you to process the messages before storing them in a data store. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
@@ -1213,32 +1132,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             self.inner = self.inner.pipeline_activities(input);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -1337,8 +1240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes the specified dataset.</p>
-    /// <p>You do not have to delete the content of the dataset before you perform this
-    /// operation.</p>
+    /// <p>You do not have to delete the content of the dataset before you perform this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -1475,16 +1377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -1705,14 +1603,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.inner = self.inner.include_statistics(input);
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_statistics(input);
             self
@@ -1860,16 +1756,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_name(input);
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.inner = self.inner.include_statistics(input);
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_statistics(input);
             self
@@ -2077,16 +1969,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -2263,16 +2151,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn scheduled_on_or_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_on_or_after(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_on_or_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2280,16 +2164,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scheduled_on_or_after(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn scheduled_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_before(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2617,10 +2497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets or updates the IoT Analytics logging options.</p>
-    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one
-    /// minute for the change to take effect. Also, if you change the policy attached to the role you
-    /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
-    /// takes up to five minutes for that change to take effect. </p>
+    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2750,20 +2627,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
         pub fn pipeline_activity(mut self, input: crate::model::PipelineActivity) -> Self {
             self.inner = self.inner.pipeline_activity(input);
             self
         }
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
         pub fn set_pipeline_activity(
             mut self,
             input: std::option::Option<crate::model::PipelineActivity>,
@@ -2791,8 +2660,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SampleChannelData`.
     ///
-    /// <p>Retrieves a sample of messages from the specified channel ingested during the specified
-    /// timeframe. Up to 10 messages can be retrieved.</p>
+    /// <p>Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SampleChannelData<
         C = aws_smithy_client::erase::DynConnector,
@@ -2859,14 +2727,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
         pub fn max_messages(mut self, input: i32) -> Self {
             self.inner = self.inner.max_messages(input);
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
         pub fn set_max_messages(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_messages(input);
             self
@@ -2971,15 +2837,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2988,15 +2852,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3005,15 +2867,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
         pub fn channel_messages(mut self, input: crate::model::ChannelMessages) -> Self {
             self.inner = self.inner.channel_messages(input);
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
         pub fn set_channel_messages(
             mut self,
             input: std::option::Option<crate::model::ChannelMessages>,
@@ -3024,8 +2884,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
-    /// manage a resource.</p>
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3266,18 +3125,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.inner = self.inner.channel_storage(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -3285,14 +3138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -3391,14 +3242,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
         pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             self.inner = self.inner.triggers(input);
             self
         }
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -3410,8 +3259,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
             input: crate::model::DatasetContentDeliveryRule,
@@ -3419,8 +3267,7 @@ pub mod fluent_builders {
             self.inner = self.inner.content_delivery_rules(input);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -3441,11 +3288,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -3453,11 +3296,7 @@ pub mod fluent_builders {
             self.inner = self.inner.versioning_configuration(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -3555,14 +3394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_name(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -3583,7 +3420,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_storage(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -3593,7 +3430,7 @@ pub mod fluent_builders {
             self.inner = self.inner.file_format_configuration(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -3606,9 +3443,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePipeline`.
     ///
-    /// <p>Updates the settings of a pipeline. You must specify both a <code>channel</code> and a
-    /// <code>datastore</code> activity and, optionally, as many as 23 additional activities in the
-    /// <code>pipelineActivities</code> array.</p>
+    /// <p>Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
@@ -3682,32 +3517,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             self.inner = self.inner.pipeline_activities(input);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,

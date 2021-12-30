@@ -175,18 +175,14 @@ impl ListHumanLoopsOutput {
 pub struct DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
-    /// human loop is <code>Failed</code>.</p>
+    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
-    /// <code>InternalError</code>
-    /// </p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>The status of the human loop. </p>
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
-    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
-    /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub human_loop_arn: std::option::Option<std::string::String>,
@@ -200,15 +196,12 @@ impl DescribeHumanLoopOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
-    /// human loop is <code>Failed</code>.</p>
+    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>A failure code that identifies the type of failure.</p>
-    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
-    /// <code>InternalError</code>
-    /// </p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn failure_code(&self) -> std::option::Option<&str> {
         self.failure_code.as_deref()
     }
@@ -216,8 +209,7 @@ impl DescribeHumanLoopOutput {
     pub fn human_loop_status(&self) -> std::option::Option<&crate::model::HumanLoopStatus> {
         self.human_loop_status.as_ref()
     }
-    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
-    /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
     pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
@@ -277,14 +269,12 @@ pub mod describe_human_loop_output {
             self.creation_time = input;
             self
         }
-        /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
-        /// human loop is <code>Failed</code>.</p>
+        /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
         }
-        /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
-        /// human loop is <code>Failed</code>.</p>
+        /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -293,17 +283,13 @@ pub mod describe_human_loop_output {
             self
         }
         /// <p>A failure code that identifies the type of failure.</p>
-        /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
-        /// <code>InternalError</code>
-        /// </p>
+        /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
         pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_code = Some(input.into());
             self
         }
         /// <p>A failure code that identifies the type of failure.</p>
-        /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
-        /// <code>InternalError</code>
-        /// </p>
+        /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure_code = input;
             self
@@ -321,14 +307,12 @@ pub mod describe_human_loop_output {
             self.human_loop_status = input;
             self
         }
-        /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
-        /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+        /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
         pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.human_loop_name = Some(input.into());
             self
         }
-        /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
-        /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+        /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,

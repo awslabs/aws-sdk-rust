@@ -1050,61 +1050,22 @@ pub struct GetModelVersionOutput {
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
-    /// <p>The details of the external events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-    /// </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
-    /// <p>The details of the ingested events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_COMPLETE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>INACTIVE</code> </p> </li>
+    /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
@@ -1133,16 +1094,13 @@ impl GetModelVersionOutput {
     pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
         self.training_data_schema.as_ref()
     }
-    /// <p>The details of the external events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-    /// </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
     pub fn external_events_detail(
         &self,
     ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
-    /// <p>The details of the ingested events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn ingested_events_detail(
         &self,
     ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
@@ -1151,51 +1109,15 @@ impl GetModelVersionOutput {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_COMPLETE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>INACTIVE</code> </p> </li>
+    /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1299,16 +1221,12 @@ pub mod get_model_version_output {
             self.training_data_schema = input;
             self
         }
-        /// <p>The details of the external events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-        /// </p>
+        /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
         }
-        /// <p>The details of the external events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-        /// </p>
+        /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
         pub fn set_external_events_detail(
             mut self,
             input: std::option::Option<crate::model::ExternalEventsDetail>,
@@ -1316,14 +1234,12 @@ pub mod get_model_version_output {
             self.external_events_detail = input;
             self
         }
-        /// <p>The details of the ingested events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
         pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
             self.ingested_events_detail = Some(input);
             self
         }
-        /// <p>The details of the ingested events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
         pub fn set_ingested_events_detail(
             mut self,
             input: std::option::Option<crate::model::IngestedEventsDetail>,
@@ -1334,51 +1250,15 @@ pub mod get_model_version_output {
         /// <p>The model version status.</p>
         /// <p>Possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_COMPLETE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>INACTIVE</code> </p> </li>
+        /// <li> <p> <code>ERROR</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -1387,51 +1267,15 @@ pub mod get_model_version_output {
         /// <p>The model version status.</p>
         /// <p>Possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_COMPLETE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>INACTIVE</code> </p> </li>
+        /// <li> <p> <code>ERROR</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -2127,16 +1971,13 @@ pub struct GetDetectorVersionOutput {
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The status of the detector version.</p>
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
-    /// <p>The timestamp when the detector version was last updated.
-    /// </p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp when the detector version was created. </p>
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p>
-    /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>
-    /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2170,8 +2011,7 @@ impl GetDetectorVersionOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>The timestamp when the detector version was last updated.
-    /// </p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
@@ -2180,10 +2020,8 @@ impl GetDetectorVersionOutput {
         self.created_time.as_deref()
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p>
-    /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>
-    /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
@@ -2332,14 +2170,12 @@ pub mod get_detector_version_output {
             self.status = input;
             self
         }
-        /// <p>The timestamp when the detector version was last updated.
-        /// </p>
+        /// <p>The timestamp when the detector version was last updated. </p>
         pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_updated_time = Some(input.into());
             self
         }
-        /// <p>The timestamp when the detector version was last updated.
-        /// </p>
+        /// <p>The timestamp when the detector version was last updated. </p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2358,19 +2194,15 @@ pub mod get_detector_version_output {
             self
         }
         /// <p>The execution mode of the rule in the dectector</p>
-        /// <p>
-        /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-        /// <p>
-        /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         pub fn rule_execution_mode(mut self, input: crate::model::RuleExecutionMode) -> Self {
             self.rule_execution_mode = Some(input);
             self
         }
         /// <p>The execution mode of the rule in the dectector</p>
-        /// <p>
-        /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-        /// <p>
-        /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         pub fn set_rule_execution_mode(
             mut self,
             input: std::option::Option<crate::model::RuleExecutionMode>,

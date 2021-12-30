@@ -220,26 +220,13 @@ pub mod associate_resource_share_input {
         ///
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
@@ -249,26 +236,13 @@ pub mod associate_resource_share_input {
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -448,14 +422,12 @@ pub mod associate_resource_share_permission_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -463,16 +435,12 @@ pub mod associate_resource_share_permission_input {
             self.permission_arn = input;
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.replace = input;
             self
@@ -684,26 +652,13 @@ pub mod create_resource_share_input {
         ///
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
@@ -713,26 +668,13 @@ pub mod create_resource_share_input {
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -760,14 +702,12 @@ pub mod create_resource_share_input {
             self.tags = input;
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
@@ -786,20 +726,14 @@ pub mod create_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
         pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permission_arns.unwrap_or_default();
             v.push(input.into());
             self.permission_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
         pub fn set_permission_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1839,14 +1773,12 @@ pub mod get_resource_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2001,9 +1933,7 @@ pub mod get_resource_share_associations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
         pub fn association_type(
             mut self,
             input: crate::model::ResourceShareAssociationType,
@@ -2011,9 +1941,7 @@ pub mod get_resource_share_associations_input {
             self.association_type = Some(input);
             self
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -2040,26 +1968,22 @@ pub mod get_resource_share_associations_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -2090,14 +2014,12 @@ pub mod get_resource_share_associations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2305,14 +2227,12 @@ pub mod get_resource_share_invitations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2552,26 +2472,22 @@ pub mod get_resource_shares_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2753,14 +2669,12 @@ pub mod list_pending_invitation_resources_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2911,14 +2825,12 @@ pub mod list_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2936,14 +2848,12 @@ pub mod list_permissions_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3138,15 +3048,13 @@ pub mod list_principals_input {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3183,14 +3091,12 @@ pub mod list_principals_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3370,15 +3276,13 @@ pub mod list_resources_input {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3434,14 +3338,12 @@ pub mod list_resources_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3615,14 +3517,12 @@ pub mod list_resource_share_permissions_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3782,14 +3682,12 @@ pub mod list_resource_types_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4629,14 +4527,12 @@ pub mod update_resource_share_input {
             self.name = input;
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
@@ -4792,8 +4688,7 @@ pub struct UpdateResourceShareInput {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -4807,8 +4702,7 @@ impl UpdateResourceShareInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(&self) -> std::option::Option<bool> {
         self.allow_external_principals
     }
@@ -4942,8 +4836,7 @@ impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
 pub struct ListResourceTypesInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceTypesInput {
@@ -4951,8 +4844,7 @@ impl ListResourceTypesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4974,8 +4866,7 @@ pub struct ListResourceSharePermissionsInput {
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceSharePermissionsInput {
@@ -4987,8 +4878,7 @@ impl ListResourceSharePermissionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5012,8 +4902,7 @@ pub struct ListResourcesInput {
     /// <p>The principal.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5021,8 +4910,7 @@ pub struct ListResourcesInput {
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourcesInput {
@@ -5035,8 +4923,7 @@ impl ListResourcesInput {
         self.principal.as_deref()
     }
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5052,8 +4939,7 @@ impl ListResourcesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5083,15 +4969,13 @@ pub struct ListPrincipalsInput {
     /// <p>The principals.</p>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPrincipalsInput {
@@ -5108,8 +4992,7 @@ impl ListPrincipalsInput {
         self.principals.as_deref()
     }
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5121,8 +5004,7 @@ impl ListPrincipalsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5145,18 +5027,15 @@ impl std::fmt::Debug for ListPrincipalsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
-    /// <p>Specifies the resource type for which to list permissions. For example, to list only
-    /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+    /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPermissionsInput {
-    /// <p>Specifies the resource type for which to list permissions. For example, to list only
-    /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+    /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5164,8 +5043,7 @@ impl ListPermissionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5188,8 +5066,7 @@ pub struct ListPendingInvitationResourcesInput {
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPendingInvitationResourcesInput {
@@ -5201,8 +5078,7 @@ impl ListPendingInvitationResourcesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5236,11 +5112,9 @@ pub struct GetResourceSharesInput {
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-    /// resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
 }
 impl GetResourceSharesInput {
@@ -5268,13 +5142,11 @@ impl GetResourceSharesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-    /// resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
@@ -5304,8 +5176,7 @@ pub struct GetResourceShareInvitationsInput {
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourceShareInvitationsInput {
@@ -5321,8 +5192,7 @@ impl GetResourceShareInvitationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5345,30 +5215,23 @@ impl std::fmt::Debug for GetResourceShareInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsInput {
-    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-    /// that are associated with the specified resource share.</p>
+    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
     pub association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
     /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-    /// the association type is <code>PRINCIPAL</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The principal. You cannot specify this parameter if the association type is
-    /// <code>RESOURCE</code>.</p>
+    /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The association status.</p>
     pub association_status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourceShareAssociationsInput {
-    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-    /// that are associated with the specified resource share.</p>
+    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
     pub fn association_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceShareAssociationType> {
@@ -5378,13 +5241,11 @@ impl GetResourceShareAssociationsInput {
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-    /// the association type is <code>PRINCIPAL</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The principal. You cannot specify this parameter if the association type is
-    /// <code>RESOURCE</code>.</p>
+    /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -5398,8 +5259,7 @@ impl GetResourceShareAssociationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5428,8 +5288,7 @@ pub struct GetResourcePoliciesInput {
     pub principal: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourcePoliciesInput {
@@ -5445,8 +5304,7 @@ impl GetResourcePoliciesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5616,39 +5474,22 @@ pub struct CreateResourceShareInput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The principals to associate with the resource share. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID</p> </li>
+    /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>An ARN of an IAM role</p> </li>
+    /// <li> <p>An ARN of an IAM user</p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-    /// do not specify an ARN for the permission, RAM automatically attaches the default
-    /// version of the permission for each resource type. Only one permission can be associated
-    /// with each resource type in a resource share.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
     pub permission_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateResourceShareInput {
@@ -5662,26 +5503,13 @@ impl CreateResourceShareInput {
     }
     /// <p>The principals to associate with the resource share. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID</p> </li>
+    /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>An ARN of an IAM role</p> </li>
+    /// <li> <p>An ARN of an IAM user</p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
@@ -5690,8 +5518,7 @@ impl CreateResourceShareInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(&self) -> std::option::Option<bool> {
         self.allow_external_principals
     }
@@ -5699,10 +5526,7 @@ impl CreateResourceShareInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-    /// do not specify an ARN for the permission, RAM automatically attaches the default
-    /// version of the permission for each resource type. Only one permission can be associated
-    /// with each resource type in a resource share.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
     pub fn permission_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.permission_arns.as_deref()
     }
@@ -5727,12 +5551,9 @@ impl std::fmt::Debug for CreateResourceShareInput {
 pub struct AssociateResourceSharePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-    /// resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
     pub permission_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the permission should replace the permissions that are currently
-    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-    /// <code>false</code> to add the permission to the current permission.</p>
+    /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
     pub replace: std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -5744,14 +5565,11 @@ impl AssociateResourceSharePermissionInput {
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-    /// resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
-    /// <p>Indicates whether the permission should replace the permissions that are currently
-    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-    /// <code>false</code> to add the permission to the current permission.</p>
+    /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
     pub fn replace(&self) -> std::option::Option<bool> {
         self.replace
     }
@@ -5786,26 +5604,13 @@ pub struct AssociateResourceShareInput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The principals to associate with the resource share. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID</p> </li>
+    /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>An ARN of an IAM role</p> </li>
+    /// <li> <p>An ARN of an IAM user</p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -5822,26 +5627,13 @@ impl AssociateResourceShareInput {
     }
     /// <p>The principals to associate with the resource share. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID</p> </li>
+    /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>An ARN of an IAM role</p> </li>
+    /// <li> <p>An ARN of an IAM user</p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()

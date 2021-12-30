@@ -183,14 +183,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
         ///
-        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-        /// that have been requested to be retrieved in batch.</p>
+        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
         pub fn identifiers(mut self, input: crate::model::BatchGetRecordIdentifier) -> Self {
             self.inner = self.inner.identifiers(input);
             self
         }
-        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
-        /// that have been requested to be retrieved in batch.</p>
+        /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
         pub fn set_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
@@ -201,9 +199,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRecord`.
     ///
-    /// <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show
-    /// up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This
-    /// record will have a value of <code>True</code> in the <code>is_deleted</code> column.</p>
+    /// <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This record will have a value of <code>True</code> in the <code>is_deleted</code> column.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecord<
         C = aws_smithy_client::erase::DynConnector,
@@ -273,8 +269,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_group_name(input);
             self
         }
-        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-        /// string format. </p>
+        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
         pub fn record_identifier_value_as_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -282,8 +277,7 @@ pub mod fluent_builders {
             self.inner = self.inner.record_identifier_value_as_string(input.into());
             self
         }
-        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
-        /// string format. </p>
+        /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -291,14 +285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_record_identifier_value_as_string(input);
             self
         }
-        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-        /// used to query data at a certain point in time.</p>
+        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_time(input.into());
             self
         }
-        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
-        /// used to query data at a certain point in time.</p>
+        /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
         pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_time(input);
             self
@@ -306,9 +298,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecord`.
     ///
-    /// <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the
-    /// latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with
-    /// <code>RecordIdentifierValue</code> is found, then an empty result is returned. </p>
+    /// <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with <code>RecordIdentifierValue</code> is found, then an empty result is returned. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecord<
         C = aws_smithy_client::erase::DynConnector,
@@ -378,8 +368,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_group_name(input);
             self
         }
-        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-        /// the record in the <code>FeatureGroup</code>. </p>
+        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
         pub fn record_identifier_value_as_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -387,8 +376,7 @@ pub mod fluent_builders {
             self.inner = self.inner.record_identifier_value_as_string(input.into());
             self
         }
-        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
-        /// the record in the <code>FeatureGroup</code>. </p>
+        /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -400,14 +388,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
         ///
-        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-        /// the Features are returned.</p>
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
         pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_names(input.into());
             self
         }
-        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
-        /// the Features are returned.</p>
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
         pub fn set_feature_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -418,11 +404,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRecord`.
     ///
-    /// <p>Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code>
-    /// API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the
-    /// record is the latest record for the <code>recordIdentifier</code>, the record is written to
-    /// both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a
-    /// historic record, it is written only to the <code>OfflineStore</code>.</p>
+    /// <p>Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is the latest record for the <code>recordIdentifier</code>, the record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a historic record, it is written only to the <code>OfflineStore</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
@@ -496,35 +478,21 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-        /// to update few of the feature values, do the following:</p>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Update the record returned from <code>GetRecord</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>PutRecord</code> to update feature values.</p>
-        /// </li>
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
         /// </ul>
         pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             self.inner = self.inner.record(input);
             self
         }
-        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
-        /// to update few of the feature values, do the following:</p>
+        /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Update the record returned from <code>GetRecord</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>PutRecord</code> to update feature values.</p>
-        /// </li>
+        /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+        /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+        /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
         /// </ul>
         pub fn set_record(
             mut self,

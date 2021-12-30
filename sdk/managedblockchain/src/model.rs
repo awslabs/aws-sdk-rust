@@ -423,42 +423,28 @@ impl MemberFabricLogPublishingConfiguration {
     }
 }
 
-/// <p>
-/// Properties of an individual vote that a member cast for a proposal.
-/// </p>
+/// <p> Properties of an individual vote that a member cast for a proposal. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoteSummary {
-    /// <p>
-    /// The vote value, either <code>YES</code> or <code>NO</code>.
-    /// </p>
+    /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     pub vote: std::option::Option<crate::model::VoteValue>,
-    /// <p>
-    /// The name of the member that cast the vote.
-    /// </p>
+    /// <p> The name of the member that cast the vote. </p>
     pub member_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the member that cast the vote.
-    /// </p>
+    /// <p> The unique identifier of the member that cast the vote. </p>
     pub member_id: std::option::Option<std::string::String>,
 }
 impl VoteSummary {
-    /// <p>
-    /// The vote value, either <code>YES</code> or <code>NO</code>.
-    /// </p>
+    /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     pub fn vote(&self) -> std::option::Option<&crate::model::VoteValue> {
         self.vote.as_ref()
     }
-    /// <p>
-    /// The name of the member that cast the vote.
-    /// </p>
+    /// <p> The name of the member that cast the vote. </p>
     pub fn member_name(&self) -> std::option::Option<&str> {
         self.member_name.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the member that cast the vote.
-    /// </p>
+    /// <p> The unique identifier of the member that cast the vote. </p>
     pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
@@ -483,44 +469,32 @@ pub mod vote_summary {
         pub(crate) member_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The vote value, either <code>YES</code> or <code>NO</code>.
-        /// </p>
+        /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
         pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
             self.vote = Some(input);
             self
         }
-        /// <p>
-        /// The vote value, either <code>YES</code> or <code>NO</code>.
-        /// </p>
+        /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
             self.vote = input;
             self
         }
-        /// <p>
-        /// The name of the member that cast the vote.
-        /// </p>
+        /// <p> The name of the member that cast the vote. </p>
         pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the member that cast the vote.
-        /// </p>
+        /// <p> The name of the member that cast the vote. </p>
         pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.member_name = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the member that cast the vote.
-        /// </p>
+        /// <p> The unique identifier of the member that cast the vote. </p>
         pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the member that cast the vote.
-        /// </p>
+        /// <p> The unique identifier of the member that cast the vote. </p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.member_id = input;
             self
@@ -547,117 +521,63 @@ impl VoteSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposalSummary {
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub proposal_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The description of the proposal.
-    /// </p>
+    /// <p> The description of the proposal. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the member that created the proposal.
-    /// </p>
+    /// <p> The unique identifier of the member that created the proposal. </p>
     pub proposed_by_member_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the member that created the proposal.
-    /// </p>
+    /// <p> The name of the member that created the proposal. </p>
     pub proposed_by_member_name: std::option::Option<std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p>
-    /// </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ProposalStatus>,
-    /// <p>
-    /// The date and time that the proposal was created.
-    /// </p>
+    /// <p> The date and time that the proposal was created. </p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-    /// </p>
+    /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl ProposalSummary {
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(&self) -> std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>
-    /// The description of the proposal.
-    /// </p>
+    /// <p> The description of the proposal. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the member that created the proposal.
-    /// </p>
+    /// <p> The unique identifier of the member that created the proposal. </p>
     pub fn proposed_by_member_id(&self) -> std::option::Option<&str> {
         self.proposed_by_member_id.as_deref()
     }
-    /// <p>
-    /// The name of the member that created the proposal.
-    /// </p>
+    /// <p> The name of the member that created the proposal. </p>
     pub fn proposed_by_member_name(&self) -> std::option::Option<&str> {
         self.proposed_by_member_name.as_deref()
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p>
-    /// </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ProposalStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// The date and time that the proposal was created.
-    /// </p>
+    /// <p> The date and time that the proposal was created. </p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>
-    /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-    /// </p>
+    /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
@@ -696,44 +616,32 @@ pub mod proposal_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposal_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
         }
-        /// <p>
-        /// The description of the proposal.
-        /// </p>
+        /// <p> The description of the proposal. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the proposal.
-        /// </p>
+        /// <p> The description of the proposal. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the member that created the proposal.
-        /// </p>
+        /// <p> The unique identifier of the member that created the proposal. </p>
         pub fn proposed_by_member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposed_by_member_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the member that created the proposal.
-        /// </p>
+        /// <p> The unique identifier of the member that created the proposal. </p>
         pub fn set_proposed_by_member_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -741,16 +649,12 @@ pub mod proposal_summary {
             self.proposed_by_member_id = input;
             self
         }
-        /// <p>
-        /// The name of the member that created the proposal.
-        /// </p>
+        /// <p> The name of the member that created the proposal. </p>
         pub fn proposed_by_member_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposed_by_member_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the member that created the proposal.
-        /// </p>
+        /// <p> The name of the member that created the proposal. </p>
         pub fn set_proposed_by_member_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -760,26 +664,11 @@ pub mod proposal_summary {
         }
         /// <p>The status of the proposal. Values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p>
-        /// </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ProposalStatus) -> Self {
             self.status = Some(input);
@@ -787,26 +676,11 @@ pub mod proposal_summary {
         }
         /// <p>The status of the proposal. Values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p>
-        /// </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -815,16 +689,12 @@ pub mod proposal_summary {
             self.status = input;
             self
         }
-        /// <p>
-        /// The date and time that the proposal was created.
-        /// </p>
+        /// <p> The date and time that the proposal was created. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>
-        /// The date and time that the proposal was created.
-        /// </p>
+        /// <p> The date and time that the proposal was created. </p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -832,16 +702,12 @@ pub mod proposal_summary {
             self.creation_date = input;
             self
         }
-        /// <p>
-        /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-        /// </p>
+        /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.  After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-        /// </p>
+        /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1545,37 +1411,13 @@ pub struct MemberSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
@@ -1600,37 +1442,13 @@ impl MemberSummary {
     }
     /// <p>The status of the member.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
         self.status.as_ref()
@@ -1708,37 +1526,13 @@ pub mod member_summary {
         }
         /// <p>The status of the member.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
             self.status = Some(input);
@@ -1746,37 +1540,13 @@ pub mod member_summary {
         }
         /// <p>The status of the member.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1935,26 +1705,11 @@ pub struct Invitation {
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The invitee rejected the invitation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p> </li>
+    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p> </li>
+    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::InvitationStatus>,
     /// <p>A summary of network configuration properties.</p>
@@ -1977,26 +1732,11 @@ impl Invitation {
     }
     /// <p>The status of the invitation:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The invitee rejected the invitation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p> </li>
+    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p> </li>
+    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::InvitationStatus> {
         self.status.as_ref()
@@ -2077,26 +1817,11 @@ pub mod invitation {
         }
         /// <p>The status of the invitation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The invitee rejected the invitation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p> </li>
+        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p> </li>
+        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::InvitationStatus) -> Self {
             self.status = Some(input);
@@ -2104,26 +1829,11 @@ pub mod invitation {
         }
         /// <p>The status of the invitation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The invitee rejected the invitation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - The invitee has not created a member to join the network, and the invitation has not yet expired.</p> </li>
+        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has not yet completed.</p> </li>
+        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -2261,47 +1971,22 @@ pub struct Proposal {
     pub proposed_by_member_name: std::option::Option<std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p>
-    /// </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ProposalStatus>,
-    /// <p>
-    /// The date and time that the proposal was created.
-    /// </p>
+    /// <p> The date and time that the proposal was created. </p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-    /// </p>
+    /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The current total of <code>YES</code> votes cast on the proposal by members.
-    /// </p>
+    /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
     pub yes_vote_count: std::option::Option<i32>,
-    /// <p>
-    /// The current total of <code>NO</code> votes cast on the proposal by members.
-    /// </p>
+    /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
     pub no_vote_count: std::option::Option<i32>,
-    /// <p>
-    /// The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.
-    /// </p>
+    /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
     pub outstanding_vote_count: std::option::Option<i32>,
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
@@ -2337,57 +2022,32 @@ impl Proposal {
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p>
-    /// </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ProposalStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// The date and time that the proposal was created.
-    /// </p>
+    /// <p> The date and time that the proposal was created. </p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>
-    /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-    /// </p>
+    /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// The current total of <code>YES</code> votes cast on the proposal by members.
-    /// </p>
+    /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
     pub fn yes_vote_count(&self) -> std::option::Option<i32> {
         self.yes_vote_count
     }
-    /// <p>
-    /// The current total of <code>NO</code> votes cast on the proposal by members.
-    /// </p>
+    /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
     pub fn no_vote_count(&self) -> std::option::Option<i32> {
         self.no_vote_count
     }
-    /// <p>
-    /// The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.
-    /// </p>
+    /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
     pub fn outstanding_vote_count(&self) -> std::option::Option<i32> {
         self.outstanding_vote_count
     }
@@ -2519,26 +2179,11 @@ pub mod proposal {
         }
         /// <p>The status of the proposal. Values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p>
-        /// </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ProposalStatus) -> Self {
             self.status = Some(input);
@@ -2546,26 +2191,11 @@ pub mod proposal {
         }
         /// <p>The status of the proposal. Values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p>
-        /// </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>EXPIRED</code> - Members did not cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> are not carried out.</p> </li>
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -2574,16 +2204,12 @@ pub mod proposal {
             self.status = input;
             self
         }
-        /// <p>
-        /// The date and time that the proposal was created.
-        /// </p>
+        /// <p> The date and time that the proposal was created. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>
-        /// The date and time that the proposal was created.
-        /// </p>
+        /// <p> The date and time that the proposal was created. </p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2591,16 +2217,12 @@ pub mod proposal {
             self.creation_date = input;
             self
         }
-        /// <p>
-        /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-        /// </p>
+        /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out.
-        /// </p>
+        /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members have not cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are not carried out. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2608,44 +2230,32 @@ pub mod proposal {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// The current total of <code>YES</code> votes cast on the proposal by members.
-        /// </p>
+        /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
         pub fn yes_vote_count(mut self, input: i32) -> Self {
             self.yes_vote_count = Some(input);
             self
         }
-        /// <p>
-        /// The current total of <code>YES</code> votes cast on the proposal by members.
-        /// </p>
+        /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
         pub fn set_yes_vote_count(mut self, input: std::option::Option<i32>) -> Self {
             self.yes_vote_count = input;
             self
         }
-        /// <p>
-        /// The current total of <code>NO</code> votes cast on the proposal by members.
-        /// </p>
+        /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
         pub fn no_vote_count(mut self, input: i32) -> Self {
             self.no_vote_count = Some(input);
             self
         }
-        /// <p>
-        /// The current total of <code>NO</code> votes cast on the proposal by members.
-        /// </p>
+        /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
         pub fn set_no_vote_count(mut self, input: std::option::Option<i32>) -> Self {
             self.no_vote_count = input;
             self
         }
-        /// <p>
-        /// The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.
-        /// </p>
+        /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
         pub fn outstanding_vote_count(mut self, input: i32) -> Self {
             self.outstanding_vote_count = Some(input);
             self
         }
-        /// <p>
-        /// The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.
-        /// </p>
+        /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
         pub fn set_outstanding_vote_count(mut self, input: std::option::Option<i32>) -> Self {
             self.outstanding_vote_count = input;
             self
@@ -2715,32 +2325,22 @@ impl Proposal {
     }
 }
 
-/// <p>
-/// The actions to carry out if a proposal is <code>APPROVED</code>.
-/// </p>
+/// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposalActions {
-    /// <p>
-    /// The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network.
-    /// </p>
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
     pub invitations: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
-    /// <p>
-    /// The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.
-    /// </p>
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
     pub removals: std::option::Option<std::vec::Vec<crate::model::RemoveAction>>,
 }
 impl ProposalActions {
-    /// <p>
-    /// The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network.
-    /// </p>
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
     pub fn invitations(&self) -> std::option::Option<&[crate::model::InviteAction]> {
         self.invitations.as_deref()
     }
-    /// <p>
-    /// The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.
-    /// </p>
+    /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
     pub fn removals(&self) -> std::option::Option<&[crate::model::RemoveAction]> {
         self.removals.as_deref()
     }
@@ -2767,18 +2367,14 @@ pub mod proposal_actions {
         ///
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
-        /// <p>
-        /// The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network.
-        /// </p>
+        /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
         pub fn invitations(mut self, input: crate::model::InviteAction) -> Self {
             let mut v = self.invitations.unwrap_or_default();
             v.push(input);
             self.invitations = Some(v);
             self
         }
-        /// <p>
-        /// The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network.
-        /// </p>
+        /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network. </p>
         pub fn set_invitations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
@@ -2790,18 +2386,14 @@ pub mod proposal_actions {
         ///
         /// To override the contents of this collection use [`set_removals`](Self::set_removals).
         ///
-        /// <p>
-        /// The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.
-        /// </p>
+        /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
         pub fn removals(mut self, input: crate::model::RemoveAction) -> Self {
             let mut v = self.removals.unwrap_or_default();
             v.push(input);
             self.removals = Some(v);
             self
         }
-        /// <p>
-        /// The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.
-        /// </p>
+        /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
         pub fn set_removals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemoveAction>>,
@@ -2960,43 +2552,15 @@ pub struct Node {
     pub state_db: std::option::Option<crate::model::StateDbType>,
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a node.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The node has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The node is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The node is in the process of being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The node can no longer participate on the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a node.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
@@ -3052,43 +2616,15 @@ impl Node {
     }
     /// <p>The status of the node.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a node.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The node has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The node is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The node is in the process of being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The node can no longer participate on the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a node.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::NodeStatus> {
         self.status.as_ref()
@@ -3268,43 +2804,15 @@ pub mod node {
         }
         /// <p>The status of the node.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a node.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The node has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The node is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The node is in the process of being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The node can no longer participate on the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a node.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::NodeStatus) -> Self {
             self.status = Some(input);
@@ -3312,43 +2820,15 @@ pub mod node {
         }
         /// <p>The status of the node.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a node.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The node has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The node is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The node is in the process of being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The node can no longer participate on the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a node.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
+        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::NodeStatus>) -> Self {
             self.status = input;
@@ -4050,9 +3530,7 @@ impl Network {
     }
 }
 
-/// <p>
-/// The voting rules for the network to decide if a proposal is accepted
-/// </p>
+/// <p> The voting rules for the network to decide if a proposal is accepted </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4355,36 +3833,18 @@ impl NetworkFrameworkAttributes {
 pub struct NetworkEthereumAttributes {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>mainnet = <code>1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>rinkeby = <code>4</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>ropsten = <code>3</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>mainnet = <code>1</code> </p> </li>
+    /// <li> <p>rinkeby = <code>4</code> </p> </li>
+    /// <li> <p>ropsten = <code>3</code> </p> </li>
     /// </ul>
     pub chain_id: std::option::Option<std::string::String>,
 }
 impl NetworkEthereumAttributes {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>mainnet = <code>1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>rinkeby = <code>4</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>ropsten = <code>3</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>mainnet = <code>1</code> </p> </li>
+    /// <li> <p>rinkeby = <code>4</code> </p> </li>
+    /// <li> <p>ropsten = <code>3</code> </p> </li>
     /// </ul>
     pub fn chain_id(&self) -> std::option::Option<&str> {
         self.chain_id.as_deref()
@@ -4408,18 +3868,9 @@ pub mod network_ethereum_attributes {
     impl Builder {
         /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>mainnet = <code>1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>rinkeby = <code>4</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>ropsten = <code>3</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>mainnet = <code>1</code> </p> </li>
+        /// <li> <p>rinkeby = <code>4</code> </p> </li>
+        /// <li> <p>ropsten = <code>3</code> </p> </li>
         /// </ul>
         pub fn chain_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.chain_id = Some(input.into());
@@ -4427,18 +3878,9 @@ pub mod network_ethereum_attributes {
         }
         /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>mainnet = <code>1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>rinkeby = <code>4</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>ropsten = <code>3</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>mainnet = <code>1</code> </p> </li>
+        /// <li> <p>rinkeby = <code>4</code> </p> </li>
+        /// <li> <p>ropsten = <code>3</code> </p> </li>
         /// </ul>
         pub fn set_chain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.chain_id = input;
@@ -4610,37 +4052,13 @@ pub struct Member {
         std::option::Option<crate::model::MemberLogPublishingConfiguration>,
     /// <p>The status of a member.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>The date and time that the member was created.</p>
@@ -4684,37 +4102,13 @@ impl Member {
     }
     /// <p>The status of a member.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-    /// <code>PROPOSAL</code> to remove the member.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-    /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
         self.status.as_ref()
@@ -4856,37 +4250,13 @@ pub mod member {
         }
         /// <p>The status of a member.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
             self.status = Some(input);
@@ -4894,37 +4264,13 @@ pub mod member {
         }
         /// <p>The status of a member.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - The AWS account is in the process of creating a member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - The member has been created and can participate in the network.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - The member is in the process of being updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p>
-        /// <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - The AWS account is in the process of creating a member.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation failed.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -5157,8 +4503,7 @@ pub struct NodeConfiguration {
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.      
-    /// </p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub log_publishing_configuration:
         std::option::Option<crate::model::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
@@ -5174,8 +4519,7 @@ impl NodeConfiguration {
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.      
-    /// </p>
+    /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     pub fn log_publishing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NodeLogPublishingConfiguration> {
@@ -5239,8 +4583,7 @@ pub mod node_configuration {
             self.availability_zone = input;
             self
         }
-        /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.      
-        /// </p>
+        /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
         pub fn log_publishing_configuration(
             mut self,
             input: crate::model::NodeLogPublishingConfiguration,
@@ -5248,8 +4591,7 @@ pub mod node_configuration {
             self.log_publishing_configuration = Some(input);
             self
         }
-        /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.      
-        /// </p>
+        /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
         pub fn set_log_publishing_configuration(
             mut self,
             input: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
@@ -5311,17 +4653,8 @@ pub struct MemberConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p>
-    /// <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-    /// <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
@@ -5357,17 +4690,8 @@ impl MemberConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p>
-    /// <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-    /// <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
@@ -5488,17 +4812,8 @@ pub mod member_configuration {
         /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p>
-        /// <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        /// <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
         /// </ul>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
@@ -5507,17 +4822,8 @@ pub mod member_configuration {
         /// <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates.</p>
         /// <p>Use one of the following options to specify this parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p>
-        /// <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        /// <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.</p> </li>
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
         /// </ul>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
@@ -5679,21 +4985,15 @@ impl MemberFabricConfiguration {
     }
 }
 
-/// <p>
-/// Configuration properties relevant to the network for the blockchain framework that the network uses.
-/// </p>
+/// <p> Configuration properties relevant to the network for the blockchain framework that the network uses. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkFrameworkConfiguration {
-    /// <p>
-    /// Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric.
-    /// </p>
+    /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     pub fabric: std::option::Option<crate::model::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfiguration {
-    /// <p>
-    /// Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric.
-    /// </p>
+    /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     pub fn fabric(&self) -> std::option::Option<&crate::model::NetworkFabricConfiguration> {
         self.fabric.as_ref()
     }
@@ -5714,16 +5014,12 @@ pub mod network_framework_configuration {
         pub(crate) fabric: std::option::Option<crate::model::NetworkFabricConfiguration>,
     }
     impl Builder {
-        /// <p>
-        /// Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric.
-        /// </p>
+        /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
         pub fn fabric(mut self, input: crate::model::NetworkFabricConfiguration) -> Self {
             self.fabric = Some(input);
             self
         }
-        /// <p>
-        /// Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric.
-        /// </p>
+        /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
         pub fn set_fabric(
             mut self,
             input: std::option::Option<crate::model::NetworkFabricConfiguration>,

@@ -1185,8 +1185,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request contains invalid parameters for the ARN or tags. This exception also
-    /// occurs when you call a tagging API on a cancelled signing profile.</p>
+    /// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2019,8 +2018,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request contains invalid parameters for the ARN or tags. This exception also
-    /// occurs when you call a tagging API on a cancelled signing profile.</p>
+    /// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2141,8 +2139,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request contains invalid parameters for the ARN or tags. This exception also
-    /// occurs when you call a tagging API on a cancelled signing profile.</p>
+    /// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2506,8 +2503,7 @@ impl InternalServiceErrorException {
     }
 }
 
-/// <p>The request contains invalid parameters for the ARN or tags. This exception also
-/// occurs when you call a tagging API on a cancelled signing profile.</p>
+/// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {

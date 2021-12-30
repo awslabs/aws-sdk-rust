@@ -18,8 +18,7 @@ pub mod create_certificate_authority_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and
-        /// X.500 certificate subject information.</p>
+        /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
         pub fn certificate_authority_configuration(
             mut self,
             input: crate::model::CertificateAuthorityConfiguration,
@@ -27,8 +26,7 @@ pub mod create_certificate_authority_input {
             self.certificate_authority_configuration = Some(input);
             self
         }
-        /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and
-        /// X.500 certificate subject information.</p>
+        /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
         pub fn set_certificate_authority_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateAuthorityConfiguration>,
@@ -36,10 +34,7 @@ pub mod create_certificate_authority_input {
             self.certificate_authority_configuration = input;
             self
         }
-        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. The
-        /// default is for both certificate validation mechanisms to be disabled. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
             input: crate::model::RevocationConfiguration,
@@ -47,10 +42,7 @@ pub mod create_certificate_authority_input {
             self.revocation_configuration = Some(input);
             self
         }
-        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. The
-        /// default is for both certificate validation mechanisms to be disabled. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn set_revocation_configuration(
             mut self,
             input: std::option::Option<crate::model::RevocationConfiguration>,
@@ -74,22 +66,12 @@ pub mod create_certificate_authority_input {
             self.certificate_authority_type = input;
             self
         }
-        /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for
-        /// <b>CreateCertificateAuthority</b> time out after five
-        /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-        /// token within five minutes, ACM Private CA recognizes that you are requesting only certificate
-        /// authority and will issue only one. If you change the idempotency token for each call,
-        /// PCA recognizes that you are requesting multiple certificate authorities.</p>
+        /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, ACM Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificate authorities.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for
-        /// <b>CreateCertificateAuthority</b> time out after five
-        /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-        /// token within five minutes, ACM Private CA recognizes that you are requesting only certificate
-        /// authority and will issue only one. If you change the idempotency token for each call,
-        /// PCA recognizes that you are requesting multiple certificate authorities.</p>
+        /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, ACM Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificate authorities.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -97,15 +79,9 @@ pub mod create_certificate_authority_input {
             self.idempotency_token = input;
             self
         }
-        /// <p>Specifies a
-        /// cryptographic key management compliance standard used for handling CA keys.</p>
+        /// <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-        /// ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-        /// <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-        /// <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
-        /// <code>InvalidArgsException</code> with the message, "A certificate authority cannot
-        /// be created in this region with the specified security standard."</p>
+        /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn key_storage_security_standard(
             mut self,
             input: crate::model::KeyStorageSecurityStandard,
@@ -113,15 +89,9 @@ pub mod create_certificate_authority_input {
             self.key_storage_security_standard = Some(input);
             self
         }
-        /// <p>Specifies a
-        /// cryptographic key management compliance standard used for handling CA keys.</p>
+        /// <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-        /// ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-        /// <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-        /// <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
-        /// <code>InvalidArgsException</code> with the message, "A certificate authority cannot
-        /// be created in this region with the specified security standard."</p>
+        /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn set_key_storage_security_standard(
             mut self,
             input: std::option::Option<crate::model::KeyStorageSecurityStandard>,
@@ -133,18 +103,14 @@ pub mod create_certificate_authority_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
-        /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
-        /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+        /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -308,17 +274,13 @@ pub mod create_certificate_authority_audit_report_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -507,22 +469,14 @@ pub mod create_permission_input {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the
-        /// ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the
-        /// ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -530,14 +484,12 @@ pub mod create_permission_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The AWS service or identity that receives the permission. At this time, the only
-        /// valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The AWS service or identity that receives the permission. At this time, the only
-        /// valid principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -559,18 +511,14 @@ pub mod create_permission_input {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The actions that the specified AWS service principal can use. These include
-        /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
-        /// <code>ListPermissions</code>.</p>
+        /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
         pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>The actions that the specified AWS service principal can use. These include
-        /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
-        /// <code>ListPermissions</code>.</p>
+        /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
@@ -727,19 +675,13 @@ pub mod delete_certificate_authority_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -747,14 +689,12 @@ pub mod delete_certificate_authority_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The number of days to make a CA restorable after it has been deleted. This can be
-        /// anywhere from 7 to 30 days, with 30 being the default.</p>
+        /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
         pub fn permanent_deletion_time_in_days(mut self, input: i32) -> Self {
             self.permanent_deletion_time_in_days = Some(input);
             self
         }
-        /// <p>The number of days to make a CA restorable after it has been deleted. This can be
-        /// anywhere from 7 to 30 days, with 30 being the default.</p>
+        /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
         pub fn set_permanent_deletion_time_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -912,22 +852,14 @@ pub mod delete_permission_input {
         pub(crate) source_account: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-        /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-        /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -935,16 +867,12 @@ pub mod delete_permission_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
-        /// the only valid service principal is <code>acm.amazonaws.com</code>
-        /// </p>
+        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
-        /// the only valid service principal is <code>acm.amazonaws.com</code>
-        /// </p>
+        /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1108,18 +1036,12 @@ pub mod delete_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
-        /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
-        /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1268,19 +1190,13 @@ pub mod describe_certificate_authority_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1437,19 +1353,13 @@ pub mod describe_certificate_authority_audit_report_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1620,19 +1530,13 @@ pub mod get_certificate_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1640,22 +1544,14 @@ pub mod get_certificate_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and
-        /// must be in the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-        /// </code>
-        /// </p>
+        /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and
-        /// must be in the following form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-        /// </code>
-        /// </p>
+        /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1809,19 +1705,13 @@ pub mod get_certificate_authority_certificate_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1977,19 +1867,13 @@ pub mod get_certificate_authority_csr_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2143,18 +2027,12 @@ pub mod get_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
-        /// retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
-        ///
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
-        /// retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
-        ///
-        /// </p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2301,19 +2179,13 @@ pub mod import_certificate_authority_certificate_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2321,14 +2193,12 @@ pub mod import_certificate_authority_certificate_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
-        /// the case of a root CA, or it may be signed by another CA that you control.</p>
+        /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
         pub fn certificate(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate = Some(input);
             self
         }
-        /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
-        /// the case of a root CA, or it may be signed by another CA that you control.</p>
+        /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2336,22 +2206,14 @@ pub mod import_certificate_authority_certificate_input {
             self.certificate = input;
             self
         }
-        /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate
-        /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root
-        /// certificate is the last in the chain, and each certificate in the chain signs the one
-        /// preceding. </p>
-        /// <p>This parameter must be supplied when you import a subordinate CA. When you import a
-        /// root CA, there is no chain.</p>
+        /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>
+        /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
         pub fn certificate_chain(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_chain = Some(input);
             self
         }
-        /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate
-        /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root
-        /// certificate is the last in the chain, and each certificate in the chain signs the one
-        /// preceding. </p>
-        /// <p>This parameter must be supplied when you import a subordinate CA. When you import a
-        /// root CA, there is no chain.</p>
+        /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>
+        /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2515,24 +2377,14 @@ pub mod issue_certificate_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies X.509 certificate information to be included in the issued certificate. An
-        /// <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must
-        /// be selected, or else this parameter is ignored. For more information about using these
-        /// templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
-        /// <p>If conflicting or duplicate certificate information is supplied during certificate
-        /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
-        /// operation rules</a> to determine what information is used.</p>
+        /// <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
+        /// <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
         pub fn api_passthrough(mut self, input: crate::model::ApiPassthrough) -> Self {
             self.api_passthrough = Some(input);
             self
         }
-        /// <p>Specifies X.509 certificate information to be included in the issued certificate. An
-        /// <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must
-        /// be selected, or else this parameter is ignored. For more information about using these
-        /// templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
-        /// <p>If conflicting or duplicate certificate information is supplied during certificate
-        /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
-        /// operation rules</a> to determine what information is used.</p>
+        /// <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
+        /// <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
         pub fn set_api_passthrough(
             mut self,
             input: std::option::Option<crate::model::ApiPassthrough>,
@@ -2541,19 +2393,13 @@ pub mod issue_certificate_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2561,60 +2407,32 @@ pub mod issue_certificate_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an
-        /// example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA
-        /// private key. </p>
-        /// <p>
-        /// <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
-        /// -out csr/test_cert_.csr</code>
-        /// </p>
-        /// <p>If you have a configuration file, you can then use the following OpenSSL command. The
-        /// <code>usr_cert</code> block in the configuration file contains your X509 version 3
-        /// extensions. </p>
-        /// <p>
-        /// <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-        /// -days -365 -keyout private/test_cert_priv_key.pem -out
-        /// csr/test_cert_.csr</code>
-        /// </p>
-        /// <p>Note: A CSR must provide either a <i>subject name</i> or a
-        /// <i>subject alternative name</i> or the request will be rejected.
-        /// </p>
+        /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+        /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
+        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
         pub fn csr(mut self, input: aws_smithy_types::Blob) -> Self {
             self.csr = Some(input);
             self
         }
-        /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an
-        /// example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA
-        /// private key. </p>
-        /// <p>
-        /// <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
-        /// -out csr/test_cert_.csr</code>
-        /// </p>
-        /// <p>If you have a configuration file, you can then use the following OpenSSL command. The
-        /// <code>usr_cert</code> block in the configuration file contains your X509 version 3
-        /// extensions. </p>
-        /// <p>
-        /// <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-        /// -days -365 -keyout private/test_cert_priv_key.pem -out
-        /// csr/test_cert_.csr</code>
-        /// </p>
-        /// <p>Note: A CSR must provide either a <i>subject name</i> or a
-        /// <i>subject alternative name</i> or the request will be rejected.
-        /// </p>
+        /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+        /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
+        /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+        /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
         pub fn set_csr(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.csr = input;
             self
         }
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
         pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithm) -> Self {
             self.signing_algorithm = Some(input);
             self
         }
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlgorithm>,
@@ -2622,92 +2440,48 @@ pub mod issue_certificate_input {
             self.signing_algorithm = input;
             self
         }
-        /// <p>Specifies a custom configuration template to use when issuing a certificate. If this
-        /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
-        /// template. For CA certificates, you should choose the shortest path length that meets
-        /// your needs. The path length is indicated by the PathLen<i>N</i> portion of
-        /// the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
-        /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the
-        /// limit set by its parents in the CA hierarchy.</p>
-        /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
-        /// Templates</a>.</p>
+        /// <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+        /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>
+        /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_arn = Some(input.into());
             self
         }
-        /// <p>Specifies a custom configuration template to use when issuing a certificate. If this
-        /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
-        /// template. For CA certificates, you should choose the shortest path length that meets
-        /// your needs. The path length is indicated by the PathLen<i>N</i> portion of
-        /// the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
-        /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the
-        /// limit set by its parents in the CA hierarchy.</p>
-        /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
-        /// Templates</a>.</p>
+        /// <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+        /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>
+        /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
         }
-        /// <p>Information describing the end of the validity period of the certificate. This
-        /// parameter sets the “Not After” date for the certificate.</p>
-        /// <p>Certificate validity is the period of time during which a certificate is valid.
-        /// Validity can be expressed as an explicit date and time when the certificate expires, or
-        /// as a span of time after issuance, stated in days, months, or years. For more
-        /// information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
-        /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For
-        /// example, if <code>Validity</code> is set to 20 days in the future, the certificate will
-        /// expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code>
-        /// value.</p>
-        /// <p>The end of the validity period configured on a certificate must not exceed the limit
-        /// set on its parents in the CA hierarchy.</p>
+        /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
+        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+        /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
+        /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
         pub fn validity(mut self, input: crate::model::Validity) -> Self {
             self.validity = Some(input);
             self
         }
-        /// <p>Information describing the end of the validity period of the certificate. This
-        /// parameter sets the “Not After” date for the certificate.</p>
-        /// <p>Certificate validity is the period of time during which a certificate is valid.
-        /// Validity can be expressed as an explicit date and time when the certificate expires, or
-        /// as a span of time after issuance, stated in days, months, or years. For more
-        /// information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
-        /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For
-        /// example, if <code>Validity</code> is set to 20 days in the future, the certificate will
-        /// expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code>
-        /// value.</p>
-        /// <p>The end of the validity period configured on a certificate must not exceed the limit
-        /// set on its parents in the CA hierarchy.</p>
+        /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
+        /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+        /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
+        /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
         pub fn set_validity(mut self, input: std::option::Option<crate::model::Validity>) -> Self {
             self.validity = input;
             self
         }
-        /// <p>Information describing the start of the validity period of the certificate. This
-        /// parameter sets the “Not Before" date for the certificate.</p>
-        /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the
-        /// issuance time minus 60 minutes. This compensates for clock inconsistencies across
-        /// computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize
-        /// the “Not Before” value. </p>
-        /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code>
-        /// parameter is optional.</p>
-        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-        /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-        /// 5280.</p>
+        /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
+        /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
+        /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
+        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
         pub fn validity_not_before(mut self, input: crate::model::Validity) -> Self {
             self.validity_not_before = Some(input);
             self
         }
-        /// <p>Information describing the start of the validity period of the certificate. This
-        /// parameter sets the “Not Before" date for the certificate.</p>
-        /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the
-        /// issuance time minus 60 minutes. This compensates for clock inconsistencies across
-        /// computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize
-        /// the “Not Before” value. </p>
-        /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code>
-        /// parameter is optional.</p>
-        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-        /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-        /// 5280.</p>
+        /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
+        /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
+        /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
+        /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
         pub fn set_validity_not_before(
             mut self,
             input: std::option::Option<crate::model::Validity>,
@@ -2715,20 +2489,12 @@ pub mod issue_certificate_input {
             self.validity_not_before = input;
             self
         }
-        /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you
-        /// call <b>IssueCertificate</b> multiple times with the same
-        /// idempotency token within one minute, ACM Private CA recognizes that you are requesting only one
-        /// certificate and will issue only one. If you change the idempotency token for each call,
-        /// PCA recognizes that you are requesting multiple certificates.</p>
+        /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you
-        /// call <b>IssueCertificate</b> multiple times with the same
-        /// idempotency token within one minute, ACM Private CA recognizes that you are requesting only one
-        /// certificate and will issue only one. If you change the idempotency token for each call,
-        /// PCA recognizes that you are requesting multiple certificates.</p>
+        /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2889,46 +2655,32 @@ pub mod list_certificate_authorities_input {
         pub(crate) resource_owner: std::option::Option<crate::model::ResourceOwner>,
     }
     impl Builder {
-        /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-        /// response with truncated results. Set it to the value of the <code>NextToken</code>
-        /// parameter from the response you just received.</p>
+        /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-        /// response with truncated results. Set it to the value of the <code>NextToken</code>
-        /// parameter from the response you just received.</p>
+        /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response on each page. If additional items exist beyond the number you
-        /// specify, the <code>NextToken</code> element is sent in the response. Use this
-        /// <code>NextToken</code> value in a subsequent request to retrieve additional
-        /// items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response on each page. If additional items exist beyond the number you
-        /// specify, the <code>NextToken</code> element is sent in the response. Use this
-        /// <code>NextToken</code> value in a subsequent request to retrieve additional
-        /// items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Use this parameter to filter the returned set of certificate authorities based on
-        /// their owner. The default is SELF.</p>
+        /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
             self
         }
-        /// <p>Use this parameter to filter the returned set of certificate authorities based on
-        /// their owner. The default is SELF.</p>
+        /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -3087,18 +2839,12 @@ pub mod list_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by
-        /// calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form:
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-        /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by
-        /// calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form:
-        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-        /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3106,32 +2852,22 @@ pub mod list_permissions_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>When paginating results, use this parameter in a subsequent request after you receive
-        /// a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+        /// <p>When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When paginating results, use this parameter in a subsequent request after you receive
-        /// a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+        /// <p>When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When paginating results, use this parameter to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <b>NextToken</b> element is sent in the response. Use this
-        /// <b>NextToken</b> value in a subsequent request to retrieve
-        /// additional items.</p>
+        /// <p>When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When paginating results, use this parameter to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <b>NextToken</b> element is sent in the response. Use this
-        /// <b>NextToken</b> value in a subsequent request to retrieve
-        /// additional items.</p>
+        /// <p>When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3285,19 +3021,13 @@ pub mod list_tags_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3305,32 +3035,22 @@ pub mod list_tags_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-        /// response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+        /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-        /// response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+        /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <b>NextToken</b> element is sent in the response. Use this
-        /// <b>NextToken</b> value in a subsequent request to retrieve
-        /// additional items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Use this parameter when paginating results to specify the maximum number of items to
-        /// return in the response. If additional items exist beyond the number you specify, the
-        /// <b>NextToken</b> element is sent in the response. Use this
-        /// <b>NextToken</b> value in a subsequent request to retrieve
-        /// additional items.</p>
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3476,34 +3196,24 @@ pub mod put_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
-        /// ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
         /// <p></p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
-        /// ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
         /// <p></p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified
-        /// private CA resource. If this policy does not contain all required statements or if it
-        /// includes any statement that is not allowed, the <code>PutPolicy</code> action returns an
-        /// <code>InvalidPolicyException</code>. For information about IAM policy and
-        /// statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+        /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified
-        /// private CA resource. If this policy does not contain all required statements or if it
-        /// includes any statement that is not allowed, the <code>PutPolicy</code> action returns an
-        /// <code>InvalidPolicyException</code>. For information about IAM policy and
-        /// statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+        /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -3649,19 +3359,13 @@ pub mod restore_certificate_authority_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3817,22 +3521,14 @@ pub mod revoke_certificate_input {
         pub(crate) revocation_reason: std::option::Option<crate::model::RevocationReason>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-        /// revoked. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-        /// revoked. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3840,32 +3536,16 @@ pub mod revoke_certificate_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format.
-        /// You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon
-        /// Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-        /// <b>GetCertificate</b> action retrieves the certificate in
-        /// the PEM format. You can use the following OpenSSL command to list the certificate in
-        /// text format and copy the hexadecimal serial number. </p>
-        /// <p>
-        /// <code>openssl x509 -in <i>file_path</i> -text -noout</code>
-        /// </p>
-        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API
-        /// Reference</i>. </p>
+        /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+        /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
+        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
         pub fn certificate_serial(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_serial = Some(input.into());
             self
         }
-        /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format.
-        /// You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon
-        /// Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-        /// <b>GetCertificate</b> action retrieves the certificate in
-        /// the PEM format. You can use the following OpenSSL command to list the certificate in
-        /// text format and copy the hexadecimal serial number. </p>
-        /// <p>
-        /// <code>openssl x509 -in <i>file_path</i> -text -noout</code>
-        /// </p>
-        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API
-        /// Reference</i>. </p>
+        /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+        /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
+        /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
         pub fn set_certificate_serial(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4034,19 +3714,13 @@ pub mod tag_certificate_authority_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4223,19 +3897,13 @@ pub mod untag_certificate_authority_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4413,22 +4081,14 @@ pub mod update_certificate_authority_input {
         pub(crate) status: std::option::Option<crate::model::CertificateAuthorityStatus>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-        /// revoked. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-        /// revoked. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>
-        /// </p>
+        /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4436,10 +4096,7 @@ pub mod update_certificate_authority_input {
             self.certificate_authority_arn = input;
             self
         }
-        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. If
-        /// this parameter is not supplied, existing capibilites remain unchanged. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
             input: crate::model::RevocationConfiguration,
@@ -4447,10 +4104,7 @@ pub mod update_certificate_authority_input {
             self.revocation_configuration = Some(input);
             self
         }
-        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. If
-        /// this parameter is not supplied, existing capibilites remain unchanged. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn set_revocation_configuration(
             mut self,
             input: std::option::Option<crate::model::RevocationConfiguration>,
@@ -4615,35 +4269,21 @@ impl UpdateCertificateAuthorityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCertificateAuthorityInput {
-    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-    /// revoked. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-    /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. If
-    /// this parameter is not supplied, existing capibilites remain unchanged. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
     /// <p>Status of your private CA.</p>
     pub status: std::option::Option<crate::model::CertificateAuthorityStatus>,
 }
 impl UpdateCertificateAuthorityInput {
-    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-    /// revoked. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-    /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. If
-    /// this parameter is not supplied, existing capibilites remain unchanged. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn revocation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RevocationConfiguration> {
@@ -4669,20 +4309,14 @@ impl std::fmt::Debug for UpdateCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>List of tags to be removed from the CA.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UntagCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -4705,20 +4339,14 @@ impl std::fmt::Debug for UntagCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>List of tags to be associated with the CA.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -4740,49 +4368,25 @@ impl std::fmt::Debug for TagCertificateAuthorityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeCertificateInput {
-    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-    /// revoked. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format.
-    /// You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon
-    /// Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-    /// <b>GetCertificate</b> action retrieves the certificate in
-    /// the PEM format. You can use the following OpenSSL command to list the certificate in
-    /// text format and copy the hexadecimal serial number. </p>
-    /// <p>
-    /// <code>openssl x509 -in <i>file_path</i> -text -noout</code>
-    /// </p>
-    /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API
-    /// Reference</i>. </p>
+    /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+    /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
+    /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
     pub certificate_serial: std::option::Option<std::string::String>,
     /// <p>Specifies why you revoked the certificate.</p>
     pub revocation_reason: std::option::Option<crate::model::RevocationReason>,
 }
 impl RevokeCertificateInput {
-    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
-    /// revoked. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format.
-    /// You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon
-    /// Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-    /// <b>GetCertificate</b> action retrieves the certificate in
-    /// the PEM format. You can use the following OpenSSL command to list the certificate in
-    /// text format and copy the hexadecimal serial number. </p>
-    /// <p>
-    /// <code>openssl x509 -in <i>file_path</i> -text -noout</code>
-    /// </p>
-    /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API
-    /// Reference</i>. </p>
+    /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+    /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
+    /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
     pub fn certificate_serial(&self) -> std::option::Option<&str> {
         self.certificate_serial.as_deref()
     }
@@ -4806,18 +4410,12 @@ impl std::fmt::Debug for RevokeCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl RestoreCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -4834,29 +4432,19 @@ impl std::fmt::Debug for RestoreCertificateAuthorityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
-    /// ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
     /// <p></p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified
-    /// private CA resource. If this policy does not contain all required statements or if it
-    /// includes any statement that is not allowed, the <code>PutPolicy</code> action returns an
-    /// <code>InvalidPolicyException</code>. For information about IAM policy and
-    /// statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
-    /// ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
     /// <p></p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified
-    /// private CA resource. If this policy does not contain all required statements or if it
-    /// includes any statement that is not allowed, the <code>PutPolicy</code> action returns an
-    /// <code>InvalidPolicyException</code>. For information about IAM policy and
-    /// statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -4875,40 +4463,24 @@ impl std::fmt::Debug for PutPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-    /// response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Use this parameter when paginating results to specify the maximum number of items to
-    /// return in the response. If additional items exist beyond the number you specify, the
-    /// <b>NextToken</b> element is sent in the response. Use this
-    /// <b>NextToken</b> value in a subsequent request to retrieve
-    /// additional items.</p>
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-    /// response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Use this parameter when paginating results to specify the maximum number of items to
-    /// return in the response. If additional items exist beyond the number you specify, the
-    /// <b>NextToken</b> element is sent in the response. Use this
-    /// <b>NextToken</b> value in a subsequent request to retrieve
-    /// additional items.</p>
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4927,39 +4499,23 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by
-    /// calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form:
-    /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-    /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>When paginating results, use this parameter in a subsequent request after you receive
-    /// a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    /// <p>When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When paginating results, use this parameter to specify the maximum number of items to
-    /// return in the response. If additional items exist beyond the number you specify, the
-    /// <b>NextToken</b> element is sent in the response. Use this
-    /// <b>NextToken</b> value in a subsequent request to retrieve
-    /// additional items.</p>
+    /// <p>When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPermissionsInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by
-    /// calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form:
-    /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-    /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>When paginating results, use this parameter in a subsequent request after you receive
-    /// a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    /// <p>When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When paginating results, use this parameter to specify the maximum number of items to
-    /// return in the response. If additional items exist beyond the number you specify, the
-    /// <b>NextToken</b> element is sent in the response. Use this
-    /// <b>NextToken</b> value in a subsequent request to retrieve
-    /// additional items.</p>
+    /// <p>When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4978,37 +4534,23 @@ impl std::fmt::Debug for ListPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificateAuthoritiesInput {
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-    /// response with truncated results. Set it to the value of the <code>NextToken</code>
-    /// parameter from the response you just received.</p>
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Use this parameter when paginating results to specify the maximum number of items to
-    /// return in the response on each page. If additional items exist beyond the number you
-    /// specify, the <code>NextToken</code> element is sent in the response. Use this
-    /// <code>NextToken</code> value in a subsequent request to retrieve additional
-    /// items.</p>
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Use this parameter to filter the returned set of certificate authorities based on
-    /// their owner. The default is SELF.</p>
+    /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
 }
 impl ListCertificateAuthoritiesInput {
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a
-    /// response with truncated results. Set it to the value of the <code>NextToken</code>
-    /// parameter from the response you just received.</p>
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Use this parameter when paginating results to specify the maximum number of items to
-    /// return in the response on each page. If additional items exist beyond the number you
-    /// specify, the <code>NextToken</code> element is sent in the response. Use this
-    /// <code>NextToken</code> value in a subsequent request to retrieve additional
-    /// items.</p>
+    /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Use this parameter to filter the returned set of certificate authorities based on
-    /// their owner. The default is SELF.</p>
+    /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
     }
@@ -5027,179 +4569,83 @@ impl std::fmt::Debug for ListCertificateAuthoritiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssueCertificateInput {
-    /// <p>Specifies X.509 certificate information to be included in the issued certificate. An
-    /// <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must
-    /// be selected, or else this parameter is ignored. For more information about using these
-    /// templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
-    /// <p>If conflicting or duplicate certificate information is supplied during certificate
-    /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
-    /// operation rules</a> to determine what information is used.</p>
+    /// <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
+    /// <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
     pub api_passthrough: std::option::Option<crate::model::ApiPassthrough>,
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an
-    /// example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA
-    /// private key. </p>
-    /// <p>
-    /// <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
-    /// -out csr/test_cert_.csr</code>
-    /// </p>
-    /// <p>If you have a configuration file, you can then use the following OpenSSL command. The
-    /// <code>usr_cert</code> block in the configuration file contains your X509 version 3
-    /// extensions. </p>
-    /// <p>
-    /// <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-    /// -days -365 -keyout private/test_cert_priv_key.pem -out
-    /// csr/test_cert_.csr</code>
-    /// </p>
-    /// <p>Note: A CSR must provide either a <i>subject name</i> or a
-    /// <i>subject alternative name</i> or the request will be rejected.
-    /// </p>
+    /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+    /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+    /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
+    /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+    /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
     pub csr: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-    /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithm>,
-    /// <p>Specifies a custom configuration template to use when issuing a certificate. If this
-    /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
-    /// template. For CA certificates, you should choose the shortest path length that meets
-    /// your needs. The path length is indicated by the PathLen<i>N</i> portion of
-    /// the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
-    /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the
-    /// limit set by its parents in the CA hierarchy.</p>
-    /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
-    /// Templates</a>.</p>
+    /// <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+    /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>
+    /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>Information describing the end of the validity period of the certificate. This
-    /// parameter sets the “Not After” date for the certificate.</p>
-    /// <p>Certificate validity is the period of time during which a certificate is valid.
-    /// Validity can be expressed as an explicit date and time when the certificate expires, or
-    /// as a span of time after issuance, stated in days, months, or years. For more
-    /// information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
-    /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For
-    /// example, if <code>Validity</code> is set to 20 days in the future, the certificate will
-    /// expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code>
-    /// value.</p>
-    /// <p>The end of the validity period configured on a certificate must not exceed the limit
-    /// set on its parents in the CA hierarchy.</p>
+    /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
+    /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+    /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
+    /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
     pub validity: std::option::Option<crate::model::Validity>,
-    /// <p>Information describing the start of the validity period of the certificate. This
-    /// parameter sets the “Not Before" date for the certificate.</p>
-    /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the
-    /// issuance time minus 60 minutes. This compensates for clock inconsistencies across
-    /// computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize
-    /// the “Not Before” value. </p>
-    /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code>
-    /// parameter is optional.</p>
-    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-    /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-    /// 5280.</p>
+    /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
+    /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
+    /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
+    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
     pub validity_not_before: std::option::Option<crate::model::Validity>,
-    /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you
-    /// call <b>IssueCertificate</b> multiple times with the same
-    /// idempotency token within one minute, ACM Private CA recognizes that you are requesting only one
-    /// certificate and will issue only one. If you change the idempotency token for each call,
-    /// PCA recognizes that you are requesting multiple certificates.</p>
+    /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl IssueCertificateInput {
-    /// <p>Specifies X.509 certificate information to be included in the issued certificate. An
-    /// <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must
-    /// be selected, or else this parameter is ignored. For more information about using these
-    /// templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
-    /// <p>If conflicting or duplicate certificate information is supplied during certificate
-    /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
-    /// operation rules</a> to determine what information is used.</p>
+    /// <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
+    /// <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
     pub fn api_passthrough(&self) -> std::option::Option<&crate::model::ApiPassthrough> {
         self.api_passthrough.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an
-    /// example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA
-    /// private key. </p>
-    /// <p>
-    /// <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
-    /// -out csr/test_cert_.csr</code>
-    /// </p>
-    /// <p>If you have a configuration file, you can then use the following OpenSSL command. The
-    /// <code>usr_cert</code> block in the configuration file contains your X509 version 3
-    /// extensions. </p>
-    /// <p>
-    /// <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-    /// -days -365 -keyout private/test_cert_priv_key.pem -out
-    /// csr/test_cert_.csr</code>
-    /// </p>
-    /// <p>Note: A CSR must provide either a <i>subject name</i> or a
-    /// <i>subject alternative name</i> or the request will be rejected.
-    /// </p>
+    /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>
+    /// <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+    /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
+    /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+    /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
     pub fn csr(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.csr.as_ref()
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-    /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
     pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlgorithm> {
         self.signing_algorithm.as_ref()
     }
-    /// <p>Specifies a custom configuration template to use when issuing a certificate. If this
-    /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
-    /// template. For CA certificates, you should choose the shortest path length that meets
-    /// your needs. The path length is indicated by the PathLen<i>N</i> portion of
-    /// the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
-    /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the
-    /// limit set by its parents in the CA hierarchy.</p>
-    /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
-    /// Templates</a>.</p>
+    /// <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+    /// <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>
+    /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>Information describing the end of the validity period of the certificate. This
-    /// parameter sets the “Not After” date for the certificate.</p>
-    /// <p>Certificate validity is the period of time during which a certificate is valid.
-    /// Validity can be expressed as an explicit date and time when the certificate expires, or
-    /// as a span of time after issuance, stated in days, months, or years. For more
-    /// information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
-    /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For
-    /// example, if <code>Validity</code> is set to 20 days in the future, the certificate will
-    /// expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code>
-    /// value.</p>
-    /// <p>The end of the validity period configured on a certificate must not exceed the limit
-    /// set on its parents in the CA hierarchy.</p>
+    /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>
+    /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
+    /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
+    /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
     pub fn validity(&self) -> std::option::Option<&crate::model::Validity> {
         self.validity.as_ref()
     }
-    /// <p>Information describing the start of the validity period of the certificate. This
-    /// parameter sets the “Not Before" date for the certificate.</p>
-    /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the
-    /// issuance time minus 60 minutes. This compensates for clock inconsistencies across
-    /// computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize
-    /// the “Not Before” value. </p>
-    /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code>
-    /// parameter is optional.</p>
-    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-    /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
-    /// 5280.</p>
+    /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
+    /// <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
+    /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
+    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
     pub fn validity_not_before(&self) -> std::option::Option<&crate::model::Validity> {
         self.validity_not_before.as_ref()
     }
-    /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you
-    /// call <b>IssueCertificate</b> multiple times with the same
-    /// idempotency token within one minute, ACM Private CA recognizes that you are requesting only one
-    /// certificate and will issue only one. If you change the idempotency token for each call,
-    /// PCA recognizes that you are requesting multiple certificates.</p>
+    /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5224,42 +4670,26 @@ impl std::fmt::Debug for IssueCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateAuthorityCertificateInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
-    /// the case of a root CA, or it may be signed by another CA that you control.</p>
+    /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
     pub certificate: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate
-    /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root
-    /// certificate is the last in the chain, and each certificate in the chain signs the one
-    /// preceding. </p>
-    /// <p>This parameter must be supplied when you import a subordinate CA. When you import a
-    /// root CA, there is no chain.</p>
+    /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>
+    /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
     pub certificate_chain: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportCertificateAuthorityCertificateInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
-    /// the case of a root CA, or it may be signed by another CA that you control.</p>
+    /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
     pub fn certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate.as_ref()
     }
-    /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate
-    /// you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root
-    /// certificate is the last in the chain, and each certificate in the chain signs the one
-    /// preceding. </p>
-    /// <p>This parameter must be supplied when you import a subordinate CA. When you import a
-    /// root CA, there is no chain.</p>
+    /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>
+    /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_chain.as_ref()
     }
@@ -5278,17 +4708,11 @@ impl std::fmt::Debug for ImportCertificateAuthorityCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
-    /// retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
-    ///
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
-    /// retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
-    ///
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5306,18 +4730,12 @@ impl std::fmt::Debug for GetPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateAuthorityCsrInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCsrInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -5335,18 +4753,12 @@ impl std::fmt::Debug for GetCertificateAuthorityCsrInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateAuthorityCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -5364,34 +4776,20 @@ impl std::fmt::Debug for GetCertificateAuthorityCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and
-    /// must be in the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-    /// </code>
-    /// </p>
+    /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl GetCertificateInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and
-    /// must be in the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-    /// </code>
-    /// </p>
+    /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -5410,20 +4808,14 @@ impl std::fmt::Debug for GetCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateAuthorityAuditReportInput {
     /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
     pub audit_report_id: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateAuthorityAuditReportInput {
     /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -5446,18 +4838,12 @@ impl std::fmt::Debug for DescribeCertificateAuthorityAuditReportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -5474,17 +4860,11 @@ impl std::fmt::Debug for DescribeCertificateAuthorityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
-    /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form
-    /// <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeletePolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
-    /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form
-    /// <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5501,33 +4881,21 @@ impl std::fmt::Debug for DeletePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-    /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
-    /// the only valid service principal is <code>acm.amazonaws.com</code>
-    /// </p>
+    /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The AWS account that calls this action.</p>
     pub source_account: std::option::Option<std::string::String>,
 }
 impl DeletePermissionInput {
-    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
-    /// can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
-    /// the only valid service principal is <code>acm.amazonaws.com</code>
-    /// </p>
+    /// <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -5551,26 +4919,18 @@ impl std::fmt::Debug for DeletePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The number of days to make a CA restorable after it has been deleted. This can be
-    /// anywhere from 7 to 30 days, with 30 being the default.</p>
+    /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
     pub permanent_deletion_time_in_days: std::option::Option<i32>,
 }
 impl DeleteCertificateAuthorityInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The number of days to make a CA restorable after it has been deleted. This can be
-    /// anywhere from 7 to 30 days, with 30 being the default.</p>
+    /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
     pub fn permanent_deletion_time_in_days(&self) -> std::option::Option<i32> {
         self.permanent_deletion_time_in_days
     }
@@ -5591,35 +4951,23 @@ impl std::fmt::Debug for DeleteCertificateAuthorityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the
-    /// ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS service or identity that receives the permission. At this time, the only
-    /// valid principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The ID of the calling account.</p>
     pub source_account: std::option::Option<std::string::String>,
-    /// <p>The actions that the specified AWS service principal can use. These include
-    /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
-    /// <code>ListPermissions</code>.</p>
+    /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
 }
 impl CreatePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the
-    /// ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The AWS service or identity that receives the permission. At this time, the only
-    /// valid principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -5627,9 +4975,7 @@ impl CreatePermissionInput {
     pub fn source_account(&self) -> std::option::Option<&str> {
         self.source_account.as_deref()
     }
-    /// <p>The actions that the specified AWS service principal can use. These include
-    /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
-    /// <code>ListPermissions</code>.</p>
+    /// <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::ActionType]> {
         self.actions.as_deref()
     }
@@ -5650,9 +4996,7 @@ impl std::fmt::Debug for CreatePermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateAuthorityAuditReportInput {
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -5661,9 +5005,7 @@ pub struct CreateCertificateAuthorityAuditReportInput {
 }
 impl CreateCertificateAuthorityAuditReportInput {
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -5695,52 +5037,31 @@ impl std::fmt::Debug for CreateCertificateAuthorityAuditReportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateAuthorityInput {
-    /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and
-    /// X.500 certificate subject information.</p>
+    /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
     pub certificate_authority_configuration:
         std::option::Option<crate::model::CertificateAuthorityConfiguration>,
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-    /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. The
-    /// default is for both certificate validation mechanisms to be disabled. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
     /// <p>The type of the certificate authority.</p>
     pub certificate_authority_type: std::option::Option<crate::model::CertificateAuthorityType>,
-    /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for
-    /// <b>CreateCertificateAuthority</b> time out after five
-    /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-    /// token within five minutes, ACM Private CA recognizes that you are requesting only certificate
-    /// authority and will issue only one. If you change the idempotency token for each call,
-    /// PCA recognizes that you are requesting multiple certificate authorities.</p>
+    /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, ACM Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificate authorities.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>Specifies a
-    /// cryptographic key management compliance standard used for handling CA keys.</p>
+    /// <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-    /// ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-    /// <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-    /// <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
-    /// <code>InvalidArgsException</code> with the message, "A certificate authority cannot
-    /// be created in this region with the specified security standard."</p>
+    /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub key_storage_security_standard:
         std::option::Option<crate::model::KeyStorageSecurityStandard>,
-    /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
-    /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCertificateAuthorityInput {
-    /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and
-    /// X.500 certificate subject information.</p>
+    /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
     pub fn certificate_authority_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CertificateAuthorityConfiguration> {
         self.certificate_authority_configuration.as_ref()
     }
-    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
-    /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. The
-    /// default is for both certificate validation mechanisms to be disabled. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn revocation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RevocationConfiguration> {
@@ -5752,32 +5073,19 @@ impl CreateCertificateAuthorityInput {
     ) -> std::option::Option<&crate::model::CertificateAuthorityType> {
         self.certificate_authority_type.as_ref()
     }
-    /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for
-    /// <b>CreateCertificateAuthority</b> time out after five
-    /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-    /// token within five minutes, ACM Private CA recognizes that you are requesting only certificate
-    /// authority and will issue only one. If you change the idempotency token for each call,
-    /// PCA recognizes that you are requesting multiple certificate authorities.</p>
+    /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, ACM Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificate authorities.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>Specifies a
-    /// cryptographic key management compliance standard used for handling CA keys.</p>
+    /// <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-    /// ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-    /// <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
-    /// <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
-    /// <code>InvalidArgsException</code> with the message, "A certificate authority cannot
-    /// be created in this region with the specified security standard."</p>
+    /// <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub fn key_storage_security_standard(
         &self,
     ) -> std::option::Option<&crate::model::KeyStorageSecurityStandard> {
         self.key_storage_security_standard.as_ref()
     }
-    /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
-    /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

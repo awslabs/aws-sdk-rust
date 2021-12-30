@@ -2,122 +2,61 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct RecognizeUtteranceOutput {
-    /// <p>Indicates whether the input mode to the operation was text or
-    /// speech.
-    /// </p>
+    /// <p>Indicates whether the input mode to the operation was text or speech. </p>
     pub input_mode: std::option::Option<std::string::String>,
-    /// <p>Content type as specified in the <code>responseContentType</code> in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on the order that you returned the messages from your
-    /// Lambda function or the order that the messages are defined in the
-    /// bot.</p>
-    /// <p>The <code>messages</code> field is compressed with gzip and then
-    /// base64 encoded. Before you can use the contents of the field, you must
-    /// decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+    /// <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub messages: std::option::Option<std::string::String>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance.</p>
-    /// <p>Each interpretation includes the intent, a score that indicates how
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
-    /// <p>The <code>interpretations</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub interpretations: std::option::Option<std::string::String>,
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action might be.</p>
-    /// <p>The <code>sessionState</code> field is compressed with gzip and then
-    /// base64 encoded. Before you can use the contents of the field, you must
-    /// decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
+    /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub session_state: std::option::Option<std::string::String>,
     /// <p>The attributes sent in the request.</p>
-    /// <p>The <code>requestAttributes</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents.</p>
+    /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p>The identifier of the session in use.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
-    /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-    /// field contains the text extracted from the audio stream. This is the
-    /// text that is actually processed to recognize intents and slot values.
-    /// You can use this information to determine if Amazon Lex V2 is correctly
-    /// processing the audio that you send.</p>
-    /// <p>The <code>inputTranscript</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
+    /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub input_transcript: std::option::Option<std::string::String>,
-    /// <p>The prompt or statement to send to the user. This is based on the
-    /// bot configuration and context. For example, if Amazon Lex V2 did not understand
-    /// the user intent, it sends the <code>clarificationPrompt</code>
-    /// configured for the bot. If the intent requires confirmation before
-    /// taking the fulfillment action, it sends the
-    /// <code>confirmationPrompt</code>. Another example: Suppose that the
-    /// Lambda function successfully fulfilled the intent, and sent a message
-    /// to convey to the user. Then Amazon Lex V2 sends that message in the
-    /// response.</p>
+    /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
 }
 impl RecognizeUtteranceOutput {
-    /// <p>Indicates whether the input mode to the operation was text or
-    /// speech.
-    /// </p>
+    /// <p>Indicates whether the input mode to the operation was text or speech. </p>
     pub fn input_mode(&self) -> std::option::Option<&str> {
         self.input_mode.as_deref()
     }
-    /// <p>Content type as specified in the <code>responseContentType</code> in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on the order that you returned the messages from your
-    /// Lambda function or the order that the messages are defined in the
-    /// bot.</p>
-    /// <p>The <code>messages</code> field is compressed with gzip and then
-    /// base64 encoded. Before you can use the contents of the field, you must
-    /// decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+    /// <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub fn messages(&self) -> std::option::Option<&str> {
         self.messages.as_deref()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance.</p>
-    /// <p>Each interpretation includes the intent, a score that indicates how
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
-    /// <p>The <code>interpretations</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+    /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub fn interpretations(&self) -> std::option::Option<&str> {
         self.interpretations.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action might be.</p>
-    /// <p>The <code>sessionState</code> field is compressed with gzip and then
-    /// base64 encoded. Before you can use the contents of the field, you must
-    /// decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
+    /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub fn session_state(&self) -> std::option::Option<&str> {
         self.session_state.as_deref()
     }
     /// <p>The attributes sent in the request.</p>
-    /// <p>The <code>requestAttributes</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents.</p>
+    /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
     pub fn request_attributes(&self) -> std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
@@ -126,27 +65,12 @@ impl RecognizeUtteranceOutput {
         self.session_id.as_deref()
     }
     /// <p>The text used to process the request.</p>
-    /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-    /// field contains the text extracted from the audio stream. This is the
-    /// text that is actually processed to recognize intents and slot values.
-    /// You can use this information to determine if Amazon Lex V2 is correctly
-    /// processing the audio that you send.</p>
-    /// <p>The <code>inputTranscript</code> field is compressed with gzip and
-    /// then base64 encoded. Before you can use the contents of the field, you
-    /// must decode and decompress the contents. See the example for a simple
-    /// function to decode and decompress the contents.</p>
+    /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
+    /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub fn input_transcript(&self) -> std::option::Option<&str> {
         self.input_transcript.as_deref()
     }
-    /// <p>The prompt or statement to send to the user. This is based on the
-    /// bot configuration and context. For example, if Amazon Lex V2 did not understand
-    /// the user intent, it sends the <code>clarificationPrompt</code>
-    /// configured for the bot. If the intent requires confirmation before
-    /// taking the fulfillment action, it sends the
-    /// <code>confirmationPrompt</code>. Another example: Suppose that the
-    /// Lambda function successfully fulfilled the intent, and sent a message
-    /// to convey to the user. Then Amazon Lex V2 sends that message in the
-    /// response.</p>
+    /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
@@ -183,80 +107,48 @@ pub mod recognize_utterance_output {
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
     }
     impl Builder {
-        /// <p>Indicates whether the input mode to the operation was text or
-        /// speech.
-        /// </p>
+        /// <p>Indicates whether the input mode to the operation was text or speech. </p>
         pub fn input_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_mode = Some(input.into());
             self
         }
-        /// <p>Indicates whether the input mode to the operation was text or
-        /// speech.
-        /// </p>
+        /// <p>Indicates whether the input mode to the operation was text or speech. </p>
         pub fn set_input_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_mode = input;
             self
         }
-        /// <p>Content type as specified in the <code>responseContentType</code> in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Content type as specified in the <code>responseContentType</code> in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on the order that you returned the messages from your
-        /// Lambda function or the order that the messages are defined in the
-        /// bot.</p>
-        /// <p>The <code>messages</code> field is compressed with gzip and then
-        /// base64 encoded. Before you can use the contents of the field, you must
-        /// decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+        /// <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
             self.messages = Some(input.into());
             self
         }
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on the order that you returned the messages from your
-        /// Lambda function or the order that the messages are defined in the
-        /// bot.</p>
-        /// <p>The <code>messages</code> field is compressed with gzip and then
-        /// base64 encoded. Before you can use the contents of the field, you must
-        /// decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+        /// <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn set_messages(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.messages = input;
             self
         }
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance.</p>
-        /// <p>Each interpretation includes the intent, a score that indicates how
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
-        /// <p>The <code>interpretations</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+        /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+        /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn interpretations(mut self, input: impl Into<std::string::String>) -> Self {
             self.interpretations = Some(input.into());
             self
         }
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance.</p>
-        /// <p>Each interpretation includes the intent, a score that indicates how
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
-        /// <p>The <code>interpretations</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
+        /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+        /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn set_interpretations(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -264,26 +156,16 @@ pub mod recognize_utterance_output {
             self.interpretations = input;
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action might be.</p>
-        /// <p>The <code>sessionState</code> field is compressed with gzip and then
-        /// base64 encoded. Before you can use the contents of the field, you must
-        /// decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
+        /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_state = Some(input.into());
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action might be.</p>
-        /// <p>The <code>sessionState</code> field is compressed with gzip and then
-        /// base64 encoded. Before you can use the contents of the field, you must
-        /// decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
+        /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -292,17 +174,13 @@ pub mod recognize_utterance_output {
             self
         }
         /// <p>The attributes sent in the request.</p>
-        /// <p>The <code>requestAttributes</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents.</p>
+        /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
         pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_attributes = Some(input.into());
             self
         }
         /// <p>The attributes sent in the request.</p>
-        /// <p>The <code>requestAttributes</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents.</p>
+        /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -321,29 +199,15 @@ pub mod recognize_utterance_output {
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-        /// field contains the text extracted from the audio stream. This is the
-        /// text that is actually processed to recognize intents and slot values.
-        /// You can use this information to determine if Amazon Lex V2 is correctly
-        /// processing the audio that you send.</p>
-        /// <p>The <code>inputTranscript</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
+        /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn input_transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_transcript = Some(input.into());
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-        /// field contains the text extracted from the audio stream. This is the
-        /// text that is actually processed to recognize intents and slot values.
-        /// You can use this information to determine if Amazon Lex V2 is correctly
-        /// processing the audio that you send.</p>
-        /// <p>The <code>inputTranscript</code> field is compressed with gzip and
-        /// then base64 encoded. Before you can use the contents of the field, you
-        /// must decode and decompress the contents. See the example for a simple
-        /// function to decode and decompress the contents.</p>
+        /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
+        /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
         pub fn set_input_transcript(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -351,28 +215,12 @@ pub mod recognize_utterance_output {
             self.input_transcript = input;
             self
         }
-        /// <p>The prompt or statement to send to the user. This is based on the
-        /// bot configuration and context. For example, if Amazon Lex V2 did not understand
-        /// the user intent, it sends the <code>clarificationPrompt</code>
-        /// configured for the bot. If the intent requires confirmation before
-        /// taking the fulfillment action, it sends the
-        /// <code>confirmationPrompt</code>. Another example: Suppose that the
-        /// Lambda function successfully fulfilled the intent, and sent a message
-        /// to convey to the user. Then Amazon Lex V2 sends that message in the
-        /// response.</p>
+        /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
         pub fn audio_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.audio_stream = Some(input);
             self
         }
-        /// <p>The prompt or statement to send to the user. This is based on the
-        /// bot configuration and context. For example, if Amazon Lex V2 did not understand
-        /// the user intent, it sends the <code>clarificationPrompt</code>
-        /// configured for the bot. If the intent requires confirmation before
-        /// taking the fulfillment action, it sends the
-        /// <code>confirmationPrompt</code>. Another example: Suppose that the
-        /// Lambda function successfully fulfilled the intent, and sent a message
-        /// to convey to the user. Then Amazon Lex V2 sends that message in the
-        /// response.</p>
+        /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -407,21 +255,13 @@ impl RecognizeUtteranceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeTextOutput {
-    /// <p>A list of messages last sent to the user. The messages are ordered
-    /// based on the order that you returned the messages from your Lambda
-    /// function or the order that the messages are defined in the bot.</p>
+    /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot. </p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action may be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
+    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub session_state: std::option::Option<crate::model::SessionState>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance. </p>
-    /// <p>Each interpretation includes the intent, a score that indicates now
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
     /// <p>The attributes sent in the request.</p>
     pub request_attributes:
@@ -430,25 +270,17 @@ pub struct RecognizeTextOutput {
     pub session_id: std::option::Option<std::string::String>,
 }
 impl RecognizeTextOutput {
-    /// <p>A list of messages last sent to the user. The messages are ordered
-    /// based on the order that you returned the messages from your Lambda
-    /// function or the order that the messages are defined in the bot.</p>
+    /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot. </p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action may be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot. </p>
+    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(&self) -> std::option::Option<&crate::model::SessionState> {
         self.session_state.as_ref()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance. </p>
-    /// <p>Each interpretation includes the intent, a score that indicates now
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(&self) -> std::option::Option<&[crate::model::Interpretation]> {
         self.interpretations.as_deref()
     }
@@ -495,18 +327,14 @@ pub mod recognize_text_output {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>A list of messages last sent to the user. The messages are ordered
-        /// based on the order that you returned the messages from your Lambda
-        /// function or the order that the messages are defined in the bot.</p>
+        /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>A list of messages last sent to the user. The messages are ordered
-        /// based on the order that you returned the messages from your Lambda
-        /// function or the order that the messages are defined in the bot.</p>
+        /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -514,18 +342,14 @@ pub mod recognize_text_output {
             self.messages = input;
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot. </p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action may be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot. </p>
+        /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
         pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
             self.session_state = Some(input);
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot. </p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action may be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot. </p>
+        /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<crate::model::SessionState>,
@@ -537,24 +361,16 @@ pub mod recognize_text_output {
         ///
         /// To override the contents of this collection use [`set_interpretations`](Self::set_interpretations).
         ///
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance. </p>
-        /// <p>Each interpretation includes the intent, a score that indicates now
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+        /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
         pub fn interpretations(mut self, input: crate::model::Interpretation) -> Self {
             let mut v = self.interpretations.unwrap_or_default();
             v.push(input);
             self.interpretations = Some(v);
             self
         }
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance. </p>
-        /// <p>Each interpretation includes the intent, a score that indicates now
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+        /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
         pub fn set_interpretations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
@@ -619,50 +435,35 @@ impl RecognizeTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutSessionOutput {
-    /// <p>The type of response. Same as the type specified in the
-    /// <code>responseContentType</code> field in the request.</p>
+    /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on how you return the messages from you Lambda function
-    /// or the order that the messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     pub messages: std::option::Option<std::string::String>,
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action may be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub session_state: std::option::Option<std::string::String>,
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
-    /// parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub request_attributes: std::option::Option<std::string::String>,
     /// <p>The identifier of the session that received the data.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>If the requested content type was audio, the audio version of the
-    /// message to convey to the user.</p>
+    /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
 }
 impl PutSessionOutput {
-    /// <p>The type of response. Same as the type specified in the
-    /// <code>responseContentType</code> field in the request.</p>
+    /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on how you return the messages from you Lambda function
-    /// or the order that the messages are defined in the bot.</p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     pub fn messages(&self) -> std::option::Option<&str> {
         self.messages.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the
-    /// next action may be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(&self) -> std::option::Option<&str> {
         self.session_state.as_deref()
     }
-    /// <p>Request-specific information passed between the client application
-    /// and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
-    /// parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn request_attributes(&self) -> std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
@@ -670,8 +471,7 @@ impl PutSessionOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>If the requested content type was audio, the audio version of the
-    /// message to convey to the user.</p>
+    /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
     pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
@@ -702,44 +502,34 @@ pub mod put_session_output {
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
     }
     impl Builder {
-        /// <p>The type of response. Same as the type specified in the
-        /// <code>responseContentType</code> field in the request.</p>
+        /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The type of response. Same as the type specified in the
-        /// <code>responseContentType</code> field in the request.</p>
+        /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on how you return the messages from you Lambda function
-        /// or the order that the messages are defined in the bot.</p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
         pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
             self.messages = Some(input.into());
             self
         }
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on how you return the messages from you Lambda function
-        /// or the order that the messages are defined in the bot.</p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
         pub fn set_messages(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.messages = input;
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action may be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
         pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_state = Some(input.into());
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>Use this to determine the progress of the conversation and what the
-        /// next action may be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -747,16 +537,12 @@ pub mod put_session_output {
             self.session_state = input;
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
-        /// parameter in the call to the <code>PutSession</code> operation.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
         pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_attributes = Some(input.into());
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
-        /// parameter in the call to the <code>PutSession</code> operation.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -774,14 +560,12 @@ pub mod put_session_output {
             self.session_id = input;
             self
         }
-        /// <p>If the requested content type was audio, the audio version of the
-        /// message to convey to the user.</p>
+        /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
         pub fn audio_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.audio_stream = Some(input);
             self
         }
-        /// <p>If the requested content type was audio, the audio version of the
-        /// message to convey to the user.</p>
+        /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -815,22 +599,13 @@ impl PutSessionOutput {
 pub struct GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on the order that your returned the messages from your
-    /// Lambda function or the order that messages are defined in the bot.
-    /// </p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance. </p>
-    /// <p>Each interpretation includes the intent, a score that indicates how
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>You can use this to determine the progress of the conversation and
-    /// what the next action might be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     pub session_state: std::option::Option<crate::model::SessionState>,
 }
 impl GetSessionOutput {
@@ -838,26 +613,17 @@ impl GetSessionOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A list of messages that were last sent to the user. The messages are
-    /// ordered based on the order that your returned the messages from your
-    /// Lambda function or the order that messages are defined in the bot.
-    /// </p>
+    /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-    /// utterance. </p>
-    /// <p>Each interpretation includes the intent, a score that indicates how
-    /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-    /// optional sentiment response that indicates the sentiment expressed in
-    /// the utterance.</p>
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+    /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(&self) -> std::option::Option<&[crate::model::Interpretation]> {
         self.interpretations.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the
-    /// bot.</p>
-    /// <p>You can use this to determine the progress of the conversation and
-    /// what the next action might be.</p>
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
+    /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     pub fn session_state(&self) -> std::option::Option<&crate::model::SessionState> {
         self.session_state.as_ref()
     }
@@ -899,20 +665,14 @@ pub mod get_session_output {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on the order that your returned the messages from your
-        /// Lambda function or the order that messages are defined in the bot.
-        /// </p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>A list of messages that were last sent to the user. The messages are
-        /// ordered based on the order that your returned the messages from your
-        /// Lambda function or the order that messages are defined in the bot.
-        /// </p>
+        /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -924,24 +684,16 @@ pub mod get_session_output {
         ///
         /// To override the contents of this collection use [`set_interpretations`](Self::set_interpretations).
         ///
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance. </p>
-        /// <p>Each interpretation includes the intent, a score that indicates how
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+        /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
         pub fn interpretations(mut self, input: crate::model::Interpretation) -> Self {
             let mut v = self.interpretations.unwrap_or_default();
             v.push(input);
             self.interpretations = Some(v);
             self
         }
-        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
-        /// utterance. </p>
-        /// <p>Each interpretation includes the intent, a score that indicates how
-        /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
-        /// optional sentiment response that indicates the sentiment expressed in
-        /// the utterance.</p>
+        /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
+        /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
         pub fn set_interpretations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
@@ -949,18 +701,14 @@ pub mod get_session_output {
             self.interpretations = input;
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>You can use this to determine the progress of the conversation and
-        /// what the next action might be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
         pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
             self.session_state = Some(input);
             self
         }
-        /// <p>Represents the current state of the dialog between the user and the
-        /// bot.</p>
-        /// <p>You can use this to determine the progress of the conversation and
-        /// what the next action might be.</p>
+        /// <p>Represents the current state of the dialog between the user and the bot.</p>
+        /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<crate::model::SessionState>,
@@ -992,8 +740,7 @@ impl GetSessionOutput {
 pub struct DeleteSessionOutput {
     /// <p>The identifier of the bot that contained the session data.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The alias identifier in use for the bot that contained the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contained the session data.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
     /// <p>The locale where the session was used.</p>
     pub locale_id: std::option::Option<std::string::String>,
@@ -1005,8 +752,7 @@ impl DeleteSessionOutput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The alias identifier in use for the bot that contained the session
-    /// data.</p>
+    /// <p>The alias identifier in use for the bot that contained the session data.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
@@ -1051,14 +797,12 @@ pub mod delete_session_output {
             self.bot_id = input;
             self
         }
-        /// <p>The alias identifier in use for the bot that contained the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contained the session data.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that contained the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contained the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self

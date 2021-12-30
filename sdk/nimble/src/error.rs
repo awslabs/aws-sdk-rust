@@ -12,8 +12,7 @@ pub struct AcceptEulasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptEulasErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -21,8 +20,7 @@ pub enum AcceptEulasErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -168,8 +166,7 @@ pub struct CreateLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLaunchProfileErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -177,8 +174,7 @@ pub enum CreateLaunchProfileErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -338,8 +334,7 @@ pub struct CreateStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingImageErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -347,8 +342,7 @@ pub enum CreateStreamingImageErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -508,8 +502,7 @@ pub struct CreateStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingSessionErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -517,8 +510,7 @@ pub enum CreateStreamingSessionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -678,8 +670,7 @@ pub struct CreateStreamingSessionStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingSessionStreamErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -687,8 +678,7 @@ pub enum CreateStreamingSessionStreamErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -860,8 +850,7 @@ pub struct CreateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -869,8 +858,7 @@ pub enum CreateStudioErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1016,8 +1004,7 @@ pub struct CreateStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioComponentErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1025,8 +1012,7 @@ pub enum CreateStudioComponentErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1186,8 +1172,7 @@ pub struct DeleteLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchProfileErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1195,8 +1180,7 @@ pub enum DeleteLaunchProfileErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1356,8 +1340,7 @@ pub struct DeleteLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchProfileMemberErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1365,8 +1348,7 @@ pub enum DeleteLaunchProfileMemberErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1534,8 +1516,7 @@ pub struct DeleteStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamingImageErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1543,8 +1524,7 @@ pub enum DeleteStreamingImageErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1704,8 +1684,7 @@ pub struct DeleteStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamingSessionErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1713,8 +1692,7 @@ pub enum DeleteStreamingSessionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -1874,8 +1852,7 @@ pub struct DeleteStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -1883,8 +1860,7 @@ pub enum DeleteStudioErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2030,8 +2006,7 @@ pub struct DeleteStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioComponentErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2039,8 +2014,7 @@ pub enum DeleteStudioComponentErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2200,8 +2174,7 @@ pub struct DeleteStudioMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioMemberErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2209,8 +2182,7 @@ pub enum DeleteStudioMemberErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2370,8 +2342,7 @@ pub struct GetEulaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEulaErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2379,8 +2350,7 @@ pub enum GetEulaErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2523,8 +2493,7 @@ pub struct GetLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2532,8 +2501,7 @@ pub enum GetLaunchProfileErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2690,8 +2658,7 @@ pub struct GetLaunchProfileDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileDetailsErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2699,8 +2666,7 @@ pub enum GetLaunchProfileDetailsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -2862,8 +2828,7 @@ pub struct GetLaunchProfileInitializationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileInitializationErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -2871,8 +2836,7 @@ pub enum GetLaunchProfileInitializationErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3047,8 +3011,7 @@ pub struct GetLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileMemberErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3056,8 +3019,7 @@ pub enum GetLaunchProfileMemberErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3217,8 +3179,7 @@ pub struct GetStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingImageErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3226,8 +3187,7 @@ pub enum GetStreamingImageErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3384,8 +3344,7 @@ pub struct GetStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingSessionErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3393,8 +3352,7 @@ pub enum GetStreamingSessionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3554,8 +3512,7 @@ pub struct GetStreamingSessionStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingSessionStreamErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3563,8 +3520,7 @@ pub enum GetStreamingSessionStreamErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3732,8 +3688,7 @@ pub struct GetStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3741,8 +3696,7 @@ pub enum GetStudioErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -3885,8 +3839,7 @@ pub struct GetStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioComponentErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -3894,8 +3847,7 @@ pub enum GetStudioComponentErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4055,8 +4007,7 @@ pub struct GetStudioMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioMemberErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4064,8 +4015,7 @@ pub enum GetStudioMemberErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4216,8 +4166,7 @@ pub struct ListEulaAcceptancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEulaAcceptancesErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4225,8 +4174,7 @@ pub enum ListEulaAcceptancesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4386,8 +4334,7 @@ pub struct ListEulasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEulasErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4395,8 +4342,7 @@ pub enum ListEulasErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4539,8 +4485,7 @@ pub struct ListLaunchProfileMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLaunchProfileMembersErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4548,8 +4493,7 @@ pub enum ListLaunchProfileMembersErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4715,8 +4659,7 @@ pub struct ListLaunchProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLaunchProfilesErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4724,8 +4667,7 @@ pub enum ListLaunchProfilesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -4885,8 +4827,7 @@ pub struct ListStreamingImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamingImagesErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -4894,8 +4835,7 @@ pub enum ListStreamingImagesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5055,8 +4995,7 @@ pub struct ListStreamingSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamingSessionsErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5064,8 +5003,7 @@ pub enum ListStreamingSessionsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5225,8 +5163,7 @@ pub struct ListStudioComponentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioComponentsErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5234,8 +5171,7 @@ pub enum ListStudioComponentsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5395,8 +5331,7 @@ pub struct ListStudioMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioMembersErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5404,8 +5339,7 @@ pub enum ListStudioMembersErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5562,8 +5496,7 @@ pub struct ListStudiosError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudiosErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5571,8 +5504,7 @@ pub enum ListStudiosErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5718,8 +5650,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5727,8 +5658,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -5888,8 +5818,7 @@ pub struct PutLaunchProfileMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLaunchProfileMembersErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -5897,8 +5826,7 @@ pub enum PutLaunchProfileMembersErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6060,8 +5988,7 @@ pub struct PutStudioMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutStudioMembersErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6069,8 +5996,7 @@ pub enum PutStudioMembersErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6227,8 +6153,7 @@ pub struct StartStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartStreamingSessionErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6236,8 +6161,7 @@ pub enum StartStreamingSessionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6397,8 +6321,7 @@ pub struct StartStudioSSOConfigurationRepairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartStudioSSOConfigurationRepairErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6406,8 +6329,7 @@ pub enum StartStudioSSOConfigurationRepairErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6590,8 +6512,7 @@ pub struct StopStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopStreamingSessionErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6599,8 +6520,7 @@ pub enum StopStreamingSessionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6760,8 +6680,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6769,8 +6688,7 @@ pub enum TagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -6916,8 +6834,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -6925,8 +6842,7 @@ pub enum UntagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -7074,8 +6990,7 @@ pub struct UpdateLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLaunchProfileErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -7083,8 +6998,7 @@ pub enum UpdateLaunchProfileErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -7244,8 +7158,7 @@ pub struct UpdateLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLaunchProfileMemberErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -7253,8 +7166,7 @@ pub enum UpdateLaunchProfileMemberErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -7422,8 +7334,7 @@ pub struct UpdateStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStreamingImageErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -7431,8 +7342,7 @@ pub enum UpdateStreamingImageErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -7592,8 +7502,7 @@ pub struct UpdateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -7601,8 +7510,7 @@ pub enum UpdateStudioErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -7748,8 +7656,7 @@ pub struct UpdateStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioComponentErrorKind {
-    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-    /// that you are using the correct access keys.</p>
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
@@ -7757,8 +7664,7 @@ pub enum UpdateStudioComponentErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your current quota does not allow you to perform the request action. You can request
-    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
     /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request throughput limit was exceeded.</p>
@@ -8159,8 +8065,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Your current quota does not allow you to perform the request action. You can request
-/// increases for some quotas, and other quotas cannot be increased.</p>
+/// <p>Your current quota does not allow you to perform the request action. You can request increases for some quotas, and other quotas cannot be increased.</p>
 /// <p>Please use AWS Service Quotas to request an increase. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8665,8 +8570,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
-/// that you are using the correct access keys.</p>
+/// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

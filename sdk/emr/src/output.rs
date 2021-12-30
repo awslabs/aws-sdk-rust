@@ -236,7 +236,7 @@ impl SetTerminationProtectionOutput {
     }
 }
 
-/// <p> The result of the <a>RunJobFlow</a> operation. </p>
+/// <p> The result of the <code>RunJobFlow</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunJobFlowOutput {
@@ -523,8 +523,7 @@ impl PutAutoTerminationPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoScalingPolicyOutput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub instance_group_id: std::option::Option<std::string::String>,
@@ -534,8 +533,7 @@ pub struct PutAutoScalingPolicyOutput {
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl PutAutoScalingPolicyOutput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -577,14 +575,12 @@ pub mod put_auto_scaling_policy_output {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -764,15 +760,13 @@ impl ModifyClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioSessionMappingsOutput {
-    /// <p>A list of session mapping summary objects. Each object includes session mapping details
-    /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+    /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     pub session_mappings: std::option::Option<std::vec::Vec<crate::model::SessionMappingSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListStudioSessionMappingsOutput {
-    /// <p>A list of session mapping summary objects. Each object includes session mapping details
-    /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+    /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     pub fn session_mappings(&self) -> std::option::Option<&[crate::model::SessionMappingSummary]> {
         self.session_mappings.as_deref()
     }
@@ -804,16 +798,14 @@ pub mod list_studio_session_mappings_output {
         ///
         /// To override the contents of this collection use [`set_session_mappings`](Self::set_session_mappings).
         ///
-        /// <p>A list of session mapping summary objects. Each object includes session mapping details
-        /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+        /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
         pub fn session_mappings(mut self, input: crate::model::SessionMappingSummary) -> Self {
             let mut v = self.session_mappings.unwrap_or_default();
             v.push(input);
             self.session_mappings = Some(v);
             self
         }
-        /// <p>A list of session mapping summary objects. Each object includes session mapping details
-        /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
+        /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
         pub fn set_session_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SessionMappingSummary>>,
@@ -929,8 +921,7 @@ impl ListStudiosOutput {
     }
 }
 
-/// <p>This output contains the list of steps returned in reverse order. This means that the
-/// last step is the first element in the list.</p>
+/// <p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStepsOutput {
@@ -1019,9 +1010,7 @@ pub struct ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
     pub security_configurations:
         std::option::Option<std::vec::Vec<crate::model::SecurityConfigurationSummary>>,
-    /// <p>A pagination token that indicates the next set of results to retrieve. Include the
-    /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
-    /// required.</p>
+    /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListSecurityConfigurationsOutput {
@@ -1031,9 +1020,7 @@ impl ListSecurityConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::SecurityConfigurationSummary]> {
         self.security_configurations.as_deref()
     }
-    /// <p>A pagination token that indicates the next set of results to retrieve. Include the
-    /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
-    /// required.</p>
+    /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1079,16 +1066,12 @@ pub mod list_security_configurations_output {
             self.security_configurations = input;
             self
         }
-        /// <p>A pagination token that indicates the next set of results to retrieve. Include the
-        /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
-        /// required.</p>
+        /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A pagination token that indicates the next set of results to retrieve. Include the
-        /// marker in the next ListSecurityConfiguration call to retrieve the next page of results, if
-        /// required.</p>
+        /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1198,8 +1181,7 @@ pub struct ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
     pub notebook_executions:
         std::option::Option<std::vec::Vec<crate::model::NotebookExecutionSummary>>,
-    /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
-    /// determine the next set of results to retrieve.</p>
+    /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsOutput {
@@ -1209,8 +1191,7 @@ impl ListNotebookExecutionsOutput {
     ) -> std::option::Option<&[crate::model::NotebookExecutionSummary]> {
         self.notebook_executions.as_deref()
     }
-    /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
-    /// determine the next set of results to retrieve.</p>
+    /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1256,14 +1237,12 @@ pub mod list_notebook_executions_output {
             self.notebook_executions = input;
             self
         }
-        /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
-        /// determine the next set of results to retrieve.</p>
+        /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
-        /// determine the next set of results to retrieve.</p>
+        /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1530,8 +1509,7 @@ impl ListInstanceFleetsOutput {
     }
 }
 
-/// <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster
-/// IDs, names, and status.</p>
+/// <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
@@ -1699,13 +1677,11 @@ impl ListBootstrapActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioSessionMappingOutput {
-    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including
-    /// session policy ARN and creation time.</p>
+    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
     pub session_mapping: std::option::Option<crate::model::SessionMappingDetail>,
 }
 impl GetStudioSessionMappingOutput {
-    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including
-    /// session policy ARN and creation time.</p>
+    /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
     pub fn session_mapping(&self) -> std::option::Option<&crate::model::SessionMappingDetail> {
         self.session_mapping.as_ref()
     }
@@ -1726,14 +1702,12 @@ pub mod get_studio_session_mapping_output {
         pub(crate) session_mapping: std::option::Option<crate::model::SessionMappingDetail>,
     }
     impl Builder {
-        /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including
-        /// session policy ARN and creation time.</p>
+        /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
         pub fn session_mapping(mut self, input: crate::model::SessionMappingDetail) -> Self {
             self.session_mapping = Some(input);
             self
         }
-        /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including
-        /// session policy ARN and creation time.</p>
+        /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
         pub fn set_session_mapping(
             mut self,
             input: std::option::Option<crate::model::SessionMappingDetail>,
@@ -1819,57 +1793,25 @@ impl GetManagedScalingPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockPublicAccessConfigurationOutput {
-    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-    /// clusters created in your account for the current Region. The configuration specifies
-    /// whether block public access is enabled. If block public access is enabled, security groups
-    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-    /// ::/0 on a port, unless the port is specified as an exception using
-    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-    /// and public access is allowed on this port. You can change this by updating the block public
-    /// access configuration to remove the exception.</p>
-    /// <note>
-    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-    /// access is disabled by default in that Region. To use this feature, you must manually
-    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-    /// before this date, block public access is enabled by default in that Region.</p>
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
-    /// <p>Properties that describe the Amazon Web Services principal that created the
-    /// <code>BlockPublicAccessConfiguration</code> using the
-    /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
-    /// the configuration was created. Each time a configuration for block public access is
-    /// updated, Amazon EMR updates this metadata.</p>
+    /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
     pub block_public_access_configuration_metadata:
         std::option::Option<crate::model::BlockPublicAccessConfigurationMetadata>,
 }
 impl GetBlockPublicAccessConfigurationOutput {
-    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-    /// clusters created in your account for the current Region. The configuration specifies
-    /// whether block public access is enabled. If block public access is enabled, security groups
-    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-    /// ::/0 on a port, unless the port is specified as an exception using
-    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-    /// and public access is allowed on this port. You can change this by updating the block public
-    /// access configuration to remove the exception.</p>
-    /// <note>
-    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-    /// access is disabled by default in that Region. To use this feature, you must manually
-    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-    /// before this date, block public access is enabled by default in that Region.</p>
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub fn block_public_access_configuration(
         &self,
     ) -> std::option::Option<&crate::model::BlockPublicAccessConfiguration> {
         self.block_public_access_configuration.as_ref()
     }
-    /// <p>Properties that describe the Amazon Web Services principal that created the
-    /// <code>BlockPublicAccessConfiguration</code> using the
-    /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
-    /// the configuration was created. Each time a configuration for block public access is
-    /// updated, Amazon EMR updates this metadata.</p>
+    /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
     pub fn block_public_access_configuration_metadata(
         &self,
     ) -> std::option::Option<&crate::model::BlockPublicAccessConfigurationMetadata> {
@@ -1902,20 +1844,8 @@ pub mod get_block_public_access_configuration_output {
             std::option::Option<crate::model::BlockPublicAccessConfigurationMetadata>,
     }
     impl Builder {
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating the block public
-        /// access configuration to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn block_public_access_configuration(
             mut self,
@@ -1924,20 +1854,8 @@ pub mod get_block_public_access_configuration_output {
             self.block_public_access_configuration = Some(input);
             self
         }
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating the block public
-        /// access configuration to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn set_block_public_access_configuration(
             mut self,
@@ -1946,11 +1864,7 @@ pub mod get_block_public_access_configuration_output {
             self.block_public_access_configuration = input;
             self
         }
-        /// <p>Properties that describe the Amazon Web Services principal that created the
-        /// <code>BlockPublicAccessConfiguration</code> using the
-        /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
-        /// the configuration was created. Each time a configuration for block public access is
-        /// updated, Amazon EMR updates this metadata.</p>
+        /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
         pub fn block_public_access_configuration_metadata(
             mut self,
             input: crate::model::BlockPublicAccessConfigurationMetadata,
@@ -1958,11 +1872,7 @@ pub mod get_block_public_access_configuration_output {
             self.block_public_access_configuration_metadata = Some(input);
             self
         }
-        /// <p>Properties that describe the Amazon Web Services principal that created the
-        /// <code>BlockPublicAccessConfiguration</code> using the
-        /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
-        /// the configuration was created. Each time a configuration for block public access is
-        /// updated, Amazon EMR updates this metadata.</p>
+        /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
         pub fn set_block_public_access_configuration_metadata(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccessConfigurationMetadata>,
@@ -2416,7 +2326,7 @@ impl DescribeNotebookExecutionOutput {
     }
 }
 
-/// <p> The output for the <a>DescribeJobFlows</a> operation. </p>
+/// <p> The output for the <code>DescribeJobFlows</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobFlowsOutput {
@@ -2802,17 +2712,15 @@ impl CreateSecurityConfigurationOutput {
     }
 }
 
-/// <p> The output for the <a>CancelSteps</a> operation. </p>
+/// <p> The output for the <code>CancelSteps</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStepsOutput {
-    /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
-    /// requests for each <code>StepID</code> specified.</p>
+    /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
     pub cancel_steps_info_list: std::option::Option<std::vec::Vec<crate::model::CancelStepsInfo>>,
 }
 impl CancelStepsOutput {
-    /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
-    /// requests for each <code>StepID</code> specified.</p>
+    /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
     pub fn cancel_steps_info_list(&self) -> std::option::Option<&[crate::model::CancelStepsInfo]> {
         self.cancel_steps_info_list.as_deref()
     }
@@ -2838,16 +2746,14 @@ pub mod cancel_steps_output {
         ///
         /// To override the contents of this collection use [`set_cancel_steps_info_list`](Self::set_cancel_steps_info_list).
         ///
-        /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
-        /// requests for each <code>StepID</code> specified.</p>
+        /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
         pub fn cancel_steps_info_list(mut self, input: crate::model::CancelStepsInfo) -> Self {
             let mut v = self.cancel_steps_info_list.unwrap_or_default();
             v.push(input);
             self.cancel_steps_info_list = Some(v);
             self
         }
-        /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
-        /// requests for each <code>StepID</code> specified.</p>
+        /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
         pub fn set_cancel_steps_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CancelStepsInfo>>,
@@ -2900,7 +2806,7 @@ impl AddTagsOutput {
     }
 }
 
-/// <p> The output for the <a>AddJobFlowSteps</a> operation. </p>
+/// <p> The output for the <code>AddJobFlowSteps</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddJobFlowStepsOutput {

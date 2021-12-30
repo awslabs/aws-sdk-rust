@@ -14,21 +14,13 @@ pub struct StartMedicalStreamTranscriptionError {
 pub enum StartMedicalStreamTranscriptionErrorKind {
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or
-    /// <code>StartMedicalStreamTranscription</code> operation was invalid. For example,
-    /// <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was
-    /// not set to a valid code. Check the parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try
-    /// your request again.</p>
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>A new stream started with the same session ID. The current stream has been
-    /// terminated.</p>
+    /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting
-    /// transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream
-    /// has finished processing, or break your audio stream into smaller chunks and try your request
-    /// again.</p>
+    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -174,21 +166,13 @@ pub struct StartStreamTranscriptionError {
 pub enum StartStreamTranscriptionErrorKind {
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or
-    /// <code>StartMedicalStreamTranscription</code> operation was invalid. For example,
-    /// <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was
-    /// not set to a valid code. Check the parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try
-    /// your request again.</p>
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>A new stream started with the same session ID. The current stream has been
-    /// terminated.</p>
+    /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting
-    /// transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream
-    /// has finished processing, or break your audio stream into smaller chunks and try your request
-    /// again.</p>
+    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -304,10 +288,7 @@ impl std::error::Error for StartStreamTranscriptionError {
     }
 }
 
-/// <p>You have exceeded the maximum number of concurrent transcription streams, are starting
-/// transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream
-/// has finished processing, or break your audio stream into smaller chunks and try your request
-/// again.</p>
+/// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -371,8 +352,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>A new stream started with the same session ID. The current stream has been
-/// terminated.</p>
+/// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -436,8 +416,7 @@ impl ConflictException {
     }
 }
 
-/// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try
-/// your request again.</p>
+/// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
@@ -501,10 +480,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p>One or more arguments to the <code>StartStreamTranscription</code> or
-/// <code>StartMedicalStreamTranscription</code> operation was invalid. For example,
-/// <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was
-/// not set to a valid code. Check the parameters and try your request again.</p>
+/// <p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {

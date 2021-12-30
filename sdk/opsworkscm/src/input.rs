@@ -12,26 +12,22 @@ pub mod associate_node_input {
             std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The name of the server with which to associate the node.
-        /// </p>
+        /// <p>The name of the server with which to associate the node. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server with which to associate the node.
-        /// </p>
+        /// <p>The name of the server with which to associate the node. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>The name of the node.
-        /// </p>
+        /// <p>The name of the node. </p>
         pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_name = Some(input.into());
             self
         }
-        /// <p>The name of the node.
-        /// </p>
+        /// <p>The name of the node. </p>
         pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_name = input;
             self
@@ -40,34 +36,15 @@ pub mod associate_node_input {
         ///
         /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
         ///
-        /// <p>Engine attributes used for associating the node.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a AssociateNode request for Chef</b>
-        /// </p>
+        /// <p>Engine attributes used for associating the node. </p>
+        /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-        /// with which the node is associated. By default only one organization
-        /// named <code>default</code> can exist.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+        /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attributes accepted in a AssociateNode request for Puppet</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
         /// </ul>
         pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
@@ -75,34 +52,15 @@ pub mod associate_node_input {
             self.engine_attributes = Some(v);
             self
         }
-        /// <p>Engine attributes used for associating the node.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a AssociateNode request for Chef</b>
-        /// </p>
+        /// <p>Engine attributes used for associating the node. </p>
+        /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-        /// with which the node is associated. By default only one organization
-        /// named <code>default</code> can exist.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+        /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attributes accepted in a AssociateNode request for Puppet</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
         /// </ul>
         pub fn set_engine_attributes(
             mut self,
@@ -258,28 +216,22 @@ pub mod create_backup_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the server that you want to back up.
-        /// </p>
+        /// <p>The name of the server that you want to back up. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server that you want to back up.
-        /// </p>
+        /// <p>The name of the server that you want to back up. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>
-        /// A user-defined description of the backup.
-        /// </p>
+        /// <p> A user-defined description of the backup. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// A user-defined description of the backup.
-        /// </p>
+        /// <p> A user-defined description of the backup. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -290,23 +242,11 @@ pub mod create_backup_input {
         ///
         /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -316,23 +256,11 @@ pub mod create_backup_input {
         }
         /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -507,32 +435,22 @@ pub mod create_server_input {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-        /// </p>
+        /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
             self.associate_public_ip_address = Some(input);
             self
         }
-        /// <p>
-        /// Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-        /// </p>
+        /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.associate_public_ip_address = input;
             self
         }
-        /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom
-        /// domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
-        /// generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
-        /// and <code>CustomPrivateKey</code>.</p>
+        /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
         pub fn custom_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_domain = Some(input.into());
             self
         }
-        /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom
-        /// domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
-        /// generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
-        /// and <code>CustomPrivateKey</code>.</p>
+        /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
         pub fn set_custom_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -540,49 +458,25 @@ pub mod create_server_input {
             self.custom_domain = input;
             self
         }
-        /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a
-        /// custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
+        /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
         /// <ul>
-        /// <li>
-        /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires
-        /// (the certificate's <code>NotAfter</code> date).</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-        /// </li>
+        /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+        /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+        /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+        /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+        /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
         /// </ul>
         pub fn custom_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_certificate = Some(input.into());
             self
         }
-        /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a
-        /// custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
+        /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
         /// <ul>
-        /// <li>
-        /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires
-        /// (the certificate's <code>NotAfter</code> date).</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-        /// </li>
+        /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+        /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+        /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+        /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+        /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
         /// </ul>
         pub fn set_custom_certificate(
             mut self,
@@ -591,14 +485,12 @@ pub mod create_server_input {
             self.custom_certificate = input;
             self
         }
-        /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
-        /// If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+        /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
         pub fn custom_private_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_private_key = Some(input.into());
             self
         }
-        /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
-        /// If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+        /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
         pub fn set_custom_private_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -606,60 +498,42 @@ pub mod create_server_input {
             self.custom_private_key = input;
             self
         }
-        /// <p>
-        /// Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-        /// </p>
+        /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
         pub fn disable_automated_backup(mut self, input: bool) -> Self {
             self.disable_automated_backup = Some(input);
             self
         }
-        /// <p>
-        /// Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-        /// </p>
+        /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
         pub fn set_disable_automated_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_automated_backup = input;
             self
         }
-        /// <p>
-        /// The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.
-        /// </p>
+        /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
-        /// <p>
-        /// The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.
-        /// </p>
+        /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
-        /// <p>
-        /// The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
-        /// </p>
+        /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
         pub fn engine_model(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_model = Some(input.into());
             self
         }
-        /// <p>
-        /// The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
-        /// </p>
+        /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
         pub fn set_engine_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_model = input;
             self
         }
-        /// <p>
-        /// The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion
-        /// is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.
-        /// </p>
+        /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
-        /// <p>
-        /// The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion
-        /// is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.
-        /// </p>
+        /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -671,49 +545,17 @@ pub mod create_server_input {
         ///
         /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
         ///
-        /// <p>Optional engine attributes on a specified server.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a Chef createServer request:</b>
-        /// </p>
+        /// <p>Optional engine attributes on a specified server. </p>
+        /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A
-        /// base64-encoded RSA public key. The corresponding private key is required to
-        /// access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is
-        /// generated and returned in the response.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>:
-        /// The password for the administrative user in the Chef Automate web-based dashboard. The
-        /// password length is a minimum of eight characters, and a maximum of 32. The
-        /// password can contain letters, numbers, and special characters
-        /// (!/@#$%^&+=_). The password must contain at least one lower case letter, one upper
-        /// case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is
-        /// generated and returned in the response.</p>
-        /// </li>
+        /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+        /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attributes accepted in a Puppet createServer request:</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository
-        /// (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add
-        /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+        /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+        /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
         /// </ul>
         pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
@@ -721,49 +563,17 @@ pub mod create_server_input {
             self.engine_attributes = Some(v);
             self
         }
-        /// <p>Optional engine attributes on a specified server.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a Chef createServer request:</b>
-        /// </p>
+        /// <p>Optional engine attributes on a specified server. </p>
+        /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A
-        /// base64-encoded RSA public key. The corresponding private key is required to
-        /// access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is
-        /// generated and returned in the response.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>:
-        /// The password for the administrative user in the Chef Automate web-based dashboard. The
-        /// password length is a minimum of eight characters, and a maximum of 32. The
-        /// password can contain letters, numbers, and special characters
-        /// (!/@#$%^&+=_). The password must contain at least one lower case letter, one upper
-        /// case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is
-        /// generated and returned in the response.</p>
-        /// </li>
+        /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+        /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attributes accepted in a Puppet createServer request:</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository
-        /// (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add
-        /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+        /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+        /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
         /// </ul>
         pub fn set_engine_attributes(
             mut self,
@@ -772,58 +582,32 @@ pub mod create_server_input {
             self.engine_attributes = input;
             self
         }
-        /// <p>
-        /// The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded.
-        /// The default value is <code>1</code>.
-        /// </p>
+        /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
         pub fn backup_retention_count(mut self, input: i32) -> Self {
             self.backup_retention_count = Some(input);
             self
         }
-        /// <p>
-        /// The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded.
-        /// The default value is <code>1</code>.
-        /// </p>
+        /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
         pub fn set_backup_retention_count(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_count = input;
             self
         }
-        /// <p>
-        /// The name of the server. The server name must be unique within your AWS account, within each region.
-        /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
-        /// </p>
+        /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the server. The server name must be unique within your AWS account, within each region.
-        /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
-        /// </p>
+        /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>
-        /// The ARN of the instance profile that your Amazon EC2
-        /// instances use. Although the AWS OpsWorks console typically creates
-        /// the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
-        /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the instance profile you need.
-        ///
-        /// </p>
+        /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
         pub fn instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the instance profile that your Amazon EC2
-        /// instances use. Although the AWS OpsWorks console typically creates
-        /// the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
-        /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the instance profile you need.
-        ///
-        /// </p>
+        /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
         pub fn set_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -831,16 +615,12 @@ pub mod create_server_input {
             self.instance_profile_arn = input;
             self
         }
-        /// <p>
-        /// The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
-        /// </p>
+        /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
-        /// </p>
+        /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -848,30 +628,18 @@ pub mod create_server_input {
             self.instance_type = input;
             self
         }
-        /// <p>
-        /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.
-        /// </p>
+        /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_pair = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.
-        /// </p>
+        /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
         }
-        /// <p>
-        /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-        /// Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
-        /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
-        /// </p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>Mon:08:00</code>,
-        /// which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
-        /// </p>
+        /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+        /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -879,16 +647,8 @@ pub mod create_server_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>
-        /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-        /// Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
-        /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
-        /// </p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>Mon:08:00</code>,
-        /// which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
-        /// </p>
+        /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+        /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -896,54 +656,26 @@ pub mod create_server_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p>
-        /// The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server
-        /// if automated backups are enabled. Valid values must be specified in one of the following formats:
-        /// </p>
+        /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HH:MM</code> for daily backups</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DDD:HH:MM</code> for weekly backups</p>
-        /// </li>
+        /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+        /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+        /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+        /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+        /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p>
-        /// The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server
-        /// if automated backups are enabled. Valid values must be specified in one of the following formats:
-        /// </p>
+        /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HH:MM</code> for daily backups</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DDD:HH:MM</code> for weekly backups</p>
-        /// </li>
+        /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+        /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-        /// <p>
-        /// <b>Example:</b>
-        /// <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+        /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+        /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+        /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -955,28 +687,16 @@ pub mod create_server_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>
-        /// A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups
-        /// must be within the VPC that is specified by <code>SubnetIds</code>.
-        /// </p>
-        /// <p>
-        /// If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to
-        /// 0.0.0.0/0 (everyone).
-        /// </p>
+        /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+        /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>
-        /// A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups
-        /// must be within the VPC that is specified by <code>SubnetIds</code>.
-        /// </p>
-        /// <p>
-        /// If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to
-        /// 0.0.0.0/0 (everyone).
-        /// </p>
+        /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+        /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -984,22 +704,12 @@ pub mod create_server_input {
             self.security_group_ids = input;
             self
         }
-        /// <p>
-        /// The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates
-        /// the service role for you, if you are using the AWS CLI or API commands,
-        /// run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the service role and instance profile that you need.
-        /// </p>
+        /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates
-        /// the service role for you, if you are using the AWS CLI or API commands,
-        /// run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the service role and instance profile that you need.
-        /// </p>
+        /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1011,34 +721,20 @@ pub mod create_server_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>
-        /// The IDs of subnets in which to launch the server EC2 instance.
-        /// </p>
-        /// <p>
-        /// Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.
-        /// </p>
-        /// <p>
-        /// EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.
-        /// </p>
-        /// <p>For more information about supported Amazon EC2 platforms, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
+        /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+        /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+        /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
+        /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>
-        /// The IDs of subnets in which to launch the server EC2 instance.
-        /// </p>
-        /// <p>
-        /// Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.
-        /// </p>
-        /// <p>
-        /// EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.
-        /// </p>
-        /// <p>For more information about supported Amazon EC2 platforms, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
+        /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+        /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+        /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
+        /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1052,23 +748,11 @@ pub mod create_server_input {
         ///
         /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -1078,23 +762,11 @@ pub mod create_server_input {
         }
         /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1103,16 +775,12 @@ pub mod create_server_input {
             self.tags = input;
             self
         }
-        /// <p>
-        /// If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.
-        /// </p>
+        /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>
-        /// If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.
-        /// </p>
+        /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -1280,16 +948,12 @@ pub mod delete_backup_input {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
-        /// Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.
-        /// </p>
+        /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
-        /// Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.
-        /// </p>
+        /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -1728,26 +1392,22 @@ pub mod describe_backups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Describes a single backup.
-        /// </p>
+        /// <p>Describes a single backup. </p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>Describes a single backup.
-        /// </p>
+        /// <p>Describes a single backup. </p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
         }
-        /// <p>Returns backups for the server with the specified ServerName.
-        /// </p>
+        /// <p>Returns backups for the server with the specified ServerName. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>Returns backups for the server with the specified ServerName.
-        /// </p>
+        /// <p>Returns backups for the server with the specified ServerName. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -1931,44 +1591,22 @@ pub mod describe_events_input {
             self.server_name = input;
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-        /// </p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-        /// </p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds
-        /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-        /// request parameter to get the next set of results.
-        /// </p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds
-        /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-        /// request parameter to get the next set of results.
-        /// </p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2120,8 +1758,7 @@ pub mod describe_node_association_status_input {
         pub(crate) server_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
-        /// </p>
+        /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
         pub fn node_association_status_token(
             mut self,
             input: impl Into<std::string::String>,
@@ -2129,8 +1766,7 @@ pub mod describe_node_association_status_input {
             self.node_association_status_token = Some(input.into());
             self
         }
-        /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
-        /// </p>
+        /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
         pub fn set_node_association_status_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2138,14 +1774,12 @@ pub mod describe_node_association_status_input {
             self.node_association_status_token = input;
             self
         }
-        /// <p>The name of the server from which to disassociate the node.
-        /// </p>
+        /// <p>The name of the server from which to disassociate the node. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server from which to disassociate the node.
-        /// </p>
+        /// <p>The name of the server from which to disassociate the node. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -2310,26 +1944,22 @@ pub mod describe_servers_input {
             self.server_name = input;
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2483,26 +2113,22 @@ pub mod disassociate_node_input {
             std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The name of the server from which to disassociate the node.
-        /// </p>
+        /// <p>The name of the server from which to disassociate the node. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server from which to disassociate the node.
-        /// </p>
+        /// <p>The name of the server from which to disassociate the node. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>The name of the client node.
-        /// </p>
+        /// <p>The name of the client node. </p>
         pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_name = Some(input.into());
             self
         }
-        /// <p>The name of the client node.
-        /// </p>
+        /// <p>The name of the client node. </p>
         pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_name = input;
             self
@@ -2511,19 +2137,10 @@ pub mod disassociate_node_input {
         ///
         /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
         ///
-        /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes required in a DisassociateNode request for Chef</b>
-        /// </p>
+        /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+        /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-        /// with which the node was associated. By default only one organization
-        /// named <code>default</code> can exist.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
         /// </ul>
         pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
@@ -2531,19 +2148,10 @@ pub mod disassociate_node_input {
             self.engine_attributes = Some(v);
             self
         }
-        /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
-        /// </p>
-        /// <p class="title">
-        /// <b>Attributes required in a DisassociateNode request for Chef</b>
-        /// </p>
+        /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+        /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-        /// with which the node was associated. By default only one organization
-        /// named <code>default</code> can exist.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
         /// </ul>
         pub fn set_engine_attributes(
             mut self,
@@ -2701,14 +2309,12 @@ pub mod export_server_engine_attribute_input {
             std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
-        /// This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+        /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
         pub fn export_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
-        /// This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+        /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
         pub fn set_export_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2730,31 +2336,12 @@ pub mod export_server_engine_attribute_input {
         ///
         /// To override the contents of this collection use [`set_input_attributes`](Self::set_input_attributes).
         ///
-        /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item
-        /// is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are
-        /// supported engine attribute names.</p>
+        /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order.
-        /// In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
-        /// always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box).
-        /// In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated
-        /// by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet,
-        /// this parameter is ignored.</p>
-        /// </li>
+        /// <li> <p> <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
         /// </ul>
         pub fn input_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.input_attributes.unwrap_or_default();
@@ -2762,31 +2349,12 @@ pub mod export_server_engine_attribute_input {
             self.input_attributes = Some(v);
             self
         }
-        /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item
-        /// is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are
-        /// supported engine attribute names.</p>
+        /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order.
-        /// In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
-        /// always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box).
-        /// In Puppet, this parameter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated
-        /// by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet,
-        /// this parameter is ignored.</p>
-        /// </li>
+        /// <li> <p> <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
+        /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
         /// </ul>
         pub fn set_input_attributes(
             mut self,
@@ -2945,52 +2513,32 @@ pub mod list_tags_for_resource_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds
-        /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-        /// request parameter to get the next set of results.</p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds
-        /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-        /// request parameter to get the next set of results.</p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3146,42 +2694,32 @@ pub mod restore_server_input {
         pub(crate) key_pair: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The ID of the backup that you want to use to restore a server.
-        /// </p>
+        /// <p> The ID of the backup that you want to use to restore a server. </p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p> The ID of the backup that you want to use to restore a server.
-        /// </p>
+        /// <p> The ID of the backup that you want to use to restore a server. </p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
         }
-        /// <p> The name of the server that you want to restore.
-        /// </p>
+        /// <p> The name of the server that you want to restore. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p> The name of the server that you want to restore.
-        /// </p>
+        /// <p> The name of the server that you want to restore. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code>
-        /// For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter,
-        /// RestoreServer uses the instance type from the specified backup.
-        /// </p>
+        /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code>
-        /// For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter,
-        /// RestoreServer uses the instance type from the specified backup.
-        /// </p>
+        /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3189,16 +2727,12 @@ pub mod restore_server_input {
             self.instance_type = input;
             self
         }
-        /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-        /// if the administrator no longer has the SSH key.
-        /// </p>
+        /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_pair = Some(input.into());
             self
         }
-        /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-        /// if the administrator no longer has the SSH key.
-        /// </p>
+        /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
@@ -3351,14 +2885,12 @@ pub mod start_maintenance_input {
             std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The name of the server on which to run maintenance.
-        /// </p>
+        /// <p>The name of the server on which to run maintenance. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server on which to run maintenance.
-        /// </p>
+        /// <p>The name of the server on which to run maintenance. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -3368,17 +2900,9 @@ pub mod start_maintenance_input {
         /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
         ///
         /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a StartMaintenance request for Chef</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2,
-        /// add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
         /// </ul>
         pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
@@ -3387,17 +2911,9 @@ pub mod start_maintenance_input {
             self
         }
         /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
-        /// <p class="title">
-        /// <b>Attributes accepted in a StartMaintenance request for Chef</b>
-        /// </p>
+        /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2,
-        /// add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
         /// </ul>
         pub fn set_engine_attributes(
             mut self,
@@ -3552,14 +3068,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3570,23 +3084,11 @@ pub mod tag_resource_input {
         ///
         /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -3596,23 +3098,11 @@ pub mod tag_resource_input {
         }
         /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3766,14 +3256,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
-        /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+        /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3945,49 +3433,38 @@ pub mod update_server_input {
         pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
-        /// </p>
+        /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
         pub fn disable_automated_backup(mut self, input: bool) -> Self {
             self.disable_automated_backup = Some(input);
             self
         }
-        /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
-        /// </p>
+        /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
         pub fn set_disable_automated_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_automated_backup = input;
             self
         }
-        /// <p>Sets the number of automated backups that you want to keep.
-        /// </p>
+        /// <p>Sets the number of automated backups that you want to keep. </p>
         pub fn backup_retention_count(mut self, input: i32) -> Self {
             self.backup_retention_count = Some(input);
             self
         }
-        /// <p>Sets the number of automated backups that you want to keep.
-        /// </p>
+        /// <p>Sets the number of automated backups that you want to keep. </p>
         pub fn set_backup_retention_count(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_count = input;
             self
         }
-        /// <p>The name of the server to update.
-        /// </p>
+        /// <p>The name of the server to update. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server to update.
-        /// </p>
+        /// <p>The name of the server to update. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>
-        /// <code>DDD:HH:MM</code> (weekly start time) or
-        /// <code>HH:MM</code> (daily start time).
-        /// </p>
-        /// <p>
-        /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-        /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+        /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+        /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -3995,13 +3472,8 @@ pub mod update_server_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>DDD:HH:MM</code> (weekly start time) or
-        /// <code>HH:MM</code> (daily start time).
-        /// </p>
-        /// <p>
-        /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-        /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+        /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+        /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4009,24 +3481,14 @@ pub mod update_server_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p>
-        /// <code>DDD:HH:MM</code> (weekly start time) or
-        /// <code>HH:MM</code> (daily start time).
-        /// </p>
-        /// <p>
-        /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-        /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+        /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+        /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>DDD:HH:MM</code> (weekly start time) or
-        /// <code>HH:MM</code> (daily start time).
-        /// </p>
-        /// <p>
-        /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-        /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+        /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+        /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4183,26 +3645,22 @@ pub mod update_server_engine_attributes_input {
         pub(crate) attribute_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the server to update.
-        /// </p>
+        /// <p>The name of the server to update. </p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_name = Some(input.into());
             self
         }
-        /// <p>The name of the server to update.
-        /// </p>
+        /// <p>The name of the server to update. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
-        /// <p>The name of the engine attribute to update.
-        /// </p>
+        /// <p>The name of the engine attribute to update. </p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the engine attribute to update.
-        /// </p>
+        /// <p>The name of the engine attribute to update. </p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4210,14 +3668,12 @@ pub mod update_server_engine_attributes_input {
             self.attribute_name = input;
             self
         }
-        /// <p>The value to set for the attribute.
-        /// </p>
+        /// <p>The value to set for the attribute. </p>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_value = Some(input.into());
             self
         }
-        /// <p>The value to set for the attribute.
-        /// </p>
+        /// <p>The value to set for the attribute. </p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4369,29 +3825,23 @@ impl UpdateServerEngineAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerEngineAttributesInput {
-    /// <p>The name of the server to update.
-    /// </p>
+    /// <p>The name of the server to update. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>The name of the engine attribute to update.
-    /// </p>
+    /// <p>The name of the engine attribute to update. </p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The value to set for the attribute.
-    /// </p>
+    /// <p>The value to set for the attribute. </p>
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl UpdateServerEngineAttributesInput {
-    /// <p>The name of the server to update.
-    /// </p>
+    /// <p>The name of the server to update. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The name of the engine attribute to update.
-    /// </p>
+    /// <p>The name of the engine attribute to update. </p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The value to set for the attribute.
-    /// </p>
+    /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
@@ -4410,65 +3860,39 @@ impl std::fmt::Debug for UpdateServerEngineAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerInput {
-    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
-    /// </p>
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     pub disable_automated_backup: std::option::Option<bool>,
-    /// <p>Sets the number of automated backups that you want to keep.
-    /// </p>
+    /// <p>Sets the number of automated backups that you want to keep. </p>
     pub backup_retention_count: std::option::Option<i32>,
-    /// <p>The name of the server to update.
-    /// </p>
+    /// <p>The name of the server to update. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>DDD:HH:MM</code> (weekly start time) or
-    /// <code>HH:MM</code> (daily start time).
-    /// </p>
-    /// <p>
-    /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-    /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>DDD:HH:MM</code> (weekly start time) or
-    /// <code>HH:MM</code> (daily start time).
-    /// </p>
-    /// <p>
-    /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-    /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
 }
 impl UpdateServerInput {
-    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
-    /// </p>
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     pub fn disable_automated_backup(&self) -> std::option::Option<bool> {
         self.disable_automated_backup
     }
-    /// <p>Sets the number of automated backups that you want to keep.
-    /// </p>
+    /// <p>Sets the number of automated backups that you want to keep. </p>
     pub fn backup_retention_count(&self) -> std::option::Option<i32> {
         self.backup_retention_count
     }
-    /// <p>The name of the server to update.
-    /// </p>
+    /// <p>The name of the server to update. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>
-    /// <code>DDD:HH:MM</code> (weekly start time) or
-    /// <code>HH:MM</code> (daily start time).
-    /// </p>
-    /// <p>
-    /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-    /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>
-    /// <code>DDD:HH:MM</code> (weekly start time) or
-    /// <code>HH:MM</code> (daily start time).
-    /// </p>
-    /// <p>
-    /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
-    /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -4492,15 +3916,13 @@ impl std::fmt::Debug for UpdateServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of tags that you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4522,56 +3944,30 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -4590,42 +3986,24 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMaintenanceInput {
-    /// <p>The name of the server on which to run maintenance.
-    /// </p>
+    /// <p>The name of the server on which to run maintenance. </p>
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a StartMaintenance request for Chef</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2,
-    /// add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl StartMaintenanceInput {
-    /// <p>The name of the server on which to run maintenance.
-    /// </p>
+    /// <p>The name of the server on which to run maintenance. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a StartMaintenance request for Chef</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2,
-    /// add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
@@ -4644,43 +4022,29 @@ impl std::fmt::Debug for StartMaintenanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreServerInput {
-    /// <p> The ID of the backup that you want to use to restore a server.
-    /// </p>
+    /// <p> The ID of the backup that you want to use to restore a server. </p>
     pub backup_id: std::option::Option<std::string::String>,
-    /// <p> The name of the server that you want to restore.
-    /// </p>
+    /// <p> The name of the server that you want to restore. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code>
-    /// For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter,
-    /// RestoreServer uses the instance type from the specified backup.
-    /// </p>
+    /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-    /// if the administrator no longer has the SSH key.
-    /// </p>
+    /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>
     pub key_pair: std::option::Option<std::string::String>,
 }
 impl RestoreServerInput {
-    /// <p> The ID of the backup that you want to use to restore a server.
-    /// </p>
+    /// <p> The ID of the backup that you want to use to restore a server. </p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
-    /// <p> The name of the server that you want to restore.
-    /// </p>
+    /// <p> The name of the server that you want to restore. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code>
-    /// For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter,
-    /// RestoreServer uses the instance type from the specified backup.
-    /// </p>
+    /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-    /// if the administrator no longer has the SSH key.
-    /// </p>
+    /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>
     pub fn key_pair(&self) -> std::option::Option<&str> {
         self.key_pair.as_deref()
     }
@@ -4700,43 +4064,23 @@ impl std::fmt::Debug for RestoreServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds
-    /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-    /// request parameter to get the next set of results.</p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
-    /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
+    /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>ListTagsForResource</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds
-    /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-    /// request parameter to get the next set of results.</p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4755,42 +4099,21 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportServerEngineAttributeInput {
-    /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
-    /// This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+    /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     pub export_attribute_name: std::option::Option<std::string::String>,
     /// <p>The name of the server from which you are exporting the attribute.</p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item
-    /// is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are
-    /// supported engine attribute names.</p>
+    /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order.
-    /// In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
-    /// always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box).
-    /// In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated
-    /// by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet,
-    /// this parameter is ignored.</p>
-    /// </li>
+    /// <li> <p> <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
     pub input_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl ExportServerEngineAttributeInput {
-    /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
-    /// This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+    /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     pub fn export_attribute_name(&self) -> std::option::Option<&str> {
         self.export_attribute_name.as_deref()
     }
@@ -4798,31 +4121,12 @@ impl ExportServerEngineAttributeInput {
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item
-    /// is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are
-    /// supported engine attribute names.</p>
+    /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order.
-    /// In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
-    /// always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box).
-    /// In Puppet, this parameter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated
-    /// by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet,
-    /// this parameter is ignored.</p>
-    /// </li>
+    /// <li> <p> <b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
+    /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
     pub fn input_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.input_attributes.as_deref()
@@ -4842,52 +4146,30 @@ impl std::fmt::Debug for ExportServerEngineAttributeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateNodeInput {
-    /// <p>The name of the server from which to disassociate the node.
-    /// </p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>The name of the client node.
-    /// </p>
+    /// <p>The name of the client node. </p>
     pub node_name: std::option::Option<std::string::String>,
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes required in a DisassociateNode request for Chef</b>
-    /// </p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-    /// with which the node was associated. By default only one organization
-    /// named <code>default</code> can exist.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl DisassociateNodeInput {
-    /// <p>The name of the server from which to disassociate the node.
-    /// </p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The name of the client node.
-    /// </p>
+    /// <p>The name of the client node. </p>
     pub fn node_name(&self) -> std::option::Option<&str> {
         self.node_name.as_deref()
     }
-    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes required in a DisassociateNode request for Chef</b>
-    /// </p>
+    /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+    /// <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-    /// with which the node was associated. By default only one organization
-    /// named <code>default</code> can exist.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
@@ -4909,11 +4191,9 @@ impl std::fmt::Debug for DisassociateNodeInput {
 pub struct DescribeServersInput {
     /// <p>Describes the server with the specified ServerName.</p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeServersInput {
@@ -4921,13 +4201,11 @@ impl DescribeServersInput {
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4946,21 +4224,17 @@ impl std::fmt::Debug for DescribeServersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeAssociationStatusInput {
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
-    /// </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
     pub node_association_status_token: std::option::Option<std::string::String>,
-    /// <p>The name of the server from which to disassociate the node.
-    /// </p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub server_name: std::option::Option<std::string::String>,
 }
 impl DescribeNodeAssociationStatusInput {
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
-    /// </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
     pub fn node_association_status_token(&self) -> std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
-    /// <p>The name of the server from which to disassociate the node.
-    /// </p>
+    /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -4983,20 +4257,9 @@ impl std::fmt::Debug for DescribeNodeAssociationStatusInput {
 pub struct DescribeEventsInput {
     /// <p>The name of the server for which you want to view events.</p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-    /// </p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds
-    /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-    /// request parameter to get the next set of results.
-    /// </p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEventsInput {
@@ -5004,22 +4267,11 @@ impl DescribeEventsInput {
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-    /// </p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds
-    /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-    /// request parameter to get the next set of results.
-    /// </p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5038,11 +4290,9 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsInput {
-    /// <p>Describes a single backup.
-    /// </p>
+    /// <p>Describes a single backup. </p>
     pub backup_id: std::option::Option<std::string::String>,
-    /// <p>Returns backups for the server with the specified ServerName.
-    /// </p>
+    /// <p>Returns backups for the server with the specified ServerName. </p>
     pub server_name: std::option::Option<std::string::String>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5050,13 +4300,11 @@ pub struct DescribeBackupsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeBackupsInput {
-    /// <p>Describes a single backup.
-    /// </p>
+    /// <p>Describes a single backup. </p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
-    /// <p>Returns backups for the server with the specified ServerName.
-    /// </p>
+    /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -5116,15 +4364,11 @@ impl std::fmt::Debug for DeleteServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
-    /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
-    /// Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.
-    /// </p>
+    /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
-    /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
-    /// Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.
-    /// </p>
+    /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
@@ -5141,465 +4385,205 @@ impl std::fmt::Debug for DeleteBackupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerInput {
-    /// <p>
-    /// Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-    /// </p>
+    /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub associate_public_ip_address: std::option::Option<bool>,
-    /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom
-    /// domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
-    /// generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
-    /// and <code>CustomPrivateKey</code>.</p>
+    /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
     pub custom_domain: std::option::Option<std::string::String>,
-    /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a
-    /// custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
+    /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires
-    /// (the certificate's <code>NotAfter</code> date).</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-    /// </li>
+    /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+    /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+    /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+    /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+    /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
     pub custom_certificate: std::option::Option<std::string::String>,
-    /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
-    /// If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+    /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
     pub custom_private_key: std::option::Option<std::string::String>,
-    /// <p>
-    /// Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-    /// </p>
+    /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub disable_automated_backup: std::option::Option<bool>,
-    /// <p>
-    /// The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.
-    /// </p>
+    /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
     pub engine: std::option::Option<std::string::String>,
-    /// <p>
-    /// The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
-    /// </p>
+    /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
     pub engine_model: std::option::Option<std::string::String>,
-    /// <p>
-    /// The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion
-    /// is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.
-    /// </p>
+    /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>Optional engine attributes on a specified server.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a Chef createServer request:</b>
-    /// </p>
+    /// <p>Optional engine attributes on a specified server. </p>
+    /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A
-    /// base64-encoded RSA public key. The corresponding private key is required to
-    /// access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is
-    /// generated and returned in the response.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>:
-    /// The password for the administrative user in the Chef Automate web-based dashboard. The
-    /// password length is a minimum of eight characters, and a maximum of 32. The
-    /// password can contain letters, numbers, and special characters
-    /// (!/@#$%^&+=_). The password must contain at least one lower case letter, one upper
-    /// case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is
-    /// generated and returned in the response.</p>
-    /// </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attributes accepted in a Puppet createServer request:</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository
-    /// (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add
-    /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
     /// </ul>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
-    /// <p>
-    /// The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded.
-    /// The default value is <code>1</code>.
-    /// </p>
+    /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
     pub backup_retention_count: std::option::Option<i32>,
-    /// <p>
-    /// The name of the server. The server name must be unique within your AWS account, within each region.
-    /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
-    /// </p>
+    /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ARN of the instance profile that your Amazon EC2
-    /// instances use. Although the AWS OpsWorks console typically creates
-    /// the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
-    /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-    /// This template creates a CloudFormation stack that includes the instance profile you need.
-    ///
-    /// </p>
+    /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub instance_profile_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
-    /// </p>
+    /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.
-    /// </p>
+    /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
     pub key_pair: std::option::Option<std::string::String>,
-    /// <p>
-    /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-    /// Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
-    /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
-    /// </p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>Mon:08:00</code>,
-    /// which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
-    /// </p>
+    /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p>
-    /// The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server
-    /// if automated backups are enabled. Valid values must be specified in one of the following formats:
-    /// </p>
+    /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HH:MM</code> for daily backups</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DDD:HH:MM</code> for weekly backups</p>
-    /// </li>
+    /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+    /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+    /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
-    /// <p>
-    /// A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups
-    /// must be within the VPC that is specified by <code>SubnetIds</code>.
-    /// </p>
-    /// <p>
-    /// If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to
-    /// 0.0.0.0/0 (everyone).
-    /// </p>
+    /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+    /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates
-    /// the service role for you, if you are using the AWS CLI or API commands,
-    /// run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-    /// This template creates a CloudFormation stack that includes the service role and instance profile that you need.
-    /// </p>
+    /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The IDs of subnets in which to launch the server EC2 instance.
-    /// </p>
-    /// <p>
-    /// Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.
-    /// </p>
-    /// <p>
-    /// EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.
-    /// </p>
-    /// <p>For more information about supported Amazon EC2 platforms, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
+    /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+    /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>
-    /// If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.
-    /// </p>
+    /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl CreateServerInput {
-    /// <p>
-    /// Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-    /// </p>
+    /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn associate_public_ip_address(&self) -> std::option::Option<bool> {
         self.associate_public_ip_address
     }
-    /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom
-    /// domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
-    /// generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
-    /// and <code>CustomPrivateKey</code>.</p>
+    /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
     pub fn custom_domain(&self) -> std::option::Option<&str> {
         self.custom_domain.as_deref()
     }
-    /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a
-    /// custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
+    /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires
-    /// (the certificate's <code>NotAfter</code> date).</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-    /// </li>
+    /// <li> <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p> </li>
+    /// <li> <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p> </li>
+    /// <li> <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>
+    /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
+    /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
     pub fn custom_certificate(&self) -> std::option::Option<&str> {
         self.custom_certificate.as_deref()
     }
-    /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
-    /// If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+    /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
     pub fn custom_private_key(&self) -> std::option::Option<&str> {
         self.custom_private_key.as_deref()
     }
-    /// <p>
-    /// Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-    /// </p>
+    /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
     pub fn disable_automated_backup(&self) -> std::option::Option<bool> {
         self.disable_automated_backup
     }
-    /// <p>
-    /// The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.
-    /// </p>
+    /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>
-    /// The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
-    /// </p>
+    /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
     pub fn engine_model(&self) -> std::option::Option<&str> {
         self.engine_model.as_deref()
     }
-    /// <p>
-    /// The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion
-    /// is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.
-    /// </p>
+    /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Optional engine attributes on a specified server.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a Chef createServer request:</b>
-    /// </p>
+    /// <p>Optional engine attributes on a specified server. </p>
+    /// <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A
-    /// base64-encoded RSA public key. The corresponding private key is required to
-    /// access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is
-    /// generated and returned in the response.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>:
-    /// The password for the administrative user in the Chef Automate web-based dashboard. The
-    /// password length is a minimum of eight characters, and a maximum of 32. The
-    /// password can contain letters, numbers, and special characters
-    /// (!/@#$%^&+=_). The password must contain at least one lower case letter, one upper
-    /// case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is
-    /// generated and returned in the response.</p>
-    /// </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. </p> </li>
+    /// <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attributes accepted in a Puppet createServer request:</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository
-    /// (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add
-    /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p> </li>
+    /// <li> <p> <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
     /// </ul>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
     }
-    /// <p>
-    /// The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded.
-    /// The default value is <code>1</code>.
-    /// </p>
+    /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
     pub fn backup_retention_count(&self) -> std::option::Option<i32> {
         self.backup_retention_count
     }
-    /// <p>
-    /// The name of the server. The server name must be unique within your AWS account, within each region.
-    /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
-    /// </p>
+    /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>
-    /// The ARN of the instance profile that your Amazon EC2
-    /// instances use. Although the AWS OpsWorks console typically creates
-    /// the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml
-    /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-    /// This template creates a CloudFormation stack that includes the instance profile you need.
-    ///
-    /// </p>
+    /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub fn instance_profile_arn(&self) -> std::option::Option<&str> {
         self.instance_profile_arn.as_deref()
     }
-    /// <p>
-    /// The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
-    /// </p>
+    /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>
-    /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.
-    /// </p>
+    /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
     pub fn key_pair(&self) -> std::option::Option<&str> {
         self.key_pair.as_deref()
     }
-    /// <p>
-    /// The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-    /// Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
-    /// The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
-    /// </p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>Mon:08:00</code>,
-    /// which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
-    /// </p>
+    /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>
-    /// The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server
-    /// if automated backups are enabled. Valid values must be specified in one of the following formats:
-    /// </p>
+    /// <p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HH:MM</code> for daily backups</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DDD:HH:MM</code> for weekly backups</p>
-    /// </li>
+    /// <li> <p> <code>HH:MM</code> for daily backups</p> </li>
+    /// <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
-    /// <p>
-    /// <b>Example:</b>
-    /// <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+    /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
+    /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
+    /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
-    /// <p>
-    /// A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups
-    /// must be within the VPC that is specified by <code>SubnetIds</code>.
-    /// </p>
-    /// <p>
-    /// If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to
-    /// 0.0.0.0/0 (everyone).
-    /// </p>
+    /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
+    /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>
-    /// The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates
-    /// the service role for you, if you are using the AWS CLI or API commands,
-    /// run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-    /// This template creates a CloudFormation stack that includes the service role and instance profile that you need.
-    /// </p>
+    /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>
-    /// The IDs of subnets in which to launch the server EC2 instance.
-    /// </p>
-    /// <p>
-    /// Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled.
-    /// </p>
-    /// <p>
-    /// EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled.
-    /// </p>
-    /// <p>For more information about supported Amazon EC2 platforms, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
+    /// <p> The IDs of subnets in which to launch the server EC2 instance. </p>
+    /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
+    /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>
-    /// If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.
-    /// </p>
+    /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
@@ -5642,66 +4626,36 @@ impl std::fmt::Debug for CreateServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupInput {
-    /// <p>The name of the server that you want to back up.
-    /// </p>
+    /// <p>The name of the server that you want to back up. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A user-defined description of the backup.
-    /// </p>
+    /// <p> A user-defined description of the backup. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBackupInput {
-    /// <p>The name of the server that you want to back up.
-    /// </p>
+    /// <p>The name of the server that you want to back up. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>
-    /// A user-defined description of the backup.
-    /// </p>
+    /// <p> A user-defined description of the backup. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -5721,82 +4675,40 @@ impl std::fmt::Debug for CreateBackupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateNodeInput {
-    /// <p>The name of the server with which to associate the node.
-    /// </p>
+    /// <p>The name of the server with which to associate the node. </p>
     pub server_name: std::option::Option<std::string::String>,
-    /// <p>The name of the node.
-    /// </p>
+    /// <p>The name of the node. </p>
     pub node_name: std::option::Option<std::string::String>,
-    /// <p>Engine attributes used for associating the node.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a AssociateNode request for Chef</b>
-    /// </p>
+    /// <p>Engine attributes used for associating the node. </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-    /// with which the node is associated. By default only one organization
-    /// named <code>default</code> can exist.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attributes accepted in a AssociateNode request for Puppet</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl AssociateNodeInput {
-    /// <p>The name of the server with which to associate the node.
-    /// </p>
+    /// <p>The name of the server with which to associate the node. </p>
     pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>The name of the node.
-    /// </p>
+    /// <p>The name of the node. </p>
     pub fn node_name(&self) -> std::option::Option<&str> {
         self.node_name.as_deref()
     }
-    /// <p>Engine attributes used for associating the node.
-    /// </p>
-    /// <p class="title">
-    /// <b>Attributes accepted in a AssociateNode request for Chef</b>
-    /// </p>
+    /// <p>Engine attributes used for associating the node. </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_ORGANIZATION</code>: The Chef organization
-    /// with which the node is associated. By default only one organization
-    /// named <code>default</code> can exist.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attributes accepted in a AssociateNode request for Puppet</b>
-    /// </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()

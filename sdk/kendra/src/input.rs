@@ -227,22 +227,14 @@ pub mod associate_personas_to_entities_input {
         ///
         /// To override the contents of this collection use [`set_personas`](Self::set_personas).
         ///
-        /// <p>The personas that define the specific permissions of users or groups in
-        /// your Amazon Web Services SSO identity source. The available personas or access
-        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
-        /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
-        /// access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn personas(mut self, input: crate::model::EntityPersonaConfiguration) -> Self {
             let mut v = self.personas.unwrap_or_default();
             v.push(input);
             self.personas = Some(v);
             self
         }
-        /// <p>The personas that define the specific permissions of users or groups in
-        /// your Amazon Web Services SSO identity source. The available personas or access
-        /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
-        /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
-        /// access to your search page</a>.</p>
+        /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
         pub fn set_personas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
@@ -401,14 +393,12 @@ pub mod batch_delete_document_input {
             std::option::Option<crate::model::DataSourceSyncJobMetricTarget>,
     }
     impl Builder {
-        /// <p>The identifier of the index that contains the documents to
-        /// delete.</p>
+        /// <p>The identifier of the index that contains the documents to delete.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the documents to
-        /// delete.</p>
+        /// <p>The identifier of the index that contains the documents to delete.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -432,8 +422,7 @@ pub mod batch_delete_document_input {
             self.document_id_list = input;
             self
         }
-        /// <p>Maps a particular data source sync job to a particular data
-        /// source.</p>
+        /// <p>Maps a particular data source sync job to a particular data source.</p>
         pub fn data_source_sync_job_metric_target(
             mut self,
             input: crate::model::DataSourceSyncJobMetricTarget,
@@ -441,8 +430,7 @@ pub mod batch_delete_document_input {
             self.data_source_sync_job_metric_target = Some(input);
             self
         }
-        /// <p>Maps a particular data source sync job to a particular data
-        /// source.</p>
+        /// <p>Maps a particular data source sync job to a particular data source.</p>
         pub fn set_data_source_sync_job_metric_target(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobMetricTarget>,
@@ -598,16 +586,12 @@ pub mod batch_get_document_status_input {
             std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
     }
     impl Builder {
-        /// <p>The identifier of the index to add documents to. The index ID is
-        /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
-        /// </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to add documents to. The index ID is
-        /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
-        /// </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -616,18 +600,14 @@ pub mod batch_get_document_status_input {
         ///
         /// To override the contents of this collection use [`set_document_info_list`](Self::set_document_info_list).
         ///
-        /// <p>A list of <code>DocumentInfo</code> objects that identify the
-        /// documents for which to get the status. You identify the documents by
-        /// their document ID and optional attributes.</p>
+        /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
         pub fn document_info_list(mut self, input: crate::model::DocumentInfo) -> Self {
             let mut v = self.document_info_list.unwrap_or_default();
             v.push(input);
             self.document_info_list = Some(v);
             self
         }
-        /// <p>A list of <code>DocumentInfo</code> objects that identify the
-        /// documents for which to get the status. You identify the documents by
-        /// their document ID and optional attributes.</p>
+        /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
         pub fn set_document_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
@@ -786,32 +766,22 @@ pub mod batch_put_document_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>The identifier of the index to add the documents to. You need to
-        /// create the index first using the <code>CreateIndex</code>
-        /// operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to add the documents to. You need to
-        /// create the index first using the <code>CreateIndex</code>
-        /// operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-        /// <code>BatchPutDocument</code> operation. For more information, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-        /// <code>BatchPutDocument</code> operation. For more information, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -821,26 +791,14 @@ pub mod batch_put_document_input {
         /// To override the contents of this collection use [`set_documents`](Self::set_documents).
         ///
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example,
-        /// 'DataSourceId' and 'DataSourceSyncJobId' are custom
-        /// attributes that provide information on the synchronization
-        /// of documents running on a data source. Note,
-        /// 'DataSourceSyncJobId' could be an optional custom attribute
-        /// as Amazon Kendra will use the ID of a running sync job.</p>
+        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
-        /// <li>
-        /// <p>5 MB total size for inline documents</p>
-        /// </li>
-        /// <li>
-        /// <p>50 MB total size for files from an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>5 MB extracted text for any file</p>
-        /// </li>
+        /// <li> <p>5 MB total size for inline documents</p> </li>
+        /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+        /// <li> <p>5 MB extracted text for any file</p> </li>
         /// </ul>
-        /// <p>For more information about file size and transaction per second
-        /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+        /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
         pub fn documents(mut self, input: crate::model::Document) -> Self {
             let mut v = self.documents.unwrap_or_default();
             v.push(input);
@@ -848,26 +806,14 @@ pub mod batch_put_document_input {
             self
         }
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example,
-        /// 'DataSourceId' and 'DataSourceSyncJobId' are custom
-        /// attributes that provide information on the synchronization
-        /// of documents running on a data source. Note,
-        /// 'DataSourceSyncJobId' could be an optional custom attribute
-        /// as Amazon Kendra will use the ID of a running sync job.</p>
+        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
-        /// <li>
-        /// <p>5 MB total size for inline documents</p>
-        /// </li>
-        /// <li>
-        /// <p>50 MB total size for files from an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>5 MB extracted text for any file</p>
-        /// </li>
+        /// <li> <p>5 MB total size for inline documents</p> </li>
+        /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+        /// <li> <p>5 MB extracted text for any file</p> </li>
         /// </ul>
-        /// <p>For more information about file size and transaction per second
-        /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+        /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
         pub fn set_documents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Document>>,
@@ -875,13 +821,8 @@ pub mod batch_put_document_input {
             self.documents = input;
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during
-        /// the document ingestion process when you use the <code>BatchPutDocument</code>
-        /// operation.</p>
-        /// <p>For more information on how to create, modify and delete document metadata,
-        /// or make other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
             input: crate::model::CustomDocumentEnrichmentConfiguration,
@@ -889,13 +830,8 @@ pub mod batch_put_document_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during
-        /// the document ingestion process when you use the <code>BatchPutDocument</code>
-        /// operation.</p>
-        /// <p>For more information on how to create, modify and delete document metadata,
-        /// or make other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
@@ -1218,26 +1154,22 @@ pub mod create_data_source_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>A unique name for the data source. A data source name can't be changed
-        /// without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the data source. A data source name can't be changed
-        /// without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index that should be associated with this data
-        /// source.</p>
+        /// <p>The identifier of the index that should be associated with this data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that should be associated with this data
-        /// source.</p>
+        /// <p>The identifier of the index that should be associated with this data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -1255,24 +1187,16 @@ pub mod create_data_source_input {
             self.r#type = input;
             self
         }
-        /// <p>The connector configuration information that is required to access the
-        /// repository.</p>
-        /// <p>You can't specify the <code>Configuration</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
-        /// <p>The <code>Configuration</code> parameter is required for all other
-        /// data sources.</p>
+        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+        /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The connector configuration information that is required to access the
-        /// repository.</p>
-        /// <p>You can't specify the <code>Configuration</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
-        /// <p>The <code>Configuration</code> parameter is required for all other
-        /// data sources.</p>
+        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+        /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -1290,50 +1214,28 @@ pub mod create_data_source_input {
             self.description = input;
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your
-        /// repository and update the index. If you don't set a schedule Amazon Kendra
-        /// will not periodically update the index. You can call the
-        /// <code>StartDataSourceSyncJob</code> operation to update the
-        /// index.</p>
-        /// <p>You can't specify the <code>Schedule</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
+        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your
-        /// repository and update the index. If you don't set a schedule Amazon Kendra
-        /// will not periodically update the index. You can call the
-        /// <code>StartDataSourceSyncJob</code> operation to update the
-        /// index.</p>
-        /// <p>You can't specify the <code>Schedule</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
+        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
-        /// data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-        /// Amazon Kendra</a>.</p>
-        /// <p>You can't specify the <code>RoleArn</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
-        /// <p>The <code>RoleArn</code> parameter is required for all other data
-        /// sources.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+        /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
-        /// data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-        /// Amazon Kendra</a>.</p>
-        /// <p>You can't specify the <code>RoleArn</code> parameter when the
-        /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-        /// you receive a <code>ValidationException</code> exception.</p>
-        /// <p>The <code>RoleArn</code> parameter is required for all other data
-        /// sources.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+        /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1342,18 +1244,14 @@ pub mod create_data_source_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the data source. You can use
-        /// the tags to identify and organize your resources and to control access to
-        /// resources.</p>
+        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that identify the data source. You can use
-        /// the tags to identify and organize your resources and to control access to
-        /// resources.</p>
+        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1361,34 +1259,22 @@ pub mod create_data_source_input {
             self.tags = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a data
-        /// source. Multiple calls to the <code>CreateDataSource</code> operation with
-        /// the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a data
-        /// source. Multiple calls to the <code>CreateDataSource</code> operation with
-        /// the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all
-        /// documents when creating the data source. English is supported
-        /// by default. For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_code = Some(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all
-        /// documents when creating the data source. English is supported
-        /// by default. For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1396,12 +1282,8 @@ pub mod create_data_source_input {
             self.language_code = input;
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the
-        /// document ingestion process when you create a data source.</p>
-        /// <p>For more information on how to create, modify and delete document metadata, or make
-        /// other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
             input: crate::model::CustomDocumentEnrichmentConfiguration,
@@ -1409,12 +1291,8 @@ pub mod create_data_source_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the
-        /// document ingestion process when you create a data source.</p>
-        /// <p>For more information on how to create, modify and delete document metadata, or make
-        /// other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
@@ -1605,34 +1483,22 @@ pub mod create_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
-        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
-        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
-        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
-        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
-        /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
-        /// user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -1650,16 +1516,12 @@ pub mod create_experience_input {
             self.description = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
-        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-        /// token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
-        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-        /// token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1864,14 +1726,12 @@ pub mod create_faq_input {
             self.s3_path = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-        /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-        /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1880,16 +1740,14 @@ pub mod create_faq_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
-        /// organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
-        /// organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1897,24 +1755,16 @@ pub mod create_faq_input {
             self.tags = input;
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
-        /// that includes customs attributes in a header, and a JSON format that includes custom
-        /// attributes.</p>
-        /// <p>The format must match the format of the file stored in the S3 bucket identified in the
-        /// <code>S3Path</code> parameter.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
-        /// answers</a>.</p>
+        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn file_format(mut self, input: crate::model::FaqFileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
-        /// that includes customs attributes in a header, and a JSON format that includes custom
-        /// attributes.</p>
-        /// <p>The format must match the format of the file stored in the S3 bucket identified in the
-        /// <code>S3Path</code> parameter.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
-        /// answers</a>.</p>
+        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FaqFileFormat>,
@@ -1922,34 +1772,22 @@ pub mod create_faq_input {
             self.file_format = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> operation with the same client token will create only
-        /// one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> operation with the same client token will create only
-        /// one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The code for a language. This allows you to support a language
-        /// for the FAQ document. English is supported by default.
-        /// For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_code = Some(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language
-        /// for the FAQ document. English is supported by default.
-        /// For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2129,28 +1967,16 @@ pub mod create_index_input {
             self.name = input;
             self
         }
-        /// <p>The Amazon Kendra edition to use for the index. Choose
-        /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
-        /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-        /// production databases. Once you set the edition for an index, it can't be
-        /// changed.</p>
-        /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
-        /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
-        /// <p>For more information on quota limits for enterprise and developer editions,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+        /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
+        /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+        /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
         pub fn edition(mut self, input: crate::model::IndexEdition) -> Self {
             self.edition = Some(input);
             self
         }
-        /// <p>The Amazon Kendra edition to use for the index. Choose
-        /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
-        /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-        /// production databases. Once you set the edition for an index, it can't be
-        /// changed.</p>
-        /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
-        /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
-        /// <p>For more information on quota limits for enterprise and developer editions,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+        /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
+        /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+        /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
         pub fn set_edition(
             mut self,
             input: std::option::Option<crate::model::IndexEdition>,
@@ -2158,27 +1984,17 @@ pub mod create_index_input {
             self.edition = input;
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives
-        /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
-        /// metrics. This is also the role used when you use the
-        /// <code>BatchPutDocument</code> operation to index documents from an
-        /// Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives
-        /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
-        /// metrics. This is also the role used when you use the
-        /// <code>BatchPutDocument</code> operation to index documents from an
-        /// Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to
-        /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
-        /// asymmetric CMKs.</p>
+        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -2186,9 +2002,7 @@ pub mod create_index_input {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The identifier of the KMScustomer managed key (CMK) to use to
-        /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
-        /// asymmetric CMKs.</p>
+        /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -2206,16 +2020,12 @@ pub mod create_index_input {
             self.description = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create an index.
-        /// Multiple calls to the <code>CreateIndex</code> operation with the same
-        /// client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create an index.
-        /// Multiple calls to the <code>CreateIndex</code> operation with the same
-        /// client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2224,18 +2034,14 @@ pub mod create_index_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the index. You can use the
-        /// tags to identify and organize your resources and to control access to
-        /// resources.</p>
+        /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that identify the index. You can use the
-        /// tags to identify and organize your resources and to control access to
-        /// resources.</p>
+        /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2267,22 +2073,17 @@ pub mod create_index_input {
         }
         /// <p>The user context policy.</p>
         /// <dl>
-        /// <dt>ATTRIBUTE_FILTER</dt>
+        /// <dt>
+        /// ATTRIBUTE_FILTER
+        /// </dt>
         /// <dd>
-        /// <p>All indexed content is searchable and displayable
-        /// for all users. If you want to filter search results on
-        /// user context, you can use the attribute filters of
-        /// <code>_user_id</code> and <code>_group_ids</code> or
-        /// you can provide user and group information in <code>UserContext</code>.
-        /// </p>
+        /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
         /// </dd>
-        /// <dt>USER_TOKEN</dt>
+        /// <dt>
+        /// USER_TOKEN
+        /// </dt>
         /// <dd>
-        /// <p>Enables token-based user access control to filter
-        /// search results on user context. All documents with no
-        /// access control and all documents accessible to the user
-        /// will be searchable and displayable.
-        /// </p>
+        /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
         /// </dd>
         /// </dl>
         pub fn user_context_policy(mut self, input: crate::model::UserContextPolicy) -> Self {
@@ -2291,22 +2092,17 @@ pub mod create_index_input {
         }
         /// <p>The user context policy.</p>
         /// <dl>
-        /// <dt>ATTRIBUTE_FILTER</dt>
+        /// <dt>
+        /// ATTRIBUTE_FILTER
+        /// </dt>
         /// <dd>
-        /// <p>All indexed content is searchable and displayable
-        /// for all users. If you want to filter search results on
-        /// user context, you can use the attribute filters of
-        /// <code>_user_id</code> and <code>_group_ids</code> or
-        /// you can provide user and group information in <code>UserContext</code>.
-        /// </p>
+        /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
         /// </dd>
-        /// <dt>USER_TOKEN</dt>
+        /// <dt>
+        /// USER_TOKEN
+        /// </dt>
         /// <dd>
-        /// <p>Enables token-based user access control to filter
-        /// search results on user context. All documents with no
-        /// access control and all documents accessible to the user
-        /// will be searchable and displayable.
-        /// </p>
+        /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
         /// </dd>
         /// </dl>
         pub fn set_user_context_policy(
@@ -2316,9 +2112,7 @@ pub mod create_index_input {
             self.user_context_policy = input;
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-        /// identity source. To configure this, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -2326,9 +2120,7 @@ pub mod create_index_input {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-        /// identity source. To configure this, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -2508,49 +2300,39 @@ pub mod create_query_suggestions_block_list_input {
             self
         }
         /// <p>A user friendly name for the block list.</p>
-        /// <p>For example, the block list named 'offensive-words' includes all
-        /// offensive words that could appear in user queries and need to be
-        /// blocked from suggestions.</p>
+        /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>A user friendly name for the block list.</p>
-        /// <p>For example, the block list named 'offensive-words' includes all
-        /// offensive words that could appear in user queries and need to be
-        /// blocked from suggestions.</p>
+        /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>A user-friendly description for the block list.</p>
-        /// <p>For example, the description "List of all offensive words that can
-        /// appear in user queries and need to be blocked from suggestions."</p>
+        /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A user-friendly description for the block list.</p>
-        /// <p>For example, the description "List of all offensive words that can
-        /// appear in user queries and need to be blocked from suggestions."</p>
+        /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The S3 path to your block list text file in your S3 bucket.</p>
         /// <p>Each block word or phrase should be on a separate line in a text file.</p>
-        /// <p>For information on the current quota limits for block lists, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-        /// for Amazon Kendra</a>.</p>
+        /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.source_s3_path = Some(input);
             self
         }
         /// <p>The S3 path to your block list text file in your S3 bucket.</p>
         /// <p>Each block word or phrase should be on a separate line in a text file.</p>
-        /// <p>For information on the current quota limits for block lists, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-        /// for Amazon Kendra</a>.</p>
+        /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -2558,34 +2340,24 @@ pub mod create_query_suggestions_block_list_input {
             self.source_s3_path = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a
-        /// query suggestions block list.</p>
+        /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a
-        /// query suggestions block list.</p>
+        /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
-        /// access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name).
-        /// The role needs S3 read permissions to your file in S3 and needs
-        /// to give STS (Security Token Service) assume role permissions
-        /// to Amazon Kendra.</p>
+        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
+        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
-        /// access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name).
-        /// The role needs S3 read permissions to your file in S3 and needs
-        /// to give STS (Security Token Service) assume role permissions
-        /// to Amazon Kendra.</p>
+        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
+        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2594,16 +2366,14 @@ pub mod create_query_suggestions_block_list_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A tag that you can assign to a block list that categorizes
-        /// the block list.</p>
+        /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A tag that you can assign to a block list that categorizes
-        /// the block list.</p>
+        /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2773,14 +2543,12 @@ pub mod create_thesaurus_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the index for the new thesaurus.
-        /// </p>
+        /// <p>The unique identifier of the index for the new thesaurus. </p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index for the new thesaurus.
-        /// </p>
+        /// <p>The unique identifier of the index for the new thesaurus. </p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -2805,16 +2573,12 @@ pub mod create_thesaurus_input {
             self.description = input;
             self
         }
-        /// <p>An IAM role that gives Amazon Kendra permissions
-        /// to access thesaurus file specified in <code>SourceS3Path</code>.
-        /// </p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>An IAM role that gives Amazon Kendra permissions
-        /// to access thesaurus file specified in <code>SourceS3Path</code>.
-        /// </p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2823,20 +2587,14 @@ pub mod create_thesaurus_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the thesaurus. You can use
-        /// the tags to identify and organize your resources and to control
-        /// access to resources.
-        /// </p>
+        /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that identify the thesaurus. You can use
-        /// the tags to identify and organize your resources and to control
-        /// access to resources.
-        /// </p>
+        /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2844,14 +2602,12 @@ pub mod create_thesaurus_input {
             self.tags = input;
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path.
-        /// </p>
+        /// <p>The thesaurus file Amazon S3 source path. </p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.source_s3_path = Some(input);
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path.
-        /// </p>
+        /// <p>The thesaurus file Amazon S3 source path. </p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -2859,18 +2615,12 @@ pub mod create_thesaurus_input {
             self.source_s3_path = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a
-        /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
-        /// with the same client token will create only one thesaurus.
-        /// </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a
-        /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
-        /// with the same client token will create only one thesaurus.
-        /// </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3039,14 +2789,12 @@ pub mod delete_data_source_input {
             self.id = input;
             self
         }
-        /// <p>The unique identifier of the index associated with the data
-        /// source.</p>
+        /// <p>The unique identifier of the index associated with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index associated with the data
-        /// source.</p>
+        /// <p>The unique identifier of the index associated with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -3688,25 +3436,13 @@ pub mod delete_principal_mapping_input {
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want
-        /// to delete a group from accessing documents in a certain data source. For example,
-        /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-        /// the company's documents stored in the data sources Confluence and Salesforce.
-        /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
-        /// these groups cannot access customer-related documents stored in Salesforce.
-        /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want
-        /// to delete a group from accessing documents in a certain data source. For example,
-        /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-        /// the company's documents stored in the data sources Confluence and Salesforce.
-        /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
-        /// these groups cannot access customer-related documents stored in Salesforce.
-        /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3724,40 +3460,16 @@ pub mod delete_principal_mapping_input {
             self.group_id = input;
             self
         }
-        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
-        /// override the latest <code>DELETE</code> action with previous actions.
-        /// The highest number ID, which is the ordering ID, is the latest action
-        /// you want to process and apply on top of other actions with lower number
-        /// IDs. This prevents previous actions with lower number IDs from possibly
-        /// overriding the latest action.</p>
-        /// <p>The ordering ID can be the UNIX time of the last update you made to a group
-        /// members list. You would then provide this list when calling
-        /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
-        /// for that updated group with the latest members list doesn't get overwritten
-        /// by earlier <code>DELETE</code> actions for the same group which are yet to
-        /// be processed.</p>
-        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-        /// action was received by Amazon Kendra.
-        /// </p>
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
         pub fn ordering_id(mut self, input: i64) -> Self {
             self.ordering_id = Some(input);
             self
         }
-        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
-        /// override the latest <code>DELETE</code> action with previous actions.
-        /// The highest number ID, which is the ordering ID, is the latest action
-        /// you want to process and apply on top of other actions with lower number
-        /// IDs. This prevents previous actions with lower number IDs from possibly
-        /// overriding the latest action.</p>
-        /// <p>The ordering ID can be the UNIX time of the last update you made to a group
-        /// members list. You would then provide this list when calling
-        /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
-        /// for that updated group with the latest members list doesn't get overwritten
-        /// by earlier <code>DELETE</code> actions for the same group which are yet to
-        /// be processed.</p>
-        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-        /// action was received by Amazon Kendra.
-        /// </p>
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
@@ -4423,14 +4135,12 @@ pub mod describe_experience_input {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get
-        /// information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get
-        /// information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -4898,30 +4608,22 @@ pub mod describe_principal_mapping_input {
         pub(crate) group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index required to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-        /// to their groups.</p>
+        /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index required to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-        /// to their groups.</p>
+        /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The identifier of the data source to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping
-        /// users to their groups.</p>
+        /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping
-        /// users to their groups.</p>
+        /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4929,16 +4631,12 @@ pub mod describe_principal_mapping_input {
             self.data_source_id = input;
             self
         }
-        /// <p>The identifier of the group required to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-        /// to their groups.</p>
+        /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the group required to check the processing of
-        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-        /// to their groups.</p>
+        /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -5261,14 +4959,12 @@ pub mod describe_query_suggestions_config_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index you want to describe query suggestions
-        /// settings for.</p>
+        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index you want to describe query suggestions
-        /// settings for.</p>
+        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -5803,16 +5499,14 @@ pub mod disassociate_personas_from_entities_input {
         ///
         /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
         ///
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
-        /// source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
         pub fn entity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_ids.unwrap_or_default();
             v.push(input.into());
             self.entity_ids = Some(v);
             self
         }
-        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
-        /// source. For example, user IDs could be user emails.</p>
+        /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
         pub fn set_entity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5982,35 +5676,25 @@ pub mod get_query_suggestions_input {
             self
         }
         /// <p>The text of a user's query to generate query suggestions.</p>
-        /// <p>A query is suggested if the query prefix matches
-        /// what a user starts to type as their query.</p>
-        /// <p>Amazon Kendra does not show any suggestions if a user
-        /// types fewer than two characters or more than 60 characters.
-        /// A query must also have at least one search result and contain
-        /// at least one word of more than four characters.</p>
+        /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+        /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
         pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_text = Some(input.into());
             self
         }
         /// <p>The text of a user's query to generate query suggestions.</p>
-        /// <p>A query is suggested if the query prefix matches
-        /// what a user starts to type as their query.</p>
-        /// <p>Amazon Kendra does not show any suggestions if a user
-        /// types fewer than two characters or more than 60 characters.
-        /// A query must also have at least one search result and contain
-        /// at least one word of more than four characters.</p>
+        /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+        /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
         pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_text = input;
             self
         }
-        /// <p>The maximum number of query suggestions you want to show
-        /// to your users.</p>
+        /// <p>The maximum number of query suggestions you want to show to your users.</p>
         pub fn max_suggestions_count(mut self, input: i32) -> Self {
             self.max_suggestions_count = Some(input);
             self
         }
-        /// <p>The maximum number of query suggestions you want to show
-        /// to your users.</p>
+        /// <p>The maximum number of query suggestions you want to show to your users.</p>
         pub fn set_max_suggestions_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_suggestions_count = input;
             self
@@ -6175,98 +5859,40 @@ pub mod get_snapshots_input {
             self.index_id = input;
             self
         }
-        /// <p>The time interval or time window to get search metrics data.
-        /// The time interval uses the time zone of your index.
-        /// You can view data in the following time windows:</p>
+        /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>THIS_WEEK</code>: The current week, starting on
-        /// the Sunday and ending on the day before the current date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
-        /// the Sunday and ending on the following Saturday.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
-        /// starting on the Sunday and ending on the following Saturday.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THIS_MONTH</code>: The current month, starting on the
-        /// first day of the month and ending on the day before the current date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
-        /// first day of the month and ending on the last day of the month.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
-        /// starting on the first day of the month and ending on last day of the month.</p>
-        /// </li>
+        /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
+        /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+        /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+        /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
+        /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
+        /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
         /// </ul>
         pub fn interval(mut self, input: crate::model::Interval) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The time interval or time window to get search metrics data.
-        /// The time interval uses the time zone of your index.
-        /// You can view data in the following time windows:</p>
+        /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>THIS_WEEK</code>: The current week, starting on
-        /// the Sunday and ending on the day before the current date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
-        /// the Sunday and ending on the following Saturday.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
-        /// starting on the Sunday and ending on the following Saturday.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THIS_MONTH</code>: The current month, starting on the
-        /// first day of the month and ending on the day before the current date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
-        /// first day of the month and ending on the last day of the month.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
-        /// starting on the first day of the month and ending on last day of the month.</p>
-        /// </li>
+        /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
+        /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+        /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+        /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
+        /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
+        /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
         /// </ul>
         pub fn set_interval(mut self, input: std::option::Option<crate::model::Interval>) -> Self {
             self.interval = input;
             self
         }
-        /// <p>The metric you want to retrieve. You
-        /// can specify only one metric per call.</p>
-        /// <p>For more information about the metrics you can view, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
-        /// insights with search analytics</a>.</p>
+        /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+        /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
         pub fn metric_type(mut self, input: crate::model::MetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p>The metric you want to retrieve. You
-        /// can specify only one metric per call.</p>
-        /// <p>For more information about the metrics you can view, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
-        /// insights with search analytics</a>.</p>
+        /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+        /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::MetricType>,
@@ -6274,18 +5900,12 @@ pub mod get_snapshots_input {
             self.metric_type = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there
-        /// is more data to retrieve), Amazon Kendra returns a pagination token in
-        /// the response. You can use this pagination token to
-        /// retrieve the next set of search metrics data.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there
-        /// is more data to retrieve), Amazon Kendra returns a pagination token in
-        /// the response. You can use this pagination token to
-        /// retrieve the next set of search metrics data.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6459,18 +6079,12 @@ pub mod list_data_sources_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to
-        /// retrieve), Amazon Kendra returns a pagination token in the response. You
-        /// can use this pagination token to retrieve the next set of data sources
-        /// (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to
-        /// retrieve), Amazon Kendra returns a pagination token in the response. You
-        /// can use this pagination token to retrieve the next set of data sources
-        /// (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6656,42 +6270,32 @@ pub mod list_data_source_sync_jobs_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of jobs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of jobs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of synchronization jobs to return in the response.
-        /// If there are fewer results in the list, this response contains only the
-        /// actual results.</p>
+        /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of synchronization jobs to return in the response.
-        /// If there are fewer results in the list, this response contains only the
-        /// actual results.</p>
+        /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are
-        /// limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
         pub fn start_time_filter(mut self, input: crate::model::TimeRange) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are
-        /// limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -6699,14 +6303,12 @@ pub mod list_data_source_sync_jobs_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the
-        /// <code>Status</code> field equal to the specified status.</p>
+        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn status_filter(mut self, input: crate::model::DataSourceSyncJobStatus) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the
-        /// <code>Status</code> field equal to the specified status.</p>
+        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobStatus>,
@@ -6888,16 +6490,12 @@ pub mod list_entity_personas_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of users or groups.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of users or groups.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7081,16 +6679,12 @@ pub mod list_experience_entities_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of users or groups.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of users or groups.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7255,16 +6849,12 @@ pub mod list_experiences_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data
-        /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
-        /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data
-        /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
-        /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7437,28 +7027,22 @@ pub mod list_faqs_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of FAQs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of FAQs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
-        /// the list, this response contains only the actual results.</p>
+        /// <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
-        /// the list, this response contains only the actual results.</p>
+        /// <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7607,26 +7191,22 @@ pub mod list_groups_older_than_ordering_id_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index for getting a list of groups mapped
-        /// to users before a given ordering or timestamp identifier.</p>
+        /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for getting a list of groups mapped
-        /// to users before a given ordering or timestamp identifier.</p>
+        /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The identifier of the data source for getting a list of groups mapped
-        /// to users before a given ordering timestamp identifier.</p>
+        /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source for getting a list of groups mapped
-        /// to users before a given ordering timestamp identifier.</p>
+        /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7634,50 +7214,32 @@ pub mod list_groups_older_than_ordering_id_input {
             self.data_source_id = input;
             self
         }
-        /// <p>The timestamp identifier used for the latest <code>PUT</code> or
-        /// <code>DELETE</code> action for mapping users to their groups.</p>
+        /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
         pub fn ordering_id(mut self, input: i64) -> Self {
             self.ordering_id = Some(input);
             self
         }
-        /// <p>The timestamp identifier used for the latest <code>PUT</code> or
-        /// <code>DELETE</code> action for mapping users to their groups.</p>
+        /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
         }
-        /// <p>
-        /// If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of groups that are mapped to users before a
-        /// given ordering or timestamp identifier.
-        /// </p>
+        /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of groups that are mapped to users before a
-        /// given ordering or timestamp identifier.
-        /// </p>
+        /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of returned groups that are mapped to users before a
-        /// given ordering or timestamp identifier.
-        /// </p>
+        /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of returned groups that are mapped to users before a
-        /// given ordering or timestamp identifier.
-        /// </p>
+        /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7834,18 +7396,12 @@ pub mod list_indices_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to
-        /// retrieve), Amazon Kendra returns a pagination token in the response. You
-        /// can use this pagination token to retrieve the next set of indexes
-        /// (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to
-        /// retrieve), Amazon Kendra returns a pagination token in the response. You
-        /// can use this pagination token to retrieve the next set of indexes
-        /// (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8006,34 +7562,24 @@ pub mod list_query_suggestions_block_lists_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index for a list of all block lists that exist for
-        /// that index.</p>
-        /// <p>For information on the current quota limits for block lists, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-        /// for Amazon Kendra</a>.</p>
+        /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
+        /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for a list of all block lists that exist for
-        /// that index.</p>
-        /// <p>For information on the current quota limits for block lists, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-        /// for Amazon Kendra</a>.</p>
+        /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
+        /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8197,14 +7743,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// get a list of tags for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// get a list of tags for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8367,18 +7911,12 @@ pub mod list_thesauri_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8554,23 +8092,13 @@ pub mod put_principal_mapping_input {
             self
         }
         /// <p>The identifier of the data source you want to map users to their groups.</p>
-        /// <p>This is useful if a group is tied to multiple data sources, but you only want
-        /// the group to access documents of a certain data source. For example, the groups
-        /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
-        /// documents stored in the data sources Confluence and Salesforce. However,
-        /// "Sales and Marketing" team only needs access to customer-related documents
-        /// stored in Salesforce.</p>
+        /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
         /// <p>The identifier of the data source you want to map users to their groups.</p>
-        /// <p>This is useful if a group is tied to multiple data sources, but you only want
-        /// the group to access documents of a certain data source. For example, the groups
-        /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
-        /// documents stored in the data sources Confluence and Salesforce. However,
-        /// "Sales and Marketing" team only needs access to customer-related documents
-        /// stored in Salesforce.</p>
+        /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8588,28 +8116,16 @@ pub mod put_principal_mapping_input {
             self.group_id = input;
             self
         }
-        /// <p>The list that contains your users or sub groups that belong
-        /// the same group.</p>
-        /// <p>For example, the group "Company" includes the user "CEO" and the
-        /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
-        /// <p>If you have more than 1000 users and/or sub groups for a single group,
-        /// you need to provide the path to the S3 file that lists your users and
-        /// sub groups for a group. Your sub groups can contain more than 1000 users,
-        /// but the list of sub groups that belong to a group (and/or users) must be
-        /// no more than 1000.</p>
+        /// <p>The list that contains your users or sub groups that belong the same group.</p>
+        /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+        /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
         pub fn group_members(mut self, input: crate::model::GroupMembers) -> Self {
             self.group_members = Some(input);
             self
         }
-        /// <p>The list that contains your users or sub groups that belong
-        /// the same group.</p>
-        /// <p>For example, the group "Company" includes the user "CEO" and the
-        /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
-        /// <p>If you have more than 1000 users and/or sub groups for a single group,
-        /// you need to provide the path to the S3 file that lists your users and
-        /// sub groups for a group. Your sub groups can contain more than 1000 users,
-        /// but the list of sub groups that belong to a group (and/or users) must be
-        /// no more than 1000.</p>
+        /// <p>The list that contains your users or sub groups that belong the same group.</p>
+        /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+        /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
         pub fn set_group_members(
             mut self,
             input: std::option::Option<crate::model::GroupMembers>,
@@ -8617,49 +8133,27 @@ pub mod put_principal_mapping_input {
             self.group_members = input;
             self
         }
-        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
-        /// the latest <code>PUT</code> action with previous actions. The highest number
-        /// ID, which is the ordering ID, is the latest action you want to process and
-        /// apply on top of other actions with lower number IDs. This prevents previous
-        /// actions with lower number IDs from possibly overriding the latest action.</p>
-        /// <p>The ordering ID can be the UNIX time of the last update you made to a
-        /// group members list. You would then provide this list when calling
-        /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
-        /// for that updated group with the latest members list doesn't get overwritten
-        /// by earlier <code>PUT</code> actions for the same group which are yet to
-        /// be processed.</p>
-        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-        /// action was received by Amazon Kendra.</p>
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
         pub fn ordering_id(mut self, input: i64) -> Self {
             self.ordering_id = Some(input);
             self
         }
-        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
-        /// the latest <code>PUT</code> action with previous actions. The highest number
-        /// ID, which is the ordering ID, is the latest action you want to process and
-        /// apply on top of other actions with lower number IDs. This prevents previous
-        /// actions with lower number IDs from possibly overriding the latest action.</p>
-        /// <p>The ordering ID can be the UNIX time of the last update you made to a
-        /// group members list. You would then provide this list when calling
-        /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
-        /// for that updated group with the latest members list doesn't get overwritten
-        /// by earlier <code>PUT</code> actions for the same group which are yet to
-        /// be processed.</p>
-        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-        /// action was received by Amazon Kendra.</p>
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
-        /// that contains your list of users or sub groups that belong to a group.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
-        /// that contains your list of users or sub groups that belong to a group.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -8827,16 +8321,12 @@ pub mod query_input {
         pub(crate) visitor_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the index to search. The identifier is
-        /// returned in the response from the <code>CreateIndex</code>
-        /// operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index to search. The identifier is
-        /// returned in the response from the <code>CreateIndex</code>
-        /// operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -8851,24 +8341,14 @@ pub mod query_input {
             self.query_text = input;
             self
         }
-        /// <p>Enables filtered searches based on document attributes. You can only
-        /// provide one attribute filter; however, the <code>AndAllFilters</code>,
-        /// <code>NotFilter</code>, and <code>OrAllFilters</code> parameters
-        /// contain a list of other filters.</p>
-        /// <p>The <code>AttributeFilter</code> parameter enables you to create a
-        /// set of filtering rules that a document must satisfy to be included in
-        /// the query results.</p>
+        /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+        /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
         pub fn attribute_filter(mut self, input: crate::model::AttributeFilter) -> Self {
             self.attribute_filter = Some(input);
             self
         }
-        /// <p>Enables filtered searches based on document attributes. You can only
-        /// provide one attribute filter; however, the <code>AndAllFilters</code>,
-        /// <code>NotFilter</code>, and <code>OrAllFilters</code> parameters
-        /// contain a list of other filters.</p>
-        /// <p>The <code>AttributeFilter</code> parameter enables you to create a
-        /// set of filtering rules that a document must satisfy to be included in
-        /// the query results.</p>
+        /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+        /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
         pub fn set_attribute_filter(
             mut self,
             input: std::option::Option<crate::model::AttributeFilter>,
@@ -8880,18 +8360,14 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_facets`](Self::set_facets).
         ///
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for
-        /// each attribute key specified. You can use this information to help
-        /// narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
         pub fn facets(mut self, input: crate::model::Facet) -> Self {
             let mut v = self.facets.unwrap_or_default();
             v.push(input);
             self.facets = Some(v);
             self
         }
-        /// <p>An array of documents attributes. Amazon Kendra returns a count for
-        /// each attribute key specified. You can use this information to help
-        /// narrow the search for your user.</p>
+        /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
         pub fn set_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Facet>>,
@@ -8903,9 +8379,7 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
         ///
-        /// <p>An array of document attributes to include in the response. No other
-        /// document attributes are included in the response. By default all
-        /// document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
         pub fn requested_document_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -8915,9 +8389,7 @@ pub mod query_input {
             self.requested_document_attributes = Some(v);
             self
         }
-        /// <p>An array of document attributes to include in the response. No other
-        /// document attributes are included in the response. By default all
-        /// document attributes are included in the response. </p>
+        /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
         pub fn set_requested_document_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8925,14 +8397,12 @@ pub mod query_input {
             self.requested_document_attributes = input;
             self
         }
-        /// <p>Sets the type of query. Only results for the specified query type
-        /// are returned.</p>
+        /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
         pub fn query_result_type_filter(mut self, input: crate::model::QueryResultType) -> Self {
             self.query_result_type_filter = Some(input);
             self
         }
-        /// <p>Sets the type of query. Only results for the specified query type
-        /// are returned.</p>
+        /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
         pub fn set_query_result_type_filter(
             mut self,
             input: std::option::Option<crate::model::QueryResultType>,
@@ -8945,13 +8415,9 @@ pub mod query_input {
         /// To override the contents of this collection use [`set_document_relevance_override_configurations`](Self::set_document_relevance_override_configurations).
         ///
         /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-        /// <p>If you use this API to override the relevance tuning configured at the index
-        /// level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-        /// <p>If there is relevance tuning configured at the index level, but you do not use this API
-        /// to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-        /// <p>If there is relevance tuning configured for fields at the index level,
-        /// but you use this API to override only some of these fields, then for the fields you did not override,
-        /// the importance is set to 1.</p>
+        /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+        /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+        /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
         pub fn document_relevance_override_configurations(
             mut self,
             input: crate::model::DocumentRelevanceConfiguration,
@@ -8964,13 +8430,9 @@ pub mod query_input {
             self
         }
         /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-        /// <p>If you use this API to override the relevance tuning configured at the index
-        /// level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-        /// <p>If there is relevance tuning configured at the index level, but you do not use this API
-        /// to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-        /// <p>If there is relevance tuning configured for fields at the index level,
-        /// but you use this API to override only some of these fields, then for the fields you did not override,
-        /// the importance is set to 1.</p>
+        /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+        /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+        /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
         pub fn set_document_relevance_override_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentRelevanceConfiguration>>,
@@ -8978,56 +8440,34 @@ pub mod query_input {
             self.document_relevance_override_configurations = input;
             self
         }
-        /// <p>Query results are returned in pages the size of the
-        /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
-        /// the first page of results. Use this parameter to get result pages after
-        /// the first one.</p>
+        /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
         pub fn page_number(mut self, input: i32) -> Self {
             self.page_number = Some(input);
             self
         }
-        /// <p>Query results are returned in pages the size of the
-        /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
-        /// the first page of results. Use this parameter to get result pages after
-        /// the first one.</p>
+        /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
         pub fn set_page_number(mut self, input: std::option::Option<i32>) -> Self {
             self.page_number = input;
             self
         }
-        /// <p>Sets the number of results that are returned in each page of
-        /// results. The default page size is 10. The maximum number of results
-        /// returned is 100. If you ask for more than 100 results, only 100 are
-        /// returned.</p>
+        /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
         pub fn page_size(mut self, input: i32) -> Self {
             self.page_size = Some(input);
             self
         }
-        /// <p>Sets the number of results that are returned in each page of
-        /// results. The default page size is 10. The maximum number of results
-        /// returned is 100. If you ask for more than 100 results, only 100 are
-        /// returned.</p>
+        /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
         }
-        /// <p>Provides information that determines how the results of the query
-        /// are sorted. You can set the field that Amazon Kendra should sort the results
-        /// on, and specify whether the results should be sorted in ascending or
-        /// descending order. In the case of ties in sorting the results, the
-        /// results are sorted by relevance.</p>
-        /// <p>If you don't provide sorting configuration, the results are sorted
-        /// by the relevance that Amazon Kendra determines for the result.</p>
+        /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+        /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
         pub fn sorting_configuration(mut self, input: crate::model::SortingConfiguration) -> Self {
             self.sorting_configuration = Some(input);
             self
         }
-        /// <p>Provides information that determines how the results of the query
-        /// are sorted. You can set the field that Amazon Kendra should sort the results
-        /// on, and specify whether the results should be sorted in ascending or
-        /// descending order. In the case of ties in sorting the results, the
-        /// results are sorted by relevance.</p>
-        /// <p>If you don't provide sorting configuration, the results are sorted
-        /// by the relevance that Amazon Kendra determines for the result.</p>
+        /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+        /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
         pub fn set_sorting_configuration(
             mut self,
             input: std::option::Option<crate::model::SortingConfiguration>,
@@ -9048,18 +8488,12 @@ pub mod query_input {
             self.user_context = input;
             self
         }
-        /// <p>Provides an identifier for a specific user. The
-        /// <code>VisitorId</code> should be a unique identifier, such as a
-        /// GUID. Don't use personally identifiable information, such as the user's
-        /// email address, as the <code>VisitorId</code>.</p>
+        /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
         pub fn visitor_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.visitor_id = Some(input.into());
             self
         }
-        /// <p>Provides an identifier for a specific user. The
-        /// <code>VisitorId</code> should be a unique identifier, such as a
-        /// GUID. Don't use personally identifiable information, such as the user's
-        /// email address, as the <code>VisitorId</code>.</p>
+        /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
         pub fn set_visitor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.visitor_id = input;
             self
@@ -9381,14 +8815,12 @@ pub mod stop_data_source_sync_job_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the data source for which to stop the
-        /// synchronization jobs.</p>
+        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source for which to stop the
-        /// synchronization jobs.</p>
+        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9565,16 +8997,12 @@ pub mod submit_feedback_input {
             self.index_id = input;
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting
-        /// feedback. The query ID is returned in the response to the
-        /// <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
         pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting
-        /// feedback. The query ID is returned in the response to the
-        /// <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -9583,16 +9011,14 @@ pub mod submit_feedback_input {
         ///
         /// To override the contents of this collection use [`set_click_feedback_items`](Self::set_click_feedback_items).
         ///
-        /// <p>Tells Amazon Kendra that a particular search result link was chosen
-        /// by the user. </p>
+        /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
         pub fn click_feedback_items(mut self, input: crate::model::ClickFeedback) -> Self {
             let mut v = self.click_feedback_items.unwrap_or_default();
             v.push(input);
             self.click_feedback_items = Some(v);
             self
         }
-        /// <p>Tells Amazon Kendra that a particular search result link was chosen
-        /// by the user. </p>
+        /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
         pub fn set_click_feedback_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClickFeedback>>,
@@ -9604,16 +9030,14 @@ pub mod submit_feedback_input {
         ///
         /// To override the contents of this collection use [`set_relevance_feedback_items`](Self::set_relevance_feedback_items).
         ///
-        /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
-        /// whether a particular item was relevant to the search.</p>
+        /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
         pub fn relevance_feedback_items(mut self, input: crate::model::RelevanceFeedback) -> Self {
             let mut v = self.relevance_feedback_items.unwrap_or_default();
             v.push(input);
             self.relevance_feedback_items = Some(v);
             self
         }
-        /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
-        /// whether a particular item was relevant to the search.</p>
+        /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
         pub fn set_relevance_feedback_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelevanceFeedback>>,
@@ -9769,14 +9193,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9785,16 +9207,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
-        /// already exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
-        /// already exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9947,14 +9367,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// remove the tag from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-        /// remove the tag from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9963,16 +9381,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a
-        /// tag key does not exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a
-        /// tag key does not exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10143,28 +9559,22 @@ pub mod update_data_source_input {
             self.id = input;
             self
         }
-        /// <p>The name of the data source to update. The name of the data source
-        /// can't be updated. To rename a data source you must delete the data source
-        /// and re-create it.</p>
+        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data source to update. The name of the data source
-        /// can't be updated. To rename a data source you must delete the data source
-        /// and re-create it.</p>
+        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source to
-        /// update.</p>
+        /// <p>The identifier of the index that contains the data source to update.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source to
-        /// update.</p>
+        /// <p>The identifier of the index that contains the data source to update.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -10202,32 +9612,22 @@ pub mod update_data_source_input {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
-        /// source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
-        /// source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all
-        /// documents when updating the data source. English is supported
-        /// by default. For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_code = Some(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all
-        /// documents when updating the data source. English is supported
-        /// by default. For more information on supported languages, including their codes,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-        /// documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10235,12 +9635,8 @@ pub mod update_data_source_input {
             self.language_code = input;
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the
-        /// document ingestion process when you update a data source.</p>
-        /// <p>For more information on how to create, modify and delete document metadata, or make
-        /// other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
             input: crate::model::CustomDocumentEnrichmentConfiguration,
@@ -10248,12 +9644,8 @@ pub mod update_data_source_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the
-        /// document ingestion process when you update a data source.</p>
-        /// <p>For more information on how to create, modify and delete document metadata, or make
-        /// other content alterations when you ingest documents into Amazon Kendra, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-        /// document metadata during the ingestion process</a>.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
@@ -10449,30 +9841,22 @@ pub mod update_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
-        /// field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
-        /// field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -10670,14 +10054,12 @@ pub mod update_index_input {
             self.name = input;
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your
-        /// Amazon CloudWatch logs.</p>
+        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your
-        /// Amazon CloudWatch logs.</p>
+        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10716,22 +10098,14 @@ pub mod update_index_input {
             self.document_metadata_configuration_updates = input;
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that
-        /// should be used by the index. You can change the capacity of the index up
-        /// to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage
-        /// capacity below that required to meet the storage needs for your
-        /// index.</p>
+        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
         pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
             self.capacity_units = Some(input);
             self
         }
-        /// <p>Sets the number of additional storage and query capacity units that
-        /// should be used by the index. You can change the capacity of the index up
-        /// to 5 times per day.</p>
-        /// <p>If you are using extra storage units, you can't reduce the storage
-        /// capacity below that required to meet the storage needs for your
-        /// index.</p>
+        /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
+        /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
         pub fn set_capacity_units(
             mut self,
             input: std::option::Option<crate::model::CapacityUnitsConfiguration>,
@@ -10774,9 +10148,7 @@ pub mod update_index_input {
             self.user_context_policy = input;
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-        /// identity source. To configure this, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -10784,9 +10156,7 @@ pub mod update_index_input {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-        /// identity source. To configure this, see
-        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -10992,27 +10362,15 @@ pub mod update_query_suggestions_block_list_input {
             self
         }
         /// <p>The S3 path where your block list text file sits in S3.</p>
-        /// <p>If you update your block list and provide the same path to the
-        /// block list text file in S3, then Amazon Kendra reloads the file to refresh
-        /// the block list. Amazon Kendra does not automatically refresh your block list.
-        /// You need to call the <code>UpdateQuerySuggestionsBlockList</code> API
-        /// to refresh you block list.</p>
-        /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
-        /// all query suggestions with the latest content in the S3 file. This
-        /// means changes might not take effect immediately.</p>
+        /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+        /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.source_s3_path = Some(input);
             self
         }
         /// <p>The S3 path where your block list text file sits in S3.</p>
-        /// <p>If you update your block list and provide the same path to the
-        /// block list text file in S3, then Amazon Kendra reloads the file to refresh
-        /// the block list. Amazon Kendra does not automatically refresh your block list.
-        /// You need to call the <code>UpdateQuerySuggestionsBlockList</code> API
-        /// to refresh you block list.</p>
-        /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
-        /// all query suggestions with the latest content in the S3 file. This
-        /// means changes might not take effect immediately.</p>
+        /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+        /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -11020,14 +10378,12 @@ pub mod update_query_suggestions_block_list_input {
             self.source_s3_path = input;
             self
         }
-        /// <p>The IAM (Identity and Access Management) role used to access the
-        /// block list text file in S3.</p>
+        /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM (Identity and Access Management) role used to access the
-        /// block list text file in S3.</p>
+        /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -11200,23 +10556,15 @@ pub mod update_query_suggestions_config_input {
             self
         }
         /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
-        /// <p>By default, Amazon Kendra enables query suggestions.
-        /// <code>LEARN_ONLY</code> mode allows you to turn off query suggestions.
-        /// You can to update this at any time.</p>
-        /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
-        /// queries to keep suggestions up to date for when you are ready to
-        /// switch to ENABLED mode again.</p>
+        /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
+        /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
         pub fn mode(mut self, input: crate::model::Mode) -> Self {
             self.mode = Some(input);
             self
         }
         /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
-        /// <p>By default, Amazon Kendra enables query suggestions.
-        /// <code>LEARN_ONLY</code> mode allows you to turn off query suggestions.
-        /// You can to update this at any time.</p>
-        /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
-        /// queries to keep suggestions up to date for when you are ready to
-        /// switch to ENABLED mode again.</p>
+        /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
+        /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
             self.mode = input;
             self
@@ -11238,34 +10586,18 @@ pub mod update_query_suggestions_config_input {
             self.query_log_look_back_window_in_days = input;
             self
         }
-        /// <p>
-        /// <code>TRUE</code> to include queries without user information (i.e. all queries,
-        /// irrespective of the user), otherwise <code>FALSE</code> to only include queries
-        /// with user information.</p>
-        /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this
-        /// flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user
-        /// information.</p>
-        /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least
-        /// <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
-        /// unique users for suggestions.</p>
-        /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
-        /// from all queries.</p>
+        /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+        /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
+        /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
+        /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
         pub fn include_queries_without_user_information(mut self, input: bool) -> Self {
             self.include_queries_without_user_information = Some(input);
             self
         }
-        /// <p>
-        /// <code>TRUE</code> to include queries without user information (i.e. all queries,
-        /// irrespective of the user), otherwise <code>FALSE</code> to only include queries
-        /// with user information.</p>
-        /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this
-        /// flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user
-        /// information.</p>
-        /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least
-        /// <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
-        /// unique users for suggestions.</p>
-        /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
-        /// from all queries.</p>
+        /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+        /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
+        /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
+        /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
         pub fn set_include_queries_without_user_information(
             mut self,
             input: std::option::Option<bool>,
@@ -11273,19 +10605,15 @@ pub mod update_query_suggestions_config_input {
             self.include_queries_without_user_information = input;
             self
         }
-        /// <p>The minimum number of unique users who must search a query in order for the query
-        /// to be eligible to suggest to your users.</p>
-        /// <p>Increasing this number might decrease the number of suggestions. However, this
-        /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
+        /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+        /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
         pub fn minimum_number_of_querying_users(mut self, input: i32) -> Self {
             self.minimum_number_of_querying_users = Some(input);
             self
         }
-        /// <p>The minimum number of unique users who must search a query in order for the query
-        /// to be eligible to suggest to your users.</p>
-        /// <p>Increasing this number might decrease the number of suggestions. However, this
-        /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
+        /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+        /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
         pub fn set_minimum_number_of_querying_users(
             mut self,
@@ -11294,21 +10622,15 @@ pub mod update_query_suggestions_config_input {
             self.minimum_number_of_querying_users = input;
             self
         }
-        /// <p>The the minimum number of times a query must be searched in order to be
-        /// eligible to suggest to your users.</p>
-        /// <p>Decreasing this number increases the number of suggestions. However, this
-        /// affects the quality of suggestions as it sets a low bar for a query to be
-        /// considered popular to suggest to users.</p>
+        /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
+        /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
         pub fn minimum_query_count(mut self, input: i32) -> Self {
             self.minimum_query_count = Some(input);
             self
         }
-        /// <p>The the minimum number of times a query must be searched in order to be
-        /// eligible to suggest to your users.</p>
-        /// <p>Decreasing this number increases the number of suggestions. However, this
-        /// affects the quality of suggestions as it sets a low bar for a query to be
-        /// considered popular to suggest to users.</p>
+        /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
+        /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
         pub fn set_minimum_query_count(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_query_count = input;
@@ -11522,14 +10844,12 @@ pub mod update_thesaurus_input {
             self.role_arn = input;
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3
-        /// bucket.</p>
+        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.source_s3_path = Some(input);
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3
-        /// bucket.</p>
+        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -11691,8 +11011,7 @@ pub struct UpdateThesaurusInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated role ARN of the thesaurus.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Information required to find a specific file in an Amazon S3
-    /// bucket.</p>
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl UpdateThesaurusInput {
@@ -11716,8 +11035,7 @@ impl UpdateThesaurusInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Information required to find a specific file in an Amazon S3
-    /// bucket.</p>
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
@@ -11742,41 +11060,24 @@ pub struct UpdateQuerySuggestionsConfigInput {
     /// <p>The identifier of the index you want to update query suggestions settings for.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
-    /// <p>By default, Amazon Kendra enables query suggestions.
-    /// <code>LEARN_ONLY</code> mode allows you to turn off query suggestions.
-    /// You can to update this at any time.</p>
-    /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
-    /// queries to keep suggestions up to date for when you are ready to
-    /// switch to ENABLED mode again.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
+    /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>How recent your queries are in your query log time window.</p>
     /// <p>The time window is the number of days from current day to past days.</p>
     /// <p>By default, Amazon Kendra sets this to 180.</p>
     pub query_log_look_back_window_in_days: std::option::Option<i32>,
-    /// <p>
-    /// <code>TRUE</code> to include queries without user information (i.e. all queries,
-    /// irrespective of the user), otherwise <code>FALSE</code> to only include queries
-    /// with user information.</p>
-    /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this
-    /// flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user
-    /// information.</p>
-    /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least
-    /// <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
-    /// unique users for suggestions.</p>
-    /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
-    /// from all queries.</p>
+    /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+    /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
+    /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
+    /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
     pub include_queries_without_user_information: std::option::Option<bool>,
-    /// <p>The minimum number of unique users who must search a query in order for the query
-    /// to be eligible to suggest to your users.</p>
-    /// <p>Increasing this number might decrease the number of suggestions. However, this
-    /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
+    /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub minimum_number_of_querying_users: std::option::Option<i32>,
-    /// <p>The the minimum number of times a query must be searched in order to be
-    /// eligible to suggest to your users.</p>
-    /// <p>Decreasing this number increases the number of suggestions. However, this
-    /// affects the quality of suggestions as it sets a low bar for a query to be
-    /// considered popular to suggest to users.</p>
+    /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
+    /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub minimum_query_count: std::option::Option<i32>,
 }
@@ -11786,12 +11087,8 @@ impl UpdateQuerySuggestionsConfigInput {
         self.index_id.as_deref()
     }
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
-    /// <p>By default, Amazon Kendra enables query suggestions.
-    /// <code>LEARN_ONLY</code> mode allows you to turn off query suggestions.
-    /// You can to update this at any time.</p>
-    /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
-    /// queries to keep suggestions up to date for when you are ready to
-    /// switch to ENABLED mode again.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
+    /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
         self.mode.as_ref()
     }
@@ -11801,34 +11098,21 @@ impl UpdateQuerySuggestionsConfigInput {
     pub fn query_log_look_back_window_in_days(&self) -> std::option::Option<i32> {
         self.query_log_look_back_window_in_days
     }
-    /// <p>
-    /// <code>TRUE</code> to include queries without user information (i.e. all queries,
-    /// irrespective of the user), otherwise <code>FALSE</code> to only include queries
-    /// with user information.</p>
-    /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this
-    /// flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user
-    /// information.</p>
-    /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least
-    /// <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
-    /// unique users for suggestions.</p>
-    /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
-    /// from all queries.</p>
+    /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
+    /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
+    /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
+    /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
     pub fn include_queries_without_user_information(&self) -> std::option::Option<bool> {
         self.include_queries_without_user_information
     }
-    /// <p>The minimum number of unique users who must search a query in order for the query
-    /// to be eligible to suggest to your users.</p>
-    /// <p>Increasing this number might decrease the number of suggestions. However, this
-    /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
+    /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub fn minimum_number_of_querying_users(&self) -> std::option::Option<i32> {
         self.minimum_number_of_querying_users
     }
-    /// <p>The the minimum number of times a query must be searched in order to be
-    /// eligible to suggest to your users.</p>
-    /// <p>Decreasing this number increases the number of suggestions. However, this
-    /// affects the quality of suggestions as it sets a low bar for a query to be
-    /// considered popular to suggest to users.</p>
+    /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
+    /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub fn minimum_query_count(&self) -> std::option::Option<i32> {
         self.minimum_query_count
@@ -11869,17 +11153,10 @@ pub struct UpdateQuerySuggestionsBlockListInput {
     /// <p>The description for a block list.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the
-    /// block list text file in S3, then Amazon Kendra reloads the file to refresh
-    /// the block list. Amazon Kendra does not automatically refresh your block list.
-    /// You need to call the <code>UpdateQuerySuggestionsBlockList</code> API
-    /// to refresh you block list.</p>
-    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
-    /// all query suggestions with the latest content in the S3 file. This
-    /// means changes might not take effect immediately.</p>
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>The IAM (Identity and Access Management) role used to access the
-    /// block list text file in S3.</p>
+    /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateQuerySuggestionsBlockListInput {
@@ -11900,19 +11177,12 @@ impl UpdateQuerySuggestionsBlockListInput {
         self.description.as_deref()
     }
     /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the
-    /// block list text file in S3, then Amazon Kendra reloads the file to refresh
-    /// the block list. Amazon Kendra does not automatically refresh your block list.
-    /// You need to call the <code>UpdateQuerySuggestionsBlockList</code> API
-    /// to refresh you block list.</p>
-    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
-    /// all query suggestions with the latest content in the S3 file. This
-    /// means changes might not take effect immediately.</p>
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
-    /// <p>The IAM (Identity and Access Management) role used to access the
-    /// block list text file in S3.</p>
+    /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11938,29 +11208,22 @@ pub struct UpdateIndexInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the index to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A new IAM role that gives Amazon Kendra permission to access your
-    /// Amazon CloudWatch logs.</p>
+    /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A new description for the index.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The document metadata to update. </p>
     pub document_metadata_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
-    /// <p>Sets the number of additional storage and query capacity units that
-    /// should be used by the index. You can change the capacity of the index up
-    /// to 5 times per day.</p>
-    /// <p>If you are using extra storage units, you can't reduce the storage
-    /// capacity below that required to meet the storage needs for your
-    /// index.</p>
+    /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
     pub capacity_units: std::option::Option<crate::model::CapacityUnitsConfiguration>,
     /// <p>The user token configuration.</p>
     pub user_token_configurations:
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-    /// identity source. To configure this, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -11973,8 +11236,7 @@ impl UpdateIndexInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A new IAM role that gives Amazon Kendra permission to access your
-    /// Amazon CloudWatch logs.</p>
+    /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11988,12 +11250,8 @@ impl UpdateIndexInput {
     ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
         self.document_metadata_configuration_updates.as_deref()
     }
-    /// <p>Sets the number of additional storage and query capacity units that
-    /// should be used by the index. You can change the capacity of the index up
-    /// to 5 times per day.</p>
-    /// <p>If you are using extra storage units, you can't reduce the storage
-    /// capacity below that required to meet the storage needs for your
-    /// index.</p>
+    /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
+    /// <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
     pub fn capacity_units(&self) -> std::option::Option<&crate::model::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
@@ -12007,9 +11265,7 @@ impl UpdateIndexInput {
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-    /// identity source. To configure this, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -12048,13 +11304,9 @@ pub struct UpdateExperienceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-    /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-    /// operations, and Amazon Web Services SSO that stores your user and group information.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
-    /// field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>The description of your Amazon Kendra experience you want to update.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12072,15 +11324,11 @@ impl UpdateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-    /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-    /// operations, and Amazon Web Services SSO that stores your user and group information.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
-    /// field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
@@ -12108,12 +11356,9 @@ impl std::fmt::Debug for UpdateExperienceInput {
 pub struct UpdateDataSourceInput {
     /// <p>The unique identifier of the data source to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the data source to update. The name of the data source
-    /// can't be updated. To rename a data source you must delete the data source
-    /// and re-create it.</p>
+    /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source to
-    /// update.</p>
+    /// <p>The identifier of the index that contains the data source to update.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Configuration information for an Amazon Kendra data source.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -12121,21 +11366,12 @@ pub struct UpdateDataSourceInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The new update schedule for the data source.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
-    /// source is accessing resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The code for a language. This allows you to support a language for all
-    /// documents when updating the data source. English is supported
-    /// by default. For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
-    /// <p>Configuration information for altering document metadata and content during the
-    /// document ingestion process when you update a data source.</p>
-    /// <p>For more information on how to create, modify and delete document metadata, or make
-    /// other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
@@ -12144,14 +11380,11 @@ impl UpdateDataSourceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the data source to update. The name of the data source
-    /// can't be updated. To rename a data source you must delete the data source
-    /// and re-create it.</p>
+    /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source to
-    /// update.</p>
+    /// <p>The identifier of the index that contains the data source to update.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12167,25 +11400,16 @@ impl UpdateDataSourceInput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
-    /// source is accessing resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The code for a language. This allows you to support a language for all
-    /// documents when updating the data source. English is supported
-    /// by default. For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
-    /// <p>Configuration information for altering document metadata and content during the
-    /// document ingestion process when you update a data source.</p>
-    /// <p>For more information on how to create, modify and delete document metadata, or make
-    /// other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CustomDocumentEnrichmentConfiguration> {
@@ -12215,21 +11439,17 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// remove the tag from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a
-    /// tag key does not exist on the resource, it is ignored.</p>
+    /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// remove the tag from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a
-    /// tag key does not exist on the resource, it is ignored.</p>
+    /// <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -12247,21 +11467,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// tag.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
-    /// already exists, the existing value is replaced with the new value.</p>
+    /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// tag.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
-    /// already exists, the existing value is replaced with the new value.</p>
+    /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12281,15 +11497,11 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the specific query for which you are submitting
-    /// feedback. The query ID is returned in the response to the
-    /// <code>Query</code> operation.</p>
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
     pub query_id: std::option::Option<std::string::String>,
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen
-    /// by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub click_feedback_items: std::option::Option<std::vec::Vec<crate::model::ClickFeedback>>,
-    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
-    /// whether a particular item was relevant to the search.</p>
+    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     pub relevance_feedback_items:
         std::option::Option<std::vec::Vec<crate::model::RelevanceFeedback>>,
 }
@@ -12298,19 +11510,15 @@ impl SubmitFeedbackInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifier of the specific query for which you are submitting
-    /// feedback. The query ID is returned in the response to the
-    /// <code>Query</code> operation.</p>
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen
-    /// by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub fn click_feedback_items(&self) -> std::option::Option<&[crate::model::ClickFeedback]> {
         self.click_feedback_items.as_deref()
     }
-    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
-    /// whether a particular item was relevant to the search.</p>
+    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     pub fn relevance_feedback_items(
         &self,
     ) -> std::option::Option<&[crate::model::RelevanceFeedback]> {
@@ -12332,15 +11540,13 @@ impl std::fmt::Debug for SubmitFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDataSourceSyncJobInput {
-    /// <p>The identifier of the data source for which to stop the
-    /// synchronization jobs.</p>
+    /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl StopDataSourceSyncJobInput {
-    /// <p>The identifier of the data source for which to stop the
-    /// synchronization jobs.</p>
+    /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -12390,71 +11596,39 @@ impl std::fmt::Debug for StartDataSourceSyncJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryInput {
-    /// <p>The unique identifier of the index to search. The identifier is
-    /// returned in the response from the <code>CreateIndex</code>
-    /// operation.</p>
+    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The text to search for.</p>
     pub query_text: std::option::Option<std::string::String>,
-    /// <p>Enables filtered searches based on document attributes. You can only
-    /// provide one attribute filter; however, the <code>AndAllFilters</code>,
-    /// <code>NotFilter</code>, and <code>OrAllFilters</code> parameters
-    /// contain a list of other filters.</p>
-    /// <p>The <code>AttributeFilter</code> parameter enables you to create a
-    /// set of filtering rules that a document must satisfy to be included in
-    /// the query results.</p>
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub attribute_filter: std::option::Option<crate::model::AttributeFilter>,
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for
-    /// each attribute key specified. You can use this information to help
-    /// narrow the search for your user.</p>
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
     pub facets: std::option::Option<std::vec::Vec<crate::model::Facet>>,
-    /// <p>An array of document attributes to include in the response. No other
-    /// document attributes are included in the response. By default all
-    /// document attributes are included in the response. </p>
+    /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
     pub requested_document_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Sets the type of query. Only results for the specified query type
-    /// are returned.</p>
+    /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     pub query_result_type_filter: std::option::Option<crate::model::QueryResultType>,
     /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index
-    /// level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API
-    /// to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-    /// <p>If there is relevance tuning configured for fields at the index level,
-    /// but you use this API to override only some of these fields, then for the fields you did not override,
-    /// the importance is set to 1.</p>
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub document_relevance_override_configurations:
         std::option::Option<std::vec::Vec<crate::model::DocumentRelevanceConfiguration>>,
-    /// <p>Query results are returned in pages the size of the
-    /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
-    /// the first page of results. Use this parameter to get result pages after
-    /// the first one.</p>
+    /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub page_number: std::option::Option<i32>,
-    /// <p>Sets the number of results that are returned in each page of
-    /// results. The default page size is 10. The maximum number of results
-    /// returned is 100. If you ask for more than 100 results, only 100 are
-    /// returned.</p>
+    /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Provides information that determines how the results of the query
-    /// are sorted. You can set the field that Amazon Kendra should sort the results
-    /// on, and specify whether the results should be sorted in ascending or
-    /// descending order. In the case of ties in sorting the results, the
-    /// results are sorted by relevance.</p>
-    /// <p>If you don't provide sorting configuration, the results are sorted
-    /// by the relevance that Amazon Kendra determines for the result.</p>
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     pub sorting_configuration: std::option::Option<crate::model::SortingConfiguration>,
     /// <p>The user context token or user and group information.</p>
     pub user_context: std::option::Option<crate::model::UserContext>,
-    /// <p>Provides an identifier for a specific user. The
-    /// <code>VisitorId</code> should be a unique identifier, such as a
-    /// GUID. Don't use personally identifiable information, such as the user's
-    /// email address, as the <code>VisitorId</code>.</p>
+    /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub visitor_id: std::option::Option<std::string::String>,
 }
 impl QueryInput {
-    /// <p>The unique identifier of the index to search. The identifier is
-    /// returned in the response from the <code>CreateIndex</code>
-    /// operation.</p>
+    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12462,67 +11636,42 @@ impl QueryInput {
     pub fn query_text(&self) -> std::option::Option<&str> {
         self.query_text.as_deref()
     }
-    /// <p>Enables filtered searches based on document attributes. You can only
-    /// provide one attribute filter; however, the <code>AndAllFilters</code>,
-    /// <code>NotFilter</code>, and <code>OrAllFilters</code> parameters
-    /// contain a list of other filters.</p>
-    /// <p>The <code>AttributeFilter</code> parameter enables you to create a
-    /// set of filtering rules that a document must satisfy to be included in
-    /// the query results.</p>
+    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn attribute_filter(&self) -> std::option::Option<&crate::model::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for
-    /// each attribute key specified. You can use this information to help
-    /// narrow the search for your user.</p>
+    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
     pub fn facets(&self) -> std::option::Option<&[crate::model::Facet]> {
         self.facets.as_deref()
     }
-    /// <p>An array of document attributes to include in the response. No other
-    /// document attributes are included in the response. By default all
-    /// document attributes are included in the response. </p>
+    /// <p>An array of document attributes to include in the response. No other document attributes are included in the response. By default all document attributes are included in the response. </p>
     pub fn requested_document_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.requested_document_attributes.as_deref()
     }
-    /// <p>Sets the type of query. Only results for the specified query type
-    /// are returned.</p>
+    /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     pub fn query_result_type_filter(&self) -> std::option::Option<&crate::model::QueryResultType> {
         self.query_result_type_filter.as_ref()
     }
     /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
-    /// <p>If you use this API to override the relevance tuning configured at the index
-    /// level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API
-    /// to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-    /// <p>If there is relevance tuning configured for fields at the index level,
-    /// but you use this API to override only some of these fields, then for the fields you did not override,
-    /// the importance is set to 1.</p>
+    /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub fn document_relevance_override_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::DocumentRelevanceConfiguration]> {
         self.document_relevance_override_configurations.as_deref()
     }
-    /// <p>Query results are returned in pages the size of the
-    /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
-    /// the first page of results. Use this parameter to get result pages after
-    /// the first one.</p>
+    /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(&self) -> std::option::Option<i32> {
         self.page_number
     }
-    /// <p>Sets the number of results that are returned in each page of
-    /// results. The default page size is 10. The maximum number of results
-    /// returned is 100. If you ask for more than 100 results, only 100 are
-    /// returned.</p>
+    /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Provides information that determines how the results of the query
-    /// are sorted. You can set the field that Amazon Kendra should sort the results
-    /// on, and specify whether the results should be sorted in ascending or
-    /// descending order. In the case of ties in sorting the results, the
-    /// results are sorted by relevance.</p>
-    /// <p>If you don't provide sorting configuration, the results are sorted
-    /// by the relevance that Amazon Kendra determines for the result.</p>
+    /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+    /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     pub fn sorting_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SortingConfiguration> {
@@ -12532,10 +11681,7 @@ impl QueryInput {
     pub fn user_context(&self) -> std::option::Option<&crate::model::UserContext> {
         self.user_context.as_ref()
     }
-    /// <p>Provides an identifier for a specific user. The
-    /// <code>VisitorId</code> should be a unique identifier, such as a
-    /// GUID. Don't use personally identifiable information, such as the user's
-    /// email address, as the <code>VisitorId</code>.</p>
+    /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub fn visitor_id(&self) -> std::option::Option<&str> {
         self.visitor_id.as_deref()
     }
@@ -12572,41 +11718,19 @@ pub struct PutPrincipalMappingInput {
     /// <p>The identifier of the index you want to map users to their groups.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source you want to map users to their groups.</p>
-    /// <p>This is useful if a group is tied to multiple data sources, but you only want
-    /// the group to access documents of a certain data source. For example, the groups
-    /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
-    /// documents stored in the data sources Confluence and Salesforce. However,
-    /// "Sales and Marketing" team only needs access to customer-related documents
-    /// stored in Salesforce.</p>
+    /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group you want to map its users to.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p>The list that contains your users or sub groups that belong
-    /// the same group.</p>
-    /// <p>For example, the group "Company" includes the user "CEO" and the
-    /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
-    /// <p>If you have more than 1000 users and/or sub groups for a single group,
-    /// you need to provide the path to the S3 file that lists your users and
-    /// sub groups for a group. Your sub groups can contain more than 1000 users,
-    /// but the list of sub groups that belong to a group (and/or users) must be
-    /// no more than 1000.</p>
+    /// <p>The list that contains your users or sub groups that belong the same group.</p>
+    /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+    /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     pub group_members: std::option::Option<crate::model::GroupMembers>,
-    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
-    /// the latest <code>PUT</code> action with previous actions. The highest number
-    /// ID, which is the ordering ID, is the latest action you want to process and
-    /// apply on top of other actions with lower number IDs. This prevents previous
-    /// actions with lower number IDs from possibly overriding the latest action.</p>
-    /// <p>The ordering ID can be the UNIX time of the last update you made to a
-    /// group members list. You would then provide this list when calling
-    /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
-    /// for that updated group with the latest members list doesn't get overwritten
-    /// by earlier <code>PUT</code> actions for the same group which are yet to
-    /// be processed.</p>
-    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-    /// action was received by Amazon Kendra.</p>
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
     pub ordering_id: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
-    /// that contains your list of users or sub groups that belong to a group.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -12616,12 +11740,7 @@ impl PutPrincipalMappingInput {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source you want to map users to their groups.</p>
-    /// <p>This is useful if a group is tied to multiple data sources, but you only want
-    /// the group to access documents of a certain data source. For example, the groups
-    /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
-    /// documents stored in the data sources Confluence and Salesforce. However,
-    /// "Sales and Marketing" team only needs access to customer-related documents
-    /// stored in Salesforce.</p>
+    /// <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -12629,36 +11748,19 @@ impl PutPrincipalMappingInput {
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>The list that contains your users or sub groups that belong
-    /// the same group.</p>
-    /// <p>For example, the group "Company" includes the user "CEO" and the
-    /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
-    /// <p>If you have more than 1000 users and/or sub groups for a single group,
-    /// you need to provide the path to the S3 file that lists your users and
-    /// sub groups for a group. Your sub groups can contain more than 1000 users,
-    /// but the list of sub groups that belong to a group (and/or users) must be
-    /// no more than 1000.</p>
+    /// <p>The list that contains your users or sub groups that belong the same group.</p>
+    /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+    /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     pub fn group_members(&self) -> std::option::Option<&crate::model::GroupMembers> {
         self.group_members.as_ref()
     }
-    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
-    /// the latest <code>PUT</code> action with previous actions. The highest number
-    /// ID, which is the ordering ID, is the latest action you want to process and
-    /// apply on top of other actions with lower number IDs. This prevents previous
-    /// actions with lower number IDs from possibly overriding the latest action.</p>
-    /// <p>The ordering ID can be the UNIX time of the last update you made to a
-    /// group members list. You would then provide this list when calling
-    /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
-    /// for that updated group with the latest members list doesn't get overwritten
-    /// by earlier <code>PUT</code> actions for the same group which are yet to
-    /// be processed.</p>
-    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-    /// action was received by Amazon Kendra.</p>
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
     pub fn ordering_id(&self) -> std::option::Option<i64> {
         self.ordering_id
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
-    /// that contains your list of users or sub groups that belong to a group.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -12683,10 +11785,7 @@ impl std::fmt::Debug for PutPrincipalMappingInput {
 pub struct ListThesauriInput {
     /// <p>The identifier of the index associated with the thesaurus to list.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
-    /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of thesauri to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -12696,10 +11795,7 @@ impl ListThesauriInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
-    /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12722,13 +11818,11 @@ impl std::fmt::Debug for ListThesauriInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// get a list of tags for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
-    /// get a list of tags for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -12745,31 +11839,21 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQuerySuggestionsBlockListsInput {
-    /// <p>The identifier of the index for a list of all block lists that exist for
-    /// that index.</p>
-    /// <p>For information on the current quota limits for block lists, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-    /// for Amazon Kendra</a>.</p>
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
+    /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of block lists to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListQuerySuggestionsBlockListsInput {
-    /// <p>The identifier of the index for a list of all block lists that exist for
-    /// that index.</p>
-    /// <p>For information on the current quota limits for block lists, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-    /// for Amazon Kendra</a>.</p>
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
+    /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12792,19 +11876,13 @@ impl std::fmt::Debug for ListQuerySuggestionsBlockListsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesInput {
-    /// <p>If the previous response was incomplete (because there is more data to
-    /// retrieve), Amazon Kendra returns a pagination token in the response. You
-    /// can use this pagination token to retrieve the next set of indexes
-    /// (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListIndicesInput {
-    /// <p>If the previous response was incomplete (because there is more data to
-    /// retrieve), Amazon Kendra returns a pagination token in the response. You
-    /// can use this pagination token to retrieve the next set of indexes
-    /// (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12826,57 +11904,35 @@ impl std::fmt::Debug for ListIndicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOlderThanOrderingIdInput {
-    /// <p>The identifier of the index for getting a list of groups mapped
-    /// to users before a given ordering or timestamp identifier.</p>
+    /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the data source for getting a list of groups mapped
-    /// to users before a given ordering timestamp identifier.</p>
+    /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
     pub data_source_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp identifier used for the latest <code>PUT</code> or
-    /// <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub ordering_id: std::option::Option<i64>,
-    /// <p>
-    /// If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of groups that are mapped to users before a
-    /// given ordering or timestamp identifier.
-    /// </p>
+    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of returned groups that are mapped to users before a
-    /// given ordering or timestamp identifier.
-    /// </p>
+    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListGroupsOlderThanOrderingIdInput {
-    /// <p>The identifier of the index for getting a list of groups mapped
-    /// to users before a given ordering or timestamp identifier.</p>
+    /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifier of the data source for getting a list of groups mapped
-    /// to users before a given ordering timestamp identifier.</p>
+    /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>The timestamp identifier used for the latest <code>PUT</code> or
-    /// <code>DELETE</code> action for mapping users to their groups.</p>
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn ordering_id(&self) -> std::option::Option<i64> {
         self.ordering_id
     }
-    /// <p>
-    /// If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of groups that are mapped to users before a
-    /// given ordering or timestamp identifier.
-    /// </p>
+    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of returned groups that are mapped to users before a
-    /// given ordering or timestamp identifier.
-    /// </p>
+    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12899,12 +11955,9 @@ impl std::fmt::Debug for ListGroupsOlderThanOrderingIdInput {
 pub struct ListFaqsInput {
     /// <p>The index that contains the FAQ lists.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of FAQs.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
-    /// the list, this response contains only the actual results.</p>
+    /// <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFaqsInput {
@@ -12912,14 +11965,11 @@ impl ListFaqsInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of FAQs.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
-    /// the list, this response contains only the actual results.</p>
+    /// <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12940,9 +11990,7 @@ impl std::fmt::Debug for ListFaqsInput {
 pub struct ListExperiencesInput {
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data
-    /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
-    /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned Amazon Kendra experiences.</p>
     pub max_results: std::option::Option<i32>,
@@ -12952,9 +12000,7 @@ impl ListExperiencesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data
-    /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
-    /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12981,9 +12027,7 @@ pub struct ListExperienceEntitiesInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of users or groups.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperienceEntitiesInput {
@@ -12995,9 +12039,7 @@ impl ListExperienceEntitiesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of users or groups.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13020,9 +12062,7 @@ pub struct ListEntityPersonasInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of users or groups.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned users or groups.</p>
     pub max_results: std::option::Option<i32>,
@@ -13036,9 +12076,7 @@ impl ListEntityPersonasInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of users or groups.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13066,19 +12104,13 @@ pub struct ListDataSourceSyncJobsInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of jobs.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of synchronization jobs to return in the response.
-    /// If there are fewer results in the list, this response contains only the
-    /// actual results.</p>
+    /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When specified, the synchronization jobs returned in the list are
-    /// limited to jobs between the specified dates. </p>
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
     pub start_time_filter: std::option::Option<crate::model::TimeRange>,
-    /// <p>When specified, only returns synchronization jobs with the
-    /// <code>Status</code> field equal to the specified status.</p>
+    /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub status_filter: std::option::Option<crate::model::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInput {
@@ -13090,25 +12122,19 @@ impl ListDataSourceSyncJobsInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of jobs.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of synchronization jobs to return in the response.
-    /// If there are fewer results in the list, this response contains only the
-    /// actual results.</p>
+    /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When specified, the synchronization jobs returned in the list are
-    /// limited to jobs between the specified dates. </p>
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.start_time_filter.as_ref()
     }
-    /// <p>When specified, only returns synchronization jobs with the
-    /// <code>Status</code> field equal to the specified status.</p>
+    /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::DataSourceSyncJobStatus> {
         self.status_filter.as_ref()
     }
@@ -13132,10 +12158,7 @@ impl std::fmt::Debug for ListDataSourceSyncJobsInput {
 pub struct ListDataSourcesInput {
     /// <p>The identifier of the index that contains the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to
-    /// retrieve), Amazon Kendra returns a pagination token in the response. You
-    /// can use this pagination token to retrieve the next set of data sources
-    /// (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of data sources to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -13145,10 +12168,7 @@ impl ListDataSourcesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to
-    /// retrieve), Amazon Kendra returns a pagination token in the response. You
-    /// can use this pagination token to retrieve the next set of data sources
-    /// (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13173,52 +12193,20 @@ impl std::fmt::Debug for ListDataSourcesInput {
 pub struct GetSnapshotsInput {
     /// <p>The identifier of the index to get search metrics data.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The time interval or time window to get search metrics data.
-    /// The time interval uses the time zone of your index.
-    /// You can view data in the following time windows:</p>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>THIS_WEEK</code>: The current week, starting on
-    /// the Sunday and ending on the day before the current date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
-    /// the Sunday and ending on the following Saturday.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
-    /// starting on the Sunday and ending on the following Saturday.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THIS_MONTH</code>: The current month, starting on the
-    /// first day of the month and ending on the day before the current date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
-    /// first day of the month and ending on the last day of the month.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
-    /// starting on the first day of the month and ending on last day of the month.</p>
-    /// </li>
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
     pub interval: std::option::Option<crate::model::Interval>,
-    /// <p>The metric you want to retrieve. You
-    /// can specify only one metric per call.</p>
-    /// <p>For more information about the metrics you can view, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
-    /// insights with search analytics</a>.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
     pub metric_type: std::option::Option<crate::model::MetricType>,
-    /// <p>If the previous response was incomplete (because there
-    /// is more data to retrieve), Amazon Kendra returns a pagination token in
-    /// the response. You can use this pagination token to
-    /// retrieve the next set of search metrics data.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned data for the metric.</p>
     pub max_results: std::option::Option<i32>,
@@ -13228,56 +12216,24 @@ impl GetSnapshotsInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The time interval or time window to get search metrics data.
-    /// The time interval uses the time zone of your index.
-    /// You can view data in the following time windows:</p>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>THIS_WEEK</code>: The current week, starting on
-    /// the Sunday and ending on the day before the current date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ONE_WEEK_AGO</code>: The previous week, starting on
-    /// the Sunday and ending on the following Saturday.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TWO_WEEKS_AGO</code>: The week before the previous week,
-    /// starting on the Sunday and ending on the following Saturday.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THIS_MONTH</code>: The current month, starting on the
-    /// first day of the month and ending on the day before the current date.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ONE_MONTH_AGO</code>: The previous month, starting on the
-    /// first day of the month and ending on the last day of the month.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TWO_MONTHS_AGO</code>: The month before the previous month,
-    /// starting on the first day of the month and ending on last day of the month.</p>
-    /// </li>
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
     pub fn interval(&self) -> std::option::Option<&crate::model::Interval> {
         self.interval.as_ref()
     }
-    /// <p>The metric you want to retrieve. You
-    /// can specify only one metric per call.</p>
-    /// <p>For more information about the metrics you can view, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
-    /// insights with search analytics</a>.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::MetricType> {
         self.metric_type.as_ref()
     }
-    /// <p>If the previous response was incomplete (because there
-    /// is more data to retrieve), Amazon Kendra returns a pagination token in
-    /// the response. You can use this pagination token to
-    /// retrieve the next set of search metrics data.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13305,15 +12261,10 @@ pub struct GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches
-    /// what a user starts to type as their query.</p>
-    /// <p>Amazon Kendra does not show any suggestions if a user
-    /// types fewer than two characters or more than 60 characters.
-    /// A query must also have at least one search result and contain
-    /// at least one word of more than four characters.</p>
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub query_text: std::option::Option<std::string::String>,
-    /// <p>The maximum number of query suggestions you want to show
-    /// to your users.</p>
+    /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub max_suggestions_count: std::option::Option<i32>,
 }
 impl GetQuerySuggestionsInput {
@@ -13322,17 +12273,12 @@ impl GetQuerySuggestionsInput {
         self.index_id.as_deref()
     }
     /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches
-    /// what a user starts to type as their query.</p>
-    /// <p>Amazon Kendra does not show any suggestions if a user
-    /// types fewer than two characters or more than 60 characters.
-    /// A query must also have at least one search result and contain
-    /// at least one word of more than four characters.</p>
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn query_text(&self) -> std::option::Option<&str> {
         self.query_text.as_deref()
     }
-    /// <p>The maximum number of query suggestions you want to show
-    /// to your users.</p>
+    /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn max_suggestions_count(&self) -> std::option::Option<i32> {
         self.max_suggestions_count
     }
@@ -13355,8 +12301,7 @@ pub struct DisassociatePersonasFromEntitiesInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
-    /// source. For example, user IDs could be user emails.</p>
+    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
     pub entity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociatePersonasFromEntitiesInput {
@@ -13368,8 +12313,7 @@ impl DisassociatePersonasFromEntitiesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity
-    /// source. For example, user IDs could be user emails.</p>
+    /// <p>The identifiers of users or groups in your Amazon Web Services SSO identity source. For example, user IDs could be user emails.</p>
     pub fn entity_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.entity_ids.as_deref()
     }
@@ -13451,13 +12395,11 @@ impl std::fmt::Debug for DescribeThesaurusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to describe query suggestions
-    /// settings for.</p>
+    /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to describe query suggestions
-    /// settings for.</p>
+    /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13502,35 +12444,23 @@ impl std::fmt::Debug for DescribeQuerySuggestionsBlockListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePrincipalMappingInput {
-    /// <p>The identifier of the index required to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-    /// to their groups.</p>
+    /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the data source to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping
-    /// users to their groups.</p>
+    /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub data_source_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the group required to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-    /// to their groups.</p>
+    /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DescribePrincipalMappingInput {
-    /// <p>The identifier of the index required to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-    /// to their groups.</p>
+    /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifier of the data source to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping
-    /// users to their groups.</p>
+    /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>The identifier of the group required to check the processing of
-    /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
-    /// to their groups.</p>
+    /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
@@ -13600,8 +12530,7 @@ impl std::fmt::Debug for DescribeFaqInput {
 pub struct DescribeExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to get
-    /// information on.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeExperienceInput {
@@ -13609,8 +12538,7 @@ impl DescribeExperienceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to get
-    /// information on.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13715,31 +12643,13 @@ pub struct DeletePrincipalMappingInput {
     /// <p>The identifier of the index you want to delete a group from.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source you want to delete a group from.</p>
-    /// <p>This is useful if a group is tied to multiple data sources and you want
-    /// to delete a group from accessing documents in a certain data source. For example,
-    /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-    /// the company's documents stored in the data sources Confluence and Salesforce.
-    /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
-    /// these groups cannot access customer-related documents stored in Salesforce.
-    /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group you want to delete.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
-    /// override the latest <code>DELETE</code> action with previous actions.
-    /// The highest number ID, which is the ordering ID, is the latest action
-    /// you want to process and apply on top of other actions with lower number
-    /// IDs. This prevents previous actions with lower number IDs from possibly
-    /// overriding the latest action.</p>
-    /// <p>The ordering ID can be the UNIX time of the last update you made to a group
-    /// members list. You would then provide this list when calling
-    /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
-    /// for that updated group with the latest members list doesn't get overwritten
-    /// by earlier <code>DELETE</code> actions for the same group which are yet to
-    /// be processed.</p>
-    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-    /// action was received by Amazon Kendra.
-    /// </p>
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
     pub ordering_id: std::option::Option<i64>,
 }
 impl DeletePrincipalMappingInput {
@@ -13748,13 +12658,7 @@ impl DeletePrincipalMappingInput {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
-    /// <p>This is useful if a group is tied to multiple data sources and you want
-    /// to delete a group from accessing documents in a certain data source. For example,
-    /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-    /// the company's documents stored in the data sources Confluence and Salesforce.
-    /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
-    /// these groups cannot access customer-related documents stored in Salesforce.
-    /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -13762,21 +12666,9 @@ impl DeletePrincipalMappingInput {
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
-    /// override the latest <code>DELETE</code> action with previous actions.
-    /// The highest number ID, which is the ordering ID, is the latest action
-    /// you want to process and apply on top of other actions with lower number
-    /// IDs. This prevents previous actions with lower number IDs from possibly
-    /// overriding the latest action.</p>
-    /// <p>The ordering ID can be the UNIX time of the last update you made to a group
-    /// members list. You would then provide this list when calling
-    /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
-    /// for that updated group with the latest members list doesn't get overwritten
-    /// by earlier <code>DELETE</code> actions for the same group which are yet to
-    /// be processed.</p>
-    /// <p>The default ordering ID is the current UNIX time in milliseconds that the
-    /// action was received by Amazon Kendra.
-    /// </p>
+    /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
+    /// <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
+    /// <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
     pub fn ordering_id(&self) -> std::option::Option<i64> {
         self.ordering_id
     }
@@ -13875,8 +12767,7 @@ impl std::fmt::Debug for DeleteExperienceInput {
 pub struct DeleteDataSourceInput {
     /// <p>The unique identifier of the data source to delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the index associated with the data
-    /// source.</p>
+    /// <p>The unique identifier of the index associated with the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
@@ -13884,8 +12775,7 @@ impl DeleteDataSourceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The unique identifier of the index associated with the data
-    /// source.</p>
+    /// <p>The unique identifier of the index associated with the data source.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13903,34 +12793,23 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThesaurusInput {
-    /// <p>The unique identifier of the index for the new thesaurus.
-    /// </p>
+    /// <p>The unique identifier of the index for the new thesaurus. </p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The name for the new thesaurus.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description for the new thesaurus.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An IAM role that gives Amazon Kendra permissions
-    /// to access thesaurus file specified in <code>SourceS3Path</code>.
-    /// </p>
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that identify the thesaurus. You can use
-    /// the tags to identify and organize your resources and to control
-    /// access to resources.
-    /// </p>
+    /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The thesaurus file Amazon S3 source path.
-    /// </p>
+    /// <p>The thesaurus file Amazon S3 source path. </p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>A token that you provide to identify the request to create a
-    /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
-    /// with the same client token will create only one thesaurus.
-    /// </p>
+    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusInput {
-    /// <p>The unique identifier of the index for the new thesaurus.
-    /// </p>
+    /// <p>The unique identifier of the index for the new thesaurus. </p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13942,28 +12821,19 @@ impl CreateThesaurusInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An IAM role that gives Amazon Kendra permissions
-    /// to access thesaurus file specified in <code>SourceS3Path</code>.
-    /// </p>
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that identify the thesaurus. You can use
-    /// the tags to identify and organize your resources and to control
-    /// access to resources.
-    /// </p>
+    /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The thesaurus file Amazon S3 source path.
-    /// </p>
+    /// <p>The thesaurus file Amazon S3 source path. </p>
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
-    /// <p>A token that you provide to identify the request to create a
-    /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
-    /// with the same client token will create only one thesaurus.
-    /// </p>
+    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13989,32 +12859,21 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all
-    /// offensive words that could appear in user queries and need to be
-    /// blocked from suggestions.</p>
+    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A user-friendly description for the block list.</p>
-    /// <p>For example, the description "List of all offensive words that can
-    /// appear in user queries and need to be blocked from suggestions."</p>
+    /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
-    /// <p>For information on the current quota limits for block lists, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-    /// for Amazon Kendra</a>.</p>
+    /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>A token that you provide to identify the request to create a
-    /// query suggestions block list.</p>
+    /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
-    /// access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Resource Name).
-    /// The role needs S3 read permissions to your file in S3 and needs
-    /// to give STS (Security Token Service) assume role permissions
-    /// to Amazon Kendra.</p>
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
+    /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A tag that you can assign to a block list that categorizes
-    /// the block list.</p>
+    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateQuerySuggestionsBlockListInput {
@@ -14023,42 +12882,31 @@ impl CreateQuerySuggestionsBlockListInput {
         self.index_id.as_deref()
     }
     /// <p>A user friendly name for the block list.</p>
-    /// <p>For example, the block list named 'offensive-words' includes all
-    /// offensive words that could appear in user queries and need to be
-    /// blocked from suggestions.</p>
+    /// <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A user-friendly description for the block list.</p>
-    /// <p>For example, the description "List of all offensive words that can
-    /// appear in user queries and need to be blocked from suggestions."</p>
+    /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
-    /// <p>For information on the current quota limits for block lists, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
-    /// for Amazon Kendra</a>.</p>
+    /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
-    /// <p>A token that you provide to identify the request to create a
-    /// query suggestions block list.</p>
+    /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
-    /// access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Resource Name).
-    /// The role needs S3 read permissions to your file in S3 and needs
-    /// to give STS (Security Token Service) assume role permissions
-    /// to Amazon Kendra.</p>
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
+    /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A tag that you can assign to a block list that categorizes
-    /// the block list.</p>
+    /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -14083,64 +12931,41 @@ impl std::fmt::Debug for CreateQuerySuggestionsBlockListInput {
 pub struct CreateIndexInput {
     /// <p>The name for the new index.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Kendra edition to use for the index. Choose
-    /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
-    /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-    /// production databases. Once you set the edition for an index, it can't be
-    /// changed.</p>
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
-    /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
-    /// <p>For more information on quota limits for enterprise and developer editions,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+    /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
-    /// <p>An Identity and Access Management(IAM) role that gives
-    /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
-    /// metrics. This is also the role used when you use the
-    /// <code>BatchPutDocument</code> operation to index documents from an
-    /// Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the KMScustomer managed key (CMK) to use to
-    /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
-    /// asymmetric CMKs.</p>
+    /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A token that you provide to identify the request to create an index.
-    /// Multiple calls to the <code>CreateIndex</code> operation with the same
-    /// client token will create only one index.</p>
+    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that identify the index. You can use the
-    /// tags to identify and organize your resources and to control access to
-    /// resources.</p>
+    /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The user token configuration.</p>
     pub user_token_configurations:
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
     /// <dl>
-    /// <dt>ATTRIBUTE_FILTER</dt>
+    /// <dt>
+    /// ATTRIBUTE_FILTER
+    /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable
-    /// for all users. If you want to filter search results on
-    /// user context, you can use the attribute filters of
-    /// <code>_user_id</code> and <code>_group_ids</code> or
-    /// you can provide user and group information in <code>UserContext</code>.
-    /// </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
     /// </dd>
-    /// <dt>USER_TOKEN</dt>
+    /// <dt>
+    /// USER_TOKEN
+    /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter
-    /// search results on user context. All documents with no
-    /// access control and all documents accessible to the user
-    /// will be searchable and displayable.
-    /// </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
     /// </dd>
     /// </dl>
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-    /// identity source. To configure this, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -14149,29 +12974,17 @@ impl CreateIndexInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose
-    /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
-    /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-    /// production databases. Once you set the edition for an index, it can't be
-    /// changed.</p>
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
-    /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
-    /// <p>For more information on quota limits for enterprise and developer editions,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
+    /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
         self.edition.as_ref()
     }
-    /// <p>An Identity and Access Management(IAM) role that gives
-    /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
-    /// metrics. This is also the role used when you use the
-    /// <code>BatchPutDocument</code> operation to index documents from an
-    /// Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The identifier of the KMScustomer managed key (CMK) to use to
-    /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
-    /// asymmetric CMKs.</p>
+    /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -14181,15 +12994,11 @@ impl CreateIndexInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create an index.
-    /// Multiple calls to the <code>CreateIndex</code> operation with the same
-    /// client token will create only one index.</p>
+    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A list of key-value pairs that identify the index. You can use the
-    /// tags to identify and organize your resources and to control access to
-    /// resources.</p>
+    /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -14201,30 +13010,23 @@ impl CreateIndexInput {
     }
     /// <p>The user context policy.</p>
     /// <dl>
-    /// <dt>ATTRIBUTE_FILTER</dt>
+    /// <dt>
+    /// ATTRIBUTE_FILTER
+    /// </dt>
     /// <dd>
-    /// <p>All indexed content is searchable and displayable
-    /// for all users. If you want to filter search results on
-    /// user context, you can use the attribute filters of
-    /// <code>_user_id</code> and <code>_group_ids</code> or
-    /// you can provide user and group information in <code>UserContext</code>.
-    /// </p>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
     /// </dd>
-    /// <dt>USER_TOKEN</dt>
+    /// <dt>
+    /// USER_TOKEN
+    /// </dt>
     /// <dd>
-    /// <p>Enables token-based user access control to filter
-    /// search results on user context. All documents with no
-    /// access control and all documents accessible to the user
-    /// will be searchable and displayable.
-    /// </p>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
     /// </dd>
     /// </dl>
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
-    /// identity source. To configure this, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -14266,29 +13068,17 @@ pub struct CreateFaqInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 location of the FAQ input data.</p>
     pub s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-    /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
-    /// organize your resources and to control access to resources.</p>
+    /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
-    /// that includes customs attributes in a header, and a JSON format that includes custom
-    /// attributes.</p>
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the
-    /// <code>S3Path</code> parameter.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
-    /// answers</a>.</p>
+    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
-    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
-    /// the <code>CreateFaqRequest</code> operation with the same client token will create only
-    /// one FAQ. </p>
+    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The code for a language. This allows you to support a language
-    /// for the FAQ document. English is supported by default.
-    /// For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
 }
 impl CreateFaqInput {
@@ -14308,37 +13098,25 @@ impl CreateFaqInput {
     pub fn s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.s3_path.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-    /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
-    /// organize your resources and to control access to resources.</p>
+    /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
-    /// that includes customs attributes in a header, and a JSON format that includes custom
-    /// attributes.</p>
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the
-    /// <code>S3Path</code> parameter.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
-    /// answers</a>.</p>
+    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub fn file_format(&self) -> std::option::Option<&crate::model::FaqFileFormat> {
         self.file_format.as_ref()
     }
-    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
-    /// the <code>CreateFaqRequest</code> operation with the same client token will create only
-    /// one FAQ. </p>
+    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The code for a language. This allows you to support a language
-    /// for the FAQ document. English is supported by default.
-    /// For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
@@ -14367,21 +13145,13 @@ pub struct CreateExperienceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-    /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-    /// operations, and Amazon Web Services SSO that stores your user and group information.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
-    /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
-    /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
-    /// user or group information to grant access to your Amazon Kendra experience.</p>
+    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>A description for your Amazon Kendra experience.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
-    /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-    /// token creates only one Amazon Kendra experience.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateExperienceInput {
@@ -14393,17 +13163,11 @@ impl CreateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-    /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-    /// operations, and Amazon Web Services SSO that stores your user and group information.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
-    /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
-    /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
-    /// user or group information to grant access to your Amazon Kendra experience.</p>
+    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
@@ -14411,9 +13175,7 @@ impl CreateExperienceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
-    /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-    /// token creates only one Amazon Kendra experience.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -14435,73 +13197,42 @@ impl std::fmt::Debug for CreateExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
-    /// <p>A unique name for the data source. A data source name can't be changed
-    /// without deleting and recreating the data source.</p>
+    /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that should be associated with this data
-    /// source.</p>
+    /// <p>The identifier of the index that should be associated with this data source.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The type of repository that contains the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The connector configuration information that is required to access the
-    /// repository.</p>
-    /// <p>You can't specify the <code>Configuration</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
-    /// <p>The <code>Configuration</code> parameter is required for all other
-    /// data sources.</p>
+    /// <p>The connector configuration information that is required to access the repository.</p>
+    /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>A description for the data source.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Sets the frequency that Amazon Kendra will check the documents in your
-    /// repository and update the index. If you don't set a schedule Amazon Kendra
-    /// will not periodically update the index. You can call the
-    /// <code>StartDataSourceSyncJob</code> operation to update the
-    /// index.</p>
-    /// <p>You can't specify the <code>Schedule</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+    /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
-    /// data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-    /// Amazon Kendra</a>.</p>
-    /// <p>You can't specify the <code>RoleArn</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
-    /// <p>The <code>RoleArn</code> parameter is required for all other data
-    /// sources.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that identify the data source. You can use
-    /// the tags to identify and organize your resources and to control access to
-    /// resources.</p>
+    /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token that you provide to identify the request to create a data
-    /// source. Multiple calls to the <code>CreateDataSource</code> operation with
-    /// the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The code for a language. This allows you to support a language for all
-    /// documents when creating the data source. English is supported
-    /// by default. For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
-    /// <p>Configuration information for altering document metadata and content during the
-    /// document ingestion process when you create a data source.</p>
-    /// <p>For more information on how to create, modify and delete document metadata, or make
-    /// other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl CreateDataSourceInput {
-    /// <p>A unique name for the data source. A data source name can't be changed
-    /// without deleting and recreating the data source.</p>
+    /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index that should be associated with this data
-    /// source.</p>
+    /// <p>The identifier of the index that should be associated with this data source.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -14509,13 +13240,9 @@ impl CreateDataSourceInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The connector configuration information that is required to access the
-    /// repository.</p>
-    /// <p>You can't specify the <code>Configuration</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
-    /// <p>The <code>Configuration</code> parameter is required for all other
-    /// data sources.</p>
+    /// <p>The connector configuration information that is required to access the repository.</p>
+    /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
@@ -14523,54 +13250,31 @@ impl CreateDataSourceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Sets the frequency that Amazon Kendra will check the documents in your
-    /// repository and update the index. If you don't set a schedule Amazon Kendra
-    /// will not periodically update the index. You can call the
-    /// <code>StartDataSourceSyncJob</code> operation to update the
-    /// index.</p>
-    /// <p>You can't specify the <code>Schedule</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
+    /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+    /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
-    /// data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-    /// Amazon Kendra</a>.</p>
-    /// <p>You can't specify the <code>RoleArn</code> parameter when the
-    /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
-    /// you receive a <code>ValidationException</code> exception.</p>
-    /// <p>The <code>RoleArn</code> parameter is required for all other data
-    /// sources.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that identify the data source. You can use
-    /// the tags to identify and organize your resources and to control access to
-    /// resources.</p>
+    /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create a data
-    /// source. Multiple calls to the <code>CreateDataSource</code> operation with
-    /// the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The code for a language. This allows you to support a language for all
-    /// documents when creating the data source. English is supported
-    /// by default. For more information on supported languages, including their codes,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
-    /// documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
-    /// <p>Configuration information for altering document metadata and content during the
-    /// document ingestion process when you create a data source.</p>
-    /// <p>For more information on how to create, modify and delete document metadata, or make
-    /// other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CustomDocumentEnrichmentConfiguration> {
@@ -14623,92 +13327,48 @@ impl std::fmt::Debug for ClearQuerySuggestionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutDocumentInput {
-    /// <p>The identifier of the index to add the documents to. You need to
-    /// create the index first using the <code>CreateIndex</code>
-    /// operation.</p>
+    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-    /// <code>BatchPutDocument</code> operation. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-    /// Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>One or more documents to add to the index.</p>
-    /// <p>Documents can include custom attributes. For example,
-    /// 'DataSourceId' and 'DataSourceSyncJobId' are custom
-    /// attributes that provide information on the synchronization
-    /// of documents running on a data source. Note,
-    /// 'DataSourceSyncJobId' could be an optional custom attribute
-    /// as Amazon Kendra will use the ID of a running sync job.</p>
+    /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li>
-    /// <p>5 MB total size for inline documents</p>
-    /// </li>
-    /// <li>
-    /// <p>50 MB total size for files from an S3 bucket</p>
-    /// </li>
-    /// <li>
-    /// <p>5 MB extracted text for any file</p>
-    /// </li>
+    /// <li> <p>5 MB total size for inline documents</p> </li>
+    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second
-    /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub documents: std::option::Option<std::vec::Vec<crate::model::Document>>,
-    /// <p>Configuration information for altering your document metadata and content during
-    /// the document ingestion process when you use the <code>BatchPutDocument</code>
-    /// operation.</p>
-    /// <p>For more information on how to create, modify and delete document metadata,
-    /// or make other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl BatchPutDocumentInput {
-    /// <p>The identifier of the index to add the documents to. You need to
-    /// create the index first using the <code>CreateIndex</code>
-    /// operation.</p>
+    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-    /// <code>BatchPutDocument</code> operation. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-    /// Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>One or more documents to add to the index.</p>
-    /// <p>Documents can include custom attributes. For example,
-    /// 'DataSourceId' and 'DataSourceSyncJobId' are custom
-    /// attributes that provide information on the synchronization
-    /// of documents running on a data source. Note,
-    /// 'DataSourceSyncJobId' could be an optional custom attribute
-    /// as Amazon Kendra will use the ID of a running sync job.</p>
+    /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li>
-    /// <p>5 MB total size for inline documents</p>
-    /// </li>
-    /// <li>
-    /// <p>50 MB total size for files from an S3 bucket</p>
-    /// </li>
-    /// <li>
-    /// <p>5 MB extracted text for any file</p>
-    /// </li>
+    /// <li> <p>5 MB total size for inline documents</p> </li>
+    /// <li> <p>50 MB total size for files from an S3 bucket</p> </li>
+    /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
-    /// <p>For more information about file size and transaction per second
-    /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn documents(&self) -> std::option::Option<&[crate::model::Document]> {
         self.documents.as_deref()
     }
-    /// <p>Configuration information for altering your document metadata and content during
-    /// the document ingestion process when you use the <code>BatchPutDocument</code>
-    /// operation.</p>
-    /// <p>For more information on how to create, modify and delete document metadata,
-    /// or make other content alterations when you ingest documents into Amazon Kendra, see
-    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
-    /// document metadata during the ingestion process</a>.</p>
+    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CustomDocumentEnrichmentConfiguration> {
@@ -14733,25 +13393,17 @@ impl std::fmt::Debug for BatchPutDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDocumentStatusInput {
-    /// <p>The identifier of the index to add documents to. The index ID is
-    /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
-    /// </a> operation.</p>
+    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>A list of <code>DocumentInfo</code> objects that identify the
-    /// documents for which to get the status. You identify the documents by
-    /// their document ID and optional attributes.</p>
+    /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
     pub document_info_list: std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
 }
 impl BatchGetDocumentStatusInput {
-    /// <p>The identifier of the index to add documents to. The index ID is
-    /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
-    /// </a> operation.</p>
+    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>A list of <code>DocumentInfo</code> objects that identify the
-    /// documents for which to get the status. You identify the documents by
-    /// their document ID and optional attributes.</p>
+    /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
     pub fn document_info_list(&self) -> std::option::Option<&[crate::model::DocumentInfo]> {
         self.document_info_list.as_deref()
     }
@@ -14769,19 +13421,16 @@ impl std::fmt::Debug for BatchGetDocumentStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDocumentInput {
-    /// <p>The identifier of the index that contains the documents to
-    /// delete.</p>
+    /// <p>The identifier of the index that contains the documents to delete.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>One or more identifiers for documents to delete from the index.</p>
     pub document_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Maps a particular data source sync job to a particular data
-    /// source.</p>
+    /// <p>Maps a particular data source sync job to a particular data source.</p>
     pub data_source_sync_job_metric_target:
         std::option::Option<crate::model::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInput {
-    /// <p>The identifier of the index that contains the documents to
-    /// delete.</p>
+    /// <p>The identifier of the index that contains the documents to delete.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -14789,8 +13438,7 @@ impl BatchDeleteDocumentInput {
     pub fn document_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.document_id_list.as_deref()
     }
-    /// <p>Maps a particular data source sync job to a particular data
-    /// source.</p>
+    /// <p>Maps a particular data source sync job to a particular data source.</p>
     pub fn data_source_sync_job_metric_target(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceSyncJobMetricTarget> {
@@ -14818,11 +13466,7 @@ pub struct AssociatePersonasToEntitiesInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The personas that define the specific permissions of users or groups in
-    /// your Amazon Web Services SSO identity source. The available personas or access
-    /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
-    /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
-    /// access to your search page</a>.</p>
+    /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub personas: std::option::Option<std::vec::Vec<crate::model::EntityPersonaConfiguration>>,
 }
 impl AssociatePersonasToEntitiesInput {
@@ -14834,11 +13478,7 @@ impl AssociatePersonasToEntitiesInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The personas that define the specific permissions of users or groups in
-    /// your Amazon Web Services SSO identity source. The available personas or access
-    /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
-    /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
-    /// access to your search page</a>.</p>
+    /// <p>The personas that define the specific permissions of users or groups in your Amazon Web Services SSO identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn personas(&self) -> std::option::Option<&[crate::model::EntityPersonaConfiguration]> {
         self.personas.as_deref()
     }

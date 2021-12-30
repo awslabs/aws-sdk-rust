@@ -20,8 +20,7 @@ pub enum QueryForecastErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find that resource. Check the information that you've provided and try
-    /// again.</p>
+    /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -134,8 +133,7 @@ impl std::error::Error for QueryForecastError {
     }
 }
 
-/// <p>We can't find that resource. Check the information that you've provided and try
-/// again.</p>
+/// <p>We can't find that resource. Check the information that you've provided and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

@@ -33,13 +33,11 @@ impl UpdateProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortalOutput {
-    /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl UpdatePortalOutput {
-    /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
@@ -60,14 +58,12 @@ pub mod update_portal_output {
         pub(crate) portal_status: std::option::Option<crate::model::PortalStatus>,
     }
     impl Builder {
-        /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn portal_status(mut self, input: crate::model::PortalStatus) -> Self {
             self.portal_status = Some(input);
             self
         }
-        /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_portal_status(
             mut self,
             input: std::option::Option<crate::model::PortalStatus>,
@@ -98,21 +94,11 @@ pub struct UpdateGatewayCapabilityConfigurationOutput {
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code>
-    /// until the gateway receives and applies or rejects the updated configuration.</p>
+    /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl UpdateGatewayCapabilityConfigurationOutput {
@@ -122,21 +108,11 @@ impl UpdateGatewayCapabilityConfigurationOutput {
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code>
-    /// until the gateway receives and applies or rejects the updated configuration.</p>
+    /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
     pub fn capability_sync_status(
         &self,
     ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
@@ -176,42 +152,22 @@ pub mod update_gateway_capability_configuration_output {
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
-        /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code>
-        /// until the gateway receives and applies or rejects the updated configuration.</p>
+        /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
             self
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
-        /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code>
-        /// until the gateway receives and applies or rejects the updated configuration.</p>
+        /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
         pub fn set_capability_sync_status(
             mut self,
             input: std::option::Option<crate::model::CapabilitySyncStatus>,
@@ -329,13 +285,11 @@ impl UpdateAssetPropertyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetModelOutput {
-    /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl UpdateAssetModelOutput {
-    /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
@@ -356,14 +310,12 @@ pub mod update_asset_model_output {
         pub(crate) asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
     }
     impl Builder {
-        /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
             self.asset_model_status = Some(input);
             self
         }
-        /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_model_status(
             mut self,
             input: std::option::Option<crate::model::AssetModelStatus>,
@@ -390,13 +342,11 @@ impl UpdateAssetModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetOutput {
-    /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl UpdateAssetOutput {
-    /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
@@ -417,14 +367,12 @@ pub mod update_asset_output {
         pub(crate) asset_status: std::option::Option<crate::model::AssetStatus>,
     }
     impl Builder {
-        /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_status(mut self, input: crate::model::AssetStatus) -> Self {
             self.asset_status = Some(input);
             self
         }
-        /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_status(
             mut self,
             input: std::option::Option<crate::model::AssetStatus>,
@@ -541,40 +489,22 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data.
-    /// The <code>storageType</code> parameter can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-    /// The hot tier is a service-managed database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-    /// </li>
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-    /// <important>
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub disassociated_data_storage:
         std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -583,19 +513,10 @@ pub struct PutStorageConfigurationOutput {
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data.
-    /// The <code>storageType</code> parameter can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-    /// The hot tier is a service-managed database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-    /// </li>
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
         self.storage_type.as_ref()
@@ -604,23 +525,14 @@ impl PutStorageConfigurationOutput {
     pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-    /// <important>
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn disassociated_data_storage(
         &self,
     ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
@@ -663,37 +575,19 @@ pub mod put_storage_configuration_output {
         pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
     }
     impl Builder {
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -715,23 +609,14 @@ pub mod put_storage_configuration_output {
             self.multi_layer_storage = input;
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn disassociated_data_storage(
             mut self,
             input: crate::model::DisassociatedDataStorageState,
@@ -739,23 +624,14 @@ pub mod put_storage_configuration_output {
             self.disassociated_data_storage = Some(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_disassociated_data_storage(
             mut self,
             input: std::option::Option<crate::model::DisassociatedDataStorageState>,
@@ -844,12 +720,9 @@ impl PutLoggingOptionsOutput {
 pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Key ARN of the KMS key used for KMS encryption if you use
-    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the account configuration. This contains the
-    /// <code>ConfigurationState</code>. If there is an error, it also contains the
-    /// <code>ErrorDetails</code>.</p>
+    /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutDefaultEncryptionConfigurationOutput {
@@ -857,14 +730,11 @@ impl PutDefaultEncryptionConfigurationOutput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The Key ARN of the KMS key used for KMS encryption if you use
-    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The status of the account configuration. This contains the
-    /// <code>ConfigurationState</code>. If there is an error, it also contains the
-    /// <code>ErrorDetails</code>.</p>
+    /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
@@ -902,28 +772,22 @@ pub mod put_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The Key ARN of the KMS key used for KMS encryption if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Key ARN of the KMS key used for KMS encryption if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The status of the account configuration. This contains the
-        /// <code>ConfigurationState</code>. If there is an error, it also contains the
-        /// <code>ErrorDetails</code>.</p>
+        /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
             self.configuration_status = Some(input);
             self
         }
-        /// <p>The status of the account configuration. This contains the
-        /// <code>ConfigurationState</code>. If there is an error, it also contains the
-        /// <code>ErrorDetails</code>.</p>
+        /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn set_configuration_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationStatus>,
@@ -1035,16 +899,12 @@ impl ListTimeSeriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The list of key-value pairs that contain metadata for the resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The list of key-value pairs that contain metadata for the resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1074,9 +934,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1087,9 +945,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2352,11 +2208,8 @@ pub struct DescribeTimeSeriesOutput {
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this time series. This parameter is required for time series
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model
-    /// in which you created the asset property that is associated with your time series.
-    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
     pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2385,11 +2238,8 @@ impl DescribeTimeSeriesOutput {
     pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this time series. This parameter is required for time series
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model
-    /// in which you created the asset property that is associated with your time series.
-    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
@@ -2493,20 +2343,14 @@ pub mod describe_time_series_output {
             self.data_type = input;
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model
-        /// in which you created the asset property that is associated with your time series.
-        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model
-        /// in which you created the asset property that is associated with your time series.
-        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn set_data_type_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2566,40 +2410,22 @@ impl DescribeTimeSeriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data.
-    /// The <code>storageType</code> parameter can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-    /// The hot tier is a service-managed database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-    /// </li>
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-    /// <important>
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub disassociated_data_storage:
         std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -2610,19 +2436,10 @@ pub struct DescribeStorageConfigurationOutput {
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data.
-    /// The <code>storageType</code> parameter can be one of the following values:</p>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-    /// The hot tier is a service-managed database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-    /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-    /// </li>
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
         self.storage_type.as_ref()
@@ -2631,23 +2448,14 @@ impl DescribeStorageConfigurationOutput {
     pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-    /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-    /// <important>
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-    /// in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn disassociated_data_storage(
         &self,
     ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
@@ -2696,37 +2504,19 @@ pub mod describe_storage_configuration_output {
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -2748,23 +2538,14 @@ pub mod describe_storage_configuration_output {
             self.multi_layer_storage = input;
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn disassociated_data_storage(
             mut self,
             input: crate::model::DisassociatedDataStorageState,
@@ -2772,23 +2553,14 @@ pub mod describe_storage_configuration_output {
             self.disassociated_data_storage = Some(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_disassociated_data_storage(
             mut self,
             input: std::option::Option<crate::model::DisassociatedDataStorageState>,
@@ -2862,9 +2634,7 @@ pub struct DescribeProjectOutput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project.</p>
     pub project_name: std::option::Option<std::string::String>,
@@ -2883,9 +2653,7 @@ impl DescribeProjectOutput {
         self.project_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -2949,17 +2717,13 @@ pub mod describe_project_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -3051,20 +2815,15 @@ pub struct DescribePortalOutput {
     /// <p>The ID of the portal.</p>
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub portal_arn: std::option::Option<std::string::String>,
     /// <p>The name of the portal.</p>
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
     pub portal_description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
-    /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
     pub portal_client_id: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub portal_contact_email: std::option::Option<std::string::String>,
@@ -3076,9 +2835,7 @@ pub struct DescribePortalOutput {
     pub portal_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The portal's logo image, which is available at a URL.</p>
     pub portal_logo_image_location: std::option::Option<crate::model::ImageLocation>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The service to use to authenticate users to the portal.</p>
     pub portal_auth_mode: std::option::Option<crate::model::AuthMode>,
@@ -3093,9 +2850,7 @@ impl DescribePortalOutput {
         self.portal_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn portal_arn(&self) -> std::option::Option<&str> {
         self.portal_arn.as_deref()
     }
@@ -3107,14 +2862,11 @@ impl DescribePortalOutput {
     pub fn portal_description(&self) -> std::option::Option<&str> {
         self.portal_description.as_deref()
     }
-    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
-    /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+    /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
     pub fn portal_client_id(&self) -> std::option::Option<&str> {
         self.portal_client_id.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(&self) -> std::option::Option<&str> {
         self.portal_start_url.as_deref()
     }
@@ -3138,9 +2890,7 @@ impl DescribePortalOutput {
     pub fn portal_logo_image_location(&self) -> std::option::Option<&crate::model::ImageLocation> {
         self.portal_logo_image_location.as_ref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -3215,17 +2965,13 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portal_arn = input;
             self
@@ -3253,14 +2999,12 @@ pub mod describe_portal_output {
             self.portal_description = input;
             self
         }
-        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
-        /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
         pub fn portal_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_client_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes
-        /// <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
+        /// <p>The Amazon Web Services SSO application generated client ID (used with Amazon Web Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use Amazon Web Services SSO to authenticate users.</p>
         pub fn set_portal_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3268,16 +3012,12 @@ pub mod describe_portal_output {
             self.portal_client_id = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_portal_start_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3350,16 +3090,12 @@ pub mod describe_portal_output {
             self.portal_logo_image_location = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3494,23 +3230,13 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the gateway capability.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
-    /// <p>The JSON document that defines the gateway capability's configuration. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub capability_configuration: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
@@ -3523,25 +3249,15 @@ impl DescribeGatewayCapabilityConfigurationOutput {
     pub fn capability_namespace(&self) -> std::option::Option<&str> {
         self.capability_namespace.as_deref()
     }
-    /// <p>The JSON document that defines the gateway capability's configuration. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn capability_configuration(&self) -> std::option::Option<&str> {
         self.capability_configuration.as_deref()
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     pub fn capability_sync_status(
         &self,
@@ -3594,14 +3310,12 @@ pub mod describe_gateway_capability_configuration_output {
             self.capability_namespace = input;
             self
         }
-        /// <p>The JSON document that defines the gateway capability's configuration. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.capability_configuration = Some(input.into());
             self
         }
-        /// <p>The JSON document that defines the gateway capability's configuration. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_capability_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3611,18 +3325,9 @@ pub mod describe_gateway_capability_configuration_output {
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
@@ -3630,18 +3335,9 @@ pub mod describe_gateway_capability_configuration_output {
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
         pub fn set_capability_sync_status(
             mut self,
@@ -3677,15 +3373,11 @@ pub struct DescribeGatewayOutput {
     /// <p>The name of the gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The gateway's platform.</p>
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
-    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-    /// gateway capability defines data sources for the gateway. To retrieve a capability
-    /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub gateway_capability_summaries:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
@@ -3703,9 +3395,7 @@ impl DescribeGatewayOutput {
         self.gateway_name.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -3713,9 +3403,7 @@ impl DescribeGatewayOutput {
     pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
-    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-    /// gateway capability defines data sources for the gateway. To retrieve a capability
-    /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub fn gateway_capability_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::GatewayCapabilitySummary]> {
@@ -3783,17 +3471,13 @@ pub mod describe_gateway_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_arn = input;
             self
@@ -3815,9 +3499,7 @@ pub mod describe_gateway_output {
         ///
         /// To override the contents of this collection use [`set_gateway_capability_summaries`](Self::set_gateway_capability_summaries).
         ///
-        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-        /// gateway capability defines data sources for the gateway. To retrieve a capability
-        /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
         pub fn gateway_capability_summaries(
             mut self,
             input: crate::model::GatewayCapabilitySummary,
@@ -3827,9 +3509,7 @@ pub mod describe_gateway_output {
             self.gateway_capability_summaries = Some(v);
             self
         }
-        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-        /// gateway capability defines data sources for the gateway. To retrieve a capability
-        /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
         pub fn set_gateway_capability_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
@@ -3890,12 +3570,9 @@ impl DescribeGatewayOutput {
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The key ARN of the customer managed key used for KMS encryption if you use
-    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the account configuration. This contains the
-    /// <code>ConfigurationState</code>. If there's an error, it also contains the
-    /// <code>ErrorDetails</code>.</p>
+    /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl DescribeDefaultEncryptionConfigurationOutput {
@@ -3903,14 +3580,11 @@ impl DescribeDefaultEncryptionConfigurationOutput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The key ARN of the customer managed key used for KMS encryption if you use
-    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The status of the account configuration. This contains the
-    /// <code>ConfigurationState</code>. If there's an error, it also contains the
-    /// <code>ErrorDetails</code>.</p>
+    /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
@@ -3948,28 +3622,22 @@ pub mod describe_default_encryption_configuration_output {
             self.encryption_type = input;
             self
         }
-        /// <p>The key ARN of the customer managed key used for KMS encryption if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The key ARN of the customer managed key used for KMS encryption if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The status of the account configuration. This contains the
-        /// <code>ConfigurationState</code>. If there's an error, it also contains the
-        /// <code>ErrorDetails</code>.</p>
+        /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
             self.configuration_status = Some(input);
             self
         }
-        /// <p>The status of the account configuration. This contains the
-        /// <code>ConfigurationState</code>. If there's an error, it also contains the
-        /// <code>ErrorDetails</code>.</p>
+        /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn set_configuration_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationStatus>,
@@ -4001,9 +3669,7 @@ pub struct DescribeDashboardOutput {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dashboard.</p>
     pub dashboard_name: std::option::Option<std::string::String>,
@@ -4011,8 +3677,7 @@ pub struct DescribeDashboardOutput {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The dashboard's description.</p>
     pub dashboard_description: std::option::Option<std::string::String>,
-    /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-    /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub dashboard_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4025,9 +3690,7 @@ impl DescribeDashboardOutput {
         self.dashboard_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
@@ -4043,8 +3706,7 @@ impl DescribeDashboardOutput {
     pub fn dashboard_description(&self) -> std::option::Option<&str> {
         self.dashboard_description.as_deref()
     }
-    /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-    /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn dashboard_definition(&self) -> std::option::Option<&str> {
         self.dashboard_definition.as_deref()
     }
@@ -4101,17 +3763,13 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn set_dashboard_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4155,14 +3813,12 @@ pub mod describe_dashboard_output {
             self.dashboard_description = input;
             self
         }
-        /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_definition = Some(input.into());
             self
         }
-        /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_dashboard_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4229,12 +3885,9 @@ pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset model.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The asset property's definition, alias, and notification state.</p>
-    /// <p>This response includes this object for normal asset properties. If you describe an asset
-    /// property in a composite model, this response includes the asset property information in
-    /// <code>compositeModel</code>.</p>
+    /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     pub asset_property: std::option::Option<crate::model::Property>,
-    /// <p>The composite asset model that declares this asset property, if this asset property exists
-    /// in a composite model.</p>
+    /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
     pub composite_model: std::option::Option<crate::model::CompositeModelProperty>,
 }
 impl DescribeAssetPropertyOutput {
@@ -4251,14 +3904,11 @@ impl DescribeAssetPropertyOutput {
         self.asset_model_id.as_deref()
     }
     /// <p>The asset property's definition, alias, and notification state.</p>
-    /// <p>This response includes this object for normal asset properties. If you describe an asset
-    /// property in a composite model, this response includes the asset property information in
-    /// <code>compositeModel</code>.</p>
+    /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
         self.asset_property.as_ref()
     }
-    /// <p>The composite asset model that declares this asset property, if this asset property exists
-    /// in a composite model.</p>
+    /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
     pub fn composite_model(&self) -> std::option::Option<&crate::model::CompositeModelProperty> {
         self.composite_model.as_ref()
     }
@@ -4321,17 +3971,13 @@ pub mod describe_asset_property_output {
             self
         }
         /// <p>The asset property's definition, alias, and notification state.</p>
-        /// <p>This response includes this object for normal asset properties. If you describe an asset
-        /// property in a composite model, this response includes the asset property information in
-        /// <code>compositeModel</code>.</p>
+        /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
         pub fn asset_property(mut self, input: crate::model::Property) -> Self {
             self.asset_property = Some(input);
             self
         }
         /// <p>The asset property's definition, alias, and notification state.</p>
-        /// <p>This response includes this object for normal asset properties. If you describe an asset
-        /// property in a composite model, this response includes the asset property information in
-        /// <code>compositeModel</code>.</p>
+        /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
         pub fn set_asset_property(
             mut self,
             input: std::option::Option<crate::model::Property>,
@@ -4339,14 +3985,12 @@ pub mod describe_asset_property_output {
             self.asset_property = input;
             self
         }
-        /// <p>The composite asset model that declares this asset property, if this asset property exists
-        /// in a composite model.</p>
+        /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
         pub fn composite_model(mut self, input: crate::model::CompositeModelProperty) -> Self {
             self.composite_model = Some(input);
             self
         }
-        /// <p>The composite asset model that declares this asset property, if this asset property exists
-        /// in a composite model.</p>
+        /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
         pub fn set_composite_model(
             mut self,
             input: std::option::Option<crate::model::CompositeModelProperty>,
@@ -4380,22 +4024,17 @@ pub struct DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub asset_model_arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset model.</p>
     pub asset_model_name: std::option::Option<std::string::String>,
     /// <p>The asset model's description.</p>
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The list of asset properties for the asset model.</p>
-    /// <p>This object doesn't include properties that you define in composite models. You can find
-    /// composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+    /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
-    /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a
-    /// <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child
-    /// asset relationships for an asset model.</p>
+    /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
     /// <p>The list of composite asset models for the asset model.</p>
@@ -4405,8 +4044,7 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
     pub asset_model_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The current status of the asset model, which contains a state and any error
-    /// message.</p>
+    /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl DescribeAssetModelOutput {
@@ -4415,9 +4053,7 @@ impl DescribeAssetModelOutput {
         self.asset_model_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn asset_model_arn(&self) -> std::option::Option<&str> {
         self.asset_model_arn.as_deref()
     }
@@ -4430,16 +4066,13 @@ impl DescribeAssetModelOutput {
         self.asset_model_description.as_deref()
     }
     /// <p>The list of asset properties for the asset model.</p>
-    /// <p>This object doesn't include properties that you define in composite models. You can find
-    /// composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+    /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
     pub fn asset_model_properties(
         &self,
     ) -> std::option::Option<&[crate::model::AssetModelProperty]> {
         self.asset_model_properties.as_deref()
     }
-    /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a
-    /// <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child
-    /// asset relationships for an asset model.</p>
+    /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
     pub fn asset_model_hierarchies(
         &self,
     ) -> std::option::Option<&[crate::model::AssetModelHierarchy]> {
@@ -4459,8 +4092,7 @@ impl DescribeAssetModelOutput {
     pub fn asset_model_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.asset_model_last_update_date.as_ref()
     }
-    /// <p>The current status of the asset model, which contains a state and any error
-    /// message.</p>
+    /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
@@ -4522,17 +4154,13 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn asset_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn set_asset_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4571,8 +4199,7 @@ pub mod describe_asset_model_output {
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
         /// <p>The list of asset properties for the asset model.</p>
-        /// <p>This object doesn't include properties that you define in composite models. You can find
-        /// composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+        /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
         pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.asset_model_properties.unwrap_or_default();
             v.push(input);
@@ -4580,8 +4207,7 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The list of asset properties for the asset model.</p>
-        /// <p>This object doesn't include properties that you define in composite models. You can find
-        /// composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+        /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
         pub fn set_asset_model_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
@@ -4593,18 +4219,14 @@ pub mod describe_asset_model_output {
         ///
         /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
         ///
-        /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a
-        /// <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child
-        /// asset relationships for an asset model.</p>
+        /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
         pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
             let mut v = self.asset_model_hierarchies.unwrap_or_default();
             v.push(input);
             self.asset_model_hierarchies = Some(v);
             self
         }
-        /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a
-        /// <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child
-        /// asset relationships for an asset model.</p>
+        /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
         pub fn set_asset_model_hierarchies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
@@ -4660,14 +4282,12 @@ pub mod describe_asset_model_output {
             self.asset_model_last_update_date = input;
             self
         }
-        /// <p>The current status of the asset model, which contains a state and any error
-        /// message.</p>
+        /// <p>The current status of the asset model, which contains a state and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
             self.asset_model_status = Some(input);
             self
         }
-        /// <p>The current status of the asset model, which contains a state and any error
-        /// message.</p>
+        /// <p>The current status of the asset model, which contains a state and any error message.</p>
         pub fn set_asset_model_status(
             mut self,
             input: std::option::Option<crate::model::AssetModelStatus>,
@@ -4706,17 +4326,14 @@ pub struct DescribeAssetOutput {
     /// <p>The ID of the asset.</p>
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub asset_arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>The ID of the asset model that was used to create the asset.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The list of asset properties for the asset.</p>
-    /// <p>This object doesn't include properties that you define in composite models. You can find
-    /// composite model properties in the <code>assetCompositeModels</code> object.</p>
+    /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
     pub asset_properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub asset_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
@@ -4736,9 +4353,7 @@ impl DescribeAssetOutput {
         self.asset_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn asset_arn(&self) -> std::option::Option<&str> {
         self.asset_arn.as_deref()
     }
@@ -4751,8 +4366,7 @@ impl DescribeAssetOutput {
         self.asset_model_id.as_deref()
     }
     /// <p>The list of asset properties for the asset.</p>
-    /// <p>This object doesn't include properties that you define in composite models. You can find
-    /// composite model properties in the <code>assetCompositeModels</code> object.</p>
+    /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
     pub fn asset_properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
         self.asset_properties.as_deref()
     }
@@ -4827,17 +4441,13 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn asset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_asset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_arn = input;
             self
@@ -4870,8 +4480,7 @@ pub mod describe_asset_output {
         /// To override the contents of this collection use [`set_asset_properties`](Self::set_asset_properties).
         ///
         /// <p>The list of asset properties for the asset.</p>
-        /// <p>This object doesn't include properties that you define in composite models. You can find
-        /// composite model properties in the <code>assetCompositeModels</code> object.</p>
+        /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
         pub fn asset_properties(mut self, input: crate::model::AssetProperty) -> Self {
             let mut v = self.asset_properties.unwrap_or_default();
             v.push(input);
@@ -4879,8 +4488,7 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The list of asset properties for the asset.</p>
-        /// <p>This object doesn't include properties that you define in composite models. You can find
-        /// composite model properties in the <code>assetCompositeModels</code> object.</p>
+        /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
         pub fn set_asset_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
@@ -4996,18 +4604,13 @@ pub struct DescribeAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub access_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
-    /// applies.</p>
+    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
-    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
-    /// access.</p>
+    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
-    /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known
-    /// as a project owner.</p>
+    /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub access_policy_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5020,24 +4623,19 @@ impl DescribeAccessPolicyOutput {
         self.access_policy_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(&self) -> std::option::Option<&str> {
         self.access_policy_arn.as_deref()
     }
-    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
-    /// applies.</p>
+    /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
     pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.access_policy_identity.as_ref()
     }
-    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
-    /// access.</p>
+    /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     pub fn access_policy_resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.access_policy_resource.as_ref()
     }
-    /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known
-    /// as a project owner.</p>
+    /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn access_policy_permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.access_policy_permission.as_ref()
     }
@@ -5100,17 +4698,13 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn access_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn set_access_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5118,14 +4712,12 @@ pub mod describe_access_policy_output {
             self.access_policy_arn = input;
             self
         }
-        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
-        /// applies.</p>
+        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
         }
-        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy
-        /// applies.</p>
+        /// <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access policy applies.</p>
         pub fn set_access_policy_identity(
             mut self,
             input: std::option::Option<crate::model::Identity>,
@@ -5133,14 +4725,12 @@ pub mod describe_access_policy_output {
             self.access_policy_identity = input;
             self
         }
-        /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
-        /// access.</p>
+        /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.access_policy_resource = Some(input);
             self
         }
-        /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides
-        /// access.</p>
+        /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
         pub fn set_access_policy_resource(
             mut self,
             input: std::option::Option<crate::model::Resource>,
@@ -5148,14 +4738,12 @@ pub mod describe_access_policy_output {
             self.access_policy_resource = input;
             self
         }
-        /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known
-        /// as a project owner.</p>
+        /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
             self.access_policy_permission = Some(input);
             self
         }
-        /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known
-        /// as a project owner.</p>
+        /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn set_access_policy_permission(
             mut self,
             input: std::option::Option<crate::model::Permission>,
@@ -5274,13 +4862,11 @@ impl DeleteProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortalOutput {
-    /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl DeletePortalOutput {
-    /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
@@ -5301,14 +4887,12 @@ pub mod delete_portal_output {
         pub(crate) portal_status: std::option::Option<crate::model::PortalStatus>,
     }
     impl Builder {
-        /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn portal_status(mut self, input: crate::model::PortalStatus) -> Self {
             self.portal_status = Some(input);
             self
         }
-        /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_portal_status(
             mut self,
             input: std::option::Option<crate::model::PortalStatus>,
@@ -5395,13 +4979,11 @@ impl DeleteDashboardOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetModelOutput {
-    /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl DeleteAssetModelOutput {
-    /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
@@ -5422,14 +5004,12 @@ pub mod delete_asset_model_output {
         pub(crate) asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
     }
     impl Builder {
-        /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
             self.asset_model_status = Some(input);
             self
         }
-        /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_model_status(
             mut self,
             input: std::option::Option<crate::model::AssetModelStatus>,
@@ -5456,13 +5036,11 @@ impl DeleteAssetModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssetOutput {
-    /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl DeleteAssetOutput {
-    /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
@@ -5483,14 +5061,12 @@ pub mod delete_asset_output {
         pub(crate) asset_status: std::option::Option<crate::model::AssetStatus>,
     }
     impl Builder {
-        /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_status(mut self, input: crate::model::AssetStatus) -> Self {
             self.asset_status = Some(input);
             self
         }
-        /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_status(
             mut self,
             input: std::option::Option<crate::model::AssetStatus>,
@@ -5550,9 +5126,7 @@ pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
@@ -5561,9 +5135,7 @@ impl CreateProjectOutput {
         self.project_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -5597,17 +5169,13 @@ pub mod create_project_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -5635,16 +5203,11 @@ pub struct CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub portal_arn: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: std::option::Option<std::string::String>,
-    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
     /// <p>The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.</p>
     pub sso_application_id: std::option::Option<std::string::String>,
@@ -5655,20 +5218,15 @@ impl CreatePortalOutput {
         self.portal_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     pub fn portal_arn(&self) -> std::option::Option<&str> {
         self.portal_arn.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn portal_start_url(&self) -> std::option::Option<&str> {
         self.portal_start_url.as_deref()
     }
-    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
@@ -5712,31 +5270,23 @@ pub mod create_portal_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portal_arn = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_portal_start_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5744,14 +5294,12 @@ pub mod create_portal_output {
             self.portal_start_url = input;
             self
         }
-        /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn portal_status(mut self, input: crate::model::PortalStatus) -> Self {
             self.portal_status = Some(input);
             self
         }
-        /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_portal_status(
             mut self,
             input: std::option::Option<crate::model::PortalStatus>,
@@ -5798,9 +5346,7 @@ pub struct CreateGatewayOutput {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayOutput {
@@ -5809,9 +5355,7 @@ impl CreateGatewayOutput {
         self.gateway_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -5845,17 +5389,13 @@ pub mod create_gateway_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_arn = input;
             self
@@ -5883,9 +5423,7 @@ pub struct CreateDashboardOutput {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub dashboard_arn: std::option::Option<std::string::String>,
 }
 impl CreateDashboardOutput {
@@ -5894,9 +5432,7 @@ impl CreateDashboardOutput {
         self.dashboard_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
@@ -5930,17 +5466,13 @@ pub mod create_dashboard_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn set_dashboard_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5971,12 +5503,9 @@ pub struct CreateAssetModelOutput {
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub asset_model_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl CreateAssetModelOutput {
@@ -5985,14 +5514,11 @@ impl CreateAssetModelOutput {
         self.asset_model_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn asset_model_arn(&self) -> std::option::Option<&str> {
         self.asset_model_arn.as_deref()
     }
-    /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after
-    /// successfully calling this operation) and any error message.</p>
+    /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
@@ -6031,17 +5557,13 @@ pub mod create_asset_model_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn asset_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn set_asset_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6049,14 +5571,12 @@ pub mod create_asset_model_output {
             self.asset_model_arn = input;
             self
         }
-        /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
             self.asset_model_status = Some(input);
             self
         }
-        /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after
-        /// successfully calling this operation) and any error message.</p>
+        /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_model_status(
             mut self,
             input: std::option::Option<crate::model::AssetModelStatus>,
@@ -6085,33 +5605,25 @@ impl CreateAssetModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssetOutput {
-    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
-    /// IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub asset_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl CreateAssetOutput {
-    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
-    /// IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn asset_arn(&self) -> std::option::Option<&str> {
         self.asset_arn.as_deref()
     }
-    /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully
-    /// calling this operation) and any error message.</p>
+    /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
@@ -6136,42 +5648,34 @@ pub mod create_asset_output {
         pub(crate) asset_status: std::option::Option<crate::model::AssetStatus>,
     }
     impl Builder {
-        /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
-        /// IoT SiteWise APIs.</p>
+        /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_id = Some(input.into());
             self
         }
-        /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
-        /// IoT SiteWise APIs.</p>
+        /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_id = input;
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn asset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_asset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_arn = input;
             self
         }
-        /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_status(mut self, input: crate::model::AssetStatus) -> Self {
             self.asset_status = Some(input);
             self
         }
-        /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully
-        /// calling this operation) and any error message.</p>
+        /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn set_asset_status(
             mut self,
             input: std::option::Option<crate::model::AssetStatus>,
@@ -6203,9 +5707,7 @@ pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub access_policy_arn: std::option::Option<std::string::String>,
 }
 impl CreateAccessPolicyOutput {
@@ -6214,9 +5716,7 @@ impl CreateAccessPolicyOutput {
         self.access_policy_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(&self) -> std::option::Option<&str> {
         self.access_policy_arn.as_deref()
     }
@@ -6253,17 +5753,13 @@ pub mod create_access_policy_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn access_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn set_access_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6291,14 +5787,12 @@ impl CreateAccessPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyValueOutput {
-    /// <p>A list of the errors (if any) associated with the batch put request. Each error entry
-    /// contains the <code>entryId</code> of the entry that failed.</p>
+    /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     pub error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
 }
 impl BatchPutAssetPropertyValueOutput {
-    /// <p>A list of the errors (if any) associated with the batch put request. Each error entry
-    /// contains the <code>entryId</code> of the entry that failed.</p>
+    /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchPutAssetPropertyErrorEntry]> {
@@ -6326,8 +5820,7 @@ pub mod batch_put_asset_property_value_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of the errors (if any) associated with the batch put request. Each error entry
-        /// contains the <code>entryId</code> of the entry that failed.</p>
+        /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
         pub fn error_entries(
             mut self,
             input: crate::model::BatchPutAssetPropertyErrorEntry,
@@ -6337,8 +5830,7 @@ pub mod batch_put_asset_property_value_output {
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of the errors (if any) associated with the batch put request. Each error entry
-        /// contains the <code>entryId</code> of the entry that failed.</p>
+        /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<

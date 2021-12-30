@@ -194,10 +194,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateParallelData`.
     ///
-    /// <p>Creates a parallel data resource in Amazon Translate by importing an input file from
-    /// Amazon S3. Parallel data files contain examples that show how you want segments of text to be
-    /// translated. By adding parallel data, you can influence the style, tone, and word choice in
-    /// your translation output.</p>
+    /// <p>Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data files contain examples that show how you want segments of text to be translated. By adding parallel data, you can influence the style, tone, and word choice in your translation output.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParallelData<
         C = aws_smithy_client::erase::DynConnector,
@@ -254,14 +251,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-        /// that is unique in the account and region.</p>
+        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-        /// that is unique in the account and region.</p>
+        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -302,14 +297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -457,8 +450,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTextTranslationJob`.
     ///
-    /// <p>Gets the properties associated with an asynchronous batch translation job including name,
-    /// ID, status, source and target languages, input/output S3 buckets, and so on.</p>
+    /// <p>Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -515,14 +507,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -668,11 +658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-        /// format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-        /// you must specify the same format as that of the input file that was imported to create it.
-        /// Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
             input: crate::model::TerminologyDataFormat,
@@ -681,11 +668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-        /// format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-        /// you must specify the same format as that of the input file that was imported to create it.
-        /// Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -696,14 +680,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportTerminology`.
     ///
-    /// <p>Creates or updates a custom terminology, depending on whether or not one already exists
-    /// for the given terminology name. Importing a terminology with the same name as an existing one
-    /// will merge the terminologies based on the chosen merge strategy. Currently, the only supported
-    /// merge strategy is OVERWRITE, and so the imported terminology will overwrite an existing
-    /// terminology of the same name.</p>
-    /// <p>If you import a terminology that overwrites an existing one, the new terminology take up
-    /// to 10 minutes to fully propagate and be available for use in a translation due to cache
-    /// policies with the DataPlane service that performs the translations.</p>
+    /// <p>Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. Currently, the only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite an existing terminology of the same name.</p>
+    /// <p>If you import a terminology that overwrites an existing one, the new terminology take up to 10 minutes to fully propagate and be available for use in a translation due to cache policies with the DataPlane service that performs the translations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportTerminology<
         C = aws_smithy_client::erase::DynConnector,
@@ -770,16 +748,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-        /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-        /// terminology of the same name.</p>
+        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
             self.inner = self.inner.merge_strategy(input);
             self
         }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-        /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-        /// terminology of the same name.</p>
+        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
         pub fn set_merge_strategy(
             mut self,
             input: std::option::Option<crate::model::MergeStrategy>,
@@ -963,14 +937,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-        /// fetch the next group of custom terminologies. </p>
+        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-        /// fetch the next group of custom terminologies. </p>
+        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1045,14 +1017,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-        /// name, job status, and submission time. You can only set one filter at a time.</p>
+        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::TextTranslationJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-        /// name, job status, and submission time. You can only set one filter at a time.</p>
+        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::TextTranslationJobFilter>,
@@ -1083,12 +1053,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTextTranslationJob`.
     ///
-    /// <p>Starts an asynchronous batch translation job. Batch translation jobs can be used to
-    /// translate large volumes of text across multiple documents at once. For more information, see
-    /// <a>async</a>.</p>
-    ///
-    /// <p>Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.</p>
-    /// <note>
+    /// <p>Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of text across multiple documents at once. For more information, see <code>async</code>.</p>
+    /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p> <note>
     /// <p>Amazon Translate does not support batch translation of multiple source languages at once.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1157,14 +1123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation
-        /// job.</p>
+        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation
-        /// job.</p>
+        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1172,14 +1136,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Specifies the S3 folder to which your job output will be saved.
-        /// </p>
+        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Specifies the S3 folder to which your job output will be saved.
-        /// </p>
+        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1187,14 +1149,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1202,16 +1162,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation
-        /// jobs.</p>
+        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_language_code(input.into());
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation
-        /// jobs.</p>
+        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1240,20 +1198,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource
-        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
-        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.terminology_names(input.into());
             self
         }
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource
-        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
-        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1265,30 +1221,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-        /// of examples that show how you want segments of text to be translated. When you add parallel
-        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-        /// <p>This parameter accepts only one parallel data resource.</p>
-        /// <note>
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p> <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
-        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parallel_data_names(input.into());
             self
         }
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-        /// of examples that show how you want segments of text to be translated. When you add parallel
-        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-        /// <p>This parameter accepts only one parallel data resource.</p>
-        /// <note>
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p> <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
-        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1296,26 +1244,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parallel_data_names(input);
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-        /// SDK.</p>
+        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-        /// SDK.</p>
+        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -1327,12 +1271,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTextTranslationJob`.
     ///
     /// <p>Stops an asynchronous batch translation job that is in progress.</p>
-    /// <p>If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and
-    /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped,
-    /// it is put into the <code>COMPLETED</code> state. Otherwise, the job is put into the
-    /// <code>STOPPED</code> state.</p>
-    /// <p>Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a> operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
-    /// operations to get a batch translation job's <code>JobId</code>.</p>
+    /// <p>If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job is put into the <code>STOPPED</code> state.</p>
+    /// <p>Asynchronous batch translation jobs are started with the <code>StartTextTranslationJob</code> operation. You can use the <code>DescribeTextTranslationJob</code> or <code>ListTextTranslationJobs</code> operations to get a batch translation job's <code>JobId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1402,8 +1342,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TranslateText`.
     ///
-    /// <p>Translates input text from the source language to the target language. For a list of
-    /// available languages and language codes, see <a>what-is-languages</a>.</p>
+    /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <code>what-is-languages</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TranslateText<
         C = aws_smithy_client::erase::DynConnector,
@@ -1460,14 +1399,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-        /// your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-        /// your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -1476,16 +1413,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-        /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-        /// contain a maximum of 256 terms.</p>
+        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.terminology_names(input.into());
             self
         }
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-        /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-        /// contain a maximum of 256 terms.</p>
+        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1493,22 +1426,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminology_names(input);
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-        /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-        /// Comprehend</a> to determine the source language.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_language_code(input.into());
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-        /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-        /// Comprehend</a> to determine the source language.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1516,14 +1441,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_language_code(input);
             self
         }
-        /// <p>The language code requested for the language of the target text. The language must be a
-        /// language supported by Amazon Translate.</p>
+        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_language_code(input.into());
             self
         }
-        /// <p>The language code requested for the language of the target text. The language must be a
-        /// language supported by Amazon Translate.</p>
+        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn set_target_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1531,14 +1454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_language_code(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -1549,8 +1470,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateParallelData`.
     ///
-    /// <p>Updates a previously created parallel data resource by importing a new input file from
-    /// Amazon S3.</p>
+    /// <p>Updates a previously created parallel data resource by importing a new input file from Amazon S3.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateParallelData<
         C = aws_smithy_client::erase::DynConnector,
@@ -1640,14 +1560,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parallel_data_config(input);
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self

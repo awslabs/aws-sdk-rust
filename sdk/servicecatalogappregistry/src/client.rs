@@ -245,9 +245,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAttributeGroup`.
     ///
-    /// <p>Associates an attribute group with an application to augment the application's metadata
-    /// with the group's attributes. This feature enables applications to be described with
-    /// user-defined details that are machine-readable, such as third-party integrations.</p>
+    /// <p>Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAttributeGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -523,18 +521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -542,10 +534,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAttributeGroup`.
     ///
-    /// <p>Creates a new attribute group as a container for user-defined attributes. This feature
-    /// enables users to have full control over their cloud application's metadata in a rich
-    /// machine-readable format to facilitate integration with automated workflows and third-party
-    /// tools.</p>
+    /// <p>Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application's metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAttributeGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -655,18 +644,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
-        /// completed successfully using the same client token and the same parameters, the retry succeeds
-        /// without performing any further actions. If you retry a successful request using the same
-        /// client token, but one or more of the parameters are different, the retry fails.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1309,7 +1292,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssociatedAttributeGroups`.
     ///
-    /// <p>Lists all attribute groups that are associated with specified application.  Results are paginated.</p>
+    /// <p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedAttributeGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -2066,14 +2049,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_group(input);
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-        /// updating the attribute group.</p>
+        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are
-        /// updating the attribute group.</p>
+        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self

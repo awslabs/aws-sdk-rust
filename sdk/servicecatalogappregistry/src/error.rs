@@ -140,8 +140,7 @@ pub struct AssociateResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateResourceErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -264,8 +263,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -377,8 +375,7 @@ pub struct CreateAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAttributeGroupErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1857,8 +1854,7 @@ pub struct SyncResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SyncResourceErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2191,8 +2187,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2304,8 +2299,7 @@ pub struct UpdateAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAttributeGroupErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2610,8 +2604,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>There was a conflict when processing the request (for example, a resource with the given name already
-/// exists within the account).</p>
+/// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

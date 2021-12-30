@@ -297,8 +297,7 @@ impl ListTagsForResourceOutput {
 pub struct ListProjectsOutput {
     /// <p>A list of projects in your AWS account.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectMetadata>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -306,8 +305,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectMetadata]> {
         self.projects.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -349,14 +347,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -383,8 +379,7 @@ impl ListProjectsOutput {
 pub struct ListModelsOutput {
     /// <p>A list of model versions in the specified project. </p>
     pub models: std::option::Option<std::vec::Vec<crate::model::ModelMetadata>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of models. </p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelsOutput {
@@ -392,8 +387,7 @@ impl ListModelsOutput {
     pub fn models(&self) -> std::option::Option<&[crate::model::ModelMetadata]> {
         self.models.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of models. </p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -435,14 +429,12 @@ pub mod list_models_output {
             self.models = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of models. </p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of models. </p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -469,8 +461,7 @@ impl ListModelsOutput {
 pub struct ListDatasetEntriesOutput {
     /// <p>A list of the entries (JSON Lines) within the dataset.</p>
     pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetEntriesOutput {
@@ -478,8 +469,7 @@ impl ListDatasetEntriesOutput {
     pub fn dataset_entries(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_entries.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -521,14 +511,12 @@ pub mod list_dataset_entries_output {
             self.dataset_entries = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

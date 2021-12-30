@@ -3288,16 +3288,9 @@ pub struct StartWorkflowExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartWorkflowExecutionErrorKind {
-    /// <p>The <code>StartWorkflowExecution</code> API action was called without the required
-    /// parameters set.</p>
-    /// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be
-    /// set to start the execution. However, these parameters might have been set as defaults when the
-    /// workflow type was registered. In this case, you can omit these parameters from the
-    /// <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow
-    /// type.</p>
-    /// <note>
-    /// <p>If these parameters aren't set and no default parameters were defined in the workflow
-    /// type, this error is displayed.</p>
+    /// <p>The <code>StartWorkflowExecution</code> API action was called without the required parameters set.</p>
+    /// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be set to start the execution. However, these parameters might have been set as defaults when the workflow type was registered. In this case, you can omit these parameters from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow type.</p> <note>
+    /// <p>If these parameters aren't set and no default parameters were defined in the workflow type, this error is displayed.</p>
     /// </note>
     DefaultUndefinedFault(crate::error::DefaultUndefinedFault),
     /// <p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>
@@ -3308,8 +3301,7 @@ pub enum StartWorkflowExecutionErrorKind {
     TypeDeprecatedFault(crate::error::TypeDeprecatedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// <p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in
-    /// the specified domain.</p>
+    /// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
     WorkflowExecutionAlreadyStartedFault(crate::error::WorkflowExecutionAlreadyStartedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4499,8 +4491,7 @@ impl TooManyTagsFault {
     }
 }
 
-/// <p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in
-/// the specified domain.</p>
+/// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionAlreadyStartedFault {
@@ -4628,16 +4619,9 @@ impl TypeDeprecatedFault {
     }
 }
 
-/// <p>The <code>StartWorkflowExecution</code> API action was called without the required
-/// parameters set.</p>
-/// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be
-/// set to start the execution. However, these parameters might have been set as defaults when the
-/// workflow type was registered. In this case, you can omit these parameters from the
-/// <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow
-/// type.</p>
-/// <note>
-/// <p>If these parameters aren't set and no default parameters were defined in the workflow
-/// type, this error is displayed.</p>
+/// <p>The <code>StartWorkflowExecution</code> API action was called without the required parameters set.</p>
+/// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be set to start the execution. However, these parameters might have been set as defaults when the workflow type was registered. In this case, you can omit these parameters from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow type.</p> <note>
+/// <p>If these parameters aren't set and no default parameters were defined in the workflow type, this error is displayed.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

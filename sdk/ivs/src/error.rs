@@ -176,15 +176,15 @@ pub struct CreateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -304,17 +304,17 @@ pub struct CreateRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -456,15 +456,15 @@ pub struct CreateStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -587,15 +587,15 @@ pub struct DeleteChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -712,13 +712,13 @@ pub struct DeletePlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -838,15 +838,15 @@ pub struct DeleteRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -979,13 +979,13 @@ pub struct DeleteStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1099,11 +1099,11 @@ pub struct GetChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1208,11 +1208,11 @@ pub struct GetPlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1323,13 +1323,13 @@ pub struct GetRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1449,13 +1449,13 @@ pub struct GetStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1563,11 +1563,11 @@ pub struct GetStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1672,11 +1672,11 @@ pub struct GetStreamSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamSessionErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1787,15 +1787,15 @@ pub struct ImportPlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportPlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1924,11 +1924,11 @@ pub struct ListChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChannelsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2030,9 +2030,9 @@ pub struct ListPlaybackKeyPairsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlaybackKeyPairsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2134,11 +2134,11 @@ pub struct ListRecordingConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecordingConfigurationsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2249,11 +2249,11 @@ pub struct ListStreamKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamKeysErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2361,7 +2361,7 @@ pub struct ListStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2451,11 +2451,11 @@ pub struct ListStreamSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamSessionsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2566,11 +2566,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2681,15 +2681,15 @@ pub struct PutMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMetadataErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2806,15 +2806,15 @@ pub struct StopStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopStreamErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     StreamUnavailable(crate::error::StreamUnavailable),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2931,11 +2931,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3040,11 +3040,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3152,15 +3152,15 @@ pub struct UpdateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3264,7 +3264,7 @@ impl std::error::Error for UpdateChannelError {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3352,7 +3352,7 @@ impl ValidationException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3440,7 +3440,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingVerification {
@@ -3528,7 +3528,7 @@ impl PendingVerification {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3616,7 +3616,7 @@ impl ConflictException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3704,7 +3704,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -3792,7 +3792,7 @@ impl InternalServerException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamUnavailable {
@@ -3880,7 +3880,7 @@ impl StreamUnavailable {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelNotBroadcasting {
@@ -3968,7 +3968,7 @@ impl ChannelNotBroadcasting {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -4056,7 +4056,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

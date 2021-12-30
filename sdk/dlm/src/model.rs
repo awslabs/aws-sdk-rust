@@ -3,29 +3,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyDetails {
-    /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
-    /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
-    /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-    /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub policy_type: std::option::Option<crate::model::PolicyTypeValues>,
-    /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
-    /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
-    /// snapshots from the volumes for an instance.</p>
+    /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
-    /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
-    /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
-    /// in your account, specify <code>OUTPOST</code>. </p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
-    /// of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. </p>
+    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
     pub resource_locations:
         std::option::Option<std::vec::Vec<crate::model::ResourceLocationValues>>,
     /// <p>The single tag that identifies targeted resources for this policy.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub target_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
-    /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+    /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub schedules: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
     /// <p>A set of optional parameters for snapshot and AMI lifecycle policies. </p>
@@ -34,32 +25,23 @@ pub struct PolicyDetails {
     /// <p>The event that triggers the event-based policy. </p>
     /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
     pub event_source: std::option::Option<crate::model::EventSource>,
-    /// <p>The actions to be performed when the event-based policy is triggered. You can specify
-    /// only one action per policy.</p>
+    /// <p>The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.</p>
     /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl PolicyDetails {
-    /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
-    /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
-    /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-    /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyTypeValues> {
         self.policy_type.as_ref()
     }
-    /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
-    /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
-    /// snapshots from the volumes for an instance.</p>
+    /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub fn resource_types(&self) -> std::option::Option<&[crate::model::ResourceTypeValues]> {
         self.resource_types.as_deref()
     }
-    /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
-    /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
-    /// in your account, specify <code>OUTPOST</code>. </p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
-    /// of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. </p>
+    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
     pub fn resource_locations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceLocationValues]> {
@@ -70,8 +52,7 @@ impl PolicyDetails {
     pub fn target_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.target_tags.as_deref()
     }
-    /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
-    /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+    /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
     pub fn schedules(&self) -> std::option::Option<&[crate::model::Schedule]> {
         self.schedules.as_deref()
@@ -86,8 +67,7 @@ impl PolicyDetails {
     pub fn event_source(&self) -> std::option::Option<&crate::model::EventSource> {
         self.event_source.as_ref()
     }
-    /// <p>The actions to be performed when the event-based policy is triggered. You can specify
-    /// only one action per policy.</p>
+    /// <p>The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.</p>
     /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
@@ -125,19 +105,13 @@ pub mod policy_details {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     }
     impl Builder {
-        /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
-        /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
-        /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-        /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+        /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
         /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
         pub fn policy_type(mut self, input: crate::model::PolicyTypeValues) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
-        /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
-        /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
-        /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+        /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
         /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
         pub fn set_policy_type(
             mut self,
@@ -150,9 +124,7 @@ pub mod policy_details {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
-        /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
-        /// snapshots from the volumes for an instance.</p>
+        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
@@ -160,9 +132,7 @@ pub mod policy_details {
             self.resource_types = Some(v);
             self
         }
-        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
-        /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
-        /// snapshots from the volumes for an instance.</p>
+        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_resource_types(
             mut self,
@@ -175,22 +145,16 @@ pub mod policy_details {
         ///
         /// To override the contents of this collection use [`set_resource_locations`](Self::set_resource_locations).
         ///
-        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
-        /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
-        /// in your account, specify <code>OUTPOST</code>. </p>
-        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
-        /// of the specified type with matching target tags across all of the Outposts in your account.</p>
+        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. </p>
+        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
         pub fn resource_locations(mut self, input: crate::model::ResourceLocationValues) -> Self {
             let mut v = self.resource_locations.unwrap_or_default();
             v.push(input);
             self.resource_locations = Some(v);
             self
         }
-        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
-        /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
-        /// in your account, specify <code>OUTPOST</code>. </p>
-        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
-        /// of the specified type with matching target tags across all of the Outposts in your account.</p>
+        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. </p>
+        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
         pub fn set_resource_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceLocationValues>>,
@@ -223,8 +187,7 @@ pub mod policy_details {
         ///
         /// To override the contents of this collection use [`set_schedules`](Self::set_schedules).
         ///
-        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
-        /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn schedules(mut self, input: crate::model::Schedule) -> Self {
             let mut v = self.schedules.unwrap_or_default();
@@ -232,8 +195,7 @@ pub mod policy_details {
             self.schedules = Some(v);
             self
         }
-        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
-        /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_schedules(
             mut self,
@@ -276,8 +238,7 @@ pub mod policy_details {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The actions to be performed when the event-based policy is triggered. You can specify
-        /// only one action per policy.</p>
+        /// <p>The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.</p>
         /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
@@ -285,8 +246,7 @@ pub mod policy_details {
             self.actions = Some(v);
             self
         }
-        /// <p>The actions to be performed when the event-based policy is triggered. You can specify
-        /// only one action per policy.</p>
+        /// <p>The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.</p>
         /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
         pub fn set_actions(
             mut self,
@@ -508,15 +468,13 @@ impl CrossRegionCopyAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyRetainRule {
-    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub interval: i32,
     /// <p>The unit of time for time-based retention.</p>
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyRetainRule {
-    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -543,14 +501,12 @@ pub mod cross_region_copy_retain_rule {
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
     }
     impl Builder {
-        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -651,23 +607,17 @@ impl AsRef<str> for RetentionIntervalUnitValues {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
-    /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable
-    /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
-    /// parameter is false or when encryption by default is not enabled.</p>
+    /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
-    /// this parameter is not specified, the default KMS key for the account is used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub cmk_arn: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
-    /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable
-    /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
-    /// parameter is false or when encryption by default is not enabled.</p>
+    /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
-    /// this parameter is not specified, the default KMS key for the account is used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub fn cmk_arn(&self) -> std::option::Option<&str> {
         self.cmk_arn.as_deref()
     }
@@ -690,28 +640,22 @@ pub mod encryption_configuration {
         pub(crate) cmk_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable
-        /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
-        /// parameter is false or when encryption by default is not enabled.</p>
+        /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable
-        /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
-        /// parameter is false or when encryption by default is not enabled.</p>
+        /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
-        /// this parameter is not specified, the default KMS key for the account is used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cmk_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
-        /// this parameter is not specified, the default KMS key for the account is used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cmk_arn = input;
             self
@@ -817,15 +761,10 @@ impl EventSource {
 pub struct EventParameters {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     pub event_type: std::option::Option<crate::model::EventTypeValues>,
-    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
-    /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
     pub snapshot_owner: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
-    /// a regular expression. The policy runs only if a snapshot with a description that matches the
-    /// specified pattern is shared with your account.</p>
-    /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>  
-    /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
-    /// are shared with your account.</p>
+    /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
+    /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
     pub description_regex: std::option::Option<std::string::String>,
 }
 impl EventParameters {
@@ -833,17 +772,12 @@ impl EventParameters {
     pub fn event_type(&self) -> std::option::Option<&crate::model::EventTypeValues> {
         self.event_type.as_ref()
     }
-    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
-    /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
     pub fn snapshot_owner(&self) -> std::option::Option<&[std::string::String]> {
         self.snapshot_owner.as_deref()
     }
-    /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
-    /// a regular expression. The policy runs only if a snapshot with a description that matches the
-    /// specified pattern is shared with your account.</p>
-    /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>  
-    /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
-    /// are shared with your account.</p>
+    /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
+    /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
     pub fn description_regex(&self) -> std::option::Option<&str> {
         self.description_regex.as_deref()
     }
@@ -885,16 +819,14 @@ pub mod event_parameters {
         ///
         /// To override the contents of this collection use [`set_snapshot_owner`](Self::set_snapshot_owner).
         ///
-        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
-        /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
         pub fn snapshot_owner(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.snapshot_owner.unwrap_or_default();
             v.push(input.into());
             self.snapshot_owner = Some(v);
             self
         }
-        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
-        /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
         pub fn set_snapshot_owner(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -902,22 +834,14 @@ pub mod event_parameters {
             self.snapshot_owner = input;
             self
         }
-        /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
-        /// a regular expression. The policy runs only if a snapshot with a description that matches the
-        /// specified pattern is shared with your account.</p>
-        /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>  
-        /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
-        /// are shared with your account.</p>
+        /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
+        /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
         pub fn description_regex(mut self, input: impl Into<std::string::String>) -> Self {
             self.description_regex = Some(input.into());
             self
         }
-        /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
-        /// a regular expression. The policy runs only if a snapshot with a description that matches the
-        /// specified pattern is shared with your account.</p>
-        /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>  
-        /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
-        /// are shared with your account.</p>
+        /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
+        /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
         pub fn set_description_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1044,32 +968,21 @@ impl AsRef<str> for EventSourceValues {
     }
 }
 
-/// <p>Specifies optional parameters to add to a policy. The set of valid parameters depends
-/// on the combination of policy type and resource type.</p>
+/// <p>Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameters {
-    /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
-    /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
-    /// The default is false.</p>
+    /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The default is false.</p>
     pub exclude_boot_volume: std::option::Option<bool>,
-    /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-    /// policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy
-    /// runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-    /// default is <code>true</code> (instances are not rebooted).</p>
+    /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
     pub no_reboot: std::option::Option<bool>,
 }
 impl Parameters {
-    /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
-    /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
-    /// The default is false.</p>
+    /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The default is false.</p>
     pub fn exclude_boot_volume(&self) -> std::option::Option<bool> {
         self.exclude_boot_volume
     }
-    /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-    /// policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy
-    /// runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-    /// default is <code>true</code> (instances are not rebooted).</p>
+    /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
     pub fn no_reboot(&self) -> std::option::Option<bool> {
         self.no_reboot
     }
@@ -1092,32 +1005,22 @@ pub mod parameters {
         pub(crate) no_reboot: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
-        /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
-        /// The default is false.</p>
+        /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The default is false.</p>
         pub fn exclude_boot_volume(mut self, input: bool) -> Self {
             self.exclude_boot_volume = Some(input);
             self
         }
-        /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
-        /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
-        /// The default is false.</p>
+        /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The default is false.</p>
         pub fn set_exclude_boot_volume(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_boot_volume = input;
             self
         }
-        /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-        /// policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy
-        /// runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-        /// default is <code>true</code> (instances are not rebooted).</p>
+        /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
         pub fn no_reboot(mut self, input: bool) -> Self {
             self.no_reboot = Some(input);
             self
         }
-        /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
-        /// policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy
-        /// runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
-        /// default is <code>true</code> (instances are not rebooted).</p>
+        /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
         pub fn set_no_reboot(mut self, input: std::option::Option<bool>) -> Self {
             self.no_reboot = input;
             self
@@ -1144,16 +1047,11 @@ impl Parameters {
 pub struct Schedule {
     /// <p>The name of the schedule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by
-    /// this policy.</p>
+    /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
     pub copy_tags: bool,
-    /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
-    /// to the Amazon Web Services-added lifecycle tags.</p>
+    /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A collection of key/value pairs with values determined dynamically when the policy is
-    /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
-    /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
-    /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
+    /// <p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
     pub variable_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The creation rule.</p>
     pub create_rule: std::option::Option<crate::model::CreateRule>,
@@ -1162,10 +1060,7 @@ pub struct Schedule {
     /// <p>The rule for enabling fast snapshot restore.</p>
     pub fast_restore_rule: std::option::Option<crate::model::FastRestoreRule>,
     /// <p>The rule for cross-Region snapshot copies.</p>
-    /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
-    /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
-    /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
-    /// Regions or Outposts.</p>
+    /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     pub cross_region_copy_rules:
         std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
     /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
@@ -1178,20 +1073,15 @@ impl Schedule {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by
-    /// this policy.</p>
+    /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
     pub fn copy_tags(&self) -> bool {
         self.copy_tags
     }
-    /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
-    /// to the Amazon Web Services-added lifecycle tags.</p>
+    /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub fn tags_to_add(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags_to_add.as_deref()
     }
-    /// <p>A collection of key/value pairs with values determined dynamically when the policy is
-    /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
-    /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
-    /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
+    /// <p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
     pub fn variable_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.variable_tags.as_deref()
     }
@@ -1208,10 +1098,7 @@ impl Schedule {
         self.fast_restore_rule.as_ref()
     }
     /// <p>The rule for cross-Region snapshot copies.</p>
-    /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
-    /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
-    /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
-    /// Regions or Outposts.</p>
+    /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     pub fn cross_region_copy_rules(
         &self,
     ) -> std::option::Option<&[crate::model::CrossRegionCopyRule]> {
@@ -1271,14 +1158,12 @@ pub mod schedule {
             self.name = input;
             self
         }
-        /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by
-        /// this policy.</p>
+        /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
             self.copy_tags = Some(input);
             self
         }
-        /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by
-        /// this policy.</p>
+        /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags = input;
             self
@@ -1287,16 +1172,14 @@ pub mod schedule {
         ///
         /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
         ///
-        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
-        /// to the Amazon Web Services-added lifecycle tags.</p>
+        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
         pub fn tags_to_add(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_to_add.unwrap_or_default();
             v.push(input);
             self.tags_to_add = Some(v);
             self
         }
-        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
-        /// to the Amazon Web Services-added lifecycle tags.</p>
+        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
         pub fn set_tags_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1308,20 +1191,14 @@ pub mod schedule {
         ///
         /// To override the contents of this collection use [`set_variable_tags`](Self::set_variable_tags).
         ///
-        /// <p>A collection of key/value pairs with values determined dynamically when the policy is
-        /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
-        /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
-        /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
+        /// <p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
         pub fn variable_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.variable_tags.unwrap_or_default();
             v.push(input);
             self.variable_tags = Some(v);
             self
         }
-        /// <p>A collection of key/value pairs with values determined dynamically when the policy is
-        /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
-        /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
-        /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
+        /// <p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
         pub fn set_variable_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1373,10 +1250,7 @@ pub mod schedule {
         /// To override the contents of this collection use [`set_cross_region_copy_rules`](Self::set_cross_region_copy_rules).
         ///
         /// <p>The rule for cross-Region snapshot copies.</p>
-        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
-        /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
-        /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
-        /// Regions or Outposts.</p>
+        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
         pub fn cross_region_copy_rules(mut self, input: crate::model::CrossRegionCopyRule) -> Self {
             let mut v = self.cross_region_copy_rules.unwrap_or_default();
             v.push(input);
@@ -1384,10 +1258,7 @@ pub mod schedule {
             self
         }
         /// <p>The rule for cross-Region snapshot copies.</p>
-        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
-        /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
-        /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
-        /// Regions or Outposts.</p>
+        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
         pub fn set_cross_region_copy_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
@@ -1455,29 +1326,19 @@ impl Schedule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateRule {
-    /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
-    /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
-    /// can't be greater than 1000.</p>
+    /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
     pub count: i32,
-    /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
-    /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
-    /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
-    /// weeks, or 3650 days.</p>
+    /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl DeprecateRule {
-    /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
-    /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
-    /// can't be greater than 1000.</p>
+    /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
-    /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
-    /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
-    /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
-    /// weeks, or 3650 days.</p>
+    /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -1506,32 +1367,22 @@ pub mod deprecate_rule {
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
     }
     impl Builder {
-        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
-        /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
-        /// can't be greater than 1000.</p>
+        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
-        /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
-        /// can't be greater than 1000.</p>
+        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
         }
-        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
-        /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
-        /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
-        /// weeks, or 3650 days.</p>
+        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
-        /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
-        /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
-        /// weeks, or 3650 days.</p>
+        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1680,65 +1531,47 @@ impl ShareRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyRule {
-    /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
-    /// to specify a target Region or a target Outpost for snapshot copies.</p>
-    /// <p>For policies created before the <b>Target</b> parameter
-    /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
+    /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
+    /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     pub target_region: std::option::Option<std::string::String>,
-    /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-    /// snapshot copies.</p>
-    /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
-    /// specify both.</p>
+    /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
+    /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
-    /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
-    /// even if this parameter is false or if encryption by default is not enabled.</p>
+    /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
-    /// parameter is not specified, the default KMS key for the account is used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub cmk_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
-    /// snapshot copy.</p>
+    /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.</p>
     pub copy_tags: std::option::Option<bool>,
-    /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
-    /// destination Region.</p>
+    /// <p>The retention rule that indicates how long snapshot copies are to be retained in the destination Region.</p>
     pub retain_rule: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
     /// <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
     pub deprecate_rule: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
 }
 impl CrossRegionCopyRule {
-    /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
-    /// to specify a target Region or a target Outpost for snapshot copies.</p>
-    /// <p>For policies created before the <b>Target</b> parameter
-    /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
+    /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
+    /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     pub fn target_region(&self) -> std::option::Option<&str> {
         self.target_region.as_deref()
     }
-    /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-    /// snapshot copies.</p>
-    /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
-    /// specify both.</p>
+    /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
+    /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
-    /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
-    /// even if this parameter is false or if encryption by default is not enabled.</p>
+    /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
-    /// parameter is not specified, the default KMS key for the account is used.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub fn cmk_arn(&self) -> std::option::Option<&str> {
         self.cmk_arn.as_deref()
     }
-    /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
-    /// snapshot copy.</p>
+    /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.</p>
     pub fn copy_tags(&self) -> std::option::Option<bool> {
         self.copy_tags
     }
-    /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
-    /// destination Region.</p>
+    /// <p>The retention rule that indicates how long snapshot copies are to be retained in the destination Region.</p>
     pub fn retain_rule(&self) -> std::option::Option<&crate::model::CrossRegionCopyRetainRule> {
         self.retain_rule.as_ref()
     }
@@ -1777,18 +1610,14 @@ pub mod cross_region_copy_rule {
         pub(crate) deprecate_rule: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
     }
     impl Builder {
-        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
-        /// to specify a target Region or a target Outpost for snapshot copies.</p>
-        /// <p>For policies created before the <b>Target</b> parameter
-        /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
+        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
+        /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
         pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_region = Some(input.into());
             self
         }
-        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
-        /// to specify a target Region or a target Outpost for snapshot copies.</p>
-        /// <p>For policies created before the <b>Target</b> parameter
-        /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
+        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
+        /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
         pub fn set_target_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1796,68 +1625,54 @@ pub mod cross_region_copy_rule {
             self.target_region = input;
             self
         }
-        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-        /// snapshot copies.</p>
-        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
-        /// specify both.</p>
+        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
+        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
         }
-        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-        /// snapshot copies.</p>
-        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
-        /// specify both.</p>
+        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
+        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
         }
-        /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
-        /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
-        /// even if this parameter is false or if encryption by default is not enabled.</p>
+        /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
-        /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
-        /// even if this parameter is false or if encryption by default is not enabled.</p>
+        /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
-        /// parameter is not specified, the default KMS key for the account is used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cmk_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
-        /// parameter is not specified, the default KMS key for the account is used.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cmk_arn = input;
             self
         }
-        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
-        /// snapshot copy.</p>
+        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
             self.copy_tags = Some(input);
             self
         }
-        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
-        /// snapshot copy.</p>
+        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags = input;
             self
         }
-        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
-        /// destination Region.</p>
+        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the destination Region.</p>
         pub fn retain_rule(mut self, input: crate::model::CrossRegionCopyRetainRule) -> Self {
             self.retain_rule = Some(input);
             self
         }
-        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
-        /// destination Region.</p>
+        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the destination Region.</p>
         pub fn set_retain_rule(
             mut self,
             input: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
@@ -1903,17 +1718,13 @@ impl CrossRegionCopyRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyDeprecateRule {
-    /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
-    /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
-    /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+    /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyDeprecateRule {
-    /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
-    /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
-    /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+    /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -1940,16 +1751,12 @@ pub mod cross_region_copy_deprecate_rule {
         pub(crate) interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
     }
     impl Builder {
-        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
-        /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
-        /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
-        /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
-        /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
+        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1983,15 +1790,13 @@ impl CrossRegionCopyDeprecateRule {
     }
 }
 
-/// <p>Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot
-/// restore based on either a count or a time interval.</p>
+/// <p>Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
     pub count: i32,
-    /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub interval: i32,
     /// <p>The unit of time for enabling fast snapshot restore.</p>
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -2003,8 +1808,7 @@ impl FastRestoreRule {
     pub fn count(&self) -> i32 {
         self.count
     }
-    /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -2049,14 +1853,12 @@ pub mod fast_restore_rule {
             self.count = input;
             self
         }
-        /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -2111,15 +1913,13 @@ impl FastRestoreRule {
     }
 }
 
-/// <p>Specifies the retention rule for a lifecycle policy. You can retain snapshots based on
-/// either a count or a time interval.</p>
+/// <p>Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetainRule {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
     pub count: i32,
-    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub interval: i32,
     /// <p>The unit of time for time-based retention.</p>
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -2129,8 +1929,7 @@ impl RetainRule {
     pub fn count(&self) -> i32 {
         self.count
     }
-    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-    /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -2169,14 +1968,12 @@ pub mod retain_rule {
             self.count = input;
             self
         }
-        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
-        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -2212,48 +2009,32 @@ impl RetainRule {
 }
 
 /// <p>Specifies when to create snapshots of EBS volumes.</p>
-/// <p>You must specify either a Cron expression or an interval, interval unit, and start
-/// time. You cannot specify both.</p>
+/// <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRule {
-    /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same
-    /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
-    /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-    /// parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
-    /// Region as the source resource.</p>
-    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
-    /// as the source resource, or in the Region of that Outpost.</p>
+    /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
+    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource.</p>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
     pub location: std::option::Option<crate::model::LocationValues>,
-    /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
-    /// 24.</p>
+    /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub interval: i32,
     /// <p>The interval unit.</p>
     pub interval_unit: std::option::Option<crate::model::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-    /// <p>The operation occurs within a one-hour window following the specified time. If you do
-    /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
     pub times: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1
-    /// year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-    /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub cron_expression: std::option::Option<std::string::String>,
 }
 impl CreateRule {
-    /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same
-    /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
-    /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-    /// parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
-    /// Region as the source resource.</p>
-    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
-    /// as the source resource, or in the Region of that Outpost.</p>
+    /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
+    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource.</p>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
     pub fn location(&self) -> std::option::Option<&crate::model::LocationValues> {
         self.location.as_ref()
     }
-    /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
-    /// 24.</p>
+    /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub fn interval(&self) -> i32 {
         self.interval
     }
@@ -2262,14 +2043,11 @@ impl CreateRule {
         self.interval_unit.as_ref()
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-    /// <p>The operation occurs within a one-hour window following the specified time. If you do
-    /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
     pub fn times(&self) -> std::option::Option<&[std::string::String]> {
         self.times.as_deref()
     }
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1
-    /// year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-    /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn cron_expression(&self) -> std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -2298,26 +2076,16 @@ pub mod create_rule {
         pub(crate) cron_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same
-        /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
-        /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-        /// parameter, <code>CLOUD</code> is used by default.</p>
-        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
-        /// Region as the source resource.</p>
-        /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
-        /// as the source resource, or in the Region of that Outpost.</p>
+        /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
+        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource.</p>
+        /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
         pub fn location(mut self, input: crate::model::LocationValues) -> Self {
             self.location = Some(input);
             self
         }
-        /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same
-        /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
-        /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-        /// parameter, <code>CLOUD</code> is used by default.</p>
-        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
-        /// Region as the source resource.</p>
-        /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
-        /// as the source resource, or in the Region of that Outpost.</p>
+        /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
+        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource.</p>
+        /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::LocationValues>,
@@ -2325,14 +2093,12 @@ pub mod create_rule {
             self.location = input;
             self
         }
-        /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
-        /// 24.</p>
+        /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
-        /// 24.</p>
+        /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -2355,8 +2121,7 @@ pub mod create_rule {
         /// To override the contents of this collection use [`set_times`](Self::set_times).
         ///
         /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-        /// <p>The operation occurs within a one-hour window following the specified time. If you do
-        /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
         pub fn times(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.times.unwrap_or_default();
             v.push(input.into());
@@ -2364,8 +2129,7 @@ pub mod create_rule {
             self
         }
         /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
-        /// <p>The operation occurs within a one-hour window following the specified time. If you do
-        /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
         pub fn set_times(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2373,16 +2137,12 @@ pub mod create_rule {
             self.times = input;
             self
         }
-        /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1
-        /// year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-        /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.cron_expression = Some(input.into());
             self
         }
-        /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1
-        /// year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-        /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2828,8 +2588,7 @@ pub struct LifecyclePolicy {
     pub state: std::option::Option<crate::model::GettablePolicyStateValues>,
     /// <p>The description of the status.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The local date and time when the lifecycle policy was created.</p>
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
@@ -2860,8 +2619,7 @@ impl LifecyclePolicy {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
@@ -2971,14 +2729,12 @@ pub mod lifecycle_policy {
             self.status_message = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3156,9 +2912,7 @@ pub struct LifecyclePolicySummary {
     /// <p>The tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
-    /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code>
-    /// indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
+    /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
     pub policy_type: std::option::Option<crate::model::PolicyTypeValues>,
 }
 impl LifecyclePolicySummary {
@@ -3181,9 +2935,7 @@ impl LifecyclePolicySummary {
     {
         self.tags.as_ref()
     }
-    /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
-    /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code>
-    /// indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
+    /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyTypeValues> {
         self.policy_type.as_ref()
     }
@@ -3272,16 +3024,12 @@ pub mod lifecycle_policy_summary {
             self.tags = input;
             self
         }
-        /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
-        /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code>
-        /// indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
+        /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
         pub fn policy_type(mut self, input: crate::model::PolicyTypeValues) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
-        /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code>
-        /// indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
+        /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyTypeValues>,
